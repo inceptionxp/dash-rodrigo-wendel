@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>O Salto · Dr. Rodrigo Wendel · Painel do Projeto</title>
+<meta name="description" content="Painel de acompanhamento do projeto da mentoria de DTM do Dr. Rodrigo Wendel. Status em tempo real de cada bloco de entrega, marcos e validações pendentes.">
+<link rel="stylesheet" href="assets/style.css?v=1">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ═══════════ SIDEBAR ═══════════ -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">O Salto</div>
+      <span class="brand-meta">Dr. Rodrigo Wendel · v1</span>
+    </div>
+
+    <div class="sidebar-section">Visão</div>
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#home" data-view="home"><span class="nav-num">01</span><span>Visão Geral</span></a>
+      <a class="nav-link" href="#proposta" data-view="proposta"><span class="nav-num">02</span><span>Proposta Aprovada</span></a>
+      <a class="nav-link" href="#contrato" data-view="contrato"><span class="nav-num">03</span><span>Contrato Assinado</span></a>
+    </nav>
+
+    <div class="sidebar-section">Marcos do Projeto</div>
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#marco-1" data-view="marco-1"><span class="nav-num">M1</span><span>Conversa de Levantamento</span></a>
+      <a class="nav-link" href="#marco-2" data-view="marco-2"><span class="nav-num">M2</span><span>Validação da Estratégia</span></a>
+      <a class="nav-link" href="#marco-3" data-view="marco-3"><span class="nav-num">M3</span><span>Configuração Operacional</span></a>
+      <a class="nav-link" href="#marco-4" data-view="marco-4"><span class="nav-num">M4</span><span>Entrega Final</span></a>
+    </nav>
+
+    <div class="sidebar-section">7 Blocos de Entrega</div>
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#bloco-1" data-view="bloco-1"><span class="nav-num">01</span><span>Método e Produto</span></a>
+      <a class="nav-link" href="#bloco-2" data-view="bloco-2"><span class="nav-num">02</span><span>Brandbook</span></a>
+      <a class="nav-link" href="#bloco-3" data-view="bloco-3"><span class="nav-num">03</span><span>Conteúdo Orgânico</span></a>
+      <a class="nav-link" href="#bloco-4" data-view="bloco-4"><span class="nav-num">04</span><span>Páginas do Funil</span></a>
+      <a class="nav-link" href="#bloco-5" data-view="bloco-5"><span class="nav-num">05</span><span>Criativos</span></a>
+      <a class="nav-link" href="#bloco-6" data-view="bloco-6"><span class="nav-num">06</span><span>Materiais de Venda</span></a>
+      <a class="nav-link" href="#bloco-7" data-view="bloco-7"><span class="nav-num">07</span><span>Setup e Operação</span></a>
+    </nav>
+
+    <div class="sidebar-section">Acompanhamento</div>
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#materiais" data-view="materiais"><span class="nav-num">→</span><span>Materiais Pendentes</span></a>
+      <a class="nav-link" href="#validacoes" data-view="validacoes"><span class="nav-num">→</span><span>Validações e Aprovações</span></a>
+    </nav>
+
+    <div class="sidebar-footer">
+      v1 · Junho 2026<br>
+      Inception Experience<br>
+      Maiara Minatto
+    </div>
+  </aside>
+
+  <!-- ═══════════ MAIN ═══════════ -->
+  <main class="main">
+    <div class="main-inner" id="main-inner"></div>
+
+    <!-- GISCUS — comentários por seção -->
+    <div id="giscus-wrapper">
+      <div class="giscus-header">
+        <span class="giscus-tag">Comentários e validações</span>
+        <p class="giscus-help">Deixe aqui sua opinião sobre <strong>esta seção</strong>. Cada página tem seu próprio espaço de comentários. Na primeira vez, faça login com o GitHub (leva 10 segundos).</p>
+      </div>
+      <div class="giscus"></div>
+    </div>
+  </main>
+
+</div>
+
+<script src="data/data.js?v=1"></script>
+<script src="assets/app.js?v=1"></script>
+
+<!-- ═══════════ GISCUS ═══════════ -->
+<script>
+(function(){
+  const REPO='inceptionxp/dash-rodrigo-wendel';
+  const REPO_ID='__REPO_ID_PLACEHOLDER__';
+  const CAT='General';
+  const CAT_ID='__CAT_ID_PLACEHOLDER__';
+  const ORIGIN='https://giscus.app';
+  let loaded=false, currentTerm=null;
+  const container=()=>document.querySelector('#giscus-wrapper .giscus');
+
+  window._showGiscus=function(termKey){
+    const term='dash-'+(termKey||'home');
+    if(term===currentTerm) return;
+    currentTerm=term;
+    const c=container(); if(!c) return;
+    if(!loaded){
+      // Só carrega quando IDs estiverem configurados
+      if(REPO_ID.includes('PLACEHOLDER')) return;
+      const s=document.createElement('script');
+      s.src='https://giscus.app/client.js';
+      s.setAttribute('data-repo',REPO);
+      s.setAttribute('data-repo-id',REPO_ID);
+      s.setAttribute('data-category',CAT);
+      s.setAttribute('data-category-id',CAT_ID);
+      s.setAttribute('data-mapping','specific');
+      s.setAttribute('data-term',term);
+      s.setAttribute('data-strict','0');
+      s.setAttribute('data-reactions-enabled','1');
+      s.setAttribute('data-emit-metadata','0');
+      s.setAttribute('data-input-position','top');
+      s.setAttribute('data-theme','light');
+      s.setAttribute('data-lang','pt');
+      s.crossOrigin='anonymous'; s.async=true;
+      c.appendChild(s); loaded=true;
+    } else {
+      const f=document.querySelector('#giscus-wrapper iframe.giscus-frame');
+      if(f) f.contentWindow.postMessage({giscus:{setConfig:{term}}},ORIGIN);
+    }
+  };
+
+  window._giscusTermFromHash=function(){
+    const h=(location.hash.slice(1)||'home').split('/');
+    return h[0]+(h[1]?'-'+h[1]:'');
+  };
+
+  function tick(){ window._showGiscus(window._giscusTermFromHash()); }
+  window.addEventListener('hashchange', ()=>setTimeout(tick,120));
+  setTimeout(tick, 300);
+})();
+</script>
+</body>
+</html>
