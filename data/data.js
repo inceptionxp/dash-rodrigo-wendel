@@ -7,8 +7,8 @@
 const PROJETO = {
   cliente: 'Dr. Rodrigo Wendel',
   produto: 'O Salto · Consultoria Estratégica e Operacional',
-  valor: 'R$ 13.800,00 · 12x R$ 1.447 (Assiny)',
-  data_assinatura: '22 de junho de 2026',
+  data_inicio: '29 de junho de 2026',
+  data_fim_prevista: '25 de setembro de 2026',
   prazo_total: 'até 60 dias corridos após a Validação da Estratégia (Marco 02)',
   proposta_url: 'https://acervo.inceptionxp.com/proposta-rodrigo',
   contrato_url: '../../contrato/contrato-rodrigo-wendel.pdf',

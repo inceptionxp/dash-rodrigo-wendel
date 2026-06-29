@@ -53,8 +53,8 @@
         <dl class="kv">
           <dt>Cliente</dt><dd>${PROJETO.cliente}</dd>
           <dt>Produto</dt><dd>${PROJETO.produto}</dd>
-          <dt>Investimento</dt><dd>${PROJETO.valor}</dd>
-          <dt>Assinatura</dt><dd>${PROJETO.data_assinatura}</dd>
+          <dt>Início</dt><dd>${PROJETO.data_inicio}</dd>
+          <dt>Entrega prevista</dt><dd>${PROJETO.data_fim_prevista}</dd>
           <dt>Prazo total</dt><dd>${PROJETO.prazo_total}</dd>
         </dl>
       </div>
@@ -124,8 +124,6 @@
       <h2 class="section-title">Pontos-chave</h2>
       <div class="card">
         <dl class="kv">
-          <dt>Valor</dt><dd>R$ 13.800,00</dd>
-          <dt>Pagamento</dt><dd>12x R$ 1.447 no cartão (Assiny)</dd>
           <dt>Prazo</dt><dd>Até 60 dias corridos após Marco 02</dd>
           <dt>Garantia</dt><dd>Devolução integral em 5 dias úteis após Marco 02 se incompatível</dd>
           <dt>Suporte pós-entrega</dt><dd>30 dias corridos</dd>
@@ -134,7 +132,7 @@
       </div>
 
       <div class="alert verde">
-        <strong>Status:</strong> assinado em 22/06/2026 · pagamento confirmado · projeto em execução.
+        <strong>Status:</strong> contrato assinado · pagamento confirmado · projeto iniciado em 29/06/2026.
       </div>
     `,
 
