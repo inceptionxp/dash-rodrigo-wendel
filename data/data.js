@@ -88,8 +88,8 @@ const BLOCOS = [
       {titulo: 'Definição de nome', detalhe: 'Nome da empresa (braço educacional), do Instagram novo e da formação', status: 'planejado'},
       {titulo: 'Estruturação do método autoral', detalhe: 'Pilares, frameworks, jornada de transformação — ver DNA do Método (aguarda materiais do Rodrigo pra fechar)', status: 'em-dev'},
       {titulo: 'Formato dos encontros', detalhe: 'Direção definida na call: semanal em grupo + presencial hands-on, sem 1:1 na formação', status: 'em-dev'},
-      {titulo: 'Régua dos 12 meses e onboarding', detalhe: 'Cronograma completo da mentoria e descritivo de cada etapa', status: 'planejado'},
-      {titulo: 'Oferta completa', detalhe: 'Escopo, duração, bônus, entregáveis, promessa e garantia', status: 'planejado'},
+      {titulo: 'Régua da formação e onboarding', detalhe: 'Arquitetura de 10 meses em 3 etapas definida (ver D5) — cronograma semana a semana aguarda lista de conteúdos do Rodrigo', status: 'em-dev'},
+      {titulo: 'Oferta completa', detalhe: 'Escopo, duração e faixa de investimento em estudo (D5) — bônus, promessa e garantia no Marco 02', status: 'em-dev'},
       {titulo: 'Documento mestre de estratégia da campanha', detalhe: 'Orienta todas as peças que vêm depois — pré-estrutura da proposta do produto em construção', status: 'em-dev'},
     ],
   },
@@ -203,7 +203,7 @@ const VALIDACOES = [
   {item: 'Briefing extraído e documentado (Expert · Aprendiz · Método)', status: 'aprovado', data: '02/07/2026 · via call (substituiu o formulário)'},
   {item: 'Pesquisas expandidas (concorrência, aprendiz, certificação)', status: 'aprovado', data: '02/07/2026 · síntese no menu Documentação'},
   {item: 'Materiais complementares enviados (lista priorizada)', status: 'aguard-material', data: 'Aguardando Rodrigo'},
-  {item: 'Pré-estrutura da proposta do produto', status: 'em-dev', data: 'Prometida pra semana de 06-10/07'},
+  {item: 'Pré-estrutura da proposta do produto (D5)', status: 'aguard-aprov', data: 'Publicada em 02/07 · validar com Rodrigo'},
   {item: 'Marco 02 · Validação da Estratégia', status: 'planejado', data: 'Após materiais + pré-estrutura'},
 ];
 

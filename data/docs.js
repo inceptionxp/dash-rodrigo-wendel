@@ -222,6 +222,72 @@ window.DASH_DOCS = [
   `,
 },
 
+/* ──────────────── PRÉ-ESTRUTURA DA FORMAÇÃO ──────────────── */
+{
+  id: 'doc-produto',
+  n: 'D5',
+  titulo: 'Pré-estrutura da Formação',
+  subtitulo: 'A arquitetura do produto — pra validar junto antes do Marco 02',
+  eyebrow: 'Documentação · Produto (pré-estrutura)',
+  html: `
+    <p class="page-lead">A primeira versão da arquitetura da formação e da esteira de produtos, construída a partir da call de levantamento + 4 pesquisas. <strong>Documento de trabalho:</strong> é a base da conversa de validação — nada aqui é definitivo até o Marco 02.</p>
+
+    <h2 class="section-title">A esteira em <span class="ei">uma linha</span></h2>
+    <div class="card">
+      <p style="font-family:var(--serif);font-size:18px;line-height:1.6;margin:0;">Curso gravado (porta de entrada) → <strong>FORMAÇÃO em DTM</strong> (10 meses, o carro-chefe) → <strong>MENTORIA</strong> (continuidade técnica + negócio, renovável) — cada degrau prepara e vende o próximo.</p>
+    </div>
+
+    <h2 class="section-title">Produto 1 · A Formação — <span class="ei">10 meses, 3 etapas</span></h2>
+    <ul class="entregas-lista">
+      <li><strong>Etapa 1 · Diagnóstico (meses 1 a 4)</strong><em>Fundamentação + anamnese profunda (o formulário de 40 perguntas e a escuta clínica) + exame físico protocolar com IMERSÃO PRESENCIAL de palpação em Brasília + interpretação de imagem (ressonância). Gate de passagem: "todo aluno sabe dar diagnóstico". É a fundação de tudo — sem diagnóstico não há tratamento nem receita.</em></li>
+      <li><strong>Etapa 2 · Tratamento (meses 5 a 8/9)</strong><em>Os dois tripés aplicados + as 3 escadas de tratamento (muscular, articular, deslocamento de disco), diagnóstico a diagnóstico, do conservador ao invasivo + timing de intervenção. Procedimentos de alta complexidade (lavagem articular, agregados plaquetários por ultrassom) apresentados em teoria — a prática é território da mentoria.</em></li>
+      <li><strong>Etapa 3 · Comercial, gestão e marketing básico (meses 9 e 10)</strong><em>Vender a abordagem terapêutica: narrativa da avaliação→tratamento, precificação, gestão essencial do consultório. Fecha com o convite natural pra MENTORIA — onde vive a continuação: acompanhamento técnico de casos reais, comercial avançado e comunidade.</em></li>
+      <li><strong>Transversal · Ganhos rápidos desde o mês 1</strong><em>Elementos comerciais que não dependem de dominar DTM (formulário pré-consulta, gestão de agenda, processos, leitura de números) — o aluno começa a recuperar o investimento antes de terminar a parte técnica.</em></li>
+      <li><strong>Transversal · Progressão por faixas</strong><em>Analogia de jiu-jitsu: cada etapa vencida = passagem de faixa, com marcos visíveis de evolução.</em></li>
+    </ul>
+
+    <h2 class="section-title">Formato <span class="ei">operacional</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Cadência</dt><dd>1 encontro semanal em grupo, ao vivo (online) + estudo de caso mensal</dd>
+        <dt>Presencial</dt><dd>1 imersão hands-on obrigatória (palpação, etapa 1) · até 2 encontros presenciais opcionais adicionais</dd>
+        <dt>1:1</dt><dd>Não há na formação — o individual é diferencial da mentoria (quando o aluno tem caso real na mão)</dd>
+        <dt>Turma</dt><dd>Fechada, com início conjunto — a coesão do grupo é parte do produto</dd>
+        <dt>Certificação</dt><dd>Curso livre com certificado de conclusão e carga horária — a autoridade real é quem assina: o formador de ~10% dos especialistas do país. (Rota validada juridicamente antes da campanha; parceria com IES reavaliada na v2)</dd>
+      </dl>
+    </div>
+
+    <h2 class="section-title">Investimento — <span class="ei">hipótese de trabalho</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Faixa em estudo</dt><dd><strong>R$ 15.000 a R$ 20.000</strong> pelos 10 meses (ex.: 12x R$ 1.500-1.800)</dd>
+        <dt>Ancoragem de mercado</dt><dd>Mentoria intensiva do nicho: R$ 6-9 mil por 4 semanas · Especialização: R$ 36-60 mil por 18-30 meses · A formação ocupa o meio com formato que nenhum player tem</dd>
+        <dt>Lógica de ROI</dt><dd>2 a 4 tratamentos de DTM (R$ 3.500-10.000 cada) pagam a formação — e a meta declarada é o aluno recuperar o investimento DENTRO do ciclo</dd>
+      </dl>
+      <p style="font-size:12px;color:var(--cinza);margin:10px 0 0;">Preço final definido na Validação da Estratégia, junto com a oferta completa (bônus, garantia, condições de fundador).</p>
+    </div>
+
+    <h2 class="section-title">Produto 2 · A Mentoria <span class="ei">(6 meses depois)</span></h2>
+    <ul class="entregas-lista">
+      <li><strong>Pra quem</strong><em>Ex-alunos especialistas (~120, base quente) + egressos da formação via pitch da etapa 3.</em></li>
+      <li><strong>O que só ela tem</strong><em>Discussão de casos reais (1:1 e grupo) · procedimentos avançados na prática (artrocentese, agregados plaquetários, ultrassom) · comercial avançado (escala, gestão, marketing, posicionamento em busca por IA) · atualizações contínuas · parcerias com fabricantes de equipamento (condições exclusivas).</em></li>
+      <li><strong>Natureza</strong><em>Ambiente de continuidade e renovação — não "curso que acaba". O aluno fica pelo acesso, pela comunidade e pela fronteira do conhecimento.</em></li>
+      <li><strong>Timeline</strong><em>Montada e vendida ~6 meses após o lançamento da formação, validada primeiro com a base de ex-alunos (condição de fundador) — quando a turma 1 concluir, a mentoria já roda pra recebê-la.</em></li>
+      <li><strong>Hipótese de investimento</strong><em>~R$ 25 mil/ano (≈ R$ 2 mil/mês) — a calibrar após a validação com a base.</em></li>
+    </ul>
+
+    <h2 class="section-title">O que falta pra fechar <span class="ei">(insumos)</span></h2>
+    <ul class="entregas-lista">
+      <li><strong>Do Rodrigo</strong><em>Lista de conteúdos mínimos + as 3 escadas completas + material dos tripés → destravam o cronograma semana a semana das etapas 1 e 2.</em></li>
+      <li><strong>Da Inception</strong><em>Naming (empresa, formação, Instagram) + oferta completa (bônus, garantia) + Documento Mestre de Estratégia → apresentados na Validação da Estratégia (Marco 02).</em></li>
+    </ul>
+
+    <div class="alert amarelo">
+      <strong>Pra validar nesta página (comentários abaixo):</strong> 1) a divisão 4 + 4-5 + 2 meses das etapas · 2) a faixa de investimento · 3) o formato presencial (1 obrigatório + 2 opcionais) · 4) o desenho da mentoria como continuação técnica + negócio.
+    </div>
+  `,
+},
+
 /* ─────────────────────────── PESQUISAS ─────────────────────────── */
 {
   id: 'doc-pesquisas',
