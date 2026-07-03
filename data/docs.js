@@ -24,9 +24,10 @@ window.DASH_DOCS = [
 
     <h2 class="section-title">Linha do <span class="ei">tempo</span></h2>
     <ul class="entregas-lista">
-      <li><strong>Graduação (Araçatuba/SP)</strong><em>Fascinado pela anatomia da ATM no 1º ano — ele mesmo tinha um estalo na articulação. Quase nenhum professor dominava o tema.</em></li>
+      <li><strong>Graduação em Odontologia — UNESP Araçatuba (2000)</strong><em>Fascinado pela anatomia da ATM no 1º ano — ele mesmo tinha um estalo na articulação. Quase nenhum professor dominava o tema.</em></li>
       <li><strong>Estágio de 3 anos com o professor Norberto</strong><em>Conheceu a referência num congresso em Uberaba ainda estudante. "Me abriu muitas portas."</em></li>
-      <li><strong>Especialização + Mestrado (UNIFESP)</strong><em>Formação científica sólida em dor orofacial.</em></li>
+      <li><strong>Especialização + Mestrado — UNIFESP (2001-2004)</strong><em>Formação científica sólida em dor orofacial.</em></li>
+      <li><strong>Fellowship internacional — Universidade de Zurique, Suíça (2013)</strong><em>Marcador raro de autoridade internacional no nicho.</em></li>
       <li><strong>Prova de título da especialidade (criada em 2002)</strong><em>Estudou os 10 temas possíveis e escreveu 10 dissertações. Sua prova virou o GABARITO da banca — e ele foi convidado a ser banca da prova seguinte.</em></li>
       <li><strong>Primeira especialização de DTM de Brasília</strong><em>Co-fundador.</em></li>
       <li><strong>2014 — a virada</strong><em>Passa a coordenar curso "nos meus moldes": formação ampla, sem viés de técnica única. "Quando você faz parte de uma equipe, você não determina a sua cara."</em></li>
@@ -36,15 +37,25 @@ window.DASH_DOCS = [
     <h2 class="section-title">Números de <span class="ei">autoridade</span></h2>
     <div class="card">
       <dl class="kv">
-        <dt>Especialistas formados</dt><dd>~100-120 em 8 turmas ≈ <strong>10% dos especialistas do Brasil</strong> (total nacional: 1.649) *</dd>
-        <dt>Alunos no total</dt><dd>300+ (imersões, atualizações, palestras) *</dd>
-        <dt>Anos ensinando DTM</dt><dd>20+</dd>
-        <dt>Atendimento social</dt><dd>17 anos de voluntariado · ~3.000 pacientes · ~700 acompanhados por 10 anos</dd>
-        <dt>Resultado clínico</dt><dd>&gt;92% de melhora com tratamento conservador — sem cirurgia, sem mexer em dente</dd>
+        <dt>Tempo de atuação</dt><dd><strong>30 anos</strong> na área (desde 1996) · consultório próprio desde <strong>2003</strong></dd>
+        <dt>Pacientes atendidos</dt><dd><strong>+8.000</strong> ao longo da carreira</dd>
+        <dt>Resultado clínico</dt><dd>Melhora dos sintomas em <strong>+95% dos casos</strong> — tratamento conservador, sem cirurgia e sem mexer em dente</dd>
+        <dt>Especialistas formados</dt><dd>~100-120 em 8 turmas ≈ <strong>10% dos especialistas de DTM do Brasil</strong> (total nacional: 1.649)</dd>
+        <dt>Alunos no total</dt><dd>300+ (imersões, atualizações, palestras)</dd>
         <dt>Prova de negócio</dt><dd><strong>R$ 1 milhão faturado no último ano</strong> — clínica pequena, só ele atendendo, 28-30h/semana, nunca depois das 18h, nunca sábado, 2h de almoço</dd>
-        <dt>Base de dados clínica</dt><dd>~1.500 avaliações estruturadas (formulário de 40 perguntas) · ~300 avaliações/ano</dd>
+        <dt>Base de dados clínica</dt><dd>~1.500 avaliações estruturadas (formulário de 40 perguntas) · ~300/ano</dd>
+        <dt>Voluntariado</dt><dd>17 anos de atendimento social — parte dos +8.000 pacientes</dd>
       </dl>
-      <p style="font-size:12px;color:var(--cinza);margin:10px 0 0;">* números em confirmação pelo Rodrigo (pendência da call).</p>
+    </div>
+
+    <h2 class="section-title">Credenciais e <span class="ei">formação</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Graduação</dt><dd>Odontologia — UNESP Araçatuba (2000)</dd>
+        <dt>Especialização + Mestrado</dt><dd>DTM e Dor Orofacial — UNIFESP (2001-2004)</dd>
+        <dt>Fellowship internacional</dt><dd>Universidade de Zurique, Suíça (2013)</dd>
+        <dt>Título de especialista</dt><dd>Aprovado na prova de reconhecimento da especialidade (2002); sua resposta virou modelo da banca e depois foi convidado a compor a banca</dd>
+      </dl>
     </div>
 
     <h2 class="section-title">Banco de <span class="ei">histórias</span></h2>
@@ -68,6 +79,15 @@ window.DASH_DOCS = [
       <li><strong>"Ciência aliada à prática clínica"</strong><em>Frase histórica do curso dele — candidata a evoluir com a camada de negócio.</em></li>
       <li><strong>"Educação em dor"</strong><em>Fundamento IASP (Associação Internacional de Estudos da Dor) da abordagem educativa.</em></li>
       <li><strong>Tom geral</strong><em>Científico mas coloquial; didático por analogias do cotidiano (Batman, martelo, guarda-chuva, faixas de jiu-jitsu); opinião forte contra picaretagem; riso fácil.</em></li>
+    </ul>
+
+    <h2 class="section-title">Crenças-âncora <span class="ei">(frases que ele repete)</span></h2>
+    <ul class="entregas-lista">
+      <li><strong>"Tratamento conservador e reversível como primeira opção"</strong><em>O princípio que abre toda decisão clínica.</em></li>
+      <li><strong>"Tratamento multimodal — múltiplas modalidades para controle dos sintomas"</strong><em>O arsenal, nunca a técnica única.</em></li>
+      <li><strong>"Avaliação protocolar individualizada" + "Diagnóstico específico"</strong><em>Cada paciente é um caso; o diagnóstico preciso vem antes de tudo.</em></li>
+      <li><strong>"DTM não é um diagnóstico" · "Bruxismo não é DTM"</strong><em>As duas correções que separam quem sabe de quem acha que sabe.</em></li>
+      <li><strong>"Não se trata DTM com cirurgia, ortodontia, botox ou placa!"</strong><em>A bandeira contra o viés único — pronta pra campanha.</em></li>
     </ul>
 
     <h2 class="section-title">Bandeiras e <span class="ei">inimigos em comum</span></h2>
@@ -245,6 +265,27 @@ window.DASH_DOCS = [
       <li><strong>Transversal · Ganhos rápidos desde o mês 1</strong><em>Elementos comerciais que não dependem de dominar DTM (formulário pré-consulta, gestão de agenda, processos, leitura de números) — o aluno começa a recuperar o investimento antes de terminar a parte técnica.</em></li>
       <li><strong>Transversal · Progressão por faixas</strong><em>Analogia de jiu-jitsu: cada etapa vencida = passagem de faixa, com marcos visíveis de evolução.</em></li>
     </ul>
+
+    <h2 class="section-title">Etapa 3 — o comercial: o que entra na <span class="ei">formação</span> × fica na <span class="ei">mentoria</span></h2>
+    <p style="margin:0 0 10px;">Os temas comerciais que o Rodrigo listou, triados por uma lógica só: a formação ensina a <strong>MONETIZAR</strong> a competência clínica recém-adquirida (extrair o máximo dos pacientes que já chegam); a mentoria ensina a <strong>ESCALAR</strong> (gerar mais pacientes) — o que também dá à mentoria o valor recorrente que justifica a renovação.</p>
+    <div class="card">
+      <p style="margin:0 0 8px;font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);">Na formação — comercial básico</p>
+      <ul class="entregas-lista" style="margin-top:0;">
+        <li><strong>Narrativa da primeira consulta</strong><em>Como conduzir a avaliação pra converter em tratamento — é a expressão comercial da abordagem educativa (os dois tripés), inseparável do método. Núcleo da etapa 3.</em></li>
+        <li><strong>Scripts de conversão lead → avaliação</strong><em>Treinamento da secretária/recepção pra receber e agendar. Ganho rápido, agnóstico a DTM, aplicável desde o mês 1.</em></li>
+        <li><strong>Pós-venda, contrato e acompanhamento</strong><em>Fechar o ciclo do paciente e sustentar a recorrência.</em></li>
+        <li><strong>Controles essenciais</strong><em>Os números mínimos pra enxergar o próprio funil: avaliações, taxa de conversão, ticket.</em></li>
+        <li><strong>Fundamentos de posicionamento + indicação</strong><em>O canal mais barato e imediato pra quem está começando — sem depender de tráfego pago.</em></li>
+      </ul>
+      <p style="margin:16px 0 8px;font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--cinza);">Na mentoria — comercial avançado</p>
+      <ul class="entregas-lista" style="margin-top:0;">
+        <li><strong>Máquina de captação completa</strong><em>Redes sociais, Google, tráfego pago, conteúdo e posicionamento em busca por IA (ChatGPT) — a aquisição que escala e é contínua.</em></li>
+        <li><strong>Posicionamento de marca e escala</strong><em>Autoridade digital, gestão avançada, times, novos canais.</em></li>
+      </ul>
+    </div>
+    <div class="alert">
+      <strong>Por que essa divisão:</strong> sem a narrativa de conversão (avaliação → tratamento), a competência técnica não vira receita e a promessa de ROI da formação quebra — por isso ela é inegociável na formação. Já a máquina de aquisição é o que gera renovação e valor contínuo: o coração da mentoria.
+    </div>
 
     <h2 class="section-title">Formato <span class="ei">operacional</span></h2>
     <div class="card">
