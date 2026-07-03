@@ -80,6 +80,16 @@
           </a>
         `).join('')}
       </div>
+
+      <h2 class="section-title">Documentação do <span class="ei">briefing</span></h2>
+      <div class="blocos-grid">
+        ${(window.DASH_DOCS || []).map(d => `
+          <a class="bloco-resumo" href="#${d.id}">
+            <div class="bloco-resumo-n">${d.n}</div>
+            <div class="bloco-resumo-titulo">${d.titulo}<small>${d.subtitulo}</small></div>
+          </a>
+        `).join('')}
+      </div>
     `,
 
     proposta: () => `
@@ -227,6 +237,18 @@
           </li>
         `).join('')}
       </ul>
+    `;
+  });
+
+  // Documentação do briefing
+  (window.DASH_DOCS || []).forEach(d => {
+    views[d.id] = () => `
+      <span class="eyebrow">${d.eyebrow}</span>
+      <div class="marco-hero">
+        <div class="marco-hero-num">${d.n}</div>
+        <div class="marco-hero-titulo">${d.titulo}</div>
+      </div>
+      ${d.html}
     `;
   });
 
