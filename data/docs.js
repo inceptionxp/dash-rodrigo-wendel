@@ -419,7 +419,128 @@ window.DASH_DOCS = [
     </ul>
 
     <div class="alert">
-      <strong>Pra fechar o cronograma semana a semana (nível aula):</strong> falta só o Rodrigo (1) marcar capacita × só-teoria nas escadas e (2) mandar o material dos dois tripés. Com isso, o design instrucional detalha cada encontro com seu output verificável.
+      <strong>Cronograma detalhado pronto:</strong> os 41 encontros, aula a aula, estão na seção <strong>D7 · Plano de Ensino</strong>. Faltam só 2 micro-ajustes do Rodrigo (marcar capacita×teoria nas escadas + material dos tripés) pra refinar 6 aulas da Etapa 2.
+    </div>
+  `,
+},
+
+/* ──────────────────── PLANO DE ENSINO (41 ENCONTROS) ──────────────────── */
+{
+  id: 'doc-plano',
+  n: 'D7',
+  titulo: 'Plano de Ensino',
+  subtitulo: 'Os 41 encontros detalhados — cada aula com seu output verificável',
+  eyebrow: 'Documentação · Plano de Ensino (rascunho)',
+  html: `
+    <p class="page-lead">A grade descida ao detalhe: <strong>41 encontros semanais</strong> em 10 meses, cada um com objetivo, atividade e o que o aluno produz. O princípio: toda aula leva a uma ação concreta — se não tem output, é palestra, não formação. Rascunho pra validar; a marcação capacita×teoria segue a hipótese até o Rodrigo confirmar.</p>
+
+    <div class="alert amarelo">
+      <strong>Legenda:</strong> 🏫 imersão presencial · 📋 estudo de caso · 🥋 gate + passagem de faixa · <span style="color:var(--vermelho-esc);">[⚠️]</span> ponto que os pendentes do Rodrigo vão refinar. Cada aula fecha com um <strong>Output</strong> (a prova de que aprendeu fazendo).
+    </div>
+
+    <h2 class="section-title">Etapa 1 · Fundação e Diagnóstico <span class="ei">(16 encontros · ~4 meses)</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Objetivo</dt><dd>O aluno sai sabendo o que 99,6% dos dentistas do Brasil não sabem: diagnosticar DTM com precisão (anamnese + exame físico + imagem). Sem isso, não há tratamento nem receita.</dd>
+        <dt>Gate → 🥋 faixa azul</dt><dd>Diagnosticar um caso inédito completo (ficha + exame + imagem) com justificativa. "Eu sei diagnosticar" — a virada que separa quem acha que sabe de quem sabe.</dd>
+      </dl>
+    </div>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 0 · Nivelamento (~3 sem)</p>
+    <ul class="entregas-lista">
+      <li><strong>E1 · O paciente que já está na sua cadeira</strong><em>Prevalência real da DTM e a demanda invisível na própria clínica. <b>Output:</b> lista de 3 pacientes reais com sinais de DTM que passaram batido.</em></li>
+      <li><strong>E2 · Os erros mais comuns (e por que acontecem)</strong><em>Confundir bruxismo com DTM, tratar sem diagnóstico, viés de especialidade. <b>Output:</b> autodiagnóstico escrito de qual erro ele mesmo já cometeu.</em></li>
+      <li><strong>E3 · Anatomia da ATM + os 2 frameworks-mãe [⚠️ tripés]</strong><em>Revisão de anatomia + o "guarda-chuva" (DTM não é um diagnóstico) + os dois tripés. <b>Output:</b> mapa mental ligando os 3 grupos aos 2 tripés.</em></li>
+    </ul>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 1 · Ficha + Anamnese (~4 sem)</p>
+    <ul class="entregas-lista">
+      <li><strong>E4 · O formulário de 40 perguntas</strong><em>A ficha pré-consulta (base RDC/DC + acréscimos autorais) que já acolhe o paciente. <b>Output:</b> formulário configurado na própria conta, pronto pra aplicar.</em></li>
+      <li><strong>E5 · Anamnese profunda: sentar, parar e escutar</strong><em>Os componentes da dor (intensidade, frequência, duração, fatores). <b>Output:</b> roteiro de anamnese preenchido via role-play.</em></li>
+      <li><strong>E6 · O tripé sistêmico na anamnese</strong><em>Sono, atividade física e psicoemocional como parte obrigatória. <b>Output:</b> análise de 2 casos marcando a perna comprometida.</em></li>
+      <li><strong>📋 E7 · Estudo de caso: anamnese do zero ao registro</strong><em>Integra ficha + anamnese + tripé sistêmico num atendimento simulado. <b>Output:</b> anamnese completa de 1 caso, corrigida ao vivo.</em></li>
+    </ul>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 2 · Exame físico + Imersão presencial (~4 sem)</p>
+    <ul class="entregas-lista">
+      <li><strong>E8 · O exame físico protocolar</strong><em>Palpação, sons articulares, medidas de movimento (teoria antes do hands-on). <b>Output:</b> checklist do protocolo pra levar à imersão.</em></li>
+      <li><strong>🏫 E9 · Imersão presencial (Brasília) — dia 1</strong><em>Palpação muscular e articular em pacientes/modelos reais, supervisionada. <b>Output:</b> ficha de exame validada pelo Rodrigo ao vivo.</em></li>
+      <li><strong>🏫 E10 · Imersão presencial — dia 2</strong><em>Medidas de movimento + integração com a palpação. <b>Output:</b> ficha completa de 2 casos reais, validada.</em></li>
+      <li><strong>E11 · Pós-imersão: consolidando à distância</strong><em>Replicar o protocolo sozinho + feedback agregado dos erros da turma. <b>Output:</b> ficha de exame de 1 paciente da própria clínica.</em></li>
+    </ul>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 3 · Imagem + Diagnóstico específico (~5 sem)</p>
+    <ul class="entregas-lista">
+      <li><strong>E12 · Interpretação de imagem (ressonância)</strong><em>O que dentista nenhum sabe ver: disco, degeneração, quando pedir imagem. <b>Output:</b> laudo simplificado de 2 imagens.</em></li>
+      <li><strong>E13 · Guarda-chuva: grupo Muscular</strong><em>Diferenciar os diagnósticos musculares integrando anamnese + exame + imagem. <b>Output:</b> diagnóstico justificado de 2 casos (com descarte dos outros grupos).</em></li>
+      <li><strong>E14 · Guarda-chuva: grupo Articular</strong><em>Diferenciar os diagnósticos articulares. <b>Output:</b> diagnóstico justificado de 2 casos articulares.</em></li>
+      <li><strong>E15 · Guarda-chuva: grupo Deslocamento de Disco</strong><em>Com redução × sem redução; achados de imagem. <b>Output:</b> diagnóstico justificado de 2 casos.</em></li>
+      <li><strong>🥋 E16 · Estudo de caso final + GATE faixa azul</strong><em>Diagnóstico de um caso inédito, corrigido individualmente. <b>Output:</b> diagnóstico específico justificado — critério de aprovação da faixa azul.</em></li>
+    </ul>
+
+    <h2 class="section-title">Etapa 2 · Tratamento <span class="ei">(18 encontros · ~4-5 meses)</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Objetivo</dt><dd>Montar o plano de tratamento escalonado (do conservador ao invasivo) para os 3 grupos, com julgamento sobre timing e risco-benefício. Aqui fica explícito o que o aluno EXECUTA × o que INDICA e encaminha.</dd>
+        <dt>Gate → 🥋 faixa roxa</dt><dd>Montar o plano escalonado de 2-3 casos mistos, com marcação de execução × encaminhamento. A virada de diagnosticador pra terapeuta.</dd>
+      </dl>
+    </div>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 0 · Princípios (~2 sem)</p>
+    <ul class="entregas-lista">
+      <li><strong>E17 · Multimodal, conservador escalonado, risco-benefício</strong><em>Os 4 princípios como critério de decisão. <b>Output:</b> 1ª escolha terapêutica escrita pra 1 caso (revisitada depois).</em></li>
+      <li><strong>E18 · Timing de intervenção + tripé local</strong><em>O critério dos 3-6 meses pra subir o degrau + o tripé local como 1ª camada em qualquer diagnóstico. <b>Output:</b> plano do tripé local (dispositivo + consciência de hábito) pra 1 caso.</em></li>
+    </ul>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 1 · Escada Muscular (~6 sem)</p>
+    <ul class="entregas-lista">
+      <li><strong>E19 · Conservador I: eletroestimulação, laser, liberação miofascial</strong> <span style="color:var(--verde);font-size:12px;font-weight:700;">[prática]</span><em><b>Output:</b> checklist de execução + liberação miofascial validada em dupla.</em></li>
+      <li><strong>E20 · Conservador II: controle do bruxismo (vigília e sono)</strong> <span style="color:var(--verde);font-size:12px;font-weight:700;">[prática]</span><em>Biofeedback/MYOBOTS, apps, dispositivo interoclusal. <b>Output:</b> prescrição de controle de bruxismo pra 2 casos.</em></li>
+      <li><strong>E21 · Conservador III: fármacos, exercícios, educação em dor</strong> <span style="color:var(--verde);font-size:12px;font-weight:700;">[prática]</span><em><b>Output:</b> roteiro de educação em dor + prescrição + protocolo de exercícios.</em></li>
+      <li><strong>E22 · Minimamente invasivo: infiltração anestésica e dry needling [⚠️]</strong> <span style="color:var(--verde);font-size:12px;font-weight:700;">[prática]</span><em><b>Output:</b> protocolo de decisão pra 2 casos que não respondem ao conservador.</em></li>
+      <li><strong>E23 · Invasivo: toxina no lugar certo da escada</strong> <span style="color:var(--vermelho-esc);font-size:12px;font-weight:700;">[bandeira]</span><em>Por que a toxina é o ÚLTIMO recurso, não o primeiro — confronto direto do uso indiscriminado do mercado. <b>Output:</b> parecer comparando uso indevido × indicação correta.</em></li>
+      <li><strong>📋 E24 · Estudo de caso: plano muscular completo</strong><em><b>Output:</b> plano escalonado completo da escada muscular, com timing e critério de subida.</em></li>
+    </ul>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 2 · Escada Deslocamento de Disco (~4 sem)</p>
+    <ul class="entregas-lista">
+      <li><strong>E25 · Conservador: exercícios de amplitude bucal</strong> <span style="color:var(--verde);font-size:12px;font-weight:700;">[prática]</span><em><b>Output:</b> protocolo de exercícios prescrito e demonstrado.</em></li>
+      <li><strong>E26 · Minimamente invasivo: ácido hialurônico e artrocentese [⚠️]</strong> <span style="color:var(--cinza);font-size:12px;font-weight:700;">[indicação]</span><em><b>Output:</b> parecer de indicação pra 2 casos.</em></li>
+      <li><strong>E27 · Cirúrgico: artroscopia e discopexia — reconhecer o limite</strong> <span style="color:var(--cinza);font-size:12px;font-weight:700;">[indicação]</span><em><b>Output:</b> linha do tempo do caso com o ponto de encaminhamento marcado.</em></li>
+      <li><strong>📋 E28 · Estudo de caso: plano completo — deslocamento de disco</strong><em><b>Output:</b> plano escalonado com marcação de executa × encaminha.</em></li>
+    </ul>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 3 · Escada Articular (~4 sem)</p>
+    <ul class="entregas-lista">
+      <li><strong>E29 · Conservador: laserterapia, fármaco, crioterapia</strong> <span style="color:var(--verde);font-size:12px;font-weight:700;">[prática]</span><em><b>Output:</b> checklist de execução pra 1 caso articular.</em></li>
+      <li><strong>E30 · Minimamente invasivo I: corticoide e artrocentese</strong> <span style="color:var(--cinza);font-size:12px;font-weight:700;">[indicação]</span><em><b>Output:</b> parecer comparando a artrocentese nas 2 escadas (racional distinto).</em></li>
+      <li><strong>E31 · Minimamente invasivo II: iPRF e ácido hialurônico</strong> <span style="color:var(--cinza);font-size:12px;font-weight:700;">[fora do escopo prático]</span><em>iPRF/agregados por ultrassom: sabe indicar, prática fica pra mentoria. <b>Output:</b> ficha de indicação + como explicar ao paciente.</em></li>
+      <li><strong>📋 E32 · Invasivo + estudo de caso: plano articular completo</strong><em>Indicações cirúrgicas (artroscopia, cirurgia aberta, prótese de ATM). <b>Output:</b> plano com executa × encaminha por degrau.</em></li>
+    </ul>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 4 · Casos mistos (~2 sem)</p>
+    <ul class="entregas-lista">
+      <li><strong>E33 · O paciente real tem mais de um diagnóstico</strong><em>Sequenciar tratamento quando há sobreposição de grupos. <b>Output:</b> plano integrado multi-diagnóstico pra 1 caso.</em></li>
+      <li><strong>🥋 E34 · Estudo de caso final + GATE faixa roxa</strong><em>2-3 casos mistos inéditos. <b>Output:</b> planos escalonados com executa × encaminha — critério de aprovação da faixa roxa.</em></li>
+    </ul>
+
+    <h2 class="section-title">Etapa 3 · Comercial, gestão e marketing básico <span class="ei">(7 encontros · ~2 meses)</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Objetivo</dt><dd>Transformar a competência clínica em receita: converter avaliação em tratamento, captar pelos canais mais baratos, reter e controlar os números. O comercial avançado (aquisição, tráfego, escala) fica na mentoria.</dd>
+        <dt>Gate → 🥋 formatura</dt><dd>Conduzir uma consulta de avaliação completa (avaliação → plano → fechamento) + apresentar o painel de números. Sabe tratar E sabe cobrar pelo que sabe.</dd>
+      </dl>
+    </div>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 1 · Narrativa da 1ª consulta (~3 sem)</p>
+    <ul class="entregas-lista">
+      <li><strong>E35 · A avaliação como ato terapêutico (e comercial)</strong><em>A narrativa de conversão nasce do próprio método (educar = converter). <b>Output:</b> roteiro de devolutiva de diagnóstico ensaiado.</em></li>
+      <li><strong>E36 · Apresentar o plano com os dois tripés como narrativa</strong><em>Explicar os tripés ao paciente aumenta a adesão. <b>Output:</b> áudio/vídeo de 2-3 min apresentando o plano.</em></li>
+      <li><strong>E37 · Fechamento: da apresentação ao "sim"</strong><em>Apresentar valores e quebrar objeções sem pressão agressiva. <b>Output:</b> script pessoal de fechamento pra usar na clínica.</em></li>
+    </ul>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 2 · Captação básica (~2 sem)</p>
+    <ul class="entregas-lista">
+      <li><strong>E38 · Treinando a recepção: scripts lead → avaliação</strong><em>A recepção como 1º ponto de confiança. <b>Output:</b> script de atendimento pra entregar à secretária.</em></li>
+      <li><strong>E39 · Posicionamento e indicação</strong><em>O canal mais barato pra quem começa. <b>Output:</b> peça de comunicação anunciando a nova competência à base.</em></li>
+    </ul>
+    <p style="font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);margin:22px 0 4px;">Bloco 3 · Retenção e números · Bloco 4 · Formatura</p>
+    <ul class="entregas-lista">
+      <li><strong>E40 · Pós-venda, contrato e controles do funil</strong><em>Ler os números (avaliações, conversão, ticket) pra saber onde está o gargalo. <b>Output:</b> planilha de controles com números reais/meta.</em></li>
+      <li><strong>🥋 E41 · Estudo de caso final + GATE formatura</strong><em>Consulta completa simulada + painel de números + pitch da mentoria (a continuação). <b>Output:</b> gravação/condução da consulta + planilha — critério de formatura.</em></li>
+    </ul>
+
+    <div class="alert">
+      <strong>Onde os 2 pendentes do Rodrigo refinam (ajuste local, não redesenho):</strong> a marcação capacita×teoria afeta o rótulo [prática]/[indicação] e o output de 6 aulas da Etapa 2 (E22, E23, E26, E27, E30-32); o material gravado dos tripés fortalece o E3 (pode virar aula invertida). Estrutura e contagem de encontros não mudam.
     </div>
   `,
 },

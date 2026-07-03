@@ -88,7 +88,7 @@ const BLOCOS = [
       {titulo: 'Definição de nome', detalhe: 'Nome da empresa (braço educacional), do Instagram novo e da formação', status: 'planejado'},
       {titulo: 'Estruturação do método autoral', detalhe: 'Pilares, frameworks, jornada de transformação — ver DNA do Método (aguarda materiais do Rodrigo pra fechar)', status: 'em-dev'},
       {titulo: 'Formato dos encontros', detalhe: 'Direção definida na call: semanal em grupo + presencial hands-on, sem 1:1 na formação', status: 'em-dev'},
-      {titulo: 'Régua da formação e onboarding', detalhe: 'Arquitetura de 10 meses em 3 etapas definida (ver D5) — cronograma semana a semana aguarda lista de conteúdos do Rodrigo', status: 'em-dev'},
+      {titulo: 'Régua da formação e onboarding', detalhe: 'Plano de ensino completo: 41 encontros aula a aula (ver D7), 10 meses em 3 etapas. Falta só a marcação capacita×teoria do Rodrigo pra refinar 6 aulas', status: 'aguard-aprov'},
       {titulo: 'Oferta completa', detalhe: 'Escopo, duração e faixa de investimento em estudo (D5) — bônus, promessa e garantia no Marco 02', status: 'em-dev'},
       {titulo: 'Documento mestre de estratégia da campanha', detalhe: 'Orienta todas as peças que vêm depois — pré-estrutura da proposta do produto em construção', status: 'em-dev'},
     ],
