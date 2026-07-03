@@ -363,6 +363,67 @@ window.DASH_DOCS = [
   `,
 },
 
+/* ──────────────────── GRADE DA FORMAÇÃO ──────────────────── */
+{
+  id: 'doc-grade',
+  n: 'D6',
+  titulo: 'Grade da Formação',
+  subtitulo: 'Rascunho do cronograma — as 3 etapas em blocos, semanas e gates',
+  eyebrow: 'Documentação · Grade (rascunho)',
+  html: `
+    <p class="page-lead">Com os conteúdos das 3 etapas na mão (03/07), esta é a primeira versão da grade — a arquitetura vira cronograma. <strong>Rascunho pra validar:</strong> as alocações de semanas são estimativas a calibrar com o Rodrigo; nada fechado até o Marco 02.</p>
+
+    <div class="alert amarelo">
+      <strong>Decisões e hipóteses embutidas (validar):</strong> (1) abre com um <strong>Bloco 0 de nivelamento</strong> antes do diagnóstico — sugestão da Maiara, pedagogicamente certa (desfaz a crença errada antes de ensinar a nova); (2) os dois tripés e o "guarda-chuva" entram cedo, como modelo mental que atravessa tudo; (3) na Etapa 2, cada escada marca <em>capacita × só-teoria</em> pela hipótese registrada (falta o Rodrigo confirmar); (4) alocação de semanas é estimativa (10 meses ≈ 40 encontros semanais).
+    </div>
+
+    <h2 class="section-title">Etapa 1 · Fundação e Diagnóstico <span class="ei">(~4 meses)</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Bloco 0 · Nivelamento (~3 sem)</dt><dd>Impacto da DTM (dados, prevalência, demanda represada — consciência do problema) · os erros mais comuns dos profissionais ao diagnosticar e tratar · revisão de anatomia da ATM e do sistema mastigatório · os frameworks-mãe: "DTM não é um diagnóstico" (guarda-chuva) + os dois tripés (sistêmico e local)</dd>
+        <dt>Bloco 1 · Ficha + Anamnese (~4 sem)</dt><dd>Ficha clínica validada e adaptada por ele (40 perguntas, base RDC/DC) · anamnese detalhada avaliando os componentes da dor (intensidade, frequência, duração, fatores de melhora/piora/precipitação) + sono, atividade física e psicoemocional</dd>
+        <dt>Bloco 2 · Exame físico (~4 sem)</dt><dd>Exames físicos protocolares balizados internacionalmente (palpação, sons articulares, tipos e medidas de movimento) — inclui a IMERSÃO PRESENCIAL de palpação em Brasília</dd>
+        <dt>Bloco 3 · Imagem + Diagnóstico específico (~5 sem)</dt><dd>Interpretação de imagem (ressonância) · integração anamnese + exame + imagem → diagnóstico específico (os 3 grupos e ~10 diagnósticos; diferencial)</dd>
+        <dt>🥋 Gate + passagem de faixa</dt><dd>Output verificável: o aluno diagnostica corretamente casos reais. Sem diagnóstico, não passa pra tratamento.</dd>
+      </dl>
+    </div>
+
+    <h2 class="section-title">Etapa 2 · Tratamento <span class="ei">(~4-5 meses)</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Bloco 0 · Princípios (~2 sem)</dt><dd>Tratamento multimodal · conservador e reversível primeiro · escalonamento com timing de intervenção (3-6 meses) · risco-benefício · o tripé local aplicado (hábitos de sono e vigília + relaxamento)</dd>
+        <dt>Bloco 1 · Escada Muscular (~6 sem)</dt><dd>Do conservador (eletroestimulação, laser, biofeedback, dispositivo, fármacos, exercícios, educação em dor) ao minimamente invasivo (infiltração, dry needling) e invasivo (toxina — último recurso)</dd>
+        <dt>Bloco 2 · Escada Deslocamento de Disco (~4 sem)</dt><dd>Exercícios → ácido hialurônico / artrocentese → artroscopia / discopexia</dd>
+        <dt>Bloco 3 · Escada Articular (~4 sem)</dt><dd>Laserterapia / fármaco / crioterapia → corticoide / artrocentese / iPRF / ácido hialurônico → artroscopia / cirurgia aberta / prótese de ATM</dd>
+        <dt>Bloco 4 · Casos mistos (~2 sem)</dt><dd>O paciente real tem mais de um diagnóstico: integrar as escadas · o que capacita a fazer × o que conhece e encaminha</dd>
+        <dt>🥋 Gate + passagem de faixa</dt><dd>Output verificável: o aluno monta o plano de tratamento escalonado de casos reais.</dd>
+      </dl>
+    </div>
+
+    <h2 class="section-title">Etapa 3 · Comercial, gestão e marketing básico <span class="ei">(~2 meses)</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Bloco 1 · Narrativa da 1ª consulta (~3 sem)</dt><dd>Converter avaliação → tratamento: a expressão comercial da abordagem educativa (os tripés vendem o plano). Núcleo da etapa.</dd>
+        <dt>Bloco 2 · Captação básica (~2 sem)</dt><dd>Scripts de conversão lead → avaliação (treino de secretária) · fundamentos de posicionamento + indicação (o canal mais barato pra quem começa)</dd>
+        <dt>Bloco 3 · Retenção e números (~2 sem)</dt><dd>Pós-venda, contrato e acompanhamento · controles essenciais do funil (avaliações, conversão, ticket)</dd>
+        <dt>Bloco 4 · Ponte pra Mentoria (~1 sem)</dt><dd>Pitch da mentoria (a continuação: casos complexos + comercial avançado) · formatura / faixa final</dd>
+      </dl>
+    </div>
+
+    <h2 class="section-title">Transversais <span class="ei">(o ano inteiro)</span></h2>
+    <ul class="entregas-lista">
+      <li><strong>Ganhos rápidos comerciais desde o Bloco 0</strong><em>Elementos agnósticos a DTM (agenda, processos, scripts) — o aluno vê retorno antes de dominar a técnica.</em></li>
+      <li><strong>Estudo de caso mensal</strong><em>Encontro dedicado a casos reais, aplicando o que foi visto — âncora do "aprender fazendo".</em></li>
+      <li><strong>Gamificação por faixas</strong><em>Passagem de faixa ao fim de cada etapa (jiu-jitsu), com marco visível de evolução.</em></li>
+      <li><strong>Comunidade / grupo ao vivo</strong><em>O encontro semanal onde a dúvida de um vira aprendizado de todos.</em></li>
+    </ul>
+
+    <div class="alert">
+      <strong>Pra fechar o cronograma semana a semana (nível aula):</strong> falta só o Rodrigo (1) marcar capacita × só-teoria nas escadas e (2) mandar o material dos dois tripés. Com isso, o design instrucional detalha cada encontro com seu output verificável.
+    </div>
+  `,
+},
+
 /* ─────────────────────────── PESQUISAS ─────────────────────────── */
 {
   id: 'doc-pesquisas',
