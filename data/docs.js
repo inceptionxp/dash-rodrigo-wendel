@@ -203,10 +203,44 @@ window.DASH_DOCS = [
       <li><strong>F1 · Os Dois Tripés (mecanismo central — sem nome ainda)</strong><em>TRIPÉ SISTÊMICO: sono + atividade física + aspectos psicoemocionais (sem isso, tratar o local é "enxugar gelo"). TRIPÉ LOCAL: hábitos no sono (dispositivo) + hábitos na vigília (consciência: adesivos, biofeedback, apps) + relaxamento muscular. É também a narrativa de venda pro paciente.</em></li>
       <li><strong>F2 · Diagnóstico de Precisão (sem nome ainda)</strong><em>4 camadas: formulário pré-consulta (40 perguntas, base RDC/DC validado + acréscimos autorais de sono/atividade/medicação) → anamnese profunda ("sentar, parar e escutar") → exame físico protocolar (palpação, sons, medidas — exige hands-on) → imagem (ressonância, "que dentista nenhum sabe ver"). Regra de ouro: sem diagnóstico não há tratamento — nem monetização.</em></li>
       <li><strong>F3 · O Guarda-Chuva da DTM</strong><em>DTM não é UM diagnóstico: 3 grandes grupos (muscular · articular · deslocamento de disco), ~10 diagnósticos no total. Analogia didática: "dor de dente" — cárie/restauração, pulpite/canal, fratura/extração.</em></li>
-      <li><strong>F4 · As 3 Escadas de Tratamento (nome de trabalho: "cascata terapêutica")</strong><em>Uma escada por grupo, do conservador ao invasivo. Muscular: compressa quente → … → toxina/antidepressivo central. Deslocamento de disco: exercícios → … → cirurgia de reposicionamento. Articular: gelo/laser → … → prótese de articulação. (Listas completas: pendência do Rodrigo.)</em></li>
+      <li><strong>F4 · As 3 Escadas de Tratamento (nome de trabalho: "cascata terapêutica")</strong><em>Uma escada por grupo diagnóstico, do conservador ao invasivo. Listas completas recebidas em 03/07 — ver a seção detalhada logo abaixo.</em></li>
       <li><strong>F5 · Timing de Intervenção</strong><em>Critérios objetivos pra subir o degrau: 3-6 meses de conservador sem resposta + diagnóstico confirmado + gravidade/imagem/impacto na vida.</em></li>
       <li><strong>F6 · Motor Comercial do Consultório</strong><em>O funil completo que sustentou o R$ 1M: captação multicanal (incl. busca por IA — já recebeu paciente via ChatGPT) → relacionamento → avaliação (com sinal antecipado) → conversão em tratamento (~50%) → pós-venda/recorrência. Inclui elementos AGNÓSTICOS a DTM = candidatos a ganhos rápidos no início da jornada do aluno.</em></li>
     </ul>
+
+    <h2 class="section-title">As 3 escadas de <span class="ei">tratamento</span> (F4 detalhado)</h2>
+    <p style="margin:0 0 10px;">Enviadas pelo Rodrigo em 03/07 — o coração da Etapa 2. Cada grupo diagnóstico tem sua própria escada, do conservador ao invasivo. A lógica do método: começa sempre embaixo (reversível) e só sobe o degrau com diagnóstico confirmado e após o timing de 3-6 meses.</p>
+
+    <div class="card">
+      <p style="margin:0 0 6px;font-family:var(--cond);font-size:20px;text-transform:uppercase;color:var(--vermelho-esc);">Muscular</p>
+      <dl class="kv">
+        <dt>Conservador</dt><dd>Eletroestimulação · infravermelho · laser · liberação miofascial manual · controle do bruxismo de vigília (biofeedback com eletromiografia MYOBOTS, app, adesivos) · controle do bruxismo do sono (dispositivo interoclusal) · fármacos · exercícios caseiros · educação em dor e orientações sistêmicas</dd>
+        <dt>Minimamente invasivo</dt><dd>Infiltração anestésica · dry needling (agulhamento seco)</dd>
+        <dt>Invasivo</dt><dd>Toxina botulínica <em style="color:var(--cinza);">— note: no TOPO da escada, último recurso; não a primeira opção como faz o mercado</em></dd>
+      </dl>
+    </div>
+
+    <div class="card">
+      <p style="margin:0 0 6px;font-family:var(--cond);font-size:20px;text-transform:uppercase;color:var(--vermelho-esc);">Deslocamento de disco</p>
+      <dl class="kv">
+        <dt>Conservador</dt><dd>Exercícios de aumento da amplitude bucal</dd>
+        <dt>Minimamente invasivo</dt><dd>Infiltração com ácido hialurônico · artrocentese</dd>
+        <dt>Cirúrgico</dt><dd>Artroscopia · discopexia</dd>
+      </dl>
+    </div>
+
+    <div class="card">
+      <p style="margin:0 0 6px;font-family:var(--cond);font-size:20px;text-transform:uppercase;color:var(--vermelho-esc);">Articular</p>
+      <dl class="kv">
+        <dt>Conservador</dt><dd>Laserterapia · fármaco · crioterapia</dd>
+        <dt>Minimamente invasivo</dt><dd>Infiltração com corticoide · artrocentese · iPRF (agregado plaquetário) · ácido hialurônico</dd>
+        <dt>Invasivo</dt><dd>Artroscopia · cirurgia aberta · prótese de ATM</dd>
+      </dl>
+    </div>
+
+    <div class="alert amarelo">
+      <strong>Falta 1 definição do Rodrigo:</strong> marcar, em cada escada, o que o aluno sai <strong>capacitado a fazer</strong> × o que ele só vai <strong>conhecer a indicação</strong>. Hipótese de partida (a confirmar): capacita nos conservadores + minimamente invasivos mais simples (infiltração anestésica, dry needling, dispositivo, biofeedback, toxina); só teoria nos avançados (artrocentese, iPRF/agregados por ultrassom, artroscopia, discopexia, cirurgia aberta, prótese de ATM).
+    </div>
 
     <h2 class="section-title">Jornada de transformação do <span class="ei">aluno</span></h2>
     <ul class="entregas-lista">
