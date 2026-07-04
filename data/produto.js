@@ -306,7 +306,7 @@ JORNADA: [
 
 /* ─────────────────────── GAMIFICAÇÃO · FAIXAS ─────────────────────── */
 GAMIFICACAO: {
-  status: 'Sistema completo especificado em 04/07 (v1), a partir do brief estratégico aprovado do Experience Architect — aguarda aprovação do Rodrigo. Nomenclatura das faixas e das fases é proposta, a validar antes de qualquer produção final.',
+  status: 'Sistema completo especificado e APROVADO pela consultoria em 04/07 (faixas, marcos e mecânicas). Validação final com o Rodrigo no Marco 02; produção visual (design das faixas, certificados) segue pro brandbook.',
   por_que: 'Gamificação, aqui, não decora a formação com pontuação — ela NOMEIA publicamente uma transformação que já é real e verificável. O aluno não sobe de faixa porque assistiu aula, comentou no grupo ou fez login toda semana: ele sobe porque passou num gate técnico corrigido pelo próprio Rodrigo. A faixa é a linguagem; o gate é a régua. Se a régua ceder uma vez, todas as faixas anteriores ficam suspeitas aos olhos do público mais cético que existe — dentista adulto que já foi enganado por curso raso. E a origem da mecânica é do próprio Rodrigo: faixa roxa, um grau, jiu-jitsu real — não analogia importada de squad de marketing.',
   visao_geral: [
     { faixa: 'branca', nome: 'Faixa Branca', quando: 'Semana 0 · onboarding', diz: 'O ponto de partida, sem gate — o "ainda não sabe" reconhecido sem vergonha.' },

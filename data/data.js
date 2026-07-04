@@ -204,6 +204,8 @@ const VALIDACOES = [
   {item: 'Pesquisas expandidas (concorrência, aprendiz, certificação)', status: 'aprovado', data: '02/07/2026 · síntese no menu Documentação'},
   {item: 'Materiais complementares enviados (lista priorizada)', status: 'aguard-material', data: 'Aguardando Rodrigo'},
   {item: 'Pré-estrutura da proposta do produto (D5)', status: 'aguard-aprov', data: 'Publicada em 02/07 · validar com Rodrigo'},
+  {item: 'Naming: Abordagem MODAL (método) + Protocolo Escalonado de DTM (mecanismo) + ângulo da PUV', status: 'aprovado', data: '04/07/2026 · validação final com Rodrigo no Marco 02'},
+  {item: 'Jornada do método e gamificação por faixas', status: 'aprovado', data: '04/07/2026'},
   {item: 'Marco 02 · Validação da Estratégia', status: 'planejado', data: 'Após materiais + pré-estrutura'},
 ];
 

@@ -131,7 +131,7 @@
       <div class="modal-head">
         <div class="modal-tags">
           <span class="modal-tag vermelho">${f.n} · ${f.classe}</span>
-          <span class="modal-tag proposta">nome proposto — em definição</span>
+          ${f.status_nome ? `<span class="modal-tag" style="background:#3D8A5A;color:#fff;">${f.status_nome}</span>` : '<span class="modal-tag proposta">nome proposto — em definição</span>'}
         </div>
         <h2 class="modal-title">${f.nome}</h2>
         ${f.nota_nome ? `<p class="modal-sub">${f.nota_nome}</p>` : ''}
@@ -251,7 +251,7 @@
         <a class="bloco-resumo" href="#met-aprendiz"><div class="bloco-resumo-n">01</div><div class="bloco-resumo-titulo">O Aprendiz<small>ICP, mercado, dores, desejos, rotina e habilidades — os 7 outputs</small></div></a>
         <a class="bloco-resumo" href="#met-expert"><div class="bloco-resumo-n">02</div><div class="bloco-resumo-titulo">O Expert<small>Posicionamento, trajetória, números, voz e bandeiras</small></div></a>
         <a class="bloco-resumo" href="#met-historias"><div class="bloco-resumo-n">03</div><div class="bloco-resumo-titulo">Banco de Histórias<small>${(M.HISTORIAS || []).length} histórias reais estruturadas — galeria com narrativa completa</small></div></a>
-        <a class="bloco-resumo" href="#met-metodo"><div class="bloco-resumo-n">04</div><div class="bloco-resumo-titulo">O Método &amp; Frameworks<small>PUV, jornada, ${(M.FRAMEWORKS || []).length} frameworks e 11 instrumentos — nomes em proposta</small></div></a>
+        <a class="bloco-resumo" href="#met-metodo"><div class="bloco-resumo-n">04</div><div class="bloco-resumo-titulo">O Método &amp; Frameworks<small>Abordagem MODAL · PUV, jornada, ${(M.FRAMEWORKS || []).length} frameworks e ${(M.INSTRUMENTOS || []).length} instrumentos</small></div></a>
       </div>
 
       <h2 class="section-title">O <span class="ei">Produto</span></h2>
@@ -396,12 +396,12 @@
       ${hero('O Método — The Path · Camada 03', '04', 'O Método &amp; <span class="ei">Frameworks</span>')}
 
       <div class="alert decisao">
-        <strong>⚠️ Tudo nesta página é PROPOSTA — em definição.</strong> ${M.NOME_METODO ? M.NOME_METODO.aviso : ''}
+        <strong>Status de naming:</strong> ${M.NOME_METODO ? M.NOME_METODO.aviso : ''}
       </div>
 
-      <h2 class="section-title">Nome do método — <span class="ei">proposta nº 1</span></h2>
+      <h2 class="section-title">Nome do método — <span class="ei">definido</span></h2>
       <div class="card preto">
-        <div class="modal-tags" style="margin-bottom:12px;"><span class="modal-tag vermelho">proposta — em definição</span></div>
+        <div class="modal-tags" style="margin-bottom:12px;"><span class="modal-tag" style="background:#3D8A5A;color:#fff;">${M.NOME_METODO && M.NOME_METODO.status_nome ? M.NOME_METODO.status_nome : 'definido'}</span></div>
         <h3 class="card-title" style="font-family:var(--cond);text-transform:uppercase;font-size:34px;">${M.NOME_METODO ? M.NOME_METODO.top1 : ''}</h3>
         <p style="font-family:var(--serif);font-style:italic;font-size:16px;">${M.NOME_METODO ? M.NOME_METODO.assinatura : ''}</p>
         <p style="font-size:13px;">${M.NOME_METODO ? M.NOME_METODO.top1_racional : ''}</p>

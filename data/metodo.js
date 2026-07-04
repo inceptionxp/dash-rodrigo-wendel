@@ -507,16 +507,17 @@ HISTORIAS: [
 /* ─────────────────────── CAMADA 03 · O MÉTODO ─────────────────────── */
 
 NOME_METODO: {
-  aviso: 'Nenhum nome desta página está fechado. Todo nome de método e de framework é uma PROPOSTA da Inception, com a técnica de naming exposta e alternativas, pra Maiara e Rodrigo decidirem juntos. A regra que destravou o Rodrigo na call: nome não é ego, é caixinha cognitiva — ajuda o paciente e o aluno a assimilar. Trava de território: uma concorrente direta já nomeou o método dela ancorado no par "diagnóstico + individualização" — por isso nenhum nome aqui ancora nesse território. O território do Rodrigo é outro e mais largo: o rigor protocolar, o arsenal multimodal de tratamento e a jornada completa diagnóstico → tratamento → negócio.',
-  top1: 'Método MODAL',
-  assinatura: 'Método MODAL — o raciocínio clínico completo em DTM: do diagnóstico protocolar ao arsenal multimodal.',
-  top1_racional: 'Acrônimo-conceito: Multimodal · Orientada (educação em dor) · Diagnóstico · Arsenal · Literatura. Curto, clínico, ancorado no multimodal (o coração do método, território livre e central dele). "Modal" soa técnico e sério, não guruesco.',
+  aviso: 'Decisão da consultoria em 04/07: o método se chama ABORDAGEM MODAL, e o mecanismo central de tratamento se chama PROTOCOLO ESCALONADO DE DTM. Validação final com o Rodrigo na Validação da Estratégia (Marco 02). Nomes dos demais frameworks seguem como proposta. Trava de território mantida: nenhum nome ancora em "diagnóstico + individualização" (ocupado por concorrente) — o território daqui é o rigor protocolar, o arsenal multimodal de tratamento e a jornada completa diagnóstico → tratamento → negócio.',
+  top1: 'Abordagem MODAL',
+  status_nome: '✓ aprovado pela consultoria · 04/07 — validação final com o Rodrigo no Marco 02',
+  assinatura: 'Abordagem MODAL — o raciocínio clínico completo em DTM: do diagnóstico protocolar ao arsenal multimodal.',
+  top1_racional: 'Acrônimo-conceito: Multimodal · Orientada (educação em dor) · Diagnóstico · Arsenal · Literatura. "Abordagem" (e não "método") reforça o que ele mesmo diz — é postura clínica, não receita. O A de ARSENAL é explicado com a analogia oficial do cinto do Batman. Dentro da Abordagem MODAL vive o mecanismo central de tratamento: o PROTOCOLO ESCALONADO DE DTM (F4).',
   opcoes: [
-    { nome: 'Método MODAL', tecnica: 'Acrônimo-conceito (M·O·D·A·L)', porque: 'Ancora no multimodal sem colidir com território de concorrente. Fácil de dizer numa aula e numa venda.', risco: 'O acrônimo pode soar forçado se for muito explicado — usar "MODAL" como marca e revelar o acrônimo só como bônus didático.' },
-    { nome: 'Protocolo Escalonado de DTM', tecnica: 'Descritiva pelo mecanismo central', porque: 'Comunica na lata o diferencial clínico — trata por degraus, com critério. Zero cara de guru.', risco: 'Genérico demais isolado — ganha se vier com uma marca junto.' },
-    { nome: 'Método do Raciocínio Clínico em DTM', tecnica: 'Nomeação pela transformação-fim', porque: 'É a frase que o próprio Rodrigo repete — soa autêntico. Difícil de copiar (é postura, não técnica).', risco: 'Longo e abstrato como marca — melhor como tagline do que como nome.' },
-    { nome: 'Sistema Multimodal Wendel (SMW)', tecnica: 'Sobrenome + mecanismo (padrão acadêmico)', porque: 'Carrega a autoridade internacional sem soar vendedor. Legítimo no meio clínico.', risco: 'O Rodrigo tem resistência a usar o próprio nome — apresentar como opção, não empurrar.' },
-    { nome: 'Cinto do Batman (apelido interno)', tecnica: 'Analogia-assinatura dele', porque: 'A analogia mais viva e memorável que ele tem — funciona como apelido carinhoso do arsenal nas aulas e na copy.', risco: 'Não serve como nome oficial de método clínico sério — guardar como asset de conteúdo.' },
+    { nome: 'Abordagem MODAL — ESCOLHIDO (04/07)', tecnica: 'Acrônimo-conceito (M·O·D·A·L)', porque: 'Ancora no multimodal sem colidir com território de concorrente; "abordagem" soa clínico e verdadeiro pro jeito dele. Fácil de dizer numa aula e numa venda.', risco: 'Revelar o acrônimo como bônus didático, não como explicação obrigatória.' },
+    { nome: 'Protocolo Escalonado de DTM — ESCOLHIDO como mecanismo (04/07)', tecnica: 'Descritiva pelo mecanismo central', porque: 'Vira o nome do mecanismo de tratamento dentro da Abordagem MODAL (F4) — comunica na lata o diferencial clínico: trata por degraus, com critério.', risco: '—' },
+    { nome: 'Cinto do Batman', tecnica: 'Analogia-assinatura dele', porque: 'DEFINIDO como analogia oficial do "A" de Arsenal — o apelido vivo do arsenal nas aulas e na copy.', risco: 'Nunca como nome oficial — sempre como analogia didática.' },
+    { nome: 'Método do Raciocínio Clínico em DTM', tecnica: 'Nomeação pela transformação-fim', porque: 'Não escolhido — vive como tagline possível.', risco: '—' },
+    { nome: 'Sistema Multimodal Wendel (SMW)', tecnica: 'Sobrenome + mecanismo', porque: 'Não escolhido — registro histórico.', risco: '—' },
   ],
 },
 
@@ -528,14 +529,17 @@ PUV: {
     { k: 'Diferencial', v: 'O arsenal multimodal ("cinto do Batman") + o escalonamento por critério + a camada comercial que os acadêmicos não ensinam.' },
   ],
   versoes: [
-    { label: 'Versão 1 · uma linha (capa, hero, pitch curto)', texto: 'Formo o dentista clínico a diagnosticar, tratar e lucrar com DTM — com o arsenal completo que a literatura recomenda, não com a única técnica que ele aprendeu.' },
+    { label: 'Versão 1 · uma linha — ✓ APROVADA (ajuste da consultora, 04/07)', texto: 'Formo dentistas capazes de diagnosticar, tratar e lucrar com DTM — com individualização de cada caso, e não com uma única técnica.' },
+    { label: 'Variação 1a · mesmo ângulo (caso a caso)', texto: 'Cada paciente de DTM é um caso diferente — formo dentistas que tratam caso a caso, com o arsenal completo, e lucram com isso.' },
+    { label: 'Variação 1b · mesmo ângulo (negativa primeiro)', texto: 'DTM não se resolve com uma técnica só. Formo dentistas que diagnosticam, tratam e lucram — individualizando cada caso.' },
+    { label: 'Variação 1c · mesmo ângulo (ponta a ponta)', texto: 'Formo dentistas que dominam DTM de ponta a ponta: diagnóstico preciso, tratamento individualizado e retorno financeiro — sem depender de uma única técnica.' },
     { label: 'Versão 2 · um parágrafo (abertura de página, apresentação)', texto: 'A maioria dos dentistas trata DTM com o que tem à mão: uma placa, um encaminhamento, às vezes um botox no lugar errado. Para quem só tem martelo, tudo é prego. Esta formação faz o oposto: dá ao dentista clínico o cinto do Batman — o arsenal multimodal de diagnóstico e tratamento que a literatura recomenda —, ensina a escalonar do conservador ao invasivo com critério e mostra como cobrar pelo que passou a saber fazer. Você sai enxergando a demanda que já está na sua cadeira todo dia, diagnosticando com precisão e transformando isso em receita dentro do próprio ano.' },
     { label: 'Versão 3 · conversacional (vídeo, story, fala do Rodrigo)', texto: 'Olha, DTM não é bruxismo, e não se trata com uma placa, um aparelho ou um botox. DTM é um guarda-chuva — cada paciente é um diagnóstico diferente e pede um tratamento diferente. Eu vou te dar o cinto do Batman inteiro: a ferramenta certa pra cada caso, na ordem certa, sabendo a hora de subir o degrau. E, no fim, te ensino a vender isso — porque tem gente falando que DTM não dá dinheiro, e eu faturei um milhão no ano passado, sozinho, sem trabalhar depois das seis.' },
   ],
   canais: [
-    { canal: 'Bio Instagram (~150 car.)', adaptacao: 'Formo dentistas a diagnosticar, tratar e lucrar com DTM. O arsenal completo — não a técnica única. Zurique · 30 anos · +8.000 pacientes.' },
+    { canal: 'Bio Instagram (~150 car.)', adaptacao: 'Formo dentistas capazes de diagnosticar, tratar e lucrar com DTM — caso a caso, não com técnica única. Zurique · 30 anos · +8.000 pacientes.' },
     { canal: 'Headline de conteúdo orgânico', adaptacao: '"Pra quem só tem martelo, tudo é prego." Por que a placa não resolve a DTM do seu paciente — e o que resolve.' },
-    { canal: 'Hero de página de vendas', adaptacao: 'Diagnostique, trate e lucre com DTM usando o arsenal completo que a literatura recomenda — não a única técnica que você aprendeu.' },
+    { canal: 'Hero de página de vendas', adaptacao: 'Diagnostique, trate e lucre com DTM — com individualização de cada caso, não com a única técnica que você aprendeu.' },
     { canal: 'LinkedIn (headline pessoal)', adaptacao: 'Cirurgião-dentista · DTM e Dor Orofacial · Fellowship Universidade de Zurique · formei ~10% dos especialistas em DTM do Brasil.' },
     { canal: 'Pitch comercial 30s', adaptacao: 'Formo o clínico geral a dominar DTM de ponta a ponta — do diagnóstico protocolar ao tratamento multimodal —, e ainda a monetizar. Em 10 meses, com ROI dentro do próprio ano.' },
     { canal: 'Assunto de e-mail', adaptacao: 'DTM dá dinheiro (eu tenho os dados) · O erro nº 1 do dentista com DTM não é técnico.' },
@@ -546,9 +550,9 @@ PUV: {
 JORNADA_METODO: [
   { etapa: '0 · Nivelamento (faixa branca)', acontece: 'Desmonta a crença errada ("DTM é bruxismo", "é só placa"). Ganho comercial rápido já na semana 1.', framework: 'F3 Guarda-Chuva + F1 Dois Tripés (modelos-mãe)', transformacao: 'Deixa de "não saber que não sabe" — enxerga a demanda que já está na cadeira dele' },
   { etapa: '1 · Diagnóstico (→ faixa azul)', acontece: 'Ficha de 40 perguntas → anamnese profunda → exame físico protocolar (imersão presencial) → leitura de imagem. Fecha diagnóstico específico nos 3 grupos.', framework: 'F2 Leitura de Precisão (4 camadas) + F3 Guarda-Chuva', transformacao: 'Deixa de "achar que sabe" e passa a diagnosticar com precisão' },
-  { etapa: '2 · Tratamento (→ faixa roxa)', acontece: 'Monta o plano escalonado (conservador → minimamente invasivo → invasivo) pra cada grupo, com timing e risco-benefício. Marca o que executa × o que encaminha.', framework: 'F4 As Três Escadas + F5 Timing de Intervenção + F1 Tripé Local', transformacao: 'Deixa de "nomear o problema" e passa a resolver com julgamento clínico' },
-  { etapa: '3 · Negócio (→ faixa marrom/formatura)', acontece: 'Converte avaliação em tratamento, capta por indicação/posicionamento, controla os números, retém.', framework: 'F6 Motor Comercial (com Educação em Dor como ponte clínico↔comercial)', transformacao: 'Deixa de "saber sem cobrar" e passa a monetizar — ROI no próprio ano' },
-  { etapa: 'Continuidade (mentoria)', acontece: 'Casos complexos, procedimentos avançados na prática, comercial avançado, comunidade.', framework: 'Todos os frameworks aprofundados + procedimentos de topo das escadas', transformacao: 'De especialista formado a referência com escala' },
+  { etapa: '2 · Tratamento (→ faixa roxa)', acontece: 'Monta o plano escalonado (conservador → minimamente invasivo → invasivo) pra cada grupo, com timing e risco-benefício. Marca o que executa × o que encaminha.', framework: 'F4 Protocolo Escalonado de DTM + F5 Timing de Intervenção + F1 Tripé Local', transformacao: 'Deixa de "nomear o problema" e passa a resolver com julgamento clínico' },
+  { etapa: '3 · Negócio (→ faixa marrom/formatura)', acontece: 'Opera a jornada completa do paciente (agendamento → avaliação → proposta → fechamento → pós-venda), capta por indicação/posicionamento, controla os números.', framework: 'F6 Motor Comercial + F7 Motor de Tração (básico) — com Educação em Dor como ponte clínico↔comercial', transformacao: 'Deixa de "saber sem cobrar" e passa a monetizar — ROI no próprio ano' },
+  { etapa: 'Continuidade (mentoria)', acontece: 'Casos complexos, procedimentos avançados na prática, comercial avançado com o arsenal completo de tração (mix por aluno), comunidade.', framework: 'Todos os frameworks aprofundados + F7 Motor de Tração completo + procedimentos de topo das escadas', transformacao: 'De especialista formado a referência com escala' },
 ],
 
 PRINCIPIOS: [
@@ -610,8 +614,9 @@ FRAMEWORKS: [
     nota_nome: 'Mantém a analogia que ele já usa e ama — metáfora-assinatura já consolidada na fala dele.',
   },
   {
-    id: 'tres-escadas', n: 'F4', nome: 'As Três Escadas', classe: 'framework de etapa · Tratamento',
-    o_que_e: 'Três escadas de tratamento — uma pra cada grupo do guarda-chuva — onde cada degrau sobe do conservador ao invasivo. É o "cinto do Batman" organizado: a ferramenta certa, na ordem certa. Subtítulo técnico: do conservador ao invasivo.',
+    id: 'tres-escadas', n: 'F4', nome: 'Protocolo Escalonado de DTM', classe: 'framework de etapa · Tratamento — MECANISMO CENTRAL da Abordagem MODAL',
+    status_nome: '✓ nome aprovado pela consultoria · 04/07',
+    o_que_e: 'O mecanismo central de tratamento da Abordagem MODAL: três escadas — uma pra cada grupo do guarda-chuva — onde cada degrau sobe do conservador ao invasivo, com critério. É o arsenal ("cinto do Batman") organizado: a ferramenta certa, na ordem certa.',
     como_funciona: [
       'ESCADA MUSCULAR — conservador: eletroestimulação · infravermelho · laser · liberação miofascial manual · controle do bruxismo de vigília (biofeedback/eletromiografia, apps, adesivos) · controle do bruxismo do sono (dispositivo interoclusal) · fármacos · exercícios caseiros · educação em dor → minimamente invasivo: infiltração anestésica · dry needling → invasivo: TOXINA BOTULÍNICA NO TOPO, último recurso. "Começo fazendo compressa quente e posso terminar fazendo toxina."',
       'ESCADA DESLOCAMENTO DE DISCO — conservador: exercícios de amplitude bucal → minimamente invasivo: ácido hialurônico · artrocentese → cirúrgico: artroscopia · discopexia.',
@@ -624,8 +629,8 @@ FRAMEWORKS: [
     temos: ['As três escadas completas (recebidas em 03/07)'],
     falta: ['A marcação definitiva capacita × só-teoria em cada degrau (pendência do Rodrigo) — hoje o plano de ensino trabalha com hipótese sinalizada'],
     vira_conteudo: ['Encontros 19-24 (muscular) · 25-28 (disco) · 29-32 (articular)', 'Copy anti-botox ("tem onda que é marola e tem onda que é tsunami")', 'Instrumento-estrela: as três escadas como pôster/fluxograma de decisão'],
-    alternativas: ['Cascata Terapêutica — nome plantado na call e que ele curtiu; mas "cascata" sugere descida, e o método é subida de degrau — a escada é mais precisa', 'O Escalonamento — sóbrio e clínico, menos concreto que "escada"'],
-    nota_nome: 'Número + metáfora de progressão, ancorado no termo que ele mesmo confirmou na call ("três escadas de tratamento — exatamente").',
+    alternativas: ['As Três Escadas — nome de trabalho anterior; permanece como descrição interna das 3 escadas dentro do protocolo', 'Cascata Terapêutica — plantado na call; descartado ("cascata" sugere descida, o mecanismo é subida)'],
+    nota_nome: 'APROVADO em 04/07 como nome do mecanismo dentro da Abordagem MODAL. Comunica o diferencial na lata: trata por degraus, com critério — zero cara de guru. Validação final com o Rodrigo no Marco 02.',
   },
   {
     id: 'timing-de-intervencao', n: 'F5', nome: 'Timing de Intervenção', classe: 'framework de etapa · Tratamento',
@@ -646,8 +651,9 @@ FRAMEWORKS: [
   },
   {
     id: 'motor-comercial', n: 'F6', nome: 'Motor Comercial', classe: 'framework de etapa · Negócio',
-    o_que_e: 'O sistema que converte a competência clínica recém-adquirida em receita — condução da primeira consulta, conversão de avaliação em tratamento, captação por indicação/posicionamento, retenção e leitura dos números essenciais. Subtítulo: transformar competência clínica em receita.',
+    o_que_e: 'O sistema que converte a competência clínica em receita olhando pra JORNADA COMPLETA DO PACIENTE — do agendamento à recorrência, não só "a venda". O diferencial do Rodrigo é enxergar cada elo: agendamento → pré-avaliação → consulta de avaliação → formato da proposta comercial → fechamento → pós-venda e acompanhamento.',
     como_funciona: [
+      'A JORNADA DE PONTA A PONTA — cada elo é desenhado: agendamento (com ou sem sinal, conforme contexto), pré-avaliação (ficha de 40 perguntas + acolhimento antes da consulta), consulta de avaliação (a devolutiva de diagnóstico), formatos de proposta comercial (como apresentar plano e investimento), fechamento e pós-venda/recorrência. O aluno não aprende "a vender" — aprende a operar a jornada inteira.',
       'O núcleo é a NARRATIVA DA PRIMEIRA CONSULTA — a educação em dor e os Dois Tripés já são o que converte ("antes de intervir, você precisa entender" vira também a lógica de venda).',
       'O funil-base: avaliação (R$ 540) → conversão histórica ~50% → ticket de tratamento R$ 4.500-5.000. Controles essenciais: nº de avaliações/mês, taxa de conversão avaliação→tratamento, ticket médio.',
       'Elementos CONTEXTUAIS (não regra pra todos): cobrança de sinal pra agendar ("os bons pagam pelos ruins" — certo pra agenda cheia, não pra iniciante; a crise de 50 desmarcações em 3 meses custou ~R$ 90-100 mil); vídeo pré-consulta (a validar com dados).',
@@ -659,8 +665,27 @@ FRAMEWORKS: [
     temos: ['O funil, os números e as teses'],
     falta: ['Separar formalmente básico (formação) × avançado (mentoria) por conteúdo', 'Os scripts de conversão detalhados'],
     vira_conteudo: ['Encontros 35-41', 'Copy de quebra de objeção ("DTM dá dinheiro — eu tenho os dados")', 'Scripts de recepção (lead→avaliação)', 'Instrumento: planilha de controles do funil + roteiro de devolutiva de diagnóstico'],
-    alternativas: ['Da Avaliação ao Tratamento — descritivo do funil-núcleo; clareza total, menos marca', '"DTM Dá Dinheiro" — ótimo como headline, arriscado como nome de framework (soa marketeiro)'],
-    nota_nome: 'Metáfora de sistema que gera movimento — comunica mecanismo repetível, não "vendinha". Sóbrio e alinhado ao mundo do consultório.',
+    alternativas: ['Da Avaliação ao Tratamento — descritivo do funil-núcleo; clareza total, menos marca', 'Jornada do Paciente — descreve o diferencial de ponta a ponta; forte, mas colide com "jornada do aluno" no vocabulário do produto'],
+    nota_nome: 'Metáfora de sistema que gera movimento — comunica mecanismo repetível, não "vendinha". Sóbrio e alinhado ao mundo do consultório. Par com o F7: o Motor de TRAÇÃO atrai, o Motor COMERCIAL converte e retém.',
+  },
+  {
+    id: 'motor-de-tracao', n: 'F7', nome: 'Motor de Tração', classe: 'framework de etapa · Negócio (básico na formação · arsenal completo na mentoria)',
+    status_nome: '✓ nomeado pela consultora · 04/07',
+    o_que_e: 'O arsenal de formas de ATRAIR pacientes pro consultório — marketing digital pago e gratuito, programas de indicação estruturada, autoridade local e outros motores permitidos pelo Código de Ética. A tese central: não existe "o funil certo" universal — existe o arsenal e o encaixe com o contexto, as convicções e a personalidade de cada dentista.',
+    como_funciona: [
+      'MAPEAR o arsenal de motores possíveis: tráfego pago · conteúdo orgânico/redes · Google e busca (incluindo busca por IA) · programas de indicação estruturada (paciente e colegas) · autoridade local (aulas, palestras, parcerias com médicos e encaminhadores) · presença em convênios/plataformas conforme estratégia.',
+      'FILTRAR duas vezes: (1) pelo CÓDIGO DE ÉTICA — só motores permitidos pra publicidade em odontologia; (2) pela PERSONALIDADE E CONVICÇÕES do dentista — nem todo mundo quer produzir conteúdo, nem todo mundo quer dar palestra pra construir autoridade. O motor que o aluno odeia operar é o motor que ele abandona.',
+      'MONTAR O MIX do contexto dele: cidade, perfil de paciente, capital disponível, tempo e temperamento — cada aluno sai com o próprio conjunto de motores, não com uma receita única.',
+      'É a lógica clínica da Abordagem MODAL aplicada ao negócio: assim como não se trata todo paciente com uma única técnica, não se capta todo paciente com um único funil. Individualização — do tratamento E da tração.',
+    ],
+    quando_usar: 'Na formação, o básico: indicação estruturada + posicionamento pra rede atual (Encontro 39) — o canal mais barato de quem começa. Na mentoria, o arsenal completo: tráfego pago, conteúdo multi-plataforma, busca por IA, parcerias — com o mix desenhado por aluno.',
+    por_que_funciona: 'Adesão: o aluno opera o motor que combina com ele, então sustenta no tempo. Ética: filtro explícito do Código de Ética protege o aluno (e a marca) de publicidade irregular. Simetria com o método clínico: a mesma filosofia de individualização — o que torna o framework inconfundível com "curso de marketing pra dentista".',
+    analogia: 'O paralelo direto com o arsenal clínico: "pra quem só tem martelo, tudo é prego" também vale pra captação — quem só conhece um funil força o funil errado no contexto errado.',
+    temos: ['A tese e o diferencial (call + direcionamento da consultora em 04/07)', 'O caso real dele: Google + Instagram + indicação + paciente vindo do ChatGPT'],
+    falta: ['Catalogar o arsenal de motores com o Rodrigo (quais ele domina e endossa)', 'Matriz motor × perfil de aluno (o instrumento de escolha do mix)', 'Separar o que entra na formação (básico) × mentoria (completo)'],
+    vira_conteudo: ['Encontro 39 (posicionamento + indicação — o básico)', 'Mentoria: módulo de tração completo, mix por aluno', 'Copy: "não existe o funil certo — existe o funil certo pra VOCÊ"', 'Instrumento: Mapa de Motores de Tração (matriz motor × perfil)'],
+    alternativas: ['Arsenal de Tração — liga com o vocabulário do "arsenal" clínico; forte, mas repete a palavra em dois territórios', 'Motores de Captação — descritivo puro; claro, menos assinatura'],
+    nota_nome: 'Nomeado pela consultora em 04/07 ("motor de tração"). Par natural com o Motor Comercial: tração atrai, comercial converte.',
   },
 ],
 
@@ -675,11 +700,12 @@ INSTRUMENTOS: [
   { nome: 'Checklist de exame físico protocolar', formato: 'PDF · roteiro pessoal pra imersão', etapa: 'Diagnóstico · F2', uso: 'Leva à imersão e usa como guia de palpação/sons/medidas', status: 'falta estruturar' },
   { nome: 'Mapa do Guarda-Chuva (3 grupos, ~10 diagnósticos)', formato: 'Infográfico · pôster de consultório', etapa: 'Diagnóstico · F3', uso: 'Referência de classificação + material de sala de espera', status: 'falta a lista nominal dos diagnósticos' },
   { nome: 'Infográfico dos Dois Tripés', formato: 'Infográfico · material paciente/aluno', etapa: 'Transversal · F1', uso: 'Explica ao paciente na devolutiva (aumenta adesão)', status: 'falta o material gravado-fonte (pendência Rodrigo)' },
-  { nome: 'As Três Escadas (fluxograma de decisão)', formato: 'Fluxograma · pôster/decisão clínica', etapa: 'Tratamento · F4', uso: 'Decide o próximo degrau terapêutico por grupo, marcando executa × encaminha', status: 'temos as escadas · falta marcação capacita×teoria' },
+  { nome: 'Protocolo Escalonado de DTM (fluxograma das 3 escadas)', formato: 'Fluxograma · pôster/decisão clínica', etapa: 'Tratamento · F4', uso: 'Decide o próximo degrau terapêutico por grupo, marcando executa × encaminha', status: 'temos as escadas · falta marcação capacita×teoria' },
   { nome: 'Checklist de reavaliação 3-6 meses', formato: 'Checklist · gatilho de decisão', etapa: 'Tratamento · F5', uso: 'Reavalia se sobe o degrau, por critério objetivo', status: 'falta estruturar' },
   { nome: 'Planilha de controles do funil', formato: 'Planilha/Notion · painel de gestão', etapa: 'Negócio · F6', uso: 'Registra avaliações/mês, conversão, ticket; lê a saúde do funil', status: 'template a criar' },
   { nome: 'Roteiro de devolutiva + fechamento', formato: 'Script · roteiro de consulta', etapa: 'Negócio · F6', uso: 'Conduz avaliação → apresentação do plano (via tripés) → fechamento', status: 'falta estruturar' },
   { nome: 'Scripts de recepção (lead → avaliação)', formato: 'Script · treino de secretária', etapa: 'Negócio · F6', uso: 'Treina a recepção a converter contato em agendamento', status: 'falta estruturar' },
+  { nome: 'Mapa de Motores de Tração (matriz motor × perfil)', formato: 'Matriz/ferramenta de escolha', etapa: 'Negócio · F7', uso: 'O aluno cruza os motores permitidos com o próprio perfil (temperamento, tempo, capital, contexto) e monta seu mix de tração', status: 'a criar — depende do catálogo de motores com o Rodrigo' },
   { nome: 'IA de anamnese (metodologia dele)', formato: 'Agente/skill · assistente clínico', etapa: 'Diagnóstico · F2', uso: 'Pré-organiza a anamnese com a lógica dele', status: 'ideia plantada — backlog' },
 ],
 
