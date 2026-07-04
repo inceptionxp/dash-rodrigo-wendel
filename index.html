@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>O Salto · Dr. Rodrigo Wendel · Painel do Projeto</title>
 <meta name="description" content="Painel de acompanhamento do projeto da mentoria de DTM do Dr. Rodrigo Wendel. Status em tempo real de cada bloco de entrega, marcos e validações pendentes.">
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=4">
 </head>
 <body>
 
@@ -15,55 +15,44 @@
   <aside class="sidebar">
     <div class="sidebar-brand">
       <div class="brand-mark">O Salto</div>
-      <span class="brand-meta">Dr. Rodrigo Wendel · v2</span>
+      <span class="brand-meta">Dr. Rodrigo Wendel · v3</span>
     </div>
 
-    <div class="sidebar-section">Visão</div>
+    <div class="sidebar-section">Consultoria</div>
     <nav class="sidebar-nav">
-      <a class="nav-link" href="#home" data-view="home"><span class="nav-num">01</span><span>Visão Geral</span></a>
-      <a class="nav-link" href="#proposta" data-view="proposta"><span class="nav-num">02</span><span>Proposta Aprovada</span></a>
-      <a class="nav-link" href="#contrato" data-view="contrato"><span class="nav-num">03</span><span>Contrato Assinado</span></a>
+      <a class="nav-link" href="#home" data-view="home"><span class="nav-ico">◆</span><span>Visão Geral</span></a>
+      <a class="nav-link" href="#marcos" data-view="marcos"><span class="nav-ico">◆</span><span>Marcos do Projeto</span></a>
+      <a class="nav-link" href="#pesquisas" data-view="pesquisas"><span class="nav-ico">◆</span><span>Pesquisas</span></a>
+      <a class="nav-link" href="#acompanhamento" data-view="acompanhamento"><span class="nav-ico">◆</span><span>Acompanhamento</span></a>
     </nav>
 
-    <div class="sidebar-section">Marcos do Projeto</div>
+    <div class="sidebar-section">Extração da Consultoria</div>
     <nav class="sidebar-nav">
-      <a class="nav-link" href="#marco-1" data-view="marco-1"><span class="nav-num">M1</span><span>Conversa de Levantamento</span></a>
-      <a class="nav-link" href="#marco-2" data-view="marco-2"><span class="nav-num">M2</span><span>Validação da Estratégia</span></a>
-      <a class="nav-link" href="#marco-3" data-view="marco-3"><span class="nav-num">M3</span><span>Configuração Operacional</span></a>
-      <a class="nav-link" href="#marco-4" data-view="marco-4"><span class="nav-num">M4</span><span>Entrega Final</span></a>
+      <a class="nav-link" href="#met-aprendiz" data-view="met-aprendiz"><span class="nav-ico">◆</span><span>Cliente Ideal</span></a>
+      <a class="nav-link" href="#met-expert" data-view="met-expert"><span class="nav-ico">◆</span><span>Diferenciais e Autoridade</span></a>
+      <a class="nav-link" href="#met-historias" data-view="met-historias"><span class="nav-ico">◆</span><span>Banco de Histórias</span></a>
+      <a class="nav-link" href="#met-metodo" data-view="met-metodo"><span class="nav-ico">◆</span><span>Método e Frameworks</span></a>
     </nav>
 
-    <div class="sidebar-section">O Método</div>
+    <div class="sidebar-section">Produtos</div>
     <nav class="sidebar-nav">
-      <a class="nav-link" href="#met-aprendiz" data-view="met-aprendiz"><span class="nav-num">01</span><span>Cliente Ideal</span></a>
-      <a class="nav-link" href="#met-expert" data-view="met-expert"><span class="nav-num">02</span><span>Diferenciais e Autoridade</span></a>
-      <a class="nav-link" href="#met-historias" data-view="met-historias"><span class="nav-num">03</span><span>Banco de Histórias</span></a>
-      <a class="nav-link" href="#met-metodo" data-view="met-metodo"><span class="nav-num">04</span><span>Método e Frameworks</span></a>
-    </nav>
-
-    <div class="sidebar-section">O Produto</div>
-    <nav class="sidebar-nav">
-      <a class="nav-link" href="#prod-formacao" data-view="prod-formacao"><span class="nav-num">P1</span><span>Formação</span></a>
-      <a class="nav-link" href="#prod-grade" data-view="prod-grade"><span class="nav-num">P2</span><span>Grade · 41 Encontros</span></a>
-      <a class="nav-link" href="#prod-mentoria" data-view="prod-mentoria"><span class="nav-num">P3</span><span>Mentoria</span></a>
-      <a class="nav-link" href="#prod-comparacao" data-view="prod-comparacao"><span class="nav-num">P4</span><span>Formação × Mentoria</span></a>
-      <a class="nav-link" href="#prod-jornada" data-view="prod-jornada"><span class="nav-num">P5</span><span>Jornada do Aluno</span></a>
-      <a class="nav-link" href="#prod-gamificacao" data-view="prod-gamificacao"><span class="nav-num">P6</span><span>Gamificação · Faixas</span></a>
-    </nav>
-
-    <div class="sidebar-section">Pesquisas</div>
-    <nav class="sidebar-nav">
-      <a class="nav-link" href="#doc-pesquisas" data-view="doc-pesquisas"><span class="nav-num">→</span><span>Os 4 relatórios</span></a>
-    </nav>
-
-    <div class="sidebar-section">Acompanhamento</div>
-    <nav class="sidebar-nav">
-      <a class="nav-link" href="#materiais" data-view="materiais"><span class="nav-num">→</span><span>Materiais Pendentes</span></a>
-      <a class="nav-link" href="#validacoes" data-view="validacoes"><span class="nav-num">→</span><span>Validações e Aprovações</span></a>
+      <div class="nav-group" id="nav-group-formacao">
+        <a class="nav-link" href="#prod-formacao" data-view="prod-formacao">
+          <span class="nav-ico">◆</span><span>Formação</span>
+          <button class="nav-toggle" onclick="event.preventDefault();event.stopPropagation();toggleNavGroup('nav-group-formacao')" aria-label="Abrir subpáginas da Formação">❯</button>
+        </a>
+        <div class="nav-children">
+          <a class="nav-link" href="#prod-oferta" data-view="prod-oferta"><span class="nav-ico">○</span><span>Oferta</span></a>
+          <a class="nav-link" href="#prod-grade" data-view="prod-grade"><span class="nav-ico">○</span><span>Grade · 41 Encontros</span></a>
+          <a class="nav-link" href="#prod-jornada" data-view="prod-jornada"><span class="nav-ico">○</span><span>Jornada do Aluno</span></a>
+          <a class="nav-link" href="#prod-gamificacao" data-view="prod-gamificacao"><span class="nav-ico">○</span><span>Gamificação · Faixas</span></a>
+        </div>
+      </div>
+      <a class="nav-link" href="#prod-mentoria" data-view="prod-mentoria"><span class="nav-ico">◆</span><span>Mentoria</span></a>
     </nav>
 
     <div class="sidebar-footer">
-      v2 · Julho 2026<br>
+      v3 · Julho 2026<br>
       Inception Experience<br>
       Maiara Minatto
     </div>
@@ -93,11 +82,11 @@
   </div>
 </div>
 
-<script src="data/data.js?v=9"></script>
-<script src="data/docs.js?v=7"></script>
-<script src="data/metodo.js?v=3"></script>
-<script src="data/produto.js?v=2"></script>
-<script src="assets/app.js?v=5"></script>
+<script src="data/data.js?v=10"></script>
+<script src="data/docs.js?v=8"></script>
+<script src="data/metodo.js?v=4"></script>
+<script src="data/produto.js?v=3"></script>
+<script src="assets/app.js?v=6"></script>
 
 <!-- ═══════════ GISCUS ═══════════ -->
 <script>

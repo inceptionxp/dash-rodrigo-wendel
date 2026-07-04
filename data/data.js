@@ -24,10 +24,9 @@ const MARCOS = [
     status: 'aprovado',
     detalhes: [
       '✓ Call de levantamento realizada em 02/07/2026 (2h16) — transcrita e documentada',
-      '✓ Posicionamento calibrado: FORMAÇÃO para dentistas que não dominam DTM; mentoria vem depois, para ex-alunos',
-      '✓ Direção de formato: encontros semanais em grupo + hands-on presencial em Brasília, sem 1:1 na formação',
-      '✓ Documentação do briefing gerada: DNA do Expert, DNA do Aprendiz, DNA do Método (ver menu Documentação)',
-      'Pendente: envio dos materiais complementares (lista priorizada enviada no WhatsApp)',
+      '✓ Posicionamento calibrado: FORMAÇÃO para dentistas que não dominam DTM (mentoria vem depois, para ex-alunos) · formato semanal em grupo + hands-on presencial em Brasília, sem 1:1',
+      '✓ Briefing documentado: cliente ideal, diferenciais e autoridade, método (ver seção Extração da Consultoria)',
+      'Pendente: envio dos materiais complementares — checklist vivo na página Acompanhamento',
     ],
   },
   {
@@ -82,15 +81,15 @@ const BLOCOS = [
     status: 'em-dev',
     descricao: 'O coração da entrega. Aqui a gente define quem é o dentista ideal, qual é o método autoral, qual o formato da formação, a oferta completa e a estratégia da campanha. Sem isso, o resto é só embalagem.',
     entregas: [
-      {titulo: 'Pesquisa aprofundada de mercado', detalhe: '4 relatórios: mercado DTM, concorrência em formações, perfil do aprendiz e rotas de certificação — síntese no menu Documentação', status: 'em-dev'},
-      {titulo: 'Perfil do dentista ideal', detalhe: 'Dores, motivações, processo de decisão, linguagem que ele usa — ver DNA do Aprendiz', status: 'em-dev'},
+      {titulo: 'Pesquisa aprofundada de mercado', detalhe: '4 relatórios: mercado DTM, concorrência em formações, perfil do aprendiz e rotas de certificação — documentados na página Pesquisas', status: 'em-dev'},
+      {titulo: 'Perfil do dentista ideal', detalhe: 'Dores, motivações, processo de decisão, linguagem que ele usa — ver Cliente Ideal', status: 'em-dev'},
       {titulo: 'Definição de posicionamento', detalhe: 'Decidido na call de 02/07: formação para dentistas que não dominam DTM — formaliza no Marco 02', status: 'aguard-aprov'},
       {titulo: 'Definição de nome', detalhe: 'Nome da empresa (braço educacional), do Instagram novo e da formação', status: 'planejado'},
-      {titulo: 'Estruturação do método autoral', detalhe: 'Pilares, frameworks, jornada de transformação — ver DNA do Método (aguarda materiais do Rodrigo pra fechar)', status: 'em-dev'},
+      {titulo: 'Estruturação do método autoral', detalhe: 'Pilares, frameworks, jornada de transformação — ver Método e Frameworks (aguarda materiais do Rodrigo pra fechar)', status: 'em-dev'},
       {titulo: 'Formato dos encontros', detalhe: 'Direção definida na call: semanal em grupo + presencial hands-on, sem 1:1 na formação', status: 'em-dev'},
-      {titulo: 'Régua da formação e onboarding', detalhe: 'Plano de ensino completo: 41 encontros aula a aula (ver D7), 10 meses em 3 etapas. Falta só a marcação capacita×teoria do Rodrigo pra refinar 6 aulas', status: 'aguard-aprov'},
-      {titulo: 'Oferta completa', detalhe: 'Escopo, duração e faixa de investimento em estudo (D5) — bônus, promessa e garantia no Marco 02', status: 'em-dev'},
-      {titulo: 'Documento mestre de estratégia da campanha', detalhe: 'Orienta todas as peças que vêm depois — pré-estrutura da proposta do produto em construção', status: 'em-dev'},
+      {titulo: 'Régua da formação e onboarding', detalhe: 'Plano de ensino completo: 41 encontros aula a aula (ver Grade · 41 Encontros), 10 meses em 3 etapas. Falta só a marcação capacita×teoria do Rodrigo pra refinar 6 aulas', status: 'aguard-aprov'},
+      {titulo: 'Oferta completa', detalhe: 'Escopo, duração e faixa de investimento em estudo (ver página Oferta) — bônus, promessa e garantia no Marco 02', status: 'em-dev'},
+      {titulo: 'Documento mestre de estratégia da campanha', detalhe: 'Orienta todas as peças que vêm depois — estrutura do produto em construção', status: 'em-dev'},
     ],
   },
   {
@@ -184,30 +183,114 @@ const BLOCOS = [
   },
 ];
 
-const MATERIAIS_PENDENTES = [
-  {categoria: '⚡ Prioritário — recebido & pendente (atualizado 03/07)', itens: ['✓ Números de autoridade — recebido (30 anos, +8.000 pacientes, +95% melhora, R$1M/ano)', '✓ Credenciais e formação — recebido (UNESP 2000, UNIFESP 2001-2004, fellowship Zurique 2013)', '✓ Jargões e crenças-âncora — recebido', '✓ Temas da parte comercial — recebido (triagem básico × avançado na Pré-estrutura D5)', '✓ Perfil da concorrente do "MEC online" — recebido e analisado', '✓ Conteúdos da etapa de DIAGNÓSTICO — recebido (03/07); nivelamento + anatomia adicionados. Grade rascunhada (ver D6)', '🟡 As 3 escadas de tratamento — RECEBIDAS (03/07); falta só marcar capacita × só teoria','⏳ Material/aula gravada dos dois tripés (sistêmico e local)', '📅 Pasta de depoimentos — não crítica pro método; importante depois, na criação dos materiais de marketing']},
-  {categoria: '01 · Pessoal e Expert', itens: ['Trajetória profissional resumida', 'Fotos profissionais (retrato, consultório, casual)', 'Bio curta e longa', 'Lista de credenciais e títulos', 'Vídeos seus falando do assunto (2-3 amostras)', 'Histórias marcantes de casos clínicos']},
-  {categoria: '02 · Produto Atual', itens: ['Material da parceria atual do curso DTM (ementa, apresentações, vídeos)', 'Depoimentos de alunos do curso atual', 'Histórico de vendas (alunos, ticket, conversão)', 'Material da pós-graduação para calibrar limites', 'Tabela de preços e produtos atuais']},
-  {categoria: '03 · Pesquisa e Mercado', itens: ['Pesquisas com alunos anteriores', 'Dados de mercado que conhece', 'Conhecimento sobre concorrentes em DTM', 'Objeções recorrentes', 'Linguagem do público (prints de WhatsApp/comentários)']},
-  {categoria: '04 · Público e Leads', itens: ['Lista quente exportada (CSV)', 'Segmentação da lista', 'Histórico de campanhas (se houver)', 'Acessos às ferramentas onde a lista está']},
-  {categoria: '05 · Identidade Visual', itens: ['Logo do "Curso DTM" atual', 'Paleta de cores e tipografia atuais', 'Manual de marca (se existir)', 'Referências visuais que gosta (5-10 perfis/sites)', 'Anti-referências']},
-  {categoria: '06 · Conteúdo e Instagram', itens: ['Acesso de leitura ao @rodrigowendeldtm', 'Acesso ao @cursodtm parado', 'Stories antigos salvos', 'Reels e posts que mais performaram', 'Contatos da agência atual', 'Conteúdo educacional avulso']},
-  {categoria: '07 · Técnico e Acessos', itens: ['Domínio (se possui)', 'Hospedagem atual', 'CRM atual', 'Conta Meta Ads e Google Ads', 'E-mail profissional', 'WhatsApp Business', 'Calendário (Google ou outro)']},
-];
+/* ─────────────────────── ACOMPANHAMENTO ───────────────────────
+   Lógica: item recebido/aprovado NUNCA fica em "pendente" — vai pro
+   histórico. Pendências do Rodrigo têm checkbox com persistência local. */
 
-const VALIDACOES = [
-  {item: 'Proposta comercial', status: 'aprovado', data: '22/06/2026'},
-  {item: 'Contrato', status: 'aprovado', data: '22/06/2026'},
-  {item: 'Pagamento (12x R$ 1.447 Assiny)', status: 'aprovado', data: '22/06/2026'},
-  {item: 'Marco 01 · Conversa de Levantamento', status: 'aprovado', data: '02/07/2026 · call de 2h16'},
-  {item: 'Briefing extraído e documentado (Expert · Aprendiz · Método)', status: 'aprovado', data: '02/07/2026 · via call (substituiu o formulário)'},
-  {item: 'Pesquisas expandidas (concorrência, aprendiz, certificação)', status: 'aprovado', data: '02/07/2026 · síntese no menu Documentação'},
-  {item: 'Materiais complementares enviados (lista priorizada)', status: 'aguard-material', data: 'Aguardando Rodrigo'},
-  {item: 'Pré-estrutura da proposta do produto (D5)', status: 'aguard-aprov', data: 'Publicada em 02/07 · validar com Rodrigo'},
-  {item: 'Naming: Abordagem MODAL (método) + Protocolo Escalonado de DTM (mecanismo) + ângulo da PUV', status: 'aprovado', data: '04/07/2026 · validação final com Rodrigo no Marco 02'},
-  {item: 'Jornada do método e gamificação por faixas', status: 'aprovado', data: '04/07/2026'},
-  {item: 'Marco 02 · Validação da Estratégia', status: 'planejado', data: 'Após materiais + pré-estrutura'},
-];
+const ACOMPANHAMENTO = {
+
+  // Pendente do Rodrigo — grupos com slug estável (base do id do checkbox)
+  pendente_rodrigo: [
+    {
+      slug: 'prio', grupo: 'Prioritário — destrava a produção', aberto: true,
+      itens: [
+        {t: 'Marcar "capacita na prática" × "apresenta em teoria" nas 3 escadas de tratamento', d: 'As escadas chegaram em 03/07 — falta só essa marcação. Refina 6 aulas da Etapa 2 (E22-E23, E26-E27 e E30-E32), sem redesenho da grade.'},
+        {t: 'Enviar o material/aula gravada dos dois tripés (sistêmico e local)', d: 'Fortalece o Encontro 3 — pode virar aula invertida (aluno assiste antes, o encontro vira discussão).'},
+        {t: 'Validar a estrutura do produto pelos comentários da dashboard', d: '4 pontos em aberto: divisão das etapas (4 + 4-5 + 2 meses) · faixa de investimento · formato presencial (1 obrigatório + 2 opcionais) · desenho da mentoria como continuidade.'},
+      ],
+    },
+    {
+      slug: 'marketing', grupo: 'Importante — entra na fase de materiais de venda', aberto: true,
+      itens: [
+        {t: 'Pasta de depoimentos de alunos e pacientes', d: 'Não é crítica pro método — vira insumo central dos materiais de marketing.'},
+        {t: 'Autorizações de uso dos cases de pacientes', d: 'Os 3 cases do Banco de Histórias pedem autorização pra uso público com identificação — inclui o vídeo-depoimento da paciente que peregrinou por especialistas.'},
+      ],
+    },
+    {
+      slug: 'pessoal', grupo: 'Pessoal e expert', aberto: false,
+      itens: [
+        {t: 'Trajetória profissional resumida'},
+        {t: 'Fotos profissionais (retrato, consultório, casual)'},
+        {t: 'Bio curta e longa'},
+        {t: 'Vídeos falando do assunto (2-3 amostras)'},
+      ],
+    },
+    {
+      slug: 'produto-atual', grupo: 'Produto atual', aberto: false,
+      itens: [
+        {t: 'Material da parceria atual do curso (ementa, apresentações, vídeos)'},
+        {t: 'Histórico de vendas (alunos, ticket, conversão)'},
+        {t: 'Material da pós-graduação para calibrar limites'},
+        {t: 'Tabela de preços e produtos atuais'},
+      ],
+    },
+    {
+      slug: 'mercado', grupo: 'Pesquisa e mercado', aberto: false,
+      itens: [
+        {t: 'Pesquisas com alunos anteriores'},
+        {t: 'Objeções recorrentes que ele ouve dos leads'},
+        {t: 'Linguagem do público (prints de WhatsApp/comentários)'},
+      ],
+    },
+    {
+      slug: 'leads', grupo: 'Público e leads', aberto: false,
+      itens: [
+        {t: 'Lista quente exportada (CSV) + segmentação'},
+        {t: 'Histórico de campanhas (se houver)'},
+        {t: 'Acessos às ferramentas onde a lista está'},
+      ],
+    },
+    {
+      slug: 'visual', grupo: 'Identidade visual', aberto: false,
+      itens: [
+        {t: 'Logo, paleta e tipografia atuais (manual de marca, se existir)'},
+        {t: 'Referências visuais que gosta (5-10 perfis/sites)'},
+        {t: 'Anti-referências (o que NÃO quer parecer)'},
+      ],
+    },
+    {
+      slug: 'conteudo', grupo: 'Conteúdo e Instagram', aberto: false,
+      itens: [
+        {t: 'Acesso de leitura ao @rodrigowendeldtm'},
+        {t: 'Acesso ao perfil do curso parado'},
+        {t: 'Reels e posts que mais performaram + stories antigos salvos'},
+        {t: 'Contatos da agência atual'},
+      ],
+    },
+    {
+      slug: 'tecnico', grupo: 'Técnico e acessos', aberto: false,
+      itens: [
+        {t: 'Domínio e hospedagem atuais (se possui)'},
+        {t: 'CRM atual + contas Meta Ads e Google Ads'},
+        {t: 'E-mail profissional, WhatsApp Business e calendário'},
+      ],
+    },
+  ],
+
+  // Como enviar (regra contratual)
+  regra_envio: 'Pasta única no Google Drive compartilhada com consultorianotion@gmail.com. Materiais via WhatsApp ou e-mail não contam como envio oficial (Cláusula 3.1.c) — e envios parciais não iniciam a fase de produção (Cláusula 4.4). O que não tiver, marcar "não tenho" e mandar referências.',
+
+  // Pendente da consultoria
+  pendente_consultoria: [
+    {t: 'Naming: empresa (braço educacional), formação e Instagram novo', d: 'Em pesquisa — nomes do método e do mecanismo já aprovados internamente (04/07). Apresenta no Marco 02.', status: 'em-dev'},
+    {t: 'Oferta completa: bônus, garantia, condições de fundador e preço final', d: 'Construção conjunta na Validação da Estratégia — a base já está na página Oferta.', status: 'em-dev'},
+    {t: 'Documento Mestre de Estratégia da campanha', d: 'Orienta todas as peças de execução que vêm depois.', status: 'em-dev'},
+    {t: 'Agendar a Validação da Estratégia (Marco 02)', d: 'Destravada pelo envio dos materiais prioritários do Rodrigo.', status: 'planejado'},
+  ],
+
+  // Histórico — recebidos e aprovados (com data)
+  historico: [
+    {item: 'Proposta comercial aprovada', data: '22/06/2026'},
+    {item: 'Contrato assinado + pagamento confirmado (12x R$ 1.447)', data: '22/06/2026'},
+    {item: 'Marco 01 · Conversa de Levantamento realizada (call de 2h16, transcrita e documentada)', data: '02/07/2026'},
+    {item: 'Briefing extraído e documentado (expert · cliente ideal · método) — via call, substituiu o formulário', data: '02/07/2026'},
+    {item: 'Pesquisas expandidas entregues (mercado, concorrência, aprendiz e certificação — ver página Pesquisas)', data: '02-03/07/2026'},
+    {item: 'Materiais recebidos: números de autoridade, credenciais e formação, jargões e crenças-âncora, temas da parte comercial, perfil da concorrente citada na call', data: '03/07/2026'},
+    {item: 'Materiais recebidos: conteúdos da etapa de diagnóstico + as 3 escadas de tratamento (falta só a marcação capacita × teoria)', data: '03/07/2026'},
+    {item: 'Naming aprovado pela consultoria: Abordagem MODAL (método) + Protocolo Escalonado de DTM (mecanismo) + ângulo da PUV — validação final com o Rodrigo no Marco 02', data: '04/07/2026'},
+    {item: 'Jornada do aluno e gamificação por faixas aprovadas pela consultoria', data: '04/07/2026'},
+  ],
+};
 
 const STATUS_LABELS = {
   'planejado': 'Planejado',
@@ -217,4 +300,4 @@ const STATUS_LABELS = {
   'aprovado': 'Aprovado e entregue',
 };
 
-window.DASH = { PROJETO, MARCOS, BLOCOS, MATERIAIS_PENDENTES, VALIDACOES, STATUS_LABELS };
+window.DASH = { PROJETO, MARCOS, BLOCOS, ACOMPANHAMENTO, STATUS_LABELS };

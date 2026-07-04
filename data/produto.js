@@ -1,22 +1,21 @@
 /* ═══════════════════════════════════════════════════════════════════
    DASHBOARD · DR. RODRIGO WENDEL · O SALTO
-   O PRODUTO — Formação · Grade (41 encontros) · Mentoria · Comparação ·
-   Jornada do Aluno · Gamificação por Faixas.
+   PRODUTOS — Formação (home + Oferta + Grade + Jornada + Gamificação) · Mentoria.
    Fontes: produto/plano-de-ensino-formacao.md · produto/jornada-do-aluno.md ·
-   pré-estrutura validada na dashboard (D5/D6) · call de 02/07/2026.
+   produto/gamificacao-faixas.md · call de 02/07/2026.
    Nomes de fase e de produto = PROPOSTA, a validar com Maiara + Rodrigo.
    ═══════════════════════════════════════════════════════════════════ */
 
 window.DASH_PRODUTO = {
 
-/* ─────────────────────── FORMAÇÃO (visão do produto) ─────────────────────── */
+/* ─────────────────────── FORMAÇÃO (home do produto) ─────────────────────── */
 FORMACAO: {
   html: `
-    <p class="page-lead">A visão do produto principal — o que já está desenhado, o que é hipótese de trabalho e o que a Maiara e o Rodrigo ainda decidem juntos. Nada aqui é definitivo até o Marco 02 (Validação da Estratégia).</p>
+    <p class="page-lead">A visão geral do produto principal — o que é, o formato, as 3 etapas e o que ainda se decide junto. O detalhe vive nas subpáginas logo abaixo. Nada aqui é definitivo até o Marco 02 (Validação da Estratégia).</p>
 
     <h2 class="section-title">A esteira em <span class="ei">uma linha</span></h2>
     <div class="card destaque">
-      <p style="font-family:var(--serif);font-size:18px;line-height:1.6;margin:0;">Curso gravado existente (porta de entrada — 9 aulas que "tiram do zero absoluto e dão o primeiro grau na faixa branca") → <strong>FORMAÇÃO em DTM</strong> (10 meses, o carro-chefe do lançamento) → <strong>MENTORIA</strong> (continuidade técnica + negócio, renovável) — cada degrau prepara e vende o próximo.</p>
+      <p style="font-family:var(--sans);font-size:17px;font-weight:500;line-height:1.6;margin:0;">Curso gravado existente (porta de entrada — 9 aulas que "tiram do zero absoluto e dão o primeiro grau na faixa branca") → <strong>FORMAÇÃO em DTM</strong> (10 meses, o carro-chefe do lançamento) → <strong>MENTORIA</strong> (continuidade técnica + negócio, renovável) — cada degrau prepara e vende o próximo.</p>
     </div>
     <ul class="entregas-lista">
       <li><strong>Backlog (não prometido)</strong><em>App educacional pro paciente (licenciável aos alunos) · agente de IA de anamnese com a metodologia dele · parcerias com fabricantes de equipamento na mentoria.</em></li>
@@ -43,51 +42,39 @@ FORMACAO: {
       <li><strong>Transversal · Progressão por faixas</strong><em>Analogia de jiu-jitsu (autoral do Rodrigo): cada etapa vencida = passagem de faixa, com marco visível de evolução. Ver a página Gamificação.</em></li>
     </ul>
 
-    <h2 class="section-title">Comercial: o que entra na <span class="ei">formação</span> × fica na <span class="ei">mentoria</span></h2>
-    <p>A triagem segue uma lógica só: a formação ensina a <strong>MONETIZAR</strong> a competência clínica recém-adquirida (extrair o máximo dos pacientes que já chegam); a mentoria ensina a <strong>ESCALAR</strong> (gerar mais pacientes) — o que também dá à mentoria o valor recorrente que justifica a renovação.</p>
-    <div class="card">
-      <p style="margin:0 0 8px;font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--vermelho-esc);">Na formação — comercial básico</p>
-      <ul class="entregas-lista" style="margin-top:0;">
-        <li><strong>Narrativa da primeira consulta</strong><em>Como conduzir a avaliação pra converter em tratamento — a expressão comercial da abordagem educativa (os dois tripés), inseparável do método. Núcleo da etapa 3.</em></li>
-        <li><strong>Scripts de conversão lead → avaliação</strong><em>Treinamento da secretária/recepção. Ganho rápido, agnóstico a DTM, aplicável desde o mês 1.</em></li>
-        <li><strong>Pós-venda, contrato e acompanhamento</strong><em>Fechar o ciclo do paciente e sustentar a recorrência.</em></li>
-        <li><strong>Controles essenciais</strong><em>Os números mínimos pra enxergar o próprio funil: avaliações, taxa de conversão, ticket.</em></li>
-        <li><strong>Fundamentos de posicionamento + indicação</strong><em>O canal mais barato e imediato pra quem está começando — sem depender de tráfego pago.</em></li>
-      </ul>
-      <p style="margin:16px 0 8px;font-family:var(--cond);font-size:19px;text-transform:uppercase;color:var(--cinza);">Na mentoria — comercial avançado</p>
-      <ul class="entregas-lista" style="margin-top:0;">
-        <li><strong>Máquina de captação completa</strong><em>Redes sociais, Google, tráfego pago, conteúdo e posicionamento em busca por IA — a aquisição que escala e é contínua.</em></li>
-        <li><strong>Posicionamento de marca e escala</strong><em>Autoridade digital, gestão avançada, times, novos canais.</em></li>
-      </ul>
-    </div>
-    <div class="alert">
-      <strong>Por que essa divisão:</strong> sem a narrativa de conversão (avaliação → tratamento), a competência técnica não vira receita e a promessa de ROI da formação quebra — por isso ela é inegociável na formação. Já a máquina de aquisição é o que gera renovação e valor contínuo: o coração da mentoria.
-    </div>
-
-    <h2 class="section-title">Investimento — <span class="ei">hipótese de trabalho</span></h2>
-    <div class="card">
-      <dl class="kv">
-        <dt>Faixa em estudo</dt><dd><strong>R$ 15.000 a R$ 20.000</strong> pelos 10 meses (ex.: 12x R$ 1.500-1.800)</dd>
-        <dt>Ancoragem de mercado</dt><dd>Mentoria intensiva do nicho: R$ 6-9 mil por 4 semanas · Especialização tradicional: R$ 36-60 mil por 18-30 meses · A formação ocupa o meio com um formato que nenhum player tem</dd>
-        <dt>Lógica de ROI</dt><dd>2 a 4 tratamentos de DTM (R$ 3.500-10.000 cada) pagam a formação — e a meta declarada é o aluno recuperar o investimento DENTRO do ciclo</dd>
-      </dl>
-      <p style="font-size:12px;color:var(--cinza);margin:10px 0 0;">Preço final definido na Validação da Estratégia, junto com a oferta completa (bônus, garantia, condições de fundador).</p>
-    </div>
-
-    <h2 class="section-title">Certificação e <span class="ei">linguagem de venda</span></h2>
-    <div class="card">
-      <dl class="kv">
-        <dt>Rota recomendada</dt><dd><strong>Curso livre</strong> com certificado de conclusão e carga horária — a autoridade real é quem assina: o formador de ~10% dos especialistas do país</dd>
-        <dt>Cuidado jurídico</dt><dd>Não pode chamar de "especialização" nem prometer título — a linguagem de venda será validada juridicamente antes da campanha</dd>
-        <dt>Reavaliação</dt><dd>Parceria com instituição de ensino reavaliada na v2 (detalhes das rotas na página Pesquisas)</dd>
-      </dl>
+    <h2 class="section-title">As subpáginas do produto — <span class="ei">navegue</span></h2>
+    <div class="gal-grid">
+      <a class="gal-card" href="#prod-oferta">
+        <div class="gal-cat">Formação · 01</div>
+        <h3>Oferta</h3>
+        <p>O documento de oferta completo: promessa, público, entregáveis, investimento — e o que ainda se define junto.</p>
+        <div class="gal-tags"><span class="gal-pill">documento navegável</span><span class="gal-more">abrir →</span></div>
+      </a>
+      <a class="gal-card" href="#prod-grade">
+        <div class="gal-cat">Formação · 02</div>
+        <h3>Grade · 41 Encontros</h3>
+        <p>Aula a aula, com a essência, o output verificável e o formato de cada encontro — em 3 etapas colapsáveis.</p>
+        <div class="gal-tags"><span class="gal-pill">rascunho pra validar</span><span class="gal-more">abrir →</span></div>
+      </a>
+      <a class="gal-card" href="#prod-jornada">
+        <div class="gal-cat">Formação · 03</div>
+        <h3>Jornada do Aluno</h3>
+        <p>A linha do tempo de transformação: 3 fases + onboarding + formatura, com riscos de evasão e antídotos.</p>
+        <div class="gal-tags"><span class="gal-pill">nomes em proposta</span><span class="gal-more">abrir →</span></div>
+      </a>
+      <a class="gal-card" href="#prod-gamificacao">
+        <div class="gal-cat">Formação · 04</div>
+        <h3>Gamificação · Faixas</h3>
+        <p>O sistema de faixas de jiu-jitsu amarrado aos gates técnicos reais — mecânicas, cerimônias e regras.</p>
+        <div class="gal-tags"><span class="gal-pill">aprovado pela consultoria</span><span class="gal-more">abrir →</span></div>
+      </a>
     </div>
 
     <div class="alert decisao">
-      <strong>🟥 Decisões em aberto — Maiara + Rodrigo definem juntos (workspace de decisão · Marco 02):</strong>
+      <strong>🟥 Decisões em aberto — Maiara + Rodrigo definem juntos (Marco 02):</strong>
       <ul>
-        <li><strong>Nome</strong> — da empresa (braço educacional), da formação e do Instagram novo. Propostas de nome do método na página O Método &amp; Frameworks.</li>
-        <li><strong>Ticket final</strong> — dentro (ou fora) da faixa de R$ 15-20 mil em estudo.</li>
+        <li><strong>Nome</strong> — da empresa (braço educacional), da formação e do Instagram novo. Propostas de nome do método na página Método e Frameworks.</li>
+        <li><strong>Ticket final</strong> — dentro (ou fora) da faixa de R$ 15-20 mil em estudo (detalhe na página Oferta).</li>
         <li><strong>Bônus e garantia</strong> — a oferta completa, incluindo condições de fundador.</li>
         <li><strong>Confirmação do "sem 1:1" na formação</strong> — direção da call, a ratificar.</li>
       </ul>
@@ -96,11 +83,112 @@ FORMACAO: {
 
     <h2 class="section-title">O que falta pra fechar <span class="ei">(insumos)</span></h2>
     <ul class="entregas-lista">
-      <li><strong>Do Rodrigo</strong><em>Marcação capacita × só-teoria nas 3 escadas + material gravado dos dois tripés → refinam 6 aulas da Etapa 2 e o Encontro 3 (ajuste local, sem redesenho).</em></li>
-      <li><strong>Da Inception</strong><em>Naming (empresa, formação, Instagram) + oferta completa (bônus, garantia) + Documento Mestre de Estratégia → apresentados na Validação da Estratégia (Marco 02).</em></li>
+      <li><strong>Do Rodrigo</strong><em>Marcação capacita × só-teoria nas 3 escadas + material gravado dos dois tripés → refinam 6 aulas da Etapa 2 e o Encontro 3 (ajuste local, sem redesenho). Checklist completo na página Acompanhamento.</em></li>
+      <li><strong>Da consultoria</strong><em>Naming (empresa, formação, Instagram) + oferta completa (bônus, garantia) + Documento Mestre de Estratégia → apresentados na Validação da Estratégia (Marco 02).</em></li>
     </ul>
     <div class="alert amarelo">
       <strong>Pra validar nesta página (comentários abaixo):</strong> 1) a divisão 4 + 4-5 + 2 meses das etapas · 2) a faixa de investimento · 3) o formato presencial (1 obrigatório + 2 opcionais) · 4) o desenho da mentoria como continuação técnica + negócio.
+    </div>
+  `,
+},
+
+/* ─────────────────────── OFERTA (documento de oferta) ─────────────────────── */
+OFERTA: {
+  html: `
+    <p class="page-lead">O documento de oferta da formação, seção por seção — o que já está definido com base na pesquisa e na call, e o que se decide junto na Validação da Estratégia. Os campos marcados em vermelho são espaço de decisão, não lacuna esquecida.</p>
+
+    <div class="sec-index">
+      <button onclick="document.getElementById('of-promessa').scrollIntoView({behavior:'smooth'})">Promessa</button>
+      <button onclick="document.getElementById('of-publico').scrollIntoView({behavior:'smooth'})">Público</button>
+      <button onclick="document.getElementById('of-entregaveis').scrollIntoView({behavior:'smooth'})">Entregáveis</button>
+      <button onclick="document.getElementById('of-formato').scrollIntoView({behavior:'smooth'})">Formato</button>
+      <button onclick="document.getElementById('of-investimento').scrollIntoView({behavior:'smooth'})">Investimento</button>
+      <button onclick="document.getElementById('of-garantia').scrollIntoView({behavior:'smooth'})">Garantia e bônus</button>
+      <button onclick="document.getElementById('of-condicoes').scrollIntoView({behavior:'smooth'})">Condições</button>
+      <button onclick="document.getElementById('of-certificacao').scrollIntoView({behavior:'smooth'})">Certificação</button>
+    </div>
+
+    <h2 class="section-title" id="of-promessa">Promessa <span class="ei">central</span></h2>
+    <div class="card destaque">
+      <p style="font-family:var(--sans);font-size:18px;font-weight:500;line-height:1.55;margin:0 0 10px;">Formo dentistas capazes de diagnosticar, tratar e lucrar com DTM — com individualização de cada caso, e não com uma única técnica.</p>
+      <p style="margin:0;font-size:13.5px;">A promessa de retorno que sustenta a venda: <strong>o aluno recupera o investimento dentro do próprio ciclo da formação</strong> — "a formação sai de graça". A conta é direta: 2 a 4 tratamentos de DTM (R$ 3.500-10.000 cada) pagam o programa, e os ganhos rápidos comerciais começam no mês 1.</p>
+    </div>
+    <div class="card">
+      <dl class="kv">
+        <dt>Nome da formação</dt><dd><span class="definir">🟥 definir juntos (consultora + Rodrigo)</span> &nbsp;<em style="font-size:12px;color:var(--cinza);">naming em pesquisa — o método (Abordagem MODAL) e o mecanismo (Protocolo Escalonado de DTM) já têm nome aprovado pela consultoria</em></dd>
+        <dt>Mecanismo</dt><dd>A Abordagem MODAL — o raciocínio clínico completo, do diagnóstico protocolar ao arsenal multimodal de tratamento, com a camada comercial que os cursos acadêmicos não ensinam</dd>
+      </dl>
+    </div>
+
+    <h2 class="section-title" id="of-publico">Pra <span class="ei">quem é</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Público</dt><dd>Dentista clínico geral que não domina DTM — "não sabe que não sabe", confunde DTM com bruxismo</dd>
+        <dt>Momento de carreira</dt><dd>3 a 10+ anos de formado, consultório próprio ou cadeira alugada, sentindo o teto de renda do convênio (hipótese da pesquisa, a validar com as turmas anteriores)</dd>
+        <dt>Pra quem NÃO é</dt><dd>O especialista já formado — esse é público da mentoria, não da formação</dd>
+      </dl>
+    </div>
+
+    <h2 class="section-title" id="of-entregaveis">O que o aluno <span class="ei">recebe</span></h2>
+    <ul class="entregas-lista">
+      <li><strong>41 encontros semanais ao vivo, em grupo</strong><em>10 meses em 3 etapas: Diagnóstico → Tratamento → Comercial (grade completa aula a aula na página Grade).</em></li>
+      <li><strong>1 imersão presencial de palpação em Brasília (2-3 dias)</strong><em>Obrigatória, na Etapa 1 — a habilidade manual validada ao vivo pelo Rodrigo. Até 2 encontros presenciais opcionais adicionais.</em></li>
+      <li><strong>7 estudos de caso com correção individual</strong><em>3 deles são os gates de passagem de faixa — o aluno prova que aprendeu fazendo, não assistindo.</em></li>
+      <li><strong>Sistema de progressão por faixas</strong><em>Cerimônias de passagem + certificado nominal a cada faixa (detalhe na página Gamificação).</em></li>
+      <li><strong>Os instrumentos do método</strong><em>Ficha de 40 perguntas como template replicável, fluxograma das 3 escadas, checklists de exame e reavaliação, planilha de controles do funil, scripts de recepção e fechamento — os 11 instrumentos listados na página Método e Frameworks.</em></li>
+      <li><strong>Comunidade da turma</strong><em>Turma fechada com início conjunto — a dúvida de um vira aprendizado de todos.</em></li>
+      <li><strong>Certificado de conclusão com carga horária</strong><em>Assinado por quem formou ~10% dos especialistas em DTM do país.</em></li>
+    </ul>
+
+    <h2 class="section-title" id="of-formato">Formato e <span class="ei">escopo comercial</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Cadência</dt><dd>1 encontro semanal ao vivo (online) + estudo de caso mensal</dd>
+        <dt>Duração</dt><dd>10 meses · turma fechada com início conjunto</dd>
+        <dt>1:1</dt><dd>Não há — o individual é diferencial da mentoria <em>(direção da call, a ratificar no Marco 02)</em></dd>
+        <dt>Comercial incluído</dt><dd>O BÁSICO que monetiza: narrativa da primeira consulta, scripts de recepção, pós-venda, controles do funil, captação por indicação</dd>
+        <dt>Fica na mentoria</dt><dd>O AVANÇADO que escala: máquina de captação completa (tráfego, conteúdo, busca por IA), procedimentos de alta complexidade na prática</dd>
+      </dl>
+      <p style="font-size:12.5px;color:var(--cinza);margin:10px 0 0;">A lógica da divisão: sem a narrativa de conversão, a competência técnica não vira receita e a promessa de ROI quebra — por isso o comercial básico é inegociável aqui. A máquina de aquisição é o valor recorrente que justifica a mentoria.</p>
+    </div>
+
+    <h2 class="section-title" id="of-investimento">Investimento — <span class="ei">hipótese de trabalho</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Faixa em estudo</dt><dd><strong>R$ 15.000 a R$ 20.000</strong> pelos 10 meses (ex.: 12x R$ 1.500-1.800)</dd>
+        <dt>Ancoragem de mercado</dt><dd>Mentoria intensiva do nicho: R$ 6-9 mil por 4 semanas (R$ 375-563/hora ao vivo) · Especialização tradicional: R$ 36-60 mil por 18-30 meses · A formação ocupa o meio com um formato que nenhum player tem</dd>
+        <dt>Lógica de ROI</dt><dd>2 a 4 tratamentos de DTM pagam a formação — e a meta declarada é recuperar o investimento DENTRO do ciclo</dd>
+        <dt>Preço final</dt><dd><span class="definir">🟥 definir juntos (consultora + Rodrigo)</span> &nbsp;<em style="font-size:12px;color:var(--cinza);">na Validação da Estratégia, junto com a oferta completa</em></dd>
+      </dl>
+    </div>
+
+    <h2 class="section-title" id="of-garantia">Garantia e <span class="ei">bônus</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Garantia</dt><dd><span class="definir">🟥 definir juntos (consultora + Rodrigo)</span> &nbsp;<em style="font-size:12px;color:var(--cinza);">modelo e prazo a desenhar na oferta completa — Marco 02</em></dd>
+        <dt>Bônus</dt><dd><span class="definir">🟥 definir juntos (consultora + Rodrigo)</span> &nbsp;<em style="font-size:12px;color:var(--cinza);">candidatos naturais já existem no ecossistema (curso gravado de entrada, instrumentos, materiais de consultório) — a seleção é decisão de oferta</em></dd>
+      </dl>
+    </div>
+
+    <h2 class="section-title" id="of-condicoes">Condições de <span class="ei">lançamento</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Turma 1</dt><dd>Fechada, com início conjunto — a coesão do grupo é parte do produto</dd>
+        <dt>Condição de fundador</dt><dd><span class="definir">🟥 definir juntos (consultora + Rodrigo)</span> &nbsp;<em style="font-size:12px;color:var(--cinza);">preço/vantagem da primeira turma — decisão de oferta no Marco 02</em></dd>
+      </dl>
+    </div>
+
+    <h2 class="section-title" id="of-certificacao">Certificação e <span class="ei">linguagem de venda</span></h2>
+    <div class="card">
+      <dl class="kv">
+        <dt>Rota recomendada</dt><dd><strong>Curso livre</strong> com certificado de conclusão e carga horária — a autoridade real é quem assina, não o selo (mapeamento completo na página Pesquisas)</dd>
+        <dt>Cuidado jurídico</dt><dd>Não pode chamar de "especialização" nem prometer título — a linguagem de venda será validada juridicamente antes da campanha</dd>
+        <dt>Reavaliação</dt><dd>Parceria com instituição de ensino fica pra uma fase 2 — é outro produto, não um upgrade deste</dd>
+      </dl>
+    </div>
+
+    <div class="alert amarelo">
+      <strong>Como este documento evolui:</strong> os campos em vermelho são fechados na Validação da Estratégia (Marco 02) e atualizados aqui. Use os comentários abaixo pra registrar posição sobre qualquer seção.
     </div>
   `,
 },
@@ -194,16 +282,16 @@ GRADE_TRANSVERSAIS: [
 /* ─────────────────────── MENTORIA ─────────────────────── */
 MENTORIA: {
   html: `
+    <p class="page-lead">O segundo produto da esteira — a continuidade de quem terminou a formação e dos ex-alunos especialistas. Desenho enxuto de propósito: a oferta completa será construída com dados reais, não com suposição.</p>
+
     <div class="alert amarelo">
-      <strong>Desenho preliminar — decidir juntos.</strong> A mentoria será montada e vendida ~6 meses após o lançamento da formação, validada primeiro com a base de ex-alunos. Tudo nesta página é direção de trabalho, não produto fechado.
+      <strong>Desenho preliminar — decidir juntos.</strong> Tudo nesta página é direção de trabalho, não produto fechado.
     </div>
 
-    <h2 class="section-title">Pra <span class="ei">quem</span></h2>
+    <h2 class="section-title">Escopo <span class="ei">macro</span></h2>
     <div class="card">
-      <p style="margin:0;"><strong>Duas portas de entrada:</strong> os ~120 ex-alunos especialistas (base quente, formados nas 8 turmas de especialização) + os egressos da formação, que chegam via pitch natural da Etapa 3 — quando a turma 1 concluir, a mentoria já roda pra recebê-la.</p>
+      <p style="margin:0 0 10px;"><strong>Duas portas de entrada:</strong> os ~120 ex-alunos especialistas (base quente, formados nas 8 turmas de especialização) + os egressos da formação, que chegam via pitch natural da Etapa 3 — quando a turma 1 concluir, a mentoria já roda pra recebê-la.</p>
     </div>
-
-    <h2 class="section-title">O que <span class="ei">só ela tem</span></h2>
     <ul class="entregas-lista">
       <li><strong>Discussão de casos complexos</strong><em>1:1 e em grupo — o individual que a formação deliberadamente não tem, porque é aqui que o aluno tem caso real na mão.</em></li>
       <li><strong>Procedimentos avançados na prática</strong><em>Artrocentese, agregados plaquetários guiados por ultrassom — o que a formação só apresenta em teoria.</em></li>
@@ -212,14 +300,20 @@ MENTORIA: {
       <li><strong>Parcerias com fabricantes de equipamento</strong><em>Condições exclusivas pros mentorados (backlog, não prometido).</em></li>
     </ul>
 
-    <h2 class="section-title">Natureza e <span class="ei">timeline</span></h2>
+    <h2 class="section-title">Formato sugerido e <span class="ei">ticket</span></h2>
     <div class="card">
       <dl class="kv">
         <dt>Natureza</dt><dd><strong>Ambiente de continuidade e renovação</strong> — não "curso que acaba". O aluno fica pelo acesso, pela comunidade e pela fronteira do conhecimento</dd>
-        <dt>Timeline</dt><dd>Montada e vendida <strong>~6 meses após o lançamento da formação</strong>, validada primeiro com a base de ex-alunos (condição de fundador)</dd>
+        <dt>Formato sugerido</dt><dd>Encontros de discussão de casos reais (em grupo) + sessões individuais quando o mentorado tem caso na mão + módulos de comercial avançado — cadência exata a definir com os dados da formação</dd>
         <dt>Hipótese de investimento</dt><dd><strong>~R$ 25 mil/ano</strong> (≈ R$ 2 mil/mês) — a calibrar após a validação com a base</dd>
         <dt>O que justifica renovar</dt><dd>Acesso contínuo a casos, atualizações, comunidade e à máquina comercial que escala — o valor recorrente mora aqui</dd>
       </dl>
+    </div>
+
+    <h2 class="section-title">Quando abrir — a recomendação <span class="ei">da consultoria</span></h2>
+    <div class="card destaque">
+      <p style="margin:0 0 10px;"><strong>Abrir a mentoria 6 a 8 meses após o início da formação</strong> — não junto com o lançamento. Até lá, o Rodrigo usa a própria turma como laboratório de demanda: coleta o que os alunos pedem nos temas exclusivos da mentoria (casos complexos que aparecem nas correções, procedimentos avançados que despertam interesse, perguntas de comercial que passam do básico).</p>
+      <p style="margin:0;">O resultado é uma oferta construída com dados reais, e não com suposição — quando a turma 1 se aproximar da formatura, a mentoria abre com o desenho calibrado pelo que a base realmente demandou, e ainda recebe os ex-alunos especialistas na condição de fundador.</p>
     </div>
 
     <div class="alert">
@@ -238,7 +332,7 @@ COMPARACAO: [
   { c: 'Conteúdo comercial', f: 'Básico — converter avaliação, captar por indicação, controlar os números', m: 'Avançado — máquina de captação, tráfego, escala, busca por IA' },
   { c: '1:1', f: 'Não há (direção da call, a confirmar)', m: 'Sim — discussão individual de casos reais' },
   { c: 'Ticket (hipótese)', f: 'R$ 15-20 mil pelos 10 meses', m: '~R$ 25 mil/ano' },
-  { c: 'Quando o aluno entra', f: 'No lançamento (turma 1)', m: '~6 meses após o lançamento da formação' },
+  { c: 'Quando o aluno entra', f: 'No lançamento (turma 1)', m: '6 a 8 meses após o início da formação' },
   { c: 'O que justifica renovar', f: '— (produto com fim: formatura)', m: 'Acesso contínuo à fronteira, comunidade, atualizações e parcerias' },
 ],
 

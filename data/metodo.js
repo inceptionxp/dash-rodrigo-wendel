@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════════
    DASHBOARD · DR. RODRIGO WENDEL · O SALTO
-   O MÉTODO · Cliente Ideal, Diferenciais e Autoridade, Histórias, Frameworks
+   EXTRAÇÃO DA CONSULTORIA · Cliente Ideal, Diferenciais e Autoridade, Histórias, Frameworks
    Fontes: briefing/dna/dna-aprendiz.md · briefing/dna/banco-de-historias.md ·
    briefing/dna/frameworks-metodo.md · call de levantamento (02/07/2026).
    Regra da dashboard pública: concorrentes anonimizados · nomes de método,
@@ -9,7 +9,7 @@
 
 window.DASH_METODO = {
 
-/* ─────────────────────── CAMADA 01 · O APRENDIZ ─────────────────────── */
+/* ─────────────────────── 01 · CLIENTE IDEAL ─────────────────────── */
 APRENDIZ: {
   html: `
     <p class="page-lead">Quem é o dentista que a formação vai transformar — o estudo completo do cliente ideal em 7 blocos, com o grau de confiança de cada dado sempre à vista. Fontes: 4 pesquisas dedicadas + call de levantamento de 02/07.</p>
@@ -94,7 +94,7 @@ SOM  = ecossistema próprio (6.800 seguidores + 300+ alunos formados
     </ul>
     <div class="tbl-wrap">
       <table class="tbl">
-        <thead><tr><th>Camada</th><th>Frase típica (declarada)</th><th>O que está por trás (real)</th></tr></thead>
+        <thead><tr><th>Nível</th><th>Frase típica (declarada)</th><th>O que está por trás (real)</th></tr></thead>
         <tbody>
           <tr><td>Declarado</td><td>"Quero aprender a tratar DTM"</td><td><strong>Quero parar de me sentir incompetente quando esse paciente senta na cadeira</strong></td></tr>
           <tr><td>Declarado</td><td>"Quero um diferencial"</td><td><strong>Quero deixar de ser só mais um dentista de convênio — ser procurado, não substituível</strong></td></tr>
@@ -157,7 +157,7 @@ SOM  = ecossistema próprio (6.800 seguidores + 300+ alunos formados
     <p style="font-size:12.5px;color:var(--cinza);">🔴 4 perguntas de detecção pros primeiros leads: (1) já ouviu falar em DTM antes de conhecer o Rodrigo? (2) sabia que bruxismo e DTM são coisas diferentes? (3) já tentou algum curso sobre isso? (4) o que te fez procurar essa formação?</p>
 
     <h2 class="section-title">7 · Habilidades <span class="ei">digitais</span></h2>
-    <p>A lacuna mais aberta da camada — nenhuma das 4 fontes traz dado direto sobre o conforto digital do dentista clínico geral. Hipótese de trabalho: conforto <strong>intermediário</strong> 🔴.</p>
+    <p>A lacuna mais aberta deste estudo — nenhuma das 4 fontes traz dado direto sobre o conforto digital do dentista clínico geral. Hipótese de trabalho: conforto <strong>intermediário</strong> 🔴.</p>
     <div class="tbl-wrap">
       <table class="tbl">
         <thead><tr><th>Plataforma</th><th>Nível de uso (hipótese)</th><th>Evidência indireta</th><th>Confiança</th></tr></thead>
@@ -177,7 +177,7 @@ SOM  = ecossistema próprio (6.800 seguidores + 300+ alunos formados
       <li><strong>O que perguntar ao Rodrigo e a ex-alunos</strong><em>Onde as turmas anteriores travavam com ferramenta; se "como funciona a plataforma" já foi barreira; resistência a componentes remotos; faixa etária real das turmas.</em></li>
     </ul>
 
-    <h2 class="section-title">Leitura do agente — o que isso muda <span class="ei">nas próximas camadas</span></h2>
+    <h2 class="section-title">Leitura da consultoria — o que isso muda <span class="ei">nas próximas etapas</span></h2>
     <ul class="entregas-lista">
       <li><strong>ICP</strong><em>Confirmar com o Rodrigo o recorte etário/tempo-de-carreira antes de fechar a régua de conteúdo da Etapa 1.</em></li>
       <li><strong>Dor a atacar</strong><em>A confusão bruxismo × DTM é dado Tier 1 — gancho mais forte que qualquer apelo de ticket ou ROI.</em></li>
@@ -188,14 +188,14 @@ SOM  = ecossistema próprio (6.800 seguidores + 300+ alunos formados
   `,
 },
 
-/* ─────────────────────── CAMADA 02 · O EXPERT ─────────────────────── */
+/* ─────────────────────── 02 · DIFERENCIAIS E AUTORIDADE ─────────────────────── */
 EXPERT: {
   html: `
     <p class="page-lead">A base de autoridade de toda a comunicação — quem é o Rodrigo nesse mercado. Extraído da Conversa de Levantamento de 02/07/2026. As histórias completas dele viram galeria própria no <a href="#met-historias" style="color:var(--vermelho);font-weight:600;">Banco de Histórias</a>.</p>
 
     <h2 class="section-title">Posicionamento em <span class="ei">uma frase</span></h2>
     <div class="card destaque">
-      <p style="font-family:var(--serif);font-size:19px;line-height:1.5;margin:0;">O único formador de DTM que une <strong>expertise clínica real</strong> (milhares de pacientes atendidos), <strong>base científica</strong> (mestrado, literatura, protocolos validados) e <strong>visão de negócio comprovada</strong> (R$ 1 milhão/ano em consultório próprio) — ensinando o raciocínio clínico completo, não uma técnica da moda.</p>
+      <p style="font-family:var(--sans);font-size:18px;font-weight:500;line-height:1.55;margin:0;">O único formador de DTM que une <strong>expertise clínica real</strong> (milhares de pacientes atendidos), <strong>base científica</strong> (mestrado, literatura, protocolos validados) e <strong>visão de negócio comprovada</strong> (R$ 1 milhão/ano em consultório próprio) — ensinando o raciocínio clínico completo, não uma técnica da moda.</p>
     </div>
 
     <h2 class="section-title">Linha do <span class="ei">tempo</span></h2>
@@ -243,7 +243,7 @@ EXPERT: {
       <li><strong>"Risco-benefício"</strong><em>Ele corrige de propósito o "custo-benefício" — a decisão clínica é sobre risco.</em></li>
       <li><strong>"Tem onda que é marola e tem onda que é tsunami"</strong><em>Sobre modas do mercado que arrastam tudo sem ciência.</em></li>
       <li><strong>"Enxugando gelo"</strong><em>Tratar o local sem resolver o sistêmico.</em></li>
-      <li><strong>"Ciência aliada à prática clínica"</strong><em>Frase histórica do curso dele — candidata a evoluir com a camada de negócio.</em></li>
+      <li><strong>"Ciência aliada à prática clínica"</strong><em>Frase histórica do curso dele — candidata a evoluir com a frente de negócio.</em></li>
       <li><strong>"Educação em dor"</strong><em>Fundamento IASP (Associação Internacional de Estudos da Dor) da abordagem educativa.</em></li>
       <li><strong>Tom geral</strong><em>Científico mas coloquial; didático por analogias do cotidiano (Batman, martelo, guarda-chuva, faixas de jiu-jitsu); opinião forte contra picaretagem; riso fácil.</em></li>
     </ul>
@@ -504,7 +504,7 @@ HISTORIAS: [
   },
 ],
 
-/* ─────────────────────── CAMADA 03 · O MÉTODO ─────────────────────── */
+/* ─────────────────────── 04 · MÉTODO E FRAMEWORKS ─────────────────────── */
 
 NOME_METODO: {
   aviso: 'Decisão da consultoria em 04/07: o método se chama ABORDAGEM MODAL, e o mecanismo central de tratamento se chama PROTOCOLO ESCALONADO DE DTM. Validação final com o Rodrigo na Validação da Estratégia (Marco 02). Nomes dos demais frameworks seguem como proposta. Trava de território mantida: nenhum nome ancora em "diagnóstico + individualização" (ocupado por concorrente) — o território daqui é o rigor protocolar, o arsenal multimodal de tratamento e a jornada completa diagnóstico → tratamento → negócio.',
