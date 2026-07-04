@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════
    DASHBOARD · DR. RODRIGO WENDEL · O SALTO
    Roteamento, renderização, galerias e modais.
-   v2 — reorganização: O Método (The Path) + O Produto.
+   v2 — reorganização: O Método + O Produto.
    ═══════════════════════════════════════════════════════════════════ */
 
 (function() {
@@ -246,12 +246,12 @@
         `).join('')}
       </div>
 
-      <h2 class="section-title">O Método — <span class="ei">The Path</span></h2>
+      <h2 class="section-title">O <span class="ei">Método</span></h2>
       <div class="blocos-grid">
-        <a class="bloco-resumo" href="#met-aprendiz"><div class="bloco-resumo-n">01</div><div class="bloco-resumo-titulo">O Aprendiz<small>ICP, mercado, dores, desejos, rotina e habilidades — os 7 outputs</small></div></a>
-        <a class="bloco-resumo" href="#met-expert"><div class="bloco-resumo-n">02</div><div class="bloco-resumo-titulo">O Expert<small>Posicionamento, trajetória, números, voz e bandeiras</small></div></a>
+        <a class="bloco-resumo" href="#met-aprendiz"><div class="bloco-resumo-n">01</div><div class="bloco-resumo-titulo">Cliente Ideal<small>Perfil, mercado, dores, desejos, rotina e habilidades — o estudo completo</small></div></a>
+        <a class="bloco-resumo" href="#met-expert"><div class="bloco-resumo-n">02</div><div class="bloco-resumo-titulo">Diferenciais e Autoridade<small>Posicionamento, trajetória, números, voz e bandeiras</small></div></a>
         <a class="bloco-resumo" href="#met-historias"><div class="bloco-resumo-n">03</div><div class="bloco-resumo-titulo">Banco de Histórias<small>${(M.HISTORIAS || []).length} histórias reais estruturadas — galeria com narrativa completa</small></div></a>
-        <a class="bloco-resumo" href="#met-metodo"><div class="bloco-resumo-n">04</div><div class="bloco-resumo-titulo">O Método &amp; Frameworks<small>Abordagem MODAL · PUV, jornada, ${(M.FRAMEWORKS || []).length} frameworks e ${(M.INSTRUMENTOS || []).length} instrumentos</small></div></a>
+        <a class="bloco-resumo" href="#met-metodo"><div class="bloco-resumo-n">04</div><div class="bloco-resumo-titulo">Método e Frameworks<small>Abordagem MODAL · PUV, jornada, ${(M.FRAMEWORKS || []).length} frameworks e ${(M.INSTRUMENTOS || []).length} instrumentos</small></div></a>
       </div>
 
       <h2 class="section-title">O <span class="ei">Produto</span></h2>
@@ -369,17 +369,17 @@
     /* ═══════════════ O MÉTODO — THE PATH ═══════════════ */
 
     'met-aprendiz': () => `
-      ${hero('O Método — The Path · Camada 01', '01', 'O <span class="ei">Aprendiz</span>')}
+      ${hero('O Método · 01', '01', 'Cliente <span class="ei">Ideal</span>')}
       ${M.APRENDIZ ? M.APRENDIZ.html : ''}
     `,
 
     'met-expert': () => `
-      ${hero('O Método — The Path · Camada 02', '02', 'O <span class="ei">Expert</span>')}
+      ${hero('O Método · 02', '02', 'Diferenciais e <span class="ei">Autoridade</span>')}
       ${M.EXPERT ? M.EXPERT.html : ''}
     `,
 
     'met-historias': () => `
-      ${hero('O Método — The Path · Camada 02', '03', 'Banco de <span class="ei">Histórias</span>', 'As ' + (M.HISTORIAS || []).length + ' histórias reais do Rodrigo, estruturadas pra virar aula, copy e conteúdo. Clique em qualquer card pra abrir a narrativa completa, a versão curta pronta pra copy e o status de autorização. Todas as falas entre aspas são literais da call — nada foi parafraseado.')}
+      ${hero('O Método · 03', '03', 'Banco de <span class="ei">Histórias</span>', 'As ' + (M.HISTORIAS || []).length + ' histórias reais do Rodrigo, estruturadas pra virar aula, copy e conteúdo. Clique em qualquer card pra abrir a narrativa completa, a versão curta pronta pra copy e o status de autorização. Todas as falas entre aspas são literais da call — nada foi parafraseado.')}
 
       <div class="gal-bar">
         ${(M.HISTORIAS_CATS || []).map(c => `<button class="gal-btn${c.id === 'todas' ? ' active' : ''}" data-cat="${c.id}" onclick="filterStories('${c.id}')">${c.label}</button>`).join('')}
@@ -393,7 +393,7 @@
     `,
 
     'met-metodo': () => `
-      ${hero('O Método — The Path · Camada 03', '04', 'O Método &amp; <span class="ei">Frameworks</span>')}
+      ${hero('O Método · 04', '04', 'Método e <span class="ei">Frameworks</span>')}
 
       <div class="alert decisao">
         <strong>Status de naming:</strong> ${M.NOME_METODO ? M.NOME_METODO.aviso : ''}
@@ -442,9 +442,15 @@
         ${(M.PRINCIPIOS || []).map(p => `<li><strong>${p.nome}</strong><em>${p.desc}</em></li>`).join('')}
       </ul>
       ${M.TRANSVERSAIS ? `
-      <div class="card">
-        <h3 class="card-title">${M.TRANSVERSAIS.titulo}</h3>
-        <p style="margin:0;">${M.TRANSVERSAIS.texto}</p>
+      <h2 class="section-title">Princípios <span class="ei">transversais</span></h2>
+      <p class="page-lead" style="font-size:15px;">${M.TRANSVERSAIS.intro}</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px;">
+        ${(M.TRANSVERSAIS.itens || []).map(t => `
+          <div class="card" style="margin:0;">
+            <div class="modal-tags" style="margin-bottom:8px;"><span class="modal-tag vermelho">${t.tag}</span></div>
+            <h3 class="card-title" style="margin-bottom:12px;">${t.nome}</h3>
+            ${t.pontos.map(p => `<p style="margin:0 0 12px;font-size:14px;line-height:1.55;"><strong style="display:block;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--vermelho);margin-bottom:3px;">${p.k}</strong>${p.v}</p>`).join('')}
+          </div>`).join('')}
       </div>` : ''}
 
       <h2 class="section-title">Jornada do <span class="ei">método</span></h2>

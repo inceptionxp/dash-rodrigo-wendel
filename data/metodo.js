@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════════
    DASHBOARD · DR. RODRIGO WENDEL · O SALTO
-   O MÉTODO — The Path · Camadas 01 (Aprendiz), 02 (Expert) e 03 (Método)
+   O MÉTODO · Cliente Ideal, Diferenciais e Autoridade, Histórias, Frameworks
    Fontes: briefing/dna/dna-aprendiz.md · briefing/dna/banco-de-historias.md ·
    briefing/dna/frameworks-metodo.md · call de levantamento (02/07/2026).
    Regra da dashboard pública: concorrentes anonimizados · nomes de método,
@@ -12,7 +12,7 @@ window.DASH_METODO = {
 /* ─────────────────────── CAMADA 01 · O APRENDIZ ─────────────────────── */
 APRENDIZ: {
   html: `
-    <p class="page-lead">Quem é o dentista que a formação vai transformar — os 7 outputs da Camada 01 do The Path, com o grau de confiança de cada dado sempre à vista. Fontes: 4 pesquisas dedicadas + call de levantamento de 02/07.</p>
+    <p class="page-lead">Quem é o dentista que a formação vai transformar — o estudo completo do cliente ideal em 7 blocos, com o grau de confiança de cada dado sempre à vista. Fontes: 4 pesquisas dedicadas + call de levantamento de 02/07.</p>
 
     <div class="leg">
       <span>🟢 <strong>dado</strong> — alta confiança, fonte Tier 1 (CFO, CRO, SciELO, papers, dados do próprio Rodrigo)</span>
@@ -690,8 +690,26 @@ FRAMEWORKS: [
 ],
 
 TRANSVERSAIS: {
-  titulo: 'Fenotipação e Educação em Dor — princípios transversais, não frameworks',
-  texto: 'Avaliados como candidatos a framework próprio, os dois ficam como princípios transversais (mentalidade). A FENOTIPAÇÃO é a visão de futuro e a filosofia de individualização ("o grande futuro é a fenotipação do paciente") — mas hoje não tem passo a passo próprio ensinável: ela se realiza através dos Dois Tripés, da Leitura de Precisão e das Três Escadas. Se na mentoria virar um protocolo concreto de fenotipagem, promove a framework. A EDUCAÇÃO EM DOR é a espinha filosófica de todo o método ("antes de intervir, você precisa entender"; base IASP) — aparece dentro do F1 (adesão), como degrau conservador no F4 e como motor de conversão no F6. Por atravessar tudo, é mais poderosa como assinatura ética e clínica da marca do que como caixinha entre outras. Se o Rodrigo quiser dar visibilidade máxima a ela, a opção registrada é elevá-la a framework nº 0 ("A Abordagem Educativa") — decisão dele.',
+  intro: 'Fenotipação e Educação em Dor foram avaliadas como candidatas a framework próprio — e ficam como <strong>princípios transversais</strong>: atravessam todos os frameworks em vez de virar caixinha ao lado deles.',
+  itens: [
+    {
+      nome: 'Fenotipação', tag: 'a visão de futuro',
+      pontos: [
+        { k: 'O que é', v: 'A filosofia de <strong>individualização</strong> — "o grande futuro é a <strong>fenotipação do paciente</strong>": entender por que cada paciente responde diferente a cada terapia.' },
+        { k: 'Por que não é framework (ainda)', v: 'Hoje <strong>não tem passo a passo próprio ensinável</strong> — ela se realiza através dos Dois Tripés, da Leitura de Precisão e do Protocolo Escalonado.' },
+        { k: 'Quando promove', v: 'Se na <strong>mentoria</strong> virar um protocolo concreto de fenotipagem, sobe pra framework.' },
+      ],
+    },
+    {
+      nome: 'Educação em Dor', tag: 'a espinha filosófica',
+      pontos: [
+        { k: 'O que é', v: '"<strong>Antes de intervir, você precisa entender</strong>" — a base IASP que atravessa diagnóstico, tratamento e venda.' },
+        { k: 'Onde vive', v: 'Dentro do <strong>F1 Dois Tripés</strong> (adesão do paciente) · como degrau conservador do <strong>F4 Protocolo Escalonado</strong> · como motor de conversão do <strong>F6 Motor Comercial</strong>.' },
+        { k: 'Por que não é framework', v: 'Por atravessar tudo, é mais poderosa como <strong>assinatura ética e clínica da marca</strong> do que como caixinha entre outras.' },
+        { k: 'Opção registrada', v: 'Se o Rodrigo quiser visibilidade máxima: elevá-la a <strong>framework nº 0 — "A Abordagem Educativa"</strong>. Decisão dele.' },
+      ],
+    },
+  ],
 },
 
 INSTRUMENTOS: [

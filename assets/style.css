@@ -29,7 +29,8 @@
   --status-aprovado:#3D8A5A;
 
   --cond:'TGSPerfect','Arial Narrow',sans-serif;
-  --serif:'PPEiko',Georgia,serif;
+  /* PPEiko removida do conteúdo a pedido da consultora (04/07) — conteúdo 100% sem serifa */
+  --serif:'HankenGrotesk',-apple-system,system-ui,sans-serif;
   --sans:'HankenGrotesk',-apple-system,system-ui,sans-serif;
 }
 

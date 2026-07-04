@@ -2,7 +2,7 @@
    DASHBOARD · DR. RODRIGO WENDEL · O SALTO
    Pesquisas — síntese executiva dos 4 relatórios.
    Nota de reorganização (v2): as antigas seções D1-D3 e D5-D7 foram
-   redistribuídas nas seções "O Método — The Path" e "O Produto"
+   redistribuídas nas seções "O Método" e "O Produto"
    (data/metodo.js e data/produto.js). Aqui fica só a página de Pesquisas.
    ═══════════════════════════════════════════════════════════════════ */
 
