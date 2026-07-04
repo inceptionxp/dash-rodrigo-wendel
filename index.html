@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>O Salto · Dr. Rodrigo Wendel · Painel do Projeto</title>
 <meta name="description" content="Painel de acompanhamento do projeto da mentoria de DTM do Dr. Rodrigo Wendel. Status em tempo real de cada bloco de entrega, marcos e validações pendentes.">
-<link rel="stylesheet" href="assets/style.css?v=1">
+<link rel="stylesheet" href="assets/style.css?v=2">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
   <aside class="sidebar">
     <div class="sidebar-brand">
       <div class="brand-mark">O Salto</div>
-      <span class="brand-meta">Dr. Rodrigo Wendel · v1</span>
+      <span class="brand-meta">Dr. Rodrigo Wendel · v2</span>
     </div>
 
     <div class="sidebar-section">Visão</div>
@@ -44,15 +44,27 @@
       <a class="nav-link" href="#bloco-7" data-view="bloco-7"><span class="nav-num">07</span><span>Setup e Operação</span></a>
     </nav>
 
-    <div class="sidebar-section">Documentação do Briefing</div>
+    <div class="sidebar-section">O Método — The Path</div>
     <nav class="sidebar-nav">
-      <a class="nav-link" href="#doc-expert" data-view="doc-expert"><span class="nav-num">D1</span><span>DNA do Expert</span></a>
-      <a class="nav-link" href="#doc-aprendiz" data-view="doc-aprendiz"><span class="nav-num">D2</span><span>DNA do Aprendiz</span></a>
-      <a class="nav-link" href="#doc-metodo" data-view="doc-metodo"><span class="nav-num">D3</span><span>DNA do Método</span></a>
-      <a class="nav-link" href="#doc-pesquisas" data-view="doc-pesquisas"><span class="nav-num">D4</span><span>Pesquisas</span></a>
-      <a class="nav-link" href="#doc-produto" data-view="doc-produto"><span class="nav-num">D5</span><span>Pré-estrutura da Formação</span></a>
-      <a class="nav-link" href="#doc-grade" data-view="doc-grade"><span class="nav-num">D6</span><span>Grade da Formação</span></a>
-      <a class="nav-link" href="#doc-plano" data-view="doc-plano"><span class="nav-num">D7</span><span>Plano de Ensino · 41 aulas</span></a>
+      <a class="nav-link" href="#met-aprendiz" data-view="met-aprendiz"><span class="nav-num">01</span><span>O Aprendiz</span></a>
+      <a class="nav-link" href="#met-expert" data-view="met-expert"><span class="nav-num">02</span><span>O Expert</span></a>
+      <a class="nav-link" href="#met-historias" data-view="met-historias"><span class="nav-num">03</span><span>Banco de Histórias</span></a>
+      <a class="nav-link" href="#met-metodo" data-view="met-metodo"><span class="nav-num">04</span><span>O Método &amp; Frameworks</span></a>
+    </nav>
+
+    <div class="sidebar-section">O Produto</div>
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#prod-formacao" data-view="prod-formacao"><span class="nav-num">P1</span><span>Formação</span></a>
+      <a class="nav-link" href="#prod-grade" data-view="prod-grade"><span class="nav-num">P2</span><span>Grade · 41 Encontros</span></a>
+      <a class="nav-link" href="#prod-mentoria" data-view="prod-mentoria"><span class="nav-num">P3</span><span>Mentoria</span></a>
+      <a class="nav-link" href="#prod-comparacao" data-view="prod-comparacao"><span class="nav-num">P4</span><span>Formação × Mentoria</span></a>
+      <a class="nav-link" href="#prod-jornada" data-view="prod-jornada"><span class="nav-num">P5</span><span>Jornada do Aluno</span></a>
+      <a class="nav-link" href="#prod-gamificacao" data-view="prod-gamificacao"><span class="nav-num">P6</span><span>Gamificação · Faixas</span></a>
+    </nav>
+
+    <div class="sidebar-section">Pesquisas</div>
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#doc-pesquisas" data-view="doc-pesquisas"><span class="nav-num">→</span><span>Os 4 relatórios</span></a>
     </nav>
 
     <div class="sidebar-section">Acompanhamento</div>
@@ -62,7 +74,7 @@
     </nav>
 
     <div class="sidebar-footer">
-      v1 · Junho 2026<br>
+      v2 · Julho 2026<br>
       Inception Experience<br>
       Maiara Minatto
     </div>
@@ -84,9 +96,19 @@
 
 </div>
 
+<!-- MODAL — histórias e frameworks -->
+<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fechar">×</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
 <script src="data/data.js?v=8"></script>
-<script src="data/docs.js?v=6"></script>
-<script src="assets/app.js?v=2"></script>
+<script src="data/docs.js?v=7"></script>
+<script src="data/metodo.js?v=1"></script>
+<script src="data/produto.js?v=1"></script>
+<script src="assets/app.js?v=3"></script>
 
 <!-- ═══════════ GISCUS ═══════════ -->
 <script>
