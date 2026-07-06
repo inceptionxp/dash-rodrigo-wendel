@@ -87,7 +87,7 @@ const BLOCOS = [
       {titulo: 'Definição de nome', detalhe: 'Nome da empresa (braço educacional), do Instagram novo e da formação', status: 'planejado'},
       {titulo: 'Estruturação do método autoral', detalhe: 'Pilares, frameworks, jornada de transformação — ver Método e Frameworks (aguarda materiais do Rodrigo pra fechar)', status: 'em-dev'},
       {titulo: 'Formato dos encontros', detalhe: 'Direção definida na call: semanal em grupo + presencial hands-on, sem 1:1 na formação', status: 'em-dev'},
-      {titulo: 'Régua da formação e onboarding', detalhe: 'Plano de ensino completo: 41 encontros aula a aula (ver Grade · 41 Encontros), 10 meses em 3 etapas. Falta só a marcação capacita×teoria do Rodrigo pra refinar 6 aulas', status: 'aguard-aprov'},
+      {titulo: 'Régua da formação e onboarding', detalhe: 'Plano de ensino completo: 41 encontros aula a aula (ver Grade · 41 Encontros), 10 meses em 3 etapas. Marcação capacita × só-teoria confirmada em 04/07 (só o iPRF a fechar)', status: 'aguard-aprov'},
       {titulo: 'Oferta completa', detalhe: 'Escopo, duração e faixa de investimento em estudo (ver página Oferta) — bônus, promessa e garantia no Marco 02', status: 'em-dev'},
       {titulo: 'Documento mestre de estratégia da campanha', detalhe: 'Orienta todas as peças que vêm depois — estrutura do produto em construção', status: 'em-dev'},
     ],
@@ -194,7 +194,7 @@ const ACOMPANHAMENTO = {
     {
       slug: 'prio', grupo: 'Prioritário — destrava a produção', aberto: true,
       itens: [
-        {t: 'Marcar "capacita na prática" × "apresenta em teoria" nas 3 escadas de tratamento', d: 'As escadas chegaram em 03/07 — falta só essa marcação. Refina 6 aulas da Etapa 2 (E22-E23, E26-E27 e E30-E32), sem redesenho da grade.'},
+        {t: 'Confirmar só o iPRF (agregado plaquetário, escada articular): o aluno sai capacitado ou fica só teoria?', d: 'A marcação capacita × só-teoria foi resolvida em 04/07 — só esse procedimento ficou em aberto (na call ele sinalizou só teoria; na resposta do WhatsApp não citou).'},
         {t: 'Enviar o material/aula gravada dos dois tripés (sistêmico e local)', d: 'Fortalece o Encontro 3 — pode virar aula invertida (aluno assiste antes, o encontro vira discussão).'},
         {t: 'Validar a estrutura do produto pelos comentários da dashboard', d: '4 pontos em aberto: divisão das etapas (4 + 4-5 + 2 meses) · faixa de investimento · formato presencial (1 obrigatório + 2 opcionais) · desenho da mentoria como continuidade.'},
       ],
@@ -202,7 +202,7 @@ const ACOMPANHAMENTO = {
     {
       slug: 'marketing', grupo: 'Importante — entra na fase de materiais de venda', aberto: true,
       itens: [
-        {t: 'Pasta de depoimentos de alunos e pacientes', d: 'Não é crítica pro método — vira insumo central dos materiais de marketing.'},
+        {t: 'Pasta de depoimentos de alunos e pacientes', d: 'Recebimento parcial em 04/07: 4 depoimentos de pacientes por e-mail + depoimentos de alunos em reels do Instagram (@rodrigowendeldtm). Os do Instagram exigem download manual pra transcrever (login-wall). Vira insumo central dos materiais de marketing.'},
         {t: 'Autorizações de uso dos cases de pacientes', d: 'Os 3 cases do Banco de Histórias pedem autorização pra uso público com identificação — inclui o vídeo-depoimento da paciente que peregrinou por especialistas.'},
       ],
     },
@@ -286,7 +286,7 @@ const ACOMPANHAMENTO = {
     {item: 'Briefing extraído e documentado (expert · cliente ideal · método) — via call, substituiu o formulário', data: '02/07/2026'},
     {item: 'Pesquisas expandidas entregues (mercado, concorrência, aprendiz e certificação — ver página Pesquisas)', data: '02-03/07/2026'},
     {item: 'Materiais recebidos: números de autoridade, credenciais e formação, jargões e crenças-âncora, temas da parte comercial, perfil da concorrente citada na call', data: '03/07/2026'},
-    {item: 'Materiais recebidos: conteúdos da etapa de diagnóstico + as 3 escadas de tratamento (falta só a marcação capacita × teoria)', data: '03/07/2026'},
+    {item: 'Materiais recebidos: conteúdos de diagnóstico + as 3 escadas + a marcação capacita × só-teoria confirmada (só o iPRF a fechar)', data: '03-04/07/2026'},
     {item: 'Naming aprovado pela consultoria: Abordagem MODAL (método) + Protocolo Escalonado de DTM (mecanismo) + ângulo da PUV — validação final com o Rodrigo no Marco 02', data: '04/07/2026'},
     {item: 'Jornada do aluno e gamificação por faixas aprovadas pela consultoria', data: '04/07/2026'},
   ],
