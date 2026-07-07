@@ -195,15 +195,14 @@ const ACOMPANHAMENTO = {
       slug: 'prio', grupo: 'Prioritário — destrava a produção', aberto: true,
       itens: [
         {t: 'Confirmar só o iPRF (agregado plaquetário, escada articular): o aluno sai capacitado ou fica só teoria?', d: 'A marcação capacita × só-teoria foi resolvida em 04/07 — só esse procedimento ficou em aberto (na call ele sinalizou só teoria; na resposta do WhatsApp não citou).'},
-        {t: 'Enviar o material/aula gravada dos dois tripés (sistêmico e local)', d: 'Fortalece o Encontro 3 — pode virar aula invertida (aluno assiste antes, o encontro vira discussão).'},
+        {t: 'Enviar o material/aula gravada dos dois tripés (sistêmico e local)', d: 'Fortalece o Encontro 3 — pode virar aula invertida (aluno assiste antes, o encontro vira discussão). Obs.: a aula recebida em 07/07 é a COMERCIAL (abordagem de venda) — esta, técnica dos tripés, ainda falta.'},
         {t: 'Validar a estrutura do produto pelos comentários da dashboard', d: '4 pontos em aberto: divisão das etapas (4 + 4-5 + 2 meses) · faixa de investimento · formato presencial (1 obrigatório + 2 opcionais) · desenho da mentoria como continuidade.'},
       ],
     },
     {
       slug: 'marketing', grupo: 'Importante — entra na fase de materiais de venda', aberto: true,
       itens: [
-        {t: 'Pasta de depoimentos de alunos e pacientes', d: 'Recebimento parcial em 04/07: 4 depoimentos de pacientes por e-mail + depoimentos de alunos em reels do Instagram (@rodrigowendeldtm). Os do Instagram exigem download manual pra transcrever (login-wall). Vira insumo central dos materiais de marketing.'},
-        {t: 'Autorizações de uso dos cases de pacientes', d: 'Os 3 cases do Banco de Histórias pedem autorização pra uso público com identificação — inclui o vídeo-depoimento da paciente que peregrinou por especialistas.'},
+        {t: 'Autorizações de uso dos depoimentos (pacientes e alunos)', d: 'Chegaram em 07/07: 4 depoimentos de PACIENTES em vídeo (Raquel, Carol, Maria Alice + 1) — falta a autorização de imagem de cada um pra uso público com identificação. Os depoimentos de ALUNOS são do contexto do Instituto Aria (parceria a desfazer) — confirmar o direito de uso antes de publicar. Ainda pendente: o vídeo-depoimento da paciente peregrina citada na call (pode ser um destes ou um 5º caso).'},
       ],
     },
     {
@@ -289,6 +288,7 @@ const ACOMPANHAMENTO = {
     {item: 'Materiais recebidos: conteúdos de diagnóstico + as 3 escadas + a marcação capacita × só-teoria confirmada (só o iPRF a fechar)', data: '03-04/07/2026'},
     {item: 'Naming aprovado pela consultoria: Abordagem MODAL (método) + Protocolo Escalonado de DTM (mecanismo) + ângulo da PUV — validação final com o Rodrigo no Marco 02', data: '04/07/2026'},
     {item: 'Jornada do aluno e gamificação por faixas aprovadas pela consultoria', data: '04/07/2026'},
+    {item: 'Materiais recebidos e processados: aula comercial "Como faço uma abordagem comercial em DTM" (4h08) + depoimentos completos (5 de alunos + 4 pacientes em vídeo) — transcritos localmente, analisados e integrados ao briefing (Banco de Histórias, Método/F6, Cliente Ideal)', data: '07/07/2026'},
   ],
 };
 

@@ -69,6 +69,7 @@ SOM  = ecossistema próprio (6.800 seguidores + 300+ alunos formados
       <li><strong>Dor consciente #1 — "Não sei diferenciar bruxismo de DTM" 🟢</strong><em>O dado mais sólido do documento: a maioria estatística dos dentistas pesquisados confunde os sinais (63,9% erram a limitação de abertura; a maioria erra estalos, crepitação e desgastes). É o gancho natural de qualquer peça de atração.</em></li>
       <li><strong>Dor consciente #2 — "Não sei fazer diagnóstico correto" 🟢/🟡</strong><em>O protocolo diagnóstico (anamnese estruturada, palpação, imagem) não faz parte da rotina da clínica geral. Nas palavras do Rodrigo sobre os leads: "os dentistas não sabem abordar, avaliar, o que perguntar".</em></li>
       <li><strong>Dor consciente #3 — teto de renda na clínica geral 🟢</strong><em>R$ 20-35 mil/mês bruto de consultório individual, dependência de convênio. Linguagem provável (🔴 a capturar nos primeiros leads): "não dá pra viver só de convênio", "cansei de fazer restauração o dia inteiro".</em></li>
+      <li><strong>Dor consciente #4 — trava comercial: "sei o que fazer, mas fico patinando" 🟢</strong><em>Novidade da aula comercial de 07/07 (interação real da turma): o dentista sabe que precisa da parte comercial mas não sabe por onde começar. Falas literais das alunas — "a gente sabe o que tem que fazer, é muita coisa, e fica patinando, não vai pra canto nenhum", "tenho dificuldade de dar nome aos planos de tratamento", "tenho dificuldade de fechamento — o paciente fala que vai pensar, vai falar com o marido". Não é só insegurança clínica: é trava comercial. A Etapa 3 resolve dando sequência e prioridade.</em></li>
       <li><strong>Problema inconsciente #1 — trata sintoma, não a disfunção 🟡</strong><em>Diante da dor de ATM, prescreve placa genérica achando que "fez o protocolo". Ele não sabe que não sabe. Conecta direto com a bandeira do Rodrigo: "não se trata DTM com cirurgia, ortodontia, botox ou placa!".</em></li>
       <li><strong>Problema inconsciente #2 — não vê o valor comercial do próprio diagnóstico 🟢</strong><em>Tratamento particular de DTM vale R$ 3.500-10.000; com 40-60% da população com sinais, esse paciente passa todo dia na cadeira dele. Ele não escolhe não monetizar: ele não vê. É o problema mais poderoso pro mecanismo de venda — ataca uma cegueira, não uma falta de vontade.</em></li>
     </ul>
@@ -83,7 +84,7 @@ SOM  = ecossistema próprio (6.800 seguidores + 300+ alunos formados
           <tr><td class="tnum">5</td><td><strong>Teto de renda na clínica geral / convênio</strong></td><td>Dor consciente (de negócio)</td><td>🟢</td></tr>
         </tbody>
       </table>
-      <div class="tbl-foot">Lacuna documentada: citações literais de dentistas em grupos fechados — fechar com depoimentos de ex-alunos do Rodrigo (pendência de material).</div>
+      <div class="tbl-foot">Citações literais de alunos e pacientes chegaram em 07/07 (aula comercial + depoimentos) e já alimentam as dores acima. Ainda vale capturar linguagem de dentistas em grupos fechados pra ampliar o repertório.</div>
     </div>
 
     <h2 class="section-title">4 · Desejos e <span class="ei">necessidades</span></h2>
@@ -502,6 +503,74 @@ HISTORIAS: [
     contextos: ['Prova social "nunca é tarde para aprender"', 'Conteúdo emocional de redes (a imagem do senhor arrumadinho na primeira fileira)', 'Quebra da objeção "já tenho muito tempo de formado"', 'Bio / prova social da página de vendas'],
     prova: 'Relato direto sobre aluno real. Uso com identificação requer autorização do aluno — status: CONFIRMAR. Uso descritivo sem nome: liberado.',
   },
+  {
+    id: 'case-04', cat: 'case', catLabel: 'Case de cliente',
+    titulo: '"Viver sem dor é outra coisa" — Raquel, 20 anos sem diagnóstico',
+    resumo: 'Conviveu com dor por cerca de 20 anos; profissionais falavam em canal, em extrair o dente, davam diagnósticos contraditórios. Encaminhada a um especialista em DTM, teve resposta rápida — e chama o tratamento de divisor de águas. Depoimento em vídeo.',
+    tags: ['peregrinação', 'prova em vídeo', 'transformação'],
+    narrativa: {
+      contexto: 'Raquel conviveu por volta de 20 anos com dor, em fases piores e melhores, procurando vários profissionais sem solução. "Tinha fases que eu sentia mais dor, procurava vários profissionais e nada resolvia."',
+      conflito: '"Falavam que era canal, falavam que tinha que extrair o dente... vários diagnósticos de perder o dente. Os exames não condiziam." E o mais duro: "foram 20 anos sofrendo... nenhum profissional me dava um diagnóstico, ninguém sabia o que tava acontecendo. E ninguém me explicava."',
+      acao: 'Um profissional reconheceu que era DTM e a encaminhou: "Raquel, o que tá faltando é isso — tenho um especialista em DTM, vou te indicar". Ela foi na mesma semana e seguiu com disciplina todas as orientações (compressa 3x ao dia, massagem, pomada), com o marido ajudando em casa.',
+      resultado: 'Resposta rápida apesar dos 20 anos: "coisas simples que eu aprendi aqui passavam a dor muito rápido" — em contraste com "eu virava noites tomando remédio e não funcionava". Abertura de boca maior, sono e humor melhores; a mãe notou "que sorrisão". "Viver sem dor é outra coisa."',
+      licao: 'Diagnóstico correto + adesão do paciente (a "dupla" que caminha junto) + abordagem multimodal resolvem em semanas o que 20 anos de peregrinação por técnica única não resolveram.',
+    },
+    curta: '"Foram uns 20 anos sofrendo, procurando profissional, e nenhum me dava um diagnóstico — ninguém sabia o que eu tinha, ninguém me explicava. Aqui eu tive uma resposta rápida. Fui disciplinada, confiei, e deu muito certo. Viver sem dor é outra coisa — foi um divisor de águas na minha vida."',
+    zona: ['Conhecimento: diagnóstico que resolve o que 20 anos de profissionais não deram', 'Valor: o paciente como parceiro do tratamento — a adesão faz parte do método'],
+    contextos: ['Prova social central da página de vendas (transformação em vídeo)', 'Quebra da objeção "meu caso é antigo/crônico demais"', 'Conteúdo emocional de redes (o "divisor de águas")', 'Prova de que a abordagem MODAL funciona onde a técnica única falhou'],
+    prova: 'Vídeo-depoimento recebido em 07/07 (materiais-cliente/depoimentos-pacientes/paciente-2). Paciente do consultório do Rodrigo — uso público com identificação requer autorização de imagem da paciente. Status: CONFIRMAR.',
+  },
+  {
+    id: 'case-05', cat: 'case', catLabel: 'Case de cliente',
+    titulo: '"Parecia mágica: eu chegava com dor e saía sem" — Carol',
+    resumo: 'DTM crônica com dor de cabeça insistente e musculatura enrijecida. O agulhamento aliviava na hora e a reeducação muscular a ensinou a se autogerenciar. Hoje diz que preferia ter procurado antes. Depoimento em vídeo.',
+    tags: ['agulhamento', 'prova em vídeo', 'reeducação'],
+    narrativa: {
+      contexto: 'Carol tinha "um incômodo muito grande, principalmente com dor de cabeça, algo muito insistente no dia a dia" que atrapalhava trabalhar e estudar; acordava com a musculatura muito enrijecida. Sua DTM "era muito crônica".',
+      conflito: 'Prolongou a busca por ajuda: "tentei alguns tratamentos mais rápidos que não funcionaram". Como a dor era crônica, ela "não lembrava mais como de fato deixar a musculatura relaxada".',
+      acao: 'Optou por um plano mais longo, com reeducação muscular ("reaprender a utilizar o corpo") e sessões de agulhamento a seco. O tempo estendido foi parte da estratégia: "com esse processo mais longo eu consegui compreender e ir treinando aos poucos".',
+      resultado: '"Quando eu fiz o agulhamento, eu saía daqui já sem dores — parecia mágica." O músculo relaxava e os sintomas iam passando. Aprendeu a manter a musculatura relaxada sozinha.',
+      licao: 'Reeducação + agulhamento na dose certa devolvem autonomia ao paciente crônico — e o plano mais longo, quando explicado, vira diferencial, não objeção. "Eu preferia ter procurado antes."',
+    },
+    curta: '"Minha DTM era muito crônica — dor de cabeça insistente todo dia. Quando eu fiz o agulhamento, eu saía daqui já sem dores, parecia mágica. E aprendi a manter a musculatura relaxada sozinha. Se eu fosse falar uma coisa pra mim mesma antes: procura o tratamento antes, não prolonga o sofrimento à toa."',
+    zona: ['Habilidade: aplicação de agulhamento a seco com alívio imediato', 'Valor: reeducação que devolve autonomia ao paciente crônico'],
+    contextos: ['Prova de eficácia do agulhamento (Etapa 2 · escada muscular)', 'Quebra da objeção "tratamento longo é ruim" (o longo virou vantagem)', 'Conteúdo sobre autogestão e educação em dor'],
+    prova: 'Vídeo-depoimento recebido em 07/07 (materiais-cliente/depoimentos-pacientes/paciente-3). Paciente do consultório do Rodrigo — uso público com identificação requer autorização de imagem. Status: CONFIRMAR.',
+  },
+  {
+    id: 'case-06', cat: 'case', catLabel: 'Case de cliente',
+    titulo: '"A dor não vai passar sozinha — eu sou prova disso" — Maria Alice',
+    resumo: 'Dor no maxilar com travamento, afetando fala, alimentação e vida social. Buscou ajuda, a dor aliviou, ela desistiu — e voltou pior. Hoje gerencia as crises sozinha. Depoimento em vídeo, com frase-âncora de urgência.',
+    tags: ['urgência', 'prova em vídeo', 'autonomia'],
+    narrativa: {
+      contexto: 'Maria Alice sentia dor diária: "em qualquer movimento para comer, na hora de dormir". Chegou com dor no maxilar e descobriu, no tratamento, "outras dores na face que eu nem sabia que tinha". A dor afetava "a alimentação, a própria fala, a hora de socializar".',
+      conflito: 'Ela viveu o padrão que o Rodrigo alerta: buscou ajuda, "a dor aliviou e aí eu desisti — e aí depois voltou, e voltou com muito mais intensidade". Só então entendeu que precisava tratar de verdade.',
+      acao: 'Fez um ano de tratamento com liberação, laser e infravermelho, num ambiente que ela descreve como acolhedor ("me senti muito acolhida desde o primeiro dia; atendimentos divertidos e relaxantes"). Aprendeu a posição da mandíbula e estratégias de autogestão.',
+      resultado: 'Hoje gerencia as crises sozinha: "quando eu sei que é uma dor da DTM, já sei o que fazer — boto uma compressa, se piorar posso tomar um relaxante". Saiu com autonomia real sobre a própria dor.',
+      licao: 'A dor de DTM não é linear (alivia e volta pior) — esperar "passar sozinha" cronifica. A frase dela é uma das mais fortes do acervo: "a dor não vai passar sozinha, eu sou prova disso".',
+    },
+    curta: '"Eu sentia dor pra comer, pra dormir, pra falar. Busquei ajuda, a dor aliviou e eu desisti — aí voltou muito pior. Fiz um ano de tratamento e hoje eu sei gerenciar sozinha: sei o que fazer quando a dor vem. Pra quem acha que essa dor passa sozinha: não passa. Eu sou prova disso."',
+    zona: ['Valor: transferir ao paciente a capacidade de se autogerir', 'Habilidade: condução de caso de um ano com adesão e vínculo'],
+    contextos: ['Abertura de VSL/CPL — a frase "a dor não vai passar sozinha" é gancho de urgência', 'Quebra da objeção do paciente que adia', 'Prova de eficácia + experiência de atendimento (acolhimento)'],
+    prova: 'Vídeo-depoimento recebido em 07/07 (materiais-cliente/depoimentos-pacientes/paciente-4). Paciente do consultório do Rodrigo — uso público com identificação requer autorização de imagem. Status: CONFIRMAR.',
+  },
+  {
+    id: 'case-07', cat: 'case', catLabel: 'Case de cliente',
+    titulo: '"Não é só passar uma placa e pronto" — a individualização na voz da paciente',
+    resumo: 'Paciente com histórico de tratamentos de DTM. O que a marcou foi a clareza do plano e a disposição de adaptar a técnica até dar resultado — o oposto do viés único. A placa devolveu qualidade de sono. Depoimento em vídeo.',
+    tags: ['individualização', 'prova em vídeo', 'multimodal'],
+    narrativa: {
+      contexto: 'Ela já vinha "com histórico de dentistas e de tratamento na área de DTM". O problema principal era o apertamento diário: sentia a boca travada ao abrir e mastigava sempre mais para um lado, com rigidez.',
+      conflito: 'Em tratamentos anteriores, técnica única e desconfortável — "já tinha feito com outro dentista o agulhamento a seco, e tinha sido muito doloroso". E a crítica direta ao viés da placa: "não é só aquela coisa de vou passar uma placa e fica a placa".',
+      acao: 'No tratamento com o Rodrigo, encontrou clareza e individualização: "desde o início há clareza sobre quanto tempo vai durar, o que vai ser feito, quais terapias — e se uma técnica não está dando certo, você tenta outra e vai adaptando". O agulhamento foi feito "de forma muito comedida"; o biofeedback (TENS) criou consciência do apertamento; a placa melhorou o sono.',
+      resultado: '"Hoje eu tenho mais confiança de que vou poder fazer o que eu quiser, sem dores e sem dificuldade de mastigação." Menos remédio, menos enxaqueca em viagens, sono estável com a placa.',
+      licao: 'A individualização e a adaptação multimodal — ajustar a abordagem ao paciente em vez de forçar uma técnica única — é o que o paciente percebe e valoriza. É a Abordagem MODAL sentida na pele.',
+    },
+    curta: '"Eu já vinha de outros tratamentos de DTM. O diferente aqui foi a clareza — quanto tempo, o que ia ser feito — e a preocupação com resultado: se uma técnica não dava certo, adaptava outra. Não é só passar uma placa e pronto. Hoje tenho confiança de fazer o que eu quiser, sem dor."',
+    zona: ['Valor: individualização real do tratamento (o oposto do viés único)', 'Conhecimento: arsenal multimodal que permite adaptar até resolver'],
+    contextos: ['Prova viva da Abordagem MODAL na voz do paciente', 'Quebra da objeção "já tentei tratar e não resolveu"', 'Conteúdo contra o viés único ("pra quem só tem martelo tudo é prego")'],
+    prova: 'Vídeo-depoimento recebido em 07/07 (materiais-cliente/depoimentos-pacientes/paciente-1). Paciente do consultório do Rodrigo — uso público com identificação requer autorização de imagem. Status: CONFIRMAR.',
+  },
 ],
 
 /* ─────────────────────── 04 · MÉTODO E FRAMEWORKS ─────────────────────── */
@@ -655,18 +724,19 @@ FRAMEWORKS: [
     como_funciona: [
       'A JORNADA DE PONTA A PONTA — cada elo é desenhado: agendamento (com ou sem sinal, conforme contexto), pré-avaliação (ficha de 40 perguntas + acolhimento antes da consulta), consulta de avaliação (a devolutiva de diagnóstico), formatos de proposta comercial (como apresentar plano e investimento), fechamento e pós-venda/recorrência. O aluno não aprende "a vender" — aprende a operar a jornada inteira.',
       'O núcleo é a NARRATIVA DA PRIMEIRA CONSULTA — a educação em dor e os Dois Tripés já são o que converte ("antes de intervir, você precisa entender" vira também a lógica de venda).',
-      'O funil-base: avaliação (R$ 540) → conversão histórica ~50% → ticket de tratamento R$ 4.500-5.000. Controles essenciais: nº de avaliações/mês, taxa de conversão avaliação→tratamento, ticket médio.',
-      'Elementos CONTEXTUAIS (não regra pra todos): cobrança de sinal pra agendar ("os bons pagam pelos ruins" — certo pra agenda cheia, não pra iniciante; a crise de 50 desmarcações em 3 meses custou ~R$ 90-100 mil); vídeo pré-consulta (a validar com dados).',
+      'O funil-base (números atualizados na aula de 07/07): avaliação R$ 540 (evoluiu de R$ 150 → R$ 490 → R$ 540, meta R$ 600) → conversão avaliação→tratamento 45-55% historicamente, hoje subindo pra ~60% (meta 60, "nunca 80, porque meu preço é o maior"). Controles essenciais: nº de avaliações/mês (meta 40), taxa da recepção (lead→avaliação: Meta 20% / Google 30% / indicação ~100%) e taxa dele (avaliação→tratamento).',
+      'VIRADA DE TICKET (novidade da aula): ele ABANDONOU os tratamentos longos de 1 ano e passou a vender uma abordagem inicial mais curta com reavaliação — ticket médio menor, mas conversão maior, o paciente circula mais na clínica e o LTV sobe. E a oferta deixou de ser "3 planos ancorados" (básico/completo/multi) pra ser modelada ao diagnóstico: "cada paciente tem um diagnóstico, cada diagnóstico tem uma oferta — nada é cravado em pedra".',
+      'Elementos CONTEXTUAIS (não regra pra todos): cobrança de sinal pra agendar — modelo atual R$ 140 antes + R$ 400 no dia, sem devolução, com os R$ 400 revertíveis em crédito de tratamento (nasceu da crise de 50 desmarcações em 3 meses); vídeo pré-consulta (hoje em casos específicos, não parou 100%).',
       'A prova viva: "faturei um milhão ano passado vendendo DTM, com uma clínica pequena, atendendo só eu, e ainda viajei com a família."',
     ],
-    quando_usar: 'Toda a Etapa 3 (Encontros 35-41); na clínica, é o sistema de gestão comercial que o aluno passa a rodar. Comercial BÁSICO na formação; comercial AVANÇADO fica na mentoria.',
-    por_que_funciona: 'Ataca a objeção-mestra do mercado ("DTM não dá dinheiro") com dados reais; conecta a venda ao método clínico — a devolutiva de diagnóstico com os tripés é o que fecha, então não parece técnica de venda enxertada. A distinção básico × avançado protege a promessa da formação e cria a ponte pra mentoria.',
-    analogia: '"Os bons pagam pelos ruins" (sobre o sinal) + o contraste do próprio caso (R$ 1M / 28-30h por semana / sem trabalhar após as 18h).',
-    temos: ['O funil, os números e as teses'],
-    falta: ['Separar formalmente básico (formação) × avançado (mentoria) por conteúdo', 'Os scripts de conversão detalhados'],
-    vira_conteudo: ['Encontros 35-41', 'Copy de quebra de objeção ("DTM dá dinheiro — eu tenho os dados")', 'Scripts de recepção (lead→avaliação)', 'Instrumento: planilha de controles do funil + roteiro de devolutiva de diagnóstico'],
+    quando_usar: 'Toda a Etapa 3 (Encontros 35-41); na clínica, é o sistema de gestão comercial que o aluno passa a rodar. Comercial BÁSICO na formação; comercial AVANÇADO fica na mentoria. Matéria-prima real: a aula "Como eu faço uma abordagem comercial em DTM" (4h08, 07/07) — ver análise em materiais-cliente/aula-rodrigo/.',
+    por_que_funciona: 'Ataca a objeção-mestra do mercado ("DTM não dá dinheiro") com dados reais; conecta a venda ao método clínico — a devolutiva de diagnóstico com os tripés é o que fecha (na aula ele usa os Dois Tripés como roteiro de venda, papel dividido ao meio), então não parece técnica de venda enxertada. E resolve a dor central do aluno ("a gente sabe o que fazer mas fica patinando"): começa mandando quantificar. A distinção básico × avançado protege a promessa da formação e cria a ponte pra mentoria.',
+    analogia: '"Não é corrida de 100 metros, é maratona" (LTV e recorrência) + "vender é uma ajuda, não é chato" + o contraste do próprio caso (R$ 1M / 28-30h por semana / sem trabalhar após as 18h).',
+    temos: ['O funil, os números e as teses', 'Os scripts e a mecânica reais, ponta a ponta (aula comercial de 4h08 transcrita e analisada, 07/07)', 'O corte básico (formação) × avançado (mentoria) já mapeado por encontro'],
+    falta: ['Ratificar com o Rodrigo os números que mudaram desde os scripts antigos (ticket invertido, conversão, sinal)', 'Confirmar o CRM atual (RD Station → migrou, provável Kommo)'],
+    vira_conteudo: ['Encontros 35-41', 'Copy de quebra de objeção ("DTM dá dinheiro — eu tenho os dados")', 'Ganchos de voz: "quero ser o seu último dentista", "vender é ajudar", "a dor não vai passar sozinha"', 'Scripts de recepção (lead→avaliação) + roteiro da 1ª consulta (autoapresentar-se antes da queixa, colher sins)', 'Instrumento: planilha de controles do funil + roteiro de devolutiva de diagnóstico'],
     alternativas: ['Da Avaliação ao Tratamento — descritivo do funil-núcleo; clareza total, menos marca', 'Jornada do Paciente — descreve o diferencial de ponta a ponta; forte, mas colide com "jornada do aluno" no vocabulário do produto'],
-    nota_nome: 'Metáfora de sistema que gera movimento — comunica mecanismo repetível, não "vendinha". Sóbrio e alinhado ao mundo do consultório. Par com o F7: o Motor de TRAÇÃO atrai, o Motor COMERCIAL converte e retém.',
+    nota_nome: 'Metáfora de sistema que gera movimento — comunica mecanismo repetível, não "vendinha". Sóbrio e alinhado ao mundo do consultório. Par com o F7: o Motor de TRAÇÃO atrai, o Motor COMERCIAL converte e retém. Headline forte que nasce da aula: "DTM dá dinheiro" é a falácia que ele mais ataca.',
   },
   {
     id: 'motor-de-tracao', n: 'F7', nome: 'Motor de Tração', classe: 'framework de etapa · Negócio (básico na formação · arsenal completo na mentoria)',

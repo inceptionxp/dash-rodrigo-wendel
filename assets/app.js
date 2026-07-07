@@ -462,7 +462,7 @@
       <div class="gal-grid" id="story-grid">${storyGrid()}</div>
 
       <div class="alert amarelo" style="margin-top:24px;">
-        <strong>Pendências de prova:</strong> os 3 cases de clientes exigem autorização antes de uso público com identificação (vídeo-depoimento da paciente peregrina ainda não enviado). As histórias de forja e as pessoais são de uso livre — são vivências do próprio Rodrigo.
+        <strong>Pendências de prova:</strong> 4 cases de pacientes agora têm <strong>depoimento em vídeo</strong> (recebidos em 07/07 — Raquel, Carol, Maria Alice + 1). Todos os cases de clientes exigem <strong>autorização de imagem</strong> antes de uso público com identificação. As histórias de forja e as pessoais são de uso livre — são vivências do próprio Rodrigo.
       </div>
     `,
 
