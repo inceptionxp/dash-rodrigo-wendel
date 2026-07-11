@@ -54,9 +54,9 @@ const MARCOS = [
     status: 'planejado',
     detalhes: [
       'Fase assíncrona com validações pontuais',
-      'CRM: opção recomendada — CRM da Funnel Labs (grátis por 3 meses)',
-      'Hospedagem: Hostinger Premium ou Business',
-      'Integrações: formulário, CRM, WhatsApp, agendamento',
+      'CRM: recomendado — CRM da Funnel Labs (tudo-em-um: pipeline + e-mail + WhatsApp + agendamento + automações), grátis por 3 meses',
+      'Hospedagem: Hostinger (Premium/Business) + Cloudflare grátis pra DNS/segurança',
+      'Integrações: formulário, CRM, e-mail no domínio, WhatsApp dedicado, agendamento (Google Agenda), pixel Meta, checkout Assiny/Asaas',
     ],
   },
   {
@@ -195,9 +195,11 @@ const ACOMPANHAMENTO = {
   // Pendente do Rodrigo — grupos com slug estável (base do id do checkbox)
   pendente_rodrigo: [
     {
-      slug: 'setup-marca', grupo: 'Setup da marca (nomes definidos) — ver Guia de Setup', aberto: true,
+      slug: 'setup-marca', grupo: 'Setup da marca & infraestrutura — ver Guia de Setup & Infraestrutura', aberto: true,
       itens: [
-        {t: 'Registrar os domínios: academiadtm.com.br + viverdedtm.com.br', d: 'Ambos livres na última checagem — registrar HOJE no registro.br (~R$40/ano cada), em nome do CNPJ. É o mais barato e o mais urgente.'},
+        {t: 'Registrar os domínios: academiadtm.com.br + academiadtm.com (guardar os 2)', d: 'Registrar HOJE, em nome do CNPJ — o mais barato e urgente. O jeito simples é registrar direto na Hostinger (junto com a hospedagem). viverdedtm.com.br recomendado pra página da formação.'},
+        {t: 'Contratar hospedagem Hostinger (Premium/Business) + criar conta Cloudflare grátis → mandar os acessos', d: 'Hostinger = site + e-mail profissional. Cloudflare = DNS/segurança por onde a Inception conecta domínio, páginas e automações. Mandar login/senha (ou adicionar a Maiara como usuário) por canal privado.'},
+        {t: 'Reunir os canais pro CRM/automações: WhatsApp dedicado + Meta Business + Google Agenda', d: 'WhatsApp: número só da Academia (não o pessoal). Meta Business: libera WhatsApp oficial + pixel + tráfego. Google Agenda: agendamento das calls. O e-mail profissional a Inception cria no domínio.'},
         {t: 'Iniciar o registro da marca Academia DTM no INPI (com advogado)', d: 'Registrar a marca MISTA (nome + logo Pulso) — "Academia DTM" isolada é marca fraca. Classe 41 (educação). Exame leva meses; começar logo garante a data. Anda junto com a identidade visual.'},
         {t: 'Renomear o Instagram @cursodtm → @academiadtm', d: '@academiadtm está livre. Renomear preserva seguidores e histórico. Fazer depois do logo Pulso pronto (foto/bio novas). Passo a passo no Guia de Setup.'},
       ],

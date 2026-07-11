@@ -388,8 +388,8 @@
       </a>
       <a class="link-card" href="guia-setup-marca/index.html" target="_blank">
         <div>
-          <span class="link-card-titulo">Guia de Setup da Marca — próximos passos</span>
-          <span class="link-card-meta">Domínios, registro no INPI, hospedagem e a virada do Instagram (@cursodtm → @academiadtm)</span>
+          <span class="link-card-titulo">Guia de Setup &amp; Infraestrutura — checklist do Rodrigo</span>
+          <span class="link-card-meta">Domínios, hospedagem (Hostinger) + Cloudflare, canais pro CRM (WhatsApp, e-mail, Meta, agenda), INPI e a virada do Instagram — com o que ele precisa mandar pra gente</span>
         </div>
         <span class="link-card-cta">Abrir →</span>
       </a>

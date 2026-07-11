@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Setup da Marca · Academia DTM · O Salto</title>
+<title>Setup da Marca &amp; Infraestrutura · Academia DTM · O Salto</title>
 <style>
 @font-face{font-family:'TGSPerfect';src:url('../assets/fonts/TGSPerfectCondensed.otf') format('opentype');font-display:swap}
 @font-face{font-family:'PPEiko';src:url('../assets/fonts/PPEiko-Medium.otf') format('opentype');font-weight:500;font-display:swap}
@@ -60,9 +60,9 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--linha);color:
 <body>
 <div class="wrap">
 
-  <span class="eyebrow">Consultoria · O Salto · Setup</span>
+  <span class="eyebrow">Consultoria · O Salto · Setup & Infraestrutura</span>
   <h1>Colocar a marca <span class="ei">no ar.</span></h1>
-  <p class="lead">Os nomes estão decididos. Este é o passo a passo pra proteger a marca, garantir os canais e virar a chave do Instagram — na ordem certa, com o que é urgente primeiro.</p>
+  <p class="lead">Os nomes e a identidade estão decididos. Este é o passo a passo pra garantir os domínios, montar a infraestrutura e deixar tudo pronto pra publicar a página da formação e ligar as automações — na ordem certa, com o urgente primeiro.</p>
 
   <div class="card preto">
     <div class="names">
@@ -73,30 +73,85 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--linha);color:
     </div>
   </div>
 
+  <!-- RESUMO: O QUE VOCÊ FAZ -->
+  <div class="regra verde" style="margin-top:22px">
+    <strong>Resumo pra você (Rodrigo):</strong> são 4 coisas que dependem de você — (1) registrar os domínios, (2) contratar a hospedagem e criar a conta Cloudflare e me mandar os acessos, (3) providenciar os canais (WhatsApp, e-mail, Meta, agenda) e (4) iniciar a marca no INPI e virar o Instagram. Todo o resto — DNS, páginas, CRM, automações, tracking — é comigo. O que eu preciso de volta está resumido no fim, na caixa <strong>"O que me mandar"</strong>.
+  </div>
+
   <!-- 01 · DOMÍNIOS -->
   <h2><span class="st">01</span>Registrar os <span class="ei">domínios</span> <span style="font-size:13px;font-family:var(--sans);color:var(--verde);letter-spacing:.06em;text-transform:uppercase;">faça hoje</span></h2>
-  <p class="sub">É o mais barato e o mais urgente — domínio livre é "primeiro que registra, leva". Todos abaixo estavam <strong>livres</strong> na última checagem; registre já pra não perder.</p>
+  <p class="sub">É o mais barato e o mais urgente — domínio livre é "primeiro que registra, leva". Registre já pra não perder, e guarde os dois <span class="mono">academiadtm</span> por garantia.</p>
   <div class="tbl-wrap">
     <table>
-      <thead><tr><th>Domínio</th><th>Para quê</th><th>Status</th><th>Prioridade</th></tr></thead>
+      <thead><tr><th>Domínio</th><th>Para quê</th><th>Prioridade</th></tr></thead>
       <tbody>
-        <tr><td><span class="mono">academiadtm.com.br</span></td><td>A empresa — site institucional, e-mail, base de tudo</td><td><span class="badge">livre</span></td><td><strong>Registrar já</strong></td></tr>
-        <tr><td><span class="mono">viverdedtm.com.br</span></td><td>A formação — página de vendas do produto</td><td><span class="badge">livre</span></td><td><strong>Registrar já</strong></td></tr>
-        <tr><td><span class="mono">academiadtm.org.br</span></td><td>Proteção defensiva (evitar que outro use)</td><td><span class="badge">livre</span></td><td>Opcional</td></tr>
+        <tr><td><span class="mono">academiadtm.com.br</span></td><td>A empresa — site institucional, e-mail, base de tudo</td><td><strong>Registrar já</strong></td></tr>
+        <tr><td><span class="mono">academiadtm.com</span></td><td>Garantia de marca + porta aberta pro internacional — guardar os dois</td><td><strong>Registrar já</strong></td></tr>
+        <tr><td><span class="mono">viverdedtm.com.br</span></td><td>A formação — pode ser o endereço da página de vendas do produto</td><td>Recomendado</td></tr>
       </tbody>
     </table>
   </div>
   <div class="card">
-    <strong>Como:</strong> registrar no <span class="mono">registro.br</span> (o oficial de <span class="mono">.com.br</span>) — leva 10 minutos, precisa de CPF/CNPJ. Custo ~R$ 40/ano por domínio.
+    <strong>Como:</strong> o jeito mais simples é registrar os dois <strong>direto na Hostinger</strong> (passo 02) — já sai junto com a hospedagem, num painel só. (Alternativa pro <span class="mono">.com.br</span>: o oficial <span class="mono">registro.br</span>, ~R$ 40/ano.)
     <ol class="do">
       <li>Registrar em nome do <strong>CNPJ da empresa</strong> (não pessoa física), pra a marca ficar no ativo da empresa.</li>
-      <li>Depois de registrar, <strong>não precisa configurar nada agora</strong> — a Inception aponta o DNS pra hospedagem quando o site/página estiver pronto.</li>
-      <li>Se quiser, garantir também os <span class="mono">.com</span> (mercado internacional) — mas <span class="mono">.com.br</span> é o que importa pro público brasileiro.</li>
+      <li>Não precisa configurar DNS nem nada agora — eu aponto tudo pela Cloudflare (passo 02) quando o site/página estiver pronto.</li>
     </ol>
   </div>
 
-  <!-- 02 · MARCA / INPI -->
-  <h2><span class="st">02</span>Registrar a <span class="ei">marca</span> no INPI <span style="font-size:13px;font-family:var(--sans);color:var(--ambar);letter-spacing:.06em;text-transform:uppercase;">começar logo</span></h2>
+  <!-- 02 · HOSPEDAGEM + CLOUDFLARE -->
+  <h2><span class="st">02</span>Hospedagem + <span class="ei">Cloudflare</span> <span style="font-size:13px;font-family:var(--sans);color:var(--verde);letter-spacing:.06em;text-transform:uppercase;">contratar e me mandar o acesso</span></h2>
+  <p class="sub">A base técnica pra tudo ficar no ar: a hospedagem guarda o site e o e-mail profissional; a Cloudflare é a camada de DNS, velocidade e segurança por onde eu conecto domínio, páginas e automações.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Conta</th><th>Onde / plano</th><th>Custo</th><th>Você faz</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hospedagem</strong></td><td><span class="mono">hostinger.com.br</span> — plano <strong>Premium</strong> ou <strong>Business</strong></td><td>~R$ 8–20/mês (no plano anual)</td><td>Contratar + me mandar o acesso</td></tr>
+        <tr><td><strong>Cloudflare</strong></td><td><span class="mono">cloudflare.com</span> — conta <strong>gratuita</strong></td><td>R$ 0</td><td>Criar a conta + me mandar o acesso</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <strong>Passo a passo:</strong>
+    <ol class="do">
+      <li><strong>Hostinger:</strong> contratar o plano Premium ou Business (o Business tem mais folga e já inclui e-mail profissional). Registrar os domínios do passo 01 nesse mesmo cadastro, se ainda não registrou.</li>
+      <li><strong>Cloudflare:</strong> criar uma conta gratuita (só e-mail + senha; não precisa cartão nem plano pago). Eu conecto o domínio aqui.</li>
+      <li><strong>Me mandar o acesso</strong> das duas (login e senha) — ou, se preferir mais seguro, me <strong>adicionar como usuário/membro</strong> nas duas contas. Manda por um canal privado, não em grupo.</li>
+    </ol>
+  </div>
+  <div class="regra">
+    <strong>Precisa de mais alguma coisa de infra pra a página da formação ir ao ar?</strong> Não da sua parte. Com os domínios + a Cloudflare + o Meta (passo 03) e o checkout (Assiny/Asaas, que já temos), eu monto e publico a página de vendas da formação e ligo o tracking. A página fica na plataforma de funil que a Inception já usa, apontada pro seu domínio.
+  </div>
+
+  <!-- 03 · CANAIS PRO CRM E AUTOMAÇÕES -->
+  <h2><span class="st">03</span>Canais pro <span class="ei">CRM e automações</span> <span style="font-size:13px;font-family:var(--sans);color:var(--ambar);letter-spacing:.06em;text-transform:uppercase;">providenciar</span></h2>
+  <p class="sub">Pra ligar as automações de e-mail e WhatsApp (captação → qualificação → call → fechamento), o CRM precisa de quatro conexões. Nenhuma é bicho de sete cabeças — só reunir.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Conexão</th><th>Por quê</th><th>Você faz</th></tr></thead>
+      <tbody>
+        <tr><td><strong>WhatsApp dedicado</strong></td><td>Número da Academia (não o seu pessoal) pra disparos e atendimento das automações</td><td>Providenciar um número/chip só pra isso</td></tr>
+        <tr><td><strong>E-mail profissional</strong></td><td>Remetente das automações (<span class="mono">contato@academiadtm.com.br</span>) — dá profissionalismo e entrega melhor</td><td>Nada — eu crio no domínio + configuro a autenticação pela Cloudflare</td></tr>
+        <tr><td><strong>Meta Business</strong></td><td>Conta business do Facebook/Instagram — libera o WhatsApp oficial, o pixel de tracking e o tráfego pago</td><td>Ter/criar e me dar acesso</td></tr>
+        <tr><td><strong>Google Agenda</strong></td><td>Pra o agendamento automático das calls de venda cair na sua agenda</td><td>Compartilhar sua agenda (ou criar uma da Academia)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 04 · CRM -->
+  <h2><span class="st">04</span>O <span class="ei">CRM</span> <span style="font-size:13px;font-family:var(--sans);color:var(--cinza-claro);letter-spacing:.06em;text-transform:uppercase;">a Inception configura</span></h2>
+  <p class="sub">Onde os leads da formação vão viver e ser trabalhados — da aplicação ao contrato assinado. Você não configura nada aqui; é entrega da consultoria. Fica só a decisão pra você entender.</p>
+  <div class="card">
+    <strong>Recomendação: CRM do Funnel Labs</strong> (plataforma tudo-em-um) — grátis por 3 meses pela Inception.
+    <ul>
+      <li>Faz num lugar só: <strong>funil de leads</strong> (aplicou → qualificado → call agendada → fechou), <strong>e-mail</strong>, <strong>WhatsApp</strong>, <strong>agendamento de calls</strong>, <strong>automações</strong> (nutrição, lembrete, follow-up, no-show) e ainda <strong>hospeda as páginas</strong> de funil.</li>
+      <li><strong>Por que não o Notion como CRM:</strong> o Notion é ótimo pra organização interna, mas não dispara e-mail/WhatsApp, não agenda call nem roda automação de forma nativa — viraria gambiarra. Ele continua útil pra gestão do projeto, não como CRM de vendas.</li>
+      <li><strong>O que ele precisa de você</strong> pra ligar e-mail + WhatsApp: exatamente as 4 conexões do passo 03 (WhatsApp dedicado, e-mail no domínio, Meta Business, Google Agenda) + os links de checkout (Assiny/Asaas, que já temos).</li>
+    </ul>
+  </div>
+
+  <!-- 05 · MARCA / INPI -->
+  <h2><span class="st">05</span>Registrar a <span class="ei">marca</span> no INPI <span style="font-size:13px;font-family:var(--sans);color:var(--ambar);letter-spacing:.06em;text-transform:uppercase;">começar logo</span></h2>
   <p class="sub">O registro no INPI é o que dá a você a propriedade da marca no Brasil. O exame leva meses — então começar logo é o que garante a data. A proteção retroage ao dia do pedido.</p>
   <div class="tbl-wrap">
     <table>
@@ -120,19 +175,8 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--linha);color:
     </ul>
   </div>
 
-  <!-- 03 · HOSPEDAGEM -->
-  <h2><span class="st">03</span>Definir a <span class="ei">hospedagem</span> <span style="font-size:13px;font-family:var(--sans);color:var(--cinza-claro);letter-spacing:.06em;text-transform:uppercase;">a Inception cuida</span></h2>
-  <p class="sub">Onde o site e as páginas ficam no ar. Você não precisa mexer nisso agora — é parte da entrega da consultoria; aqui fica só o mapa pra você entender o que vai acontecer.</p>
-  <div class="card">
-    <ul>
-      <li><strong>Páginas de venda / captação</strong> (da formação Viver de DTM): ficam na plataforma de funil que a Inception já usa — nada pra você contratar.</li>
-      <li><strong>Site institucional</strong> (Academia DTM): hospedagem leve e rápida (Cloudflare Pages ou similar) — a Inception configura e aponta o seu domínio.</li>
-      <li><strong>O que você só precisa fazer:</strong> ter os domínios do passo 01 no seu nome. O resto (DNS, SSL, deploy) é com a gente.</li>
-    </ul>
-  </div>
-
-  <!-- 04 · INSTAGRAM -->
-  <h2><span class="st">04</span>Virar o <span class="ei">Instagram</span> <span style="font-size:13px;font-family:var(--sans);color:var(--ambar);letter-spacing:.06em;text-transform:uppercase;">após o logo pronto</span></h2>
+  <!-- 06 · INSTAGRAM -->
+  <h2><span class="st">06</span>Virar o <span class="ei">Instagram</span> <span style="font-size:13px;font-family:var(--sans);color:var(--ambar);letter-spacing:.06em;text-transform:uppercase;">após o logo pronto</span></h2>
   <p class="sub">Você já tem o perfil do curso — <span class="mono">@cursodtm</span>. Em vez de começar do zero, a gente <strong>renomeia</strong> ele pra <span class="mono">@academiadtm</span> (que está livre) e preserva os seguidores e o histórico.</p>
   <div class="regra verde">
     <strong>@academiadtm está livre</strong> — dá pra fazer a troca. Renomear <em>não</em> apaga seguidores, posts nem histórico: só muda o @.
@@ -148,24 +192,38 @@ footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--linha);color:
     </ol>
   </div>
 
+  <!-- O QUE ME MANDAR -->
+  <h2><span class="st">★</span>O que me <span class="ei">mandar</span></h2>
+  <p class="sub">Assim que fizer, me manda por um canal privado (não em grupo). Com isso em mãos eu ligo o resto.</p>
+  <div class="card preto">
+    <ul style="margin-left:20px;color:var(--bege)">
+      <li style="margin-bottom:9px"><strong style="color:#CDF23F">Hostinger</strong> — login e senha (ou me adiciona como usuário)</li>
+      <li style="margin-bottom:9px"><strong style="color:#CDF23F">Cloudflare</strong> — login e senha da conta gratuita (ou me adiciona como membro)</li>
+      <li style="margin-bottom:9px"><strong style="color:#CDF23F">WhatsApp</strong> — qual número dedicado você vai usar pra Academia</li>
+      <li style="margin-bottom:9px"><strong style="color:#CDF23F">Meta Business</strong> — acesso à conta business do Facebook/Instagram</li>
+      <li><strong style="color:#CDF23F">Google Agenda</strong> — qual e-mail/agenda usar pro agendamento das calls</li>
+    </ul>
+  </div>
+
   <!-- ORDEM -->
   <h2><span class="st">✓</span>A <span class="ei">ordem</span> das coisas</h2>
   <div class="tbl-wrap">
     <table>
       <thead><tr><th>Quando</th><th>O quê</th><th>Quem</th></tr></thead>
       <tbody>
-        <tr><td><strong>Hoje</strong></td><td>Registrar os 2 domínios (<span class="mono">academiadtm.com.br</span> + <span class="mono">viverdedtm.com.br</span>)</td><td>Rodrigo</td></tr>
-        <tr><td><strong>Esta semana</strong></td><td>Acionar advogado de marca e iniciar o registro INPI da Academia DTM (mista, quando o logo estiver pronto)</td><td>Rodrigo (+ advogado)</td></tr>
-        <tr><td><strong>Em paralelo</strong></td><td>Finalizar a identidade visual (Pulso) — destrava o logo pro INPI e pro Instagram</td><td>Inception</td></tr>
+        <tr><td><strong>Hoje</strong></td><td>Registrar <span class="mono">academiadtm.com.br</span> + <span class="mono">academiadtm.com</span> (+ <span class="mono">viverdedtm.com.br</span> recomendado)</td><td>Rodrigo</td></tr>
+        <tr><td><strong>Esta semana</strong></td><td>Contratar a Hostinger + criar a conta Cloudflare e me mandar os acessos</td><td>Rodrigo</td></tr>
+        <tr><td><strong>Esta semana</strong></td><td>Reunir os canais: WhatsApp dedicado, Meta Business, Google Agenda</td><td>Rodrigo</td></tr>
+        <tr><td><strong>Esta semana</strong></td><td>Acionar advogado de marca e iniciar o INPI da Academia DTM (marca mista, com o logo)</td><td>Rodrigo (+ advogado)</td></tr>
         <tr><td><strong>Depois do logo</strong></td><td>Renomear <span class="mono">@cursodtm → @academiadtm</span> + atualizar perfil</td><td>Rodrigo</td></tr>
-        <tr><td><strong>Quando o site pedir</strong></td><td>Apontar DNS, hospedar site e páginas</td><td>Inception</td></tr>
+        <tr><td><strong>Com os acessos em mãos</strong></td><td>DNS na Cloudflare, e-mail profissional, página da formação no ar, CRM + automações de e-mail/WhatsApp, tracking</td><td>Inception</td></tr>
       </tbody>
     </table>
   </div>
 
   <footer>
-    Guia de Setup da Marca · Academia DTM · Consultoria O Salto — Inception<br>
-    Disponibilidade de domínios e @ verificada em julho 2026 (registro.br + Instagram) · registro de marca a validar com advogado de propriedade industrial
+    Guia de Setup da Marca &amp; Infraestrutura · Academia DTM · Consultoria O Salto — Inception<br>
+    Disponibilidade de domínios e @ verificada em julho 2026 · registro de marca a validar com advogado de propriedade industrial
   </footer>
 </div>
 </body>
