@@ -576,17 +576,17 @@ HISTORIAS: [
 /* ─────────────────────── 04 · MÉTODO E FRAMEWORKS ─────────────────────── */
 
 NOME_METODO: {
-  aviso: 'Decisão da consultoria em 04/07: o método se chama ABORDAGEM MODAL, e o mecanismo central de tratamento se chama PROTOCOLO ESCALONADO DE DTM. Validação final com o Rodrigo na Validação da Estratégia (Marco 02). Nomes dos demais frameworks seguem como proposta. Trava de território mantida: nenhum nome ancora em "diagnóstico + individualização" (ocupado por concorrente) — o território daqui é o rigor protocolar, o arsenal multimodal de tratamento e a jornada completa diagnóstico → tratamento → negócio.',
+  aviso: 'REABERTO (10/07): o nome do método volta a ser uma decisão do Rodrigo. "Abordagem MODAL" foi a hipótese de trabalho da consultoria e segue como UMA das opções, ao lado de alternativas — os nomes dos 3 níveis (método, empresa e formação) são decididos juntos com ele. As opções completas de cada nível, com disponibilidade e prós/contras, estão no GUIA DE NAMING (link abaixo). O mecanismo de tratamento (Protocolo Escalonado de DTM · F4) segue como proposta.',
   top1: 'Abordagem MODAL',
-  status_nome: '✓ aprovado pela consultoria · 04/07 — validação final com o Rodrigo no Marco 02',
-  assinatura: 'Abordagem MODAL — o raciocínio clínico completo em DTM: do diagnóstico protocolar ao arsenal multimodal.',
-  top1_racional: 'Acrônimo-conceito: Multimodal · Orientada (educação em dor) · Diagnóstico · Arsenal · Literatura. "Abordagem" (e não "método") reforça o que ele mesmo diz — é postura clínica, não receita. O A de ARSENAL é explicado com a analogia oficial do cinto do Batman. Dentro da Abordagem MODAL vive o mecanismo central de tratamento: o PROTOCOLO ESCALONADO DE DTM (F4).',
+  status_nome: '🟥 em decisão com o Rodrigo — ver Guia de Naming',
+  assinatura: 'Hipótese de trabalho — o raciocínio clínico completo em DTM: do diagnóstico protocolar ao arsenal multimodal. Agora uma das opções em aberto.',
+  top1_racional: 'Acrônimo-conceito: Multimodal · Orientada (educação em dor) · Diagnóstico · Arsenal · Literatura. "Abordagem" (e não "método") reforça o que ele mesmo diz — é postura clínica, não receita. O A de ARSENAL é explicado com a analogia oficial do cinto do Batman. Segue como a opção conceitual mais forte, mas a decisão é do Rodrigo entre as opções abaixo.',
   opcoes: [
-    { nome: 'Abordagem MODAL — ESCOLHIDO (04/07)', tecnica: 'Acrônimo-conceito (M·O·D·A·L)', porque: 'Ancora no multimodal sem colidir com território de concorrente; "abordagem" soa clínico e verdadeiro pro jeito dele. Fácil de dizer numa aula e numa venda.', risco: 'Revelar o acrônimo como bônus didático, não como explicação obrigatória.' },
-    { nome: 'Protocolo Escalonado de DTM — ESCOLHIDO como mecanismo (04/07)', tecnica: 'Descritiva pelo mecanismo central', porque: 'Vira o nome do mecanismo de tratamento dentro da Abordagem MODAL (F4) — comunica na lata o diferencial clínico: trata por degraus, com critério.', risco: '—' },
-    { nome: 'Cinto do Batman', tecnica: 'Analogia-assinatura dele', porque: 'DEFINIDO como analogia oficial do "A" de Arsenal — o apelido vivo do arsenal nas aulas e na copy.', risco: 'Nunca como nome oficial — sempre como analogia didática.' },
-    { nome: 'Método do Raciocínio Clínico em DTM', tecnica: 'Nomeação pela transformação-fim', porque: 'Não escolhido — vive como tagline possível.', risco: '—' },
-    { nome: 'Sistema Multimodal Wendel (SMW)', tecnica: 'Sobrenome + mecanismo', porque: 'Não escolhido — registro histórico.', risco: '—' },
+    { nome: 'Abordagem MODAL', tecnica: 'Conceitual · acrônimo (M·O·D·A·L)', porque: 'Marca própria forte; ancora no multimodal sem colidir com território de concorrente; "abordagem" soa clínico e verdadeiro. Era a hipótese de trabalho.', risco: 'Revelar o acrônimo como bônus didático, não como explicação obrigatória.' },
+    { nome: 'Abordagem Multicritério', tecnica: 'Conceitual · neologismo', porque: 'Marca própria forte; junta multimodalidade + rigor de decisão (quando escalonar) numa palavra só.', risco: 'Palavra menos imediata que "modal" — exige uma linha de apoio.' },
+    { nome: 'DTM Multimodal', tecnica: 'Descritivo (com a sigla)', porque: 'O mais fiel à substância — várias ferramentas, não uma só. Comunica o nicho na hora.', risco: 'Marca fraca no INPI ("multimodal" é termo genérico da literatura).' },
+    { nome: 'DTM Global', tecnica: 'Descritivo (com a sigla)', porque: 'Cobertura total — corpo inteiro, não só a articulação.', risco: 'Marca fraca — "global" é adjetivo genérico.' },
+    { nome: 'DTM 360', tecnica: 'Descritivo (com a sigla)', porque: 'Imagem de visão completa do problema.', risco: 'Marca fraca + "360" pode soar clichê de "curso completo".' },
   ],
 },
 

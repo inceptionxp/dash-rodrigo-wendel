@@ -473,23 +473,31 @@
         <strong>Status de naming:</strong> ${M.NOME_METODO ? M.NOME_METODO.aviso : ''}
       </div>
 
-      <h2 class="section-title">Nome do método — <span class="ei">definido</span></h2>
+      <a class="link-card" href="naming-guia/index.html" target="_blank" style="border-color:var(--vermelho);">
+        <div>
+          <span class="link-card-titulo">🟥 Guia de Naming — os 3 nomes a decidir com o Rodrigo</span>
+          <span class="link-card-meta">Método · Empresa · Formação — todas as opções livres, com prós/contras e disponibilidade. Sem recomendação: a escolha é dele.</span>
+        </div>
+        <span class="link-card-cta">Abrir →</span>
+      </a>
+
+      <h2 class="section-title">Nome do método — <span class="ei">em decisão</span></h2>
       <div class="card preto">
-        <div class="modal-tags" style="margin-bottom:12px;"><span class="modal-tag" style="background:#3D8A5A;color:#fff;">${M.NOME_METODO && M.NOME_METODO.status_nome ? M.NOME_METODO.status_nome : 'definido'}</span></div>
+        <div class="modal-tags" style="margin-bottom:12px;"><span class="modal-tag" style="background:var(--vermelho);color:#fff;">${M.NOME_METODO && M.NOME_METODO.status_nome ? M.NOME_METODO.status_nome : 'em decisão'}</span></div>
         <h3 class="card-title" style="font-family:var(--cond);text-transform:uppercase;font-size:34px;">${M.NOME_METODO ? M.NOME_METODO.top1 : ''}</h3>
         <p style="font-family:var(--sans);font-style:italic;font-size:15.5px;">${M.NOME_METODO ? M.NOME_METODO.assinatura : ''}</p>
         <p style="font-size:13px;">${M.NOME_METODO ? M.NOME_METODO.top1_racional : ''}</p>
       </div>
       <div class="tbl-wrap">
         <table class="tbl">
-          <thead><tr><th>#</th><th>Nome proposto</th><th>Técnica de naming</th><th>Por que funciona</th><th>Risco</th></tr></thead>
+          <thead><tr><th>#</th><th>Opção de nome</th><th>Estilo</th><th>O que comunica</th><th>Ponto de atenção</th></tr></thead>
           <tbody>
             ${(M.NOME_METODO ? M.NOME_METODO.opcoes : []).map((o, i) => `
               <tr><td class="tnum">${i + 1}</td><td><strong>${o.nome}</strong></td><td>${o.tecnica}</td><td>${o.porque}</td><td>${o.risco}</td></tr>
             `).join('')}
           </tbody>
         </table>
-        <div class="tbl-foot">Decisão final: Maiara + Rodrigo, na Validação da Estratégia (Marco 02).</div>
+        <div class="tbl-foot">Decisão final: Rodrigo, na Validação da Estratégia (Marco 02). Opções completas dos 3 nomes no Guia de Naming acima.</div>
       </div>
 
       <h2 class="section-title">PUV — Proposta Única de <span class="ei">Valor</span></h2>

@@ -115,8 +115,9 @@ OFERTA: {
     </div>
     <div class="card">
       <dl class="kv">
-        <dt>Nome da formação</dt><dd><span class="definir">🟥 definir juntos (consultora + Rodrigo)</span> &nbsp;<em style="font-size:12px;color:var(--cinza);">naming em curadoria — nome com "DTM" explícito que simbolize a formação completa (diagnosticar, tratar e lucrar). Apresentar ao Rodrigo só depois de explicar a Abordagem MODAL. O método (Abordagem MODAL) e o mecanismo (Protocolo Escalonado de DTM) já têm nome aprovado.</em></dd>
-        <dt>Mecanismo</dt><dd>A Abordagem MODAL — o raciocínio clínico completo, do diagnóstico protocolar ao arsenal multimodal de tratamento, com a camada comercial que os cursos acadêmicos não ensinam</dd>
+        <dt>Nome da formação</dt><dd><span class="definir">🟥 decidir com o Rodrigo (Marco 02)</span> &nbsp;<em style="font-size:12px;color:var(--cinza);">nome com "DTM" explícito, em dois ângulos: completude/domínio técnico ou lucro/faturamento. Todas as opções livres estão no <strong>Guia de Naming</strong> (página Método e Frameworks).</em></dd>
+        <dt>Nome do método</dt><dd><span class="definir">🟥 decidir com o Rodrigo (Marco 02)</span> &nbsp;<em style="font-size:12px;color:var(--cinza);">reaberto — "Abordagem MODAL" é a hipótese de trabalho e uma das opções; ver Guia de Naming. O mecanismo (Protocolo Escalonado de DTM) segue como proposta.</em></dd>
+        <dt>Mecanismo</dt><dd>A abordagem clínica completa, do diagnóstico protocolar ao arsenal multimodal de tratamento, com a camada comercial que os cursos acadêmicos não ensinam (nome do método a decidir no Marco 02)</dd>
       </dl>
     </div>
 

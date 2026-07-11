@@ -194,7 +194,6 @@ const ACOMPANHAMENTO = {
     {
       slug: 'prio', grupo: 'Prioritário — destrava a produção', aberto: true,
       itens: [
-        {t: 'Confirmar só o iPRF (agregado plaquetário, escada articular): o aluno sai capacitado ou fica só teoria?', d: 'A marcação capacita × só-teoria foi resolvida em 04/07 — só esse procedimento ficou em aberto (na call ele sinalizou só teoria; na resposta do WhatsApp não citou).'},
         {t: 'Enviar o material/aula gravada dos dois tripés (sistêmico e local)', d: 'Fortalece o Encontro 3 — pode virar aula invertida (aluno assiste antes, o encontro vira discussão). Obs.: a aula recebida em 07/07 é a COMERCIAL (abordagem de venda) — esta, técnica dos tripés, ainda falta.'},
         {t: 'Validar a estrutura do produto pelos comentários da dashboard', d: '4 pontos em aberto: divisão das etapas (4 + 4-5 + 2 meses) · faixa de investimento · formato presencial (1 obrigatório + 2 opcionais) · desenho da mentoria como continuidade.'},
       ],
@@ -285,7 +284,8 @@ const ACOMPANHAMENTO = {
     {item: 'Briefing extraído e documentado (expert · cliente ideal · método) — via call, substituiu o formulário', data: '02/07/2026'},
     {item: 'Pesquisas expandidas entregues (mercado, concorrência, aprendiz e certificação — ver página Pesquisas)', data: '02-03/07/2026'},
     {item: 'Materiais recebidos: números de autoridade, credenciais e formação, jargões e crenças-âncora, temas da parte comercial, perfil da concorrente citada na call', data: '03/07/2026'},
-    {item: 'Materiais recebidos: conteúdos de diagnóstico + as 3 escadas + a marcação capacita × só-teoria confirmada (só o iPRF a fechar)', data: '03-04/07/2026'},
+    {item: 'Materiais recebidos: conteúdos de diagnóstico + as 3 escadas de tratamento', data: '03-04/07/2026'},
+    {item: 'Marcação capacita × só-teoria FECHADA pelo Rodrigo: capacita em tudo, exceto toxina botulínica, artrocentese e procedimentos cirúrgicos (só teoria). iPRF confirmado como CAPACITA na escada articular', data: '10/07/2026'},
     {item: 'Naming aprovado pela consultoria: Abordagem MODAL (método) + Protocolo Escalonado de DTM (mecanismo) + ângulo da PUV — validação final com o Rodrigo no Marco 02', data: '04/07/2026'},
     {item: 'Jornada do aluno e gamificação por faixas aprovadas pela consultoria', data: '04/07/2026'},
     {item: 'Materiais recebidos e processados: aula comercial "Como faço uma abordagem comercial em DTM" (4h08) + depoimentos completos (5 de alunos + 4 pacientes em vídeo) — transcritos localmente, analisados e integrados ao briefing (Banco de Histórias, Método/F6, Cliente Ideal)', data: '07/07/2026'},

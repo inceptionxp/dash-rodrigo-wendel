@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Os Três Nomes · Dr. Rodrigo Wendel · O Salto</title>
+<style>
+@font-face{font-family:'TGSPerfect';src:url('../assets/fonts/TGSPerfectCondensed.otf') format('opentype');font-display:swap}
+@font-face{font-family:'PPEiko';src:url('../assets/fonts/PPEiko-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'HankenGrotesk';src:url('../assets/fonts/HankenGrotesk-Light.ttf') format('truetype');font-weight:300;font-display:swap}
+@font-face{font-family:'HankenGrotesk';src:url('../assets/fonts/HankenGrotesk-Medium.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face{font-family:'HankenGrotesk';src:url('../assets/fonts/HankenGrotesk-SemiBold.ttf') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:'HankenGrotesk';src:url('../assets/fonts/HankenGrotesk-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+:root{
+  --vermelho:#E0391C; --vermelho-esc:#B32D15; --bege:#F5F1EA; --bege-claro:#FAF7F2; --papel:#EDE7DA;
+  --preto:#0A0A0A; --cinza:#5C544D; --cinza-claro:#9A938A; --linha:rgba(10,10,10,.10);
+  --verde:#3D8A5A; --ambar:#C99A3D;
+  --cond:'TGSPerfect','Arial Narrow',sans-serif; --serif:'PPEiko',Georgia,serif;
+  --sans:'HankenGrotesk',-apple-system,system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bege);color:var(--preto);font-family:var(--sans);font-weight:300;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:56px 28px 100px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--vermelho);display:inline-flex;align-items:center;gap:12px;margin-bottom:16px}
+.eyebrow::before{content:'';width:28px;height:2px;background:var(--vermelho)}
+h1{font-family:var(--cond);text-transform:uppercase;font-size:clamp(42px,6vw,78px);line-height:.95;margin-bottom:18px}
+h1 .ei{font-family:var(--serif);text-transform:none;color:var(--vermelho);font-weight:500}
+.lead{font-size:clamp(17px,1.8vw,21px);color:var(--cinza);max-width:70ch;font-style:italic;margin-bottom:14px}
+h2{font-family:var(--cond);text-transform:uppercase;font-size:30px;line-height:1;margin:56px 0 8px}
+h2 .ei{font-family:var(--serif);text-transform:none;color:var(--vermelho);font-weight:500}
+h2 .n{color:var(--vermelho);margin-right:10px}
+h3.grp{font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--vermelho);margin:22px 0 8px}
+.sub{color:var(--cinza);margin-bottom:20px;max-width:76ch}
+.card{background:var(--bege-claro);border:1px solid var(--linha);border-radius:14px;padding:24px 26px;margin-bottom:14px}
+.card.preto{background:var(--preto);color:var(--bege);border-color:var(--preto)}
+.card.preto .cinza{color:#B9B2A8}
+.card h3{font-family:var(--serif);font-weight:500;font-size:21px;margin-bottom:8px}
+.acr{list-style:none;margin:6px 0 0}
+.acr li{display:flex;gap:12px;align-items:baseline;margin-bottom:8px;color:#C9C2B8}
+.acr .l{font-family:var(--cond);font-size:26px;line-height:1;color:var(--vermelho);min-width:24px}
+.acr strong{color:var(--bege)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:6px}
+th{background:var(--preto);color:var(--bege);text-align:left;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:11px 14px}
+td{padding:13px 14px;border-top:1px solid var(--linha);vertical-align:top;color:var(--cinza)}
+td strong{color:var(--preto);font-weight:600}
+tbody tr:hover{background:var(--papel)}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--linha);border-radius:12px;margin-bottom:10px}
+.badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:20px;white-space:nowrap}
+.b-livre{background:rgba(61,138,90,.14);color:var(--verde)}
+.b-parcial{background:rgba(201,154,61,.16);color:var(--ambar)}
+.b-forte{background:rgba(61,138,90,.14);color:var(--verde)}
+.b-fraca{background:rgba(201,154,61,.16);color:var(--ambar)}
+.regra{border-left:3px solid var(--vermelho);background:var(--papel);padding:16px 20px;border-radius:0 10px 10px 0;margin:16px 0}
+.regra strong{color:var(--preto)}
+ul.deck{list-style:none;margin:0}
+.deck li{display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;color:var(--cinza)}
+.deck .num{font-family:var(--cond);color:var(--vermelho);font-size:20px;min-width:26px;line-height:1.2}
+.deck strong{color:var(--preto)}
+footer{margin-top:70px;padding-top:22px;border-top:1px solid var(--linha);color:var(--cinza-claro);font-size:12px;text-align:center}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="eyebrow">Consultoria · O Salto</span>
+  <h1>Os três <span class="ei">nomes.</span></h1>
+  <p class="lead">Três decisões de nome que destravam tudo o que vem depois — marca, domínio, Instagram, páginas e material do aluno. Nenhum nome aqui está fechado: são opções com o porquê de cada uma, pra você escolher.</p>
+
+  <div class="regra">
+    <strong>Como ler:</strong> cada opção vem com o que comunica, a disponibilidade real (verificada em Google, Instagram e registro de domínio) e a força de marca no INPI. Não há "recomendação" — a decisão é sua. O único passo obrigatório antes de investir na identidade visual é validar o nome escolhido com um advogado de marca.
+  </div>
+
+  <!-- ═══════════ MÉTODO ═══════════ -->
+  <h2><span class="n">01</span>O nome do <span class="ei">método</span></h2>
+  <p class="sub">O raciocínio clínico completo em DTM: multimodal, orientado pela educação em dor, diagnóstico primeiro e escalonamento por critério. "Abordagem MODAL" foi a hipótese de trabalho da consultoria — aqui ela volta ao jogo como <strong>uma opção entre outras</strong>, com alternativas de dois estilos: nomes de marca própria (conceituais) e nomes descritivos com a sigla DTM.</p>
+
+  <div class="card preto">
+    <h3 style="color:var(--bege);">Abordagem MODAL</h3>
+    <p class="cinza" style="margin-bottom:6px;">O nome é um acrônimo do raciocínio clínico completo:</p>
+    <ul class="acr">
+      <li><span class="l">M</span><span><strong>Multimodal</strong> — o arsenal de terapias, não uma técnica única</span></li>
+      <li><span class="l">O</span><span><strong>Orientada pela educação em dor</strong> — o paciente entende antes de ser tratado</span></li>
+      <li><span class="l">D</span><span><strong>Diagnóstico</strong> primeiro — "antes de intervir, você precisa entender"</span></li>
+      <li><span class="l">A</span><span><strong>Arsenal</strong> — a ferramenta certa, na ordem certa (o "cinto do Batman")</span></li>
+      <li><span class="l">L</span><span><strong>Literatura</strong> — quem decide o tratamento é a ciência, não o achismo</span></li>
+    </ul>
+  </div>
+
+  <h3 class="grp">As opções de nome do método</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:22%">Nome</th><th style="width:16%">Estilo</th><th>O que comunica</th><th style="width:13%">Disponível</th><th style="width:12%">Marca</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Abordagem MODAL</strong></td><td>Conceitual (acrônimo)</td><td>O raciocínio clínico inteiro num nome de marca próprio; já era a hipótese de trabalho</td><td><span class="badge b-livre">livre</span></td><td><span class="badge b-forte">forte</span></td></tr>
+        <tr><td><strong>Abordagem Multicritério</strong></td><td>Conceitual (neologismo)</td><td>Multimodalidade + rigor de decisão (quando escalonar) numa palavra só</td><td><span class="badge b-livre">livre</span></td><td><span class="badge b-forte">forte</span></td></tr>
+        <tr><td><strong>DTM Multimodal</strong></td><td>Descritivo</td><td>O coração do método — várias ferramentas, não uma só. O mais fiel à substância</td><td><span class="badge b-livre">livre</span></td><td><span class="badge b-fraca">fraca*</span></td></tr>
+        <tr><td><strong>DTM Global</strong></td><td>Descritivo</td><td>Cobertura total — corpo inteiro, não só a articulação</td><td><span class="badge b-livre">livre</span></td><td><span class="badge b-fraca">fraca*</span></td></tr>
+        <tr><td><strong>DTM 360</strong></td><td>Descritivo</td><td>Visão completa do problema. Atenção: "360" pode soar clichê de "curso completo"</td><td><span class="badge b-livre">livre</span></td><td><span class="badge b-fraca">fraca*</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12.5px;color:var(--cinza-claro);">*Marca fraca = os nomes com a sigla "DTM" comunicam o nicho na hora, mas são difíceis de proteger com exclusividade no INPI (qualquer um pode usar "DTM + palavra"). Os conceituais (MODAL, Multicritério) são marca própria forte.</p>
+
+  <!-- ═══════════ EMPRESA ═══════════ -->
+  <h2><span class="n">02</span>O nome da <span class="ei">empresa</span></h2>
+  <p class="sub">A marca-mãe que abriga a formação, a mentoria e tudo que vier depois — é ela que carrega o Instagram, o domínio, o contrato e o certificado, e é ela que se protege no INPI. Todas as opções abaixo estão com domínio e Google livres.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:24%">Nome</th><th style="width:16%">Linha</th><th>Leitura</th><th style="width:14%">Disponível</th><th style="width:13%">Registro</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Instituto Wendel</strong></td><td>Sobrenome</td><td>Nome próprio é sinal distintivo — carrega 30 anos de autoridade e abriga qualquer produto futuro</td><td><span class="badge b-livre">livre nos 3</span></td><td><span class="badge b-forte">forte</span></td></tr>
+        <tr><td><strong>Wendel Educação</strong></td><td>Sobrenome</td><td>Mesma força do Instituto, mais explícito no segmento</td><td><span class="badge b-livre">livre nos 3</span></td><td><span class="badge b-forte">forte</span></td></tr>
+        <tr><td><strong>Academia DTM</strong></td><td>Sigla</td><td>Direto e contemporâneo, diz o que é na hora</td><td><span class="badge b-livre">livre nos 3</span></td><td><span class="badge b-fraca">fraca</span></td></tr>
+        <tr><td><strong>Instituto DTM</strong></td><td>Sigla</td><td>Seriedade acadêmica (a pegada de "instituto")</td><td><span class="badge b-livre">livre nos 3</span></td><td><span class="badge b-fraca">fraca</span></td></tr>
+        <tr><td><strong>DTM School</strong></td><td>Sigla</td><td>Vibe moderna e internacional</td><td><span class="badge b-livre">livre nos 3</span></td><td><span class="badge b-fraca">fraca</span></td></tr>
+        <tr><td><strong>Escola DTM</strong></td><td>Sigla</td><td>Simples e claro, em português</td><td><span class="badge b-livre">livre nos 3</span></td><td><span class="badge b-fraca">fraca</span></td></tr>
+        <tr><td><strong>DTM Academy</strong> · <strong>DTM Edu</strong></td><td>Sigla</td><td>Mesma vibe internacional</td><td><span class="badge b-parcial">@ ocupado</span></td><td><span class="badge b-fraca">fraca</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="regra">
+    <strong>O que pesar aqui:</strong> os nomes com <strong>"Wendel"</strong> são os únicos fortes juridicamente — nome próprio registra de verdade e ninguém mais é "Wendel" no nicho. Os com <strong>"DTM"</strong> comunicam o nicho na hora, mas são marca fraca (um concorrente pode lançar "DTM + outra palavra" sem violar). Se você quiser <strong>DTM na empresa e na formação ao mesmo tempo</strong>, funciona — nesse caso a proteção se faz pelo logo e pela identidade visual, não só pelo nome.
+  </div>
+
+  <!-- ═══════════ FORMAÇÃO ═══════════ -->
+  <h2><span class="n">03</span>O nome da <span class="ei">formação</span></h2>
+  <p class="sub">O produto que você vende agora — a formação em DTM. Aqui o Instagram não conta (o produto não terá perfil próprio); o que importa é a marca estar livre e o domínio disponível pra guardar. Todas as opções abaixo passaram. Dois ângulos:</p>
+
+  <h3 class="grp">Ângulo A · Completude e domínio técnico</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:30%">Nome</th><th>O que comunica</th><th style="width:14%">Disponível</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Domínio DTM</strong></td><td>Maestria + território — o dentista domina de verdade, não "só tem um martelo". Curto e memorável</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>Formação DTM na Prática</strong></td><td>Ataca o medo do curso teórico que nunca se aplica</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>Formação DTM Integral</strong></td><td>A promessa inteira numa palavra: diagnosticar + tratar + lucrar</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>Formação DTM Completa</strong></td><td>Ponta a ponta, entendida por qualquer dentista na hora</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>Formação DTM 360</strong></td><td>Imagem de "cobre tudo". Nota: "360" também aparece como opção de nome do método — escolher onde usar</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>Formação Modal DTM</strong></td><td>Liga ao método. Nota: "Modal" já é o nome do método (MODAL) — pode gerar confusão de papéis</td><td><span class="badge b-livre">livre</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="grp">Ângulo B · Lucro e faturamento (a DTM como renda)</h3>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:30%">Nome</th><th>O que comunica</th><th style="width:14%">Disponível</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Viver de DTM</strong></td><td>Sustento/carreira na especialidade (padrão de mercado — modelado no "Viver de Mentoria"). Testar se comunica "o dentista viver de DTM"</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>DTM Rentável</strong></td><td>Decisão de negócio racional — sóbrio, financeiro</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>DTM que Paga</strong></td><td>Resposta direta à falácia "DTM não dá dinheiro"</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>Retorno com DTM</strong></td><td>Vocabulário de ROI — investimento que retorna</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>DTM Lucrativa</strong></td><td>Resultado financeiro sem rodeio</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>DTM Como Negócio</strong></td><td>DTM administrada como negócio, não só técnica</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>DTM: Carreira e Renda</strong></td><td>Os dois pilares — crescimento profissional + resultado</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>Do Consultório ao Lucro com DTM</strong></td><td>Jornada a partir da prática real (nome longo — bom com subtítulo)</td><td><span class="badge b-livre">livre</span></td></tr>
+        <tr><td><strong>Fature com DTM</strong> · <strong>Faturamento com DTM</strong></td><td>Ação/faturamento direto. "Fature" é o mais próximo do limite anti-guru — ainda dentro, mas testar em voz alta</td><td><span class="badge b-livre">livre</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="regra">
+    <strong>Sobre registro:</strong> o nome da formação <strong>também precisa ser registrado</strong> (não é secundário) — guardar o domínio e proteger a marca do produto. Como quase todos giram em torno da sigla "DTM" (termo clínico de uso comum), a proteção mais forte vem de registrar a expressão inteira + a identidade visual, e validar com advogado de marca antes de fechar.
+  </div>
+
+  <!-- ═══════════ O QUE DECIDIR ═══════════ -->
+  <h2><span class="n">04</span>O que decidir <span class="ei">hoje</span></h2>
+  <div class="card">
+    <ul class="deck">
+      <li><span class="num">1</span><div><strong>Nome do método.</strong> Define como a abordagem é apresentada em aula, na copy e na venda.</div></li>
+      <li><span class="num">2</span><div><strong>Nome da empresa.</strong> Define o domínio, o Instagram e o que vai no contrato e no certificado. É o que se protege no INPI.</div></li>
+      <li><span class="num">3</span><div><strong>Nome da formação.</strong> Define a página de vendas, os anúncios e todo o material do aluno.</div></li>
+    </ul>
+  </div>
+  <div class="regra">
+    <strong>Antes de investir na identidade visual:</strong> validar o(s) nome(s) escolhido(s) com um advogado de propriedade industrial. O INPI não pôde ser consultado direto (exige login) — e nomes com "DTM + termo genérico" tendem a não dar exclusividade sozinhos.
+  </div>
+
+  <footer>
+    Guia de Naming · Dr. Rodrigo Wendel · Consultoria O Salto — Inception<br>
+    Opções sem recomendação — a decisão é do expert · disponibilidade verificada em Google, Instagram (endpoint público) e RDAP oficial do Registro.br · julho 2026
+  </footer>
+</div>
+</body>
+</html>
