@@ -34,12 +34,15 @@ const MARCOS = [
     n: '02',
     titulo: 'Validação da Estratégia',
     descricao: 'Apresentação da estratégia da campanha (método, posicionamento, oferta, naming e funil) para revisão e aprovação do Rodrigo antes do início da produção.',
-    prazo: 'Até 15 dias úteis após a Conversa de Levantamento',
-    status: 'planejado',
+    prazo: '1ª sessão de validação realizada em 11/07/2026',
+    status: 'aguard-aprov',
     detalhes: [
-      'Reunião síncrona obrigatória — ponto-chave de alinhamento',
+      '✓ Call de validação realizada em 11/07/2026 — naming, identidade visual e formato do produto validados pelo Rodrigo',
+      '✓ NAMING RATIFICADO: método Abordagem MODAL · empresa Academia DTM · formação Viver de DTM',
+      '✓ Identidade visual escolhida: território Pulso (navy + verde-limão fluor)',
+      '✓ Formato validado: misto, turma fechada, ~10 meses / ~41 encontros, 2 imersões presenciais obrigatórias em Brasília + formatura, sem 1:1 na formação',
+      'Pendente pra fechar o Marco: revisão do Rodrigo sobre a estrutura técnica (frameworks + grade dos 41 encontros) — prazo ~2 semanas. Só a aprovação técnica destrava a produção dos materiais do produto',
       'Garantia ativa: devolução integral em 5 dias úteis se incompatível com expectativa',
-      'Aprovação aqui destrava o início da fase de produção',
     ],
   },
   {
@@ -83,12 +86,12 @@ const BLOCOS = [
     entregas: [
       {titulo: 'Pesquisa aprofundada de mercado', detalhe: '4 relatórios: mercado DTM, concorrência em formações, perfil do aprendiz e rotas de certificação — documentados na página Pesquisas', status: 'em-dev'},
       {titulo: 'Perfil do dentista ideal', detalhe: 'Dores, motivações, processo de decisão, linguagem que ele usa — ver Cliente Ideal', status: 'em-dev'},
-      {titulo: 'Definição de posicionamento', detalhe: 'Decidido na call de 02/07: formação para dentistas que não dominam DTM — formaliza no Marco 02', status: 'aguard-aprov'},
-      {titulo: 'Definição de nome', detalhe: 'Nome da empresa (braço educacional), do Instagram novo e da formação', status: 'planejado'},
+      {titulo: 'Definição de posicionamento', detalhe: 'Formação para dentistas que não dominam DTM — validado com o Rodrigo na call de 11/07', status: 'aprovado'},
+      {titulo: 'Definição de nome', detalhe: 'RATIFICADO em 11/07: empresa Academia DTM · formação Viver de DTM · método Abordagem MODAL · Instagram-alvo @academiadtm', status: 'aprovado'},
       {titulo: 'Estruturação do método autoral', detalhe: 'Pilares, frameworks, jornada de transformação — ver Método e Frameworks (aguarda materiais do Rodrigo pra fechar)', status: 'em-dev'},
-      {titulo: 'Formato dos encontros', detalhe: 'Direção definida na call: semanal em grupo + presencial hands-on, sem 1:1 na formação', status: 'em-dev'},
-      {titulo: 'Régua da formação e onboarding', detalhe: 'Plano de ensino completo: 41 encontros aula a aula (ver Grade · 41 Encontros), 10 meses em 3 etapas. Marcação capacita × só-teoria confirmada em 04/07 (só o iPRF a fechar)', status: 'aguard-aprov'},
-      {titulo: 'Oferta completa', detalhe: 'Escopo, duração e faixa de investimento em estudo (ver página Oferta) — bônus, promessa e garantia no Marco 02', status: 'em-dev'},
+      {titulo: 'Formato dos encontros', detalhe: 'Validado em 11/07: semanal em grupo online + 2 imersões presenciais obrigatórias em Brasília (diagnóstico e fim do tratamento) + formatura, turma fechada, sem 1:1 na formação', status: 'aprovado'},
+      {titulo: 'Régua da formação e onboarding', detalhe: 'Plano de ensino completo: 41 encontros aula a aula (ver Grade · 41 Encontros), 10 meses em 3 etapas. Em revisão técnica pelo Rodrigo (prazo ~2 semanas). Ajuste do formato em 11/07: 2 imersões presenciais obrigatórias (a grade será atualizada com a 2ª imersão, no fim do tratamento)', status: 'aguard-aprov'},
+      {titulo: 'Oferta completa', detalhe: 'Escopo e duração definidos. Precificação refeita do zero com o formato agora fechado (a faixa 15-20k citada antes foi aposentada). Bônus, promessa, garantia e preço final no fechamento da oferta', status: 'em-dev'},
       {titulo: 'Documento mestre de estratégia da campanha', detalhe: 'Orienta todas as peças que vêm depois — estrutura do produto em construção', status: 'em-dev'},
     ],
   },
@@ -200,10 +203,10 @@ const ACOMPANHAMENTO = {
       ],
     },
     {
-      slug: 'prio', grupo: 'Prioritário — destrava a produção', aberto: true,
+      slug: 'prio', grupo: 'Prioritário — revisão da estratégia (prazo autoimposto: ~2 semanas)', aberto: true,
       itens: [
+        {t: 'Revisar TODA a dashboard e mandar os comentários', d: 'Combinado na call de 11/07: revisar aos poucos (30-40 min/dia), por bloco, comentando aqui na dash (login Google) ou no WhatsApp (pode ser áudio/picado). Frentes: Cliente Ideal · diferenciais/autoridade · Banco de Histórias · Método/PUV/frameworks (os 2 tripés a aprofundar) · Grade dos 41 encontros (validar o que falta, o que tirar).'},
         {t: 'Enviar o material/aula gravada dos dois tripés (sistêmico e local)', d: 'Fortalece o Encontro 3 — pode virar aula invertida (aluno assiste antes, o encontro vira discussão). Obs.: a aula recebida em 07/07 é a COMERCIAL (abordagem de venda) — esta, técnica dos tripés, ainda falta.'},
-        {t: 'Validar a estrutura do produto pelos comentários da dashboard', d: '4 pontos em aberto: divisão das etapas (4 + 4-5 + 2 meses) · faixa de investimento · formato presencial (1 obrigatório + 2 opcionais) · desenho da mentoria como continuidade.'},
       ],
     },
     {
@@ -278,10 +281,11 @@ const ACOMPANHAMENTO = {
 
   // Pendente da consultoria
   pendente_consultoria: [
-    {t: 'Naming: empresa (braço educacional), formação e Instagram novo', d: 'Em pesquisa — nomes do método e do mecanismo já aprovados internamente (04/07). Apresenta no Marco 02.', status: 'em-dev'},
-    {t: 'Oferta completa: bônus, garantia, condições de fundador e preço final', d: 'Construção conjunta na Validação da Estratégia — a base já está na página Oferta.', status: 'em-dev'},
+    {t: 'Trilha A · Identidade visual + marketing (em andamento, ~1-2 semanas)', d: 'Destravada pela validação de 11/07. Logo Academia DTM + sistema visual completo (território Pulso), páginas e peças de marketing inicial. Agnóstica ao conteúdo técnico — anda em paralelo à revisão do Rodrigo.', status: 'em-dev'},
+    {t: 'Trilha B · Materiais do produto (depende da revisão do Rodrigo)', d: 'Após a validação técnica: material comercial de apresentação (conteúdos programáticos), outputs/ferramentas por encontro (calculadora, planilha, checklist), plano comercial.', status: 'planejado'},
+    {t: 'Precificação refinada + oferta completa', d: 'Estudo de preço refeito do zero com o formato agora fechado (faixa 15-20k aposentada). Depois: bônus, garantia, condições de fundador e preço final.', status: 'em-dev'},
+    {t: 'Atualizar a grade com a 2ª imersão presencial', d: 'A grade atual traz 1 imersão (diagnóstico); inserir a 2ª (fim do tratamento), conforme definido em 11/07 — junto à revisão técnica.', status: 'em-dev'},
     {t: 'Documento Mestre de Estratégia da campanha', d: 'Orienta todas as peças de execução que vêm depois.', status: 'em-dev'},
-    {t: 'Agendar a Validação da Estratégia (Marco 02)', d: 'Destravada pelo envio dos materiais prioritários do Rodrigo.', status: 'planejado'},
   ],
 
   // Histórico — recebidos e aprovados (com data)
@@ -298,6 +302,7 @@ const ACOMPANHAMENTO = {
     {item: 'Jornada do aluno e gamificação por faixas aprovadas pela consultoria', data: '04/07/2026'},
     {item: 'Materiais recebidos e processados: aula comercial "Como faço uma abordagem comercial em DTM" (4h08) + depoimentos completos (5 de alunos + 4 pacientes em vídeo) — transcritos localmente, analisados e integrados ao briefing (Banco de Histórias, Método/F6, Cliente Ideal)', data: '07/07/2026'},
     {item: 'NAMING DEFINIDO: Método = Abordagem MODAL · Empresa = Academia DTM · Formação = Viver de DTM. Identidade visual = território Pulso (fluor-lime). Guia de Naming + Guia de Setup de Marca entregues', data: '10/07/2026'},
+    {item: 'Marco 02 · Call de Validação da Estratégia (1ª sessão) realizada — Rodrigo RATIFICOU naming (Academia DTM · Viver de DTM · MODAL), identidade visual (território Pulso) e formato do produto (misto, turma fechada, ~10 meses/41 encontros, 2 imersões presenciais obrigatórias + formatura, sem 1:1). DTM 360 descartado (uso do André Cia). Rodrigo assumiu revisar a estrutura técnica em ~2 semanas', data: '11/07/2026'},
   ],
 };
 
