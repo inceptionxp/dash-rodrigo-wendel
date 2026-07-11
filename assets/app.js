@@ -358,11 +358,12 @@
         <a class="bloco-resumo" href="#met-expert"><div class="bloco-resumo-n">02</div><div class="bloco-resumo-titulo">Diferenciais e Autoridade<small>Posicionamento, trajetória, números, voz e bandeiras</small></div></a>
         <a class="bloco-resumo" href="#met-historias"><div class="bloco-resumo-n">03</div><div class="bloco-resumo-titulo">Banco de Histórias<small>${(M.HISTORIAS || []).length} histórias reais estruturadas — galeria com narrativa completa</small></div></a>
         <a class="bloco-resumo" href="#met-metodo"><div class="bloco-resumo-n">04</div><div class="bloco-resumo-titulo">Método e Frameworks<small>Abordagem MODAL · PUV, jornada, ${(M.FRAMEWORKS || []).length} frameworks e ${(M.INSTRUMENTOS || []).length} instrumentos</small></div></a>
+        <a class="bloco-resumo" href="brandbook/opcao-d-pulso.html" target="_blank"><div class="bloco-resumo-n">05</div><div class="bloco-resumo-titulo">Brandbook · Território Pulso<small>A identidade visual escolhida: paleta, tipografia, direção de arte e aplicação (abre em nova aba)</small></div></a>
       </div>
 
       <h2 class="section-title"><span class="ei">Produtos</span></h2>
       <div class="blocos-grid">
-        <a class="bloco-resumo" href="#prod-formacao"><div class="bloco-resumo-n">F</div><div class="bloco-resumo-titulo">Formação<small>O carro-chefe — visão geral + 4 subpáginas: Oferta · Grade (41 encontros) · Jornada do Aluno · Gamificação</small></div></a>
+        <a class="bloco-resumo" href="#prod-formacao"><div class="bloco-resumo-n">F</div><div class="bloco-resumo-titulo">Formação<small>O carro-chefe — visão geral + 4 subpáginas: Oferta · Grade (43 encontros) · Jornada do Aluno · Gamificação</small></div></a>
         <a class="bloco-resumo" href="#prod-mentoria"><div class="bloco-resumo-n">M</div><div class="bloco-resumo-titulo">Mentoria<small>A continuidade — escopo macro, timing de abertura e a comparação com a formação</small></div></a>
       </div>
 
