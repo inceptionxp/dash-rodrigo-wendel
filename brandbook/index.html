@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Três territórios de marca · Marca-mãe DTM · Dr. Rodrigo Wendel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,400&family=Space+Grotesk:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Archivo:wght@600;700;800&family=Space+Mono:wght@400;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1a1a1c;
+    --fg:#F4EEE3;
+    --fg-60:rgba(244,238,227,.6);
+    --fg-40:rgba(244,238,227,.4);
+    --line:rgba(244,238,227,.14);
+    --corpo:"Hanken Grotesk",-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--fg);font-family:var(--corpo);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:17px}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+
+  /* intro */
+  .intro{padding:100px 0 70px;text-align:center;border-bottom:1px solid var(--line)}
+  .intro .eyebrow{font-family:"Space Grotesk",sans-serif;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--fg-40);margin-bottom:26px}
+  .intro h1{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(38px,6.5vw,74px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance;max-width:16ch;margin:0 auto}
+  .intro h1 em{font-style:italic;color:#C4893B}
+  .intro p{max-width:56ch;margin:26px auto 0;color:var(--fg-60);font-size:18px}
+  .intro .meta{margin-top:32px;font-family:"Space Grotesk",sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-40)}
+  .intro .meta strong{color:var(--fg)}
+  .anchors{display:flex;gap:14px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+  .anchors span{border:1px solid var(--line);border-radius:100px;padding:10px 20px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:9px}
+  .anchors .d1{width:8px;height:8px;border-radius:50%;background:#08C5A0}
+  .anchors .d2{width:8px;height:8px;border-radius:50%;background:#2350E6}
+
+  /* cards */
+  .cards{padding:80px 0 60px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .card{border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .25s ease,border-color .25s ease}
+  .card:hover{transform:translateY(-6px);border-color:rgba(244,238,227,.35)}
+  .card-vis{height:190px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  /* A */
+  .vis-a{background:#F4EEE3}
+  .vis-a .wm{font-family:"Fraunces",serif;font-weight:300;font-size:28px;color:#16232B;letter-spacing:-.02em;z-index:2}
+  .vis-a .wm em{font-style:italic;color:#C4893B}
+  .vis-a .rule{position:absolute;left:0;right:0;top:60%;height:1px;background:rgba(22,35,43,.18)}
+  .vis-a .amber{position:absolute;left:0;width:100%;top:calc(60% + 8px);height:2px;background:#C4893B;opacity:.6}
+  /* B */
+  .vis-b{background:#10161E}
+  .vis-b .wm{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:28px;color:#F6F1E8;letter-spacing:-.02em;z-index:2}
+  .vis-b .wm .c{color:#FF6A45}
+  /* C */
+  .vis-c{background:#0F0F12}
+  .vis-c .wm{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:32px;color:#EDE8DC;letter-spacing:-.03em;text-transform:uppercase;z-index:2}
+  .vis-c .wm .m{color:#08C5A0}
+  /* D */
+  .vis-d{background:#101C46}
+  .vis-d .wm{font-family:"Archivo",sans-serif;font-weight:800;font-size:30px;color:#F4F3EC;letter-spacing:-.03em;text-transform:uppercase;z-index:2}
+  .vis-d .wm .fl{color:#CDF23F}
+
+  .card-body{padding:30px 30px 34px;flex:1;display:flex;flex-direction:column}
+  .card-tag{font-family:"Space Grotesk",sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-40);margin-bottom:14px}
+  .card h2{font-size:24px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+  .card h2 .terr{display:block;font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:13px;letter-spacing:.06em;color:var(--fg-40);margin-bottom:8px;text-transform:none}
+  .card .concept{color:var(--fg-60);font-size:15px;margin-bottom:20px;flex:1}
+  .card .palette{display:flex;gap:0;height:26px;border-radius:4px;overflow:hidden;margin-bottom:22px}
+  .card .palette i{flex:1;display:block}
+  .card .go{font-family:"Space Grotesk",sans-serif;font-size:13px;font-weight:600;letter-spacing:.04em;display:flex;align-items:center;gap:9px;color:var(--fg)}
+  .card .go svg{transition:transform .25s ease}
+  .card:hover .go svg{transform:translateX(5px)}
+
+  /* how-to-read */
+  .guide{padding:60px 0 100px;border-top:1px solid var(--line)}
+  .guide h3{font-family:"Fraunces",serif;font-weight:300;font-size:30px;letter-spacing:-.01em;margin-bottom:36px}
+  .guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .g-item{border-left:2px solid var(--line);padding-left:22px}
+  .g-item .gn{font-family:"Space Grotesk",sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-40);margin-bottom:10px}
+  .g-item p{font-size:15px;color:var(--fg-60)}
+  .g-item strong{color:var(--fg);font-weight:600}
+
+  footer{border-top:1px solid var(--line);padding:44px 0;text-align:center}
+  footer .fm{font-family:"Fraunces",serif;font-style:italic;font-size:18px;color:var(--fg-40)}
+  footer .fmeta{font-family:"Space Grotesk",sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-40);margin-top:12px}
+
+  @media(max-width:1080px){
+    .cards{grid-template-columns:repeat(2,1fr)}
+    .card-vis{height:200px}
+  }
+  @media(max-width:900px){
+    .wrap{padding:0 22px}
+    .guide-grid{grid-template-columns:1fr;gap:20px}
+    .intro{padding:70px 0 56px}
+  }
+  @media(max-width:600px){
+    .cards{grid-template-columns:1fr;padding:56px 0 40px}
+  }
+</style>
+</head>
+<body>
+
+<section class="intro">
+  <div class="wrap">
+    <div class="eyebrow">Quatro territórios visuais · para escolher</div>
+    <h1>A mesma marca. <em>Quatro</em> caminhos possíveis.</h1>
+    <p>Quatro explorações de identidade para a marca-mãe educacional do Dr. Rodrigo Wendel — a empresa guarda-chuva que vai abrigar a Formação e a Mentoria em DTM. Mesmas seções nos quatro, para comparar. Estilos distintos, para escolher.</p>
+    <div class="anchors">
+      <span><i class="d1"></i>Autoridade científica</span>
+      <span><i class="d2"></i>Moderno · health-tech</span>
+    </div>
+    <div class="meta">Marca-mãe · <strong>Dr. Rodrigo Wendel</strong> · DTM e Dor Orofacial · Naming em definição</div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cards">
+
+    <a class="card" href="opcao-a-editorial.html">
+      <div class="card-vis vis-a">
+        <div class="rule"></div><div class="amber"></div>
+        <span class="wm">Modal <em>Editorial</em></span>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Território A</div>
+        <h2><span class="terr">MODAL Editorial</span>Autoridade que vem da ciência e da tradição</h2>
+        <p class="concept">O extremo mais seguro e credível. Instituto de ensino sério, editorial, de curadoria — sóbrio-premium e atemporal, com calor humano no creme e no âmbar.</p>
+        <div class="palette">
+          <i style="background:#16232B"></i><i style="background:#F4EEE3"></i><i style="background:#1E5A4F"></i><i style="background:#C4893B"></i><i style="background:#6B7076"></i>
+        </div>
+        <span class="go">Ver brandbook completo
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a class="card" href="opcao-b-vivo.html">
+      <div class="card-vis vis-b">
+        <svg width="100%" height="100%" viewBox="0 0 380 230" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0">
+          <circle cx="320" cy="60" r="120" fill="none" stroke="rgba(35,80,230,.5)" stroke-width="1.4"/>
+          <path d="M320 60 m-70 0 a70 70 0 0 1 140 0" fill="none" stroke="rgba(255,106,69,.7)" stroke-width="2.4"/>
+          <circle cx="60" cy="200" r="90" fill="none" stroke="rgba(61,220,196,.35)" stroke-width="1.4"/>
+        </svg>
+        <span class="wm">Modal <span class="c">Vivo</span></span>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Território B</div>
+        <h2><span class="terr">MODAL Vivo</span>Saúde de nova geração, humana e otimista</h2>
+        <p class="concept">O coração do moodboard. Marca health-tech acessível-premium: geometria confiante, blocos de cor, layout modular e fotografia humana e quente.</p>
+        <div class="palette">
+          <i style="background:#2350E6"></i><i style="background:#0C7C6C"></i><i style="background:#FF6A45"></i><i style="background:#F6F1E8"></i><i style="background:#10161E"></i>
+        </div>
+        <span class="go">Ver brandbook completo
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a class="card" href="opcao-c-sinal.html">
+      <div class="card-vis vis-c">
+        <svg width="100%" height="100%" viewBox="0 0 380 230" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0">
+          <circle cx="190" cy="115" r="150" fill="none" stroke="rgba(237,232,220,.1)" stroke-width="1.4"/>
+          <circle cx="190" cy="115" r="100" fill="none" stroke="rgba(237,232,220,.12)" stroke-width="1.4"/>
+          <circle cx="190" cy="115" r="54" fill="none" stroke="rgba(8,197,160,.55)" stroke-width="2"/>
+          <path d="M190 115 m-54 0 a54 54 0 0 1 108 0" fill="none" stroke="rgba(8,197,160,.9)" stroke-width="3"/>
+        </svg>
+        <span class="wm">Modal <span class="m">Sinal</span></span>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Território C</div>
+        <h2><span class="terr">MODAL Sinal</span>Marca-ícone que se impõe sem gritar</h2>
+        <p class="concept">O mais ousado e distintivo. Statement iconográfico de alto contraste: preto, osso e um único sinal de menta-elétrica. Distintividade pela execução, não pela cor.</p>
+        <div class="palette">
+          <i style="background:#0F0F12;flex:3"></i><i style="background:#EDE8DC;flex:2"></i><i style="background:#08C5A0;flex:.5"></i><i style="background:#7A7E7B;flex:.7"></i>
+        </div>
+        <span class="go">Ver brandbook completo
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a class="card" href="opcao-d-pulso.html">
+      <div class="card-vis vis-d">
+        <svg width="100%" height="100%" viewBox="0 0 380 230" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0">
+          <circle cx="300" cy="70" r="130" fill="none" stroke="rgba(44,75,255,.5)" stroke-width="1.4"/>
+          <circle cx="300" cy="70" r="82" fill="none" stroke="rgba(205,242,63,.55)" stroke-width="1.6"/>
+          <circle cx="300" cy="70" r="4" fill="#CDF23F"/>
+          <circle cx="70" cy="200" r="80" fill="none" stroke="rgba(18,217,160,.3)" stroke-width="1.4"/>
+        </svg>
+        <span class="wm">Modal <span class="fl">Pulso</span></span>
+      </div>
+      <div class="card-body">
+        <div class="card-tag">Território D</div>
+        <h2><span class="terr">MODAL Pulso</span>Saúde digital energética, tech e humana</h2>
+        <p class="concept">Health-tech de nova geração com energia. Confiança de dashboard e calor de gente: navy sério, geometria modular e o fluor-lime pulsando nos dados-chave.</p>
+        <div class="palette">
+          <i style="background:#101C46"></i><i style="background:#2C4BFF"></i><i style="background:#CDF23F"></i><i style="background:#12D9A0"></i><i style="background:#0B0F1A"></i>
+        </div>
+        <span class="go">Ver brandbook completo
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+    </a>
+
+  </div>
+
+  <section class="guide">
+    <h3>Como ler os quatro</h3>
+    <div class="guide-grid">
+      <div class="g-item">
+        <div class="gn">Mesma estrutura</div>
+        <p>Os quatro brandbooks têm <strong>as mesmas 9 seções</strong> — paleta, tipografia, logo, grafismo, ícones, aplicações, tom e o que evita — para você comparar maçã com maçã.</p>
+      </div>
+      <div class="g-item">
+        <div class="gn">Estilo próprio</div>
+        <p>Cada página é <strong>desenhada no estilo do seu território</strong>: o Editorial parece editorial, o Vivo e o Pulso parecem health-tech, o Sinal parece statement. O brandbook já mostra a marca em ação.</p>
+      </div>
+      <div class="g-item">
+        <div class="gn">Naming em aberto</div>
+        <p>O nome ainda está em definição. Cada território mostra a direção de logo com <strong>dois candidatos</strong> — Instituto Wendel e Academia DTM — só como exemplo.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fm">Quatro territórios de marca — para escolher um</div>
+    <div class="fmeta">Marca-mãe educacional · Dr. Rodrigo Wendel · DTM</div>
+  </div>
+</footer>
+
+</body>
+</html>

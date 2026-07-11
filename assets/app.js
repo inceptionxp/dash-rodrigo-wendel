@@ -366,6 +366,34 @@
         <a class="bloco-resumo" href="#prod-mentoria"><div class="bloco-resumo-n">M</div><div class="bloco-resumo-titulo">Mentoria<small>A continuidade — escopo macro, timing de abertura e a comparação com a formação</small></div></a>
       </div>
 
+      <h2 class="section-title">Marca e <span class="ei">entregas</span></h2>
+      <div class="card" style="margin-bottom:8px;"><dl class="kv" style="margin:0;">
+        <dt>Nomes definidos</dt><dd>Método <strong>Abordagem MODAL</strong> · Empresa <strong>Academia DTM</strong> · Formação <strong>Viver de DTM</strong></dd>
+        <dt>Identidade visual</dt><dd><strong>Território Pulso</strong> — saúde digital energética (navy + fluor-lime)</dd>
+      </dl></div>
+      <a class="link-card" href="brandbook/opcao-d-pulso.html" target="_blank">
+        <div>
+          <span class="link-card-titulo">Brandbook — Território Pulso</span>
+          <span class="link-card-meta">A identidade visual escolhida: paleta, tipografia, direção de arte e aplicação</span>
+        </div>
+        <span class="link-card-cta">Abrir →</span>
+      </a>
+      <a class="link-card" href="naming-guia/index.html" target="_blank">
+        <div>
+          <span class="link-card-titulo">Guia de Naming — os 3 nomes e o porquê</span>
+          <span class="link-card-meta">Método · Empresa · Formação — as opções consideradas e o que levou a cada escolha</span>
+        </div>
+        <span class="link-card-cta">Abrir →</span>
+      </a>
+      <a class="link-card" href="guia-setup-marca/index.html" target="_blank">
+        <div>
+          <span class="link-card-titulo">Guia de Setup da Marca — próximos passos</span>
+          <span class="link-card-meta">Domínios, registro no INPI, hospedagem e a virada do Instagram (@cursodtm → @academiadtm)</span>
+        </div>
+        <span class="link-card-cta">Abrir →</span>
+      </a>
+
+      <h2 class="section-title"><span class="ei">Consultoria</span> — navegação</h2>
       <a class="link-card" href="#pesquisas">
         <div>
           <span class="link-card-titulo">Pesquisas</span>
@@ -473,17 +501,17 @@
         <strong>Status de naming:</strong> ${M.NOME_METODO ? M.NOME_METODO.aviso : ''}
       </div>
 
-      <a class="link-card" href="naming-guia/index.html" target="_blank" style="border-color:var(--vermelho);">
+      <a class="link-card" href="naming-guia/index.html" target="_blank">
         <div>
-          <span class="link-card-titulo">🟥 Guia de Naming — os 3 nomes a decidir com o Rodrigo</span>
-          <span class="link-card-meta">Método · Empresa · Formação — todas as opções livres, com prós/contras e disponibilidade. Sem recomendação: a escolha é dele.</span>
+          <span class="link-card-titulo">Guia de Naming — os 3 nomes e o porquê de cada um</span>
+          <span class="link-card-meta">Método · Empresa · Formação — as opções consideradas, prós/contras e disponibilidade que levaram às escolhas.</span>
         </div>
         <span class="link-card-cta">Abrir →</span>
       </a>
 
-      <h2 class="section-title">Nome do método — <span class="ei">em decisão</span></h2>
+      <h2 class="section-title">Nome do método — <span class="ei">definido</span></h2>
       <div class="card preto">
-        <div class="modal-tags" style="margin-bottom:12px;"><span class="modal-tag" style="background:var(--vermelho);color:#fff;">${M.NOME_METODO && M.NOME_METODO.status_nome ? M.NOME_METODO.status_nome : 'em decisão'}</span></div>
+        <div class="modal-tags" style="margin-bottom:12px;"><span class="modal-tag" style="background:#3D8A5A;color:#fff;">${M.NOME_METODO && M.NOME_METODO.status_nome ? M.NOME_METODO.status_nome : 'definido'}</span></div>
         <h3 class="card-title" style="font-family:var(--cond);text-transform:uppercase;font-size:34px;">${M.NOME_METODO ? M.NOME_METODO.top1 : ''}</h3>
         <p style="font-family:var(--sans);font-style:italic;font-size:15.5px;">${M.NOME_METODO ? M.NOME_METODO.assinatura : ''}</p>
         <p style="font-size:13px;">${M.NOME_METODO ? M.NOME_METODO.top1_racional : ''}</p>

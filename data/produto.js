@@ -115,9 +115,10 @@ OFERTA: {
     </div>
     <div class="card">
       <dl class="kv">
-        <dt>Nome da formação</dt><dd><span class="definir">🟥 decidir com o Rodrigo (Marco 02)</span> &nbsp;<em style="font-size:12px;color:var(--cinza);">nome com "DTM" explícito, em dois ângulos: completude/domínio técnico ou lucro/faturamento. Todas as opções livres estão no <strong>Guia de Naming</strong> (página Método e Frameworks).</em></dd>
-        <dt>Nome do método</dt><dd><span class="definir">🟥 decidir com o Rodrigo (Marco 02)</span> &nbsp;<em style="font-size:12px;color:var(--cinza);">reaberto — "Abordagem MODAL" é a hipótese de trabalho e uma das opções; ver Guia de Naming. O mecanismo (Protocolo Escalonado de DTM) segue como proposta.</em></dd>
-        <dt>Mecanismo</dt><dd>A abordagem clínica completa, do diagnóstico protocolar ao arsenal multimodal de tratamento, com a camada comercial que os cursos acadêmicos não ensinam (nome do método a decidir no Marco 02)</dd>
+        <dt>Nome da formação</dt><dd><strong style="color:#2E7D46;">✓ Viver de DTM</strong> &nbsp;<em style="font-size:12px;color:var(--cinza);">definido 10/07 — ângulo lucro/faturamento (a DTM como renda), no padrão de mercado "Viver de [X]". Domínio <span style="font-family:monospace;">viverdedtm.com.br</span> livre.</em></dd>
+        <dt>Nome do método</dt><dd><strong style="color:#2E7D46;">✓ Abordagem MODAL</strong> &nbsp;<em style="font-size:12px;color:var(--cinza);">definido — Multimodal · Orientada (educação em dor) · Diagnóstico · Arsenal · Literatura. Mecanismo interno: Protocolo Escalonado de DTM.</em></dd>
+        <dt>Empresa (marca-mãe)</dt><dd><strong style="color:#2E7D46;">✓ Academia DTM</strong> &nbsp;<em style="font-size:12px;color:var(--cinza);">definido — abriga formação + mentoria. @academiadtm e academiadtm.com.br livres. Ver Guia de Setup pros próximos passos (domínio, INPI, Instagram).</em></dd>
+        <dt>Identidade visual</dt><dd><strong style="color:#2E7D46;">✓ Território Pulso</strong> &nbsp;<em style="font-size:12px;color:var(--cinza);">saúde digital energética — navy + fluor-lime. Brandbook nas entregas.</em></dd>
       </dl>
     </div>
 

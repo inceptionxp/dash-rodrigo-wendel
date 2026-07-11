@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MODAL Editorial — Território A · Marca-mãe DTM · Dr. Rodrigo Wendel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --tinta:#16232B;
+    --osso:#F4EEE3;
+    --verde:#1E5A4F;
+    --ambar:#C4893B;
+    --cinza:#6B7076;
+    --osso-2:#EBE3D3;
+    --tinta-70:rgba(22,35,43,.70);
+    --tinta-45:rgba(22,35,43,.45);
+    --linha:rgba(22,35,43,.16);
+    --display:"Fraunces",Georgia,serif;
+    --corpo:"Hanken Grotesk",-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--osso);
+    color:var(--tinta);
+    font-family:var(--corpo);
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    font-size:17px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+  section{padding:118px 0;border-top:1px solid var(--linha);position:relative}
+  section:first-of-type{border-top:none}
+
+  /* ---------- shared type ---------- */
+  h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.01em}
+  .kicker{
+    font-family:var(--corpo);font-weight:600;text-transform:uppercase;
+    letter-spacing:.28em;font-size:12px;color:var(--verde);
+    display:flex;align-items:center;gap:14px;
+  }
+  .kicker::before{content:"";width:34px;height:1px;background:var(--ambar);display:inline-block}
+  .sec-num{
+    font-family:var(--display);font-style:italic;font-size:15px;color:var(--tinta-45);
+    letter-spacing:0;
+  }
+  .sec-head{margin-bottom:60px}
+  .sec-head h2{font-size:clamp(34px,5vw,58px);line-height:1.04;margin-top:22px;max-width:15ch}
+  .sec-head p{max-width:56ch;margin-top:22px;color:var(--tinta-70);font-size:18px}
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:0;border:none;min-height:100svh;display:flex;flex-direction:column;
+    justify-content:space-between;
+    background:
+      radial-gradient(120% 90% at 88% 8%, rgba(196,137,59,.10) 0%, transparent 55%),
+      var(--osso);
+    position:relative;
+  }
+  .hero-rule{
+    position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--linha);
+    pointer-events:none;
+  }
+  .hero-top{padding:34px 40px 0;display:flex;justify-content:space-between;align-items:center;
+    font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--tinta-70);z-index:2}
+  .hero-mid{flex:1;display:flex;align-items:center;padding:40px}
+  .hero-mid .wrap{width:100%}
+  .hero-eyebrow{font-family:var(--display);font-style:italic;font-size:clamp(20px,2.4vw,27px);color:var(--verde);margin-bottom:20px}
+  .hero-title{
+    font-family:var(--display);font-weight:300;
+    font-size:clamp(52px,10.5vw,148px);line-height:.94;letter-spacing:-.03em;
+    text-wrap:balance;
+  }
+  .hero-title em{font-style:italic;font-weight:400;color:var(--ambar)}
+  .hero-sub{
+    margin-top:34px;max-width:52ch;font-size:clamp(17px,1.5vw,20px);color:var(--tinta-70);
+  }
+  .hero-anchors{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+  .anchor-pill{
+    border:1px solid var(--linha);border-radius:100px;padding:10px 20px;
+    font-size:13px;font-weight:600;letter-spacing:.02em;display:flex;align-items:center;gap:9px;
+    background:rgba(255,255,255,.25);
+  }
+  .anchor-pill .dot{width:7px;height:7px;border-radius:50%}
+  .hero-bottom{
+    padding:26px 40px 30px;border-top:1px solid var(--linha);
+    display:flex;justify-content:space-between;align-items:baseline;gap:20px;flex-wrap:wrap;z-index:2;
+    background:var(--osso);
+  }
+  .hero-bottom .brand-line{font-size:13px;letter-spacing:.02em;color:var(--tinta-70)}
+  .hero-bottom .brand-line strong{color:var(--tinta);font-weight:600}
+  .hero-bottom .terr{font-family:var(--display);font-style:italic;font-size:16px;color:var(--tinta-45)}
+
+  /* ---------- palette ---------- */
+  .swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+  .sw{border-radius:3px;overflow:hidden;border:1px solid var(--linha);background:#fff}
+  .sw-chip{height:150px;position:relative}
+  .sw-body{padding:16px 16px 20px}
+  .sw-role{font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;color:var(--verde);margin-bottom:7px}
+  .sw-name{font-family:var(--display);font-size:19px;margin-bottom:3px}
+  .sw-hex{font-size:13px;color:var(--tinta-70);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+  .sw-note{font-size:12.5px;color:var(--tinta-45);margin-top:9px;line-height:1.45}
+  .proportion{margin-top:40px}
+  .prop-bar{display:flex;height:52px;border-radius:3px;overflow:hidden;border:1px solid var(--linha)}
+  .prop-seg{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;letter-spacing:.06em}
+  .prop-legend{display:flex;flex-wrap:wrap;gap:22px;margin-top:16px;font-size:12.5px;color:var(--tinta-70)}
+  .prop-legend span{display:flex;align-items:center;gap:8px}
+  .prop-legend i{width:11px;height:11px;border-radius:2px;display:inline-block}
+
+  /* ---------- typography ---------- */
+  .type-grid{display:grid;grid-template-columns:1fr;gap:44px}
+  .type-card{border:1px solid var(--linha);border-radius:4px;background:#fff;padding:38px 40px}
+  .type-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px;flex-wrap:wrap;gap:8px}
+  .type-label .fname{font-family:var(--display);font-size:23px}
+  .type-label .fsource{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:var(--verde);font-weight:700}
+  .specimen-display{font-family:var(--display);font-weight:300;font-size:clamp(40px,7vw,86px);line-height:.98;letter-spacing:-.03em}
+  .specimen-display em{font-style:italic;color:var(--ambar)}
+  .glyphs{font-family:var(--display);font-size:clamp(30px,4vw,50px);color:var(--verde);margin-top:24px;letter-spacing:.02em}
+  .specimen-body{font-size:19px;line-height:1.62;max-width:60ch;color:var(--tinta)}
+  .specimen-body .lead{font-size:22px;color:var(--tinta)}
+  .nums{font-variant-numeric:tabular-nums;font-weight:500;font-size:clamp(30px,4vw,46px);letter-spacing:.02em;margin-top:22px;color:var(--tinta)}
+  .scale{border-top:1px solid var(--linha);margin-top:30px;padding-top:24px;display:grid;gap:16px}
+  .scale-row{display:flex;align-items:baseline;gap:26px;border-bottom:1px dotted var(--linha);padding-bottom:14px}
+  .scale-row .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-45);width:70px;flex:none;font-weight:700}
+  .scale-h1{font-family:var(--display);font-weight:300;font-size:46px;letter-spacing:-.02em;line-height:1}
+  .scale-h2{font-family:var(--display);font-weight:400;font-size:30px;letter-spacing:-.01em}
+  .scale-b{font-size:17px}
+  .scale-c{font-size:13px;color:var(--tinta-70);letter-spacing:.02em}
+
+  /* ---------- logo ---------- */
+  .logo-note{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:700;color:var(--ambar);border:1px solid var(--ambar);border-radius:100px;padding:6px 15px;margin-bottom:34px}
+  .logo-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .logo-card{border:1px solid var(--linha);border-radius:4px;background:#fff;padding:52px 44px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:270px}
+  .logo-card.dark{background:var(--tinta);border-color:var(--tinta)}
+  .wordmark{display:flex;align-items:center;gap:18px}
+  .wm-sym{flex:none}
+  .wm-txt{text-align:left;line-height:1}
+  .wm-txt .l1{font-family:var(--display);font-weight:400;font-size:32px;letter-spacing:-.01em;display:block}
+  .wm-txt .l2{font-family:var(--corpo);font-weight:600;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--verde);display:block;margin-top:7px}
+  .logo-card.dark .wm-txt .l1{color:var(--osso)}
+  .logo-card.dark .wm-txt .l2{color:var(--ambar)}
+  .logo-cap{font-size:12.5px;color:var(--tinta-70);margin-top:22px;letter-spacing:.02em}
+  .sym-explain{margin-top:40px;border-left:2px solid var(--ambar);padding-left:24px;max-width:62ch}
+  .sym-explain h3{font-family:var(--display);font-size:22px;margin-bottom:10px}
+  .sym-explain p{color:var(--tinta-70);font-size:16px}
+
+  /* ---------- visual system ---------- */
+  .motif-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:44px}
+  .motif{aspect-ratio:1;border:1px solid var(--linha);border-radius:4px;overflow:hidden;background:#fff;position:relative}
+  .motif.tone{background:var(--tinta)}
+  .motif.tone2{background:var(--verde)}
+  .motif figcaption{position:absolute;left:16px;bottom:14px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--tinta-45)}
+  .motif.tone figcaption,.motif.tone2 figcaption{color:rgba(244,238,227,.6)}
+  .duo-row{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+  .duo{border:1px solid var(--linha);border-radius:4px;overflow:hidden;position:relative;min-height:280px;
+    background:linear-gradient(135deg,#2b3a42 0%,#16232b 100%)}
+  .duo .duo-tex{position:absolute;inset:0;opacity:.5;
+    background:repeating-linear-gradient(115deg, rgba(196,137,59,.14) 0 2px, transparent 2px 9px)}
+  .duo .duo-label{position:absolute;left:26px;bottom:24px;color:var(--osso);z-index:2}
+  .duo .duo-label .t{font-family:var(--display);font-style:italic;font-size:24px}
+  .duo .duo-label .s{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,238,227,.65);margin-top:6px}
+  .duo-side{border:1px solid var(--linha);border-radius:4px;background:var(--osso-2);padding:28px;display:flex;flex-direction:column;justify-content:space-between}
+  .duo-side h3{font-family:var(--display);font-size:20px;margin-bottom:10px}
+  .duo-side p{font-size:14px;color:var(--tinta-70)}
+  .duo-side .rule-set{display:flex;flex-direction:column;gap:9px;margin-top:20px}
+  .duo-side .rule-set i{height:1px;background:var(--tinta);display:block;opacity:.3}
+
+  /* ---------- icons ---------- */
+  .icon-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+  .icon-cell{border:1px solid var(--linha);border-radius:4px;background:#fff;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:14px}
+  .icon-cell svg{width:46px;height:46px}
+  .icon-cell span{font-size:11px;color:var(--tinta-70);letter-spacing:.04em;text-align:center}
+  .icon-desc{margin-top:26px;color:var(--tinta-70);max-width:60ch;font-size:15px}
+
+  /* ---------- applications ---------- */
+  .app-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .mock{border:1px solid var(--linha);border-radius:6px;overflow:hidden;background:#fff}
+  .mock-cap{padding:14px 18px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--tinta-45);border-top:1px solid var(--linha);background:var(--osso-2)}
+  /* feed */
+  .m-feed{aspect-ratio:1;background:var(--osso);padding:34px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+  .m-feed::after{content:"";position:absolute;right:30px;top:30px;width:52px;height:52px;border:1px solid var(--ambar);border-radius:50%}
+  .m-feed .fk{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--verde);font-weight:700}
+  .m-feed .fh{font-family:var(--display);font-weight:300;font-size:34px;line-height:1.02;letter-spacing:-.02em}
+  .m-feed .fh em{font-style:italic;color:var(--ambar)}
+  .m-feed .ff{font-size:12px;color:var(--tinta-70);border-top:1px solid var(--linha);padding-top:12px}
+  /* story */
+  .m-story{aspect-ratio:9/16;background:linear-gradient(160deg,#16232b,#1e5a4f);padding:30px;display:flex;flex-direction:column;justify-content:space-between;color:var(--osso);position:relative}
+  .m-story::before{content:"";position:absolute;left:30px;right:30px;top:78px;height:1px;background:rgba(244,238,227,.28)}
+  .m-story .sk{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ambar);font-weight:700}
+  .m-story .sh{font-family:var(--display);font-style:italic;font-weight:400;font-size:29px;line-height:1.06}
+  .m-story .sc{border:1px solid rgba(244,238,227,.4);border-radius:100px;padding:10px 20px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-align:center;font-weight:600}
+  /* sales header */
+  .m-sales{aspect-ratio:16/10;background:var(--osso);padding:34px;display:flex;flex-direction:column;justify-content:center;gap:16px;position:relative;overflow:hidden}
+  .m-sales .grid-lines{position:absolute;inset:0;background:linear-gradient(90deg,var(--linha) 1px,transparent 1px);background-size:25% 100%;opacity:.6}
+  .m-sales .inner{position:relative;z-index:2}
+  .m-sales .zk{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--verde);font-weight:700;margin-bottom:12px}
+  .m-sales .zh{font-family:var(--display);font-weight:300;font-size:clamp(26px,3.6vw,42px);line-height:1;letter-spacing:-.02em}
+  .m-sales .zh em{font-style:italic;color:var(--ambar)}
+  .m-sales .zb{font-size:13px;color:var(--tinta-70);max-width:44ch;margin-top:14px}
+  .m-sales .zcta{display:inline-block;margin-top:18px;background:var(--verde);color:var(--osso);padding:11px 24px;border-radius:3px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  /* credential */
+  .m-cred{aspect-ratio:16/10;background:var(--tinta);padding:32px;display:flex;flex-direction:column;justify-content:space-between;color:var(--osso);position:relative}
+  .m-cred::after{content:"";position:absolute;right:-40px;bottom:-40px;width:170px;height:170px;border:1px solid rgba(196,137,59,.4);border-radius:50%}
+  .m-cred .ct{font-family:var(--display);font-size:22px}
+  .m-cred .cn{font-family:var(--display);font-weight:300;font-size:30px;letter-spacing:-.01em}
+  .m-cred .cr{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ambar);font-weight:700}
+  .m-cred .cl{font-size:11px;color:rgba(244,238,227,.6);letter-spacing:.04em}
+
+  /* ---------- tone & attributes ---------- */
+  .attr-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .attr-card{border:1px solid var(--linha);border-radius:4px;background:#fff;padding:36px}
+  .attr-card .an{font-family:var(--display);font-size:15px;color:var(--ambar);font-style:italic;margin-bottom:6px}
+  .attr-card h3{font-family:var(--display);font-weight:400;font-size:27px;margin-bottom:16px;letter-spacing:-.01em}
+  .attr-card p{color:var(--tinta-70);font-size:15.5px}
+  .moods{display:flex;flex-wrap:wrap;gap:12px;margin-top:44px}
+  .mood{border:1px solid var(--linha);background:var(--osso-2);border-radius:100px;padding:11px 22px;font-family:var(--display);font-style:italic;font-size:18px}
+
+  /* ---------- avoid ---------- */
+  .avoid-list{display:grid;gap:0;border-top:1px solid var(--linha)}
+  .avoid-item{display:grid;grid-template-columns:44px 1fr 1.4fr;gap:26px;padding:26px 0;border-bottom:1px solid var(--linha);align-items:baseline}
+  .avoid-item .an{font-family:var(--display);font-style:italic;font-size:26px;color:var(--tinta-45)}
+  .avoid-item .at{font-weight:600;font-size:17px}
+  .avoid-item .ad{color:var(--tinta-70);font-size:15.5px}
+  .avoid-item .ad strong{color:var(--verde);font-weight:600}
+
+  footer{padding:60px 0 70px;border-top:1px solid var(--linha);text-align:center}
+  footer .fmark{font-family:var(--display);font-style:italic;font-size:22px;color:var(--tinta-45)}
+  footer .fmeta{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--tinta-45);margin-top:14px}
+
+  @media(max-width:860px){
+    body{font-size:16px}
+    .wrap{padding:0 24px}
+    section{padding:78px 0}
+    .swatches{grid-template-columns:repeat(2,1fr)}
+    .logo-grid{grid-template-columns:1fr}
+    .motif-row{grid-template-columns:1fr 1fr}
+    .duo-row{grid-template-columns:1fr}
+    .icon-grid{grid-template-columns:repeat(3,1fr)}
+    .app-grid{grid-template-columns:1fr}
+    .attr-grid{grid-template-columns:1fr}
+    .avoid-item{grid-template-columns:1fr;gap:8px}
+    .avoid-item .an{font-size:20px}
+    .hero-mid{padding:24px}
+    .hero-top,.hero-bottom{padding-left:24px;padding-right:24px}
+    .prop-seg{font-size:9px}
+  }
+  @media(max-width:480px){
+    .swatches{grid-template-columns:1fr}
+    .icon-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media print{
+    body{background:#fff}
+    section{page-break-inside:avoid;border-color:#ccc}
+    .hero{min-height:auto;padding:40px 0}
+  }
+  @media(max-width:900px){html{overflow-x:hidden}[class*="grid"]>*,.bento>*,.swatches>*,.sym-explain>*,.wrap>*{min-width:0}section *{overflow-wrap:anywhere}}
+  @media(max-width:760px){.type-grid,.logo-grid,.app-grid,.attr-grid,.avoid-grid,.sym-explain,.bento,.icon-grid,.swatches{grid-template-columns:1fr!important}}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-rule"></div>
+  <div class="hero-top">
+    <span>Território A</span>
+    <span>Brandbook · 01 / 03</span>
+  </div>
+  <div class="hero-mid">
+    <div class="wrap">
+      <div class="hero-eyebrow">MODAL Editorial</div>
+      <h1 class="hero-title">A ciência<br>tem <em>método.</em><br>E forma.</h1>
+      <p class="hero-sub">O território da autoridade que vem da ciência e da tradição — em roupagem contemporânea. Instituto de ensino sério, editorial, de curadoria. Onde o conhecimento denso vira escola.</p>
+      <div class="hero-anchors">
+        <span class="anchor-pill"><span class="dot" style="background:var(--verde)"></span>Autoridade científica</span>
+        <span class="anchor-pill"><span class="dot" style="background:var(--ambar)"></span>Moderno · health-tech</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <span class="brand-line">Marca-mãe educacional · <strong>Dr. Rodrigo Wendel</strong> · DTM e Dor Orofacial</span>
+    <span class="terr">um dos três territórios visuais</span>
+  </div>
+</header>
+
+<!-- PALETTE -->
+<section id="paleta">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">01</span> <span class="kicker" style="margin-top:8px">Paleta</span>
+      <h2>Tinta, osso e um calor científico.</h2>
+      <p>Cinco cores que respiram. O creme substitui o branco clínico, o âmbar aquece a página e o verde-científico assina a autoridade. Nada de azul dental — o calor é o que separa esta escola de uma clínica.</p>
+    </div>
+    <div class="swatches">
+      <div class="sw">
+        <div class="sw-chip" style="background:#16232B"></div>
+        <div class="sw-body">
+          <div class="sw-role">Principal</div>
+          <div class="sw-name">Tinta / Navy</div>
+          <div class="sw-hex">#16232B</div>
+          <div class="sw-note">Cor da palavra escrita. Títulos, texto, fundos de autoridade.</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="sw-chip" style="background:#F4EEE3"></div>
+        <div class="sw-body">
+          <div class="sw-role">Fundo</div>
+          <div class="sw-name">Osso / Creme</div>
+          <div class="sw-hex">#F4EEE3</div>
+          <div class="sw-note">O papel. Base de quase tudo — o oposto do branco estéril.</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="sw-chip" style="background:#1E5A4F"></div>
+        <div class="sw-body">
+          <div class="sw-role">Assinatura</div>
+          <div class="sw-name">Verde-científico</div>
+          <div class="sw-hex">#1E5A4F</div>
+          <div class="sw-note">A autoridade do conhecimento. Kickers, selos, CTAs sóbrios.</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="sw-chip" style="background:#C4893B"></div>
+        <div class="sw-body">
+          <div class="sw-role">Acento</div>
+          <div class="sw-name">Âmbar quente</div>
+          <div class="sw-hex">#C4893B</div>
+          <div class="sw-note">O calor humano. Grifos, réguas, itálicos de destaque. Usar com parcimônia.</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="sw-chip" style="background:#6B7076"></div>
+        <div class="sw-body">
+          <div class="sw-role">Apoio</div>
+          <div class="sw-name">Cinza pedra</div>
+          <div class="sw-hex">#6B7076</div>
+          <div class="sw-note">Legendas, metadados, hierarquia secundária. Neutro que não compete.</div>
+        </div>
+      </div>
+    </div>
+    <div class="proportion">
+      <div class="prop-bar">
+        <div class="prop-seg" style="flex:60;background:#F4EEE3;color:#16232B">OSSO 60%</div>
+        <div class="prop-seg" style="flex:24;background:#16232B;color:#F4EEE3">TINTA 24%</div>
+        <div class="prop-seg" style="flex:9;background:#1E5A4F;color:#F4EEE3">VERDE 9%</div>
+        <div class="prop-seg" style="flex:5;background:#C4893B;color:#16232B">ÂMBAR 5%</div>
+        <div class="prop-seg" style="flex:2;background:#6B7076;color:#fff">2%</div>
+      </div>
+      <div class="prop-legend">
+        <span><i style="background:#F4EEE3;border:1px solid var(--linha)"></i>Osso domina — página é papel</span>
+        <span><i style="background:#16232B"></i>Tinta estrutura</span>
+        <span><i style="background:#1E5A4F"></i>Verde assina</span>
+        <span><i style="background:#C4893B"></i>Âmbar aquece pontualmente</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section id="tipografia">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">02</span> <span class="kicker" style="margin-top:8px">Tipografia</span>
+      <h2>Uma serifada que pensa. Uma sans que explica.</h2>
+      <p>Fraunces conduz o discurso com autoridade editorial e optical sizing vivo. Hanken Grotesk carrega o texto longo com clareza. A dupla soa a periódico científico bem editado — não a folheto de consultório.</p>
+    </div>
+    <div class="type-grid">
+      <div class="type-card">
+        <div class="type-label">
+          <span class="fname">Fraunces — Display</span>
+          <span class="fsource">Google Fonts · optical sizing</span>
+        </div>
+        <div class="specimen-display">O músculo<br>que <em>ensina</em></div>
+        <div class="glyphs">Aa Gg &amp; Qq — 12345</div>
+        <div class="scale">
+          <div class="scale-row"><span class="tag">H1</span><span class="scale-h1">Protocolo Escalonado</span></div>
+          <div class="scale-row"><span class="tag">H2</span><span class="scale-h2">A Abordagem MODAL</span></div>
+        </div>
+      </div>
+      <div class="type-card">
+        <div class="type-label">
+          <span class="fname">Hanken Grotesk — Corpo</span>
+          <span class="fsource">Google Fonts · texto &amp; dados</span>
+        </div>
+        <div class="specimen-body">
+          <p class="lead">A dor orofacial não se explica em slogans.</p>
+          <p style="margin-top:14px;color:var(--tinta-70)">Trinta anos de clínica e um fellowship na Universidade de Zurique cabem numa frase honesta: diagnóstico primeiro, protocolo depois. A escola que se constrói aqui ensina o dentista a pensar em camadas — não a decorar receitas. É devagar quando precisa ser, e é preciso o tempo todo.</p>
+        </div>
+        <div class="nums">01 — 30 anos · R$ 1.447 · 10%</div>
+        <div class="scale">
+          <div class="scale-row"><span class="tag">Corpo</span><span class="scale-b">Texto de leitura longa, 17px, entrelinha generosa.</span></div>
+          <div class="scale-row" style="border-bottom:none;padding-bottom:0"><span class="tag">Legenda</span><span class="scale-c">METADADO · FONTE · CRÉDITO — 13PX MAIÚSCULA ESPAÇADA</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO -->
+<section id="logo">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">03</span> <span class="kicker" style="margin-top:8px">Logo &amp; marca</span>
+      <h2>Um selo de escola, não um logotipo de clínica.</h2>
+      <p>Wordmark serifado com um símbolo mínimo: o <em>arco modal</em> — três arcos concêntricos que crescem, o gesto do protocolo escalonado. Autoridade que se lê como carimbo de instituição.</p>
+    </div>
+    <span class="logo-note">exemplo — naming em definição</span>
+    <div class="logo-grid">
+      <div class="logo-card">
+        <div class="wordmark">
+          <svg class="wm-sym" width="58" height="58" viewBox="0 0 58 58" fill="none">
+            <path d="M8 44 A21 21 0 0 1 50 44" stroke="#16232B" stroke-width="2.4" fill="none"/>
+            <path d="M15 44 A14 14 0 0 1 43 44" stroke="#1E5A4F" stroke-width="2.4" fill="none"/>
+            <path d="M22 44 A7 7 0 0 1 36 44" stroke="#C4893B" stroke-width="2.4" fill="none"/>
+            <circle cx="29" cy="44" r="1.8" fill="#16232B"/>
+          </svg>
+          <span class="wm-txt">
+            <span class="l1">Instituto Wendel</span>
+            <span class="l2">DTM · Dor Orofacial</span>
+          </span>
+        </div>
+        <div class="logo-cap">Wordmark primário · versão clara</div>
+      </div>
+      <div class="logo-card dark">
+        <div class="wordmark">
+          <svg class="wm-sym" width="58" height="58" viewBox="0 0 58 58" fill="none">
+            <path d="M8 44 A21 21 0 0 1 50 44" stroke="#F4EEE3" stroke-width="2.4" fill="none"/>
+            <path d="M15 44 A14 14 0 0 1 43 44" stroke="#C4893B" stroke-width="2.4" fill="none"/>
+            <path d="M22 44 A7 7 0 0 1 36 44" stroke="#1E5A4F" stroke-width="2.4" fill="none"/>
+            <circle cx="29" cy="44" r="1.8" fill="#F4EEE3"/>
+          </svg>
+          <span class="wm-txt">
+            <span class="l1">Academia DTM</span>
+            <span class="l2">Formação · Mentoria</span>
+          </span>
+        </div>
+        <div class="logo-cap" style="color:rgba(244,238,227,.6)">Versão escura · aplicação sobre tinta</div>
+      </div>
+    </div>
+    <div class="sym-explain">
+      <h3>O arco modal</h3>
+      <p>Três arcos que sobem do mesmo eixo desenham o protocolo em camadas — do diagnóstico ao caso resolvido. Lido de longe é um selo; lido de perto conta o método. Serve isolado como ícone de app, favicon ou carimbo de certificação.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VISUAL SYSTEM -->
+<section id="visual">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">04</span> <span class="kicker" style="margin-top:8px">Estilo visual &amp; grafismo</span>
+      <h2>Grid rigoroso, réguas finas, respiro largo.</h2>
+      <p>O motif é a linha — réguas de âmbar, arcos concêntricos, grid editorial visível. A fotografia vive em duotone quente (preto-e-branco lavado em creme), nunca em cor saturada. Densidade baixa, ar alto.</p>
+    </div>
+    <div class="motif-row">
+      <figure class="motif">
+        <svg viewBox="0 0 200 200" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="#16232B" stroke-width="1.4">
+            <path d="M20 150 A80 80 0 0 1 180 150"/>
+            <path d="M40 150 A60 60 0 0 1 160 150"/>
+            <path d="M60 150 A40 40 0 0 1 140 150"/>
+          </g>
+          <path d="M80 150 A20 20 0 0 1 120 150" fill="none" stroke="#C4893B" stroke-width="1.4"/>
+          <line x1="20" y1="150" x2="180" y2="150" stroke="#1E5A4F" stroke-width="1.4"/>
+        </svg>
+        <figcaption>Arcos concêntricos</figcaption>
+      </figure>
+      <figure class="motif">
+        <svg viewBox="0 0 200 200" width="100%" height="100%">
+          <g stroke="#16232B" stroke-width="1" opacity=".55">
+            <line x1="40" y1="0" x2="40" y2="200"/><line x1="80" y1="0" x2="80" y2="200"/>
+            <line x1="120" y1="0" x2="120" y2="200"/><line x1="160" y1="0" x2="160" y2="200"/>
+          </g>
+          <line x1="0" y1="60" x2="200" y2="60" stroke="#C4893B" stroke-width="2"/>
+          <line x1="0" y1="140" x2="200" y2="140" stroke="#1E5A4F" stroke-width="2"/>
+        </svg>
+        <figcaption>Grid editorial</figcaption>
+      </figure>
+      <figure class="motif tone2">
+        <svg viewBox="0 0 200 200" width="100%" height="100%">
+          <g stroke="#F4EEE3" stroke-width="1.2" opacity=".8">
+            <line x1="0" y1="50" x2="200" y2="50"/><line x1="0" y1="80" x2="200" y2="80"/>
+            <line x1="0" y1="110" x2="200" y2="110"/><line x1="0" y1="140" x2="200" y2="140"/>
+          </g>
+          <line x1="0" y1="95" x2="200" y2="95" stroke="#C4893B" stroke-width="3"/>
+        </svg>
+        <figcaption>Réguas de escala</figcaption>
+      </figure>
+    </div>
+    <div class="duo-row">
+      <figure class="duo">
+        <div class="duo-tex"></div>
+        <div class="duo-label">
+          <div class="t">Fotografia em duotone quente</div>
+          <div class="s">Preto-e-branco lavado em creme · retrato de clínico real, olhar direto, sem sorriso de banco de imagem</div>
+        </div>
+      </figure>
+      <div class="duo-side">
+        <div>
+          <h3>Texturas</h3>
+          <p>Réguas finas separam blocos. Fio de âmbar marca o começo de cada capítulo. O grid pode aparecer — é assinatura, não erro.</p>
+        </div>
+        <div class="rule-set">
+          <i style="opacity:.85"></i><i style="opacity:.5"></i><i style="background:var(--ambar);opacity:1"></i><i style="opacity:.3"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ICONS -->
+<section id="icones">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">05</span> <span class="kicker" style="margin-top:8px">Ícones</span>
+      <h2>Fine-line, um traço só, temperamento clínico.</h2>
+      <p>Traço fino e uniforme, cantos honestos, sem preenchimento. Metáforas da própria matéria — articulação, camadas, escuta, evidência — longe de dente-clichê, foguete ou lâmpada.</p>
+    </div>
+    <div class="icon-grid">
+      <div class="icon-cell">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#16232B" stroke-width="1.5" stroke-linecap="round">
+          <path d="M14 8 v14 a10 10 0 0 0 20 0 V8"/><circle cx="14" cy="8" r="3"/><circle cx="34" cy="8" r="3"/>
+          <path d="M24 32 v8"/><circle cx="24" cy="42" r="3" stroke="#C4893B"/>
+        </svg>
+        <span>Articulação</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#16232B" stroke-width="1.5" stroke-linecap="round">
+          <path d="M8 34 A16 16 0 0 1 40 34" /><path d="M14 34 A10 10 0 0 1 34 34" stroke="#1E5A4F"/>
+          <path d="M19 34 A5 5 0 0 1 29 34" stroke="#C4893B"/>
+        </svg>
+        <span>Protocolo escalonado</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#16232B" stroke-width="1.5" stroke-linecap="round">
+          <rect x="9" y="9" width="30" height="30" rx="3"/><line x1="9" y1="19" x2="39" y2="19"/>
+          <line x1="9" y1="29" x2="39" y2="29" stroke="#C4893B"/>
+        </svg>
+        <span>Camadas de estudo</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#16232B" stroke-width="1.5" stroke-linecap="round">
+          <path d="M10 24 q7 -12 14 0 t14 0"/><circle cx="24" cy="24" r="2.4" fill="#C4893B" stroke="none"/>
+        </svg>
+        <span>Sinal &amp; dor</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#16232B" stroke-width="1.5" stroke-linecap="round">
+          <path d="M24 10 a8 8 0 0 1 8 8 c0 6 -8 8 -8 14"/><path d="M24 10 a8 8 0 0 0 -8 8"/>
+          <circle cx="24" cy="38" r="1.8" fill="#1E5A4F" stroke="none"/>
+        </svg>
+        <span>Escuta clínica</span>
+      </div>
+      <div class="icon-cell">
+        <svg viewBox="0 0 48 48" fill="none" stroke="#16232B" stroke-width="1.5" stroke-linecap="round">
+          <path d="M12 30 l8 -8 6 6 10 -12"/><circle cx="36" cy="16" r="2.6" stroke="#C4893B"/>
+          <line x1="10" y1="38" x2="38" y2="38"/>
+        </svg>
+        <span>Evidência</span>
+      </div>
+    </div>
+    <p class="icon-desc">Sistema de traço fino de 1,5px, escala fixa, encaixe no grid. O âmbar entra só no ponto de foco do ícone — nunca preenche a forma inteira.</p>
+  </div>
+</section>
+
+<!-- APPLICATIONS -->
+<section id="aplicacoes">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">06</span> <span class="kicker" style="margin-top:8px">Aplicações</span>
+      <h2>O sistema em uso.</h2>
+      <p>Post, story, header de página e credencial — a mesma gramática editorial em quatro suportes. Cor, tipo e grafismo trabalhando juntos.</p>
+    </div>
+    <div class="app-grid">
+      <div class="mock">
+        <div class="m-feed">
+          <div class="fk">Nota clínica · 04</div>
+          <div class="fh">Nem toda dor<br>de <em>cabeça</em><br>vem da cabeça.</div>
+          <div class="ff">Instituto Wendel · DTM e Dor Orofacial</div>
+        </div>
+        <div class="mock-cap">Post de feed · 1:1</div>
+      </div>
+      <div class="mock">
+        <div class="m-story">
+          <div class="sk">Aula aberta</div>
+          <div class="sh">O diagnóstico que<br>a faculdade não deu<br><span style="color:var(--ambar)">tempo</span> de ensinar.</div>
+          <div class="sc">Assistir agora</div>
+        </div>
+        <div class="mock-cap">Story · 9:16</div>
+      </div>
+      <div class="mock">
+        <div class="m-sales">
+          <div class="grid-lines"></div>
+          <div class="inner">
+            <div class="zk">Formação em DTM · Turma 2026</div>
+            <div class="zh">A escola do <em>diagnóstico</em><br>que forma quem forma.</div>
+            <div class="zb">Trinta anos de clínica destilados num protocolo que você aplica na segunda-feira.</div>
+            <span class="zcta">Conhecer a formação</span>
+          </div>
+        </div>
+        <div class="mock-cap">Header de página de vendas</div>
+      </div>
+      <div class="mock">
+        <div class="m-cred">
+          <div>
+            <div class="cr">Certificação</div>
+            <div class="ct" style="margin-top:10px">Formação em DTM e Dor Orofacial</div>
+          </div>
+          <div>
+            <div class="cn">Dra. Marina Alves</div>
+            <div class="cl" style="margin-top:6px">Concluída · Protocolo Escalonado MODAL · 2026</div>
+          </div>
+        </div>
+        <div class="mock-cap">Cartão / credencial de conclusão</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TONE -->
+<section id="tom">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">07</span> <span class="kicker" style="margin-top:8px">Tom &amp; atributos</span>
+      <h2>Como os dois âncoras aparecem.</h2>
+    </div>
+    <div class="attr-grid">
+      <div class="attr-card">
+        <div class="an">âncora 01</div>
+        <h3>Autoridade científica</h3>
+        <p>Vive na serifada Fraunces, no verde-científico e na diagramação de periódico. A página tem hierarquia, fonte, régua — respeita o leitor culto. Autoridade que se demonstra na forma, não se grita no adjetivo.</p>
+      </div>
+      <div class="attr-card">
+        <div class="an">âncora 02</div>
+        <h3>Moderno · health-tech</h3>
+        <p>Vive no creme quente que troca o branco estéril, no âmbar humano e no espaço generoso. É atemporal sem ser antigo — a tradição relida com olho de hoje. Contemporâneo pela contenção, não pelo gadget.</p>
+      </div>
+    </div>
+    <div class="moods">
+      <span class="mood">editorial</span>
+      <span class="mood">sóbrio</span>
+      <span class="mood">rigoroso</span>
+      <span class="mood">quente</span>
+      <span class="mood">atemporal</span>
+      <span class="mood">de curadoria</span>
+    </div>
+  </div>
+</section>
+
+<!-- AVOID -->
+<section id="evita">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-num">08</span> <span class="kicker" style="margin-top:8px">O que este território evita</span>
+      <h2>Quatro armadilhas — e a saída de cada uma.</h2>
+    </div>
+    <div class="avoid-list">
+      <div class="avoid-item">
+        <span class="an">01</span>
+        <span class="at">Clínica-odonto fria</span>
+        <span class="ad">O <strong>creme e o âmbar</strong> substituem o branco/azul dental. A página é papel quente, nunca sala de espera estéril.</span>
+      </div>
+      <div class="avoid-item">
+        <span class="an">02</span>
+        <span class="at">Guru de marketing</span>
+        <span class="ad">A <strong>contenção editorial</strong> — sem setas, sem hype, sem "6 em 7". Autoridade se prova em espécime de tipo, não em promessa.</span>
+      </div>
+      <div class="avoid-item">
+        <span class="an">03</span>
+        <span class="at">Corporativo genérico</span>
+        <span class="ad">A serifada Fraunces e o <strong>arco modal</strong> dão alma autoral. É a escola de um clínico específico, não um template de instituição qualquer.</span>
+      </div>
+      <div class="avoid-item">
+        <span class="an">04</span>
+        <span class="at">Colorido / infantil</span>
+        <span class="ad">Paleta de <strong>cinco cores terrosas</strong> e disciplina de proporção. O âmbar aparece a 5% — cor é tempero, nunca festa.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fmark">Território A — MODAL Editorial</div>
+    <div class="fmeta">Marca-mãe educacional · Dr. Rodrigo Wendel · DTM</div>
+  </div>
+</footer>
+
+</body>
+</html>

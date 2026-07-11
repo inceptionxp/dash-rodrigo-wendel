@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Setup da Marca · Academia DTM · O Salto</title>
+<style>
+@font-face{font-family:'TGSPerfect';src:url('../assets/fonts/TGSPerfectCondensed.otf') format('opentype');font-display:swap}
+@font-face{font-family:'PPEiko';src:url('../assets/fonts/PPEiko-Medium.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'HankenGrotesk';src:url('../assets/fonts/HankenGrotesk-Light.ttf') format('truetype');font-weight:300;font-display:swap}
+@font-face{font-family:'HankenGrotesk';src:url('../assets/fonts/HankenGrotesk-Medium.ttf') format('truetype');font-weight:500;font-display:swap}
+@font-face{font-family:'HankenGrotesk';src:url('../assets/fonts/HankenGrotesk-SemiBold.ttf') format('truetype');font-weight:600;font-display:swap}
+@font-face{font-family:'HankenGrotesk';src:url('../assets/fonts/HankenGrotesk-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+:root{
+  --vermelho:#E0391C; --vermelho-esc:#B32D15; --bege:#F5F1EA; --bege-claro:#FAF7F2; --papel:#EDE7DA;
+  --preto:#0A0A0A; --cinza:#5C544D; --cinza-claro:#9A938A; --linha:rgba(10,10,10,.10);
+  --verde:#3D8A5A; --ambar:#C99A3D; --lime:#0F8A5F;
+  --cond:'TGSPerfect','Arial Narrow',sans-serif; --serif:'PPEiko',Georgia,serif;
+  --sans:'HankenGrotesk',-apple-system,system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bege);color:var(--preto);font-family:var(--sans);font-weight:300;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:56px 28px 100px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--vermelho);display:inline-flex;align-items:center;gap:12px;margin-bottom:16px}
+.eyebrow::before{content:'';width:28px;height:2px;background:var(--vermelho)}
+h1{font-family:var(--cond);text-transform:uppercase;font-size:clamp(42px,6vw,72px);line-height:.95;margin-bottom:18px}
+h1 .ei{font-family:var(--serif);text-transform:none;color:var(--vermelho);font-weight:500}
+.lead{font-size:clamp(17px,1.8vw,21px);color:var(--cinza);max-width:70ch;font-style:italic;margin-bottom:14px}
+h2{font-family:var(--cond);text-transform:uppercase;font-size:28px;line-height:1;margin:52px 0 6px;display:flex;align-items:baseline;gap:14px}
+h2 .ei{font-family:var(--serif);text-transform:none;color:var(--vermelho);font-weight:500}
+h2 .st{font-family:var(--cond);color:var(--vermelho);font-size:34px}
+.sub{color:var(--cinza);margin-bottom:18px;max-width:80ch}
+.card{background:var(--bege-claro);border:1px solid var(--linha);border-radius:14px;padding:22px 24px;margin-bottom:14px}
+.card.preto{background:var(--preto);color:var(--bege);border-color:var(--preto)}
+.card.preto .cinza{color:#B9B2A8}
+.names{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;margin-top:6px}
+.names .n{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 14px}
+.names .k{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#9A938A;margin-bottom:4px}
+.names .v{font-family:var(--serif);font-size:19px;color:var(--bege)}
+.names .v.lime{color:#CDF23F}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:6px}
+th{background:var(--preto);color:var(--bege);text-align:left;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:11px 14px}
+td{padding:12px 14px;border-top:1px solid var(--linha);vertical-align:top;color:var(--cinza)}
+td strong{color:var(--preto);font-weight:600}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--linha);border-radius:12px;margin:8px 0}
+.badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:20px;white-space:nowrap;background:rgba(61,138,90,.14);color:var(--verde)}
+.step{display:flex;gap:18px;margin-bottom:12px}
+.step .num{font-family:var(--cond);font-size:40px;line-height:.9;color:var(--vermelho);min-width:52px}
+.step .body{flex:1}
+ul{margin:8px 0 0 20px;color:var(--cinza)}li{margin-bottom:7px}
+ol.do{margin:10px 0 0 20px;color:var(--cinza)}ol.do li{margin-bottom:6px}
+.regra{border-left:3px solid var(--vermelho);background:var(--papel);padding:14px 18px;border-radius:0 10px 10px 0;margin:14px 0;font-size:14.5px}
+.regra strong{color:var(--preto)}
+.regra.verde{border-color:var(--lime);background:rgba(15,138,95,.07)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;background:var(--papel);padding:1px 7px;border-radius:5px;color:var(--preto)}
+footer{margin-top:60px;padding-top:22px;border-top:1px solid var(--linha);color:var(--cinza-claro);font-size:12px;text-align:center}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="eyebrow">Consultoria · O Salto · Setup</span>
+  <h1>Colocar a marca <span class="ei">no ar.</span></h1>
+  <p class="lead">Os nomes estão decididos. Este é o passo a passo pra proteger a marca, garantir os canais e virar a chave do Instagram — na ordem certa, com o que é urgente primeiro.</p>
+
+  <div class="card preto">
+    <div class="names">
+      <div class="n"><div class="k">Empresa (marca-mãe)</div><div class="v">Academia DTM</div></div>
+      <div class="n"><div class="k">Método</div><div class="v">Abordagem MODAL</div></div>
+      <div class="n"><div class="k">Formação (produto)</div><div class="v">Viver de DTM</div></div>
+      <div class="n"><div class="k">Identidade visual</div><div class="v lime">Pulso · fluor-lime</div></div>
+    </div>
+  </div>
+
+  <!-- 01 · DOMÍNIOS -->
+  <h2><span class="st">01</span>Registrar os <span class="ei">domínios</span> <span style="font-size:13px;font-family:var(--sans);color:var(--verde);letter-spacing:.06em;text-transform:uppercase;">faça hoje</span></h2>
+  <p class="sub">É o mais barato e o mais urgente — domínio livre é "primeiro que registra, leva". Todos abaixo estavam <strong>livres</strong> na última checagem; registre já pra não perder.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Domínio</th><th>Para quê</th><th>Status</th><th>Prioridade</th></tr></thead>
+      <tbody>
+        <tr><td><span class="mono">academiadtm.com.br</span></td><td>A empresa — site institucional, e-mail, base de tudo</td><td><span class="badge">livre</span></td><td><strong>Registrar já</strong></td></tr>
+        <tr><td><span class="mono">viverdedtm.com.br</span></td><td>A formação — página de vendas do produto</td><td><span class="badge">livre</span></td><td><strong>Registrar já</strong></td></tr>
+        <tr><td><span class="mono">academiadtm.org.br</span></td><td>Proteção defensiva (evitar que outro use)</td><td><span class="badge">livre</span></td><td>Opcional</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <strong>Como:</strong> registrar no <span class="mono">registro.br</span> (o oficial de <span class="mono">.com.br</span>) — leva 10 minutos, precisa de CPF/CNPJ. Custo ~R$ 40/ano por domínio.
+    <ol class="do">
+      <li>Registrar em nome do <strong>CNPJ da empresa</strong> (não pessoa física), pra a marca ficar no ativo da empresa.</li>
+      <li>Depois de registrar, <strong>não precisa configurar nada agora</strong> — a Inception aponta o DNS pra hospedagem quando o site/página estiver pronto.</li>
+      <li>Se quiser, garantir também os <span class="mono">.com</span> (mercado internacional) — mas <span class="mono">.com.br</span> é o que importa pro público brasileiro.</li>
+    </ol>
+  </div>
+
+  <!-- 02 · MARCA / INPI -->
+  <h2><span class="st">02</span>Registrar a <span class="ei">marca</span> no INPI <span style="font-size:13px;font-family:var(--sans);color:var(--ambar);letter-spacing:.06em;text-transform:uppercase;">começar logo</span></h2>
+  <p class="sub">O registro no INPI é o que dá a você a propriedade da marca no Brasil. O exame leva meses — então começar logo é o que garante a data. A proteção retroage ao dia do pedido.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>O que registrar</th><th>Classe (NCL)</th><th>Prioridade</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Academia DTM</strong> — a marca-mãe</td><td>41 (educação, formação, cursos)</td><td><strong>Prioritário</strong></td></tr>
+        <tr><td><strong>Viver de DTM</strong> — o produto (opcional, se quiser blindar)</td><td>41</td><td>Recomendado</td></tr>
+        <tr><td><strong>Abordagem MODAL</strong> — o método (opcional)</td><td>41 / 44</td><td>Opcional</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="regra">
+    <strong>Ponto de atenção honesto:</strong> "Academia DTM" é uma marca <strong>fraca</strong> juridicamente — "academia" é termo comum e "DTM" é sigla clínica de uso geral, então o INPI não dá exclusividade sobre elas isoladas. Por isso o registro deve ser da <strong>marca MISTA</strong> (o nome <em>junto com o logo</em> da identidade Pulso) — é o logo que carrega a distintividade e a proteção real. Registrar só o nome dá pouca proteção.
+  </div>
+  <div class="card">
+    <strong>Como:</strong> dá pra fazer sozinho no <span class="mono">gov.br/inpi</span> (sistema e-Marcas), mas o recomendado é <strong>via advogado de marca</strong> — ele faz a busca de anterioridade, escolhe as classes certas e monta o pedido misto pra maximizar a chance de deferimento.
+    <ul>
+      <li><strong>Custo:</strong> GRU do INPI ~R$ 355 por classe (ou ~R$ 142 com desconto de micro/pequena empresa e MEI) + honorários do advogado.</li>
+      <li><strong>Prazo:</strong> ~8 a 18 meses até o exame; a proteção vale desde o depósito.</li>
+      <li><strong>Pré-requisito:</strong> ter o <strong>logo pronto</strong> (identidade Pulso) pra registrar a marca mista — então este passo anda junto com a criação da identidade visual.</li>
+    </ul>
+  </div>
+
+  <!-- 03 · HOSPEDAGEM -->
+  <h2><span class="st">03</span>Definir a <span class="ei">hospedagem</span> <span style="font-size:13px;font-family:var(--sans);color:var(--cinza-claro);letter-spacing:.06em;text-transform:uppercase;">a Inception cuida</span></h2>
+  <p class="sub">Onde o site e as páginas ficam no ar. Você não precisa mexer nisso agora — é parte da entrega da consultoria; aqui fica só o mapa pra você entender o que vai acontecer.</p>
+  <div class="card">
+    <ul>
+      <li><strong>Páginas de venda / captação</strong> (da formação Viver de DTM): ficam na plataforma de funil que a Inception já usa — nada pra você contratar.</li>
+      <li><strong>Site institucional</strong> (Academia DTM): hospedagem leve e rápida (Cloudflare Pages ou similar) — a Inception configura e aponta o seu domínio.</li>
+      <li><strong>O que você só precisa fazer:</strong> ter os domínios do passo 01 no seu nome. O resto (DNS, SSL, deploy) é com a gente.</li>
+    </ul>
+  </div>
+
+  <!-- 04 · INSTAGRAM -->
+  <h2><span class="st">04</span>Virar o <span class="ei">Instagram</span> <span style="font-size:13px;font-family:var(--sans);color:var(--ambar);letter-spacing:.06em;text-transform:uppercase;">após o logo pronto</span></h2>
+  <p class="sub">Você já tem o perfil do curso — <span class="mono">@cursodtm</span>. Em vez de começar do zero, a gente <strong>renomeia</strong> ele pra <span class="mono">@academiadtm</span> (que está livre) e preserva os seguidores e o histórico.</p>
+  <div class="regra verde">
+    <strong>@academiadtm está livre</strong> — dá pra fazer a troca. Renomear <em>não</em> apaga seguidores, posts nem histórico: só muda o @.
+  </div>
+  <div class="card">
+    <strong>Passo a passo:</strong>
+    <ol class="do">
+      <li>Deixar a <strong>nova identidade pronta</strong> primeiro (foto de perfil e destaques com o visual Pulso) — pra a virada já mostrar a marca nova, não um perfil "em transição".</li>
+      <li>No app: <strong>Editar perfil → Nome de usuário</strong> → trocar <span class="mono">cursodtm</span> por <span class="mono">academiadtm</span>.</li>
+      <li>Atualizar também o <strong>Nome</strong> (o campo em negrito, ex.: "Academia DTM · DTM e Dor Orofacial") e a <strong>bio</strong>.</li>
+      <li>Fazer a troca num <strong>horário de baixo movimento</strong> e avisar a audiência (story) que o perfil evoluiu — pra quem já segue não estranhar.</li>
+      <li>Guardar o antigo <span class="mono">@cursodtm</span>? Depois de renomear, ele fica livre — se quiser, criar um perfil placeholder com esse @ pra ninguém pegar (opcional).</li>
+    </ol>
+  </div>
+
+  <!-- ORDEM -->
+  <h2><span class="st">✓</span>A <span class="ei">ordem</span> das coisas</h2>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Quando</th><th>O quê</th><th>Quem</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hoje</strong></td><td>Registrar os 2 domínios (<span class="mono">academiadtm.com.br</span> + <span class="mono">viverdedtm.com.br</span>)</td><td>Rodrigo</td></tr>
+        <tr><td><strong>Esta semana</strong></td><td>Acionar advogado de marca e iniciar o registro INPI da Academia DTM (mista, quando o logo estiver pronto)</td><td>Rodrigo (+ advogado)</td></tr>
+        <tr><td><strong>Em paralelo</strong></td><td>Finalizar a identidade visual (Pulso) — destrava o logo pro INPI e pro Instagram</td><td>Inception</td></tr>
+        <tr><td><strong>Depois do logo</strong></td><td>Renomear <span class="mono">@cursodtm → @academiadtm</span> + atualizar perfil</td><td>Rodrigo</td></tr>
+        <tr><td><strong>Quando o site pedir</strong></td><td>Apontar DNS, hospedar site e páginas</td><td>Inception</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    Guia de Setup da Marca · Academia DTM · Consultoria O Salto — Inception<br>
+    Disponibilidade de domínios e @ verificada em julho 2026 (registro.br + Instagram) · registro de marca a validar com advogado de propriedade industrial
+  </footer>
+</div>
+</body>
+</html>

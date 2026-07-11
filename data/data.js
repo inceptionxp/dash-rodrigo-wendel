@@ -192,6 +192,14 @@ const ACOMPANHAMENTO = {
   // Pendente do Rodrigo — grupos com slug estável (base do id do checkbox)
   pendente_rodrigo: [
     {
+      slug: 'setup-marca', grupo: 'Setup da marca (nomes definidos) — ver Guia de Setup', aberto: true,
+      itens: [
+        {t: 'Registrar os domínios: academiadtm.com.br + viverdedtm.com.br', d: 'Ambos livres na última checagem — registrar HOJE no registro.br (~R$40/ano cada), em nome do CNPJ. É o mais barato e o mais urgente.'},
+        {t: 'Iniciar o registro da marca Academia DTM no INPI (com advogado)', d: 'Registrar a marca MISTA (nome + logo Pulso) — "Academia DTM" isolada é marca fraca. Classe 41 (educação). Exame leva meses; começar logo garante a data. Anda junto com a identidade visual.'},
+        {t: 'Renomear o Instagram @cursodtm → @academiadtm', d: '@academiadtm está livre. Renomear preserva seguidores e histórico. Fazer depois do logo Pulso pronto (foto/bio novas). Passo a passo no Guia de Setup.'},
+      ],
+    },
+    {
       slug: 'prio', grupo: 'Prioritário — destrava a produção', aberto: true,
       itens: [
         {t: 'Enviar o material/aula gravada dos dois tripés (sistêmico e local)', d: 'Fortalece o Encontro 3 — pode virar aula invertida (aluno assiste antes, o encontro vira discussão). Obs.: a aula recebida em 07/07 é a COMERCIAL (abordagem de venda) — esta, técnica dos tripés, ainda falta.'},
@@ -289,6 +297,7 @@ const ACOMPANHAMENTO = {
     {item: 'Naming aprovado pela consultoria: Abordagem MODAL (método) + Protocolo Escalonado de DTM (mecanismo) + ângulo da PUV — validação final com o Rodrigo no Marco 02', data: '04/07/2026'},
     {item: 'Jornada do aluno e gamificação por faixas aprovadas pela consultoria', data: '04/07/2026'},
     {item: 'Materiais recebidos e processados: aula comercial "Como faço uma abordagem comercial em DTM" (4h08) + depoimentos completos (5 de alunos + 4 pacientes em vídeo) — transcritos localmente, analisados e integrados ao briefing (Banco de Histórias, Método/F6, Cliente Ideal)', data: '07/07/2026'},
+    {item: 'NAMING DEFINIDO: Método = Abordagem MODAL · Empresa = Academia DTM · Formação = Viver de DTM. Identidade visual = território Pulso (fluor-lime). Guia de Naming + Guia de Setup de Marca entregues', data: '10/07/2026'},
   ],
 };
 
