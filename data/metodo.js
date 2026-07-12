@@ -40,8 +40,8 @@ APRENDIZ: {
     </div>
 
     <ul class="entregas-lista">
-      <li><strong>🔴 Hipótese de momento de carreira (validar com o Rodrigo)</strong><em>O momento de decisão mais provável não é o recém-formado — é o dentista de 3 a 10+ anos de formado, com consultório próprio ou cadeira alugada, que sente o teto de renda da clínica geral e busca diferencial técnico com ROI mensurável. Como validar: perfil etário/tempo-de-formado das 8 turmas de especialização que ele já formou.</em></li>
-      <li><strong>🔴 Hipótese de gênero no nicho</strong><em>Como a base geral da profissão é majoritariamente feminina, é razoável supor maioria de mulheres também entre as inscritas — mas não há dado específico do nicho DTM que confirme. Como validar: gênero dos alunos das turmas anteriores.</em></li>
+      <li><strong>✅ Momento de carreira — validado pelo Rodrigo (12/07)</strong><em>O aluno que investe é o dentista mais sênior, muitas vezes já com OUTRA especialidade e faturamento maior — quem tem caixa pra bancar a formação. Confirma o recorte "3 a 10+ anos de formado" e acrescenta a fatia do especialista que busca DTM como segunda especialização.</em></li>
+      <li><strong>✅ Gênero — validado com dado do expert (12/07)</strong><em>Maioria feminina forte: <strong>80% de mulheres nas duas últimas turmas</strong>. A comunicação e o retrato-falado assumem a mulher dentista como público majoritário.</em></li>
       <li><strong>🟢 Contexto financeiro</strong><em>O dentista ambicioso já orçamenta capacitação: o mercado de especialização em odontologia sustenta ticket de R$ 36-60 mil (DTM/DOF) e R$ 35-80 mil (implantodontia). A formação compete numa faixa mais acessível, mas ainda exige decisão financeira ponderada, não impulsiva.</em></li>
     </ul>
 
@@ -120,7 +120,7 @@ SOM  = ecossistema próprio (6.800 seguidores + 300+ alunos formados
       </table>
     </div>
     <ul class="entregas-lista">
-      <li><strong>🔴 Hipótese de janela útil</strong><em>Fim de tarde/início de noite em dia de semana (18h-20h) é o horário mais provável sem concorrer com o expediente clínico — validar com o Rodrigo, que tem o dado real de quando os leads da especialização perguntavam sobre disponibilidade.</em></li>
+      <li><strong>✅ Janela de horário — validada pelo Rodrigo (12/07)</strong><em>19h-21h numa noite de semana (segunda como exemplo), com abertura pra um encontro mais longo num sábado por mês conforme a turma pedir. Confirma o período (noite de semana) e ajusta a faixa para 19h-21h.</em></li>
       <li><strong>Implicação de formato (já decidido 🟢)</strong><em>1 encontro semanal em grupo, ao vivo, por 10 meses. O burnout torna qualquer "mais uma coisa pra fazer" um risco de abandono — comunicar o ALÍVIO (parar de tratar errado) tanto quanto o ganho.</em></li>
     </ul>
 
@@ -158,7 +158,7 @@ SOM  = ecossistema próprio (6.800 seguidores + 300+ alunos formados
     <p style="font-size:12.5px;color:var(--cinza);">🔴 4 perguntas de detecção pros primeiros leads: (1) já ouviu falar em DTM antes de conhecer o Rodrigo? (2) sabia que bruxismo e DTM são coisas diferentes? (3) já tentou algum curso sobre isso? (4) o que te fez procurar essa formação?</p>
 
     <h2 class="section-title">7 · Habilidades <span class="ei">digitais</span></h2>
-    <p>A lacuna mais aberta deste estudo — nenhuma das 4 fontes traz dado direto sobre o conforto digital do dentista clínico geral. Hipótese de trabalho: conforto <strong>intermediário</strong> 🔴.</p>
+    <p>Lacuna fechada no essencial — <strong>validado pelo Rodrigo (12/07)</strong>: a turma hoje é familiarizada com <strong>Zoom e Teams</strong> (o único caso de dificuldade que ele lembra foi um aluno mais velho travando no Zoom, na pandemia — contexto superado). Zoom confirmado; resta validar só o conforto com a área de membros. 🟢</p>
     <div class="tbl-wrap">
       <table class="tbl">
         <thead><tr><th>Plataforma</th><th>Nível de uso (hipótese)</th><th>Evidência indireta</th><th>Confiança</th></tr></thead>
