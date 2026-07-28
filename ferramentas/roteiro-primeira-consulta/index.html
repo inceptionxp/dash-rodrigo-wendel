@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roteiro da Primeira Consulta — Academia DTM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#101C46;
+    --navy-2:#182559;
+    --cobalto:#2C4BFF;
+    --fluor:#CDF23F;
+    --menta:#12D9A0;
+    --off:#F4F3EC;
+    --off-2:#E7E5D8;
+    --tinta:#0B0F1A;
+    --off-70:rgba(244,243,236,.7);
+    --off-45:rgba(244,243,236,.45);
+    --tinta-70:rgba(11,15,26,.68);
+    --tinta-45:rgba(11,15,26,.45);
+    --line:rgba(11,15,26,.12);
+    --line-dark:rgba(244,243,236,.14);
+    --display:"Archivo",sans-serif;
+    --expanded:"Archivo Expanded","Archivo",sans-serif;
+    --corpo:"Hanken Grotesk",-apple-system,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--off);color:var(--tinta);font-family:var(--corpo);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.02em;line-height:1.08}
+  a{color:inherit}
+
+  /* ===== TOPBAR ===== */
+  .topbar{position:sticky;top:0;z-index:50;background:var(--navy);color:var(--off);border-bottom:1px solid var(--line-dark)}
+  .topbar-in{max-width:920px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brandmark{display:flex;flex-direction:column;line-height:1.1}
+  .brandmark .b1{font-family:var(--expanded);font-weight:800;font-size:15px;letter-spacing:-.01em;text-transform:uppercase}
+  .brandmark .b2{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--fluor);margin-top:3px}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.05em;text-transform:uppercase;border-radius:8px;padding:10px 16px;border:1.5px solid var(--line-dark);background:transparent;color:var(--off);cursor:pointer;transition:all .15s ease;white-space:nowrap}
+  .btn:hover{border-color:var(--off-45)}
+  .btn.primary{background:var(--fluor);color:var(--navy);border-color:var(--fluor)}
+  .btn.primary:hover{opacity:.88}
+  .save-flag{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--menta);opacity:0;transition:opacity .3s ease;display:flex;align-items:center;gap:6px}
+  .save-flag.show{opacity:1}
+  .save-flag .dot{width:6px;height:6px;border-radius:50%;background:var(--menta)}
+
+  /* ===== HERO ===== */
+  .hero{padding:56px 0 40px;border-bottom:1px solid var(--line)}
+  .kicker{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cobalto);margin-bottom:18px}
+  .kicker .tag{background:var(--fluor);color:var(--navy);border-radius:4px;padding:3px 9px;font-size:10px}
+  .hero h1{font-family:var(--expanded);font-size:clamp(32px,5vw,52px);text-transform:uppercase;max-width:14ch}
+  .hero .lead{margin-top:18px;font-size:18px;color:var(--tinta-70);max-width:62ch}
+  .hero .lead strong{color:var(--tinta);font-weight:700}
+
+  .howto{margin-top:32px;background:var(--tinta);color:var(--off);border-radius:14px;padding:26px 28px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .howto .step{display:flex;flex-direction:column;gap:6px}
+  .howto .num{font-family:var(--mono);font-size:11px;color:var(--fluor);letter-spacing:.08em}
+  .howto p{font-size:14px;color:var(--off-70)}
+
+  /* ===== NAV PILLS ===== */
+  .navrow{position:sticky;top:65px;z-index:40;background:var(--off);border-bottom:1px solid var(--line);padding:14px 0}
+  .navrow .wrap{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+  .navrow .wrap::-webkit-scrollbar{display:none}
+  .pill{flex:none;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:8px 14px;border-radius:100px;border:1.5px solid var(--line);color:var(--tinta-70);text-decoration:none;transition:all .15s ease}
+  .pill:hover{border-color:var(--cobalto);color:var(--cobalto)}
+
+  /* ===== SECTIONS (movimentos) ===== */
+  .mov{padding:64px 0;border-bottom:1px solid var(--line);scroll-margin-top:150px}
+  .mov-head{display:flex;align-items:flex-start;gap:18px;margin-bottom:22px}
+  .mov-num{font-family:var(--expanded);font-weight:800;font-size:15px;color:var(--navy);background:var(--fluor);border-radius:10px;width:44px;height:44px;flex:none;display:flex;align-items:center;justify-content:center}
+  .mov-titles .kicker{margin-bottom:8px}
+  .mov h2{font-size:clamp(22px,3vw,30px);text-transform:none}
+  .funcao{margin-top:10px;font-size:15px;color:var(--tinta-70);max-width:60ch}
+  .funcao b{color:var(--tinta);font-weight:700}
+
+  .ref{margin-top:22px;background:var(--navy);color:var(--off);border-radius:12px;padding:20px 22px;position:relative}
+  .ref .reflabel{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--fluor);margin-bottom:10px;display:block}
+  .ref p{font-family:var(--mono);font-size:13px;line-height:1.7;color:var(--off-70)}
+  .ref p + p{margin-top:10px}
+
+  .guard{margin-top:18px;background:var(--off-2);border-left:4px solid var(--navy);border-radius:0 10px 10px 0;padding:18px 20px}
+  .guard .glabel{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  .guard .glabel::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--fluor);border:1.5px solid var(--navy)}
+  .guard ul{padding-left:18px}
+  .guard li{font-size:14px;color:var(--tinta-70);margin-top:6px}
+  .guard li b{color:var(--tinta)}
+
+  .fields{margin-top:26px;display:flex;flex-direction:column;gap:18px}
+  label{display:block;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--tinta);margin-bottom:8px}
+  label .hint{display:block;font-family:var(--corpo);font-weight:400;font-size:13px;text-transform:none;letter-spacing:0;color:var(--tinta-45);margin-top:4px}
+  input[type=text],input[type=number],textarea{width:100%;font-family:var(--corpo);font-size:15px;color:var(--tinta);background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:13px 15px;resize:vertical;transition:border-color .15s ease}
+  input[type=text]:focus,input[type=number]:focus,textarea:focus{outline:none;border-color:var(--cobalto)}
+  textarea{min-height:88px;line-height:1.55}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:640px){.row2{grid-template-columns:1fr}.howto{grid-template-columns:1fr}}
+
+  /* checklist (movimento 3 e 4) */
+  .qlist{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+  .qitem{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:16px 18px}
+  .qitem .qtop{display:flex;align-items:flex-start;gap:12px}
+  .qitem input[type=checkbox]{margin-top:4px;width:18px;height:18px;flex:none;accent-color:var(--menta)}
+  .qitem .qtext{font-size:15px;font-weight:600;color:var(--tinta)}
+  .qitem .qtext .qn{font-family:var(--mono);font-size:11px;color:var(--tinta-45);margin-right:8px}
+  .qitem textarea{margin-top:12px;min-height:52px;font-size:14px}
+
+  .protocol{margin-top:22px;display:flex;flex-direction:column;gap:10px}
+  .pchip{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:13px 16px}
+  .pchip input[type=checkbox]{width:18px;height:18px;accent-color:var(--menta)}
+  .pchip span{font-size:15px;font-weight:600}
+
+  /* prova social blocks */
+  .proofgrid{margin-top:22px;display:flex;flex-direction:column;gap:16px}
+  .proofcard{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:18px}
+  .proofcard .plabel{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--cobalto);font-weight:700;margin-bottom:12px}
+
+  /* calc box movimento 9 */
+  .calc{margin-top:24px;background:var(--navy);border-radius:14px;padding:24px 26px;color:var(--off)}
+  .calc .clabel{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--fluor);margin-bottom:16px}
+  .calc .crow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .calc label{color:var(--off-70)}
+  .calc input{background:var(--navy-2);border:1.5px solid var(--line-dark);color:var(--off)}
+  .calc input:focus{border-color:var(--fluor)}
+  .calcout{margin-top:18px;background:var(--navy-2);border-radius:10px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .calcout .col{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--off-45)}
+  .calcout .cval{font-family:var(--expanded);font-weight:800;font-size:26px;color:var(--fluor)}
+
+  /* print helper */
+  .print-fill{display:none;white-space:pre-wrap;width:100%;font-family:var(--corpo);font-size:15px;color:var(--tinta);background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:13px 15px}
+
+  /* footer */
+  footer{background:var(--tinta);color:var(--off-70);padding:44px 0 60px}
+  footer .fmark{font-family:var(--expanded);font-weight:800;font-size:18px;color:var(--off);text-transform:uppercase}
+  footer .fmeta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--off-45);margin-top:10px}
+  footer .fcta{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+
+  .reset-line{margin-top:60px;padding-top:20px;border-top:1px solid var(--line-dark);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .reset-line button{background:transparent;border:1px solid var(--line-dark);color:var(--off-45)}
+  .reset-line button:hover{color:var(--off);border-color:var(--off-45)}
+
+  /* ===== PRINT ===== */
+  @media print{
+    .topbar,.navrow,.howto,.btn{display:none !important}
+    body{font-size:12px}
+    .mov{padding:22px 0;border-bottom:1px solid #ccc}
+    .ref{background:#fff !important;color:#111 !important;border:1px solid #999}
+    .ref .reflabel{color:#333 !important}
+    .ref p{color:#333 !important}
+    input[type=text],input[type=number],textarea{display:none}
+    .print-fill{display:block}
+    .calc{background:#fff !important;color:#111 !important;border:1px solid #999}
+    .calc input{display:none}
+    .calc .print-fill{display:block;color:#111}
+    .calcout{background:#f2f2f2 !important}
+    .calcout .cval{color:#111 !important}
+    footer{background:#fff !important;color:#111 !important}
+    .fmark{color:#111 !important}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brandmark">
+      <span class="b1">Academia DTM</span>
+      <span class="b2">Viver de DTM</span>
+    </div>
+    <div class="actions">
+      <span class="save-flag" id="saveFlag"><span class="dot"></span>rascunho salvo</span>
+      <button class="btn" id="btnDownload">baixar .txt</button>
+      <button class="btn" id="btnPrint">imprimir</button>
+      <button class="btn primary" id="btnSave">salvar rascunho</button>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker"><span class="tag">instrumento</span>etapa 3 · comercial</span>
+    <h1>Roteiro da Primeira Consulta</h1>
+    <p class="lead">Este instrumento não é pra copiar a fala do Dr. Rodrigo — é pra você construir <strong>a sua própria narrativa</strong> de primeira consulta, no seu jeito de falar, adaptada à sua clínica. Cada um dos 9 movimentos abaixo mostra a função do passo, a referência real de como o Dr. Rodrigo conduz, e um espaço pra você escrever a sua versão.</p>
+
+    <div class="howto">
+      <div class="step">
+        <span class="num">01 · leia</span>
+        <p>Em cada movimento, leia a <b style="color:var(--off)">função</b> e a caixa de referência antes de escrever. Entenda o porquê antes de preencher.</p>
+      </div>
+      <div class="step">
+        <span class="num">02 · escreva</span>
+        <p>Preencha os campos com a sua fala, no seu vocabulário, pensando na sua clínica e no seu paciente real.</p>
+      </div>
+      <div class="step">
+        <span class="num">03 · leve pra clínica</span>
+        <p>Salve o rascunho, baixe em .txt ou imprima — e leve o roteiro pronto pra sua próxima consulta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="navrow">
+  <div class="wrap">
+    <a class="pill" href="#m1">1 · boas-vindas</a>
+    <a class="pill" href="#m2">2 · enquadramento</a>
+    <a class="pill" href="#m3">3 · descoberta</a>
+    <a class="pill" href="#m4">4 · exame</a>
+    <a class="pill" href="#m5">5 · porquê da dor</a>
+    <a class="pill" href="#m6">6 · proposta</a>
+    <a class="pill" href="#m7">7 · prova social</a>
+    <a class="pill" href="#m8">8 · ancoragem</a>
+    <a class="pill" href="#m9">9 · fechamento</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- MOVIMENTO 1 -->
+  <section class="mov" id="m1">
+    <div class="mov-head">
+      <span class="mov-num">01</span>
+      <div class="mov-titles">
+        <span class="kicker">movimento 1 · ancoragem de autoridade</span>
+        <h2>Boas-vindas e apresentação</h2>
+        <p class="funcao"><b>Função:</b> ancorar autoridade e virar o foco pro paciente logo na entrada da consulta.</p>
+      </div>
+    </div>
+
+    <div class="ref">
+      <span class="reflabel">como o Dr. Rodrigo conduz</span>
+      <p>"Seja bem-vindo(a)! É um prazer te receber aqui na clínica. Sou o Dr. Rodrigo, mestre especialista em DTM, coordenador de curso de pós-graduação. Iniciei em 1996 meus estudos em DTM, bruxismo e dor facial. Já atendi mais de 8 mil pacientes, ajudando eles a se livrarem da dor e recuperar a qualidade de vida."</p>
+      <p>"Porque a consulta não é sobre mim, é sobre você — e estou muito feliz em te atender pessoalmente."</p>
+    </div>
+
+    <div class="fields">
+      <div>
+        <label>Sua apresentação<span class="hint">formação, especialização e tempo de atuação com DTM</span></label>
+        <textarea id="f1a" placeholder="Ex.: sou especialista em DTM e dor orofacial, atuo há X anos..."></textarea>
+        <div class="print-fill" data-for="f1a"></div>
+      </div>
+      <div>
+        <label>Seu diferencial de autoridade<span class="hint">o que mostra experiência real — nº de pacientes, tempo de atuação, resultado que você entrega</span></label>
+        <textarea id="f1b" placeholder="Ex.: já atendi mais de X pacientes com dor orofacial..."></textarea>
+        <div class="print-fill" data-for="f1b"></div>
+      </div>
+      <div>
+        <label>Sua frase de virada de foco<span class="hint">a frase que tira o holofote de você e coloca no paciente</span></label>
+        <input type="text" id="f1c" placeholder="Ex.: a consulta não é sobre mim, é sobre você.">
+        <div class="print-fill" data-for="f1c"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIMENTO 2 -->
+  <section class="mov" id="m2">
+    <div class="mov-head">
+      <span class="mov-num">02</span>
+      <div class="mov-titles">
+        <span class="kicker">movimento 2 · enquadramento + rapport</span>
+        <h2>O contrato da consulta</h2>
+        <p class="funcao"><b>Função:</b> definir o contrato da consulta e descobrir o critério de sucesso do paciente — antes de falar de exame.</p>
+      </div>
+    </div>
+
+    <div class="ref">
+      <span class="reflabel">como o Dr. Rodrigo conduz</span>
+      <p>"Separei 1h pra conversarmos e fazermos todo o processo, tudo bem pra você?"</p>
+      <p>"Sempre começo perguntando uma coisa muito importante: o que precisa acontecer aqui hoje pra você sair totalmente satisfeita?"</p>
+      <p>"Pra eu te dar um atendimento bem personalizado, vou precisar te fazer algumas perguntas, pode ser?"</p>
+    </div>
+
+    <div class="guard">
+      <div class="glabel">atenção</div>
+      <ul>
+        <li>Ainda <b>não fale do exame clínico</b> nesse momento — primeiro vem o contrato e o critério de sucesso do paciente.</li>
+      </ul>
+    </div>
+
+    <div class="fields">
+      <div>
+        <label>Quanto tempo você reserva pra 1ª consulta</label>
+        <input type="text" id="f2a" placeholder="Ex.: 1h">
+        <div class="print-fill" data-for="f2a"></div>
+      </div>
+      <div>
+        <label>Sua versão da pergunta-chave<span class="hint">a pergunta que extrai o critério de sucesso do paciente</span></label>
+        <textarea id="f2b" placeholder="Ex.: o que precisa acontecer aqui hoje pra você sair totalmente satisfeito(a)?"></textarea>
+        <div class="print-fill" data-for="f2b"></div>
+      </div>
+      <div>
+        <label>Sua frase de pedido de permissão<span class="hint">antes de começar a bateria de perguntas do movimento 3</span></label>
+        <input type="text" id="f2c" placeholder="Ex.: pra eu te dar um atendimento bem personalizado, posso te fazer algumas perguntas?">
+        <div class="print-fill" data-for="f2c"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIMENTO 3 -->
+  <section class="mov" id="m3">
+    <div class="mov-head">
+      <span class="mov-num">03</span>
+      <div class="mov-titles">
+        <span class="kicker">movimento 3 · descoberta emocional</span>
+        <h2>A anamnese que vende</h2>
+        <p class="funcao"><b>Função:</b> fazer o paciente verbalizar a dor, o impacto dela na vida dele e o custo real de não resolver. É o coração da conversão.</p>
+      </div>
+    </div>
+
+    <div class="ref">
+      <span class="reflabel">o banco de perguntas do Dr. Rodrigo</span>
+      <p>Marque as que você já usa (ou vai passar a usar) e, se quiser, escreva a sua própria versão de cada uma — no seu jeito de falar.</p>
+    </div>
+
+    <div class="qlist" id="qlist3"></div>
+  </section>
+
+  <!-- MOVIMENTO 4 -->
+  <section class="mov" id="m4">
+    <div class="mov-head">
+      <span class="mov-num">04</span>
+      <div class="mov-titles">
+        <span class="kicker">movimento 4 · exame físico</span>
+        <h2>A prova clínica ao vivo</h2>
+        <p class="funcao"><b>Função:</b> mostrar prova clínica ao vivo — credibilidade técnica no meio da narrativa.</p>
+      </div>
+    </div>
+
+    <div class="ref">
+      <span class="reflabel">como o Dr. Rodrigo conduz</span>
+      <p>Abertura bucal · movimentos de lateralidade · sons articulares · palpação.</p>
+    </div>
+
+    <div class="protocol" id="protocol4"></div>
+
+    <div class="fields" style="margin-top:18px">
+      <div>
+        <label>Outros passos do seu protocolo<span class="hint">se o seu exame tem etapas além das listadas acima</span></label>
+        <textarea id="f4a" placeholder="Ex.: teste de resistência, ausculta articular..."></textarea>
+        <div class="print-fill" data-for="f4a"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIMENTO 5 -->
+  <section class="mov" id="m5">
+    <div class="mov-head">
+      <span class="mov-num">05</span>
+      <div class="mov-titles">
+        <span class="kicker">movimento 5 · tradução + link</span>
+        <h2>O porquê da dor</h2>
+        <p class="funcao"><b>Função:</b> criar a lógica do problema e o risco real de esperar — conectando com o que o paciente contou no movimento 3.</p>
+      </div>
+    </div>
+
+    <div class="ref">
+      <span class="reflabel">como o Dr. Rodrigo conduz</span>
+      <p>"Aponto três pontos específicos no exame: onde está a dor, por que ela existe, e como ela afeta a rotina do paciente. E é por isso que você está com... — linkando isso às queixas que colhi antes."</p>
+      <p>"A dor não é isolada. Ela é resultado de um sistema sobrecarregado."</p>
+      <p>"Agora que sabemos o seu problema, eu preciso te perguntar uma coisa: na sua visão, como seria um bom tratamento pra você?"</p>
+    </div>
+
+    <div class="guard">
+      <div class="glabel">atenção — os 3 guardrails deste movimento</div>
+      <ul>
+        <li><b>Explique menos, não dê aula.</b> A regra do Dr. Rodrigo: só 3 pontos, na linguagem do paciente, e segue pro fechamento. Virar palestra clínica é o erro nº1 do dentista técnico — e perde o paciente.</li>
+        <li><b>Traduza os termos técnicos pro leigo.</b> Nunca use "masseter", "pterigóideo" ou "ATM" crus — troque por linguagem simples (ex.: "o músculo que ajuda a abrir e fechar a boca").</li>
+        <li><b>DTM é progressiva — comunique isso com honestidade.</b> Não existe "CPAD" nem "6 fases" como framework real: isso veio de uma mentoria de vendas da qual o próprio Dr. Rodrigo se distancia. Diga a verdade clínica — a dor tende a piorar sem intervenção — sem inventar fases nem fabricar urgência.</li>
+      </ul>
+    </div>
+
+    <div class="fields">
+      <div>
+        <label>Onde está a dor<span class="hint">sua versão simples, sem jargão técnico</span></label>
+        <textarea id="f5a"></textarea>
+        <div class="print-fill" data-for="f5a"></div>
+      </div>
+      <div>
+        <label>Por que ela existe<span class="hint">conectando à ideia de sistema sobrecarregado (os Dois Tripés)</span></label>
+        <textarea id="f5b"></textarea>
+        <div class="print-fill" data-for="f5b"></div>
+      </div>
+      <div>
+        <label>Como ela afeta a rotina<span class="hint">use as palavras que o próprio paciente trouxe no movimento 3</span></label>
+        <textarea id="f5c"></textarea>
+        <div class="print-fill" data-for="f5c"></div>
+      </div>
+      <div>
+        <label>Sua tradução pro leigo dos termos que você mais usa<span class="hint">liste os termos técnicos e a versão simples de cada um</span></label>
+        <textarea id="f5d" placeholder="Ex.: masseter → o músculo que ajuda a abrir e fechar a boca"></textarea>
+        <div class="print-fill" data-for="f5d"></div>
+      </div>
+      <div>
+        <label>Sua frase de transição pro fechamento</label>
+        <input type="text" id="f5e" placeholder="Ex.: na sua visão, como seria um bom tratamento pra você?">
+        <div class="print-fill" data-for="f5e"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIMENTO 6 -->
+  <section class="mov" id="m6">
+    <div class="mov-head">
+      <span class="mov-num">06</span>
+      <div class="mov-titles">
+        <span class="kicker">movimento 6 · a proposta de tratamento</span>
+        <h2>O que é o tratamento</h2>
+        <p class="funcao"><b>Função:</b> traduzir o problema em solução desejável e no tempo certo — parte racional, desejo e oportunidade.</p>
+      </div>
+    </div>
+
+    <div class="ref">
+      <span class="reflabel">como o Dr. Rodrigo conduz</span>
+      <p>"Mostro minha proposta com clareza — a parte racional. Mostro o desejo: como a vida dele vai ficar após cada sessão. E mostro a oportunidade: por que o ideal é fechar agora."</p>
+    </div>
+
+    <div class="fields">
+      <div>
+        <label>Sua proposta com clareza<span class="hint">parte racional — o que é o tratamento, em linguagem simples</span></label>
+        <textarea id="f6a"></textarea>
+        <div class="print-fill" data-for="f6a"></div>
+      </div>
+      <div>
+        <label>O desejo<span class="hint">como a vida do paciente fica após cada sessão</span></label>
+        <textarea id="f6b"></textarea>
+        <div class="print-fill" data-for="f6b"></div>
+      </div>
+      <div>
+        <label>A oportunidade<span class="hint">por que faz sentido fechar agora — com clareza, sem pressão</span></label>
+        <textarea id="f6c"></textarea>
+        <div class="print-fill" data-for="f6c"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIMENTO 7 -->
+  <section class="mov" id="m7">
+    <div class="mov-head">
+      <span class="mov-num">07</span>
+      <div class="mov-titles">
+        <span class="kicker">movimento 7 · prova social</span>
+        <h2>Quem já resolveu</h2>
+        <p class="funcao"><b>Função:</b> quebrar a objeção "meu caso não tem solução" com prova de outros pacientes.</p>
+      </div>
+    </div>
+
+    <div class="ref">
+      <span class="reflabel">como o Dr. Rodrigo conduz</span>
+      <p>Depoimentos em vídeo de pacientes reais — ex.: "achei que meu caso era cirúrgico, DTM tem cura sim" e "fui muito bem atendido, resolveu meu problema".</p>
+    </div>
+
+    <div class="proofgrid">
+      <div class="proofcard">
+        <div class="plabel">prova social 1</div>
+        <div class="row2">
+          <div><label>Paciente / tipo de caso</label><input type="text" id="f7a1"><div class="print-fill" data-for="f7a1"></div></div>
+          <div><label>Formato (vídeo / print / texto)</label><input type="text" id="f7a2"><div class="print-fill" data-for="f7a2"></div></div>
+        </div>
+        <div style="margin-top:12px"><label>Onde está salva</label><input type="text" id="f7a3"><div class="print-fill" data-for="f7a3"></div></div>
+      </div>
+      <div class="proofcard">
+        <div class="plabel">prova social 2</div>
+        <div class="row2">
+          <div><label>Paciente / tipo de caso</label><input type="text" id="f7b1"><div class="print-fill" data-for="f7b1"></div></div>
+          <div><label>Formato (vídeo / print / texto)</label><input type="text" id="f7b2"><div class="print-fill" data-for="f7b2"></div></div>
+        </div>
+        <div style="margin-top:12px"><label>Onde está salva</label><input type="text" id="f7b3"><div class="print-fill" data-for="f7b3"></div></div>
+      </div>
+      <div class="proofcard">
+        <div class="plabel">prova social 3</div>
+        <div class="row2">
+          <div><label>Paciente / tipo de caso</label><input type="text" id="f7c1"><div class="print-fill" data-for="f7c1"></div></div>
+          <div><label>Formato (vídeo / print / texto)</label><input type="text" id="f7c2"><div class="print-fill" data-for="f7c2"></div></div>
+        </div>
+        <div style="margin-top:12px"><label>Onde está salva</label><input type="text" id="f7c3"><div class="print-fill" data-for="f7c3"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIMENTO 8 -->
+  <section class="mov" id="m8">
+    <div class="mov-head">
+      <span class="mov-num">08</span>
+      <div class="mov-titles">
+        <span class="kicker">movimento 8 · checagem + ancoragem</span>
+        <h2>O "sim" antes do preço</h2>
+        <p class="funcao"><b>Função:</b> confirmar o "sim" psicológico do paciente antes do preço — e ancorar o valor do que ele vai receber.</p>
+      </div>
+    </div>
+
+    <div class="ref">
+      <span class="reflabel">como o Dr. Rodrigo conduz</span>
+      <p>"Fez sentido pra você? Era isso que você estava procurando? Você acha que isso vai resolver o seu problema? Ficou alguma dúvida?"</p>
+      <p>"Antes de falar do preço, eu ancoro o que ele vai receber — cito o tratamento e só depois mostro o valor."</p>
+    </div>
+
+    <div class="fields">
+      <div>
+        <label>Suas perguntas de checagem<span class="hint">edite as do Dr. Rodrigo ou escreva as suas</span></label>
+        <textarea id="f8a" placeholder="Ex.: fez sentido pra você? Isso resolve o que você veio buscar?"></textarea>
+        <div class="print-fill" data-for="f8a"></div>
+      </div>
+      <div>
+        <label>Sua ancoragem<span class="hint">liste em tópicos o que o paciente vai receber, antes de falar o preço</span></label>
+        <textarea id="f8b" placeholder="Ex.: X sessões de... + acompanhamento de... + material de..."></textarea>
+        <div class="print-fill" data-for="f8b"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIMENTO 9 -->
+  <section class="mov" id="m9">
+    <div class="mov-head">
+      <span class="mov-num">09</span>
+      <div class="mov-titles">
+        <span class="kicker">movimento 9 · preço + fechamento</span>
+        <h2>Preço e fechamento</h2>
+        <p class="funcao"><b>Função:</b> fechar com âncora e clareza — e com uma régua de desconto que respeita a sua margem, não um número copiado.</p>
+      </div>
+    </div>
+
+    <div class="ref">
+      <span class="reflabel">como o Dr. Rodrigo conduz</span>
+      <p>"Crio a urgência, dou desconto pra fechar agora, tiro o valor da avaliação. Meu papel é dar clareza."</p>
+    </div>
+
+    <div class="guard">
+      <div class="glabel">atenção</div>
+      <ul>
+        <li>Não existe régua de desconto pronta pra copiar. O próprio Dr. Rodrigo não tem um número fixo — ele calibra pela própria margem (custos fixos + até onde consegue ir). <b>Defina a sua régua abaixo, a partir da sua realidade.</b></li>
+      </ul>
+    </div>
+
+    <div class="fields">
+      <div class="row2">
+        <div>
+          <label>Valor do tratamento à vista (R$)</label>
+          <input type="text" id="f9a" placeholder="Ex.: 4.500">
+          <div class="print-fill" data-for="f9a"></div>
+        </div>
+        <div>
+          <label>Opção parcelada</label>
+          <input type="text" id="f9b" placeholder="Ex.: 6x de R$ 850">
+          <div class="print-fill" data-for="f9b"></div>
+        </div>
+      </div>
+      <div>
+        <label>Sua frase de fechamento</label>
+        <input type="text" id="f9c" placeholder="Ex.: meu papel é dar clareza.">
+        <div class="print-fill" data-for="f9c"></div>
+      </div>
+    </div>
+
+    <div class="calc">
+      <div class="clabel">calculadora da sua régua de desconto</div>
+      <div class="crow">
+        <div>
+          <label>Valor cheio do tratamento (R$)</label>
+          <input type="number" id="calcValor" placeholder="Ex.: 4500">
+          <div class="print-fill" data-for="calcValor"></div>
+        </div>
+        <div>
+          <label>Desconto máximo que a sua margem aguenta (%)</label>
+          <input type="number" id="calcDesconto" placeholder="Ex.: 10">
+          <div class="print-fill" data-for="calcDesconto"></div>
+        </div>
+      </div>
+      <div class="calcout">
+        <span class="col">o menor valor que você aceita fechar</span>
+        <span class="cval" id="calcResultado">R$ —</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="reset-line">
+    <button class="btn" id="btnReset">limpar todo o roteiro</button>
+    <span style="font-family:var(--mono);font-size:11px;color:var(--tinta-45);letter-spacing:.04em">o rascunho fica salvo só neste navegador — baixe o .txt pra guardar em outro lugar</span>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fmark">Academia DTM</div>
+    <div class="fmeta">Roteiro da Primeira Consulta · instrumento do aluno · Etapa 3 — Comercial</div>
+    <div class="fcta">
+      <button class="btn" style="border-color:var(--off-45);color:var(--off)" id="btnDownload2">baixar meu roteiro em .txt</button>
+      <button class="btn" style="border-color:var(--off-45);color:var(--off)" id="btnPrint2">imprimir</button>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const STORAGE_KEY = "academia-dtm-roteiro-primeira-consulta";
+
+  // ---- movimento 3: banco de perguntas ----
+  const perguntas3 = [
+    "O que está te incomodando hoje em relação à dor?",
+    "Há quanto tempo você vem sentindo essa dor?",
+    "Por que isso te incomoda tanto?",
+    "Isso te atrapalha mais na vida pessoal ou profissional?",
+    "O que isso impacta no seu dia a dia?",
+    "Com que frequência isso te incomoda?",
+    "Qual o sentimento que isso te gera?",
+    "Quando você sente isso, como reage?",
+    "Isso já te impediu de fazer algo?",
+    "As pessoas ao seu redor percebem isso? Como comentam?",
+    "Como você se sente sendo percebido(a) dessa forma?",
+    "O que você já fez, de lá pra cá, pra tentar resolver isso? (tratamentos frustrados)",
+    "Se você não fizer nada, como imagina sua vida daqui a 1 ano?"
+  ];
+  const qlist3 = document.getElementById("qlist3");
+  perguntas3.forEach((q, i) => {
+    const id = "q3_" + i;
+    const div = document.createElement("div");
+    div.className = "qitem";
+    div.innerHTML = `
+      <div class="qtop">
+        <input type="checkbox" id="${id}_check">
+        <div class="qtext"><span class="qn">${String(i+1).padStart(2,"0")}</span>${q}</div>
+      </div>
+      <textarea id="${id}_versao" placeholder="Sua versão desta pergunta (opcional)"></textarea>
+      <div class="print-fill" data-for="${id}_versao"></div>
+    `;
+    qlist3.appendChild(div);
+  });
+
+  // ---- movimento 4: protocolo padrão ----
+  const protocolo4 = ["Abertura bucal", "Movimentos de lateralidade", "Sons articulares", "Palpação"];
+  const protocol4 = document.getElementById("protocol4");
+  protocolo4.forEach((p, i) => {
+    const id = "p4_" + i;
+    const div = document.createElement("div");
+    div.className = "pchip";
+    div.innerHTML = `<input type="checkbox" id="${id}"><span>${p}</span>`;
+    protocol4.appendChild(div);
+  });
+
+  // ---- coleta de todos os campos persistíveis ----
+  function getAllFields(){
+    return Array.from(document.querySelectorAll("input[type=text], input[type=number], textarea"));
+  }
+  function getAllChecks(){
+    return Array.from(document.querySelectorAll("input[type=checkbox]"));
+  }
+
+  // ---- localStorage: salvar / carregar ----
+  function saveDraft(showFlag){
+    const data = {};
+    getAllFields().forEach(el => { if(el.id) data[el.id] = el.value; });
+    getAllChecks().forEach(el => { if(el.id) data[el.id] = el.checked; });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    if(showFlag){
+      const flag = document.getElementById("saveFlag");
+      flag.classList.add("show");
+      clearTimeout(window._flagTimer);
+      window._flagTimer = setTimeout(() => flag.classList.remove("show"), 1800);
+    }
+  }
+
+  function loadDraft(){
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return;
+    try{
+      const data = JSON.parse(raw);
+      Object.keys(data).forEach(id => {
+        const el = document.getElementById(id);
+        if(!el) return;
+        if(el.type === "checkbox") el.checked = data[id];
+        else el.value = data[id];
+      });
+      updateCalc();
+    }catch(e){}
+  }
+
+  let debounceTimer;
+  document.addEventListener("input", (e) => {
+    if(e.target.matches("input, textarea")){
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => saveDraft(true), 900);
+      if(e.target.id === "calcValor" || e.target.id === "calcDesconto") updateCalc();
+    }
+  });
+  document.addEventListener("change", (e) => {
+    if(e.target.matches("input[type=checkbox]")) saveDraft(true);
+  });
+
+  // ---- calculadora de régua de desconto ----
+  function updateCalc(){
+    const valor = parseFloat(document.getElementById("calcValor").value);
+    const desc = parseFloat(document.getElementById("calcDesconto").value);
+    const out = document.getElementById("calcResultado");
+    if(!isNaN(valor) && !isNaN(desc) && valor > 0 && desc >= 0){
+      const minimo = valor * (1 - desc/100);
+      out.textContent = "R$ " + minimo.toLocaleString("pt-BR", {minimumFractionDigits:2, maximumFractionDigits:2});
+    } else {
+      out.textContent = "R$ —";
+    }
+  }
+
+  // ---- botões salvar / limpar ----
+  document.getElementById("btnSave").addEventListener("click", () => saveDraft(true));
+  document.getElementById("btnReset").addEventListener("click", () => {
+    if(confirm("Isso apaga todo o roteiro preenchido neste navegador. Confirma?")){
+      localStorage.removeItem(STORAGE_KEY);
+      getAllFields().forEach(el => el.value = "");
+      getAllChecks().forEach(el => el.checked = false);
+      updateCalc();
+    }
+  });
+
+  // ---- imprimir ----
+  function printPage(){ window.print(); }
+  document.getElementById("btnPrint").addEventListener("click", printPage);
+  document.getElementById("btnPrint2").addEventListener("click", printPage);
+
+  window.addEventListener("beforeprint", () => {
+    document.querySelectorAll(".print-fill").forEach(div => {
+      const id = div.dataset.for;
+      const el = document.getElementById(id);
+      if(!el) return;
+      div.textContent = el.value && el.value.trim() ? el.value : "—";
+    });
+  });
+
+  // ---- baixar .txt ----
+  const labelMap = {
+    f1a:"Sua apresentação", f1b:"Seu diferencial de autoridade", f1c:"Sua frase de virada de foco",
+    f2a:"Tempo reservado pra 1ª consulta", f2b:"Pergunta-chave de sucesso", f2c:"Pedido de permissão pra perguntar",
+    f4a:"Outros passos do seu protocolo de exame",
+    f5a:"Onde está a dor", f5b:"Por que ela existe", f5c:"Como afeta a rotina",
+    f5d:"Sua tradução de termos técnicos", f5e:"Frase de transição pro fechamento",
+    f6a:"Proposta com clareza", f6b:"O desejo", f6c:"A oportunidade",
+    f7a1:"Prova social 1 — paciente/caso", f7a2:"Prova social 1 — formato", f7a3:"Prova social 1 — onde está salva",
+    f7b1:"Prova social 2 — paciente/caso", f7b2:"Prova social 2 — formato", f7b3:"Prova social 2 — onde está salva",
+    f7c1:"Prova social 3 — paciente/caso", f7c2:"Prova social 3 — formato", f7c3:"Prova social 3 — onde está salva",
+    f8a:"Perguntas de checagem", f8b:"Ancoragem (o que o paciente vai receber)",
+    f9a:"Valor à vista", f9b:"Opção parcelada", f9c:"Frase de fechamento",
+    calcValor:"Valor cheio do tratamento", calcDesconto:"Desconto máximo (%)"
+  };
+
+  function buildText(){
+    const L = (s) => s + "\n" + "-".repeat(s.length) + "\n";
+    let out = "";
+    out += "ROTEIRO DA PRIMEIRA CONSULTA — ACADEMIA DTM\n";
+    out += "Instrumento do aluno · Etapa 3 — Comercial\n";
+    out += "=".repeat(50) + "\n\n";
+
+    out += L("MOVIMENTO 1 — Boas-vindas e apresentação");
+    ["f1a","f1b","f1c"].forEach(id => out += (labelMap[id]||id) + ": " + (val(id)||"—") + "\n");
+    out += "\n";
+
+    out += L("MOVIMENTO 2 — O contrato da consulta");
+    ["f2a","f2b","f2c"].forEach(id => out += (labelMap[id]||id) + ": " + (val(id)||"—") + "\n");
+    out += "\n";
+
+    out += L("MOVIMENTO 3 — A anamnese que vende");
+    perguntas3.forEach((q, i) => {
+      const uso = document.getElementById("q3_"+i+"_check").checked ? "[uso]" : "[não uso]";
+      const versao = val("q3_"+i+"_versao");
+      out += (i+1) + ". " + q + " " + uso + "\n";
+      if(versao) out += "   minha versão: " + versao + "\n";
+    });
+    out += "\n";
+
+    out += L("MOVIMENTO 4 — A prova clínica ao vivo");
+    protocolo4.forEach((p, i) => {
+      const marcado = document.getElementById("p4_"+i).checked ? "[x]" : "[ ]";
+      out += marcado + " " + p + "\n";
+    });
+    if(val("f4a")) out += "Outros passos: " + val("f4a") + "\n";
+    out += "\n";
+
+    out += L("MOVIMENTO 5 — O porquê da dor");
+    ["f5a","f5b","f5c","f5d","f5e"].forEach(id => out += (labelMap[id]||id) + ": " + (val(id)||"—") + "\n");
+    out += "\n";
+
+    out += L("MOVIMENTO 6 — O que é o tratamento");
+    ["f6a","f6b","f6c"].forEach(id => out += (labelMap[id]||id) + ": " + (val(id)||"—") + "\n");
+    out += "\n";
+
+    out += L("MOVIMENTO 7 — Prova social");
+    ["f7a1","f7a2","f7a3","f7b1","f7b2","f7b3","f7c1","f7c2","f7c3"].forEach(id => out += (labelMap[id]||id) + ": " + (val(id)||"—") + "\n");
+    out += "\n";
+
+    out += L("MOVIMENTO 8 — O sim antes do preço");
+    ["f8a","f8b"].forEach(id => out += (labelMap[id]||id) + ": " + (val(id)||"—") + "\n");
+    out += "\n";
+
+    out += L("MOVIMENTO 9 — Preço e fechamento");
+    ["f9a","f9b","f9c"].forEach(id => out += (labelMap[id]||id) + ": " + (val(id)||"—") + "\n");
+    out += "Régua de desconto — valor cheio: " + (val("calcValor")||"—") + " | desconto máx: " + (val("calcDesconto")||"—") + "% | valor mínimo: " + (document.getElementById("calcResultado").textContent) + "\n";
+
+    return out;
+  }
+
+  function val(id){
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : "";
+  }
+
+  function downloadTxt(){
+    saveDraft(false);
+    const text = buildText();
+    const blob = new Blob([text], {type:"text/plain;charset=utf-8"});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "roteiro-primeira-consulta.txt";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }
+  document.getElementById("btnDownload").addEventListener("click", downloadTxt);
+  document.getElementById("btnDownload2").addEventListener("click", downloadTxt);
+
+  // ---- init ----
+  loadDraft();
+  updateCalc();
+})();
+</script>
+
+</body>
+</html>

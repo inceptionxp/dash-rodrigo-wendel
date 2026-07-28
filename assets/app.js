@@ -394,6 +394,15 @@
         <span class="link-card-cta">Abrir →</span>
       </a>
 
+      <h2 class="section-title">Ferramentas do <span class="ei">aluno</span></h2>
+      <a class="link-card" href="ferramentas/roteiro-primeira-consulta/index.html" target="_blank">
+        <div>
+          <span class="link-card-titulo">Roteiro da Primeira Consulta — instrumento (Etapa 3)</span>
+          <span class="link-card-meta">Ferramenta interativa que o aluno preenche pra construir a própria narrativa de consulta: 9 movimentos, banco de perguntas de descoberta, calculadora de régua de desconto, baixar/imprimir. Construída a partir do script real do Rodrigo</span>
+        </div>
+        <span class="link-card-cta">Abrir →</span>
+      </a>
+
       <h2 class="section-title"><span class="ei">Consultoria</span> — navegação</h2>
       <a class="link-card" href="#pesquisas">
         <div>
