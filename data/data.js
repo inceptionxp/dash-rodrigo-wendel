@@ -205,10 +205,22 @@ const ACOMPANHAMENTO = {
       ],
     },
     {
-      slug: 'prio', grupo: 'Prioritário — revisão da estratégia (prazo autoimposto: ~2 semanas)', aberto: true,
+      slug: 'prio', grupo: 'Prioritário — decisões e materiais em aberto (atualizado 28/07)', aberto: true,
       itens: [
-        {t: 'Revisar TODA a dashboard e mandar os comentários', d: 'Combinado na call de 11/07: revisar aos poucos (30-40 min/dia), por bloco, comentando aqui na dash (login Google) ou no WhatsApp (pode ser áudio/picado). Frentes: Cliente Ideal · diferenciais/autoridade · Banco de Histórias · Método/PUV/frameworks (os 2 tripés a aprofundar) · Grade dos 43 encontros (validar o que falta, o que tirar).'},
-        {t: 'Enviar o material/aula gravada dos dois tripés (sistêmico e local)', d: 'Fortalece o Encontro 3 — pode virar aula invertida (aluno assiste antes, o encontro vira discussão). Obs.: a aula recebida em 07/07 é a COMERCIAL (abordagem de venda) — esta, técnica dos tripés, ainda falta.'},
+        {t: 'DECIDIR: o nome do método', d: 'Três opções enviadas em 28/07, depois de você rever o MODAL: Arsenal Multimodal (mantém a palavra que você gostou + a imagem do cinto do Batman) · Amplitude Clínica (o mais forte juridicamente; duplo sentido real com a amplitude de abertura bucal) · Abordagem Multicritério (o mais sóbrio, enfatiza o rigor da decisão). Empresa (Academia DTM) e formação (Viver de DTM) já estão fechadas — falta só o método.'},
+        {t: 'DECIDIR: a proposta da IA de anamnese', d: 'R$ 3.000 (parcelável no cartão) pelo desenvolvimento em 2 fases: o agente na sua clínica e depois a plataforma pros alunos da formação. Custos recorrentes: uso da IA (~US$ 20/mês na clínica), hospedagem (~R$ 250/mês, só quando virar plataforma) e manutenção (R$ 800/mês, até 2h de trabalho).'},
+        {t: 'ENVIAR: os templates de PowerPoint da devolutiva', d: 'Você comentou em 28/07 que tem a apresentação personalizada com o nome do paciente + o roteiro escrito nos comentários dos slides, e que mandaria por e-mail. É o insumo do instrumento "Roteiro de devolutiva + fechamento".'},
+        {t: 'ENVIAR: a pasta do Drive com a ficha de avaliação + scripts de recepção', d: 'Você já tem tudo pronto — a ficha com as perguntas de anamnese e os exames físicos, e os scripts de recepção. Vira material do aluno direto, sem você reescrever nada. Serve também de base pra IA de anamnese, se aprovar a proposta.'},
+        {t: 'ENVIAR: os números atuais da clínica', d: 'Ticket médio, quantos leads chegam por mês e quantos viram avaliação. Calibra os scripts comerciais da Etapa 3 com a sua realidade de hoje.'},
+      ],
+    },
+    {
+      slug: 'concluido', grupo: '✅ Concluído por você — julho/2026', aberto: false,
+      itens: [
+        {t: '✅ Revisão completa da dashboard (22 comentários, 20 a 26/07)', d: 'Validou Cliente Ideal, método, produto e oferta. Destravou: público (inclui especialistas de outras áreas), gênero (80% mulheres), horário (19h-21h), habilidades digitais, marcação capacita × teoria, CRM, e o modelo dos estudos de caso.'},
+        {t: '✅ Material dos dois tripés (áudio, 28/07)', d: 'Você gravou o procedimento exato que executa com o paciente, incluindo o gesto da folha virada e riscada ao meio. Encontro 3 destravado.'},
+        {t: '✅ Aprovação do modelo de prática da imersão (28/07)', d: 'Rodízio entre os próprios alunos + triagem pré-imersão + recrutamento externo só da diferença.'},
+        {t: '✅ Aprovação do brandbook (território Pulso) e do naming da empresa e da formação', d: 'Academia DTM + Viver de DTM ratificados.'},
       ],
     },
     {
