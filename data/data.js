@@ -317,6 +317,7 @@ const ACOMPANHAMENTO = {
     {item: 'NAMING DEFINIDO: Método = Abordagem MODAL · Empresa = Academia DTM · Formação = Viver de DTM. Identidade visual = território Pulso (fluor-lime). Guia de Naming + Guia de Setup de Marca entregues', data: '10/07/2026'},
     {item: 'Marco 02 · Call de Validação da Estratégia (1ª sessão) realizada — Rodrigo RATIFICOU naming (Academia DTM · Viver de DTM · MODAL), identidade visual (território Pulso) e formato do produto (misto, turma fechada, ~10 meses, sem 1:1). DTM 360 descartado (uso do André Cia). Rodrigo assumiu revisar a estrutura técnica em ~2 semanas', data: '11/07/2026'},
     {item: 'Plano de ensino reestruturado (v2): 43 encontros em 3 etapas, cada uma fechando numa imersão presencial obrigatória em Brasília com cerimônia de passagem de faixa (azul E15 · roxa E35 · marrom/formatura E43). A imersão final é o workshop de gestão/comercial/lucro + formatura + pitch da mentoria. Grade, jornada e gamificação atualizadas e consistentes', data: '11/07/2026'},
+    {item: 'Material recebido: "Primeira Consulta com a Narrativa" (PPTX, o script real de conversão do Rodrigo na clínica) — extraído e analisado. Alimenta direto a Etapa 3 (E36-38, narrativa da avaliação → apresentação → fechamento) e revela o framework autoral CPAD (Ciclo Progressivo de Avanço da Doença). Ticket real R$4.500/tratamento corrobora o estudo de preço', data: '28/07/2026'},
   ],
 };
 
