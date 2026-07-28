@@ -83,7 +83,7 @@ FORMACAO: {
 
     <h2 class="section-title">O que falta pra fechar <span class="ei">(insumos)</span></h2>
     <ul class="entregas-lista">
-      <li><strong>Do Rodrigo</strong><em>Marcação capacita × só-teoria nas 3 escadas — ✓ fechada em 10/07, já aplicada na grade. Único item ainda pendente: material gravado dos dois tripés, que refina o Encontro 3 (ajuste local, sem redesenho). Checklist completo na página Acompanhamento.</em></li>
+      <li><strong>Do Rodrigo</strong><em>✅ Marcação capacita × só-teoria — revisada e fechada em 28/07 (as infiltrações passam a indicação/teoria). ✅ Material dos dois tripés — RECEBIDO em 28/07 por áudio: ele gravou o procedimento exato que executa com o paciente, incluindo o gesto da folha virada e riscada ao meio (instrumento visual que não estava documentado). Encontro 3 destravado. ⏳ Único pendente agora: os templates de PowerPoint da devolutiva, que ele vai enviar por e-mail.</em></li>
       <li><strong>Da consultoria</strong><em>Naming, identidade visual e o formato de 3 imersões presenciais — ✓ validados em 11/07. Segue em aberto: oferta completa (bônus, garantia, preço final) + Documento Mestre de Estratégia.</em></li>
     </ul>
     <div class="alert amarelo">
