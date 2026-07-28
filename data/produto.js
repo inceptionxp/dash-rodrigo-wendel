@@ -125,9 +125,9 @@ OFERTA: {
     <h2 class="section-title" id="of-publico">Pra <span class="ei">quem é</span></h2>
     <div class="card">
       <dl class="kv">
-        <dt>Público</dt><dd>Dentista clínico geral que não domina DTM — "não sabe que não sabe", confunde DTM com bruxismo</dd>
-        <dt>Momento de carreira</dt><dd>3 a 10+ anos de formado, consultório próprio ou cadeira alugada, sentindo o teto de renda do convênio (hipótese da pesquisa, a validar com as turmas anteriores)</dd>
-        <dt>Pra quem NÃO é</dt><dd>O especialista já formado — esse é público da mentoria, não da formação</dd>
+        <dt>Público</dt><dd>Dentista que quer dominar DTM — o <strong>clínico geral</strong> que confunde DTM com bruxismo ("não sabe que não sabe") <strong>e o especialista de outra área</strong> (orto, prótese, cirurgia) que já recebe casos de DTM e hoje não sabe resolver. ✅ Validado pelo Rodrigo (26/07): os especialistas de outras áreas são quem <em>mais</em> procura a especialização dele.</dd>
+        <dt>Momento de carreira</dt><dd>Dentista já estabelecido — de alguns anos de formado ao veterano de 20+ anos, com consultório próprio ou cadeira alugada. ✅ Validado pelo Rodrigo (12/07 e 26/07): tende a ser mais sênior, muitas vezes já com uma especialidade, e com caixa pra investir.</dd>
+        <dt>Pra quem NÃO é</dt><dd>O recém-formado sem consultório nem caixa pra investir, e quem busca receita rápida sem base clínica. A camada avançada (procedimentos guiados, escala comercial completa) fica na mentoria, não na formação.</dd>
       </dl>
     </div>
 

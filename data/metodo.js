@@ -40,7 +40,7 @@ APRENDIZ: {
     </div>
 
     <ul class="entregas-lista">
-      <li><strong>✅ Momento de carreira — validado pelo Rodrigo (12/07)</strong><em>O aluno que investe é o dentista mais sênior, muitas vezes já com OUTRA especialidade e faturamento maior — quem tem caixa pra bancar a formação. Confirma o recorte "3 a 10+ anos de formado" e acrescenta a fatia do especialista que busca DTM como segunda especialização.</em></li>
+      <li><strong>✅ Momento de carreira + público — validado pelo Rodrigo (12/07 e 26/07)</strong><em>O aluno que investe é o dentista mais sênior (de alguns anos de formado ao veterano de 20+), muitas vezes já com OUTRA especialidade e faturamento maior — quem tem caixa pra bancar a formação. Público NÃO é só clínico geral: inclui o especialista de outra área (orto, prótese, cirurgia), que é quem MAIS procura a especialização do Rodrigo.</em></li>
       <li><strong>✅ Gênero — validado com dado do expert (12/07)</strong><em>Maioria feminina forte: <strong>80% de mulheres nas duas últimas turmas</strong>. A comunicação e o retrato-falado assumem a mulher dentista como público majoritário.</em></li>
       <li><strong>🟢 Contexto financeiro</strong><em>O dentista ambicioso já orçamenta capacitação: o mercado de especialização em odontologia sustenta ticket de R$ 36-60 mil (DTM/DOF) e R$ 35-80 mil (implantodontia). A formação compete numa faixa mais acessível, mas ainda exige decisão financeira ponderada, não impulsiva.</em></li>
     </ul>

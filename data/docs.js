@@ -171,7 +171,7 @@ window.DASH_PESQUISAS = {
           <tr><td><strong>Faturamento de consultório individual</strong></td><td>R$ 20-35 mil/mês bruto — o teto que empurra a busca por diferencial</td><td>🟢</td></tr>
         </tbody>
       </table>
-      <div class="tbl-foot">🔴 Hipótese central a validar: o aluno-alvo é o dentista de 3 a 10+ anos de formado, com consultório próprio ou cadeira alugada — validar com o perfil real das turmas anteriores do Rodrigo.</div>
+      <div class="tbl-foot">✅ Validado pelo Rodrigo (12/07 e 26/07): o aluno-alvo é o dentista já estabelecido (de alguns anos de formado ao veterano de 20+), clínico geral OU especialista de outra área, com consultório próprio ou cadeira alugada.</div>
     </div>
 
     <h3 class="card-title">O dado mais forte do projeto</h3>
