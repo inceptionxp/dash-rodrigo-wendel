@@ -222,9 +222,9 @@ GRADE_ETAPAS: [
 
 ENCONTROS: [
   // ETAPA 1 · Bloco 0 — Nivelamento
-  { n: 1,  etapa: 1, bloco: 'Bloco 0 · Nivelamento (3 semanas)', titulo: 'O paciente que já está na sua cadeira', essencia: 'Prevalência real da DTM (40-60% da população com sinais) e a demanda invisível na própria clínica — "sem diagnóstico, sem tratamento, sem monetização".', output: 'Lista de 3 pacientes reais da própria agenda com sinais de DTM não investigados.', fmt: 'online' },
-  { n: 2,  etapa: 1, bloco: 'Bloco 0 · Nivelamento (3 semanas)', titulo: 'Os erros mais comuns (e por que acontecem)', essencia: 'Confundir bruxismo com DTM, tratar sem diagnóstico, viés de especialidade ("pra quem só tem martelo, tudo é prego").', output: 'Autodiagnóstico escrito do erro que ele já cometeu + ganho rápido transversal: mini-guia de agenda e pré-triagem de contato, agnóstico a DTM.', fmt: 'online' },
-  { n: 3,  etapa: 1, bloco: 'Bloco 0 · Nivelamento (3 semanas)', titulo: 'Anatomia da ATM + os 2 frameworks-mãe', essencia: 'Revisão de anatomia + o Guarda-Chuva (DTM não é um diagnóstico) + os Dois Tripés como modelos mentais que atravessam toda a formação.', output: 'Mapa mental ligando os 3 grupos do guarda-chuva aos 2 tripés.', fmt: 'online', nota: '⚠️ Incorpora o material gravado dos tripés (pendência do Rodrigo) — pode virar aula invertida.' },
+  { n: 1,  etapa: 1, bloco: 'Bloco 0 · Nivelamento (3 semanas)', titulo: 'O paciente que já está na sua cadeira', essencia: 'Prevalência real da DTM (40-60% da população com sinais) e a demanda invisível na própria clínica — "sem diagnóstico, sem tratamento, sem monetização".', output: 'Lista de 3 pacientes reais da própria agenda com sinais de DTM não investigados + trilha comercial (~10 min ao final): implanta a Cadência de Confirmação nos agendamentos da semana.', fmt: 'online', nota: '🟡 Início da trilha comercial paralela do Bloco 0 — antes disso, na Semana 0, o aluno já preencheu o "Diagnóstico de Vazamento da Agenda" com os próprios números dos últimos 30 dias (baseline).' },
+  { n: 2,  etapa: 1, bloco: 'Bloco 0 · Nivelamento (3 semanas)', titulo: 'Os erros mais comuns (e por que acontecem)', essencia: 'Confundir bruxismo com DTM, tratar sem diagnóstico, viés de especialidade ("pra quem só tem martelo, tudo é prego").', output: 'Autodiagnóstico escrito do erro que ele já cometeu + trilha comercial (~10 min ao final): implanta a Cadência de Resgate dos 3 cenários — não respondeu · agendou e faltou · avaliou e não fechou.', fmt: 'online', nota: '🟡 Trilha comercial paralela do Bloco 0 (E1-E3) — proposta em <code>produto/ganho-rapido-mes-1.md</code>, aguarda OK do Rodrigo. Substitui o antigo "mini-guia de agenda", que era intenção sem instrumento.' },
+  { n: 3,  etapa: 1, bloco: 'Bloco 0 · Nivelamento (3 semanas)', titulo: 'Anatomia da ATM + os 2 frameworks-mãe', essencia: 'Revisão de anatomia + o Guarda-Chuva (DTM não é um diagnóstico) + os Dois Tripés como modelos mentais que atravessam toda a formação.', output: 'Mapa mental ligando os 3 grupos do guarda-chuva aos 2 tripés + trilha comercial (~15 min ao final): repreenche o "Diagnóstico de Vazamento" com os números das 3 semanas rodando o processo novo e vê o próprio delta.', fmt: 'online', nota: '✅ Material gravado dos Dois Tripés RECEBIDO em 28/07 — incorporado; pode virar aula invertida. 🟡 Fecha a trilha comercial do Bloco 0: é aqui que o aluno vê, em número, quanto recuperou no mês 1.' },
   // ETAPA 1 · Bloco 1 — Ficha + Anamnese
   { n: 4,  etapa: 1, bloco: 'Bloco 1 · Ficha + Anamnese (4 semanas)', titulo: 'O formulário de 40 perguntas', essencia: 'A ficha pré-consulta (base RDC/DC + acréscimos autorais de sono, atividade física e medicação) que já acolhe o paciente antes da consulta.', output: 'Formulário configurado na própria conta, pronto pra aplicar em pacientes reais.', fmt: 'online' },
   { n: 5,  etapa: 1, bloco: 'Bloco 1 · Ficha + Anamnese (4 semanas)', titulo: 'Anamnese profunda: sentar, parar e escutar', essencia: 'Os componentes da dor (intensidade, frequência, duração, fatores de melhora/piora/precipitação) — "não é simples, é difícil".', output: 'Roteiro de anamnese preenchido via role-play, com os 4 componentes documentados.', fmt: 'online' },
@@ -363,11 +363,11 @@ JORNADA: [
     tipo: 'fase', quando: 'Encontros 1 a 15 · ~4 meses', nome: 'Fase 1 · "O diagnóstico que ninguém sabe fazer"', proposta: true, faixas: ['branca', 'azul'], hl: false,
     objetivo: 'Deixar de "achar que sabe" DTM e passar a diagnosticar com precisão clínica — anamnese estruturada, exame físico protocolar e leitura de imagem. Sem isso não existe tratamento nem monetização.',
     vive: ['Semanas 1-3: desmonta a crença errada ("DTM é bruxismo") e descobre a demanda que já está na cadeira dele — com os primeiros ganhos rápidos comerciais', 'Semanas 4-7: aplica a ficha de 40 perguntas e conduz anamnese profunda, investigando os 2 tripés', 'Semana 8: aprende a teoria do exame físico protocolar (aula invertida) — o que procurar com as mãos, antes de ir procurar de fato', 'Semanas 9-12: lê ressonância e diferencia os 3 grupos do guarda-chuva a partir de casos escritos, fechando o raciocínio diagnóstico ainda à distância', 'Semana final (fecha a fase): IMERSÃO PRESENCIAL em Brasília (3 dias) — a habilidade manual sai da teoria e entra no corpo, terminando no GATE ao vivo e na cerimônia de faixa azul'],
-    ganhos: { tecnico: 'O pacote diagnóstico completo (ficha + anamnese + exame + imagem) que 99,6% dos dentistas do Brasil não têm.', financeiro: '🔴 A ESTRUTURAR (apontado pelo Rodrigo 3×, a última em 02/08: "não está estruturado na minha cabeça esse ganho inicial"). A promessa de "ganho rápido no mês 1" hoje se apoia só num mini-guia de agenda (E2) — é promessa sem lastro. Proposta em avaliação: trocar o ganho técnico (impossível no mês 1, ele ainda não sabe DTM) por ganho de EFICIÊNCIA COMERCIAL sobre o que ele já faz hoje — implantar o fluxo de recepção e a cadência anti-no-show do próprio Rodrigo (material já em mãos) e passar a cobrar por avaliação estruturada. Métrica honesta: no mês 1 ele não ganha com DTM, ele para de perder na porta.', identitario: '"Eu enxergo o que os outros não enxergam" — para de confundir bruxismo com DTM e vê, na própria agenda, pacientes que peregrinaram anos sem resposta.' },
+    ganhos: { tecnico: 'O pacote diagnóstico completo (ficha + anamnese + exame + imagem) que 99,6% dos dentistas do Brasil não têm.', financeiro: '🟡 PROPOSTA PRONTA, AGUARDA SEU OK (documento completo: <code>produto/ganho-rapido-mes-1.md</code>). Você apontou 3× que este ponto não fechava — 20/07, 26/07 e 02/08 ("não está estruturado na minha cabeça esse ganho inicial"). Você estava certo: a promessa se apoiava só numa linha de intenção no E2, sem instrumento, sem número e sem prazo. <b>A virada:</b> sai "no mês 1 você já ganha com DTM" (impossível — ninguém trata o que ainda não sabe diagnosticar), entra <b>"no mês 1 você para de perder dinheiro que já é seu"</b>. O aluno implanta na própria clínica os 3 scripts que VOCÊ já usa na sua — recepção, confirmação e resgate de agenda (recebidos em 28/07) — que são DTM-agnósticos e funcionam em qualquer especialidade. <b>Como roda:</b> na Semana 0 ele mede o próprio vazamento de agenda (baseline); nas Semanas 1-2 implanta confirmação e resgate; na Semana 3 remede e vê o próprio delta. Tudo em ~10-15 min ao final dos Encontros 1-3, <b>sem tirar um minuto de conteúdo técnico nem remanejar a grade</b>. <b>Não canibaliza a Etapa 3:</b> recepção é a camada anterior à consulta (não exige diagnóstico); a Narrativa da Primeira Consulta continua intacta em E36-38. <b>A prova do mecanismo é sua:</b> 50 desmarcações em jan-mar/26 ≈ R$27 mil só em avaliação perdida — a conta que você mesmo fez na aula. O aluno usa a fórmula com o ticket DELE, nunca o seu.', identitario: '"Eu enxergo o que os outros não enxergam" — para de confundir bruxismo com DTM e vê, na própria agenda, pacientes que peregrinaram anos sem resposta.' },
     marco: 'GATE faixa branca → azul (Encontro 15, dia 3 da imersão presencial que fecha a fase): o aluno realiza o exame físico completo num paciente/voluntário real, integra com anamnese e imagem, e fecha o diagnóstico específico ao vivo, validado presencialmente pelo Rodrigo.',
     checkpoint: ['Diagnóstica (entrada): autodiagnóstico escrito dos erros que ele mesmo já cometeu — linha de base do "antes"', 'Formativa: estudo de caso com correção individual (Encontro 7)', 'Somativa: o GATE presencial do Encontro 15 substitui o antigo estudo de caso assíncrono por uma avaliação hands-on ao vivo, em paciente real', 'Antes/depois: comparação entre o autodiagnóstico do Encontro 1 e o diagnóstico presencial do Encontro 15'],
     risco: 'A fase mais longa e teórica antes da imersão — risco de "cansaço de conteúdo sem ver resultado no bolso", especialmente entre as semanas 4 e 7 (anamnese é "difícil, não simples").',
-    antidoto: '🔴 O PRIMEIRO ANTÍDOTO ESTÁ EM ABERTO — o Rodrigo sinalizou em 02/08 que o ganho rápido do Bloco 0 não está estruturado, e sem ele este trecho fica desprotegido. É a prioridade de redesenho da Etapa 1 (proposta na aba Jornada). Os demais antídotos seguem de pé: o feedback formativo do Encontro 7 cumpre parte do papel de reconexão que a imersão cumpria antes de se mover pro fim da fase. A imersão presencial, agora capstone da fase, vira o destino visível desde o Momento 0 — o aluno atravessa o trecho mais árido sabendo que a recompensa presencial e a faixa azul estão logo depois do Bloco 3, não abandonadas no meio do caminho. O feedback formativo do Encontro 7 cumpre parte do papel de reconexão que a imersão cumpria antes de se mover pro fim da fase. A imersão presencial, agora capstone da fase, vira o destino visível desde o Momento 0 — o aluno atravessa o trecho mais árido sabendo que a recompensa presencial e a faixa azul estão logo depois do Bloco 3, não abandonadas no meio do caminho.',
+    antidoto: '🟡 O PRIMEIRO ANTÍDOTO TEM PROPOSTA — a trilha comercial paralela do Bloco 0 (ver o ganho financeiro da fase, acima, e <code>produto/ganho-rapido-mes-1.md</code>) devolve ao aluno um resultado mensurável na própria agenda já na Semana 3, antes de o conteúdo técnico ficar árido. Aguarda validação do Rodrigo. Os demais antídotos seguem de pé: o feedback formativo do Encontro 7 cumpre parte do papel de reconexão que a imersão cumpria antes de se mover pro fim da fase. A imersão presencial, agora capstone da fase, vira o destino visível desde o Momento 0 — o aluno atravessa o trecho mais árido sabendo que a recompensa presencial e a faixa azul estão logo depois do Bloco 3, não abandonadas no meio do caminho. O feedback formativo do Encontro 7 cumpre parte do papel de reconexão que a imersão cumpria antes de se mover pro fim da fase. A imersão presencial, agora capstone da fase, vira o destino visível desde o Momento 0 — o aluno atravessa o trecho mais árido sabendo que a recompensa presencial e a faixa azul estão logo depois do Bloco 3, não abandonadas no meio do caminho.',
   },
   {
     tipo: 'imersao', quando: 'Semana final da Fase 1 (fecha a etapa) · 3 dias em Brasília · Encontros 13 a 15', nome: 'Imersão presencial — o capstone da Fase 1', faixas: null, hl: true,
@@ -520,6 +520,111 @@ GAMIFICACAO: {
     { material: 'Roteiro/resumo das falas-modelo pros Encontros 15, 35 e 43 (as 3 imersões presenciais)', resp: 'Pronto — está nesta página', dep: '—' },
     { material: 'Kit de onboarding com a faixa branca simbólica (Momento 0)', resp: 'Direção de marca + construção da ferramenta', dep: 'Identidade visual aprovada' },
   ],
+},
+
+/* ─────────────────────── CALENDÁRIO DA TURMA 2027 ─────────────────────── */
+CALENDARIO: {
+  html: `
+    <h2 class="section-title">Calendário da turma — <span class="ei">fevereiro a novembro/2027</span></h2>
+    <p>Data de início <strong>proposta pelo próprio Rodrigo</strong> no áudio de 02/08: <em>"começando em fevereiro, terminando em novembro, fica bem legal"</em>. O mapa abaixo responde ao outro pedido dele — as "aulas em branco" pra quando um tema estourar o tempo previsto.</p>
+
+    <div class="card">
+      <dl class="kv">
+        <dt>Semanas disponíveis</dt><dd>44 (01/02/2027 → 29/11/2027)</dd>
+        <dt>Encontros online</dt><dd>35 (E1-E12 · E16-E32 · E36-E41)</dd>
+        <dt>Semanas de imersão</dt><dd>3 viagens a Brasília — 8 dias presenciais concentrados</dd>
+        <dt>Conteúdo fixo</dt><dd><strong>38 semanas</strong></dd>
+        <dt>Pausa de Carnaval</dt><dd>1 semana (08/02 — obrigatória)</dd>
+        <dt>⬜ Respiros livres</dt><dd><strong>5 semanas</strong> — o buffer que o Rodrigo pediu</dd>
+      </dl>
+      <p style="font-size:12.5px;margin:8px 0 0;">38 + 1 + 5 = 44. Encaixe exato: não sobra nem falta semana, e o ano fecha na formatura, na última semana de novembro. A folga sempre existiu — os 8 dias de imersão acontecem em 3 semanas de viagem, não em 8 semanas de calendário.</p>
+    </div>
+
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>Sem</th><th>Semana de</th><th>Encontro</th><th>Feriado na semana</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>01/02</td><td>E1</td><td>—</td></tr>
+          <tr><td>2</td><td>08/02</td><td><strong>⏸ CARNAVAL — sem aula</strong></td><td>Carnaval (seg/ter), Cinzas (qua)</td></tr>
+          <tr><td>3</td><td>15/02</td><td>E2</td><td>—</td></tr>
+          <tr><td>4</td><td>22/02</td><td>E3</td><td>—</td></tr>
+          <tr><td>5</td><td>01/03</td><td>E4</td><td>—</td></tr>
+          <tr><td>6</td><td>08/03</td><td>E5</td><td>—</td></tr>
+          <tr><td>7</td><td>15/03</td><td>E6</td><td>—</td></tr>
+          <tr><td>8</td><td>22/03</td><td>E7 · estudo de caso</td><td>Sexta-feira Santa (26/03)</td></tr>
+          <tr><td>9</td><td>29/03</td><td><strong>⬜ RESPIRO 1</strong></td><td>—</td></tr>
+          <tr><td>10</td><td>05/04</td><td>E8</td><td>—</td></tr>
+          <tr><td>11</td><td>12/04</td><td>E9</td><td>—</td></tr>
+          <tr><td>12</td><td>19/04</td><td>E10</td><td>Tiradentes (qua)</td></tr>
+          <tr><td>13</td><td>26/04</td><td>E11</td><td>—</td></tr>
+          <tr><td>14</td><td>03/05</td><td>E12</td><td>—</td></tr>
+          <tr><td>15</td><td>10/05</td><td><strong>✈️ IMERSÃO 1 · E13-15 · faixa azul</strong></td><td>—</td></tr>
+          <tr><td>16</td><td>17/05</td><td><strong>⬜ RESPIRO 2</strong> (pós-viagem)</td><td>—</td></tr>
+          <tr><td>17</td><td>24/05</td><td>E16</td><td>Corpus Christi (qui)</td></tr>
+          <tr><td>18</td><td>31/05</td><td>E17</td><td>—</td></tr>
+          <tr><td>19</td><td>07/06</td><td>E18</td><td>—</td></tr>
+          <tr><td>20</td><td>14/06</td><td>E19</td><td>—</td></tr>
+          <tr><td>21</td><td>21/06</td><td>E20</td><td>—</td></tr>
+          <tr><td>22</td><td>28/06</td><td>E21</td><td>—</td></tr>
+          <tr><td>23</td><td>05/07</td><td>E22</td><td>—</td></tr>
+          <tr><td>24</td><td>12/07</td><td>E23 · caso · grau 1 faixa azul</td><td>—</td></tr>
+          <tr><td>25</td><td>19/07</td><td><strong>⬜ RESPIRO 3</strong></td><td>—</td></tr>
+          <tr><td>26</td><td>26/07</td><td>E24</td><td>—</td></tr>
+          <tr><td>27</td><td>02/08</td><td>E25</td><td>—</td></tr>
+          <tr><td>28</td><td>09/08</td><td>E26</td><td>—</td></tr>
+          <tr><td>29</td><td>16/08</td><td>E27 · caso · grau 2 faixa azul</td><td>—</td></tr>
+          <tr><td>30</td><td>23/08</td><td>E28</td><td>—</td></tr>
+          <tr><td>31</td><td>30/08</td><td>E29</td><td>—</td></tr>
+          <tr><td>32</td><td>06/09</td><td>E30</td><td>Independência (ter)</td></tr>
+          <tr><td>33</td><td>13/09</td><td>E31 · caso · grau 3 faixa azul</td><td>—</td></tr>
+          <tr><td>34</td><td>20/09</td><td>E32</td><td>—</td></tr>
+          <tr><td>35</td><td>27/09</td><td><strong>⬜ RESPIRO 4</strong></td><td>—</td></tr>
+          <tr><td>36</td><td>04/10</td><td><strong>✈️ IMERSÃO 2 · E33-35 · faixa roxa</strong></td><td>—</td></tr>
+          <tr><td>37</td><td>11/10</td><td>E36</td><td>Aparecida (ter)</td></tr>
+          <tr><td>38</td><td>18/10</td><td>E37</td><td>—</td></tr>
+          <tr><td>39</td><td>25/10</td><td>E38</td><td>—</td></tr>
+          <tr><td>40</td><td>01/11</td><td>E39</td><td>Finados (ter)</td></tr>
+          <tr><td>41</td><td>08/11</td><td>E40</td><td>—</td></tr>
+          <tr><td>42</td><td>15/11</td><td>E41</td><td>Proclamação (seg)</td></tr>
+          <tr><td>43</td><td>22/11</td><td><strong>⬜ RESPIRO 5</strong></td><td>—</td></tr>
+          <tr><td>44</td><td>29/11</td><td><strong>✈️ IMERSÃO 3 · E42-43 · FORMATURA</strong></td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="card-title" style="margin-top:22px;">Por que cada respiro está onde está</h3>
+    <ul class="entregas-lista">
+      <li><strong>Respiro 1 · 29/03</strong><em>Fecha o arco de ficha + anamnese antes de abrir imagem e diagnóstico específico. É a primeira leitura de temperatura da turma: quem ficou pra trás aparece aqui, com tempo de recuperar antes do conteúdo pesado.</em></li>
+      <li><strong>Respiro 2 · 17/05</strong><em>Semana de aterrissagem. A turma acabou de viajar, passar pelo gate e receber a faixa azul. Emendar aula na semana seguinte à viagem derruba presença.</em></li>
+      <li><strong>Respiro 3 · 19/07</strong><em>Meio da Etapa 2, a mais longa (17 encontros seguidos). Cai logo depois do E23, que fecha a escada muscular inteira. Sem ele, a turma atravessa quatro meses e meio sem uma semana livre.</em></li>
+      <li><strong>Respiro 4 · 27/09</strong><em>Preparação da viagem mais técnica do ano (infiltrações hands-on). É onde a triagem de pacientes-modelo precisa estar fechada.</em></li>
+      <li><strong>Respiro 5 · 22/11</strong><em>O aluno chega na formatura tendo que apresentar a planilha de números e conduzir uma consulta completa diante da turma. Esta semana existe pra ele preparar as duas coisas.</em></li>
+    </ul>
+
+    <div class="alert">
+      <strong>Regra de uso:</strong> os respiros são do Rodrigo e existem pra absorver conteúdo que estourou — se o E10 precisar de duas semanas, o respiro seguinte vira o E10-B e a numeração não muda. Servem também como plantão de dúvidas e recuperação de imprevisto. <strong>O que eles não são:</strong> entrega adicional. A oferta vende 43 encontros; os respiros são elasticidade operacional e por isso não aparecem em material de venda. ⚠️ Se os cinco forem consumidos até setembro, a formação está atrasada e a formatura de 29/11 entra em risco — o sinal existe pra ser lido a tempo.
+    </div>
+
+    <h3 class="card-title" style="margin-top:22px;">Feriados: a decisão que falta</h3>
+    <p>Os feriados de 2027 só afetam a grade depois que o <strong>dia da semana da aula</strong> estiver definido — e ele ainda não está. O que está definido (validação do Rodrigo em 12/07) é a janela: 19h-21h em noite de semana, com possibilidade de um sábado por mês.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead><tr><th>Se a aula for na</th><th>Semanas atingidas por feriado</th></tr></thead>
+        <tbody>
+          <tr><td>Segunda</td><td>15/11 (Proclamação) — 1 semana</td></tr>
+          <tr><td><strong>Terça</strong></td><td><strong>06/09, 11/10, 01/11 — 3 semanas</strong></td></tr>
+          <tr><td>Quarta</td><td>19/04 (Tiradentes) — 1 semana</td></tr>
+          <tr><td>Quinta</td><td>24/05 (Corpus Christi) — 1 semana</td></tr>
+          <tr><td>Sexta</td><td>22/03 (Sexta-feira Santa) — 1 semana</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>Terça é o pior dia</strong> — três feriados em cima dela, dois deles no trecho final, que já é o mais apertado. <strong>Quarta e quinta são os mais limpos.</strong> O Carnaval derruba a aula em qualquer cenário de segunda a quarta, e já está tratado como pausa fixa.</p>
+
+    <div class="alert">
+      <strong>A margem é curta — 44 semanas para 44 slots.</strong> Atrasar 1 semana joga o Carnaval na semana de abertura (se atrasar, atrasar pra 15/02 e sacrificar o Respiro 1). Atrasar 3 semanas ou mais empurra a formatura pra dezembro, em cima das festas — a pior semana do ano pra pedir uma viagem de 2 dias a Brasília. Antecipar pra janeiro não é recomendado: mês de férias e agenda clínica irregular, justamente no bloco que segura a evasão inicial.
+    </div>
+  `,
 },
 
 };

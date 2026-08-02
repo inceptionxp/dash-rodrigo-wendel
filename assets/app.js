@@ -629,15 +629,17 @@
     `,
 
     'prod-grade': () => `
-      ${hero('Produtos · Formação · Grade completa', '41', 'Os 41 <span class="ei">encontros</span>', 'A grade descida ao detalhe: 41 encontros semanais em 10 meses, em 3 etapas, cada um com sua essência, seu output verificável e seu formato. O princípio: toda aula leva a uma ação concreta — se não tem output, é palestra, não formação. Rascunho pra validar.')}
+      ${hero('Produtos · Formação · Grade completa', '43', 'Os 43 <span class="ei">encontros</span>', 'A grade descida ao detalhe: 43 encontros em 10 meses, em 3 etapas, cada um com sua essência, seu output verificável e seu formato. O princípio: toda aula leva a uma ação concreta — se não tem output, é palestra, não formação. ✅ Macro aprovado pelo Rodrigo em 02/08 — "no macro a gente pode fazer do jeito que tá já".')}
 
       <div class="leg">
         <span>${fmtTag('online')}</span>
-        <span>${fmtTag('presencial')} (E9-E10, Brasília)</span>
+        <span>${fmtTag('presencial')} (E13-15, E33-35, E42-43 — Brasília)</span>
         <span>${fmtTag('caso')}</span>
         <span>${fmtTag('gate')}</span>
         <span>⚠️ ponto que os pendentes do Rodrigo refinam</span>
       </div>
+
+      ${P.CALENDARIO ? P.CALENDARIO.html : ''}
 
       ${(P.GRADE_ETAPAS || []).map(et => {
         const encs = (P.ENCONTROS || []).filter(e => e.etapa === et.n);
@@ -684,7 +686,11 @@
       </ul>
 
       <div class="alert">
-        <strong>Onde os 2 pendentes do Rodrigo refinam este plano (ajuste local, não redesenho):</strong> a marcação capacita × só-teoria afeta o rótulo e o output de 6 aulas da Etapa 2 (E22-E23, E26-E27, E30-E32); o material gravado dos tripés fortalece o E3 (pode virar aula invertida). Estrutura e contagem de encontros não mudam.
+        <strong>Os 2 pendentes que refinavam este plano estão resolvidos.</strong> (1) A marcação <em>capacita × só-teoria</em> foi revisada e confirmada por escrito pelo Rodrigo em 28/07 — o aluno é capacitado em todos os conservadores + infiltração anestésica e dry needling; ácido hialurônico, corticoide, iPRF, toxina, artrocentese e cirúrgicos ficam em indicação/teoria. Já aplicada em E25, E29, E30 e E34. (2) O material dos <em>Dois Tripés</em> foi recebido em 28/07 e está incorporado ao E3. Estrutura e contagem de encontros não mudaram.
+      </div>
+
+      <div class="alert">
+        <strong>Pedido do Rodrigo em 02/08 — as "aulas em branco" — está resolvido no calendário acima.</strong> A grade nunca precisou de 43 semanas: os 8 dias de imersão acontecem em 3 semanas de viagem, não em 8 semanas. Sobram <strong>5 semanas de respiro</strong> dentro do ano, além da pausa de Carnaval. Detalhamento completo em <code>produto/calendario-turma-2027.md</code>.
       </div>
     `,
 
