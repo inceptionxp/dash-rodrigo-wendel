@@ -8,6 +8,7 @@
   const { PROJETO, MARCOS, BLOCOS, ACOMPANHAMENTO, STATUS_LABELS } = window.DASH;
   const M = window.DASH_METODO || {};
   const P = window.DASH_PRODUTO || {};
+  const C = window.DASH_CONTEUDO || {};
   const A = ACOMPANHAMENTO || {};
   const main = document.getElementById('main-inner');
 
@@ -694,6 +695,13 @@
       </div>
     `,
 
+    /* ═══════════════ MARCA & CONTEÚDO ═══════════════ */
+
+    'conteudo-linha': () => `
+      ${hero('Marca & Conteúdo · Linha Editorial', 'LE', 'Linha <span class="ei">Editorial</span>', 'A estratégia de conteúdo do @academiadtm: para quem fala, com que linhas, em que ritmo — e as 4 primeiras semanas de pauta prontas pra gravar.')}
+      ${C.LINHA_EDITORIAL ? C.LINHA_EDITORIAL.html : ''}
+    `,
+
     'prod-mentoria': () => `
       ${hero('Produtos · Mentoria', 'M', 'A <span class="ei">Mentoria</span>')}
       ${P.MENTORIA ? P.MENTORIA.html : ''}
@@ -714,7 +722,7 @@
     `,
 
     'prod-jornada': () => `
-      ${hero('Produtos · Formação · Experiência', 'J', 'Jornada do <span class="ei">Aluno</span>', 'A linha do tempo de transformação da formação: 10 meses, 41 encontros + 1 imersão presencial, 3 fases + onboarding + formatura. Cada fase nomeada pela virada de identidade — não por "módulo 1, módulo 2".')}
+      ${hero('Produtos · Formação · Experiência', 'J', 'Jornada do <span class="ei">Aluno</span>', 'A linha do tempo de transformação da formação: 10 meses (fevereiro a novembro/2027), 43 encontros com 3 imersões presenciais em Brasília, 3 fases + onboarding + formatura. Cada fase nomeada pela virada de identidade — não por "módulo 1, módulo 2".')}
 
       <div class="alert amarelo"><strong>⚠️ Nomes de fase = proposta.</strong> ${P.JORNADA_NOTA || ''}</div>
 
