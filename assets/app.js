@@ -359,7 +359,7 @@
         <a class="bloco-resumo" href="#met-expert"><div class="bloco-resumo-n">02</div><div class="bloco-resumo-titulo">Diferenciais e Autoridade<small>Posicionamento, trajetória, números, voz e bandeiras</small></div></a>
         <a class="bloco-resumo" href="#met-historias"><div class="bloco-resumo-n">03</div><div class="bloco-resumo-titulo">Banco de Histórias<small>${(M.HISTORIAS || []).length} histórias reais estruturadas — galeria com narrativa completa</small></div></a>
         <a class="bloco-resumo" href="#met-metodo"><div class="bloco-resumo-n">04</div><div class="bloco-resumo-titulo">Método e Frameworks<small>Abordagem MODAL · PUV, jornada, ${(M.FRAMEWORKS || []).length} frameworks e ${(M.INSTRUMENTOS || []).length} instrumentos</small></div></a>
-        <a class="bloco-resumo" href="brandbook/opcao-d-pulso.html" target="_blank"><div class="bloco-resumo-n">05</div><div class="bloco-resumo-titulo">Brandbook · Território Pulso<small>A identidade visual escolhida: paleta, tipografia, direção de arte e aplicação (abre em nova aba)</small></div></a>
+        <a class="bloco-resumo" href="brandbook-academia-dtm/index.html" target="_blank"><div class="bloco-resumo-n">05</div><div class="bloco-resumo-titulo">Brandbook &amp; Design System<small>A marca fechada — símbolo, as três versões do logo, cor, tipografia e voz — mais o sistema de páginas, conteúdos, criativos e slides (abre em nova aba)</small></div></a>
       </div>
 
       <h2 class="section-title"><span class="ei">Produtos</span></h2>
@@ -371,12 +371,12 @@
       <h2 class="section-title">Marca e <span class="ei">entregas</span></h2>
       <div class="card" style="margin-bottom:8px;"><dl class="kv" style="margin:0;">
         <dt>Nomes definidos</dt><dd>Método <strong>Abordagem MODAL</strong> · Empresa <strong>Academia DTM</strong> · Formação <strong>Viver de DTM</strong></dd>
-        <dt>Identidade visual</dt><dd><strong>Território Pulso</strong> — saúde digital energética (navy + fluor-lime)</dd>
+        <dt>Identidade visual</dt><dd><strong>Território Pulso</strong> — navy + fluor-lime. Símbolo <strong>Trama</strong> e lockup aprovados em 20/08; brandbook e design system fechados.</dd>
       </dl></div>
-      <a class="link-card" href="brandbook/opcao-d-pulso.html" target="_blank">
+      <a class="link-card" href="brandbook-academia-dtm/index.html" target="_blank">
         <div>
-          <span class="link-card-titulo">Brandbook — Território Pulso</span>
-          <span class="link-card-meta">A identidade visual escolhida: paleta, tipografia, direção de arte e aplicação</span>
+          <span class="link-card-titulo">Brandbook &amp; Design System — Academia DTM</span>
+          <span class="link-card-meta">O símbolo Trama, as três versões do logo com onde usar cada uma, cor, tipografia e voz — e o sistema aplicado a páginas, conteúdos, criativos e slides</span>
         </div>
         <span class="link-card-cta">Abrir →</span>
       </a>

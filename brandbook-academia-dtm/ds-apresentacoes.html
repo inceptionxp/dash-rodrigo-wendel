@@ -1,0 +1,1430 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Academia DTM · Sistema de Apresentações · Inception</title>
+<meta name="description" content="Sistema de slides da Academia DTM — régua da lâmina, 18 masters, regra de imagem clínica e tradução para Canva, PowerPoint e Keynote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&family=Hanken+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ACADEMIA DTM — módulo 4 · Apresentações
+   tokens canônicos v1 (fonte única: _contrato.md) — copiados verbatim
+   ============================================================ */
+:root{
+  /* cor — base */
+  --navy:#101C46;
+  --navy-alto:#182559;
+  --tinta:#0B0F1A;
+  --papel:#F4F3EC;
+  --papel-2:#E7E5D8;
+  /* cor — sinal */
+  --fluor:#CDF23F;
+  --cobalto:#2C4BFF;
+  --menta:#12D9A0;
+  /* cor — revisão · NÃO é cor da marca. Só marca o proibido dentro destes
+     documentos; nunca em peça que a Academia publica. Ver contrato §9.1. */
+  --erro:#B3261E;
+  /* cor — derivadas */
+  --papel-72:rgba(244,243,236,.72);
+  --papel-45:rgba(244,243,236,.45);
+  --tinta-70:rgba(11,15,26,.70);
+  --tinta-45:rgba(11,15,26,.45);
+  --linha-clara:rgba(244,243,236,.14);
+  --linha-escura:rgba(11,15,26,.13);
+  /* tipo */
+  --display:"Archivo",system-ui,sans-serif;
+  --corpo:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:"Space Mono",ui-monospace,SFMono-Regular,monospace;
+  /* escala tipográfica */
+  --t-hero:clamp(44px,7.4vw,88px);
+  --t-h1:clamp(32px,4.8vw,58px);
+  --t-h2:clamp(24px,3.2vw,38px);
+  --t-h3:21px;
+  --t-corpo:17px;
+  --t-corpo-s:15px;
+  --t-legenda:13px;
+  --t-rotulo:11px;
+  /* espaço — base 4 */
+  --e-1:4px; --e-2:8px; --e-3:12px; --e-4:16px; --e-5:24px;
+  --e-6:32px; --e-7:48px; --e-8:64px; --e-9:96px; --e-10:128px;
+  /* raio */
+  --r-0:0; --r-1:3px; --r-2:6px; --r-3:12px; --r-pill:999px;
+  /* sombra — sempre navy, nunca preto */
+  --sombra-1:0 1px 2px rgba(16,28,70,.07);
+  --sombra-2:0 14px 36px -14px rgba(16,28,70,.24);
+  /* movimento */
+  --d-micro:180ms; --d-base:240ms; --d-reveal:520ms;
+  --ease:cubic-bezier(.22,1,.36,1);
+  /* medida */
+  --largura:1180px;
+  --largura-texto:68ch;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;overflow-x:clip}
+body{
+  background:var(--papel);color:var(--tinta);
+  font-family:var(--corpo);font-size:var(--t-corpo);line-height:1.62;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:clip;
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.042;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6)}
+@media(max-width:640px){.wrap{padding:0 20px}}
+
+/* ---------- cabeçalho compartilhado (4 páginas) ---------- */
+.nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--linha-clara)}
+.nav-in{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--e-5);min-height:64px;flex-wrap:wrap}
+.nav-links{display:flex;gap:var(--e-5);list-style:none;flex-wrap:wrap}
+.nav-links a{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--papel-45);text-decoration:none;padding:20px 0;display:block;
+  border-bottom:2px solid transparent;transition:color var(--d-base) var(--ease),border-color var(--d-base) var(--ease)}
+.nav-links a:hover{color:var(--papel)}
+.nav-links a[aria-current="page"]{color:var(--fluor);border-bottom-color:var(--fluor)}
+@media(max-width:640px){.nav-in{padding:12px 20px 4px;min-height:0}
+  .nav-links{gap:16px}.nav-links a{padding:10px 0}}
+
+/* ---------- lockups (contrato §4) ---------- */
+.lk{display:inline-flex;align-items:center;color:var(--navy)}
+.lk .sym{width:1em;height:1em;flex:none}
+.lk .rule{width:.028em;min-width:1px;background:currentColor;opacity:.32;flex:none}
+.lk .col{display:flex;flex-direction:column;font-family:var(--display);
+  text-transform:uppercase;line-height:1;white-space:nowrap}
+.lk .ac{font-weight:400;font-size:.225em;letter-spacing:.22em}
+.lk .dtm{font-weight:800;font-size:.6875em;letter-spacing:-.04em}
+.lk--principal .rule{height:.90em;margin:0 .325em}
+.lk--hz{align-items:center}
+.lk--hz .rule{height:.62em;margin-left:.30em;margin-right:.26em}
+.lk--hz .row{display:flex;align-items:baseline;font-family:var(--display);
+  text-transform:uppercase;white-space:nowrap;line-height:1}
+.lk--hz .ac-h{font-weight:500;font-size:.44em;letter-spacing:.18em}
+.lk--hz .dtm-h{font-weight:800;font-size:.44em;letter-spacing:-.035em;margin-left:.26em}
+.lk--neg{color:var(--papel)}
+.lk--neg .sym{color:var(--fluor)}
+.lk--mono-papel{color:var(--papel)}
+.lk--mono-papel .sym{color:var(--papel)}
+.lk--mono-navy{color:var(--navy)}
+.lk--mono-navy .sym{color:var(--navy)}
+.selo{display:grid;place-items:center;background:var(--navy);border-radius:var(--r-pill)}
+.selo svg{color:var(--fluor);width:62%;height:62%}
+.selo--invertido{background:var(--fluor)}
+.selo--invertido svg{color:var(--navy)}
+.selo--papel{background:var(--papel-2)}
+.selo--papel svg{color:var(--navy)}
+.selo--quadrado{border-radius:var(--r-1)}
+
+/* ---------- capa da página ---------- */
+.capa{background:var(--navy);color:var(--papel);padding:var(--e-9) 0 var(--e-8);position:relative;overflow:hidden}
+.capa::before{content:"";position:absolute;right:-13%;top:-24%;width:min(60vw,760px);aspect-ratio:1;
+  background:radial-gradient(circle at 50% 50%,rgba(24,37,89,1) 0%,rgba(16,28,70,0) 68%);pointer-events:none}
+.capa-sym{position:absolute;right:-9%;top:-10%;width:min(52vw,620px);color:var(--navy-alto);opacity:.9;pointer-events:none}
+.capa .wrap{position:relative;z-index:2}
+.rotulo{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--fluor);display:flex;align-items:center;gap:var(--e-3);flex-wrap:wrap}
+.rotulo i{display:block;width:34px;height:2px;background:var(--fluor);font-style:normal;flex:none}
+.capa h1{font-family:var(--display);font-weight:800;font-size:var(--t-hero);line-height:1.0;text-wrap:balance;
+  letter-spacing:-.042em;margin:var(--e-6) 0 0;max-width:14ch}
+.capa h1 em{font-style:normal;color:var(--fluor)}
+.capa .tese{margin-top:var(--e-6);max-width:60ch;font-size:19px;color:var(--papel-72)}
+.capa .tese b{color:var(--papel);font-weight:600}
+.capa-meta{margin-top:var(--e-8);padding-top:var(--e-5);border-top:1px solid var(--linha-clara);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--e-5)}
+.capa-meta .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--fluor);margin-bottom:var(--e-2)}
+.capa-meta p{font-size:var(--t-corpo-s);color:var(--papel-72);line-height:1.5}
+.capa-lk{margin-top:var(--e-7)}
+
+/* ---------- gestos de assinatura (contrato §5) ---------- */
+.junta{display:block;width:104px;height:2px;position:relative;background:var(--navy);margin-bottom:var(--e-4)}
+.junta::after{content:"";position:absolute;left:52px;top:5px;width:104px;height:2px;background:var(--fluor)}
+.junta--claro{background:var(--papel-45)}
+.junta--claro::after{background:var(--fluor)}
+.octo-janela{clip-path:polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%)}
+
+/* ---------- seções ---------- */
+.sec{padding:var(--e-9) 0;border-top:1px solid var(--linha-escura)}
+.sec:first-of-type{border-top:0}
+.sec-h{display:grid;grid-template-columns:88px 1fr;gap:var(--e-6);align-items:start;margin-bottom:var(--e-7)}
+.sec-n{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.1em;
+  color:var(--tinta-45);padding-top:10px}
+.sec-h h2{font-family:var(--display);font-weight:800;font-size:var(--t-h2);letter-spacing:-.035em;
+  line-height:1.02;max-width:20ch;text-wrap:balance}
+.sec-h .lede{margin-top:var(--e-4);max-width:var(--largura-texto);color:var(--tinta-70);font-size:var(--t-corpo)}
+.sec-h .lede b{color:var(--tinta);font-weight:600}
+@media(max-width:720px){.sec-h{grid-template-columns:1fr;gap:var(--e-3)}.sec-n{padding-top:0}}
+.sec--escuro{background:var(--navy);color:var(--papel);border-top:0;
+  margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw;padding:var(--e-9) 0}
+.sec--escuro .sec-n{color:var(--papel-45)}
+.sec--escuro .sec-h .lede{color:var(--papel-72)}
+.sec--escuro .sec-h .lede b{color:var(--papel)}
+.sec--escuro .junta{background:var(--papel-45)}
+h3.sub{font-family:var(--display);font-weight:800;font-size:var(--t-h3);letter-spacing:-.02em;
+  margin:var(--e-8) 0 var(--e-4)}
+.sub .n{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--tinta-45);margin-right:10px}
+.sec--escuro .sub .n,.bloco-navy .sub .n{color:var(--papel-45)}
+h3.sub:first-of-type{margin-top:0}
+h4.mini{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.01em;margin-bottom:var(--e-2)}
+
+/* ---------- blocos ---------- */
+.painel{background:var(--papel-2);border:1px solid var(--linha-escura);border-radius:var(--r-1);padding:var(--e-6)}
+.painel--claro{background:#FBFAF4}
+.cap{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-45);margin-top:var(--e-3)}
+.sec--escuro .cap{color:var(--papel-45)}
+.porque{margin-top:var(--e-3);font-size:var(--t-corpo-s);color:var(--tinta-70);border-left:2px solid var(--fluor);
+  padding-left:var(--e-3);max-width:var(--largura-texto)}
+.sec--escuro .porque{color:var(--papel-72)}
+.porque b{color:var(--tinta);font-weight:600}
+.sec--escuro .porque b{color:var(--papel)}
+.grade-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-5)}
+.grade-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e-5)}
+.grade-2>*,.grade-3>*{min-width:0}
+@media(max-width:900px){.grade-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grade-2,.grade-3{grid-template-columns:1fr}}
+.tab{width:100%;border-collapse:collapse;font-size:var(--t-corpo-s);margin-top:var(--e-2)}
+.tab th,.tab td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--linha-escura);vertical-align:top}
+.tab th{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-45);border-bottom-width:2px;border-bottom-color:var(--navy)}
+.tab td b{font-weight:600}
+.tab .num{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sec--escuro .tab th{color:var(--papel-45);border-bottom-color:var(--fluor)}
+.sec--escuro .tab th,.sec--escuro .tab td{border-bottom-color:var(--linha-clara)}
+.tab-rolo{overflow-x:auto;-webkit-overflow-scrolling:touch}
+ul.lista{list-style:none;display:grid;gap:var(--e-3);max-width:var(--largura-texto)}
+ul.lista li{position:relative;padding-left:22px;font-size:var(--t-corpo-s);color:var(--tinta-70);line-height:1.55}
+ul.lista li::before{content:"";position:absolute;left:0;top:10px;width:10px;height:2px;background:var(--fluor)}
+ul.lista li b{color:var(--tinta);font-weight:600}
+.sec--escuro ul.lista li{color:var(--papel-72)}
+.sec--escuro ul.lista li b{color:var(--papel)}
+.alerta{border:1px solid rgba(44,75,255,.35);background:rgba(44,75,255,.05);border-radius:var(--r-1);
+  padding:var(--e-5);margin-top:var(--e-5)}
+.alerta .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cobalto);margin-bottom:var(--e-3)}
+.alerta p{font-size:var(--t-corpo-s);color:var(--tinta-70);max-width:var(--largura-texto)}
+.alerta p + p{margin-top:10px}
+.alerta b{color:var(--tinta);font-weight:600}
+.nota-pe{font-size:var(--t-legenda);color:var(--tinta-45);margin-top:var(--e-5);max-width:var(--largura-texto);line-height:1.55}
+.sec--escuro .nota-pe{color:var(--papel-45)}
+
+/* ============================================================
+   A LÂMINA — motor de render 16:9
+   1 lâmina = 1920 x 1080. --px converte o desenho real para
+   qualquer largura de miniatura sem perder proporção.
+   ============================================================ */
+.sl{position:relative;aspect-ratio:16/9;container-type:inline-size;overflow:hidden;
+  background:var(--papel);color:var(--tinta);border:1px solid var(--linha-escura);border-radius:var(--r-1);
+  font-family:var(--corpo);--px:calc(100cqw / 1920)}
+.sl--navy{background:var(--navy);color:var(--papel);border-color:var(--navy)}
+.sl--fundo{background:linear-gradient(158deg,#101C46 0%,#182559 100%)}
+.sl--tinta{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+.sl--papel2{background:var(--papel-2)}
+.sl-quadro{position:absolute;inset:calc(96*var(--px));display:flex;flex-direction:column;gap:calc(40*var(--px))}
+.sl-topo{display:flex;justify-content:space-between;gap:calc(32*var(--px));flex:none}
+.sl-corpo{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
+.sl-pe{flex:none}
+.sl-perow{display:flex;justify-content:space-between;align-items:baseline;gap:calc(32*var(--px));
+  margin-top:calc(24*var(--px))}
+.sl-topo>span,.sl-perow>span{white-space:nowrap}
+.sec--escuro .sl{border-color:rgba(244,243,236,.22)}
+
+/* tipos da lâmina — tudo em px de 1920, dividir por 2 para virar pt */
+.k56{font-family:var(--mono);font-weight:700;font-size:calc(56*var(--px));letter-spacing:.14em;
+  text-transform:uppercase;line-height:1;color:var(--tinta-45)}
+.sl--navy .k56,.sl--tinta .k56,.sl--fundo .k56{color:var(--papel-45)}
+.k56--fluor{color:var(--fluor)}
+.k56--forte{color:var(--tinta-70)}
+.sl--navy .k56--forte{color:var(--papel-72)}
+.t176{font-family:var(--display);font-weight:800;font-size:calc(176*var(--px));letter-spacing:-.042em;line-height:.94}
+.t140{font-family:var(--display);font-weight:800;font-size:calc(140*var(--px));letter-spacing:-.042em;line-height:.96}
+.t200{font-family:var(--display);font-weight:800;font-size:calc(200*var(--px));letter-spacing:-.042em;line-height:.92}
+.t360{font-family:var(--display);font-weight:800;font-size:calc(360*var(--px));letter-spacing:-.05em;line-height:.82;
+  font-variant-numeric:tabular-nums}
+.t88{font-family:var(--display);font-weight:800;font-size:calc(88*var(--px));letter-spacing:-.038em;line-height:1.02;
+  text-wrap:balance}
+.t64{font-family:var(--display);font-weight:500;font-size:calc(64*var(--px));letter-spacing:-.02em;line-height:1.14}
+.t72{font-family:var(--display);font-weight:700;font-size:calc(72*var(--px));letter-spacing:-.028em;line-height:1.16;text-wrap:balance}
+.p60{font-size:calc(60*var(--px));line-height:1.42;max-width:34ch}
+.p56{font-size:calc(56*var(--px));line-height:1.38}
+.sl--navy .p60,.sl--navy .p56,.sl--fundo .p60{color:var(--papel-72)}
+.sl--navy .p60 b,.sl--navy .p56 b{color:var(--papel);font-weight:600}
+
+/* faixa de etapa — o marcador que atravessa os 43 encontros */
+.faixa{display:flex;gap:calc(6*var(--px));height:calc(10*var(--px))}
+.faixa i{flex:1;background:rgba(11,15,26,.13)}
+.faixa i.feito{background:rgba(11,15,26,.42)}
+.faixa i.agora{background:var(--fluor)}
+.sl--navy .faixa i,.sl--tinta .faixa i,.sl--fundo .faixa i{background:rgba(244,243,236,.14)}
+.sl--navy .faixa i.feito,.sl--tinta .faixa i.feito,.sl--fundo .faixa i.feito{background:rgba(244,243,236,.45)}
+.sl--navy .faixa i.agora,.sl--tinta .faixa i.agora,.sl--fundo .faixa i.agora{background:var(--fluor)}
+.faixa--muda i.agora{background:rgba(11,15,26,.42)}
+.sl--navy .faixa--muda i.agora{background:rgba(244,243,236,.45)}
+
+/* símbolo que sangra — a única quebra de grid por lâmina */
+.sl-sangra{position:absolute;color:var(--navy-alto);pointer-events:none}
+.sl-sangra--dir{right:calc(-140*var(--px));top:calc(-160*var(--px));width:calc(820*var(--px))}
+.sl-sangra--baixo{right:calc(-180*var(--px));bottom:calc(-260*var(--px));width:calc(760*var(--px))}
+.sl--papel2 .sl-sangra,.sl--claro .sl-sangra{color:rgba(11,15,26,.06)}
+.sl--fundo .sl-sangra{color:rgba(244,243,236,.07)}
+
+/* gabarito de imagem clínica */
+.gab{position:relative;background:var(--tinta);overflow:hidden;flex:1;min-height:0}
+.gab::before{content:"";position:absolute;inset:calc(20*var(--px));border:1px solid rgba(244,243,236,.16)}
+.gab-k{position:absolute;left:calc(40*var(--px));bottom:calc(34*var(--px));font-family:var(--mono);font-weight:700;
+  font-size:calc(56*var(--px));letter-spacing:.14em;text-transform:uppercase;color:var(--papel-45);white-space:nowrap}
+.gab-escala{position:absolute;right:calc(64*var(--px));bottom:calc(230*var(--px));display:flex;align-items:center;
+  gap:calc(16*var(--px))}
+.gab-escala span{display:block;width:calc(180*var(--px));height:calc(6*var(--px));background:var(--papel-45)}
+.mira{position:absolute;color:var(--fluor)}
+.tarja{position:absolute;left:0;right:0;bottom:0;background:rgba(16,28,70,.90);
+  padding:calc(34*var(--px)) calc(40*var(--px))}
+
+/* vitrine de lâminas */
+.lam{margin:0}
+.lam + .lam{margin-top:var(--e-7)}
+.lam-k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tinta-45);display:flex;gap:var(--e-3);align-items:center;margin-bottom:var(--e-3);flex-wrap:wrap}
+.lam-k b{color:var(--navy);font-weight:700}
+.lam-k s{text-decoration:none;color:var(--cobalto)}
+.sec--escuro .lam-k{color:var(--papel-45)}
+.sec--escuro .lam-k b{color:var(--fluor)}
+.lam-cap{font-size:var(--t-corpo-s);color:var(--tinta-70);margin-top:var(--e-3);line-height:1.55;
+  max-width:var(--largura-texto)}
+.lam-cap b{color:var(--tinta);font-weight:600}
+.sec--escuro .lam-cap{color:var(--papel-72)}
+.sec--escuro .lam-cap b{color:var(--papel)}
+.vitrine{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-7) var(--e-5)}
+.vitrine>*{min-width:0}
+@media(max-width:820px){.vitrine{grid-template-columns:1fr}}
+
+/* guia de grade sobre a lâmina */
+.guia{position:absolute;inset:calc(96*var(--px));display:flex;gap:calc(24*var(--px));pointer-events:none}
+.guia i{flex:1;background:rgba(44,75,255,.12);border-left:1px solid rgba(44,75,255,.30);
+  border-right:1px solid rgba(44,75,255,.30)}
+.guia-borda{position:absolute;inset:calc(96*var(--px));outline:1px dashed rgba(44,75,255,.55);pointer-events:none}
+.guia-pe{position:absolute;left:calc(96*var(--px));right:calc(96*var(--px));bottom:calc(96*var(--px));
+  height:calc(128*var(--px));background:rgba(205,242,63,.16);border:1px solid rgba(11,15,26,.20);pointer-events:none}
+.cota{position:absolute;font-family:var(--mono);font-weight:700;font-size:calc(44*var(--px));letter-spacing:.1em;
+  text-transform:uppercase;color:var(--cobalto)}
+
+/* reprovados */
+.proib{border:1px solid var(--linha-escura);border-radius:var(--r-1);overflow:hidden;background:#FBFAF4}
+.proib .sl{border:0;border-radius:0;border-bottom:1px solid var(--linha-escura)}
+.proib-x{position:absolute;top:10px;right:12px;z-index:3;font-family:var(--mono);font-size:9px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--erro);background:rgba(244,243,236,.92);
+  border:1px solid rgba(179,38,30,.4);padding:2px 6px;border-radius:2px}
+.proib-t{padding:var(--e-4)}
+.proib-t h4{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.01em;margin-bottom:6px}
+.proib-t p{font-size:13.5px;color:var(--tinta-70);line-height:1.5}
+.parede{font-size:calc(38*var(--px));line-height:1.5;display:grid;gap:calc(14*var(--px));color:var(--tinta-70)}
+
+/* rodapé compartilhado */
+.rodape{background:var(--tinta);color:var(--papel-45);padding:var(--e-8) 0 var(--e-7);margin-top:var(--e-9)}
+.rodape-in{display:flex;justify-content:space-between;gap:var(--e-6);flex-wrap:wrap;align-items:flex-end}
+.rodape-nav{display:flex;gap:var(--e-5);flex-wrap:wrap;list-style:none}
+.rodape a{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--papel-45);text-decoration:none;transition:color var(--d-base) var(--ease)}
+.rodape a:hover{color:var(--fluor)}
+.rodape-assin{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  line-height:1.9}
+.rodape-assin b{color:var(--papel-72);font-weight:700}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="trama" viewBox="0 0 200 200" fill="none">
+    <line x1="59.74" y1="28.53" x2="116.58" y2="28.53" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="122.07" y1="21.00" x2="162.26" y2="61.19" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="171.47" y1="59.74" x2="171.47" y2="116.58" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="179.00" y1="122.07" x2="138.81" y2="162.26" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="140.26" y1="171.47" x2="83.42" y2="171.47" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="77.93" y1="179.00" x2="37.74" y2="138.81" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="28.53" y1="140.26" x2="28.53" y2="83.42" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="21.00" y1="77.93" x2="61.19" y2="37.74" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mira" viewBox="0 0 120 120" fill="none">
+    <path d="M4 30V4h26M90 4h26v26M116 90v26H90M30 116H4V90" stroke="currentColor" stroke-width="7"/>
+  </symbol>
+</svg>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" style="text-decoration:none">
+      <span class="lk lk--hz lk--neg" style="font-size:26px">
+        <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <span class="rule"></span>
+        <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Brandbook</a></li>
+      <li><a href="ds-paginas.html">Páginas</a></li>
+      <li><a href="ds-conteudos-criativos.html">Conteúdos &amp; Criativos</a></li>
+      <li><a href="ds-apresentacoes.html" aria-current="page">Apresentações</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="capa">
+  <svg class="capa-sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+  <div class="wrap">
+    <div class="rotulo"><i></i>Módulo 4 de 4 &middot; Apresentações &middot; v1 &middot; 20 de agosto de 2026</div>
+    <h1>A lâmina<br>é uma <em>ata</em></h1>
+    <p class="tese">Este sistema não foi desenhado para um lançamento: foi desenhado para <b>43 encontros ao vivo em 2027</b>, três imersões presenciais em Brasília e a vida de congresso do Dr. Rodrigo Wendel. Cada lâmina se comporta como a página de um caderno publicado — cabeçalho de folha, faixa de etapa, número de folha — atravessada por <b>um único marcador fluorescente</b> que se move de slide em slide.</p>
+    <div class="capa-lk">
+      <span class="lk lk--principal lk--neg" style="font-size:clamp(60px,8.4vw,96px)">
+        <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <span class="rule"></span>
+        <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+      </span>
+    </div>
+    <div class="capa-meta">
+      <div><div class="k">O que este módulo entrega</div><p>Régua da lâmina, 13 masters de aula, 5 masters comerciais, regra de imagem clínica e a tradução para Canva, PowerPoint e Keynote.</p></div>
+      <div><div class="k">Onde ele roda</div><p>Formação Viver de DTM — 35 encontros online, 3 imersões presenciais na clínica em Brasília, palestra e congresso.</p></div>
+      <div><div class="k">Duas réguas</div><p>Aula e comercial têm densidade diferente. A régua de aula aceita tabela e protocolo; a comercial não aceita nada além de uma ideia por lâmina.</p></div>
+      <div><div class="k">Herança</div><p>Cor, tipo, logo, gestos e voz vêm fechados do Brandbook. Este módulo não redefine nenhum deles — só decide como eles se comportam projetados.</p></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ 00 · A RÉGUA ============ -->
+<section class="sec" id="regua">
+  <div class="sec-h">
+    <div class="sec-n">§ 00</div>
+    <div>
+      <span class="junta"></span>
+      <h2>A régua da lâmina</h2>
+      <p class="lede">Um slide de aula é lido em duas situações que quase nada têm em comum: uma sala em Brasília, com gente na última fileira a doze metros do projetor, e uma tela compartilhada dentro de uma chamada, com o aluno num notebook de treze polegadas. <b>O sistema é dimensionado pela pior das duas</b> — e quando ele passa na pior, passa nas duas.</p>
+    </div>
+  </div>
+
+  <div class="grade-2" style="align-items:start">
+    <div>
+      <div class="lam-k"><b>Gabarito</b> <span>1920 &times; 1080 &middot; margem, grade e pé de folha</span></div>
+      <div class="sl sl--papel2">
+        <div class="guia"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="guia-borda"></div>
+        <div class="guia-pe"></div>
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56">12 colunas &middot; 122</span><span class="k56">medianiz 24</span></div>
+          <div class="sl-corpo">
+            <div class="t88">Área de conteúdo<br>1728 &times; 728</div>
+          </div>
+          <div class="sl-pe">
+            <div class="faixa"><i class="feito"></i><i class="feito"></i><i class="agora"></i><i></i><i></i><i></i></div>
+            <div class="sl-perow"><span class="k56">pé de folha &middot; 128 de altura</span><span class="k56">96</span></div>
+          </div>
+        </div>
+        <span class="cota" style="left:calc(28*var(--px));top:calc(46*var(--px))">96</span>
+      </div>
+      <p class="lam-cap"><b>Azul:</b> as doze colunas úteis. <b>Tracejado:</b> a margem de segurança de 96. <b>Verde:</b> o pé de folha — a faixa da tela que a cabeça de quem está sentado na frente rouba, e por isso só recebe navegação.</p>
+    </div>
+
+    <div>
+      <div class="tab-rolo">
+        <table class="tab">
+          <thead><tr><th style="min-width:140px">Medida</th><th>Valor</th><th style="min-width:180px">Por quê</th></tr></thead>
+          <tbody>
+            <tr><td><b>Proporção</b></td><td class="num">16:9 &middot; 1920 &times; 1080 px</td><td>Único formato do sistema. 4:3 corta a lâmina no projetor da sala e deixa duas tarjas na chamada.</td></tr>
+            <tr><td><b>Margem de segurança</b></td><td class="num">96 px nos quatro lados</td><td>5% do lado maior. Nada de conteúdo encosta a borda, com uma exceção declarada: o símbolo que sangra.</td></tr>
+            <tr><td><b>Pé de folha</b></td><td class="num">128 px de altura</td><td>Zona morta na sala. Recebe faixa de etapa e número de folha, nunca conteúdo de aula.</td></tr>
+            <tr><td><b>Grade</b></td><td class="num">12 col &times; 122 &middot; medianiz 24</td><td>Fecha exatamente em 1728. Toda caixa começa e termina numa coluna.</td></tr>
+            <tr><td><b>Linha de base</b></td><td class="num">24 px</td><td>Base 4 do contrato, seis passos. Todo espaçamento vertical é múltiplo dela.</td></tr>
+            <tr><td><b>Piso da sala</b></td><td class="num">64 px &middot; 32 pt</td><td>O que a última fileira precisa ler sem apertar os olhos.</td></tr>
+            <tr><td><b>Piso da tela</b></td><td class="num">56 px &middot; 28 pt</td><td>Piso absoluto de qualquer elemento da lâmina. Rótulo, legenda e folha inclusive.</td></tr>
+            <tr><td><b>Densidade</b></td><td class="num">5 linhas &middot; 30 caracteres</td><td>Teto de texto por lâmina de conteúdo. Passou disso, vira duas lâminas.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="porque"><b>O piso de 28 pt manda no sistema inteiro.</b> Ele proíbe o crédito minúsculo no canto, a legenda de 12 pt e o rodapé de fonte. A hierarquia da lâmina se resolve por <b>peso e contraste</b>, e nunca por tamanho pequeno: o dado que vale menos fica em tinta a 45%, mantendo os mesmos 56 px.</p>
+      <p class="porque" style="margin-top:var(--e-4)"><b>A conversão é limpa:</b> a lâmina desenhada em 1920 vira PowerPoint dividindo tudo por dois. 88 px de título viram 44 pt; 60 px de texto viram 30 pt; os 56 px de piso viram os 28 pt de sempre.</p>
+    </div>
+  </div>
+
+  <h3 class="sub">A escala tipográfica da lâmina</h3>
+  <div class="tab-rolo">
+    <table class="tab">
+      <thead><tr><th style="min-width:190px">Papel na lâmina</th><th>px em 1920</th><th>pt</th><th>Família e ajuste</th><th style="min-width:170px">Onde aparece</th></tr></thead>
+      <tbody>
+        <tr><td><b>Dado-herói</b></td><td class="num">360</td><td class="num">180</td><td>Archivo 800 &middot; -0,05em &middot; tabular</td><td>Uma vez a cada bloco de ensino, nunca duas seguidas</td></tr>
+        <tr><td><b>Divisória de etapa</b></td><td class="num">200</td><td class="num">100</td><td>Archivo 800 &middot; -0,042em</td><td>Três vezes na formação inteira</td></tr>
+        <tr><td><b>Capa de encontro</b></td><td class="num">176</td><td class="num">88</td><td>Archivo 800 &middot; -0,042em</td><td>Primeira lâmina de cada um dos 43 encontros</td></tr>
+        <tr><td><b>Título de lâmina</b></td><td class="num">88</td><td class="num">44</td><td>Archivo 800 &middot; -0,038em</td><td>Toda lâmina de conteúdo</td></tr>
+        <tr><td><b>Subtítulo</b></td><td class="num">64</td><td class="num">32</td><td>Archivo 500 &middot; -0,02em</td><td>Capa, comparação, caso clínico</td></tr>
+        <tr><td><b>Texto</b></td><td class="num">60</td><td class="num">30</td><td>Hanken 400 &middot; entrelinha 1,42</td><td>Corpo, tópico, campo de caso</td></tr>
+        <tr><td><b>Célula e citação de apoio</b></td><td class="num">56</td><td class="num">28</td><td>Hanken 400 &middot; número em Space Mono</td><td>Tabela, protocolo, cronograma</td></tr>
+        <tr><td><b>Rótulo, legenda e folha</b></td><td class="num">56</td><td class="num">28</td><td>Space Mono 700 &middot; caixa alta &middot; +0,14em</td><td>Cabeçalho de folha, pé, legenda de imagem</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="nota-pe">Salto de escala: entre o dado-herói e o título há 4,1&times;; entre a capa e o subtítulo, 3,1&times;. A regra de 3&times; do contrato vale entre o nível de display e o seguinte — a lâmina de conteúdo não tem display, ela tem título, e o drama de escala dela vem do vazio ao redor.</p>
+</section>
+
+<!-- ============ 01 · A GRAMÁTICA FIXA ============ -->
+<section class="sec sec--escuro" id="gramatica">
+ <div class="wrap">
+  <div class="sec-h">
+    <div class="sec-n">§ 01</div>
+    <div>
+      <span class="junta junta--claro"></span>
+      <h2>A gramática fixa de toda lâmina</h2>
+      <p class="lede">Quatro elementos aparecem em todas as lâminas de aula, sempre no mesmo lugar, sempre do mesmo tamanho. <b>É o que faz 43 encontros parecerem um só documento</b> — e é também o que permite montar uma aula às pressas sem inventar diagramação nova.</p>
+    </div>
+  </div>
+
+  <div class="grade-2" style="align-items:start">
+    <div>
+      <div class="lam-k"><b>Anatomia</b> <span>os quatro elementos fixos</span></div>
+      <div class="sl sl--navy">
+        <div class="sl-quadro">
+          <div class="sl-topo">
+            <span class="k56 k56--forte">E-09 &middot; Etapa 1</span>
+            <span class="k56">Diagnóstico</span>
+          </div>
+          <div class="sl-corpo">
+            <div class="t88" style="max-width:16ch">O cabeçalho diz onde a turma está</div>
+            <p class="p60" style="margin-top:calc(32*var(--px))">O corpo ocupa o centro vertical. O que sobra de espaço em cima e embaixo é material do sistema, e não erro de diagramação.</p>
+          </div>
+          <div class="sl-pe">
+            <div class="faixa"><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="agora"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="sl-perow"><span class="k56">Viver de DTM &middot; Turma 1</span><span class="k56 k56--forte">09 &middot; 15</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="lam-cap"><b>Faixa de etapa:</b> quinze traços, um por encontro da Etapa 1. Os oito à esquerda já aconteceram, o nono é o de hoje, em fluor. Na Etapa 2 são vinte traços; na Etapa 3, oito.</p>
+    </div>
+
+    <div>
+      <div class="tab-rolo">
+        <table class="tab">
+          <thead><tr><th style="min-width:150px">Elemento</th><th>Onde fica</th><th style="min-width:150px">Conteúdo</th></tr></thead>
+          <tbody>
+            <tr><td><b>Cabeçalho de folha</b></td><td class="num">topo &middot; 56 px &middot; mono</td><td>Código do encontro e etapa à esquerda; assunto do bloco à direita</td></tr>
+            <tr><td><b>Faixa de etapa</b></td><td class="num">pé &middot; 10 px de altura</td><td>Um traço por encontro da etapa corrente. O de hoje em fluor</td></tr>
+            <tr><td><b>Assinatura de pé</b></td><td class="num">pé &middot; esquerda</td><td>Nome da formação e turma. Nunca o logo em lâmina de conteúdo</td></tr>
+            <tr><td><b>Número de folha</b></td><td class="num">pé &middot; direita &middot; tabular</td><td>Folha corrente e total do encontro, no formato 09 &middot; 15</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="painel" style="background:rgba(244,243,236,.06);border-color:var(--linha-clara);margin-top:var(--e-6)">
+        <div class="cap" style="margin-top:0;color:var(--fluor)">A regra do marcador único</div>
+        <p style="font-size:var(--t-corpo-s);color:var(--papel-72);margin-top:var(--e-3);max-width:var(--largura-texto)">O fluor aparece <b style="color:var(--papel)">uma vez por lâmina</b>, e ele se move. No padrão, o lugar dele é o traço de hoje na faixa de etapa. Quando a lâmina precisa do fluor em outro lugar — o número do dado-herói, a marcação do achado numa imagem, o filete da divisória — <b style="color:var(--papel)">a faixa perde a cor e o traço de hoje volta a ser papel a 45%</b>. Duas manchas de fluor na mesma lâmina cancelam uma à outra e a marcação deixa de marcar.</p>
+      </div>
+      <p class="porque" style="border-left-color:var(--fluor);margin-top:var(--e-5)"><b>Por que a faixa existe:</b> numa formação de dez meses, o aluno perde o fio de onde está. A faixa devolve isso em meio segundo, sem ocupar espaço de conteúdo e sem exigir que o Rodrigo diga em voz alta.</p>
+    </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ 02 · MASTERS DE AULA ============ -->
+<section class="sec" id="aula">
+  <div class="sec-h">
+    <div class="sec-n">§ 02</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Os treze masters de aula</h2>
+      <p class="lede">Treze composições cobrem os 43 encontros. Não existe a décima quarta: quando um conteúdo não cabe em nenhuma delas, o conteúdo está errado para uma lâmina e vira material de apoio. <b>Todo texto abaixo é exemplo</b>, escrito com o vocabulário real do plano de ensino para mostrar densidade verdadeira, e não para ser copiado.</p>
+    </div>
+  </div>
+
+  <div class="vitrine">
+
+    <!-- M01 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M01</b> <span>Capa de encontro</span> <s>conteúdo de exemplo</s></div>
+      <div class="sl sl--navy">
+        <svg class="sl-sangra sl-sangra--dir" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">Encontro 09 de 43</span><span class="k56">Etapa 1 &middot; Bloco 3</span></div>
+          <div class="sl-corpo">
+            <div class="t176" style="max-width:11ch">Leitura de imagem</div>
+            <div class="t64" style="margin-top:calc(40*var(--px));color:var(--papel-72);max-width:26ch">O que a ressonância da ATM mostra</div>
+          </div>
+          <div class="sl-pe">
+            <span class="lk lk--hz lk--neg" style="font-size:calc(96*var(--px))">
+              <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+              <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+            </span>
+            <div class="sl-perow"><span class="k56">Viver de DTM &middot; Turma 1</span><span class="k56 k56--forte">01 &middot; 15</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Único lugar da aula com logo grande.</b> O símbolo sangra a borda superior direita — a quebra de grid autorizada, uma por lâmina. O fluor mora no símbolo do lockup, então a capa não tem faixa de etapa.</figcaption>
+    </figure>
+
+    <!-- M02 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M02</b> <span>Divisória de etapa</span> <s>conteúdo real do plano</s></div>
+      <div class="sl sl--fundo">
+        <svg class="sl-sangra sl-sangra--baixo" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">Etapa 2 de 3</span><span class="k56">Encontros 16 a 35</span></div>
+          <div class="sl-corpo">
+            <span class="junta junta--claro" style="width:calc(300*var(--px));height:calc(6*var(--px));margin-bottom:calc(40*var(--px))"></span>
+            <div class="t200" style="max-width:9ch">Tratamento</div>
+            <div class="t64" style="margin-top:calc(36*var(--px));color:var(--papel-72);max-width:30ch">Faixa azul &rarr; faixa roxa</div>
+          </div>
+          <div class="sl-pe">
+            <div class="sl-perow" style="margin-top:0"><span class="k56">3 dias em Brasília</span><span class="k56">Academia DTM</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Aparece três vezes na formação inteira.</b> Fundo navy com o único degradê autorizado do sistema (navy &rarr; navy-alto), a junta em versão grande e o símbolo sangrando por baixo. Sem faixa de etapa: a etapa está começando.</figcaption>
+    </figure>
+
+    <!-- M03 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M03</b> <span>Conteúdo &middot; título e texto</span> <s>conteúdo de exemplo</s></div>
+      <div class="sl">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">E-09 &middot; Etapa 1</span><span class="k56">Imagem</span></div>
+          <div class="sl-corpo">
+            <div class="t88" style="max-width:15ch">Nem todo caso pede ressonância</div>
+            <p class="p60" style="margin-top:calc(32*var(--px));color:var(--tinta-70)">A imagem confirma ou descarta uma hipótese que já existe. Quando ela chega antes da hipótese, vira ruído caro.</p>
+          </div>
+          <div class="sl-pe">
+            <div class="faixa"><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="agora"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="sl-perow"><span class="k56">Viver de DTM &middot; Turma 1</span><span class="k56 k56--forte">04 &middot; 15</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>O master mais usado dos treze.</b> Teto rígido: título de até nove palavras e texto de até cinco linhas com trinta caracteres cada. O texto ocupa sete das doze colunas — as cinco restantes são o vazio que faz o título pesar.</figcaption>
+    </figure>
+
+    <!-- M04 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M04</b> <span>Tópicos &middot; máximo três</span> <s>conteúdo real do plano</s></div>
+      <div class="sl">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">E-03 &middot; Etapa 1</span><span class="k56">Dois Tripés</span></div>
+          <div class="sl-corpo">
+            <div class="t88" style="max-width:14ch">O tripé sistêmico</div>
+            <div style="display:grid;gap:calc(28*var(--px));margin-top:calc(44*var(--px))">
+              <div style="display:grid;grid-template-columns:calc(150*var(--px)) 1fr;align-items:baseline;gap:calc(24*var(--px));border-top:1px solid var(--linha-escura);padding-top:calc(22*var(--px))">
+                <span class="k56">01</span><span class="p60" style="color:var(--tinta)">Sono</span></div>
+              <div style="display:grid;grid-template-columns:calc(150*var(--px)) 1fr;align-items:baseline;gap:calc(24*var(--px));border-top:1px solid var(--linha-escura);padding-top:calc(22*var(--px))">
+                <span class="k56">02</span><span class="p60" style="color:var(--tinta)">Atividade física</span></div>
+              <div style="display:grid;grid-template-columns:calc(150*var(--px)) 1fr;align-items:baseline;gap:calc(24*var(--px));border-top:1px solid var(--linha-escura);padding-top:calc(22*var(--px))">
+                <span class="k56">03</span><span class="p60" style="color:var(--tinta)">Psicoemocional</span></div>
+            </div>
+          </div>
+          <div class="sl-pe">
+            <div class="faixa"><i class="feito"></i><i class="feito"></i><i class="agora"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="sl-perow"><span class="k56">Viver de DTM &middot; Turma 1</span><span class="k56 k56--forte">06 &middot; 12</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Três itens e nenhum a mais.</b> Numeração em Space Mono, filete acima de cada linha, item em uma palavra ou expressão curta. O quarto item obriga a segunda lâmina — que é justamente o que impede a parede de tópicos.</figcaption>
+    </figure>
+
+    <!-- M05 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M05</b> <span>Imagem cheia</span> <s>gabarito de área</s></div>
+      <div class="sl sl--tinta">
+        <div class="gab" style="position:absolute;inset:0">
+          <svg class="mira" viewBox="0 0 120 120" aria-hidden="true" style="width:calc(300*var(--px));left:44%;top:30%"><use href="#mira"/></svg>
+          <div class="gab-escala"><span></span><i class="k56" style="font-style:normal;color:var(--papel-45)">10 mm</i></div>
+        </div>
+        <div class="tarja">
+          <div style="display:flex;justify-content:space-between;gap:calc(32*var(--px));flex-wrap:wrap">
+            <span class="k56" style="color:var(--papel-72)">RM de ATM &middot; corte sagital &middot; boca fechada</span>
+            <span class="k56">Caso 04 &middot; uso autorizado</span>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Sangria total, sem margem e sem cabeçalho.</b> A tarja navy a 90% carrega a legenda obrigatória e o código do caso. O marcador de mira em fluor aponta o achado — e é o único fluor da lâmina.</figcaption>
+    </figure>
+
+    <!-- M06 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M06</b> <span>Imagem e texto</span> <s>conteúdo de exemplo</s></div>
+      <div class="sl">
+        <div class="sl-quadro" style="flex-direction:row;gap:calc(64*var(--px))">
+          <div style="flex:0 0 46%;display:flex;flex-direction:column">
+            <div class="gab">
+              <svg class="mira" viewBox="0 0 120 120" aria-hidden="true" style="width:calc(240*var(--px));left:38%;top:34%"><use href="#mira"/></svg>
+              <span class="gab-k">Área de imagem</span>
+            </div>
+            <span class="k56" style="margin-top:calc(20*var(--px))">RM &middot; Caso 04</span>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column">
+            <div class="sl-topo"><span class="k56 k56--forte">E-09 &middot; Etapa 1</span></div>
+            <div class="sl-corpo">
+              <div class="t88" style="max-width:12ch">O disco na posição fechada</div>
+              <p class="p60" style="margin-top:calc(28*var(--px));color:var(--tinta-70);max-width:26ch">A mira marca a região a observar. O restante da imagem fica intacto.</p>
+            </div>
+            <div class="sl-pe">
+              <div class="faixa faixa--muda"><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="agora"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="sl-perow"><span class="k56">Viver de DTM</span><span class="k56 k56--forte">07 &middot; 15</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Divisão fixa de 46% e 54%</b> — nunca metade a metade, que anula a hierarquia. Como o fluor foi para a mira da imagem, a faixa de etapa perde a cor: a regra do marcador único em funcionamento.</figcaption>
+    </figure>
+
+    <!-- M07 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M07</b> <span>Tabela e protocolo</span> <s>conteúdo real do plano</s></div>
+      <div class="sl">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">E-08 &middot; Etapa 1</span><span class="k56">Exame físico</span></div>
+          <div class="sl-corpo" style="justify-content:flex-start">
+            <div class="t88" style="max-width:16ch;margin-bottom:calc(36*var(--px))">O protocolo em três componentes</div>
+            <div style="display:grid;grid-template-columns:1.15fr 1fr .55fr;gap:calc(24*var(--px)) calc(32*var(--px));font-size:calc(56*var(--px));line-height:1.3">
+              <span class="k56" style="border-bottom:2px solid var(--navy);padding-bottom:calc(16*var(--px))">Componente</span>
+              <span class="k56" style="border-bottom:2px solid var(--navy);padding-bottom:calc(16*var(--px))">O que se registra</span>
+              <span class="k56" style="border-bottom:2px solid var(--navy);padding-bottom:calc(16*var(--px))">Onde</span>
+              <span style="border-bottom:1px solid var(--linha-escura);padding-bottom:calc(18*var(--px))">Palpação</span>
+              <span style="border-bottom:1px solid var(--linha-escura);padding-bottom:calc(18*var(--px));color:var(--tinta-70)">Músculo e articulação</span>
+              <span class="k56" style="border-bottom:1px solid var(--linha-escura);padding-bottom:calc(18*var(--px))">E-13</span>
+              <span style="border-bottom:1px solid var(--linha-escura);padding-bottom:calc(18*var(--px))">Sons</span>
+              <span style="border-bottom:1px solid var(--linha-escura);padding-bottom:calc(18*var(--px));color:var(--tinta-70)">Estalido e crepitação</span>
+              <span class="k56" style="border-bottom:1px solid var(--linha-escura);padding-bottom:calc(18*var(--px))">E-13</span>
+              <span style="border-bottom:1px solid var(--linha-escura);padding-bottom:calc(18*var(--px))">Movimento</span>
+              <span style="border-bottom:1px solid var(--linha-escura);padding-bottom:calc(18*var(--px));color:var(--tinta-70)">Abertura e lateralidade</span>
+              <span class="k56" style="border-bottom:1px solid var(--linha-escura);padding-bottom:calc(18*var(--px))">E-14</span>
+            </div>
+          </div>
+          <div class="sl-pe">
+            <div class="faixa"><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="agora"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="sl-perow"><span class="k56">Viver de DTM &middot; Turma 1</span><span class="k56 k56--forte">05 &middot; 09</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Teto de cinco linhas por quatro colunas.</b> Cabeçalho em Space Mono com filete navy de 2 px, corpo em Hanken, número e código sempre em mono tabular. Protocolo maior sai da lâmina e vira material de apoio impresso.</figcaption>
+    </figure>
+
+    <!-- M08 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M08</b> <span>Comparação</span> <s>conteúdo real do plano</s></div>
+      <div class="sl">
+        <div style="position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr">
+          <div style="background:var(--navy)"></div><div style="background:var(--papel)"></div>
+        </div>
+        <div class="sl-quadro" style="flex-direction:row;gap:calc(96*var(--px))">
+          <div style="flex:1;display:flex;flex-direction:column;color:var(--papel)">
+            <span class="k56" style="color:var(--papel-45)">O erro mais comum</span>
+            <div class="t88" style="margin-top:calc(32*var(--px));max-width:12ch">Tratar bruxismo achando que é DTM</div>
+            <p class="p60" style="margin-top:calc(28*var(--px));color:var(--papel-72);max-width:22ch">Placa genérica, sem diagnóstico anterior.</p>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column">
+            <span class="k56">O caminho da formação</span>
+            <div class="t88" style="margin-top:calc(32*var(--px));max-width:12ch">Fechar o grupo dentro do guarda-chuva</div>
+            <p class="p60" style="margin-top:calc(28*var(--px));color:var(--tinta-70);max-width:22ch">Muscular, articular ou deslocamento de disco.</p>
+          </div>
+        </div>
+        <div style="position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(11,15,26,.20)"></div>
+      </div>
+      <figcaption class="lam-cap"><b>A polaridade é de fundo, e não de cor de texto.</b> O lado do erro fica em navy, o lado correto em papel. Serve para antes e depois, certo e errado, e para a comparação entre os três grupos quando reduzida a dois por vez.</figcaption>
+    </figure>
+
+    <!-- M09 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M09</b> <span>Caso clínico</span> <s>estrutura de exemplo</s></div>
+      <div class="sl sl--papel2">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">Caso 04 &middot; F, 34 anos</span><span class="k56">Uso autorizado</span></div>
+          <div class="sl-corpo" style="flex-direction:row;gap:calc(56*var(--px));align-items:stretch">
+            <div style="flex:0 0 34%;display:flex;flex-direction:column">
+              <div class="gab"><span class="gab-k">Imagem</span></div>
+            </div>
+            <div style="flex:1;display:grid;align-content:center;gap:calc(30*var(--px))">
+              <div><span class="k56">Queixa</span><p class="p56" style="margin-top:calc(12*var(--px))">Dor ao mastigar, pior pela manhã</p></div>
+              <div><span class="k56">Tripé sistêmico</span><p class="p56" style="margin-top:calc(12*var(--px))">Sono fragmentado há dois anos</p></div>
+              <div><span class="k56">Hipótese em aberto</span><p class="p56" style="margin-top:calc(12*var(--px))">Grupo muscular, a confirmar no exame</p></div>
+            </div>
+          </div>
+          <div class="sl-pe">
+            <div class="faixa"><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="agora"></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="sl-perow"><span class="k56">Viver de DTM &middot; estudo de caso</span><span class="k56 k56--forte">03 &middot; 08</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Fundo papel-2 separa o caso do conteúdo teórico</b> sem trocar de paleta. Três campos fixos e nunca mais que isso. O paciente aparece só como código, sexo e idade — nome, iniciais e cidade jamais entram na lâmina.</figcaption>
+    </figure>
+
+    <!-- M10 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M10</b> <span>Dado-herói</span> <s>dado do plano de ensino</s></div>
+      <div class="sl sl--navy">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">E-01 &middot; Etapa 1</span><span class="k56">Nivelamento</span></div>
+          <div class="sl-corpo">
+            <div class="t360" style="color:var(--fluor)">0,38%</div>
+            <div class="t64" style="margin-top:calc(28*var(--px));max-width:24ch">dos dentistas do Brasil são especialistas em DTM</div>
+          </div>
+          <div class="sl-pe">
+            <div class="faixa faixa--muda"><i class="agora"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="sl-perow"><span class="k56">Fonte citada no encontro</span><span class="k56 k56--forte">03 &middot; 11</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>O único elemento desproporcional do sistema</b> — 360 px, tabular, em fluor, com a faixa apagada. Regra que não se negocia: todo número na lâmina carrega a fonte no próprio pé de folha. Número sem fonte não sobe ao projetor.</figcaption>
+    </figure>
+
+    <!-- M11 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M11</b> <span>Citação</span> <s>frase registrada no plano de ensino</s></div>
+      <div class="sl sl--tinta">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">E-01 &middot; Etapa 1</span><span class="k56">Posicionamento</span></div>
+          <div class="sl-corpo">
+            <span class="junta junta--claro" style="width:calc(220*var(--px));margin-bottom:calc(40*var(--px))"></span>
+            <div class="t72" style="max-width:31ch">&ldquo;Se você acha que DTM se trata com cirurgia, com orto, com ajuste oclusal, com placa ou com botox &mdash; você precisa da formação.&rdquo;</div>
+            <span class="k56 k56--forte" style="margin-top:calc(40*var(--px))">Dr. Rodrigo Wendel</span>
+          </div>
+          <div class="sl-pe">
+            <div class="sl-perow" style="margin-top:0"><span class="k56">Viver de DTM &middot; Turma 1</span><span class="k56 k56--forte">02 &middot; 11</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Fundo tinta, nunca navy</b> — a citação é o momento em que a lâmina fica em silêncio, e o tinta é meio tom mais fundo que o resto da apresentação. Aspas tipográficas de verdade, atribuição em mono, zero aspas decorativas gigantes.<br><br><b>A única exceção de escala do sistema, e ela é declarada:</b> citação atribuída entra <b>na íntegra</b>, e para isso o corpo cai de 88 px para <b>72 px, ou 36 pt</b> &mdash; ainda oito pixels acima do piso da sala. Teto do master: <b>24 palavras ou 140 caracteres</b>. Passou disso, a frase vira duas lâminas com a atribuição só na segunda. Frase encurtada dentro das aspas está proibida.</figcaption>
+    </figure>
+
+    <!-- M12 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M12</b> <span>Exercício &middot; output verificável</span> <s>conteúdo real do plano</s></div>
+      <div class="sl">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">E-09 &middot; Etapa 1</span><span class="k56">Prática guiada</span></div>
+          <div class="sl-corpo">
+            <div style="border:1px solid var(--linha-escura);border-left:calc(12*var(--px)) solid var(--fluor);background:var(--papel-2);padding:calc(52*var(--px))">
+              <span class="k56">Output verificável</span>
+              <div class="t88" style="margin-top:calc(24*var(--px));max-width:20ch">Preencher o laudo simplificado de duas imagens</div>
+              <div style="display:flex;gap:calc(64*var(--px));margin-top:calc(36*var(--px));flex-wrap:wrap">
+                <span class="k56 k56--forte">20 minutos</span>
+                <span class="k56 k56--forte">Em dupla</span>
+                <span class="k56 k56--forte">Entrega ao vivo</span>
+              </div>
+            </div>
+          </div>
+          <div class="sl-pe">
+            <div class="faixa faixa--muda"><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="feito"></i><i class="agora"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="sl-perow"><span class="k56">Viver de DTM &middot; Turma 1</span><span class="k56 k56--forte">12 &middot; 15</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>O filete fluor de 12 px na lateral esquerda</b> é a única marcação: significa "pare de assistir e faça". Três campos fixos no pé do bloco — tempo, formato e como entrega. Todo encontro do plano de ensino tem um destes.</figcaption>
+    </figure>
+
+    <!-- M13 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M13</b> <span>Encerramento e próxima</span> <s>conteúdo de exemplo</s></div>
+      <div class="sl sl--navy">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">E-09 &middot; Etapa 1</span><span class="k56">Fecho</span></div>
+          <div class="sl-corpo" style="flex-direction:row;gap:calc(96*var(--px))">
+            <div style="flex:1">
+              <span class="k56">Hoje</span>
+              <div class="t64" style="margin-top:calc(24*var(--px));max-width:18ch">Leitura de ressonância da ATM</div>
+            </div>
+            <div style="width:1px;background:var(--linha-clara)"></div>
+            <div style="flex:1">
+              <span class="k56 k56--fluor">No próximo encontro</span>
+              <div class="t64" style="margin-top:calc(24*var(--px));max-width:18ch">Guarda-chuva &middot; grupo muscular</div>
+              <p class="p56" style="margin-top:calc(24*var(--px));color:var(--papel-72);max-width:24ch">Traga os dois laudos preenchidos.</p>
+            </div>
+          </div>
+          <div class="sl-pe">
+            <span class="lk lk--hz lk--mono-papel" style="font-size:calc(72*var(--px))">
+              <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+              <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+            </span>
+            <div class="sl-perow"><span class="k56">Viver de DTM &middot; Turma 1</span><span class="k56 k56--forte">15 &middot; 15</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Segunda e última aparição do logo na aula</b>, aqui em versão horizontal monocromática — o fluor já está no rótulo "no próximo encontro", que é o que a lâmina quer que fique na cabeça. A tarefa entra em uma linha, nunca em lista.</figcaption>
+    </figure>
+
+  </div>
+
+  <div class="alerta">
+    <div class="k">O esqueleto fixo de todo encontro</div>
+    <p>Os 43 encontros abrem e fecham do mesmo jeito, e isso poupa uma decisão por semana durante dez meses: <b>M01 capa &rarr; M03 objetivo do encontro &rarr; conteúdo &rarr; M12 exercício &rarr; M13 encerramento</b>. O miolo varia; as quatro pontas não. Aula de 90 minutos fica entre 14 e 20 lâminas — abaixo de 12, falta apoio visual; acima de 24, a turma parou de acompanhar.</p>
+  </div>
+</section>
+
+<!-- ============ 03 · IMAGEM CLÍNICA ============ -->
+<section class="sec" id="imagem">
+  <div class="sec-h">
+    <div class="sec-n">§ 03</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Imagem clínica &mdash; regra de ofício</h2>
+      <p class="lede">Radiografia, ressonância, foto intraoral e foto extraoral são <b>prova</b>, e prova não se decora. Nesta escola a imagem carrega o argumento inteiro da aula, e qualquer tratamento estético aplicado sobre ela muda o que o aluno enxerga. As regras abaixo têm peso de conduta clínica, e não de preferência visual.</p>
+    </div>
+  </div>
+
+  <h3 class="sub"><span class="n">3.1</span>Enquadramento e tratamento</h3>
+  <div class="grade-2" style="align-items:start">
+    <div class="painel painel--claro">
+      <h4 class="mini">A imagem entra inteira</h4>
+      <p style="font-size:var(--t-corpo-s);color:var(--tinta-70);max-width:var(--largura-texto)">Corte só para tirar borda vazia ou dado de identificação. Nunca para caber num formato: se o exame é vertical, ele ocupa 46% da lâmina no M06 e o resto é papel. Recorte que atravessa estrutura anatômica está proibido, mesmo quando a estrutura não é a do achado.</p>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>Sem máscara decorativa.</b> O octógono-janela é para retrato e ambiente. Imagem clínica é sempre retângulo.</li>
+        <li><b>Raio de 6 px</b> no bloco de imagem, o teto do contrato. Zero sombra, zero contorno, zero moldura.</li>
+        <li><b>O grão não atravessa a imagem.</b> Textura em cima de exame é ruído sobre evidência.</li>
+      </ul>
+    </div>
+    <div class="painel painel--claro">
+      <h4 class="mini">O fundo é tinta, jamais navy</h4>
+      <p style="font-size:var(--t-corpo-s);color:var(--tinta-70);max-width:var(--largura-texto)">Ressonância e radiografia são escalas de cinza sobre preto. Sobre navy elas vibram e o cinza médio some; sobre tinta (#0B0F1A) o preto da imagem encosta no preto da lâmina e a leitura fica limpa. Foto intraoral, que tem vermelho saturado, pede a placa de papel-2 em volta para não brigar com o fundo escuro.</p>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>Zero filtro.</b> Sem duotone, sem multiply, sem brilho, sem ajuste de contraste "para ficar melhor".</li>
+        <li><b>Zero fluor tocando o tecido.</b> O fluor marca ao redor do achado, com a mira, e nunca preenche área.</li>
+        <li><b>Barra de escala visível</b> quando a medida importa. Sem ela a imagem não prova tamanho.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sub"><span class="n">3.2</span>A legenda obrigatória, em três campos</h3>
+  <div class="tab-rolo">
+    <table class="tab">
+      <thead><tr><th style="min-width:130px">Campo</th><th style="min-width:190px">Escreve o quê</th><th>Exemplo de preenchimento</th></tr></thead>
+      <tbody>
+        <tr><td><b>Exame</b></td><td>Modalidade, região e condição de aquisição</td><td class="num">RM de ATM &middot; corte sagital &middot; boca fechada</td></tr>
+        <tr><td><b>Caso</b></td><td>Código, sexo e idade. Nunca nome, iniciais ou cidade</td><td class="num">Caso 04 &middot; F, 34 anos</td></tr>
+        <tr><td><b>Origem</b></td><td>De onde veio e sob qual autorização</td><td class="num">Acervo clínico &middot; uso autorizado para ensino</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="nota-pe">A legenda vive dentro da tarja navy a 90% no rodapé da imagem (M05) ou como linha em Space Mono logo abaixo dela (M06 e M09). Nos dois casos ela respeita o piso de 28 pt: legenda ilegível equivale a legenda ausente, e imagem clínica sem legenda não vai ao projetor.</p>
+
+  <h3 class="sub"><span class="n">3.3</span>Consentimento e anonimização</h3>
+  <div class="alerta">
+    <div class="k">Derivado &middot; construído pela Inception &middot; depende de validação do Rodrigo</div>
+    <p>O fluxo abaixo é proposta nossa, escrita a partir da prática corrente de material didático em saúde. <b>Ele não descreve um processo que já exista na clínica</b> e precisa da conferência dele — e, no ponto do termo, de apoio jurídico — antes de virar rotina da formação.</p>
+  </div>
+  <div class="tab-rolo" style="margin-top:var(--e-5)">
+    <table class="tab">
+      <thead><tr><th class="num" style="width:56px">#</th><th style="min-width:200px">Passo</th><th>O que ele impede</th></tr></thead>
+      <tbody>
+        <tr><td class="num">01</td><td><b>Termo de uso de imagem assinado</b>, com finalidade escrita e dois níveis marcados em separado: ensino em turma fechada e divulgação pública</td><td>Que uma imagem cedida para a aula apareça num criativo de captação. São autorizações diferentes e o termo precisa distinguir as duas</td></tr>
+        <tr><td class="num">02</td><td><b>Exportar achatado</b> em JPG ou PNG a partir do visualizador. O arquivo DICOM original jamais entra na apresentação</td><td>Que nome, data de nascimento, número de prontuário e instituição viajem nos metadados junto com a imagem</td></tr>
+        <tr><td class="num">03</td><td><b>Cortar a tarja de dados</b> gravada na própria imagem. Quando o corte prejudicar a leitura, cobrir com retângulo navy sólido</td><td>Identificação por dado queimado no exame. Desfoque está proibido: além de reversível em parte, denuncia amadorismo</td></tr>
+        <tr><td class="num">04</td><td><b>Enquadrar do arco zigomático ao mento</b> em foto extraoral. Olhos entram apenas quando o achado exige e o termo cita esse uso</td><td>Reconhecimento facial do paciente por quem assiste, inclusive por colega de profissão da mesma cidade</td></tr>
+        <tr><td class="num">05</td><td><b>Codificar o caso</b> num índice fora da apresentação, no formato Caso 04, e usar só o código na lâmina</td><td>Rastreio do paciente a partir do material didático, e ao mesmo tempo mantém a rastreabilidade interna do Rodrigo</td></tr>
+        <tr><td class="num">06</td><td><b>Reconferir antes de cada turma.</b> Autorização revogada retira a imagem de todas as apresentações, inclusive dos já gravados</td><td>Que um material de 2027 continue circulando em 2029 com uma autorização que o paciente já cancelou</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub"><span class="n">3.4</span>Os três erros que reprovam a lâmina</h3>
+  <div class="grade-3">
+    <div class="proib">
+      <div class="sl sl--tinta" style="border-radius:0">
+        <span class="proib-x">reprova</span>
+        <div class="sl-quadro"><div class="sl-corpo" style="align-items:center">
+          <div class="octo-janela" style="width:calc(560*var(--px));aspect-ratio:1;background:#2A3348"></div>
+        </div></div>
+      </div>
+      <div class="proib-t"><h4>Exame dentro do octógono</h4><p>A máscara corta estrutura anatômica e transforma prova em grafismo. O octógono-janela é de retrato e ambiente.</p></div>
+    </div>
+    <div class="proib">
+      <div class="sl sl--tinta" style="border-radius:0">
+        <span class="proib-x">reprova</span>
+        <div class="sl-quadro"><div class="sl-corpo" style="align-items:center">
+          <div style="width:calc(760*var(--px));aspect-ratio:16/10;background:#1B2231;position:relative">
+            <span style="position:absolute;inset:0;background:var(--fluor);opacity:.42"></span>
+          </div>
+        </div></div>
+      </div>
+      <div class="proib-t"><h4>Duotone ou fluor sobre o exame</h4><p>Qualquer camada de cor sobre a imagem altera o cinza que o aluno precisa ler. O fluor marca por fora, com a mira.</p></div>
+    </div>
+    <div class="proib">
+      <div class="sl sl--tinta" style="border-radius:0">
+        <span class="proib-x">reprova</span>
+        <div class="sl-quadro"><div class="sl-corpo" style="align-items:center">
+          <div style="width:calc(760*var(--px));aspect-ratio:16/10;background:#1B2231;position:relative">
+            <span style="position:absolute;left:calc(24*var(--px));bottom:calc(18*var(--px));font-family:var(--mono);font-size:calc(22*var(--px));color:var(--papel-45)">rm atm caso 4</span>
+          </div>
+        </div></div>
+      </div>
+      <div class="proib-t"><h4>Legenda em corpo minúsculo</h4><p>Abaixo de 28 pt, e em caixa baixa, a legenda deixa de cumprir a função. Ela é registro de origem, não crédito discreto.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · MASTERS COMERCIAIS ============ -->
+<section class="sec sec--escuro" id="comercial">
+ <div class="wrap">
+  <div class="sec-h">
+    <div class="sec-n">§ 04</div>
+    <div>
+      <span class="junta junta--claro"></span>
+      <h2>Os cinco masters comerciais</h2>
+      <p class="lede">Palestra, congresso e apresentação de venda obedecem a uma régua mais dura que a da aula. Na aula o aluno já comprou e aceita uma tabela; no palco comercial <b>a plateia decide em segundos se continua ouvindo</b>. Aqui a densidade cai pela metade, a tabela some, e cada lâmina carrega uma ideia só.</p>
+    </div>
+  </div>
+
+  <div class="tab-rolo" style="margin-bottom:var(--e-8)">
+    <table class="tab">
+      <thead><tr><th style="min-width:170px">Item</th><th>Régua de aula</th><th>Régua comercial</th></tr></thead>
+      <tbody>
+        <tr><td><b>Texto por lâmina</b></td><td class="num">até 5 linhas de 30 caracteres</td><td class="num">até 2 linhas</td></tr>
+        <tr><td><b>Tabela</b></td><td class="num">até 5 &times; 4</td><td class="num">só a grade da formação</td></tr>
+        <tr><td><b>Logo</b></td><td class="num">capa e encerramento</td><td class="num">capa, grade e encerramento</td></tr>
+        <tr><td><b>Faixa de etapa</b></td><td class="num">em toda lâmina de conteúdo</td><td class="num">não existe</td></tr>
+        <tr><td><b>Ritmo</b></td><td class="num">14 a 24 lâminas por encontro</td><td class="num">1 lâmina a cada 40 a 60 segundos</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="vitrine">
+
+    <!-- M14 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M14</b> <span>Capa de palestra e congresso</span> <s>conteúdo de exemplo</s></div>
+      <div class="sl sl--fundo">
+        <svg class="sl-sangra sl-sangra--dir" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">Congresso 2027</span><span class="k56">Dor orofacial</span></div>
+          <div class="sl-corpo">
+            <div class="t140" style="max-width:14ch">O paciente que já está na sua cadeira</div>
+          </div>
+          <div class="sl-pe">
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:calc(40*var(--px));flex-wrap:wrap">
+              <div>
+                <div class="t64" style="color:var(--papel)">Dr. Rodrigo Wendel</div>
+                <span class="k56 k56--forte" style="display:block;margin-top:calc(16*var(--px))">Especialista em DTM e dor orofacial</span>
+              </div>
+              <span class="lk lk--principal lk--neg" style="font-size:calc(112*var(--px))">
+                <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+                <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>A plateia de congresso não conhece a marca</b>, então esta é a única lâmina do sistema com a versão principal em tamanho grande. Nome e formação em texto, sem número de conselho e sem foto do palestrante.</figcaption>
+    </figure>
+
+    <!-- M15 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M15</b> <span>Oferta &middot; pilha de entrega</span> <s>estrutura real, valores pendentes</s></div>
+      <div class="sl">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">Viver de DTM</span><span class="k56">Turma 1 &middot; 2027</span></div>
+          <div class="sl-corpo" style="justify-content:flex-start">
+            <div class="t88" style="max-width:16ch;margin-bottom:calc(40*var(--px))">O que entra na formação</div>
+            <div style="display:grid;gap:calc(26*var(--px))">
+              <div style="display:flex;justify-content:space-between;gap:calc(32*var(--px));border-top:1px solid var(--linha-escura);padding-top:calc(20*var(--px))">
+                <span class="p60" style="color:var(--tinta)">Encontros ao vivo em grupo</span><span class="k56 k56--forte">35 aulas</span></div>
+              <div style="display:flex;justify-content:space-between;gap:calc(32*var(--px));border-top:1px solid var(--linha-escura);padding-top:calc(20*var(--px))">
+                <span class="p60" style="color:var(--tinta)">Imersões presenciais em Brasília</span><span class="k56 k56--forte">8 dias</span></div>
+              <div style="display:flex;justify-content:space-between;gap:calc(32*var(--px));border-top:1px solid var(--linha-escura);padding-top:calc(20*var(--px))">
+                <span class="p60" style="color:var(--tinta)">Estudos de caso corrigidos</span><span class="k56 k56--forte">4 entregas</span></div>
+            </div>
+          </div>
+          <div class="sl-pe">
+            <div class="sl-perow" style="margin-top:0;border-top:2px solid var(--navy);padding-top:calc(24*var(--px))">
+              <span class="k56 k56--forte">10 meses &middot; 43 encontros</span><span class="k56">Academia DTM</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Uma pilha de entrega, ainda sem preço.</b> A ancoragem exige que cada item apareça sozinho, com o valor individual, antes do total — e o contrato bloqueia número financeiro até a conferência com a clínica fechar. As lâminas de valor entram depois disso, uma por item.</figcaption>
+    </figure>
+
+    <!-- M16 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M16</b> <span>Grade da formação</span> <s>conteúdo real do plano</s></div>
+      <div class="sl sl--papel2">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">Viver de DTM</span><span class="k56">Três etapas</span></div>
+          <div class="sl-corpo" style="flex-direction:row;gap:calc(32*var(--px));align-items:stretch">
+            <div style="flex:1;background:var(--papel);border-top:calc(10*var(--px)) solid var(--navy);padding:calc(40*var(--px));display:flex;flex-direction:column">
+              <span class="k56">Etapa 1</span>
+              <div class="t64" style="margin-top:calc(20*var(--px))">Fundação e diagnóstico</div>
+              <span class="k56 k56--forte" style="margin-top:auto">E-01 a E-15</span>
+            </div>
+            <div style="flex:1;background:var(--papel);border-top:calc(10*var(--px)) solid var(--navy);padding:calc(40*var(--px));display:flex;flex-direction:column">
+              <span class="k56">Etapa 2</span>
+              <div class="t64" style="margin-top:calc(20*var(--px))">Tratamento</div>
+              <span class="k56 k56--forte" style="margin-top:auto">E-16 a E-35</span>
+            </div>
+            <div style="flex:1;background:var(--papel);border-top:calc(10*var(--px)) solid var(--fluor);padding:calc(40*var(--px));display:flex;flex-direction:column">
+              <span class="k56">Etapa 3</span>
+              <div class="t64" style="margin-top:calc(20*var(--px))">Comercial e gestão</div>
+              <span class="k56 k56--forte" style="margin-top:auto">E-36 a E-43</span>
+            </div>
+          </div>
+          <div class="sl-pe">
+            <div class="sl-perow" style="margin-top:0"><span class="k56">Três imersões presenciais</span><span class="k56">Academia DTM</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Três colunas iguais, um filete diferente.</b> O fluor no topo da terceira coluna é o marcador único da lâmina — ele indica onde a formação termina, que é o argumento comercial da grade.</figcaption>
+    </figure>
+
+    <!-- M17 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M17</b> <span>Cronograma</span> <s>conteúdo real do plano</s></div>
+      <div class="sl">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">Turma 1</span><span class="k56">Fevereiro a novembro de 2027</span></div>
+          <div class="sl-corpo">
+            <div class="t88" style="max-width:16ch;margin-bottom:calc(52*var(--px))">Dez meses, três viagens</div>
+            <div style="position:relative">
+              <div style="position:absolute;left:calc(30*var(--px));right:calc(30*var(--px));top:calc(28*var(--px));height:calc(4*var(--px));background:var(--linha-escura)"></div>
+              <div style="position:relative;display:flex;justify-content:space-between">
+                <div style="text-align:left"><span style="display:block;width:calc(60*var(--px));height:calc(60*var(--px));background:var(--navy)"></span><span class="k56" style="display:block;margin-top:calc(22*var(--px))">Fev</span></div>
+                <div style="text-align:center"><span style="display:block;width:calc(60*var(--px));height:calc(60*var(--px));background:var(--navy);margin:0 auto"></span><span class="k56" style="display:block;margin-top:calc(22*var(--px))">Mai</span></div>
+                <div style="text-align:center"><span style="display:block;width:calc(60*var(--px));height:calc(60*var(--px));background:var(--navy);margin:0 auto"></span><span class="k56" style="display:block;margin-top:calc(22*var(--px))">Set</span></div>
+                <div style="text-align:right"><span style="display:block;width:calc(60*var(--px));height:calc(60*var(--px));background:var(--fluor);margin-left:auto"></span><span class="k56 k56--forte" style="display:block;margin-top:calc(22*var(--px))">Nov</span></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:calc(20*var(--px))">
+                <span class="k56">Início</span><span class="k56">Imersão</span><span class="k56">Imersão</span><span class="k56 k56--forte">Formatura</span>
+              </div>
+            </div>
+          </div>
+          <div class="sl-pe">
+            <div class="sl-perow" style="margin-top:0"><span class="k56">Datas na validação</span><span class="k56">Academia DTM</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Quatro marcos e nenhum a mais.</b> Quadrados navy no eixo, o último em fluor porque é o destino que a plateia compra. Os meses das duas imersões do meio ainda dependem do calendário fechado — a lâmina declara isso no pé, sem inventar data.</figcaption>
+    </figure>
+
+    <!-- M18 -->
+    <figure class="lam">
+      <div class="lam-k"><b>M18</b> <span>Encerramento com chamada</span> <s>conteúdo de exemplo</s></div>
+      <div class="sl">
+        <div class="sl-quadro">
+          <div class="sl-topo"><span class="k56 k56--forte">Viver de DTM</span><span class="k56">Turma 1 &middot; 2027</span></div>
+          <div class="sl-corpo" style="flex-direction:row;gap:calc(72*var(--px));align-items:center">
+            <div style="flex:1">
+              <div class="t88" style="max-width:13ch">A lista de espera abre hoje</div>
+              <p class="p60" style="margin-top:calc(28*var(--px));color:var(--tinta-70);max-width:24ch">Aponte a câmera para o código.</p>
+              <div style="margin-top:calc(36*var(--px));display:inline-block;background:var(--cobalto);color:var(--papel);
+                          font-family:var(--mono);font-weight:700;font-size:calc(56*var(--px));letter-spacing:.1em;
+                          text-transform:uppercase;padding:calc(28*var(--px)) calc(40*var(--px))">academiadtm.com.br</div>
+            </div>
+            <div style="flex:0 0 30%;aspect-ratio:1;background:var(--papel-2);border:1px solid var(--linha-escura);
+                        display:grid;place-items:center">
+              <span class="k56">Área do QR</span>
+            </div>
+          </div>
+          <div class="sl-pe">
+            <span class="lk lk--hz lk--mono-navy" style="font-size:calc(72*var(--px))">
+              <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+              <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <figcaption class="lam-cap"><b>Esta lâmina é papel, e a razão é de contraste.</b> A chamada usa cobalto, que é a cor de ação do sistema — e cobalto sobre navy reprova em legibilidade (2,79:1). Zero contador, zero selo de desconto, zero seta desenhada. O endereço acima é exemplo de formato, e o domínio real entra na validação.</figcaption>
+    </figure>
+
+  </div>
+ </div>
+</section>
+
+<!-- ============ 05 · DURABILIDADE ============ -->
+<section class="sec" id="durar">
+  <div class="sec-h">
+    <div class="sec-n">§ 05</div>
+    <div>
+      <span class="junta"></span>
+      <h2>O que aguenta 43 encontros</h2>
+      <p class="lede">Um sistema de slides morre de dois jeitos: por repetição, quando o mesmo elemento aparece 900 vezes e vira ruído, ou por erosão, quando cada aula abre uma pequena exceção até que o conjunto perca a forma. <b>As regras deste capítulo existem contra os dois</b> — e a última delas foi escrita pensando nas dez da noite da véspera.</p>
+    </div>
+  </div>
+
+  <h3 class="sub"><span class="n">5.1</span>Onde a marca aparece, e onde ela some</h3>
+  <div class="tab-rolo">
+    <table class="tab">
+      <thead><tr><th style="min-width:180px">Lâmina</th><th>Versão da marca</th><th style="min-width:190px">Por quê</th></tr></thead>
+      <tbody>
+        <tr><td><b>Capa de encontro (M01)</b></td><td class="num">horizontal, negativo, símbolo 48 px</td><td>Abre o documento. Uma vez por encontro basta</td></tr>
+        <tr><td><b>Divisória de etapa (M02)</b></td><td class="num">só o símbolo, sangrando o fundo</td><td>Marca de água estrutural, três vezes na formação</td></tr>
+        <tr><td><b>Encerramento (M13)</b></td><td class="num">horizontal, monocromático papel</td><td>Fecha o documento e é a lâmina que a turma fotografa</td></tr>
+        <tr><td><b>Conteúdo, tópico, tabela, caso</b></td><td class="num">nenhuma</td><td>Quem assina é a gramática de folha, e não o logo repetido</td></tr>
+        <tr><td><b>Capa de palestra (M14)</b></td><td class="num">principal, grande</td><td>Plateia que não conhece a marca precisa da versão que diz o nome</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="porque"><b>Por que o logo some no miolo:</b> 43 encontros com uma média de 18 lâminas dão cerca de 780 lâminas em dez meses. Um logo em cada uma delas seria visto 780 vezes pela mesma pessoa e deixaria de ser visto. O que carrega a marca no miolo é o cabeçalho em Space Mono, a faixa e o folio tabular.</p>
+
+  <h3 class="sub"><span class="n">5.2</span>Numeração, progresso e o comportamento do fluor</h3>
+  <div class="grade-3">
+    <div class="painel painel--claro">
+      <h4 class="mini">Número de folha</h4>
+      <p style="font-size:var(--t-corpo-s);color:var(--tinta-70)">Formato <b>09 &middot; 15</b>, em Space Mono tabular, no canto inferior direito, a 56 px. Corrente e total do encontro, sempre com zero à esquerda. A numeração reinicia a cada encontro: o aluno conta lâminas de aula, e nunca de formação.</p>
+    </div>
+    <div class="painel painel--claro">
+      <h4 class="mini">Progresso na etapa</h4>
+      <p style="font-size:var(--t-corpo-s);color:var(--tinta-70)">A faixa mostra a <b>etapa</b>, e não a aula: 15 traços na Etapa 1, 20 na Etapa 2, 8 na Etapa 3. Traço cheio para o que passou, fluor para o de hoje, traço fraco para o que vem. Ela é montada uma vez por etapa e só o traço em fluor anda de encontro em encontro.</p>
+    </div>
+    <div class="painel painel--claro">
+      <h4 class="mini">O fluor é sinal</h4>
+      <p style="font-size:var(--t-corpo-s);color:var(--tinta-70)">Uma mancha por lâmina, em um dos <b>cinco lugares autorizados</b>: o traço de hoje na faixa, o número do dado-herói, a mira sobre a imagem clínica, o filete do bloco de exercício e o segundo traço da junta na divisória. Fora dessa lista, o fluor não entra.</p>
+    </div>
+  </div>
+  <div class="alerta">
+    <div class="k">O que o fluor nunca faz numa lâmina</div>
+    <p>Fundo de lâmina inteira &middot; fundo de caixa de texto &middot; texto sobre papel (1,15:1 de contraste, ilegível no projetor) &middot; cor de título &middot; preenchimento de barra de gráfico &middot; marca-texto atrás de palavra &middot; borda de imagem clínica. <b>Projetor de sala esmaece o fluor mais que a tela do computador</b> — o que já é fraco no monitor desaparece na parede.</p>
+  </div>
+
+  <h3 class="sub"><span class="n">5.3</span>As dez da noite da véspera</h3>
+  <p style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-5)">Toda regra de design é testada no pior momento possível: a aula é amanhã, o conteúdo é denso e o caminho curto é sempre encolher a fonte. Esta tabela existe para esse momento. À esquerda, o atalho que estraga o sistema; à direita, o movimento que custa o mesmo tempo e o preserva.</p>
+  <div class="tab-rolo">
+    <table class="tab">
+      <thead><tr><th style="min-width:220px">O atalho da pressa</th><th>O que fazer no lugar</th></tr></thead>
+      <tbody>
+        <tr><td><b>Reduzir a fonte para caber</b></td><td>Cortar metade do texto. O piso de 28 pt existe justamente para que essa decisão seja tomada no conteúdo, e não na tipografia</td></tr>
+        <tr><td><b>Colar a tabela inteira do documento</b></td><td>Levar cinco linhas para a lâmina e o resto para o material de apoio. Tabela de 12 linhas projetada não é lida por ninguém</td></tr>
+        <tr><td><b>Empilhar sete tópicos numa lâmina</b></td><td>Duplicar o M04 três vezes. Três lâminas de três itens sustentam mais atenção que uma de sete</td></tr>
+        <tr><td><b>Capturar tela de artigo com fundo branco</b></td><td>Recortar só o trecho e recompor no M11 de citação, com a referência no pé. Branco puro no meio da apresentação escura queima a vista da sala</td></tr>
+        <tr><td><b>Duas imagens clínicas na mesma lâmina</b></td><td>Uma por lâmina, no M05. Comparação de exames pede o M08, com uma imagem de cada lado e um achado por vez</td></tr>
+        <tr><td><b>Marcar a palavra importante em fluor</b></td><td>Trocar o peso da fonte ou a cor para tinta cheia. O fluor da lâmina já está gasto na faixa de etapa</td></tr>
+        <tr><td><b>Encurtar a frase dentro das aspas</b></td><td>Usar a íntegra no M11, que aceita 24 palavras a 36 pt. Aspas com o nome dele embaixo são literais, e cortar a enumeração muda o argumento e vira atribuição falsa</td></tr>
+        <tr><td><b>Abrir uma exceção "só nesta aula"</b></td><td>Usar o master mais próximo mesmo imperfeito. A exceção de hoje vira o padrão do mês que vem</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub"><span class="n">5.4</span>Três lâminas que reprovam</h3>
+  <div class="grade-3">
+    <div class="proib">
+      <div class="sl" style="border-radius:0">
+        <span class="proib-x">reprova</span>
+        <div class="sl-quadro"><div class="sl-corpo">
+          <div style="font-family:var(--display);font-weight:700;font-size:calc(52*var(--px));margin-bottom:calc(20*var(--px))">Diagnóstico diferencial em DTM</div>
+          <div class="parede">
+            <span>&bull; Anamnese estruturada e ficha pré-consulta aplicada antes</span>
+            <span>&bull; Palpação muscular e articular com registro em ficha</span>
+            <span>&bull; Sons articulares, estalido e crepitação, com correlação</span>
+            <span>&bull; Medidas de abertura, lateralidade e protrusão</span>
+            <span>&bull; Leitura de imagem quando houver indicação clínica</span>
+            <span>&bull; Diferenciação entre os três grupos do guarda-chuva</span>
+            <span>&bull; Fechamento do diagnóstico específico e justificativa</span>
+          </div>
+        </div></div>
+      </div>
+      <div class="proib-t"><h4>A parede de tópicos</h4><p>Sete itens a 26 pt. A turma lê e para de ouvir, e a última fileira não lê nem isso. São três lâminas de M04.</p></div>
+    </div>
+    <div class="proib">
+      <div class="sl" style="border-radius:0;background:var(--fluor)">
+        <span class="proib-x">reprova</span>
+        <div class="sl-quadro"><div class="sl-corpo">
+          <div class="t88" style="color:var(--navy);max-width:14ch">Fluor como fundo de lâmina</div>
+          <p class="p60" style="margin-top:calc(24*var(--px));color:rgba(11,15,26,.70)">Vibra no projetor e cansa a vista em minutos.</p>
+        </div></div>
+      </div>
+      <div class="proib-t"><h4>Fluor em área grande</h4><p>Regra dura do contrato: o fluor é marcação de exame, e marcação não cobre a folha inteira. Fundo é papel, navy ou tinta.</p></div>
+    </div>
+    <div class="proib">
+      <div class="sl sl--navy" style="border-radius:0">
+        <span class="proib-x">reprova</span>
+        <div class="sl-quadro"><div class="sl-corpo" style="align-items:center;text-align:center">
+          <span class="lk lk--hz lk--neg" style="font-size:calc(70*var(--px))">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+            <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+          </span>
+          <div class="t64" style="margin-top:calc(40*var(--px));max-width:20ch">Logo em toda lâmina do encontro</div>
+        </div></div>
+      </div>
+      <div class="proib-t"><h4>A marca repetida 780 vezes</h4><p>Logo em todas as lâminas some da percepção em duas semanas e rouba a coluna que o conteúdo precisa. Capa e encerramento resolvem.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · IMPLEMENTAÇÃO ============ -->
+<section class="sec sec--escuro" id="implementacao">
+ <div class="wrap">
+  <div class="sec-h">
+    <div class="sec-n">§ 06</div>
+    <div>
+      <span class="junta junta--claro"></span>
+      <h2>Do HTML para Canva e PowerPoint</h2>
+      <p class="lede">As lâminas acima estão desenhadas em 1920 &times; 1080, que é exatamente a mesma tela dos três programas. <b>A conversão inteira cabe numa divisão por dois:</b> todo valor em px vira pt pela metade. O que sobra é montar nove layouts mestres uma vez e nunca mais diagramar do zero.</p>
+    </div>
+  </div>
+
+  <h3 class="sub"><span class="n">6.1</span>Abrir o documento no tamanho certo</h3>
+  <div class="tab-rolo">
+    <table class="tab">
+      <thead><tr><th style="min-width:130px">Programa</th><th style="min-width:200px">Onde configurar</th><th>Valor exato</th></tr></thead>
+      <tbody>
+        <tr><td><b>Canva</b></td><td>Criar design &rarr; Tamanho personalizado</td><td class="num">1920 &times; 1080 px</td></tr>
+        <tr><td><b>PowerPoint</b></td><td>Design &rarr; Tamanho do Slide &rarr; Personalizado</td><td class="num">33,87 &times; 19,05 cm &middot; widescreen 16:9</td></tr>
+        <tr><td><b>Keynote</b></td><td>Documento &rarr; Tamanho do slide &rarr; Personalizado</td><td class="num">1920 &times; 1080 px</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="porque" style="border-left-color:var(--fluor)"><b>A conta que resolve tudo:</b> o slide do PowerPoint em widescreen tem 960 &times; 540 pt, e a lâmina desenhada aqui tem 1920 &times; 1080 px. Um ponto vale dois pixels. Título de 88 px vira 44 pt, texto de 60 px vira 30 pt, margem de 96 px vira 1,69 cm, e o piso de 56 px é o velho piso de 28 pt.</p>
+
+  <h3 class="sub"><span class="n">6.2</span>As três fontes</h3>
+  <div class="grade-3">
+    <div class="painel" style="background:rgba(244,243,236,.06);border-color:var(--linha-clara)">
+      <h4 class="mini" style="color:var(--papel)">Archivo</h4>
+      <p style="font-size:var(--t-corpo-s);color:var(--papel-72)">Display. Pesos <b style="color:var(--papel)">800</b> em título e capa, <b style="color:var(--papel)">500</b> em subtítulo. Tracking de -0,038em em título e -0,042em em capa. Jamais em texto corrido.</p>
+    </div>
+    <div class="painel" style="background:rgba(244,243,236,.06);border-color:var(--linha-clara)">
+      <h4 class="mini" style="color:var(--papel)">Hanken Grotesk</h4>
+      <p style="font-size:var(--t-corpo-s);color:var(--papel-72)">Texto. Peso <b style="color:var(--papel)">400</b>, entrelinha 1,42, tracking zero. Peso 600 só para destacar palavra dentro de frase. Jamais em título.</p>
+    </div>
+    <div class="painel" style="background:rgba(244,243,236,.06);border-color:var(--linha-clara)">
+      <h4 class="mini" style="color:var(--papel)">Space Mono</h4>
+      <p style="font-size:var(--t-corpo-s);color:var(--papel-72)">Rótulo, folio, legenda e número. Peso <b style="color:var(--papel)">700</b>, caixa alta, tracking +0,14em. Nunca passa de uma linha.</p>
+    </div>
+  </div>
+  <p class="nota-pe">As três são gratuitas no Google Fonts e liberadas para uso em computador. No Canva elas costumam aparecer na busca da biblioteca de fontes; quando alguma não aparecer, subir o arquivo .ttf em Marca &rarr; Fontes, o que exige conta Pro. No PowerPoint e no Keynote, instalar no sistema antes de abrir o arquivo e marcar <b>Incorporar fontes no arquivo</b> ao salvar, porque o arquivo vai rodar no notebook da sala de aula em Brasília e não no computador de casa.</p>
+
+  <h3 class="sub"><span class="n">6.3</span>As cores nos espaços do tema</h3>
+  <div class="tab-rolo">
+    <table class="tab">
+      <thead><tr><th style="min-width:150px">Espaço do tema</th><th>Cor</th><th>HEX</th><th style="min-width:170px">Uso na lâmina</th></tr></thead>
+      <tbody>
+        <tr><td>Texto/Plano de Fundo &mdash; Escuro 1</td><td>Tinta</td><td class="num">#0B0F1A</td><td>Texto sobre papel e fundo de citação e de imagem</td></tr>
+        <tr><td>Texto/Plano de Fundo &mdash; Claro 1</td><td>Papel</td><td class="num">#F4F3EC</td><td>Fundo padrão da lâmina de conteúdo</td></tr>
+        <tr><td>Texto/Plano de Fundo &mdash; Escuro 2</td><td>Navy</td><td class="num">#101C46</td><td>Fundo de capa, divisória, dado e tarja</td></tr>
+        <tr><td>Texto/Plano de Fundo &mdash; Claro 2</td><td>Papel 2</td><td class="num">#E7E5D8</td><td>Fundo de caso clínico e de bloco de exercício</td></tr>
+        <tr><td>Ênfase 1</td><td>Fluor</td><td class="num">#CDF23F</td><td>O marcador único. Cinco lugares autorizados</td></tr>
+        <tr><td>Ênfase 2</td><td>Cobalto</td><td class="num">#2C4BFF</td><td>Chamada comercial. Só sobre papel, nunca sobre navy</td></tr>
+        <tr><td>Ênfase 3</td><td>Menta</td><td class="num">#12D9A0</td><td>Estado concluído em barra de progresso, com texto escuro por cima</td></tr>
+        <tr><td>Ênfase 4</td><td>Navy alto</td><td class="num">#182559</td><td>Segundo tom do fundo da divisória e do símbolo que sangra</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub"><span class="n">6.4</span>O que vira layout mestre</h3>
+  <div class="tab-rolo">
+    <table class="tab">
+      <thead><tr><th style="min-width:190px">Master</th><th>Como entra no programa</th><th style="min-width:150px">Por quê</th></tr></thead>
+      <tbody>
+        <tr><td><b>M01 capa &middot; M02 divisória &middot; M03 conteúdo &middot; M04 tópicos &middot; M05 imagem cheia &middot; M06 imagem e texto &middot; M07 tabela &middot; M10 dado &middot; M13 encerramento</b></td><td class="num">layout mestre, com espaço reservado</td><td>São nove estruturas que só trocam de texto. Viram Slide Master no PowerPoint e Modelo de slide no Keynote</td></tr>
+        <tr><td><b>M08 comparação &middot; M09 caso &middot; M11 citação &middot; M12 exercício</b></td><td class="num">lâmina modelo, duplicada</td><td>A composição muda com o conteúdo, e espaço reservado atrapalha mais do que ajuda</td></tr>
+        <tr><td><b>M14 a M18 comerciais</b></td><td class="num">arquivo separado</td><td>Régua diferente. Misturar os dois num arquivo só é como a densidade de aula vaza para o palco</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="nota-pe">No Canva o equivalente é a pasta de Modelos da Marca: uma prancha por master, nomeada com o código (M03, M07) para que o Rodrigo escolha por código e não por miniatura. O cabeçalho de folha, a faixa de etapa e o folio entram no mestre travados como elementos fixos, e assim ninguém precisa lembrar de posicioná-los.</p>
+
+  <h3 class="sub"><span class="n">6.5</span>Movimento, grão e entrega</h3>
+  <div class="grade-3">
+    <div class="painel" style="background:rgba(244,243,236,.06);border-color:var(--linha-clara)">
+      <h4 class="mini" style="color:var(--papel)">Transição</h4>
+      <p style="font-size:var(--t-corpo-s);color:var(--papel-72)">Nenhuma entre lâminas de conteúdo. <b style="color:var(--papel)">Empurrar para a esquerda, 0,4 s</b>, apenas ao entrar numa divisória de etapa. Zero cubo, zero dissolver, zero folha virando.</p>
+    </div>
+    <div class="painel" style="background:rgba(244,243,236,.06);border-color:var(--linha-clara)">
+      <h4 class="mini" style="color:var(--papel)">Animação</h4>
+      <p style="font-size:var(--t-corpo-s);color:var(--papel-72)">Só <b style="color:var(--papel)">Aparecer, 0,2 s</b>, e só nos três itens do M04. Logo, símbolo e número de dado clínico jamais animam, por regra do contrato.</p>
+    </div>
+    <div class="painel" style="background:rgba(244,243,236,.06);border-color:var(--linha-clara)">
+      <h4 class="mini" style="color:var(--papel)">Grão</h4>
+      <p style="font-size:var(--t-corpo-s);color:var(--papel-72)">Fica de fora do slide. <b style="color:var(--papel)">Grão é da tela, e não da projeção</b> — em lâmpada de projetor ele vira sujeira. A matéria da lâmina vem do papel-2, do filete e do folio.</p>
+    </div>
+  </div>
+  <p class="nota-pe">Entrega ao aluno: PDF exportado em 16:9, com fontes incorporadas, uma lâmina por página e nome no formato <b>viver-de-dtm_e-09_leitura-de-imagem.pdf</b>. O PDF vai para a área de membros depois do encontro, e nunca antes — a lâmina é apoio da aula ao vivo, e chegando adiantada ela vira resumo e esvazia a presença.</p>
+ </div>
+</section>
+
+<!-- ============ 07 · PROCEDÊNCIA ============ -->
+<section class="sec" id="procedencia">
+  <div class="sec-h">
+    <div class="sec-n">§ 07</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Procedência, derivações e pendências</h2>
+      <p class="lede">Regra bloqueante do projeto: <b>nada que este módulo criou pode circular como fala, número ou decisão do Rodrigo sem que ele valide antes.</b> Abaixo está a separação linha a linha entre o que veio do material dele, o que veio do contrato de marca e o que foi construído aqui.</p>
+    </div>
+  </div>
+
+  <div class="grade-3" style="align-items:start">
+    <div class="painel painel--claro">
+      <h4 class="mini">Do material do cliente</h4>
+      <ul class="lista" style="margin-top:var(--e-4);max-width:none">
+        <li>Estrutura de <b>43 encontros, 3 etapas e 3 imersões</b> em Brasília, com os intervalos E-01 a E-15, E-16 a E-35 e E-36 a E-43.</li>
+        <li>Vocabulário técnico usado nos exemplos: guarda-chuva e seus três grupos, Dois Tripés, escadas de tratamento, output verificável, passagem de faixa.</li>
+        <li>O dado de <b>1.649 especialistas e 0,38% dos dentistas</b>, e a frase de posicionamento do Encontro 1 — ambos registrados no plano de ensino.</li>
+      </ul>
+    </div>
+    <div class="painel painel--claro">
+      <h4 class="mini">Herdado do contrato de marca</h4>
+      <ul class="lista" style="margin-top:var(--e-4);max-width:none">
+        <li>Paleta, proporção de cor, tipografia, lockups, símbolo, os dois gestos e as regras duras. Copiados sem alteração.</li>
+        <li>A tese do caderno de atas com uma fita fluorescente, que aqui virou a faixa de etapa e a mira sobre a imagem.</li>
+        <li>Cabeçalho e rodapé da página, tokens e base de estilo.</li>
+      </ul>
+    </div>
+    <div class="painel painel--claro">
+      <h4 class="mini">Derivado &middot; autoria Inception</h4>
+      <ul class="lista" style="margin-top:var(--e-4);max-width:none">
+        <li>Toda a régua da lâmina: margem de 96, pé de folha de 128, grade de 12 colunas, escala tipográfica e os pisos de 32 e 28 pt.</li>
+        <li>Os 18 masters, a gramática de folha, a regra do marcador único e o esqueleto fixo do encontro.</li>
+        <li>O fluxo de consentimento e anonimização do §3.3, os prazos e as quantidades citadas nos exemplos.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="alerta" style="border-color:rgba(16,28,70,.25);background:rgba(16,28,70,.04)">
+    <div class="k" style="color:var(--navy)">O que precisa de decisão antes de virar rotina</div>
+    <div class="tab-rolo">
+      <table class="tab" style="margin-top:var(--e-3)">
+        <thead><tr><th class="num" style="width:56px">#</th><th style="min-width:210px">Pendência</th><th>De quem é a decisão</th></tr></thead>
+        <tbody>
+          <tr><td class="num">01</td><td><b>Fluxo de consentimento de imagem clínica</b> (§3.3) — os seis passos são proposta nossa, sem espelho num processo existente</td><td><b>Rodrigo</b>, com apoio jurídico no texto do termo</td></tr>
+          <tr><td class="num">02</td><td><b>Números financeiros na lâmina de oferta</b> (M15) — a pilha está montada, os valores individuais e o total continuam bloqueados</td><td><b>Rodrigo</b>, após a conferência com a clínica</td></tr>
+          <tr><td class="num">03</td><td><b>Datas exatas das três imersões</b> e o endereço final do site que aparece no M18</td><td><b>Rodrigo</b>, no fechamento do calendário da Turma 1</td></tr>
+          <tr><td class="num">04</td><td><b>Lockup Viver de DTM na capa de encontro</b> — a fonte dele não é Archivo e a pendência 01 do contrato segue aberta</td><td><b>Rodrigo</b>. Até lá, a capa usa o lockup da Academia e o nome da formação em texto</td></tr>
+          <tr><td class="num">05</td><td><b>Depoimento de aluno em lâmina comercial</b> — os nove existentes foram gravados no contexto do Instituto Ária e estão sem autorização de uso</td><td><b>Bloqueado.</b> Nenhum entra em apresentação até haver material novo com autorização</td></tr>
+          <tr><td class="num">06</td><td><b>Arquivo mestre montado</b> nos três programas, a partir deste documento</td><td><b>Inception</b>, depois da aprovação deste módulo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="painel" style="margin-top:var(--e-6)">
+    <div class="cap" style="margin-top:0">As três decisões que destravam a produção das apresentações</div>
+    <ul class="lista" style="margin-top:var(--e-4);max-width:none">
+      <li><b>1. A régua da lâmina está aceita?</b> O piso de 28 pt é a regra que mais muda o dia a dia: ele obriga a cortar conteúdo em vez de encolher fonte. §&nbsp;00.</li>
+      <li><b>2. O fluxo de consentimento de imagem fecha assim?</b> Sem ele, nenhuma imagem de paciente pode entrar em lâmina de aula. §&nbsp;03.</li>
+      <li><b>3. Montamos o arquivo mestre em qual programa primeiro?</b> Canva favorece montar rápido de qualquer lugar; PowerPoint favorece rodar sem internet na sala em Brasília. §&nbsp;06.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-in">
+      <div>
+        <span class="lk lk--hz lk--neg" style="font-size:30px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+          <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+        </span>
+        <ul class="rodape-nav" style="margin-top:var(--e-5)">
+          <li><a href="index.html">Brandbook</a></li>
+          <li><a href="ds-paginas.html">Páginas</a></li>
+          <li><a href="ds-conteudos-criativos.html">Conteúdos &amp; Criativos</a></li>
+          <li><a href="ds-apresentacoes.html">Apresentações</a></li>
+        </ul>
+      </div>
+      <div class="rodape-assin">
+        <b>Academia DTM</b> &middot; Dr. Rodrigo Wendel<br>
+        Brandbook &amp; Design System &middot; v1 &middot; 20/08/2026<br>
+        Módulo 4 de 4 &middot; Apresentações &middot; direção de arte <b>Inception</b>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

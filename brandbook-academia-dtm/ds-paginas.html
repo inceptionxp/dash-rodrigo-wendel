@@ -1,0 +1,1610 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Academia DTM · Sistema de Páginas · Inception</title>
+<meta name="description" content="Módulo 2 do Design System da Academia DTM: grid, biblioteca de blocos de página, estados de interface, templates e regras de conversão da marca.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='6' fill='%23101C46'/%3E%3Cg stroke='%23CDF23F' stroke-width='18' stroke-linecap='round' transform='translate(100 100) scale(.75) translate(-100 -100)'%3E%3Cline x1='59.74' y1='28.53' x2='116.58' y2='28.53'/%3E%3Cline x1='122.07' y1='21' x2='162.26' y2='61.19'/%3E%3Cline x1='171.47' y1='59.74' x2='171.47' y2='116.58'/%3E%3Cline x1='179' y1='122.07' x2='138.81' y2='162.26'/%3E%3Cline x1='140.26' y1='171.47' x2='83.42' y2='171.47'/%3E%3Cline x1='77.93' y1='179' x2='37.74' y2='138.81'/%3E%3Cline x1='28.53' y1='140.26' x2='28.53' y2='83.42'/%3E%3Cline x1='21' y1='77.93' x2='61.19' y2='37.74'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&family=Hanken+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ACADEMIA DTM — MÓDULO 2 · SISTEMA DE PÁGINAS
+   Tokens canônicos v1 · fonte única: _contrato.md · copiados verbatim.
+   Nenhum token novo, nenhum renomeado. A única adição está marcada
+   como DERIVADO logo abaixo do bloco canônico.
+
+   MANIFESTO (Ato 1 · fable-web-craft)
+   TESE ......... o caderno de atas da sociedade científica virou manual de
+                  construção: cada bloco de página é um artigo numerado, com
+                  o espécime renderizado em tamanho real ao lado da regra.
+   SENSAÇÃO ..... «isso já está decidido, eu só preciso montar» — a calma de
+                  quem recebe planta baixa, não moodboard.
+   GESTO ........ a PRANCHA: moldura de papel com etiqueta em mono no topo,
+                  o bloco vivo dentro, e embaixo a dupla usa/não usa.
+   ANTI-REF ..... documentação de framework (cinza monoespaçado, componente
+                  flutuando em card) · landing de venda disfarçada de sistema ·
+                  catálogo de UI kit do Figma Community.
+   APOSTA ....... o bloco de depoimento e o de preço entram na página
+                  DELIBERADAMENTE tarjados. O sistema publica o que ainda não
+                  pode publicar, em vez de encher com nome e número inventados.
+   ============================================================ */
+:root{
+  /* cor · base */
+  --navy:#101C46;
+  --navy-alto:#182559;
+  --tinta:#0B0F1A;
+  --papel:#F4F3EC;
+  --papel-2:#E7E5D8;
+  /* cor · sinal */
+  --fluor:#CDF23F;
+  --cobalto:#2C4BFF;
+  --menta:#12D9A0;
+  /* cor · revisão · NÃO é cor da marca. Só marca o proibido dentro destes
+     documentos; nunca em peça que a Academia publica. Ver contrato §9.1. */
+  --erro:#B3261E;
+  /* cor · derivadas */
+  --papel-72:rgba(244,243,236,.72);
+  --papel-45:rgba(244,243,236,.45);
+  --tinta-70:rgba(11,15,26,.70);
+  --tinta-45:rgba(11,15,26,.45);
+  --linha-clara:rgba(244,243,236,.14);
+  --linha-escura:rgba(11,15,26,.13);
+  /* tipo */
+  --display:"Archivo",system-ui,sans-serif;
+  --corpo:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:"Space Mono",ui-monospace,SFMono-Regular,monospace;
+  /* escala tipográfica */
+  --t-hero:clamp(44px,7.4vw,88px);
+  --t-h1:clamp(32px,4.8vw,58px);
+  --t-h2:clamp(24px,3.2vw,38px);
+  --t-h3:21px;
+  --t-corpo:17px;
+  --t-corpo-s:15px;
+  --t-legenda:13px;
+  --t-rotulo:11px;
+  /* espaço · base 4 */
+  --e-1:4px; --e-2:8px; --e-3:12px; --e-4:16px; --e-5:24px;
+  --e-6:32px; --e-7:48px; --e-8:64px; --e-9:96px; --e-10:128px;
+  /* raio */
+  --r-0:0; --r-1:3px; --r-2:6px; --r-3:12px; --r-pill:999px;
+  /* sombra · sempre navy, nunca preto */
+  --sombra-1:0 1px 2px rgba(16,28,70,.07);
+  --sombra-2:0 14px 36px -14px rgba(16,28,70,.24);
+  /* movimento */
+  --d-micro:180ms; --d-base:240ms; --d-reveal:520ms;
+  --ease:cubic-bezier(.22,1,.36,1);
+  /* medida */
+  --largura:1180px;
+  --largura-texto:68ch;
+
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;overflow-x:clip}
+body{
+  background:var(--papel);color:var(--tinta);
+  font-family:var(--corpo);font-size:var(--t-corpo);line-height:1.62;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:clip;
+}
+/* grão · a matéria do sistema */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.042;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--fluor);color:var(--tinta)}
+:focus-visible{outline:2px solid var(--cobalto);outline-offset:3px}
+.sobre-navy :focus-visible{outline-color:var(--fluor)}
+
+.wrap{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6)}
+@media(max-width:640px){.wrap{padding:0 20px}}
+
+/* ---------- cabeçalho compartilhado (4 páginas) ---------- */
+.nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--linha-clara)}
+.nav-in{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--e-5);min-height:64px;flex-wrap:wrap}
+.nav-links{display:flex;gap:var(--e-5);list-style:none;flex-wrap:wrap}
+.nav-links a{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--papel-45);text-decoration:none;padding:20px 0;display:block;
+  border-bottom:2px solid transparent;transition:color var(--d-base) var(--ease),border-color var(--d-base) var(--ease)}
+.nav-links a:hover{color:var(--papel)}
+.nav-links a[aria-current="page"]{color:var(--fluor);border-bottom-color:var(--fluor)}
+@media(max-width:640px){.nav-in{padding:12px 20px 4px;min-height:0}
+  .nav-links{gap:16px}.nav-links a{padding:10px 0}}
+
+/* ---------- lockups ---------- */
+.lk{display:inline-flex;align-items:center;color:var(--navy)}
+.lk .sym{width:1em;height:1em;flex:none}
+.lk .rule{width:.028em;min-width:1px;background:currentColor;opacity:.32;flex:none}
+.lk .col{display:flex;flex-direction:column;font-family:var(--display);
+  text-transform:uppercase;line-height:1;white-space:nowrap}
+.lk .ac{font-weight:400;font-size:.225em;letter-spacing:.22em}
+.lk .dtm{font-weight:800;font-size:.6875em;letter-spacing:-.04em}
+.lk--principal .rule{height:.90em;margin:0 .325em}
+.lk--hz{align-items:center}
+.lk--hz .rule{height:.62em;margin-left:.30em;margin-right:.26em}
+.lk--hz .row{display:flex;align-items:baseline;font-family:var(--display);
+  text-transform:uppercase;white-space:nowrap;line-height:1}
+.lk--hz .ac-h{font-weight:500;font-size:.44em;letter-spacing:.18em}
+.lk--hz .dtm-h{font-weight:800;font-size:.44em;letter-spacing:-.035em;margin-left:.26em}
+.lk--neg{color:var(--papel)}
+.lk--neg .sym{color:var(--fluor)}
+.lk--mono-papel{color:var(--papel)}
+.lk--mono-papel .sym{color:var(--papel)}
+.lk--mono-navy{color:var(--navy)}
+.lk--mono-navy .sym{color:var(--navy)}
+.selo{display:grid;place-items:center;background:var(--navy);border-radius:var(--r-pill)}
+.selo svg{color:var(--fluor);width:62%;height:62%}
+.selo--papel{background:var(--papel-2)}
+.selo--papel svg{color:var(--navy)}
+
+/* ---------- gesto 01 · A JUNTA ---------- */
+.junta{display:block;width:104px;height:2px;position:relative;background:var(--navy);margin-bottom:var(--e-4)}
+.junta::after{content:"";position:absolute;left:52px;top:5px;width:104px;height:2px;background:var(--fluor)}
+.junta--claro{background:var(--papel-45)}
+.junta--claro::after{background:var(--fluor)}
+/* ---------- gesto 02 · O OCTÓGONO-JANELA ---------- */
+.octo-janela{clip-path:polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%)}
+
+/* ---------- capa ---------- */
+.capa{background:var(--navy);color:var(--papel);padding:var(--e-9) 0 var(--e-8);position:relative;overflow:hidden}
+.capa::before{content:"";position:absolute;right:-13%;top:-24%;width:min(60vw,760px);aspect-ratio:1;
+  background:radial-gradient(circle at 50% 50%,rgba(24,37,89,1) 0%,rgba(16,28,70,0) 68%);pointer-events:none}
+.capa-sym{position:absolute;right:-9%;top:-10%;width:min(52vw,620px);color:var(--navy-alto);opacity:.9;pointer-events:none}
+.capa .wrap{position:relative;z-index:2}
+.capa h1{font-family:var(--display);font-weight:800;font-size:var(--t-hero);line-height:1.0;text-wrap:balance;
+  letter-spacing:-.042em;margin:var(--e-6) 0 0;max-width:15ch}
+.capa h1 em{font-style:normal;color:var(--fluor)}
+.capa .tese{margin-top:var(--e-6);max-width:62ch;font-size:19px;color:var(--papel-72);text-wrap:pretty}
+.capa .tese b{color:var(--papel);font-weight:600}
+.capa-meta{margin-top:var(--e-8);padding-top:var(--e-5);border-top:1px solid var(--linha-clara);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--e-5)}
+.capa-meta .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--fluor);margin-bottom:var(--e-2)}
+.capa-meta p{font-size:var(--t-corpo-s);color:var(--papel-72);line-height:1.5}
+.capa-lk{margin-top:var(--e-7)}
+
+/* ---------- rótulos e seções ---------- */
+.rotulo{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--fluor);display:flex;align-items:center;gap:var(--e-3);flex-wrap:wrap}
+.rotulo i{display:block;width:34px;height:2px;background:var(--fluor);font-style:normal;flex:none}
+.rotulo--escuro{color:var(--navy)}
+.rotulo--escuro i{background:var(--navy)}
+.sec{padding:var(--e-9) 0;border-top:1px solid var(--linha-escura)}
+.sec:first-of-type{border-top:0}
+.sec-h{display:grid;grid-template-columns:88px 1fr;gap:var(--e-6);align-items:start;margin-bottom:var(--e-7)}
+.sec-n{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.1em;
+  color:var(--tinta-45);padding-top:10px}
+.sec-h h2{font-family:var(--display);font-weight:800;font-size:var(--t-h2);letter-spacing:-.035em;
+  line-height:1.02;max-width:22ch;text-wrap:balance}
+.sec-h .lede{margin-top:var(--e-4);max-width:var(--largura-texto);color:var(--tinta-70);font-size:var(--t-corpo);text-wrap:pretty}
+.sec-h .lede b{color:var(--tinta);font-weight:600}
+@media(max-width:720px){.sec-h{grid-template-columns:1fr;gap:var(--e-3)}.sec-n{padding-top:0}
+  .sec{padding:var(--e-8) 0}}
+@media(max-width:480px){.sec{padding:var(--e-7) 0}}
+.sec--escuro{background:var(--navy);color:var(--papel);border-top:0;
+  margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw;padding:var(--e-9) 0}
+.sec--escuro .sec-n{color:var(--papel-45)}
+.sec--escuro .sec-h .lede{color:var(--papel-72)}
+.sec--escuro .sec-h .lede b{color:var(--papel)}
+
+h3.tit{font-family:var(--display);font-weight:800;font-size:var(--t-h3);letter-spacing:-.02em;
+  margin-top:var(--e-8);margin-bottom:var(--e-3);scroll-margin-top:88px}
+h3.tit .n{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--tinta-45);margin-right:10px}
+.sec--escuro h3.tit .n{color:var(--papel-45)}
+p.dizer{max-width:var(--largura-texto);color:var(--tinta-70);text-wrap:pretty}
+p.dizer b{color:var(--tinta);font-weight:600}
+.sec--escuro p.dizer{color:var(--papel-72)}
+.sec--escuro p.dizer b{color:var(--papel)}
+.cap{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-45);margin-top:var(--e-3)}
+.sec--escuro .cap{color:var(--papel-45)}
+.porque{margin-top:var(--e-3);font-size:var(--t-corpo-s);color:var(--tinta-70);border-left:2px solid var(--fluor);
+  padding-left:var(--e-3);max-width:var(--largura-texto)}
+.porque b{color:var(--tinta);font-weight:600}
+.sec--escuro .porque{color:var(--papel-72)}
+.sec--escuro .porque b{color:var(--papel)}
+.painel{background:var(--papel-2);border:1px solid var(--linha-escura);border-radius:var(--r-1);padding:var(--e-6)}
+.painel--claro{background:#FBFAF4}
+.grade-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-5)}
+.grade-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e-5)}
+@media(max-width:900px){.grade-3{grid-template-columns:1fr}}
+@media(max-width:600px){.grade-2{grid-template-columns:1fr}}
+/* item de grid nunca é mais largo que a coluna: sem isso, tabela e bloco rolável esticam o grid */
+.grade-2>*,.grade-3>*,.dor>*,.prof>*,.preco>*,.plantas>*,.vitrine>*,.mec>*,.prova>*,.rod-cols>*{min-width:0}
+.tab-rolo,.rolo,.rolo-in{min-width:0;max-width:100%}
+ul.lista{list-style:none;display:grid;gap:var(--e-3);max-width:var(--largura-texto)}
+ul.lista li{position:relative;padding-left:22px;font-size:var(--t-corpo-s);color:var(--tinta-70);line-height:1.55}
+ul.lista li::before{content:"";position:absolute;left:0;top:10px;width:10px;height:2px;background:var(--fluor)}
+ul.lista li b{color:var(--tinta);font-weight:600}
+.sec--escuro ul.lista li{color:var(--papel-72)}
+.sec--escuro ul.lista li b{color:var(--papel)}
+.pv--navy ul.lista li,.pv--tinta ul.lista li{color:var(--papel-72)}
+.pv--navy ul.lista li b,.pv--tinta ul.lista li b{color:var(--papel)}
+.nota-pe{font-size:var(--t-legenda);color:var(--tinta-45);margin-top:var(--e-5);max-width:var(--largura-texto);line-height:1.55}
+.sec--escuro .nota-pe{color:var(--papel-45)}
+
+/* tabela do sistema */
+.tab{width:100%;border-collapse:collapse;font-size:var(--t-corpo-s);margin-top:var(--e-2)}
+.tab th,.tab td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--linha-escura);vertical-align:top}
+.tab th{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-45);border-bottom-width:2px;border-bottom-color:var(--navy)}
+.tab td b{font-weight:600}
+.tab .num{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tab-rolo{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sec--escuro .tab th{color:var(--papel-45);border-bottom-color:var(--fluor)}
+.sec--escuro .tab th,.sec--escuro .tab td{border-bottom-color:var(--linha-clara)}
+.sec--escuro .tab td b{color:var(--papel)}
+.sec--escuro .tab{color:var(--papel-72)}
+
+/* alerta */
+.alerta{border:1px solid rgba(44,75,255,.35);background:rgba(44,75,255,.05);border-radius:var(--r-1);
+  padding:var(--e-5);margin-top:var(--e-5)}
+.alerta .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cobalto);margin-bottom:var(--e-3)}
+.alerta p{font-size:var(--t-corpo-s);color:var(--tinta-70);max-width:var(--largura-texto)}
+.alerta p + p{margin-top:10px}
+.alerta b{color:var(--tinta);font-weight:600}
+
+/* rodapé compartilhado */
+.rodape{background:var(--tinta);color:var(--papel-45);padding:var(--e-8) 0 var(--e-7);margin-top:var(--e-9)}
+.rodape-in{display:flex;justify-content:space-between;gap:var(--e-6);flex-wrap:wrap;align-items:flex-end}
+.rodape-nav{display:flex;gap:var(--e-5);flex-wrap:wrap;list-style:none}
+.rodape a{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--papel-45);text-decoration:none;transition:color var(--d-base) var(--ease)}
+.rodape a:hover{color:var(--fluor)}
+.rodape-assin{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  line-height:1.9}
+.rodape-assin b{color:var(--papel-72);font-weight:700}
+
+/* ============================================================
+   MÓDULO 2 · CSS PRÓPRIO
+   Tudo abaixo é composto só com os tokens do contrato.
+   ============================================================ */
+
+/* ---------- A PRANCHA · a moldura de espécime ---------- */
+.esp{border:1px solid var(--linha-escura);border-radius:var(--r-1);background:#FBFAF4;
+  overflow:hidden;margin-top:var(--e-5);box-shadow:var(--sombra-1)}
+.esp-top{display:flex;align-items:baseline;justify-content:space-between;gap:var(--e-4);flex-wrap:wrap;
+  padding:11px var(--e-4);background:var(--papel-2);border-bottom:1px solid var(--linha-escura);
+  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--tinta-45)}
+.esp-top b{color:var(--navy);font-weight:700}
+.esp-uso{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--linha-escura)}
+.esp-uso > div{padding:var(--e-4)}
+.esp-uso > div + div{border-left:1px solid var(--linha-escura)}
+.esp-uso .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  margin-bottom:var(--e-2);display:flex;align-items:center;gap:var(--e-2)}
+.esp-uso .k i{width:16px;height:2px;display:block;font-style:normal;flex:none}
+.esp-uso .usa .k{color:var(--navy)}
+.esp-uso .usa .k i{background:var(--fluor)}
+.esp-uso .nusa .k{color:var(--tinta-45)}
+.esp-uso .nusa .k i{background:var(--tinta-45)}
+.esp-uso p{font-size:var(--t-corpo-s);color:var(--tinta-70);line-height:1.5}
+@media(max-width:640px){.esp-uso{grid-template-columns:1fr}
+  .esp-uso > div + div{border-left:0;border-top:1px solid var(--linha-escura)}}
+
+/* ---------- a página dentro da prancha ---------- */
+.pv{background:var(--papel);color:var(--tinta);font-size:16px;line-height:1.58;position:relative}
+.pv-in{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6)}
+@media(max-width:640px){.pv-in{padding:0 20px}}
+.pv--navy{background:var(--navy);color:var(--papel)}
+.pv--tinta{background:var(--tinta);color:var(--papel)}
+.pv--papel2{background:var(--papel-2)}
+.pv h2.hl{font-family:var(--display);font-weight:800;letter-spacing:-.04em;line-height:1.03;
+  font-size:clamp(30px,4.3vw,50px);text-wrap:balance;max-width:17ch}
+.pv h3.hl{font-family:var(--display);font-weight:800;letter-spacing:-.032em;line-height:1.06;
+  font-size:clamp(24px,3vw,34px);text-wrap:balance;max-width:20ch}
+.pv h4.hl{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.15;font-size:19px}
+.pv .sub{font-size:17px;max-width:56ch;text-wrap:pretty;color:var(--tinta-70)}
+.pv--navy .sub,.pv--tinta .sub{color:var(--papel-72)}
+.pv .dado{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:700}
+
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;
+  font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:16px 28px;border-radius:var(--r-1);
+  border:1px solid transparent;background:var(--cobalto);color:var(--papel);text-decoration:none;cursor:pointer;
+  transition:transform var(--d-micro) var(--ease),box-shadow var(--d-micro) var(--ease),
+    background-color var(--d-base) var(--ease),border-color var(--d-base) var(--ease),color var(--d-base) var(--ease)}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--sombra-2)}
+.btn:active{transform:translateY(1px);box-shadow:none;background:#2340E0}
+.btn--fantasma{background:transparent;color:var(--navy);border-color:rgba(16,28,70,.30)}
+.btn--fantasma:hover{background:rgba(16,28,70,.05);border-color:var(--navy);box-shadow:none;transform:none}
+.btn--fantasma:active{background:rgba(16,28,70,.09)}
+.btn--papel{background:var(--papel);color:var(--navy)}
+.btn--papel:active{background:var(--papel-2)}
+.btn--linha-clara{background:transparent;color:var(--papel);border-color:var(--linha-clara)}
+.btn--linha-clara:hover{background:rgba(244,243,236,.08);border-color:var(--papel-45);box-shadow:none;transform:none}
+.btn--bloco{width:100%}
+.btn[aria-disabled="true"]{background:var(--papel-2);color:var(--tinta-45);cursor:not-allowed;
+  border-color:var(--linha-escura);pointer-events:none}
+
+/* link em texto corrido */
+.pv a.txt,a.txt{color:var(--cobalto);text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:3px;text-decoration-color:rgba(44,75,255,.42);
+  transition:text-decoration-color var(--d-base) var(--ease),text-decoration-thickness var(--d-base) var(--ease)}
+a.txt:hover{text-decoration-thickness:2px;text-decoration-color:var(--cobalto)}
+.pv--navy a.txt,.pv--tinta a.txt{color:var(--fluor);text-decoration-color:rgba(205,242,63,.5)}
+.pv--navy a.txt:hover,.pv--tinta a.txt:hover{text-decoration-color:var(--fluor)}
+
+/* ---------- campos ---------- */
+.campo{display:block}
+.campo > span.rot{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--tinta-45);display:block;margin-bottom:7px}
+.campo input,.campo select{width:100%;font-family:var(--corpo);font-size:16px;color:var(--tinta);background:#FBFAF4;
+  border:1px solid rgba(11,15,26,.22);border-radius:var(--r-1);padding:14px;line-height:1.3;
+  transition:border-color var(--d-base) var(--ease),box-shadow var(--d-base) var(--ease)}
+.campo input::placeholder{color:var(--tinta-45)}
+.campo input:hover{border-color:rgba(11,15,26,.42)}
+.campo input:focus{outline:none;border-color:var(--cobalto);box-shadow:0 0 0 3px rgba(44,75,255,.16)}
+.campo .aviso{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  margin-top:7px;display:flex;align-items:center;gap:var(--e-2)}
+.campo .aviso i{width:14px;height:14px;flex:none;border-radius:var(--r-pill);display:grid;place-items:center;
+  font-style:normal;font-size:9px;line-height:1;color:var(--papel)}
+.campo--erro input{border-color:rgba(11,15,26,.85);box-shadow:inset 3px 0 0 var(--navy)}
+.campo--erro input:focus{border-color:var(--cobalto);box-shadow:inset 3px 0 0 var(--navy),0 0 0 3px rgba(44,75,255,.16)}
+.campo--erro .rot{color:var(--tinta)}
+.campo--erro .aviso{color:var(--tinta)}
+.campo--erro .aviso i{background:var(--navy)}
+.campo--ok input{border-color:rgba(18,217,160,.75)}
+.campo--ok .aviso{color:#0A7A5B}
+.campo--ok .aviso i{background:var(--menta);color:var(--tinta)}
+.recado{border-radius:var(--r-1);padding:var(--e-4);display:flex;gap:var(--e-3);align-items:flex-start;
+  font-size:var(--t-corpo-s);line-height:1.5}
+.recado .marca{width:4px;align-self:stretch;flex:none;border-radius:2px}
+.recado--ok{background:rgba(18,217,160,.10);color:var(--tinta)}
+.recado--ok .marca{background:var(--menta)}
+.recado--erro{background:var(--papel-2);color:var(--tinta)}
+.recado--erro .marca{background:var(--navy)}
+.recado b{font-weight:600}
+
+/* ---------- a chapa · superfície de foto e a tarja ---------- */
+.chapa{position:relative;overflow:hidden;border-radius:var(--r-2);background:
+  radial-gradient(120% 90% at 22% 12%,rgba(24,37,89,.95) 0%,rgba(16,28,70,0) 60%),
+  radial-gradient(90% 70% at 84% 78%,rgba(11,15,26,.9) 0%,rgba(16,28,70,0) 62%),
+  linear-gradient(158deg,#1B2A5E 0%,#101C46 46%,#0B0F1A 100%)}
+.chapa::before{content:"";position:absolute;inset:0;opacity:.5;
+  background:repeating-linear-gradient(112deg,rgba(244,243,236,.05) 0 1px,rgba(244,243,236,0) 1px 9px)}
+.chapa-cap{position:absolute;left:12px;top:11px;font-family:var(--mono);font-size:9px;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--papel-45);z-index:3}
+.chapa .tarja{position:absolute;inset:auto 0 0 0;padding:var(--e-5) var(--e-5) var(--e-4);z-index:2;
+  background:linear-gradient(to top,rgba(11,15,26,.94) 0%,rgba(11,15,26,.88) 42%,rgba(11,15,26,0) 100%)}
+.chapa .tarja p{color:var(--papel);font-size:var(--t-corpo-s);max-width:44ch;text-wrap:pretty}
+.chapa--quadro{aspect-ratio:4/5}
+.chapa--faixa{aspect-ratio:16/7}
+@media(max-width:640px){.chapa--faixa{aspect-ratio:4/3}}
+
+/* ---------- tarja de bloqueio · conteúdo pendente de liberação ---------- */
+.bloqueio{position:relative;border:1px dashed rgba(44,75,255,.45);background:rgba(44,75,255,.045);
+  border-radius:var(--r-1);padding:var(--e-5)}
+.bloqueio .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cobalto);margin-bottom:var(--e-3);display:flex;align-items:center;gap:var(--e-2);flex-wrap:wrap}
+.bloqueio .k i{width:18px;height:2px;background:var(--cobalto);display:block;font-style:normal;flex:none}
+.bloqueio p{font-size:var(--t-corpo-s);color:var(--tinta-70);max-width:56ch;line-height:1.5;text-wrap:pretty}
+.bloqueio p + p{margin-top:var(--e-2)}
+.bloqueio b{color:var(--tinta);font-weight:600}
+.pv--navy .bloqueio,.pv--tinta .bloqueio{border-color:rgba(205,242,63,.5);background:rgba(205,242,63,.06)}
+.pv--navy .bloqueio .k,.pv--tinta .bloqueio .k{color:var(--fluor)}
+.pv--navy .bloqueio .k i,.pv--tinta .bloqueio .k i{background:var(--fluor)}
+.pv--navy .bloqueio p,.pv--tinta .bloqueio p{color:var(--papel-72)}
+.pv--navy .bloqueio b,.pv--tinta .bloqueio b{color:var(--papel)}
+
+/* ---------- régua de grid ---------- */
+.regua{border:1px solid var(--linha-escura);border-radius:var(--r-1);overflow:hidden;background:#FBFAF4}
+.regua-col{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--e-5);padding:var(--e-6);
+  background:var(--papel-2);border-bottom:1px solid var(--linha-escura)}
+.regua-col span{height:104px;background:rgba(44,75,255,.13);border-top:2px solid var(--cobalto);
+  display:block;position:relative}
+.regua-col span::after{content:attr(data-n);position:absolute;left:0;top:8px;width:100%;text-align:center;
+  font-family:var(--mono);font-size:9px;font-weight:700;color:var(--cobalto)}
+.regua-med{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0}
+.regua-med div{padding:var(--e-4) var(--e-5);border-right:1px solid var(--linha-escura)}
+.regua-med div:last-child{border-right:0}
+.regua-med .k{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--tinta-45);margin-bottom:5px}
+.regua-med .v{font-family:var(--mono);font-size:15px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--navy)}
+@media(max-width:720px){.regua-col{grid-template-columns:repeat(4,1fr);gap:var(--e-4);padding:20px}
+  .regua-col span:nth-child(n+5){display:none}}
+
+/* ritmo vertical */
+.ritmo{display:grid;gap:var(--e-2);margin-top:var(--e-5)}
+.ritmo div{display:flex;align-items:center;gap:var(--e-4);font-family:var(--mono);font-size:11px;
+  font-weight:700;letter-spacing:.06em;color:var(--tinta-45)}
+.ritmo div b{color:var(--navy);min-width:74px;font-variant-numeric:tabular-nums}
+.ritmo div i{display:block;background:var(--navy);height:9px;font-style:normal;flex:none;border-radius:1px}
+@media(max-width:560px){.ritmo div{flex-wrap:wrap;gap:var(--e-3);padding-bottom:var(--e-3);border-bottom:1px solid var(--linha-escura)}
+  .ritmo div span{flex-basis:100%;line-height:1.5}}
+
+/* ---------- plantas de template ---------- */
+.plantas{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e-5);align-items:start}
+@media(max-width:900px){.plantas{grid-template-columns:1fr}}
+.planta{border:1px solid var(--linha-clara);border-radius:var(--r-1);background:rgba(244,243,236,.035);overflow:hidden}
+.planta-top{padding:var(--e-4) var(--e-5);border-bottom:1px solid var(--linha-clara);background:rgba(244,243,236,.05)}
+.planta-top .k{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fluor);margin-bottom:6px}
+.planta-top h4{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:-.025em;line-height:1.1;color:var(--papel)}
+.planta-top p{font-size:var(--t-legenda);color:var(--papel-45);margin-top:6px;line-height:1.45}
+.planta ol{list-style:none;counter-reset:pb;padding:var(--e-4) var(--e-5) var(--e-6)}
+.planta li{counter-increment:pb;position:relative;padding:11px 0 11px 34px;border-bottom:1px solid var(--linha-clara);
+  font-size:var(--t-corpo-s);color:var(--papel-72);line-height:1.4}
+.planta li:last-child{border-bottom:0}
+.planta li::before{content:counter(pb,decimal-leading-zero);position:absolute;left:0;top:13px;
+  font-family:var(--mono);font-size:10px;font-weight:700;color:var(--papel-45);font-variant-numeric:tabular-nums}
+.planta li b{color:var(--papel);font-weight:600}
+.planta li em{font-style:normal;display:block;font-size:var(--t-legenda);color:var(--papel-45);margin-top:2px}
+.planta li.marco{background:rgba(205,242,63,.07)}
+.planta li.marco::before{color:var(--fluor)}
+.planta li.corte{padding-left:0;border-bottom:0;padding-top:var(--e-5)}
+.planta li.corte::before{content:""}
+.planta li.corte span{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fluor);display:flex;align-items:center;gap:var(--e-2)}
+.planta li.corte span i{height:2px;background:var(--fluor);flex:1;display:block;font-style:normal}
+.planta li.excl::before{content:"";width:10px;height:2px;background:var(--papel-45);top:20px}
+
+/* ---------- FAQ · acordeão nativo ---------- */
+.faq{border-top:1px solid var(--linha-escura)}
+.faq details{border-bottom:1px solid var(--linha-escura)}
+.faq summary{list-style:none;cursor:pointer;display:flex;gap:var(--e-4);align-items:center;padding:20px 0;
+  font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.018em;line-height:1.2;color:var(--navy);
+  transition:color var(--d-base) var(--ease)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--cobalto)}
+.faq summary:focus-visible{outline-offset:-2px}
+.faq .sinal{margin-left:auto;flex:none;position:relative;width:14px;height:14px}
+.faq .sinal::before,.faq .sinal::after{content:"";position:absolute;background:currentColor;
+  transition:transform var(--d-base) var(--ease),opacity var(--d-base) var(--ease)}
+.faq .sinal::before{left:0;top:6px;width:14px;height:2px}
+.faq .sinal::after{left:6px;top:0;width:2px;height:14px}
+.faq details[open] .sinal::after{transform:scaleY(0);opacity:0}
+.faq .resp{padding:0 46px var(--e-5) 0;max-width:64ch;color:var(--tinta-70);font-size:var(--t-corpo-s);
+  animation:abre var(--d-reveal) var(--ease) both}
+@keyframes abre{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+/* ---------- tabela responsiva de página ---------- */
+.rolo{position:relative}
+.rolo-in{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.rolo::after{content:"";position:absolute;top:0;right:0;bottom:0;width:36px;pointer-events:none;
+  background:linear-gradient(to right,rgba(244,243,236,0),rgba(244,243,236,.96))}
+@media(min-width:721px){.rolo::after{display:none}}
+.rolo-dica{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--tinta-45);margin-top:var(--e-3)}
+@media(min-width:721px){.rolo-dica{display:none}}
+
+/* ---------- utilidades de página ---------- */
+.fio{height:1px;background:var(--linha-escura);border:0}
+.pv--navy .fio,.pv--tinta .fio{background:var(--linha-clara)}
+.linha-cta{display:flex;gap:var(--e-4);flex-wrap:wrap;align-items:center}
+.selo-num{width:52px;height:52px;flex:none;display:grid;place-items:center;background:var(--navy);color:var(--fluor);
+  font-family:var(--mono);font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.pv--navy .selo-num{background:var(--fluor);color:var(--navy)}
+.mono-k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- blocos de página ---------- */
+.pv-nav{display:flex;gap:var(--e-5);list-style:none;flex-wrap:wrap;margin:0}
+.pv-nav a{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--papel-45);text-decoration:none;transition:color var(--d-base) var(--ease)}
+.pv-nav a:hover{color:var(--papel)}
+.pv-nav a[aria-current="page"]{color:var(--fluor)}
+
+.slot{border:1px dashed rgba(205,242,63,.55);padding:9px 15px;display:inline-flex;flex-direction:column;gap:3px}
+.slot .wm{font-family:var(--display);font-weight:800;font-size:clamp(26px,3.4vw,36px);letter-spacing:-.038em;
+  line-height:1;color:var(--papel);text-transform:uppercase}
+.slot .aviso{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--fluor)}
+.endosso{display:flex;align-items:flex-end;gap:var(--e-5);flex-wrap:wrap}
+.endosso .par{display:flex;flex-direction:column;gap:7px}
+.endosso .de{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--papel-45)}
+
+.prova{display:grid;grid-template-columns:repeat(4,1fr)}
+.prova > div{padding:var(--e-6) var(--e-5) var(--e-6) 0;border-right:1px solid var(--linha-escura)}
+.prova > div:last-child{border-right:0}
+.prova > div + div{padding-left:var(--e-5)}
+.prova .k{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--tinta-45);margin-bottom:var(--e-2)}
+.prova .v{font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.022em;line-height:1.15;color:var(--navy)}
+.prova .d{font-size:var(--t-legenda);color:var(--tinta-70);margin-top:5px;line-height:1.4}
+@media(max-width:720px){.prova{grid-template-columns:1fr 1fr}
+  .prova > div{padding:var(--e-5) var(--e-4) var(--e-5) 0}
+  .prova > div:nth-child(2n){border-right:0;padding-left:var(--e-4)}
+  .prova > div:nth-child(-n+2){border-bottom:1px solid var(--linha-escura)}}
+
+.dor{display:grid;grid-template-columns:8fr 4fr;gap:var(--e-8)}
+@media(max-width:820px){.dor{grid-template-columns:1fr;gap:var(--e-6)}}
+.dor-item{display:flex;gap:var(--e-4);align-items:flex-start;padding:var(--e-4) 0;border-top:1px solid var(--linha-escura)}
+.dor-item:last-child{border-bottom:1px solid var(--linha-escura)}
+.dor-item p{font-size:var(--t-corpo-s);color:var(--tinta-70);line-height:1.45}
+
+.mec{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--e-5)}
+@media(max-width:820px){.mec{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.mec{grid-template-columns:1fr}}
+.mec-cel .jan{aspect-ratio:1;display:grid;place-items:center;background:var(--navy-alto);color:var(--fluor);
+  font-family:var(--mono);font-size:17px;font-weight:700;font-variant-numeric:tabular-nums;max-width:104px}
+.mec-cel h5{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.018em;margin-top:var(--e-4);color:var(--papel)}
+.mec-cel p{font-size:var(--t-legenda);color:var(--papel-45);margin-top:6px;line-height:1.45}
+
+.curso{border-top:1px solid var(--linha-escura)}
+.curso-l{display:grid;grid-template-columns:64px 1fr 5fr;gap:var(--e-5);align-items:baseline;
+  padding:var(--e-5) 0;border-bottom:1px solid var(--linha-escura)}
+.curso-l .n{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--tinta-45);
+  font-variant-numeric:tabular-nums}
+.curso-l h5{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.022em;line-height:1.2;
+  color:var(--navy);min-width:12ch}
+.curso-l p{font-size:var(--t-corpo-s);color:var(--tinta-70);line-height:1.45;max-width:56ch}
+@media(max-width:820px){.curso-l{grid-template-columns:48px 1fr;gap:var(--e-3)}
+  .curso-l p{grid-column:2}}
+
+.prof{display:grid;grid-template-columns:5fr 7fr;gap:var(--e-7);align-items:start}
+@media(max-width:820px){.prof{grid-template-columns:1fr;gap:var(--e-5)}}
+
+.dep{display:grid;grid-template-columns:96px 1fr;gap:var(--e-5);align-items:start}
+@media(max-width:560px){.dep{grid-template-columns:1fr}}
+.dep-avatar{aspect-ratio:1;background:var(--papel-2);display:grid;place-items:center;
+  font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.12em;color:var(--tinta-45);text-align:center;padding:8px}
+.dep-linhas{display:grid;gap:var(--e-3);max-width:52ch}
+.dep-linhas i{display:block;height:11px;background:var(--papel-2);border-radius:1px}
+.dep-assin{margin-top:var(--e-5);display:flex;align-items:center;gap:var(--e-3)}
+.dep-assin i{display:block;width:34px;height:2px;background:var(--fluor);flex:none}
+.dep-assin span{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tinta-45)}
+
+.preco{display:grid;grid-template-columns:7fr 5fr;gap:var(--e-8);align-items:center}
+@media(max-width:900px){.preco{grid-template-columns:1fr;gap:var(--e-6)}}
+.preco-card{background:var(--navy-alto);border:1px solid var(--linha-clara);border-radius:var(--r-1);padding:var(--e-6)}
+.preco-card .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--fluor);margin-bottom:var(--e-4)}
+.preco-cond{list-style:none;display:grid;gap:var(--e-3);margin:var(--e-5) 0}
+.preco-cond li{font-size:var(--t-corpo-s);color:var(--papel-72);display:flex;gap:var(--e-3);align-items:baseline}
+.preco-cond li i{width:8px;height:2px;background:var(--fluor);flex:none;display:block;position:relative;top:-4px}
+
+.form-card{background:#FBFAF4;border:1px solid var(--linha-escura);border-radius:var(--r-1);padding:var(--e-6)}
+.form-grade{display:grid;gap:var(--e-4)}
+.form-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-4)}
+@media(max-width:560px){.form-2{grid-template-columns:1fr}}
+.form-nota{font-size:var(--t-legenda);color:var(--tinta-45);margin-top:var(--e-4);line-height:1.45}
+
+.cta-faixa{display:grid;grid-template-columns:7fr 5fr;gap:var(--e-7);align-items:center}
+@media(max-width:820px){.cta-faixa{grid-template-columns:1fr;gap:var(--e-5)}}
+
+.rod-cols{display:grid;grid-template-columns:4fr 2fr 2fr 4fr;gap:var(--e-6)}
+@media(max-width:820px){.rod-cols{grid-template-columns:1fr 1fr;gap:var(--e-5)}}
+@media(max-width:480px){.rod-cols{grid-template-columns:1fr}}
+.rod-cols .k{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--papel-45);margin-bottom:var(--e-3)}
+.rod-cols ul{list-style:none;display:grid;gap:var(--e-2)}
+.rod-cols ul a{font-size:var(--t-corpo-s);color:var(--papel-72);text-decoration:none;
+  transition:color var(--d-base) var(--ease)}
+.rod-cols ul a:hover{color:var(--fluor)}
+.rod-legal{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--papel-45);line-height:1.9;margin-top:var(--e-6);padding-top:var(--e-5);border-top:1px solid var(--linha-clara)}
+
+/* barra fixa de celular */
+.barra-fixa{display:flex;align-items:center;justify-content:space-between;gap:var(--e-4);
+  background:var(--navy);border-top:2px solid var(--fluor);padding:var(--e-3) var(--e-4)}
+.barra-fixa .t{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--papel-45)}
+.barra-fixa .t b{display:block;color:var(--papel);font-size:11px;margin-top:3px}
+
+/* estados · vitrine */
+.vitrine{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e-5)}
+@media(max-width:900px){.vitrine{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.vitrine{grid-template-columns:1fr}}
+.vit{background:#FBFAF4;border:1px solid var(--linha-escura);border-radius:var(--r-1);padding:var(--e-5);
+  display:flex;flex-direction:column;gap:var(--e-4)}
+.vit .k{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-45)}
+.vit .palcoz{display:grid;place-items:center;min-height:96px;background:var(--papel-2);border-radius:var(--r-1);padding:var(--e-5)}
+.vit p{font-size:var(--t-legenda);color:var(--tinta-70);line-height:1.45;margin-top:auto}
+.vit code{font-family:var(--mono);font-size:11px;color:var(--navy);background:rgba(16,28,70,.07);
+  padding:2px 5px;border-radius:2px;word-break:break-word}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="trama" viewBox="0 0 200 200" fill="none">
+    <line x1="59.74" y1="28.53" x2="116.58" y2="28.53" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="122.07" y1="21.00" x2="162.26" y2="61.19" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="171.47" y1="59.74" x2="171.47" y2="116.58" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="179.00" y1="122.07" x2="138.81" y2="162.26" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="140.26" y1="171.47" x2="83.42" y2="171.47" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="77.93" y1="179.00" x2="37.74" y2="138.81" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="28.53" y1="140.26" x2="28.53" y2="83.42" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="21.00" y1="77.93" x2="61.19" y2="37.74" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" style="text-decoration:none">
+      <span class="lk lk--hz lk--neg" style="font-size:26px">
+        <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <span class="rule"></span>
+        <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Brandbook</a></li>
+      <li><a href="ds-paginas.html" aria-current="page">Páginas</a></li>
+      <li><a href="ds-conteudos-criativos.html">Conteúdos &amp; Criativos</a></li>
+      <li><a href="ds-apresentacoes.html">Apresentações</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="capa sobre-navy">
+  <svg class="capa-sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+  <div class="wrap">
+    <div class="rotulo"><i></i>Módulo 2 de 4 &middot; Páginas &middot; v1 &middot; 20 de agosto de 2026</div>
+    <h1>Toda página já<br>chega <em>decidida</em></h1>
+    <p class="tese">Este módulo existe para uma coisa: quem for montar uma página da Academia DTM abre este arquivo, copia o bloco, troca o texto e publica — <b>sem abrir uma pergunta de design pelo caminho</b>. Grid com número, biblioteca de blocos renderizada em tamanho real, estados de interface, três plantas de página e as regras de conversão que valem nesta marca e em nenhuma outra.</p>
+    <div class="capa-lk">
+      <span class="lk lk--principal lk--neg" style="font-size:clamp(60px,8.4vw,96px)">
+        <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <span class="rule"></span>
+        <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+      </span>
+    </div>
+    <div class="capa-meta">
+      <div><div class="k">O que tem aqui</div><p>Grid e respiro &middot; 13 blocos de página &middot; estados e acabamento &middot; 3 plantas de template &middot; regras de conversão da marca.</p></div>
+      <div><div class="k">Fonte única</div><p>Cor, tipografia, símbolo, logo, cabeçalho e rodapé vêm fechados do Brandbook. Nada foi redefinido aqui.</p></div>
+      <div><div class="k">Primeiro uso</div><p>Captação da Turma 1 da formação Viver de DTM, a partir de setembro de 2026. A turma abre em fevereiro de 2027.</p></div>
+      <div><div class="k">Como ler</div><p>Cada bloco aparece numa prancha: etiqueta no topo, o bloco vivo no meio, e embaixo onde ele entra e onde não entra.</p></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ 01 · ANATOMIA E GRID ============ -->
+<section class="sec" id="grid">
+  <div class="sec-h">
+    <div class="sec-n">§ 01</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Anatomia da página &mdash; o que já está resolvido antes de você começar</h2>
+      <p class="lede">Um órgão publica com margem constante. A largura, a coluna e o respiro entre dobras <b>não são decisão de quem monta a página</b> — são medida de casa, iguais em toda peça, do site institucional à página de captura mais simples.</p>
+    </div>
+  </div>
+
+  <div class="regua">
+    <div class="regua-col" aria-hidden="true">
+      <span data-n="01"></span><span data-n="02"></span><span data-n="03"></span><span data-n="04"></span>
+      <span data-n="05"></span><span data-n="06"></span><span data-n="07"></span><span data-n="08"></span>
+      <span data-n="09"></span><span data-n="10"></span><span data-n="11"></span><span data-n="12"></span>
+    </div>
+    <div class="regua-med">
+      <div><div class="k">Container</div><div class="v">1180 px</div></div>
+      <div><div class="k">Sangria interna</div><div class="v">32 px</div></div>
+      <div><div class="k">Área útil</div><div class="v">1116 px</div></div>
+      <div><div class="k">Coluna</div><div class="v">71 px</div></div>
+      <div><div class="k">Medianiz</div><div class="v">24 px</div></div>
+      <div><div class="k">Colunas</div><div class="v">12</div></div>
+    </div>
+  </div>
+  <p class="cap">Régua de 12 colunas na largura de trabalho. Em telas menores que 720 px o grid cai para 4 colunas de 75,5 px com 16 px de medianiz.</p>
+
+  <div class="grade-2" style="margin-top:var(--e-7);align-items:start">
+    <div>
+      <h3 class="tit" style="margin-top:0"><span class="n">1.1</span>Largura, margem e quebra</h3>
+      <div class="tab-rolo">
+        <table class="tab">
+          <thead><tr><th>Viewport</th><th>Container</th><th>Sangria</th><th>Grid</th></tr></thead>
+          <tbody>
+            <tr><td><b>1440 px</b> (referência desktop)</td><td class="num">1180 fixo &middot; 130 de margem viva de cada lado</td><td class="num">32</td><td class="num">12 col &middot; 71 / 24</td></tr>
+            <tr><td><b>1181 a 1439 px</b></td><td class="num">1180 fixo, a margem viva encolhe</td><td class="num">32</td><td class="num">12 col &middot; 71 / 24</td></tr>
+            <tr><td><b>721 a 1180 px</b></td><td class="num">100% da tela</td><td class="num">32</td><td class="num">12 col fluidas &middot; 24</td></tr>
+            <tr><td><b>481 a 720 px</b></td><td class="num">100% da tela</td><td class="num">20</td><td class="num">4 col fluidas &middot; 16</td></tr>
+            <tr><td><b>390 px</b> (referência celular)</td><td class="num">100% da tela</td><td class="num">20</td><td class="num">4 col &middot; 75,5 / 16</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="porque"><b>Por que 1180 e não a tela inteira:</b> texto que atravessa 1440 px vira boletim de mural. A margem viva de 130 px é o que faz a página ler como documento publicado, e é o mesmo gesto da margem de um anuário.</p>
+    </div>
+    <div>
+      <h3 class="tit" style="margin-top:0"><span class="n">1.2</span>Frações permitidas</h3>
+      <p class="dizer">A assimetria é o estado normal do sistema. Duas colunas iguais só quando os dois lados são a mesma natureza de coisa (dois espécimes em comparação).</p>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>12</b> &mdash; dobra de texto largo, tabela, faixa de prova.</li>
+        <li><b>8 / 4</b> &mdash; conteúdo com painel lateral de apoio. A fração de casa.</li>
+        <li><b>7 / 5</b> &mdash; texto com foto. O texto fica no lado maior.</li>
+        <li><b>4 / 4 / 4</b> &mdash; três cartões de mesmo peso.</li>
+        <li><b>3 / 3 / 3 / 3</b> &mdash; faixa de quatro dados curtos, nunca com parágrafo dentro.</li>
+        <li><b>6 / 6</b> &mdash; só em comparação lado a lado. Em qualquer outro caso, reprova.</li>
+      </ul>
+      <p class="porque"><b>Regra que fecha a seção:</b> a linha de texto nunca passa de 68 caracteres, mesmo quando a coluna permite. Coluna larga com texto curto é composição; coluna larga com texto até a borda é descuido.</p>
+    </div>
+  </div>
+
+  <h3 class="tit"><span class="n">1.3</span>Respiro vertical &middot; o ritmo entre dobras</h3>
+  <p class="dizer">A dobra respira sempre pelo mesmo conjunto de valores. Quem monta escolhe entre <b>quatro alturas</b> e nenhuma a mais &mdash; nada de 70, nada de 88, nada de 110.</p>
+  <div class="ritmo">
+    <div><b>128 px</b><i style="width:min(128px,32vw)"></i><span>dobra de clímax: preço, oferta, CTA final (o botão de ação). Uma por página</span></div>
+    <div><b>96 px</b><i style="width:min(96px,24vw)"></i><span>respiro padrão entre dobras no desktop</span></div>
+    <div><b>64 px</b><i style="width:min(64px,16vw)"></i><span>o mesmo respiro abaixo de 720 px, e entre sub-blocos irmãos</span></div>
+    <div><b>48 px</b><i style="width:min(48px,12vw)"></i><span>abaixo de 480 px, e entre o título da dobra e o conteúdo</span></div>
+    <div><b>32 px</b><i style="width:min(32px,8vw)"></i><span>entre cartões, entre campos de formulário, dentro de painel</span></div>
+  </div>
+  <p class="porque" style="margin-top:var(--e-5)"><b>Por que quatro alturas e não uma escala contínua:</b> respiro irregular é a primeira coisa que denuncia página montada às pressas. Quando o intervalo entre dobras é sempre o mesmo número, o olho para de medir e começa a ler.</p>
+
+  <div class="alerta">
+    <div class="k">O teste do quadrado de 390</div>
+    <p>Antes de publicar, abra a página em 390 px de largura e role até o fim uma vez. <b>Nenhum elemento pode encostar na borda</b>, nenhuma tabela pode empurrar a página para o lado, e nenhum título pode ficar com uma palavra sozinha na última linha. Se algo falhar, o erro está no bloco, não na tela.</p>
+  </div>
+</section>
+
+<!-- ============ 02 · BIBLIOTECA DE BLOCOS ============ -->
+<section class="sec" id="blocos">
+  <div class="sec-h">
+    <div class="sec-n">§ 02</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Os treze blocos &mdash; toda página da Academia sai daqui</h2>
+      <p class="lede">Cada bloco aparece vivo, na largura de trabalho, com o texto de exemplo que ele receberia numa página real da formação. <b>Copiar o bloco e trocar o texto é o fluxo esperado</b> — desenhar um bloco novo não é. Abaixo de cada prancha, uma linha diz onde ele entra e uma linha diz onde ele nunca entra.</p>
+    </div>
+  </div>
+
+  <div class="alerta" style="margin-top:0;margin-bottom:var(--e-7)">
+    <div class="k">Leia antes de copiar qualquer coisa</div>
+    <p>Todo texto dentro das pranchas é <b>exemplo de composição</b>, escrito pela Inception para dimensionar o bloco. Nada ali é copy aprovada, promessa de resultado, credencial, grade oficial ou dado de clínica. A copy final vem do copywriter e passa pelo Rodrigo. O que é regra de sistema está sempre fora da prancha, no texto ao redor.</p>
+  </div>
+
+  <!-- 01 CABEÇALHO -->
+  <h3 class="tit" id="b-cabecalho" style="margin-top:0"><span class="n">Bloco 01</span>Cabeçalho de navegação</h3>
+  <p class="dizer">Navy, colado no topo, altura de 68 px no desktop e 60 px no celular. O lockup horizontal à esquerda com símbolo de 26 px, os links em Space Mono e <b>um único botão de ação</b> à direita. O cabeçalho é a única faixa da página que nunca muda entre uma página e outra.</p>
+  <div class="esp">
+    <div class="esp-top"><b>01 &middot; Cabeçalho</b><span>navy &middot; 68 px &middot; colado no topo &middot; texto de exemplo</span></div>
+    <div class="pv pv--navy sobre-navy">
+      <div class="pv-in" style="display:flex;align-items:center;justify-content:space-between;gap:var(--e-5);min-height:68px;flex-wrap:wrap;padding-top:var(--e-3);padding-bottom:var(--e-3)">
+        <span class="lk lk--hz lk--neg" style="font-size:26px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span class="rule"></span>
+          <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+        </span>
+        <ul class="pv-nav">
+          <li><a href="#b-cabecalho" aria-current="page">A formação</a></li>
+          <li><a href="#b-grade">Grade</a></li>
+          <li><a href="#b-professor">Professor</a></li>
+          <li><a href="#b-faq">Perguntas</a></li>
+        </ul>
+        <a class="btn btn--papel" href="#b-formulario" style="padding:12px 22px">Lista da Turma 1</a>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Todas as páginas com mais de uma dobra: vendas, institucional, área de conteúdo, obrigado.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Página de captura e checkout, onde o cabeçalho perde os links e fica só com o lockup centralizado.</p></div>
+    </div>
+  </div>
+
+  <!-- 02 HERO -->
+  <h3 class="tit" id="b-hero"><span class="n">Bloco 02</span>Hero</h3>
+  <p class="dizer">A primeira dobra tem quatro camadas e nenhuma a mais: <b>rótulo em mono, assinatura de marca, título e uma linha de apoio</b>, com o par de botões fechando embaixo. O título ocupa entre 60% e 90% da largura útil e quebra em duas ou três linhas equilibradas. A dobra inteira cabe numa tela, no celular e no computador.</p>
+  <p class="dizer" style="margin-top:var(--e-3)">Em página de venda da formação, a arquitetura de marca manda: <b>Viver de DTM em destaque e a Academia como endosso</b>, com o lockup da mãe a no máximo 60% da altura do lockup da formação.</p>
+  <div class="esp">
+    <div class="esp-top"><b>02 &middot; Hero</b><span>navy &middot; uma dobra &middot; endosso de marca &middot; texto de exemplo</span></div>
+    <div class="pv pv--navy sobre-navy" style="padding:var(--e-9) 0 var(--e-8);position:relative;overflow:hidden">
+      <svg viewBox="0 0 200 200" aria-hidden="true" style="position:absolute;right:-7%;top:-16%;width:min(42vw,380px);color:var(--navy-alto);pointer-events:none"><use href="#trama"/></svg>
+      <div class="pv-in" style="position:relative;z-index:2">
+        <div class="rotulo"><i></i>Formação anual &middot; Turma 1 &middot; fevereiro de 2027</div>
+        <div class="endosso" style="margin-top:var(--e-6)">
+          <span class="slot"><span class="wm">Viver de DTM</span><span class="aviso">arte final em assets/marca-viver-de-dtm &middot; não redesenhar</span></span>
+          <span class="par">
+            <span class="de">uma formação da</span>
+            <span class="lk lk--hz lk--neg" style="font-size:22px">
+              <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+              <span class="rule"></span>
+              <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+            </span>
+          </span>
+        </div>
+        <h2 class="hl" style="margin-top:var(--e-6)">Dor orofacial não se resolve com placa e encaminhamento</h2>
+        <p class="sub" style="margin-top:var(--e-5)">Formação anual em DTM para o dentista que quer fechar diagnóstico, escolher a conduta com critério e sustentar a decisão diante do paciente e do colega que encaminhou.</p>
+        <div class="linha-cta" style="margin-top:var(--e-7)">
+          <a class="btn btn--papel" href="#b-formulario">Entrar na lista da Turma 1</a>
+          <a class="btn btn--linha-clara" href="#b-grade">Ver a grade</a>
+        </div>
+        <p class="mono-k" style="color:var(--papel-45);margin-top:var(--e-6)">Uma turma por ano &middot; inscrição por lista &middot; início em fevereiro de 2027</p>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Abertura de página de vendas, institucional e de captura, sempre como primeira dobra e uma vez só.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Meio de página como separador, e nunca com formulário longo dentro — formulário de mais de três campos vai para o bloco 11.</p></div>
+    </div>
+  </div>
+
+  <!-- 03 BARRA DE PROVA -->
+  <h3 class="tit" id="b-prova"><span class="n">Bloco 03</span>Barra de prova e autoridade</h3>
+  <p class="dizer">A faixa que vem logo abaixo da hero e sustenta o que ela prometeu. Quatro campos, divididos por filete vertical, cada um com rótulo em mono e uma linha curta em Archivo. <b>Número só entra aqui com a fonte escrita embaixo</b>, em mono, na mesma célula. Sem fonte, o campo carrega um fato de estrutura, não uma estatística.</p>
+  <div class="esp">
+    <div class="esp-top"><b>03 &middot; Barra de prova</b><span>papel 2 &middot; 4 campos &middot; filete divisor &middot; texto de exemplo</span></div>
+    <div class="pv pv--papel2">
+      <div class="pv-in">
+        <div class="prova">
+          <div><div class="k">O que é</div><div class="v">Escola de DTM e dor orofacial</div><div class="d">Formação para cirurgião-dentista, não para paciente.</div></div>
+          <div><div class="k">Direção clínica</div><div class="v">Dr. Rodrigo Wendel</div><div class="d">Responsável pela grade e pela conduta ensinada.</div></div>
+          <div><div class="k">Formato</div><div class="v">Anual, com turma única</div><div class="d">Uma entrada por ano, sem turma paralela.</div></div>
+          <div><div class="k">Turma 1</div><div class="v">Fevereiro de 2027</div><div class="d">Lista de espera aberta desde setembro de 2026.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Logo depois da hero, em página de vendas e institucional, para ancorar quem chegou por anúncio.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Como vitrine de números soltos. Quantidade de alunos, anos de clínica e faturamento não entram sem procedência.</p></div>
+    </div>
+  </div>
+
+  <!-- 04 DOR -->
+  <h3 class="tit" id="b-dor"><span class="n">Bloco 04</span>Cena clínica</h3>
+  <p class="dizer">O bloco de dor da Academia <b>descreve uma cena de consultório</b>, no tempo presente, e nunca acusa o leitor. A composição é 8/4: a cena ocupa a coluna larga em corpo maior, e as fricções entram como lista numerada na coluna estreita, com o número em selo navy.</p>
+  <div class="esp">
+    <div class="esp-top"><b>04 &middot; Cena clínica</b><span>papel &middot; 8/4 &middot; selo numerado &middot; texto de exemplo</span></div>
+    <div class="pv">
+      <div class="pv-in" style="padding-top:var(--e-9);padding-bottom:var(--e-9)">
+        <div class="dor">
+          <div>
+            <div class="rotulo rotulo--escuro"><i></i>O que acontece hoje</div>
+            <h3 class="hl" style="margin-top:var(--e-5);color:var(--navy)">A tomografia volta normal e a dor continua</h3>
+            <p style="margin-top:var(--e-5);font-size:18px;color:var(--tinta-70);max-width:52ch;text-wrap:pretty">A paciente abre a boca, estala, aponta a região do ouvido. A imagem não acusa nada. A placa foi entregue há dois meses e ela voltou a acordar com a mandíbula travada. Daí em diante o plano vira tentativa: ajusta, espera, remarca. E a consulta seguinte começa do mesmo lugar.</p>
+            <p style="margin-top:var(--e-5);max-width:52ch;color:var(--tinta-70)">O problema quase nunca é a placa. É o que veio antes dela: um diagnóstico que ficou aberto e uma conduta escolhida por eliminação. <a class="txt" href="#b-mecanismo">Veja como a formação fecha esse ponto</a>.</p>
+          </div>
+          <div>
+            <div class="dor-item"><span class="selo-num">01</span><p>Placa entregue com o diagnóstico ainda em aberto</p></div>
+            <div class="dor-item"><span class="selo-num">02</span><p>Encaminhamento que não volta com resposta nem com laudo</p></div>
+            <div class="dor-item"><span class="selo-num">03</span><p>Paciente que troca de dentista antes da reavaliação</p></div>
+            <div class="dor-item"><span class="selo-num">04</span><p>Agenda cheia de retorno que não resolve e não se cobra</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Página de vendas, entre a barra de prova e o mecanismo. Uma vez por página.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Página institucional e de obrigado. E nunca com culpa dirigida ao leitor no estilo «você está errando».</p></div>
+    </div>
+  </div>
+
+  <!-- 05 MECANISMO -->
+  <h3 class="tit" id="b-mecanismo"><span class="n">Bloco 05</span>Mecanismo</h3>
+  <p class="dizer">A dobra mais escura da página e a de menor densidade: <b>uma ideia só, em escala grande</b>. O fundo é tinta, o octógono-janela entra como máscara dos números das etapas, e a frase do Rodrigo sobre o símbolo abre o bloco. Nenhuma etapa recebe nome de método enquanto o nome não estiver decidido.</p>
+  <div class="esp">
+    <div class="esp-top"><b>05 &middot; Mecanismo</b><span>tinta &middot; densidade baixa &middot; octógono-janela &middot; texto de exemplo</span></div>
+    <div class="pv pv--tinta sobre-navy">
+      <div class="pv-in" style="padding-top:var(--e-9);padding-bottom:var(--e-9)">
+        <span class="junta junta--claro"></span>
+        <div class="rotulo" style="margin-top:var(--e-5)"><i></i>O mecanismo</div>
+        <h3 class="hl" style="margin-top:var(--e-5);color:var(--papel);max-width:15ch">Oito peças do mesmo tamanho</h3>
+        <blockquote style="margin-top:var(--e-6);max-width:54ch;font-size:19px;color:var(--papel-72);text-wrap:pretty">&ldquo;Não tem uma técnica principal. São oito peças do mesmo tamanho, e o anel só fecha quando todas estão no lugar.&rdquo;</blockquote>
+        <p class="mono-k" style="color:var(--fluor);margin-top:var(--e-4)">Dr. Rodrigo Wendel &middot; legenda oficial do símbolo</p>
+        <div class="mec" style="margin-top:var(--e-8)">
+          <div class="mec-cel"><div class="jan octo-janela">01</div><h5>Anamnese dirigida</h5><p>A queixa é traduzida em hipótese antes de qualquer exame.</p></div>
+          <div class="mec-cel"><div class="jan octo-janela">02</div><h5>Exame físico</h5><p>Palpação, amplitude e ruído articular com registro comparável.</p></div>
+          <div class="mec-cel"><div class="jan octo-janela">03</div><h5>Diagnóstico diferencial</h5><p>O que separa dor articular, muscular, dentária e neuropática.</p></div>
+          <div class="mec-cel"><div class="jan octo-janela">04</div><h5>Conduta e reavaliação</h5><p>A decisão de tratamento e o critério de voltar atrás.</p></div>
+        </div>
+        <div class="bloqueio" style="margin-top:var(--e-7)">
+          <div class="k"><i></i>Nomenclatura pendente</div>
+          <p>Os quatro nomes acima são <b>vocabulário clínico corrente</b>, escolhidos pela Inception só para dimensionar o bloco. A nomenclatura oficial das etapas e o nome do método vêm do Rodrigo — duas propostas de nome já foram recusadas por ele, e a marca que assina segue sendo Academia DTM.</p>
+        </div>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Página de vendas e institucional, como virada entre o problema e a oferta.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Com mais de oito células, com ícone desenhado dentro da janela, ou com etapa batizada por quem monta a página.</p></div>
+    </div>
+  </div>
+
+  <!-- 06 GRADE -->
+  <h3 class="tit" id="b-grade"><span class="n">Bloco 06</span>Grade curricular</h3>
+  <p class="dizer">Índice de estatuto, não card de curso: <b>número em mono, título em Archivo, uma linha de descrição</b>, separados por filete. Sem caixa, sem sombra, sem ícone. A grade rola na horizontal no celular só quando tiver coluna de carga horária.</p>
+  <div class="esp">
+    <div class="esp-top"><b>06 &middot; Grade curricular</b><span>papel &middot; linhas com filete &middot; estrutura de exemplo</span></div>
+    <div class="pv">
+      <div class="pv-in" style="padding-top:var(--e-9);padding-bottom:var(--e-9)">
+        <div class="rotulo rotulo--escuro"><i></i>A grade</div>
+        <h3 class="hl" style="margin-top:var(--e-5);color:var(--navy)">O que a turma percorre do primeiro ao último encontro</h3>
+        <div class="curso" style="margin-top:var(--e-7)">
+          <div class="curso-l"><div class="n">01</div><h5>Anatomia e biomecânica da ATM</h5><p>O que precisa estar claro antes de encostar em qualquer paciente com dor.</p></div>
+          <div class="curso-l"><div class="n">02</div><h5>Anamnese da dor orofacial</h5><p>A entrevista que separa queixa de sintoma e sintoma de diagnóstico.</p></div>
+          <div class="curso-l"><div class="n">03</div><h5>Exame físico e registro</h5><p>Palpação, amplitude, ruído e o registro que permite comparar duas consultas.</p></div>
+          <div class="curso-l"><div class="n">04</div><h5>Diagnóstico diferencial</h5><p>Cefaleias, neuropatias e dor dentária que chegam ao consultório como DTM.</p></div>
+          <div class="curso-l"><div class="n">05</div><h5>Placas oclusais</h5><p>Indicação, confecção, ajuste e o momento de suspender o uso.</p></div>
+          <div class="curso-l"><div class="n">06</div><h5>Caso clínico e conduta</h5><p>Casos discutidos do encaminhamento à alta, com a decisão exposta.</p></div>
+        </div>
+        <div class="bloqueio" style="margin-top:var(--e-6)">
+          <div class="k"><i></i>Grade de exemplo</div>
+          <p>Os seis títulos acima são <b>áreas correntes do campo</b>, usadas para dimensionar o bloco. A grade real, a ordem e a carga horária da Turma 1 saem do Rodrigo. Nada aqui pode ir para uma página pública sem essa validação.</p>
+        </div>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Página de vendas, depois do mecanismo, e na página institucional como resumo da formação.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Como cartões coloridos ou acordeão. A grade é para ser lida inteira de uma vez, sem clique.</p></div>
+    </div>
+  </div>
+
+  <!-- 07 PROFESSOR -->
+  <h3 class="tit" id="b-professor"><span class="n">Bloco 07</span>Professor</h3>
+  <p class="dizer">Retrato em 4:5 com <b>tarja navy de 88% na base</b> carregando nome e função, e a biografia na coluna larga ao lado. Esta é a aplicação canônica de texto sobre foto no sistema: o texto nunca encosta no rosto e nunca fica sem tarja.</p>
+  <div class="esp">
+    <div class="esp-top"><b>07 &middot; Professor</b><span>papel 2 &middot; 5/7 &middot; foto 4:5 com tarja &middot; biografia pendente</span></div>
+    <div class="pv pv--papel2">
+      <div class="pv-in" style="padding-top:var(--e-9);padding-bottom:var(--e-9)">
+        <div class="prof">
+          <div>
+            <div class="chapa chapa--quadro">
+              <span class="chapa-cap">Retrato 4:5 &middot; ponto focal no terço superior</span>
+              <div class="tarja">
+                <p style="font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:-.03em;line-height:1.1">Dr. Rodrigo Wendel</p>
+                <p class="mono-k" style="color:var(--fluor);margin-top:8px">Direção clínica da Academia DTM</p>
+              </div>
+            </div>
+            <p class="cap">A tarja cobre o terço inferior da imagem e nunca sobe até a linha dos olhos.</p>
+          </div>
+          <div>
+            <div class="rotulo rotulo--escuro"><i></i>Quem conduz</div>
+            <h3 class="hl" style="margin-top:var(--e-5);color:var(--navy)">Quem assina a conduta que a turma vai levar para o consultório</h3>
+            <div class="bloqueio" style="margin-top:var(--e-6)">
+              <div class="k"><i></i>Biografia oficial pendente</div>
+              <p>O texto de apresentação, a titulação e a trajetória clínica do Rodrigo <b>só entram aqui escritos por ele ou aprovados por ele</b>. A Inception não escreve credencial, não estima tempo de atuação e não cita número de conselho em material público.</p>
+              <p>Enquanto o texto não chega, o bloco fica com o retrato, o nome e a função — que já estão validados.</p>
+            </div>
+            <div class="cap" style="margin-top:var(--e-6)">Anatomia do bloco</div>
+            <ul class="lista" style="margin-top:var(--e-3)">
+              <li><b>Retrato 4:5</b> com o ponto focal no terço superior e a tarja ocupando o terço de baixo.</li>
+              <li><b>Nome em Archivo 800</b> sobre a tarja, e função em Space Mono fluor logo abaixo.</li>
+              <li><b>Biografia na coluna larga</b>, com medida de 68 caracteres e nenhum número sem fonte.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Página de vendas depois da grade, e na institucional como bloco de corpo docente.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Com foto recortada em círculo, com o texto sobre o rosto, ou com credencial escrita por quem monta a página.</p></div>
+    </div>
+  </div>
+
+  <!-- 08 DEPOIMENTO -->
+  <h3 class="tit" id="b-depoimento"><span class="n">Bloco 08</span>Depoimento</h3>
+  <p class="dizer">O bloco existe, a anatomia está definida, e <b>o conteúdo está bloqueado</b>. Os nove depoimentos gravados até aqui foram captados no contexto do Instituto Ária e não têm autorização de uso para a Academia DTM. A prancha abaixo mostra a estrutura vazia de propósito: enquanto a liberação não sair, nenhum nome, nenhuma cidade e nenhum resultado entram neste bloco.</p>
+  <div class="esp">
+    <div class="esp-top"><b>08 &middot; Depoimento</b><span>papel &middot; anatomia visível &middot; conteúdo bloqueado</span></div>
+    <div class="pv">
+      <div class="pv-in" style="padding-top:var(--e-8);padding-bottom:var(--e-8)">
+        <div class="rotulo rotulo--escuro"><i></i>Quem já passou por aqui</div>
+        <div class="dep" style="margin-top:var(--e-6)">
+          <div class="dep-avatar octo-janela">Retrato<br>1:1</div>
+          <div>
+            <div class="dep-linhas" aria-hidden="true">
+              <i style="width:100%"></i><i style="width:96%"></i><i style="width:99%"></i><i style="width:62%"></i>
+            </div>
+            <div class="dep-assin"><i></i><span>Nome &middot; especialidade &middot; cidade</span></div>
+          </div>
+        </div>
+        <div class="bloqueio" style="margin-top:var(--e-6)">
+          <div class="k"><i></i>Conteúdo bloqueado por procedência</div>
+          <p>Os nove depoimentos existentes foram gravados sob a marca <b>Instituto Ária</b> e não têm autorização de uso para a Academia DTM. Republicá-los aqui é uso indevido de imagem e de contexto.</p>
+          <p>Para destravar o bloco: nova captação sob a marca Academia DTM, ou autorização por escrito de cada depoente para o novo uso, com identificação da marca no termo. <b>Enquanto isso não existe, o bloco fica fora da página</b> — nunca preenchido com texto de exemplo.</p>
+        </div>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Página de vendas, entre professor e preço, a partir do momento em que houver depoimento liberado com nome e procedência.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Qualquer página hoje. E jamais com depoimento anônimo, avatar genérico, print de conversa sem autorização ou frase montada pela Inception.</p></div>
+    </div>
+  </div>
+
+  <!-- 09 PREÇO -->
+  <h3 class="tit" id="b-preco"><span class="n">Bloco 09</span>Preço e condições</h3>
+  <p class="dizer">A dobra de clímax: respiro de 128 px, fundo navy, composição 7/5. À esquerda o que a matrícula inclui; à direita o cartão de valor em navy-alto, com <b>o número em Archivo 800 e tabulação fixa</b>. O botão é o único elemento em cobalto da dobra.</p>
+  <div class="esp">
+    <div class="esp-top"><b>09 &middot; Preço e condições</b><span>navy &middot; 7/5 &middot; clímax &middot; valores bloqueados</span></div>
+    <div class="pv pv--navy sobre-navy">
+      <div class="pv-in" style="padding-top:var(--e-10);padding-bottom:var(--e-10)">
+        <div class="preco">
+          <div>
+            <div class="rotulo"><i></i>A matrícula</div>
+            <h3 class="hl" style="margin-top:var(--e-5);color:var(--papel)">O que entra na Turma 1</h3>
+            <ul class="lista" style="margin-top:var(--e-6)">
+              <li><b>Encontros da formação</b> conduzidos pelo Dr. Rodrigo Wendel, com caso clínico em discussão.</li>
+              <li><b>Material de consulta</b> para levar ao consultório entre um encontro e outro.</li>
+              <li><b>Espaço de dúvida clínica</b> com a turma, ativo durante todo o ano da formação.</li>
+              <li><b>Certificado</b> emitido pela Academia DTM ao fim do percurso.</li>
+            </ul>
+            <p class="mono-k" style="color:var(--papel-45);margin-top:var(--e-6)">Lista de exemplo &middot; a composição real da matrícula sai do Rodrigo</p>
+          </div>
+          <div class="preco-card">
+            <div class="k">Matrícula &middot; Turma 1</div>
+            <div class="bloqueio">
+              <div class="k"><i></i>Valor bloqueado</div>
+              <p>Nenhum valor, parcelamento, desconto ou prazo é escrito pela Inception. O número entra aqui depois de definido pelo Rodrigo e conferido com a clínica.</p>
+            </div>
+            <ul class="preco-cond">
+              <li><i></i><span>Espaço do valor cheio riscado: só existe se o valor cheio tiver sido praticado de verdade</span></li>
+              <li><i></i><span>Espaço da parcela: Space Mono 700, 13 px, com tabulação fixa</span></li>
+              <li><i></i><span>Espaço da forma de pagamento: uma linha, sem bandeira de cartão desenhada</span></li>
+            </ul>
+            <hr class="fio" style="margin:var(--e-5) 0">
+            <a class="btn btn--bloco" href="#b-formulario">Entrar na lista da Turma 1</a>
+            <p class="mono-k" style="color:var(--papel-45);margin-top:var(--e-4);text-align:center">Especificação do número: Archivo 800 &middot; 56 px &middot; tabular-nums</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Página de vendas e de checkout, uma única vez, sempre como a dobra de maior densidade da página.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Com contador regressivo, selo de garantia que ninguém redigiu, «últimas vagas» sem contagem real ou preço riscado inventado.</p></div>
+    </div>
+  </div>
+
+  <!-- 10 FAQ -->
+  <h3 class="tit" id="b-faq"><span class="n">Bloco 10</span>Perguntas frequentes</h3>
+  <p class="dizer">Acordeão nativo, sem script: filete em cima e embaixo de cada pergunta, título em Archivo 700, sinal de mais que vira menos ao abrir. <b>A primeira pergunta já abre carregada</b>, para que o bloco nunca apareça como uma pilha de linhas fechadas.</p>
+  <div class="esp">
+    <div class="esp-top"><b>10 &middot; Perguntas frequentes</b><span>papel &middot; acordeão nativo &middot; primeira aberta &middot; texto de exemplo</span></div>
+    <div class="pv">
+      <div class="pv-in" style="padding-top:var(--e-9);padding-bottom:var(--e-9)">
+        <div class="rotulo rotulo--escuro"><i></i>Perguntas frequentes</div>
+        <h3 class="hl" style="margin-top:var(--e-5);margin-bottom:var(--e-7);color:var(--navy)">O que costumam perguntar antes de entrar</h3>
+        <div class="faq">
+          <details open>
+            <summary>Preciso já atender casos de DTM para acompanhar<span class="sinal" aria-hidden="true"></span></summary>
+            <div class="resp">Não. A formação parte da anamnese e do exame físico, então quem chega sem rotina em dor orofacial começa do mesmo ponto que os demais e vai ganhando casos ao longo do ano.</div>
+          </details>
+          <details>
+            <summary>Quando abre a Turma 1<span class="sinal" aria-hidden="true"></span></summary>
+            <div class="resp">Em fevereiro de 2027. A lista de espera abre antes disso, e quem está nela recebe as informações da matrícula em primeiro lugar.</div>
+          </details>
+          <details>
+            <summary>Qual a diferença entre a Academia e a formação<span class="sinal" aria-hidden="true"></span></summary>
+            <div class="resp">A Academia DTM é a escola, e assina tudo. Viver de DTM é a formação que vive dentro dela. Uma é a instituição, a outra é o programa que ela oferece.</div>
+          </details>
+          <details>
+            <summary>Como funcionam pagamento e cancelamento<span class="sinal" aria-hidden="true"></span></summary>
+            <div class="resp">
+              <div class="bloqueio">
+                <div class="k"><i></i>Resposta pendente</div>
+                <p>Preço, parcelamento, política de cancelamento e prazo de reembolso <b>não são redigidos pela Inception</b>. Cada resposta de natureza comercial ou jurídica sai do Rodrigo por escrito antes de entrar na página.</p>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Página de vendas depois do preço, e na página de captura com no máximo três perguntas.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Com mais de oito perguntas, com resposta que promete resultado, ou com política comercial escrita por quem monta a página.</p></div>
+    </div>
+  </div>
+
+  <!-- 11 FORMULÁRIO -->
+  <h3 class="tit" id="b-formulario"><span class="n">Bloco 11</span>Formulário de captura</h3>
+  <p class="dizer">Três campos e um botão. Rótulo sempre visível acima do campo, nunca só no interior; campo em papel claro com filete de 1 px; foco em cobalto com anel de 3 px. <b>O botão ocupa a largura inteira do cartão</b> e repete o verbo do CTA da hero.</p>
+  <div class="esp">
+    <div class="esp-top"><b>11 &middot; Formulário de captura</b><span>papel 2 &middot; 3 campos &middot; rótulo visível &middot; texto de exemplo</span></div>
+    <div class="pv pv--papel2">
+      <div class="pv-in" style="padding-top:var(--e-9);padding-bottom:var(--e-9)">
+        <div class="preco" style="align-items:center">
+          <div>
+            <div class="rotulo rotulo--escuro"><i></i>Lista da Turma 1</div>
+            <h3 class="hl" style="margin-top:var(--e-5);color:var(--navy)">A lista avisa antes de qualquer anúncio</h3>
+            <p class="sub" style="margin-top:var(--e-5)">Quem entra na lista recebe a grade completa, a data de abertura e as condições da matrícula antes da campanha ir para o ar.</p>
+            <p style="margin-top:var(--e-5);max-width:52ch;color:var(--tinta-70)">Dúvida sobre a formação antes de entrar na lista? <a class="txt" href="#b-faq">As perguntas frequentes ficam logo abaixo</a>.</p>
+          </div>
+          <form class="form-card" onsubmit="return false">
+            <div class="form-grade">
+              <label class="campo"><span class="rot">Nome completo</span><input type="text" name="nome" placeholder="Como assina em ficha clínica" autocomplete="name"></label>
+              <label class="campo"><span class="rot">E-mail</span><input type="email" name="email" placeholder="nome@clinica.com.br" autocomplete="email"></label>
+              <label class="campo"><span class="rot">WhatsApp</span><input type="tel" name="tel" placeholder="(00) 00000-0000" autocomplete="tel"></label>
+              <button class="btn btn--bloco" type="submit">Entrar na lista da Turma 1</button>
+            </div>
+            <p class="form-nota">Usamos os dados só para avisar sobre a Turma 1 da formação. Sem repasse a terceiros, e a saída da lista fica em todo e-mail enviado.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Página de captura, e no pé da página de vendas como último pedido antes do rodapé.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Dentro da hero, em janela que abre sozinha, e com mais de três campos sem que exista uma etapa de qualificação declarada.</p></div>
+    </div>
+  </div>
+
+  <!-- 12 CTA -->
+  <h3 class="tit" id="b-cta"><span class="n">Bloco 12</span>Chamada de seção</h3>
+  <p class="dizer">Faixa navy de altura curta que fecha um trecho da página e leva de volta ao pedido. Texto à esquerda, botão à direita, alinhados pelo centro. <b>É o único bloco que pode se repetir na mesma página</b> — no máximo três vezes, sempre com o mesmo verbo.</p>
+  <div class="esp">
+    <div class="esp-top"><b>12 &middot; Chamada de seção</b><span>navy &middot; faixa curta &middot; repetível &middot; texto de exemplo</span></div>
+    <div class="pv pv--navy sobre-navy">
+      <div class="pv-in" style="padding-top:var(--e-8);padding-bottom:var(--e-8)">
+        <div class="cta-faixa">
+          <div>
+            <span class="junta junta--claro"></span>
+            <h4 class="hl" style="color:var(--papel);font-size:26px;max-width:26ch;margin-top:var(--e-4)">A Turma 1 abre uma vez, em fevereiro de 2027</h4>
+            <p class="mono-k" style="color:var(--papel-45);margin-top:var(--e-3)">Sem turma paralela no mesmo ano</p>
+          </div>
+          <div style="justify-self:end">
+            <a class="btn btn--papel" href="#b-formulario">Entrar na lista</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Depois da grade e depois do FAQ, em página de vendas longa, para não obrigar o leitor a rolar de volta.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Duas vezes seguidas sem dobra entre elas, e nunca com verbo diferente do CTA principal da página.</p></div>
+    </div>
+  </div>
+
+  <!-- 13 RODAPÉ -->
+  <h3 class="tit" id="b-rodape"><span class="n">Bloco 13</span>Rodapé de página</h3>
+  <p class="dizer">Fundo tinta, lockup horizontal, quatro colunas e uma linha de assinatura em mono no pé. O rodapé <b>não carrega botão nem formulário</b>: quem chegou até aqui sem clicar tem no cabeçalho o caminho de volta.</p>
+  <div class="esp">
+    <div class="esp-top"><b>13 &middot; Rodapé</b><span>tinta &middot; 4 colunas &middot; sem botão &middot; texto de exemplo</span></div>
+    <div class="pv pv--tinta sobre-navy">
+      <div class="pv-in" style="padding-top:var(--e-8);padding-bottom:var(--e-7)">
+        <div class="rod-cols">
+          <div>
+            <span class="lk lk--hz lk--neg" style="font-size:30px">
+              <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+              <span class="rule"></span>
+              <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+            </span>
+            <p style="font-size:var(--t-corpo-s);color:var(--papel-72);margin-top:var(--e-4);max-width:32ch">Escola de DTM e dor orofacial para cirurgiões-dentistas. Direção clínica do Dr. Rodrigo Wendel.</p>
+          </div>
+          <div>
+            <div class="k">A formação</div>
+            <ul>
+              <li><a href="#b-grade">Grade curricular</a></li>
+              <li><a href="#b-professor">Professor</a></li>
+              <li><a href="#b-faq">Perguntas frequentes</a></li>
+              <li><a href="#b-formulario">Lista da Turma 1</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="k">A Academia</div>
+            <ul>
+              <li><a href="#blocos">O que fazemos</a></li>
+              <li><a href="#blocos">Corpo docente</a></li>
+              <li><a href="#blocos">Publicações</a></li>
+              <li><a href="#blocos">Contato</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="k">Onde encontrar</div>
+            <ul>
+              <li><a href="#b-rodape">Instagram</a></li>
+              <li><a href="#b-rodape">YouTube</a></li>
+              <li><a href="#b-rodape">WhatsApp da secretaria</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="rod-legal">
+          Academia DTM &middot; Dr. Rodrigo Wendel &middot; todos os direitos reservados<br>
+          Política de privacidade &middot; Termos de uso &middot; dados de registro entram aqui quando o cadastro estiver concluído
+        </div>
+      </div>
+    </div>
+    <div class="esp-uso">
+      <div class="usa"><div class="k"><i></i>Usa em</div><p>Todas as páginas com mais de uma dobra, sempre como último bloco.</p></div>
+      <div class="nusa"><div class="k"><i></i>Não usa em</div><p>Página de captura e de obrigado, que fecham com a versão reduzida: lockup, uma linha de assinatura e nada mais.</p></div>
+    </div>
+  </div>
+
+  <p class="nota-pe">Treze blocos cobrem as três páginas do § 04. Se aparecer uma necessidade que nenhum deles resolve, a decisão volta à direção de arte antes de qualquer bloco novo ser desenhado — bloco inventado no meio do caminho é como um sistema começa a virar coleção.</p>
+</section>
+
+<!-- ============ 03 · ESTADOS E ACABAMENTO ============ -->
+<section class="sec" id="estados">
+  <div class="sec-h">
+    <div class="sec-n">§ 03</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Estados e acabamento &mdash; o que separa página feita de página montada</h2>
+      <p class="lede">Bloco bonito no repouso qualquer um monta. O que denuncia pressa é o que acontece quando alguém passa o mouse, dá um Tab, erra o e-mail ou abre a tabela no celular. <b>Estes estados não são detalhe, são parte do bloco</b> — copiar o bloco sem eles é entregar metade.</p>
+    </div>
+  </div>
+
+  <h3 class="tit" style="margin-top:0"><span class="n">3.1</span>Botão &middot; repouso, mouse em cima e pressionado</h3>
+  <p class="dizer">Três estados, uma curva. O botão sobe 1 px com a sombra navy no hover, e afunda 1 px com a sombra desligada no clique. <b>Nada pulsa e nada brilha</b> — a resposta é de peso, não de luz.</p>
+  <div class="vitrine" style="margin-top:var(--e-5)">
+    <div class="vit">
+      <div class="k">Primário &middot; cobalto</div>
+      <div class="palcoz"><a class="btn" href="#estados">Entrar na lista</a></div>
+      <p>Uma vez por dobra. Cobalto é ação e nunca encosta em navy como fundo vizinho. <code>:hover</code> sobe 1 px e liga a sombra; <code>:active</code> afunda e escurece.</p>
+    </div>
+    <div class="vit">
+      <div class="k">Secundário &middot; fantasma</div>
+      <div class="palcoz"><a class="btn btn--fantasma" href="#estados">Ver a grade</a></div>
+      <p>Filete navy a 30% sobre papel. No hover ganha fundo navy a 5% e o filete fecha. Sem elevação: só o principal levanta.</p>
+    </div>
+    <div class="vit">
+      <div class="k">Indisponível</div>
+      <div class="palcoz"><span class="btn" aria-disabled="true">Matrícula fechada</span></div>
+      <p>Papel 2 com texto em tinta 45%. Aparece só quando a ação existe e está fechada — nunca como enfeite de página.</p>
+    </div>
+  </div>
+
+  <h3 class="tit"><span class="n">3.2</span>Foco visível &middot; a regra que quase todo mundo apaga</h3>
+  <p class="dizer">O anel de foco <b>nunca é removido</b>. Ele muda de cor conforme o fundo, porque cobalto sobre navy reprova em contraste: cobalto sobre papel, fluor sobre navy e sobre tinta. Percorra a página com Tab para conferir.</p>
+  <div class="grade-2" style="margin-top:var(--e-5)">
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Sobre papel &middot; anel cobalto</div>
+      <div style="display:flex;gap:var(--e-4);flex-wrap:wrap;align-items:center;margin-top:var(--e-4)">
+        <a class="btn" href="#estados">Botão com foco</a>
+        <a class="txt" href="#estados">Link com foco</a>
+      </div>
+      <p class="cap">outline 2 px cobalto &middot; offset 3 px &middot; nunca outline: none</p>
+    </div>
+    <div class="painel sobre-navy" style="background:var(--navy);border-color:var(--navy)">
+      <div class="cap" style="margin-top:0;color:var(--papel-45)">Sobre navy &middot; anel fluor</div>
+      <div style="display:flex;gap:var(--e-4);flex-wrap:wrap;align-items:center;margin-top:var(--e-4)">
+        <a class="btn btn--papel" href="#estados">Botão com foco</a>
+        <a class="txt" href="#estados" style="color:var(--fluor)">Link com foco</a>
+      </div>
+      <p class="cap" style="color:var(--papel-45)">a única troca permitida de cor de foco no sistema</p>
+    </div>
+  </div>
+
+  <h3 class="tit"><span class="n">3.3</span>Formulário &middot; erro e confirmação</h3>
+  <p class="dizer">O erro fica <b>colado no campo que falhou</b>, em Space Mono, com a mesma largura do campo. Nunca em janela e nunca no topo da página. E <b>sem cor de alerta</b>: o campo ganha um filete navy, o rótulo e o aviso vêm em peso cheio, e o texto diz o que corrigir em vez de só acender. A confirmação usa menta como preenchimento com texto escuro por cima, que é o único uso de menta no sistema.</p>
+  <div class="grade-2" style="margin-top:var(--e-5)">
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Estado de erro</div>
+      <div class="form-grade" style="margin-top:var(--e-4)">
+        <label class="campo campo--erro">
+          <span class="rot">E-mail</span>
+          <input type="text" value="rodrigo@clinica" aria-invalid="true">
+          <span class="aviso"><i>!</i>Falta o final do endereço, algo como .com.br</span>
+        </label>
+        <div class="recado recado--erro"><span class="marca"></span><span><b>Confira dois campos antes de enviar.</b> O erro fica no campo, e o resumo aparece só quando mais de um campo falha ao mesmo tempo.</span></div>
+      </div>
+      <p class="cap">filete navy de 3 px &middot; rótulo e aviso em peso cheio &middot; nenhuma cor de alerta</p>
+    </div>
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Estado de confirmação</div>
+      <div class="form-grade" style="margin-top:var(--e-4)">
+        <label class="campo campo--ok">
+          <span class="rot">E-mail</span>
+          <input type="text" value="rodrigo@clinica.com.br">
+          <span class="aviso"><i>&check;</i>Endereço válido</span>
+        </label>
+        <div class="recado recado--ok"><span class="marca"></span><span><b>Pronto, você está na lista.</b> A confirmação substitui o formulário no mesmo lugar da página, sem levar a pessoa para outra tela.</span></div>
+      </div>
+      <p class="cap">menta como preenchimento com texto em tinta &middot; menta nunca vira texto sobre papel</p>
+    </div>
+  </div>
+
+  <h3 class="tit"><span class="n">3.4</span>Link em texto corrido</h3>
+  <p class="dizer">Cobalto sublinhado, com o filete a 42% de opacidade e 3 px de distância da linha de base. No hover o filete fecha em cobalto cheio e engrossa para 2 px. Sobre fundo escuro o link vira fluor, porque cobalto sobre navy não passa em contraste.</p>
+  <div class="grade-2" style="margin-top:var(--e-5)">
+    <div class="painel painel--claro">
+      <p style="max-width:52ch;color:var(--tinta-70)">A grade do primeiro semestre está descrita no <a class="txt" href="#b-grade">bloco de grade curricular</a>, e as condições de matrícula ficam na <a class="txt" href="#b-preco">dobra de preço</a>. Dentro de um parágrafo, o link fala o que ele é: nunca «clique aqui», nunca a URL crua.</p>
+      <p class="cap">no máximo dois links por parágrafo</p>
+    </div>
+    <div class="painel sobre-navy" style="background:var(--tinta);border-color:var(--tinta)">
+      <p style="max-width:52ch;color:var(--papel-72)">Sobre tinta e sobre navy, o link em texto corrido é <a class="txt" href="#estados" style="color:var(--fluor);text-decoration-color:rgba(205,242,63,.5)">fluor sublinhado</a>, e essa é a única vez em que o fluor toca uma palavra. Fora daqui, fluor é filete, rótulo ou número, nunca corpo de texto.</p>
+      <p class="cap" style="color:var(--papel-45)">contraste do fluor sobre tinta: 13,9:1</p>
+    </div>
+  </div>
+
+  <h3 class="tit"><span class="n">3.5</span>Tabela em tela estreita</h3>
+  <p class="dizer">Tabela do sistema não vira cartão empilhado, porque comparar é o motivo dela existir. Abaixo de 720 px ela <b>rola dentro do próprio bloco</b>, com uma sombra de papel na borda direita indicando que há mais coluna adiante, e uma linha em mono avisando o gesto. A página nunca rola para o lado por causa dela.</p>
+  <div class="painel painel--claro" style="margin-top:var(--e-5)">
+    <div class="rolo">
+      <div class="rolo-in">
+        <table class="tab">
+          <thead><tr><th>Bloco</th><th>Fração</th><th>Respiro</th><th>Fundo</th><th>Repetível</th></tr></thead>
+          <tbody>
+            <tr><td><b>Hero</b></td><td class="num">12</td><td class="num">96 / 64</td><td>navy</td><td>não</td></tr>
+            <tr><td><b>Cena clínica</b></td><td class="num">8 / 4</td><td class="num">96</td><td>papel</td><td>não</td></tr>
+            <tr><td><b>Mecanismo</b></td><td class="num">12</td><td class="num">96</td><td>tinta</td><td>não</td></tr>
+            <tr><td><b>Preço</b></td><td class="num">7 / 5</td><td class="num">128</td><td>navy</td><td>não</td></tr>
+            <tr><td><b>Chamada de seção</b></td><td class="num">7 / 5</td><td class="num">64</td><td>navy</td><td>até 3&times;</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="rolo-dica">Role a tabela para o lado &middot; 5 colunas</p>
+    <p class="cap">Coluna de número sempre em Space Mono com tabulação fixa, para que os algarismos alinhem entre linhas.</p>
+  </div>
+
+  <h3 class="tit"><span class="n">3.6</span>Texto sobre imagem &middot; a tarja é obrigatória</h3>
+  <p class="dizer">Nenhuma palavra encosta numa foto sem tarja embaixo. A tarja é <b>tinta a 88% no mínimo</b>, com um degradê curto para transparente na borda de cima, e cobre no máximo o terço inferior da imagem. O rosto fica sempre fora da área de texto.</p>
+  <div class="grade-2" style="margin-top:var(--e-5);align-items:start">
+    <div>
+      <div class="chapa chapa--faixa">
+        <span class="chapa-cap">Faixa 16:7 &middot; tarja na base</span>
+        <div class="tarja">
+          <p style="font-family:var(--display);font-weight:800;font-size:clamp(20px,2.6vw,28px);letter-spacing:-.03em;line-height:1.1;max-width:22ch">Encontro presencial da turma</p>
+          <p class="mono-k" style="color:var(--fluor);margin-top:8px">Legenda em Space Mono &middot; sempre fluor sobre a tarja</p>
+        </div>
+      </div>
+      <p class="cap">Certo: o texto ocupa a base, a tarja garante o contraste, e o topo da imagem fica livre.</p>
+    </div>
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">As quatro condições</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>Tarja em tinta, mínimo 88%</b>, com degradê curto para transparente na borda superior.</li>
+        <li><b>Nunca sobre o rosto.</b> Se o enquadramento não deixa, troque a foto ou reenquadre com object-position.</li>
+        <li><b>Máximo um terço da altura</b> da imagem. Tarja que come metade da foto quer dizer que o bloco errado foi escolhido.</li>
+        <li><b>O logo sobre foto</b> exige tarja navy de 88% por baixo dele, e nunca sai direto sobre a imagem.</li>
+      </ul>
+      <p class="porque" style="margin-top:var(--e-5)"><b>Por que isso é regra e não gosto:</b> foto de congresso, de clínica e de aula têm luz imprevisível. A tarja é o que garante que a mesma composição continue legível quando a foto trocar — e ela vai trocar.</p>
+    </div>
+  </div>
+
+  <div class="alerta">
+    <div class="k">Acabamento que ninguém pede e todo mundo sente</div>
+    <p><b>Aspas tipográficas</b> em citação, nunca as retas do teclado. <b>Número em tabulação fixa</b> sempre que dois números aparecerem um embaixo do outro. <b>Âncora com folga de 88 px</b> no topo, para que o cabeçalho colado não coma o título ao pular de link. <b>Nenhuma linha órfã</b> em título: se sobrar uma palavra sozinha na última linha, ajuste a medida ou grude as duas últimas palavras.</p>
+  </div>
+</section>
+
+<!-- ============ 04 · TEMPLATES ============ -->
+<section class="sec sec--escuro sobre-navy" id="templates">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="sec-n">§ 04</div>
+      <div>
+        <span class="junta junta--claro"></span>
+        <h2 style="color:var(--papel)">Três plantas &mdash; a ordem dos blocos em cada tipo de página</h2>
+        <p class="lede">A planta diz <b>quais blocos entram e em que ordem</b>, e mais nada. O texto de cada bloco é do copywriter; o desenho de cada bloco está no § 02. Quem monta uma página nova escolhe a planta mais próxima, empilha os blocos na sequência e para por aí.</p>
+      </div>
+    </div>
+
+    <div class="plantas">
+
+      <div class="planta">
+        <div class="planta-top">
+          <div class="k">Planta A</div>
+          <h4>Página de vendas da formação</h4>
+          <p>Viver de DTM em destaque, Academia como endosso. A página mais longa do sistema.</p>
+        </div>
+        <ol>
+          <li><b>Cabeçalho</b><em>bloco 01 &middot; colado no topo, com o botão da lista</em></li>
+          <li class="marco"><b>Hero com endosso de marca</b><em>bloco 02 &middot; uma dobra, dois botões</em></li>
+          <li><b>Barra de prova</b><em>bloco 03 &middot; quatro campos, sem número solto</em></li>
+          <li><b>Cena clínica</b><em>bloco 04 &middot; a dobra mais densa da metade de cima</em></li>
+          <li class="marco"><b>Mecanismo</b><em>bloco 05 &middot; fundo tinta, densidade baixa, a virada</em></li>
+          <li><b>Grade curricular</b><em>bloco 06 &middot; índice de linhas com filete</em></li>
+          <li><b>Chamada de seção</b><em>bloco 12 &middot; primeira repetição do CTA</em></li>
+          <li><b>Professor</b><em>bloco 07 &middot; retrato com tarja e biografia</em></li>
+          <li><b>Depoimento</b><em>bloco 08 &middot; fora da página até a liberação sair</em></li>
+          <li class="marco"><b>Preço e condições</b><em>bloco 09 &middot; clímax, respiro de 128 px</em></li>
+          <li><b>Perguntas frequentes</b><em>bloco 10 &middot; até oito perguntas, a primeira aberta</em></li>
+          <li><b>Formulário de captura</b><em>bloco 11 &middot; o último pedido da página</em></li>
+          <li><b>Rodapé</b><em>bloco 13 &middot; completo, quatro colunas</em></li>
+        </ol>
+      </div>
+
+      <div class="planta">
+        <div class="planta-top">
+          <div class="k">Planta B</div>
+          <h4>Página institucional da Academia</h4>
+          <p>A Academia assina sozinha. Sem preço, sem urgência e com um único pedido no fim.</p>
+        </div>
+        <ol>
+          <li><b>Cabeçalho</b><em>bloco 01 &middot; botão de contato no lugar do de matrícula</em></li>
+          <li class="marco"><b>Hero institucional</b><em>bloco 02 sem endosso &middot; lockup principal, um botão só</em></li>
+          <li><b>Barra de prova</b><em>bloco 03 &middot; o que a escola é, em fatos de estrutura</em></li>
+          <li><b>Mecanismo</b><em>bloco 05 &middot; aqui ele carrega a tese de ensino, não a oferta</em></li>
+          <li><b>Grade curricular</b><em>bloco 06 &middot; como resumo da formação em curso</em></li>
+          <li><b>Professor</b><em>bloco 07 &middot; um retrato por docente, mesma composição</em></li>
+          <li><b>Depoimento</b><em>bloco 08 &middot; fora da página até a liberação sair</em></li>
+          <li><b>Chamada de seção</b><em>bloco 12 &middot; leva ao contato, não à matrícula</em></li>
+          <li><b>Rodapé</b><em>bloco 13 &middot; completo</em></li>
+          <li class="corte"><span>Não entram nesta planta<i></i></span></li>
+          <li class="excl"><b>Cena clínica, preço e formulário longo</b><em>a institucional não vende: ela apresenta e encaminha</em></li>
+        </ol>
+      </div>
+
+      <div class="planta">
+        <div class="planta-top">
+          <div class="k">Planta C</div>
+          <h4>Captura, e a página de obrigado</h4>
+          <p>Duas telas curtas, encadeadas. Uma pede o dado, a outra devolve o próximo passo.</p>
+        </div>
+        <ol>
+          <li><b>Cabeçalho reduzido</b><em>bloco 01 sem links e sem botão &middot; só o lockup, centralizado</em></li>
+          <li class="marco"><b>Hero com formulário ao lado</b><em>blocos 02 + 11 na mesma dobra, três campos</em></li>
+          <li><b>Barra de prova</b><em>bloco 03 &middot; reduzida a dois campos</em></li>
+          <li><b>Perguntas frequentes</b><em>bloco 10 &middot; no máximo três perguntas</em></li>
+          <li><b>Chamada de seção</b><em>bloco 12 &middot; rola de volta ao formulário</em></li>
+          <li><b>Rodapé reduzido</b><em>bloco 13 &middot; lockup e uma linha de assinatura</em></li>
+          <li class="corte"><span>Página de obrigado<i></i></span></li>
+          <li><b>Cabeçalho reduzido</b><em>bloco 01 &middot; idêntico ao da captura</em></li>
+          <li class="marco"><b>Confirmação</b><em>bloco 12 em papel &middot; diz o que acabou de acontecer</em></li>
+          <li><b>Próximo passo numerado</b><em>bloco 04 com os selos numerados, sem a cena de dor</em></li>
+          <li><b>Chamada de seção</b><em>bloco 12 &middot; leva ao WhatsApp ou ao Instagram</em></li>
+          <li><b>Rodapé reduzido</b><em>bloco 13 &middot; sem colunas de link</em></li>
+        </ol>
+      </div>
+
+    </div>
+
+    <div class="grade-2" style="margin-top:var(--e-8);align-items:start">
+      <div>
+        <h3 class="tit" style="margin-top:0;color:var(--papel)"><span class="n">4.4</span>A regra de alternância</h3>
+        <p class="dizer">Duas dobras seguidas com o mesmo fundo e a mesma fração <b>não podem existir</b>. A alternância de temperatura é o que dá ritmo à página: navy, papel, papel 2, tinta, papel. Se duas dobras vizinhas ficarem iguais, troque a fração de uma delas ou junte as duas num bloco só.</p>
+      </div>
+      <div>
+        <h3 class="tit" style="margin-top:0;color:var(--papel)"><span class="n">4.5</span>A quebra de grid</h3>
+        <p class="dizer">Uma por página, e sempre a mesma: <b>o símbolo que sangra a borda</b>, em navy-alto sobre navy, no canto superior direito da hero. Duas quebras viram bagunça, nenhuma vira modelo pronto. Nenhum outro elemento atravessa a margem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · CONVERSÃO ============ -->
+<section class="sec" id="conversao">
+  <div class="sec-h">
+    <div class="sec-n">§ 05</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Conversão sem barulho &mdash; o que esta marca faz e o que ela recusa</h2>
+      <p class="lede">Um órgão também pede matrícula. A diferença está em <b>como</b> ele pede: repetindo o mesmo convite em pontos previsíveis da página, em vez de cercar o leitor. Nada aqui é opinião de gosto — cada regra abaixo já foi ditada pela tese da marca no brandbook.</p>
+    </div>
+  </div>
+
+  <h3 class="tit" style="margin-top:0"><span class="n">5.1</span>Onde o CTA repete</h3>
+  <p class="dizer">O verbo é <b>sempre o mesmo na página inteira</b>. Se a hero diz «Entrar na lista da Turma 1», nenhum outro botão diz «Quero participar», «Garantir vaga» ou «Saiba mais». Trocar o verbo faz o leitor achar que são coisas diferentes.</p>
+  <div class="tab-rolo" style="margin-top:var(--e-5)">
+    <table class="tab">
+      <thead><tr><th>Página</th><th>Aparições do CTA</th><th>Onde</th><th>Botão secundário</th></tr></thead>
+      <tbody>
+        <tr><td><b>Vendas</b></td><td class="num">4 a 5</td><td>hero &middot; depois da grade &middot; no preço &middot; depois do FAQ &middot; no formulário final</td><td>só na hero, e apenas para rolar dentro da própria página</td></tr>
+        <tr><td><b>Institucional</b></td><td class="num">2</td><td>hero &middot; chamada de seção antes do rodapé</td><td>nenhum</td></tr>
+        <tr><td><b>Captura</b></td><td class="num">2</td><td>o formulário na primeira dobra &middot; a chamada que rola de volta a ele</td><td>nenhum</td></tr>
+        <tr><td><b>Obrigado</b></td><td class="num">1</td><td>o próximo passo, e nunca uma nova oferta</td><td>nenhum</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="tit"><span class="n">5.2</span>O que nunca sai da tela</h3>
+  <p class="dizer">No computador, o cabeçalho fica colado no topo com o lockup e o botão de ação. No celular o cabeçalho encolhe para 60 px e perde os links, e o pedido migra para uma <b>barra fixa no rodapé da tela</b>, que só aparece depois que a hero sai de vista.</p>
+  <div class="grade-2" style="margin-top:var(--e-5);align-items:start">
+    <div>
+      <div class="esp" style="margin-top:0;max-width:390px">
+        <div class="esp-top"><b>Celular &middot; 390 px</b><span>barra fixa</span></div>
+        <div class="pv sobre-navy" style="background:var(--navy)">
+          <div class="barra-fixa">
+            <span class="t">Turma 1 &middot; fevereiro de 2027<b>Inscrição por lista</b></span>
+            <a class="btn btn--papel" href="#conversao" style="padding:12px 18px;font-size:10px">Entrar</a>
+          </div>
+        </div>
+      </div>
+      <p class="cap">Altura de 64 px &middot; filete fluor de 2 px no topo &middot; aparece depois de 100% de altura de rolagem</p>
+    </div>
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Regras da barra fixa</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>Só no celular</b>, e só em página de vendas e de captura.</li>
+        <li><b>Some quando o formulário entra na tela</b> — a barra nunca cobre o campo que a pessoa está preenchendo.</li>
+        <li><b>Sem botão de fechar</b>: se ela incomoda a ponto de precisar fechar, ela não devia estar lá.</li>
+        <li><b>Nunca vira faixa de contagem</b>, de desconto ou de aviso piscante.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="tit"><span class="n">5.3</span>O que a Academia DTM não faz</h3>
+  <p class="dizer">Esta lista não é preferência estética. É o que separa <b>um órgão que abre matrícula</b> de um lançamento de infoproduto — e é a primeira coisa que o público desta marca, dentista adulto e cético, identifica em três segundos.</p>
+  <div class="grade-3" style="margin-top:var(--e-5)">
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Urgência</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>Sem contador regressivo.</b> Data de abertura e de fechamento se escrevem por extenso, uma vez.</li>
+        <li><b>Sem «últimas vagas»</b> quando não existe contagem real de vaga.</li>
+        <li><b>Sem faixa piscante</b>, sem janela que abre sozinha, sem aviso de saída.</li>
+        <li><b>Sem preço riscado</b> que nunca foi praticado.</li>
+      </ul>
+    </div>
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Prova</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>Todo número tem fonte</b> escrita embaixo dele, em mono, na mesma célula.</li>
+        <li><b>Todo depoimento tem nome</b>, especialidade, cidade e autorização de uso para esta marca.</li>
+        <li><b>Sem selo inventado</b> de garantia, de qualidade ou de aprovação.</li>
+        <li><b>Sem logo de instituição</b> que não tenha vínculo formal com a Academia.</li>
+      </ul>
+    </div>
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Promessa</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>Sem promessa de renda</b>, de faturamento, de número de pacientes ou de retorno de investimento.</li>
+        <li><b>Sem superlativo sem medida</b>: nada é o maior, o melhor ou o único do país.</li>
+        <li><b>Sem nome de concorrente</b>, direto ou por insinuação.</li>
+        <li><b>Sem credencial</b> que o Rodrigo não tenha escrito ou aprovado por escrito.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="tit"><span class="n">5.4</span>Um pedido por página</h3>
+  <p class="dizer">Cada página tem <b>uma ação e uma só</b>. A página de vendas pede matrícula; a de captura pede o contato; a institucional pede conversa. Botão que compete com botão faz as duas taxas caírem, e numa marca de tom institucional o segundo pedido soa como insegurança.</p>
+  <div class="alerta">
+    <div class="k">A prova final antes de publicar</div>
+    <p>Cubra o logo e mostre a página para alguém que não conhece a Academia. Se a primeira leitura for <b>«isso é uma escola»</b>, a página está certa. Se for «isso é um curso online», algum bloco da lista de recusas voltou para a página sem ninguém perceber.</p>
+  </div>
+</section>
+
+<!-- ============ 06 · PROCEDÊNCIA ============ -->
+<section class="sec" id="procedencia">
+  <div class="sec-h">
+    <div class="sec-n">§ 06</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Procedência &mdash; o que é do Rodrigo, o que é nosso e o que está travado</h2>
+      <p class="lede">Regra do projeto: <b>nada que soe como fala, número ou método do Rodrigo entra sem ele ter escrito ou validado</b>. Este módulo criou muito texto de exemplo, e a lista abaixo separa linha por linha o que veio dele do que veio da Inception.</p>
+    </div>
+  </div>
+
+  <div class="grade-3">
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Dele &middot; usado como está</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li>A frase do símbolo: <b>&ldquo;Não tem uma técnica principal. São oito peças do mesmo tamanho, e o anel só fecha quando todas estão no lugar.&rdquo;</b> Legenda oficial, autorizada no brandbook.</li>
+        <li>Os nomes <b>Academia DTM</b> e <b>Viver de DTM</b>.</li>
+        <li>A rota Trama e a escolha da V05 como lockup principal.</li>
+      </ul>
+    </div>
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Nosso &middot; texto de exemplo, marcado na peça</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li>Todo título, subtítulo e parágrafo dentro das pranchas do § 02.</li>
+        <li>Os quatro nomes de etapa do bloco de mecanismo e os seis títulos da grade &mdash; <b>vocabulário clínico corrente</b>, nunca nomenclatura do método dele.</li>
+        <li>As quatro perguntas do FAQ e as três respostas abertas.</li>
+        <li>A lista do que entra na matrícula, no bloco de preço.</li>
+        <li>A proposta de uma cor de erro. A direção de arte ratificou o vermelho <b>só como tinta de revisão destes documentos</b> e recusou o uso em página — o erro daqui não tem cor de alerta.</li>
+      </ul>
+    </div>
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Travado &middot; não sai daqui sem liberação</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>Depoimentos.</b> Os nove existentes foram gravados sob a marca Instituto Ária, sem autorização de uso para a Academia DTM.</li>
+        <li><b>Preço, parcelamento, cancelamento e reembolso.</b> Nenhum número financeiro entra em peça pública antes da conferência com a clínica.</li>
+        <li><b>Biografia e titulação do Rodrigo.</b> Registro de conselho não aparece em material público, em nenhuma hipótese.</li>
+        <li><b>Grade oficial e carga horária</b> da Turma 1.</li>
+        <li><b>Lockup Viver de DTM.</b> A fonte segue em decisão dele; os arquivos atuais ficam em assets/marca-viver-de-dtm e não se redesenham.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="alerta">
+    <div class="k">Decisão de marca &middot; o erro não tem cor</div>
+    <p>Este módulo propôs um vermelho para o erro de formulário. A direção de arte ratificou o vermelho <b>#B3261E</b> apenas como <b>tinta de revisão</b> — a caneta que marca o proibido dentro destes quatro documentos, como no selo &ldquo;não&rdquo; das proibições do Brandbook — e <b>recusou</b> a cor em qualquer peça que a Academia publica. Um caderno de atas tem caneta vermelha de revisor; não tem alerta vermelho de sistema. <b>O erro se resolve por peso, filete, rótulo em Space Mono e posição</b>, como está na prancha do § 03. A regra está no contrato do sistema e vale para os três módulos.</p>
+  </div>
+
+  <div class="painel" style="margin-top:var(--e-6)">
+    <div class="cap" style="margin-top:0">O que o próximo módulo precisa saber</div>
+    <ul class="lista" style="margin-top:var(--e-4);max-width:none">
+      <li><b>A prancha é o formato de apresentação de peça do sistema.</b> Conteúdos e criativos podem reusá-la para mostrar cada formato vivo, com a mesma dupla de usa e não usa embaixo.</li>
+      <li><b>A tarja de bloqueio é componente, não improviso.</b> Filete tracejado em cobalto sobre papel, em fluor sobre escuro. Toda peça que depende de liberação a usa em vez de inventar conteúdo.</li>
+      <li><b>O anel de foco muda de cor com o fundo.</b> Cobalto sobre papel, fluor sobre navy e tinta. Vale em qualquer módulo com elemento clicável.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-in">
+      <div>
+        <span class="lk lk--hz lk--neg" style="font-size:30px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+          <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+        </span>
+        <ul class="rodape-nav" style="margin-top:var(--e-5)">
+          <li><a href="index.html">Brandbook</a></li>
+          <li><a href="ds-paginas.html">Páginas</a></li>
+          <li><a href="ds-conteudos-criativos.html">Conteúdos &amp; Criativos</a></li>
+          <li><a href="ds-apresentacoes.html">Apresentações</a></li>
+        </ul>
+      </div>
+      <div class="rodape-assin">
+        <b>Academia DTM</b> &middot; Dr. Rodrigo Wendel<br>
+        Brandbook &amp; Design System &middot; v1 &middot; 20/08/2026<br>
+        Módulo 2 de 4 &middot; Páginas &middot; direção de arte <b>Inception</b>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

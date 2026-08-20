@@ -1,0 +1,1495 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Academia DTM · Conteúdos &amp; Criativos · Design System</title>
+<meta name="description" content="Módulo 3 do Design System da Academia DTM — perfil, formatos de feed e story, criativos de tráfego e a régua que sustenta todos eles. Dr. Rodrigo Wendel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&family=Hanken+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ACADEMIA DTM — módulo 3 · Conteúdos & Criativos
+   Tokens, lockups, cabeçalho e rodapé vêm de _contrato.md (fonte única).
+   ============================================================ */
+:root{
+  /* cor — base */
+  --navy:#101C46;
+  --navy-alto:#182559;
+  --tinta:#0B0F1A;
+  --papel:#F4F3EC;
+  --papel-2:#E7E5D8;
+  /* cor — sinal */
+  --fluor:#CDF23F;
+  --cobalto:#2C4BFF;
+  --menta:#12D9A0;
+  /* cor — revisão · NÃO é cor da marca. Só marca o proibido dentro destes
+     documentos; nunca em peça que a Academia publica. Ver contrato §9.1. */
+  --erro:#B3261E;
+  /* cor — derivadas */
+  --papel-72:rgba(244,243,236,.72);
+  --papel-45:rgba(244,243,236,.45);
+  --tinta-70:rgba(11,15,26,.70);
+  --tinta-45:rgba(11,15,26,.45);
+  --linha-clara:rgba(244,243,236,.14);
+  --linha-escura:rgba(11,15,26,.13);
+  /* tipo */
+  --display:"Archivo",system-ui,sans-serif;
+  --corpo:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:"Space Mono",ui-monospace,SFMono-Regular,monospace;
+  /* escala tipográfica */
+  --t-hero:clamp(44px,7.4vw,88px);
+  --t-h1:clamp(32px,4.8vw,58px);
+  --t-h2:clamp(24px,3.2vw,38px);
+  --t-h3:21px;
+  --t-corpo:17px;
+  --t-corpo-s:15px;
+  --t-legenda:13px;
+  --t-rotulo:11px;
+  /* espaço — base 4 */
+  --e-1:4px; --e-2:8px; --e-3:12px; --e-4:16px; --e-5:24px;
+  --e-6:32px; --e-7:48px; --e-8:64px; --e-9:96px; --e-10:128px;
+  /* raio */
+  --r-0:0; --r-1:3px; --r-2:6px; --r-3:12px; --r-pill:999px;
+  /* sombra — sempre navy, nunca preto */
+  --sombra-1:0 1px 2px rgba(16,28,70,.07);
+  --sombra-2:0 14px 36px -14px rgba(16,28,70,.24);
+  /* movimento */
+  --d-micro:180ms; --d-base:240ms; --d-reveal:520ms;
+  --ease:cubic-bezier(.22,1,.36,1);
+  /* medida */
+  --largura:1180px;
+  --largura-texto:68ch;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;overflow-x:clip}
+body{
+  background:var(--papel);color:var(--tinta);
+  font-family:var(--corpo);font-size:var(--t-corpo);line-height:1.62;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:clip;
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.042;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6)}
+@media(max-width:640px){.wrap{padding:0 20px}}
+
+/* ---------- cabeçalho compartilhado (4 páginas) ---------- */
+.nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--linha-clara)}
+.nav-in{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--e-5);min-height:64px;flex-wrap:wrap}
+.nav-links{display:flex;gap:var(--e-5);list-style:none;flex-wrap:wrap}
+.nav-links a{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--papel-45);text-decoration:none;padding:20px 0;display:block;
+  border-bottom:2px solid transparent;transition:color var(--d-base) var(--ease),border-color var(--d-base) var(--ease)}
+.nav-links a:hover{color:var(--papel)}
+.nav-links a[aria-current="page"]{color:var(--fluor);border-bottom-color:var(--fluor)}
+@media(max-width:640px){.nav-in{padding:12px 20px 4px;min-height:0}
+  .nav-links{gap:16px}.nav-links a{padding:10px 0}}
+
+/* ---------- lockups ---------- */
+.lk{display:inline-flex;align-items:center;color:var(--navy)}
+.lk .sym{width:1em;height:1em;flex:none}
+.lk .rule{width:.028em;min-width:1px;background:currentColor;opacity:.32;flex:none}
+.lk .col{display:flex;flex-direction:column;font-family:var(--display);
+  text-transform:uppercase;line-height:1;white-space:nowrap}
+.lk .ac{font-weight:400;font-size:.225em;letter-spacing:.22em}
+.lk .dtm{font-weight:800;font-size:.6875em;letter-spacing:-.04em}
+.lk--principal .rule{height:.90em;margin:0 .325em}
+.lk--hz{align-items:center}
+.lk--hz .rule{height:.62em;margin-left:.30em;margin-right:.26em}
+.lk--hz .row{display:flex;align-items:baseline;font-family:var(--display);
+  text-transform:uppercase;white-space:nowrap;line-height:1}
+.lk--hz .ac-h{font-weight:500;font-size:.44em;letter-spacing:.18em}
+.lk--hz .dtm-h{font-weight:800;font-size:.44em;letter-spacing:-.035em;margin-left:.26em}
+.lk--neg{color:var(--papel)}
+.lk--neg .sym{color:var(--fluor)}
+.lk--mono-papel{color:var(--papel)}
+.lk--mono-papel .sym{color:var(--papel)}
+.lk--mono-navy{color:var(--navy)}
+.lk--mono-navy .sym{color:var(--navy)}
+.selo{display:grid;place-items:center;background:var(--navy);border-radius:var(--r-pill)}
+.selo svg{color:var(--fluor);width:62%;height:62%}
+.selo--invertido{background:var(--fluor)}
+.selo--invertido svg{color:var(--navy)}
+.selo--papel{background:var(--papel-2)}
+.selo--papel svg{color:var(--navy)}
+.selo--quadrado{border-radius:var(--r-1)}
+
+/* ---------- capa ---------- */
+.capa{background:var(--navy);color:var(--papel);padding:var(--e-9) 0 var(--e-8);position:relative;overflow:hidden}
+.capa::before{
+  content:"";position:absolute;right:-13%;top:-24%;width:min(60vw,760px);aspect-ratio:1;
+  background:radial-gradient(circle at 50% 50%,rgba(24,37,89,1) 0%,rgba(16,28,70,0) 68%);pointer-events:none}
+.capa-sym{position:absolute;right:-9%;top:-10%;width:min(52vw,620px);color:var(--navy-alto);opacity:.9;pointer-events:none}
+.capa .wrap{position:relative;z-index:2}
+.rotulo{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--fluor);display:flex;align-items:center;gap:var(--e-3);flex-wrap:wrap}
+.rotulo i{display:block;width:34px;height:2px;background:var(--fluor);font-style:normal;flex:none}
+.capa h1{font-family:var(--display);font-weight:800;font-size:var(--t-hero);line-height:1.0;text-wrap:balance;
+  letter-spacing:-.042em;margin:var(--e-6) 0 0;max-width:15ch}
+.capa h1 em{font-style:normal;color:var(--fluor)}
+.capa .tese{margin-top:var(--e-6);max-width:62ch;font-size:19px;color:var(--papel-72)}
+.capa .tese b{color:var(--papel);font-weight:600}
+.capa-meta{margin-top:var(--e-8);padding-top:var(--e-5);border-top:1px solid var(--linha-clara);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--e-5)}
+.capa-meta .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--fluor);margin-bottom:var(--e-2)}
+.capa-meta p{font-size:var(--t-corpo-s);color:var(--papel-72);line-height:1.5}
+.capa-lk{margin-top:var(--e-7)}
+
+/* ---------- gesto 01 · a junta ---------- */
+.junta{display:block;width:104px;height:2px;position:relative;background:var(--navy);margin-bottom:var(--e-4)}
+.junta::after{content:"";position:absolute;left:52px;top:5px;width:104px;height:2px;background:var(--fluor)}
+.junta--claro{background:var(--papel-45)}
+.junta--claro::after{background:var(--fluor)}
+
+/* ---------- seções ---------- */
+.sec{padding:var(--e-9) 0;border-top:1px solid var(--linha-escura)}
+.sec:first-of-type{border-top:0}
+.sec-h{display:grid;grid-template-columns:88px 1fr;gap:var(--e-6);align-items:start;margin-bottom:var(--e-7)}
+.sec-n{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.1em;
+  color:var(--tinta-45);padding-top:10px}
+.sec-h h2{font-family:var(--display);font-weight:800;font-size:var(--t-h2);letter-spacing:-.035em;
+  line-height:1.02;max-width:22ch;text-wrap:balance}
+.sec-h .lede{margin-top:var(--e-4);max-width:var(--largura-texto);color:var(--tinta-70);font-size:var(--t-corpo)}
+.sec-h .lede b{color:var(--tinta);font-weight:600}
+@media(max-width:720px){.sec-h{grid-template-columns:1fr;gap:var(--e-3)}.sec-n{padding-top:0}}
+.sec--escuro{background:var(--navy);color:var(--papel);border-top:0;
+  margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);width:100vw;padding:var(--e-9) 0}
+.sec--escuro .sec-n{color:var(--papel-45)}
+.sec--escuro .sec-h .lede{color:var(--papel-72)}
+.sec--escuro .sec-h .lede b{color:var(--papel)}
+.sub{font-family:var(--display);font-weight:800;font-size:var(--t-h3);letter-spacing:-.02em;
+  margin:var(--e-8) 0 var(--e-5)}
+.sub .n{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--tinta-45);margin-right:10px}
+.sec--escuro .sub .n,.bloco-navy .sub .n{color:var(--papel-45)}
+.sub:first-child{margin-top:0}
+
+/* ---------- blocos ---------- */
+.painel{background:var(--papel-2);border:1px solid var(--linha-escura);border-radius:var(--r-1);padding:var(--e-6)}
+.painel--claro{background:#FBFAF4}
+.cap{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-45);margin-top:var(--e-3)}
+.sec--escuro .cap{color:var(--papel-45)}
+.porque{margin-top:var(--e-3);font-size:var(--t-corpo-s);color:var(--tinta-70);border-left:2px solid var(--fluor);
+  padding-left:var(--e-3);max-width:var(--largura-texto)}
+.porque b{color:var(--tinta);font-weight:600}
+.sec--escuro .porque{color:var(--papel-72)}
+.sec--escuro .porque b{color:var(--papel)}
+.grade-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-5)}
+.grade-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e-5)}
+.grade-4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--e-4)}
+.grade-2>*,.grade-3>*,.grade-4>*{min-width:0}
+@media(max-width:900px){.grade-3,.grade-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grade-2,.grade-3,.grade-4{grid-template-columns:1fr}}
+.palco{display:grid;place-items:center;min-height:230px;padding:var(--e-7) var(--e-5);
+  background:var(--papel);border:1px solid var(--linha-escura);border-radius:var(--r-1);overflow:hidden}
+.palco--navy{background:var(--navy);border-color:var(--navy)}
+.palco--papel2{background:var(--papel-2)}
+.palco--baixo{min-height:150px;padding:var(--e-6) var(--e-5)}
+
+/* ---------- tabelas ---------- */
+.tab{width:100%;border-collapse:collapse;font-size:var(--t-corpo-s);margin-top:var(--e-2)}
+.tab th,.tab td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--linha-escura);vertical-align:top}
+.tab th{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-45);border-bottom-width:2px;border-bottom-color:var(--navy)}
+.tab td b{font-weight:600}
+.tab .num{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sec--escuro .tab th{color:var(--papel-45);border-bottom-color:var(--fluor)}
+.sec--escuro .tab th,.sec--escuro .tab td{border-bottom-color:var(--linha-clara)}
+.tab-rolo{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sim{color:var(--navy);font-weight:600}
+.nao{color:var(--tinta-45)}
+
+/* ---------- listas, notas, alerta ---------- */
+ul.lista{list-style:none;display:grid;gap:var(--e-3);max-width:var(--largura-texto)}
+ul.lista li{position:relative;padding-left:22px;font-size:var(--t-corpo-s);color:var(--tinta-70);line-height:1.55}
+ul.lista li::before{content:"";position:absolute;left:0;top:10px;width:10px;height:2px;background:var(--fluor)}
+ul.lista li b{color:var(--tinta);font-weight:600}
+.sec--escuro ul.lista li{color:var(--papel-72)}
+.sec--escuro ul.lista li b{color:var(--papel)}
+.nota-pe{font-size:var(--t-legenda);color:var(--tinta-45);margin-top:var(--e-5);max-width:var(--largura-texto);line-height:1.55}
+.sec--escuro .nota-pe{color:var(--papel-45)}
+.alerta{border:1px solid rgba(44,75,255,.35);background:rgba(44,75,255,.05);border-radius:var(--r-1);
+  padding:var(--e-5);margin-top:var(--e-5)}
+.alerta .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cobalto);margin-bottom:var(--e-3)}
+.alerta p{font-size:var(--t-corpo-s);color:var(--tinta-70);max-width:var(--largura-texto)}
+.alerta p + p{margin-top:10px}
+.alerta b{color:var(--tinta);font-weight:600}
+.dna{background:var(--tinta);color:var(--papel);border-radius:var(--r-1);padding:var(--e-6);
+  font-family:var(--mono);font-size:13px;line-height:1.85;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+.dna b{color:var(--fluor);font-weight:700}
+.proc{border-left:3px solid var(--navy);padding-left:var(--e-5)}
+.proc--dele{border-left-color:var(--fluor)}
+.proc--maiara{border-left-color:var(--cobalto)}
+.proc--nosso{border-left-color:var(--menta)}
+.proc h4{font-family:var(--display);font-weight:700;font-size:var(--t-h3);letter-spacing:-.02em;margin-bottom:var(--e-3)}
+.proc ul{list-style:none;display:grid;gap:10px}
+.proc li{font-size:var(--t-corpo-s);color:var(--tinta-70);padding-left:16px;position:relative;line-height:1.55}
+.proc li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--tinta-45)}
+.proc li b{color:var(--tinta);font-weight:600}
+
+/* ---------- rodapé compartilhado ---------- */
+.rodape{background:var(--tinta);color:var(--papel-45);padding:var(--e-8) 0 var(--e-7);margin-top:var(--e-9)}
+.rodape-in{display:flex;justify-content:space-between;gap:var(--e-6);flex-wrap:wrap;align-items:flex-end}
+.rodape-nav{display:flex;gap:var(--e-5);flex-wrap:wrap;list-style:none}
+.rodape a{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--papel-45);text-decoration:none;transition:color var(--d-base) var(--ease)}
+.rodape a:hover{color:var(--fluor)}
+.rodape-assin{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  line-height:1.9}
+.rodape-assin b{color:var(--papel-72);font-weight:700}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ============================================================
+   MÓDULO 3 — o canvas de conteúdo
+   Toda peça abaixo é renderizada no tamanho real, em proporção.
+   --u = 1 pixel do canvas de 1080. Assim o CSS carrega o número
+   verdadeiro: calc(96*var(--u)) é literalmente 96 px no arquivo final.
+   ============================================================ */
+.peca{display:flex;flex-direction:column;gap:10px}
+.peca-topo{display:flex;justify-content:space-between;align-items:baseline;gap:var(--e-3);flex-wrap:wrap}
+.peca-nome{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.015em;line-height:1.2}
+.peca-px{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--tinta-45);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.sec--escuro .peca-px{color:var(--papel-45)}
+.sec--escuro .peca-nome{color:var(--papel)}
+.peca-cap{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-45);line-height:1.7}
+.sec--escuro .peca-cap{color:var(--papel-45)}
+.peca-txt{font-size:var(--t-corpo-s);color:var(--tinta-70);line-height:1.5}
+.peca-txt b{color:var(--tinta);font-weight:600}
+.sec--escuro .peca-txt{color:var(--papel-72)}
+.sec--escuro .peca-txt b{color:var(--papel)}
+
+.art{--u:calc(100cqw / 1080);container-type:inline-size;position:relative;overflow:hidden;
+  background:var(--papel);color:var(--tinta);border:1px solid var(--linha-escura);border-radius:var(--r-1)}
+.art::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:6;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+.sec--escuro .art{border-color:rgba(244,243,236,.24)}
+.art--feed{aspect-ratio:4/5}
+.art--story{aspect-ratio:9/16}
+.art--quad{aspect-ratio:1}
+.art--navy{background:var(--navy);color:var(--papel);border-color:var(--navy)}
+.art--tinta{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+.art--papel2{background:var(--papel-2)}
+.art-in{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;
+  padding:calc(64*var(--u))}
+.art-in--story{padding:calc(250*var(--u)) calc(64*var(--u)) calc(250*var(--u))}
+.art-in--folgado{padding:calc(88*var(--u))}
+.empurra{margin-top:auto}
+.sobe{margin-bottom:auto}
+.centro{margin:auto 0;display:flex;flex-direction:column}
+
+/* tipografia de card — 5 níveis, no máximo 3 por peça */
+.a-rot{font-family:var(--mono);font-weight:700;font-size:calc(24*var(--u));letter-spacing:.16em;
+  text-transform:uppercase;display:flex;align-items:center;gap:calc(14*var(--u));color:var(--navy);
+  line-height:1.2;flex-wrap:wrap}
+.a-rot i{display:block;width:calc(46*var(--u));height:max(1px,calc(4*var(--u)));background:var(--navy);
+  font-style:normal;flex:none}
+.art--navy .a-rot,.art--tinta .a-rot{color:var(--fluor)}
+.art--navy .a-rot i,.art--tinta .a-rot i{background:var(--fluor)}
+.a-olho{font-family:var(--corpo);font-weight:600;font-size:calc(30*var(--u));line-height:1.35;
+  letter-spacing:.01em;opacity:.7}
+.a-disp{font-family:var(--display);font-weight:800;letter-spacing:-.038em;line-height:.98;
+  font-size:calc(104*var(--u));text-wrap:balance}
+.a-disp--xl{font-size:calc(140*var(--u));letter-spacing:-.042em;line-height:.94}
+.a-disp--m{font-size:calc(76*var(--u));letter-spacing:-.032em;line-height:1.02}
+.a-disp--s{font-size:calc(58*var(--u));letter-spacing:-.028em;line-height:1.06}
+.art--navy .a-disp em,.art--tinta .a-disp em{font-style:normal;color:var(--fluor)}
+.a-corpo{font-family:var(--corpo);font-size:calc(42*var(--u));line-height:1.36;max-width:24ch;opacity:.86}
+.a-corpo--s{font-size:calc(36*var(--u))}
+.a-nota{font-family:var(--mono);font-size:calc(24*var(--u));letter-spacing:.05em;line-height:1.5;opacity:.6}
+.a-num{font-family:var(--display);font-weight:800;font-size:calc(360*var(--u));line-height:.78;
+  letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.a-num small{font-size:calc(110*var(--u));letter-spacing:-.02em}
+.art--navy .a-num{color:var(--fluor)}
+
+/* gesto 01 dentro do card — a junta engorda para 4 px no canvas de 1080 */
+.a-junta{position:relative;width:calc(120*var(--u));height:max(2px,calc(6*var(--u)));
+  background:currentColor;flex:none}
+.a-junta::after{content:"";position:absolute;left:calc(60*var(--u));top:calc(14*var(--u));
+  width:calc(120*var(--u));height:max(2px,calc(6*var(--u)));background:var(--fluor)}
+/* gesto 02 — o símbolo que sangra a borda, uma vez por peça */
+.a-sangra{position:absolute;z-index:1;pointer-events:none;color:var(--papel-2)}
+.art--navy .a-sangra,.art--tinta .a-sangra{color:var(--navy-alto)}
+.octo-janela{clip-path:polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%)}
+
+/* assinatura do card */
+.a-assin{display:flex;align-items:center;justify-content:space-between;gap:calc(20*var(--u));
+  padding-top:calc(28*var(--u));border-top:max(1px,calc(2*var(--u))) solid currentColor;
+  border-color:rgba(11,15,26,.16)}
+.art--navy .a-assin,.art--tinta .a-assin{border-color:rgba(244,243,236,.18)}
+.a-arroba{font-family:var(--mono);font-weight:700;font-size:calc(24*var(--u));letter-spacing:.14em;
+  text-transform:uppercase;opacity:.55;white-space:nowrap}
+.a-cta{display:inline-flex;align-items:center;gap:calc(14*var(--u));
+  border:max(1px,calc(3*var(--u))) solid currentColor;border-radius:var(--r-1);
+  padding:calc(18*var(--u)) calc(30*var(--u));font-family:var(--mono);font-weight:700;
+  font-size:calc(26*var(--u));letter-spacing:.14em;text-transform:uppercase;align-self:flex-start}
+
+/* campo de foto — enquanto não há imagem liberada, o slot se declara */
+.a-foto{position:relative;overflow:hidden;background:var(--navy);display:grid;place-items:center;
+  isolation:isolate}
+.a-foto .marca{position:absolute;width:74%;color:var(--navy-alto);z-index:1}
+.a-foto span{position:relative;z-index:2;font-family:var(--mono);font-weight:700;font-size:calc(22*var(--u));
+  letter-spacing:.14em;text-transform:uppercase;color:var(--papel-45);text-align:center;line-height:1.8;
+  padding:0 calc(24*var(--u))}
+.a-foto--cheia{position:absolute;inset:0;z-index:0}
+.a-scrim{position:absolute;inset:0;z-index:2;
+  background:linear-gradient(0deg,rgba(16,28,70,.94) 22%,rgba(16,28,70,.55) 52%,rgba(16,28,70,.10) 78%)}
+
+/* anotações de zona segura (camada de documento, não de marca) */
+.zs{position:absolute;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:center;
+  background:rgba(244,243,236,.08);border-block:1px dashed rgba(244,243,236,.45)}
+.zs span{font-family:var(--mono);font-weight:700;font-size:calc(20*var(--u));letter-spacing:.12em;
+  text-transform:uppercase;color:var(--papel-72);text-align:center;line-height:1.5}
+.zs--claro{background:rgba(11,15,26,.05);border-block-color:rgba(11,15,26,.35)}
+.zs--claro span{color:var(--tinta-70)}
+.moldura{position:absolute;z-index:5;border:1px dashed rgba(244,243,236,.5);pointer-events:none}
+.moldura--claro{border-color:rgba(11,15,26,.32)}
+.moldura--dir b{left:auto;right:0}
+.moldura b{position:absolute;top:calc(-34*var(--u));left:0;font-family:var(--mono);font-weight:700;
+  font-size:calc(20*var(--u));letter-spacing:.12em;text-transform:uppercase;opacity:.7;white-space:nowrap}
+
+/* bloqueio de prova social */
+.a-bloq{position:relative;border:max(1px,calc(3*var(--u))) dashed rgba(244,243,236,.35);
+  border-radius:var(--r-1);padding:calc(36*var(--u));
+  background:repeating-linear-gradient(135deg,rgba(244,243,236,.05) 0 6px,transparent 6px 14px)}
+.a-vazio{height:calc(28*var(--u));border-radius:2px;background:rgba(244,243,236,.16);margin-bottom:calc(18*var(--u))}
+.a-vazio--curto{width:52%}
+.a-vazio--medio{width:78%}
+
+/* faixa navy dentro de card claro (mito e fato) */
+.bloco-navy{background:var(--navy);color:var(--papel)}
+.bloco-navy .a-rot{color:var(--fluor)}
+.bloco-navy .a-rot i{background:var(--fluor)}
+.bloco-navy .a-junta::after{background:var(--fluor)}
+
+/* a grade do perfil */
+.mosaico{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--linha-escura);
+  border:1px solid var(--linha-escura);border-radius:var(--r-1);overflow:hidden;max-width:440px}
+.mosaico .art{border:0;border-radius:0}
+.mosaico .art::after{opacity:.04}
+.tile-in{position:absolute;inset:0;z-index:3;padding:calc(56*var(--u));display:flex;flex-direction:column}
+
+/* perfil e destaques */
+.linha-avatar{display:flex;align-items:flex-end;gap:var(--e-6);flex-wrap:wrap}
+.av{display:flex;flex-direction:column;align-items:center;gap:10px}
+.av .selo{outline:2px solid var(--papel);outline-offset:2px}
+.av b{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--tinta-45);
+  text-transform:uppercase;font-variant-numeric:tabular-nums}
+.dest-linha{display:flex;gap:var(--e-5);flex-wrap:wrap}
+.dest{display:flex;flex-direction:column;align-items:center;gap:10px;width:104px}
+.dest .selo{width:88px;height:88px;outline:1px solid var(--linha-escura);outline-offset:3px}
+.dest b{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-70);text-align:center;line-height:1.5}
+
+/* barra de proporção de cor */
+.barra-prop{display:flex;height:56px;border-radius:var(--r-1);overflow:hidden;margin-top:var(--e-5);
+  border:1px solid var(--linha-escura)}
+.barra-prop div{display:grid;place-items:center;font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase}
+
+/* escada tipográfica viva */
+.escada{display:grid;gap:var(--e-4)}
+.degrau{display:grid;grid-template-columns:132px 1fr;gap:var(--e-5);align-items:baseline;
+  padding-bottom:var(--e-4);border-bottom:1px solid var(--linha-escura)}
+.degrau .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-45);font-variant-numeric:tabular-nums;line-height:1.6}
+@media(max-width:640px){.degrau{grid-template-columns:1fr;gap:var(--e-2)}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="trama" viewBox="0 0 200 200" fill="none">
+    <line x1="59.74" y1="28.53" x2="116.58" y2="28.53" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="122.07" y1="21.00" x2="162.26" y2="61.19" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="171.47" y1="59.74" x2="171.47" y2="116.58" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="179.00" y1="122.07" x2="138.81" y2="162.26" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="140.26" y1="171.47" x2="83.42" y2="171.47" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="77.93" y1="179.00" x2="37.74" y2="138.81" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="28.53" y1="140.26" x2="28.53" y2="83.42" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="21.00" y1="77.93" x2="61.19" y2="37.74" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" style="text-decoration:none">
+      <span class="lk lk--hz lk--neg" style="font-size:26px">
+        <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <span class="rule"></span>
+        <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Brandbook</a></li>
+      <li><a href="ds-paginas.html">Páginas</a></li>
+      <li><a href="ds-conteudos-criativos.html" aria-current="page">Conteúdos &amp; Criativos</a></li>
+      <li><a href="ds-apresentacoes.html">Apresentações</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="capa">
+  <svg class="capa-sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+  <div class="wrap">
+    <div class="rotulo"><i></i>Módulo 3 de 4 &middot; Conteúdos &amp; Criativos &middot; v1 &middot; 20 de agosto de 2026</div>
+    <h1>O feed é publicação,<br>não <em>vitrine</em></h1>
+    <p class="tese">Um órgão de ensino publica com a mesma cara todo dia, e é essa repetição que constrói autoridade. Este módulo entrega o <b>canvas, a régua e os arranjos</b> de tudo que sai no @academiadtm: perfil, feed, story e anúncio. Cada peça aqui está desenhada no tamanho real, com os números do lado, para o Rodrigo e a equipe preencherem sem decidir de novo a cada post.</p>
+    <div class="capa-lk">
+      <span class="lk lk--principal lk--neg" style="font-size:clamp(60px,8.4vw,96px)">
+        <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <span class="rule"></span>
+        <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+      </span>
+    </div>
+    <div class="capa-meta">
+      <div><div class="k">Canvas</div><p>Feed 1080 &times; 1350 (4:5) &middot; story e anúncio vertical 1080 &times; 1920 (9:16) &middot; miniatura de perfil 4:5.</p></div>
+      <div><div class="k">Cadência</div><p>Dois posts por semana, terça e quinta, mais stories em dias alternados. Ritmo definido na linha editorial de 02/08.</p></div>
+      <div><div class="k">Quem lê</div><p>Dentista clínico e especialista de outra área. Nunca paciente: esse público continua no perfil pessoal do Rodrigo.</p></div>
+      <div><div class="k">Bloqueios</div><p>Sem depoimento autorizado, sem foto liberada e sem número financeiro validado. O sistema já nasce desenhado para essa restrição.</p></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ 00 · A REGRA DO CANVAS ============ -->
+<section class="sec" id="canvas">
+  <div class="sec-h">
+    <div class="sec-n">§ 00</div>
+    <div>
+      <span class="junta"></span>
+      <h2>A régua antes das peças</h2>
+      <p class="lede">O dentista lê isso entre um paciente e outro, na tela do celular apoiada no balcão da recepção. É essa a condição real de leitura: <b>tela pequena, som desligado, quinze segundos</b>. Todas as decisões deste módulo saem daí, e não do que fica bonito no monitor.</p>
+    </div>
+  </div>
+
+  <div class="dna">SISTEMA DE CONTEÚDO &middot; Academia DTM &middot; v1
+
+CANVAS      feed 1080x1350 (4:5) &middot; story 1080x1920 (9:16) &middot; miniatura de perfil 4:5
+MARGEM      64 px em feed &middot; 64 px lateral e 96/120 px no topo e base do story
+PALETA      papel domina &middot; navy ancora &middot; <b>fluor entra uma vez por peça</b>, nunca como fundo,
+            nunca como texto sobre papel &middot; cobalto e menta ficam fora do conteúdo social
+TIPO        display Archivo 800 &middot; corpo Hanken 400, piso de 36 px &middot; rótulo e dado em Space Mono 700
+ARRANJOS    três, e só três: <b>RODAPÉ</b> (texto ancorado embaixo) &middot; <b>REGISTRO</b> (rótulo no topo,
+            texto descendo) &middot; <b>CENTRO</b> (um elemento em escala, contexto em volta)
+GESTO       um por peça: a junta abrindo o texto, ou o símbolo sangrando a borda &mdash; nunca os dois
+ASSINATURA  arroba em mono no rodapé do card &middot; lockup horizontal só na capa e no fechamento
+GRÃO        viaja para dentro do arquivo exportado, 4 a 5 por cento
+PROIBIDO    emoji &middot; seta desenhada &middot; "arrasta pro lado" &middot; contador &middot; selo de desconto &middot;
+            print com círculo vermelho &middot; ícone de banco &middot; foto de banco de imagem</div>
+
+  <div class="alerta">
+    <div class="k">Leia antes de olhar qualquer peça</div>
+    <p><b>Todo texto dentro das artes desta página é exemplo de preenchimento.</b> Foi escrito pela Inception a partir do universo clínico do Rodrigo e da linha editorial de 02/08, para mostrar quanto texto cabe e como ele se comporta no canvas. Nada aqui é fala dele, nem pauta aprovada, até que ele valide.</p>
+    <p><b>Nenhum número real entra nos masters.</b> Onde o formato pede um dado, a arte mostra o campo zerado, no padrão 00,0 por cento, e a linha de fonte declarada como campo a preencher. Número entra na peça com a referência completa na mão, nunca antes: é a regra 27 do contrato, e é também o que o próprio card de dado ensina.</p>
+  </div>
+</section>
+
+<!-- ============ 01 · O PERFIL ============ -->
+<section class="sec" id="perfil">
+  <div class="sec-h">
+    <div class="sec-n">§ 01</div>
+    <div>
+      <span class="junta"></span>
+      <h2>O perfil &mdash; a primeira peça que ninguém desenha</h2>
+      <p class="lede">O dentista que descobre o @academiadtm por um comentário ou uma indicação decide em segundos se aquilo é uma escola ou mais um perfil de curso. Ele decide olhando <b>três coisas: o avatar, a fila de destaques e a grade</b>. Nenhuma delas é um post, e por isso todas costumam ficar sem dono.</p>
+    </div>
+  </div>
+
+  <h3 class="sub"><span class="n">1.1</span>O avatar</h3>
+  <div class="grade-2" style="align-items:start">
+    <div>
+      <div class="palco palco--papel2" style="min-height:auto;padding:var(--e-7) var(--e-5)">
+        <div class="linha-avatar">
+          <div class="av">
+            <span class="selo" style="width:110px;height:110px"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span>
+            <b>110 px &middot; perfil</b>
+          </div>
+          <div class="av">
+            <span class="selo" style="width:56px;height:56px"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span>
+            <b>56 px &middot; post</b>
+          </div>
+          <div class="av">
+            <span class="selo" style="width:32px;height:32px"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span>
+            <b>32 px &middot; comentário</b>
+          </div>
+        </div>
+      </div>
+      <div class="cap">Selo navy, símbolo fluor a 62 por cento do lado &middot; arquivo enviado em 1080 &times; 1080</div>
+    </div>
+    <div>
+      <ul class="lista" style="margin-top:var(--e-2)">
+        <li><b>O avatar é o selo, nunca o lockup completo.</b> A 32 px, o texto "Academia DTM" vira um borrão cinza e o perfil perde a única chance de ser reconhecido na lista de comentários.</li>
+        <li><b>Uma versão só, para sempre.</b> Avatar que muda a cada campanha zera o reconhecimento acumulado. O selo navy com símbolo fluor é o padrão; o selo invertido fica para adesivo e carimbo.</li>
+        <li><b>Sem foto do Rodrigo no avatar do @academiadtm.</b> O rosto dele assina o perfil clínico. Aqui quem assina é a instituição, e essa separação é o que sustenta os dois perfis convivendo.</li>
+        <li><b>Enviar em 1080 &times; 1080</b>, com o símbolo já centrado: o Instagram recorta o círculo e come as bordas.</li>
+      </ul>
+      <div class="porque"><b>Por quê:</b> o piso de redução do selo no contrato é 32 px, exatamente o tamanho que o avatar assume no comentário. O símbolo Trama foi desenhado para sobreviver aí; o texto do lockup não.</div>
+    </div>
+  </div>
+
+  <h3 class="sub"><span class="n">1.2</span>Os destaques</h3>
+  <div class="palco" style="min-height:auto;padding:var(--e-7) var(--e-6)">
+    <div class="dest-linha">
+      <div class="dest"><span class="selo"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span><b>Sobre</b></div>
+      <div class="dest"><span class="selo selo--papel"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span><b>Guarda-chuva</b></div>
+      <div class="dest"><span class="selo"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span><b>Bandeira</b></div>
+      <div class="dest"><span class="selo selo--papel"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span><b>Casos</b></div>
+      <div class="dest"><span class="selo selo--invertido"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span><b>Viver de DTM</b></div>
+    </div>
+  </div>
+  <div class="cap">Cinco capas, na ordem da linha editorial &middot; arquivo 1080 &times; 1920, o Instagram recorta o círculo central</div>
+
+  <div class="grade-2" style="margin-top:var(--e-5);align-items:start">
+    <ul class="lista">
+      <li><b>Capa de destaque não leva texto dentro.</b> O nome vive no rótulo do Instagram, que corta por volta do décimo caractere. Texto dentro do círculo some no recorte e briga com o rótulo.</li>
+      <li><b>O ritmo alterna navy e papel</b>, sempre nesta ordem. A alternância é o que impede a fila de virar cinco medalhas iguais.</li>
+      <li><b>Uma capa invertida na fila, e só uma.</b> O selo fluor marca o destaque da formação, que é o único com função comercial. É o mesmo princípio do fluor no resto do sistema: aparece onde importa decidir.</li>
+    </ul>
+    <div class="painel">
+      <div class="cap" style="margin-top:0">Rótulos, na ordem</div>
+      <div class="tab-rolo">
+        <table class="tab">
+          <thead><tr><th>#</th><th>Destaque</th><th>O que abriga</th></tr></thead>
+          <tbody>
+            <tr><td class="num">01</td><td><b>Sobre</b></td><td>Trajetória em três ou quatro telas. Cartão de visita, não currículo</td></tr>
+            <tr><td class="num">02</td><td><b>Guarda-chuva</b></td><td>O conceito que mais separa o Rodrigo do dentista comum</td></tr>
+            <tr><td class="num">03</td><td><b>Bandeira</b></td><td>As convicções: por que ensinar todas as ferramentas</td></tr>
+            <tr><td class="num">04</td><td><b>Casos</b></td><td>Casos clínicos anonimizados, narrados por ele</td></tr>
+            <tr><td class="num">05</td><td><b>Viver de DTM</b></td><td>A formação. Fica magro até setembro e cresce depois</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 01.3 · A GRADE ============ -->
+<section class="sec" id="grade" style="border-top:0;padding-top:var(--e-8)">
+  <h3 class="sub" style="margin-top:0"><span class="n">1.3</span>A grade do perfil</h3>
+  <div class="grade-2" style="align-items:start">
+    <div>
+      <div class="mosaico">
+        <div class="art art--feed art--navy">
+          <svg class="a-sangra" viewBox="0 0 200 200" aria-hidden="true" style="width:62%;right:-16%;top:-12%"><use href="#trama"/></svg>
+          <div class="tile-in"><div class="a-rot"><i></i>Série</div><div class="a-disp empurra" style="font-size:calc(96*var(--u))">Bruxismo não é DTM</div></div>
+        </div>
+        <div class="art art--feed">
+          <div class="tile-in"><div class="a-junta"></div><div class="a-disp--m empurra" style="font-family:var(--display);font-weight:800;letter-spacing:-.032em;line-height:1.02;font-size:calc(84*var(--u))">O guarda-chuva</div></div>
+        </div>
+        <div class="art art--feed art--papel2">
+          <div class="tile-in centro" style="text-align:center;align-items:center"><div class="a-num" style="font-size:calc(260*var(--u))">00,0<small>%</small></div></div>
+        </div>
+        <div class="art art--feed art--navy">
+          <div class="tile-in"><div class="a-junta empurra"></div><div class="a-disp" style="font-size:calc(88*var(--u));margin-top:calc(24*var(--u))">Tudo vira prego</div></div>
+        </div>
+        <div class="art art--feed">
+          <div class="tile-in"><div class="a-rot"><i></i>Mito</div><div class="a-disp empurra" style="font-size:calc(92*var(--u))">A placa resolve</div></div>
+        </div>
+        <div class="art art--feed art--papel2">
+          <div class="a-foto" style="position:absolute;inset:0 0 46% 0;z-index:2"><svg class="marca" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></div>
+          <div class="tile-in empurra" style="justify-content:flex-end"><div class="a-rot"><i></i>Bastidor</div></div>
+        </div>
+        <div class="art art--feed art--navy">
+          <div class="tile-in centro" style="align-items:flex-start"><div class="a-num" style="font-size:calc(240*var(--u))">00</div><div class="a-nota" style="opacity:.8;margin-top:calc(28*var(--u))">campo de número</div></div>
+        </div>
+        <div class="art art--feed">
+          <div class="tile-in"><div class="a-rot"><i></i>Aula</div><div class="a-disp--m empurra" style="font-family:var(--display);font-weight:800;letter-spacing:-.032em;line-height:1.02;font-size:calc(80*var(--u))">Anamnese que investiga</div></div>
+        </div>
+        <div class="art art--feed art--papel2">
+          <div class="tile-in centro" style="align-items:center;text-align:center">
+            <span class="lk lk--principal lk--mono-navy" style="font-size:calc(150*var(--u))">
+              <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+              <span class="rule"></span>
+              <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="cap">Nove publicações seguidas &middot; cada miniatura em 4:5, do jeito que a grade recorta</div>
+    </div>
+    <div>
+      <ul class="lista" style="margin-top:var(--e-2)">
+        <li><b>A grade não é um mosaico desenhado.</b> Todo post novo empurra os outros para a direita, e qualquer composição fixa se desfaz na semana seguinte. Quem desenha grade em quadriculado refaz o desenho toda terça.</li>
+        <li><b>A única regra que sobrevive ao empurrão é a alternância:</b> nunca publicar dois cards de mesma polaridade em sequência. Depois de um card navy vem um card de papel, e vice-versa. Isso mantém o xadrez vivo em qualquer posição.</li>
+        <li><b>No máximo três cards navy visíveis</b> nas primeiras nove miniaturas. Passou disso, a grade fecha e o perfil ganha peso de agência, não de escola.</li>
+        <li><b>Um card com campo de foto a cada seis publicações.</b> Grade só de tipografia vira parede de citação; grade só de foto vira álbum.</li>
+        <li><b>A miniatura é lida a 145 px de largura.</b> Se o display do card tem mais de sete palavras, some. Esse é o teste, e ele roda antes de publicar: reduza a arte para o tamanho de uma unha e veja o que restou.</li>
+      </ul>
+      <div class="porque"><b>Por quê:</b> a grade do perfil hoje mostra a miniatura em 4:5, o mesmo formato do post. Publicar em 4:5 é o que garante que a arte apareça inteira, sem recorte pelo centro.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · FEED ============ -->
+<section class="sec" id="feed">
+  <div class="sec-h">
+    <div class="sec-n">§ 02</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Feed &mdash; os nove formatos que cobrem tudo</h2>
+      <p class="lede">Nove peças resolvem as cinco linhas editoriais inteiras. Elas não são nove desenhos diferentes: são <b>três arranjos</b> preenchidos de três maneiras. Quem entende isso monta um carrossel novo em vinte minutos; quem não entende, redesenha do zero toda semana. Todas em 1080 &times; 1350.</p>
+    </div>
+  </div>
+
+  <div class="grade-3">
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">01 &middot; Capa de carrossel</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--navy">
+        <svg class="a-sangra" viewBox="0 0 200 200" aria-hidden="true" style="width:66%;right:-18%;top:-14%"><use href="#trama"/></svg>
+        <div class="art-in">
+          <div class="a-rot"><i></i>Série &middot; Diagnóstico</div>
+          <div class="empurra"></div>
+          <div class="a-disp a-disp--xl">Bruxismo não é diagnóstico de DTM</div>
+          <div class="a-assin" style="margin-top:calc(44*var(--u))">
+            <span class="a-arroba">@academiadtm</span>
+            <span class="a-arroba">01 / 08</span>
+          </div>
+        </div>
+      </div>
+      <div class="peca-cap">Arranjo rodapé &middot; gesto: símbolo sangrando &middot; sem corpo de texto</div>
+      <div class="peca-txt">A capa é o anúncio do carrossel. Ela carrega <b>uma frase e nada mais</b>: display de até sete palavras, o rótulo da série no topo e a numeração discreta no rodapé. O símbolo sangra a borda uma vez, e essa é a quebra de grade da peça.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">02 &middot; Card interno &middot; registro</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed">
+        <div class="art-in">
+          <div class="a-rot"><i></i>02</div>
+          <div class="a-junta" style="margin-top:calc(40*var(--u))"></div>
+          <div class="a-disp a-disp--m" style="margin-top:calc(36*var(--u))">O guarda-chuva</div>
+          <div class="a-corpo" style="margin-top:calc(28*var(--u))">DTM não é um diagnóstico. É o nome que abriga quadros diferentes, com tratamentos que não se parecem entre si.</div>
+          <div class="a-assin empurra"><span class="a-arroba">@academiadtm</span><span class="a-arroba">02 / 08</span></div>
+        </div>
+      </div>
+      <div class="peca-cap">Arranjo registro &middot; gesto: a junta &middot; uma ideia por card</div>
+      <div class="peca-txt">O card de trabalho do carrossel educativo. Rótulo numerado no topo, junta abrindo, display curto e um bloco de corpo com <b>no máximo 32 palavras</b>. Duas ideias no mesmo card viram duas ideias esquecidas.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">03 &middot; Card de citação no miolo</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--navy">
+        <div class="art-in">
+          <div class="a-rot"><i></i>Bandeira</div>
+          <div class="centro">
+            <div class="a-disp">Pra quem só tem martelo, tudo é prego</div>
+            <div class="a-nota" style="margin-top:calc(40*var(--u))">Dr. Rodrigo Wendel</div>
+          </div>
+          <div class="a-assin"><span class="a-arroba">@academiadtm</span><span class="a-arroba">05 / 08</span></div>
+        </div>
+      </div>
+      <div class="peca-cap">Arranjo centro &middot; quebra de ritmo do carrossel &middot; frase do próprio Rodrigo</div>
+      <div class="peca-txt">Todo carrossel de sete cards ou mais precisa de <b>um card que inverte a polaridade</b> no meio. É ele que segura a leitura na hora em que ela costuma cair. A frase aqui é dele, não nossa, e por isso leva assinatura.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">04 &middot; Fechamento com pedido</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--papel2">
+        <div class="art-in">
+          <div class="a-rot"><i></i>Fim</div>
+          <div class="empurra"></div>
+          <div class="a-disp a-disp--m">Guarda para a próxima consulta</div>
+          <div class="a-cta" style="margin-top:calc(36*var(--u))">Salvar</div>
+          <div class="a-assin" style="margin-top:calc(44*var(--u))">
+            <span class="lk lk--hz lk--mono-navy" style="font-size:calc(64*var(--u))">
+              <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+              <span class="rule"></span>
+              <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+            </span>
+            <span class="a-arroba">08 / 08</span>
+          </div>
+        </div>
+      </div>
+      <div class="peca-cap">Arranjo rodapé &middot; único card do carrossel com lockup &middot; um pedido só</div>
+      <div class="peca-txt">O fechamento muda de fundo para avisar que a leitura acabou. Ele pede <b>uma coisa apenas</b>: salvar, comentar ou responder. Dois pedidos no mesmo card derrubam os dois.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">05 &middot; Post único de tese</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--navy">
+        <svg class="a-sangra" viewBox="0 0 200 200" aria-hidden="true" style="width:54%;left:-16%;bottom:-16%"><use href="#trama"/></svg>
+        <div class="art-in">
+          <div class="a-rot"><i></i>Tese</div>
+          <div class="empurra"></div>
+          <div class="a-disp a-disp--xl">Não sou dono da <em>razão</em></div>
+          <div class="a-corpo" style="margin-top:calc(32*var(--u))">O dado clínico não me dá razão, ele me obriga a olhar de novo.</div>
+          <div class="a-assin" style="margin-top:calc(40*var(--u))"><span class="a-arroba">@academiadtm</span><span class="a-arroba">Dr. Rodrigo Wendel</span></div>
+        </div>
+      </div>
+      <div class="peca-cap">Arranjo rodapé &middot; a única peça onde uma palavra vai em fluor</div>
+      <div class="peca-txt">Post solto, sem carrossel. O fluor marca <b>uma palavra da frase</b>, nunca duas, e só existe aqui porque o fundo é navy. Sobre papel, a mesma palavra ficaria ilegível.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">06 &middot; Card de dado</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--navy">
+        <div class="art-in">
+          <div class="a-rot"><i></i>Dado</div>
+          <div class="centro">
+            <div class="a-num">00,0<small>%</small></div>
+            <div class="a-corpo" style="margin-top:calc(36*var(--u))">campo do achado clínico que o número sustenta, até 14 palavras</div>
+          </div>
+          <div class="a-nota">Campo de fonte &middot; periódico, ano e página, a preencher</div>
+        </div>
+      </div>
+      <div class="peca-cap">Arranjo centro &middot; o número é a imagem &middot; linha de fonte obrigatória</div>
+      <div class="peca-txt">O único lugar do sistema onde o fluor ocupa área grande, porque ali ele é <b>o número-chave</b>. O master sai com o número zerado de propósito: <b>o dado só entra na arte com a referência completa na mão</b>, e a linha de fonte é campo obrigatório, não enfeite. Dado sem origem, num público de dentista, vira motivo de desconfiança.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">07 &middot; Mito e fato</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed">
+        <div style="position:absolute;inset:0 0 54% 0;z-index:3;padding:calc(64*var(--u));display:flex;flex-direction:column;justify-content:center">
+          <div class="a-rot"><i></i>Mito</div>
+          <div class="a-disp a-disp--s" style="margin-top:calc(24*var(--u))">A placa resolve a DTM</div>
+        </div>
+        <div class="bloco-navy" style="position:absolute;inset:46% 0 0 0;z-index:3;padding:calc(64*var(--u));display:flex;flex-direction:column;justify-content:center">
+          <div class="a-rot"><i></i>Fato</div>
+          <div class="a-disp a-disp--s" style="margin-top:calc(24*var(--u))">É uma ferramenta entre várias</div>
+          <div class="a-corpo a-corpo--s" style="margin-top:calc(24*var(--u))">Sem investigar a causa, ela administra o sintoma e o paciente volta.</div>
+        </div>
+      </div>
+      <div class="peca-cap">Arranjo registro em duas faixas &middot; a divisão cai em 46 por cento, nunca no meio exato</div>
+      <div class="peca-txt">O contraste é de <b>polaridade, não de cor de alerta</b>. Nada de vermelho, nada de X, nada de sinal de proibido: o erro comum aparece em papel e a correção em navy. A divisão fora do meio é o que impede a peça de parecer uma tabela.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">08 &middot; Capa de aula ou bastidor</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--navy">
+        <div class="a-foto a-foto--cheia">
+          <svg class="marca" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span>Campo de foto<br>sem imagem liberada</span>
+        </div>
+        <div class="a-scrim"></div>
+        <div class="art-in">
+          <div class="a-rot"><i></i>Bastidor</div>
+          <div class="empurra"></div>
+          <div class="a-disp a-disp--m">O que entra na aula de diagnóstico</div>
+          <div class="a-assin" style="margin-top:calc(40*var(--u))"><span class="a-arroba">@academiadtm</span></div>
+        </div>
+      </div>
+      <div class="peca-cap">Arranjo rodapé &middot; scrim navy obrigatório sob o texto &mdash; o véu escuro que garante a leitura sobre a foto &middot; foto pendente de liberação</div>
+      <div class="peca-txt">Quando houver foto, ela entra por baixo e o texto nunca cruza o rosto. O scrim sobe do rodapé até 78 por cento da altura, o suficiente para o display ficar legível <b>sem apagar a imagem</b>.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">09 &middot; Prova social</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--tinta">
+        <div class="art-in">
+          <div class="a-rot"><i></i>Prova</div>
+          <div class="a-bloq" style="margin-top:calc(40*var(--u))">
+            <div class="a-vazio a-vazio--medio"></div>
+            <div class="a-vazio"></div>
+            <div class="a-vazio a-vazio--curto"></div>
+            <div class="a-nota" style="margin-top:calc(28*var(--u));opacity:.9">Bloqueado &middot; depoimento sem autorização de uso</div>
+          </div>
+          <div class="a-corpo a-corpo--s empurra" style="opacity:.7">Enquanto não houver liberação, a prova vem de caso clínico anonimizado narrado pelo Rodrigo.</div>
+        </div>
+      </div>
+      <div class="peca-cap">Estrutura definida, conteúdo bloqueado &middot; ver § 07</div>
+      <div class="peca-txt">Os nove depoimentos existentes foram gravados no contexto do Instituto Ária e <b>não têm autorização de uso</b> para a Academia DTM. O formato fica pronto e vazio até a liberação chegar por escrito.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 03 · STORY ============ -->
+<section class="sec sec--escuro" id="story">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="sec-n">§ 03</div>
+      <div>
+        <span class="junta junta--claro"></span>
+        <h2>Story &mdash; o mesmo sistema com metade do texto</h2>
+        <p class="lede">Story não é o post recortado. O Instagram ocupa <b>250 px em cima e 250 px embaixo</b> com nome de perfil, respostas e adesivos, e quem esquece isso publica peça com a frase escondida atrás do teclado. O texto cai pela metade, o display cresce, e a arte deixa o espaço do adesivo vazio de propósito.</p>
+      </div>
+    </div>
+
+    <div class="grade-4">
+
+      <div class="peca">
+        <div class="peca-topo"><div class="peca-nome">S1 &middot; Anúncio da série</div><div class="peca-px">1080 &times; 1920</div></div>
+        <div class="art art--story art--navy">
+          <svg class="a-sangra" viewBox="0 0 200 200" aria-hidden="true" style="width:80%;right:-24%;top:8%"><use href="#trama"/></svg>
+          <div class="zs" style="top:0;height:calc(250*var(--u))"><span>Faixa do Instagram &middot; 250 px</span></div>
+          <div class="zs" style="bottom:0;height:calc(250*var(--u))"><span>Faixa do Instagram &middot; 250 px</span></div>
+          <div class="art-in art-in--story">
+            <div class="a-rot"><i></i>Hoje no feed</div>
+            <div class="empurra"></div>
+            <div class="a-disp a-disp--xl">Bruxismo não é DTM</div>
+            <div class="a-corpo" style="margin-top:calc(32*var(--u))">Carrossel novo, oito cards</div>
+            <div class="empurra"></div>
+            <div class="a-arroba">@academiadtm</div>
+          </div>
+        </div>
+        <div class="peca-cap">Zonas seguras marcadas &middot; texto vive no miolo de 1080 &times; 1420</div>
+      </div>
+
+      <div class="peca">
+        <div class="peca-topo"><div class="peca-nome">S2 &middot; Educativo</div><div class="peca-px">1080 &times; 1920</div></div>
+        <div class="art art--story">
+          <div class="art-in art-in--story">
+            <div class="a-rot"><i></i>Guarda-chuva</div>
+            <div class="a-junta" style="margin-top:calc(40*var(--u))"></div>
+            <div class="centro">
+              <div class="a-disp a-disp--m">Um nome, vários quadros</div>
+              <div class="a-corpo" style="margin-top:calc(32*var(--u))">Tratamentos que não se parecem entre si.</div>
+            </div>
+            <div class="a-arroba">@academiadtm</div>
+          </div>
+        </div>
+        <div class="peca-cap">Arranjo registro &middot; até 18 palavras no frame inteiro</div>
+      </div>
+
+      <div class="peca">
+        <div class="peca-topo"><div class="peca-nome">S3 &middot; Citação</div><div class="peca-px">1080 &times; 1920</div></div>
+        <div class="art art--story art--navy">
+          <div class="art-in art-in--story">
+            <div class="centro">
+              <div class="a-disp">Tudo vira prego</div>
+              <div class="a-nota" style="margin-top:calc(36*var(--u))">Dr. Rodrigo Wendel</div>
+            </div>
+            <div class="a-arroba">@academiadtm</div>
+          </div>
+        </div>
+        <div class="peca-cap">Arranjo centro &middot; frase dele, sempre assinada</div>
+      </div>
+
+      <div class="peca">
+        <div class="peca-topo"><div class="peca-nome">S4 &middot; Dado</div><div class="peca-px">1080 &times; 1920</div></div>
+        <div class="art art--story art--navy">
+          <div class="art-in art-in--story">
+            <div class="a-rot"><i></i>Dado</div>
+            <div class="centro">
+              <div class="a-num" style="font-size:calc(300*var(--u))">00,0<small>%</small></div>
+              <div class="a-corpo" style="margin-top:calc(32*var(--u))">campo do achado, até 8 palavras</div>
+            </div>
+            <div class="a-nota">Campo de fonte, a preencher</div>
+          </div>
+        </div>
+        <div class="peca-cap">O número encolhe de 360 para 300 px &middot; a linha de fonte continua obrigatória</div>
+      </div>
+
+      <div class="peca">
+        <div class="peca-topo"><div class="peca-nome">S5 &middot; Mito e fato</div><div class="peca-px">1080 &times; 1920</div></div>
+        <div class="art art--story">
+          <div style="position:absolute;inset:calc(250*var(--u)) 0 52% 0;z-index:3;padding:0 calc(64*var(--u));display:flex;flex-direction:column;justify-content:center">
+            <div class="a-rot"><i></i>Mito</div>
+            <div class="a-disp a-disp--s" style="margin-top:calc(24*var(--u))">A placa resolve</div>
+          </div>
+          <div class="bloco-navy" style="position:absolute;inset:48% 0 0 0;z-index:3;padding:calc(72*var(--u)) calc(64*var(--u)) calc(250*var(--u));display:flex;flex-direction:column;justify-content:center">
+            <div class="a-rot"><i></i>Fato</div>
+            <div class="a-disp a-disp--s" style="margin-top:calc(24*var(--u))">É uma ferramenta entre várias</div>
+          </div>
+        </div>
+        <div class="peca-cap">Duas faixas &middot; o corpo de texto sai, sobram os dois títulos</div>
+      </div>
+
+      <div class="peca">
+        <div class="peca-topo"><div class="peca-nome">S6 &middot; Bastidor</div><div class="peca-px">1080 &times; 1920</div></div>
+        <div class="art art--story art--navy">
+          <div class="a-foto a-foto--cheia">
+            <svg class="marca" viewBox="0 0 200 200" aria-hidden="true" style="width:56%"><use href="#trama"/></svg>
+            <span>Campo de foto<br>sem imagem liberada</span>
+          </div>
+          <div class="a-scrim"></div>
+          <div class="art-in art-in--story">
+            <div class="empurra"></div>
+            <div class="a-disp a-disp--m">Preparando o encontro de diagnóstico</div>
+            <div class="a-arroba" style="margin-top:calc(36*var(--u))">@academiadtm</div>
+          </div>
+        </div>
+        <div class="peca-cap">Foto de celular, sem tratamento de estúdio &middot; scrim mantém o texto legível</div>
+      </div>
+
+      <div class="peca">
+        <div class="peca-topo"><div class="peca-nome">S7 &middot; Enquete</div><div class="peca-px">1080 &times; 1920</div></div>
+        <div class="art art--story art--papel2">
+          <div class="art-in art-in--story">
+            <div class="a-rot"><i></i>Pergunta</div>
+            <div class="a-disp a-disp--m" style="margin-top:calc(36*var(--u))">Quantos pacientes com dor de mandíbula você atendeu este mês</div>
+            <div class="empurra"></div>
+            <div class="moldura moldura--claro" style="left:calc(64*var(--u));right:calc(64*var(--u));bottom:calc(250*var(--u));height:calc(230*var(--u))"><b>Espaço do adesivo do Instagram</b></div>
+          </div>
+        </div>
+        <div class="peca-cap">A arte deixa o espaço vazio &middot; o adesivo real entra por cima, no aplicativo</div>
+      </div>
+
+      <div class="peca">
+        <div class="peca-topo"><div class="peca-nome">S8 &middot; Aviso</div><div class="peca-px">1080 &times; 1920</div></div>
+        <div class="art art--story art--navy">
+          <div class="art-in art-in--story">
+            <div class="a-rot"><i></i>Aviso</div>
+            <div class="centro">
+              <div class="a-junta"></div>
+              <div class="a-disp a-disp--m" style="margin-top:calc(36*var(--u))">Aula nova no destaque Guarda-chuva</div>
+            </div>
+            <div class="a-arroba">@academiadtm</div>
+          </div>
+        </div>
+        <div class="peca-cap">Frame de serviço &middot; nunca leva contagem regressiva nem urgência fabricada</div>
+      </div>
+
+      <div class="peca">
+        <div class="peca-topo"><div class="peca-nome">S9 &middot; Puxa para o link</div><div class="peca-px">1080 &times; 1920</div></div>
+        <div class="art art--story art--tinta">
+          <div class="zs" style="bottom:0;height:calc(420*var(--u))"><span>Adesivo de link &middot; 420 px reservados</span></div>
+          <div class="art-in art-in--story">
+            <div class="a-rot"><i></i>Formação</div>
+            <div class="empurra"></div>
+            <div class="a-disp a-disp--m">Viver de DTM abre a próxima turma</div>
+            <div class="a-corpo a-corpo--s" style="margin-top:calc(28*var(--u))">Lista de espera pelo link abaixo</div>
+            <div class="empurra"></div>
+          </div>
+        </div>
+        <div class="peca-cap">Único frame com pedido comercial &middot; data e vaga só entram quando estiverem fechadas</div>
+      </div>
+
+    </div>
+
+    <div class="grade-2" style="margin-top:var(--e-8)">
+      <div>
+        <div class="cap" style="margin-top:0">A régua do story</div>
+        <ul class="lista" style="margin-top:var(--e-4)">
+          <li><b>250 px em cima, 250 px embaixo.</b> Nada de texto, logo ou número dentro dessas faixas. Quando o frame tem adesivo de link, a reserva de baixo sobe para 420 px.</li>
+          <li><b>Até 18 palavras no frame inteiro.</b> Story é lido em pé, andando, com o dedo já no meio da tela.</li>
+          <li><b>Uma ideia por frame.</b> Sequência de três a sete frames com começo, meio e pedido, como manda a linha editorial.</li>
+          <li><b>A arte deixa o lugar do adesivo vazio.</b> Desenhar uma enquete falsa e colar a real por cima é o erro que faz o frame parecer anúncio mal feito.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="cap" style="margin-top:0">O que muda do feed para o story</div>
+        <div class="tab-rolo">
+          <table class="tab">
+            <thead><tr><th>Elemento</th><th>Feed 4:5</th><th>Story 9:16</th></tr></thead>
+            <tbody>
+              <tr><td><b>Margem</b></td><td class="num">64 px</td><td class="num">64 lateral &middot; 250 topo e base</td></tr>
+              <tr><td><b>Display</b></td><td class="num">104 a 140 px</td><td class="num">76 a 140 px</td></tr>
+              <tr><td><b>Corpo</b></td><td class="num">42 px &middot; até 32 palavras</td><td class="num">42 px &middot; até 18 palavras</td></tr>
+              <tr><td><b>Assinatura</b></td><td>Arroba e numeração</td><td>Arroba apenas</td></tr>
+              <tr><td><b>Lockup</b></td><td>Só no fechamento</td><td>Não entra</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · TRÁFEGO ============ -->
+<section class="sec" id="trafego">
+  <div class="sec-h">
+    <div class="sec-n">§ 04</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Criativos de tráfego &mdash; o mesmo sistema falando com quem não conhece</h2>
+      <p class="lede">O post orgânico conversa com quem já segue. O anúncio aparece no meio do feed de um dentista que nunca ouviu falar da Academia DTM e tem <b>menos de dois segundos</b> para dizer quem está falando. Isso muda quatro coisas: a marca aparece, o rosto entra, o texto encolhe e as faixas do gerenciador viram lei.</p>
+    </div>
+  </div>
+
+  <div class="grade-2" style="align-items:start">
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">P1 &middot; Feed &middot; o dado como imagem</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--navy">
+        <div class="moldura moldura--dir" style="left:0;right:0;top:12.5%;bottom:12.5%"><b>Sobrevivência em 1:1</b></div>
+        <div class="art-in">
+          <div class="a-rot"><i></i>Academia DTM</div>
+          <div class="centro">
+            <div class="a-num">00,0<small>%</small></div>
+            <div class="a-corpo" style="margin-top:calc(32*var(--u))">campo do dado de mercado, até 9 palavras</div>
+          </div>
+          <div class="a-nota" style="margin-bottom:calc(28*var(--u))">Campo de fonte, a preencher &middot; sem referência, o anúncio não sobe</div>
+          <div class="a-assin">
+            <span class="lk lk--hz lk--neg" style="font-size:calc(58*var(--u))">
+              <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+              <span class="rule"></span>
+              <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+            </span>
+            <span class="a-cta" style="align-self:center">Saber mais</span>
+          </div>
+        </div>
+      </div>
+      <div class="peca-cap">Lockup horizontal a 58 px &middot; selo de chamada em contorno, nunca botão cheio</div>
+      <div class="peca-txt">A moldura tracejada marca o <b>quadrado central</b>: tudo que importa vive ali dentro, para o criativo continuar de pé quando o gerenciador recorta em 1:1. O número é o elemento em escala e o resto se cala. Ele sai zerado no master: <b>anúncio com número sem fonte é o mais fácil de derrubar</b>, e o público daqui derruba.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">P2 &middot; Feed &middot; retrato e promessa</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--navy">
+        <div class="a-foto a-foto--cheia">
+          <svg class="marca" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span>Retrato do Dr. Rodrigo<br>arquivo em alta pendente</span>
+        </div>
+        <div class="a-scrim"></div>
+        <div class="art-in">
+          <div class="a-rot"><i></i>Formação</div>
+          <div class="empurra"></div>
+          <div class="a-disp a-disp--m">O paciente que você encaminha podia ficar com você</div>
+          <div class="a-assin" style="margin-top:calc(40*var(--u))">
+            <span class="lk lk--hz lk--neg" style="font-size:calc(58*var(--u))">
+              <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+              <span class="rule"></span>
+              <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+            </span>
+            <span class="a-cta" style="align-self:center">Ver a formação</span>
+          </div>
+        </div>
+      </div>
+      <div class="peca-cap">Foto ocupa dois terços &middot; texto no terço livre do rosto &middot; asset a solicitar</div>
+      <div class="peca-txt">Esta é a peça que precisa de <b>foto real em alta resolução</b>. Enquanto o arquivo não chega, o campo fica declarado. Rosto gerado por inteligência artificial e foto de banco de imagem estão fora, por regra de marca.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">P3 &middot; Story &middot; tipográfico</div><div class="peca-px">1080 &times; 1920</div></div>
+      <div class="art art--story art--papel2">
+        <svg class="a-sangra" viewBox="0 0 200 200" aria-hidden="true" style="width:70%;left:-22%;bottom:16%"><use href="#trama"/></svg>
+        <div class="zs zs--claro" style="top:0;height:calc(250*var(--u))"><span>Perfil e fechar &middot; 250 px</span></div>
+        <div class="zs zs--claro" style="bottom:0;height:calc(420*var(--u))"><span>Botão do gerenciador &middot; 420 px</span></div>
+        <div class="art-in art-in--story" style="padding-bottom:calc(420*var(--u))">
+          <div class="a-rot"><i></i>Academia DTM</div>
+          <div class="centro">
+            <div class="a-disp a-disp--m">00.000 dentistas no Brasil</div>
+            <div class="a-junta" style="margin:calc(36*var(--u)) 0"></div>
+            <div class="a-disp a-disp--m">Menos de 0.000 especialistas em DTM</div>
+          </div>
+          <div class="a-nota">Dois campos de número &middot; a peça não sobe sem a fonte dos dois</div>
+        </div>
+      </div>
+      <div class="peca-cap">Reserva de 420 px na base &middot; a junta separa as duas metades do contraste</div>
+      <div class="peca-txt">Peça sem foto, resolvida na tipografia. Os dois números fazem o contraste sozinhos, e a junta funciona como o <b>sinal de igual às avessas</b> entre eles. Os dois são campos: <b>entram juntos, com a mesma fonte, ou não entra nenhum</b>.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">P4 &middot; Story &middot; retrato vertical</div><div class="peca-px">1080 &times; 1920</div></div>
+      <div class="art art--story art--navy">
+        <div class="a-foto a-foto--cheia">
+          <svg class="marca" viewBox="0 0 200 200" aria-hidden="true" style="width:58%"><use href="#trama"/></svg>
+          <span>Retrato vertical<br>arquivo em alta pendente</span>
+        </div>
+        <div class="a-scrim"></div>
+        <div class="zs" style="top:0;height:calc(250*var(--u))"><span>Perfil e fechar &middot; 250 px</span></div>
+        <div class="zs" style="bottom:0;height:calc(420*var(--u))"><span>Botão do gerenciador &middot; 420 px</span></div>
+        <div class="art-in art-in--story" style="padding-bottom:calc(420*var(--u))">
+          <div class="empurra"></div>
+          <div class="a-disp a-disp--m">Formação em DTM para quem não aceita achismo</div>
+          <div class="a-assin" style="margin-top:calc(36*var(--u))">
+            <span class="lk lk--hz lk--neg" style="font-size:calc(54*var(--u))">
+              <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+              <span class="rule"></span>
+              <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="peca-cap">Texto acima da reserva de botão &middot; lockup fecha a peça, sem selo de chamada</div>
+      <div class="peca-txt">Quando o botão do gerenciador já pede a ação, a arte <b>não repete o pedido</b>. Dois convites na mesma tela competem entre si e a peça perde o ar de instituição.</div>
+    </div>
+
+  </div>
+
+  <h3 class="sub"><span class="n">4.1</span>O que muda do orgânico para o pago</h3>
+  <div class="tab-rolo">
+    <table class="tab">
+      <thead><tr><th style="min-width:150px">Decisão</th><th>Orgânico</th><th>Pago</th><th>Por quê</th></tr></thead>
+      <tbody>
+        <tr><td><b>Marca</b></td><td>Arroba em mono no rodapé</td><td class="sim">Lockup horizontal, sempre</td><td>Quem vê o anúncio não sabe de quem é o perfil</td></tr>
+        <tr><td><b>Rosto</b></td><td>Entra no bastidor</td><td class="sim">Entra em metade do lote</td><td>Rosto é o que dá endereço humano a uma marca desconhecida</td></tr>
+        <tr><td><b>Texto na arte</b></td><td class="num">Até 32 palavras</td><td class="num">Até 12 palavras</td><td>O texto do anúncio vive no campo principal, acima da imagem</td></tr>
+        <tr><td><b>Chamada</b></td><td>Um pedido no fechamento</td><td>Selo em contorno, ou nenhum</td><td>Botão cheio imitando o do sistema envelhece a peça</td></tr>
+        <tr><td><b>Zona segura</b></td><td>250 px no story</td><td class="sim">250 px topo e 420 px base</td><td>O gerenciador desenha o botão por cima da arte</td></tr>
+        <tr><td><b>Recorte</b></td><td>Publicado como foi feito</td><td class="sim">Miolo 1:1 preservado</td><td>Outras posições recortam o 4:5 pelo centro</td></tr>
+        <tr><td><b>Fluor</b></td><td>Rótulo, junta ou palavra</td><td>Rótulo, junta ou número</td><td>Regra dura do contrato: nunca fundo, nunca sobre papel</td></tr>
+        <tr><td><b>Repetição</b></td><td>Formato repete de propósito</td><td class="sim">Uma composição por peça do lote</td><td>Lote com quatro peças iguais gasta verba na mesma imagem</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="porque"><b>O que continua igual:</b> paleta, tipografia, gesto, grão e a proibição de emoji, seta desenhada, círculo vermelho em print, contador e selo de desconto. Anúncio da Academia DTM é reconhecido como Academia DTM antes de ser reconhecido como anúncio.</div>
+  <p class="nota-pe">As medidas de zona segura são operacionais e mudam quando a Meta muda a interface. Conferir no gerenciador antes de subir cada lote, com a pré-visualização de cada posição.</p>
+</section>
+
+<!-- ============ 05 · O SISTEMA ============ -->
+<section class="sec" id="sistema">
+  <div class="sec-h">
+    <div class="sec-n">§ 05</div>
+    <div>
+      <span class="junta"></span>
+      <h2>O sistema por trás &mdash; o que permite repetir sem virar molde</h2>
+      <p class="lede">As peças acima são o resultado. O que se repete toda semana é isto aqui: <b>cinco níveis de tipo, uma régua de texto, três arranjos, uma proporção de cor e um gesto</b>. Com isso na mão, qualquer pauta nova encontra sozinha o formato dela.</p>
+    </div>
+  </div>
+
+  <h3 class="sub" style="margin-top:0"><span class="n">5.1</span>Os cinco níveis de tipo do card</h3>
+  <div class="painel painel--claro">
+    <div class="escada">
+      <div class="degrau">
+        <div class="k">Nível 1 &middot; rótulo<br>Space Mono 700<br>24 px &middot; +0,16em</div>
+        <div style="font-family:var(--mono);font-weight:700;font-size:8.9px;letter-spacing:.16em;text-transform:uppercase">Série &middot; Diagnóstico</div>
+      </div>
+      <div class="degrau">
+        <div class="k">Nível 2 &middot; olho<br>Hanken 600<br>30 px</div>
+        <div style="font-family:var(--corpo);font-weight:600;font-size:11.1px;line-height:1.35">Antes de tratar, separar o que dói do que estala</div>
+      </div>
+      <div class="degrau">
+        <div class="k">Nível 3 &middot; display<br>Archivo 800<br>104 px &middot; &minus;0,038em</div>
+        <div style="font-family:var(--display);font-weight:800;font-size:38.5px;letter-spacing:-.038em;line-height:.98">O guarda-chuva</div>
+      </div>
+      <div class="degrau">
+        <div class="k">Nível 4 &middot; corpo<br>Hanken 400<br>42 px &middot; piso de 36</div>
+        <div style="font-family:var(--corpo);font-size:15.6px;line-height:1.36;max-width:44ch">DTM não é um diagnóstico. É o nome que abriga quadros diferentes, com tratamentos que não se parecem entre si.</div>
+      </div>
+      <div class="degrau" style="border-bottom:0;padding-bottom:0">
+        <div class="k">Nível 5 &middot; nota<br>Space Mono 400<br>24 px</div>
+        <div style="font-family:var(--mono);font-size:8.9px;letter-spacing:.05em;color:var(--tinta-70)">Campo de fonte &middot; periódico, ano e página, a preencher</div>
+      </div>
+    </div>
+    <div class="cap">Amostras na escala real de leitura: o card de 1080 px visto a 400 px de largura, que é o tamanho dele no feed</div>
+  </div>
+
+  <div class="grade-2" style="margin-top:var(--e-5);align-items:start">
+    <ul class="lista">
+      <li><b>No máximo três níveis por card.</b> Rótulo, display e corpo é a combinação de trabalho. Quem usa os cinco de uma vez fez um panfleto.</li>
+      <li><b>O salto entre display e corpo é de 2,5 vezes</b> no card educativo e chega a 3,3 vezes no card de dado. Hierarquia tímida some no feed.</li>
+      <li><b>Piso de 36 px no corpo.</b> Abaixo disso, a 400 px de largura, o texto vira desenho de texto.</li>
+      <li><b>O número tem tratamento próprio:</b> Archivo 800 a 360 px, com dígitos tabulares. É o único elemento autorizado a ocupar mais da metade da altura.</li>
+    </ul>
+    <div class="painel">
+      <div class="cap" style="margin-top:0">Quanto texto cabe, por peça</div>
+      <div class="tab-rolo">
+        <table class="tab">
+          <thead><tr><th>Peça</th><th>Display</th><th>Corpo</th><th>Total</th></tr></thead>
+          <tbody>
+            <tr><td><b>Capa de carrossel</b></td><td class="num">até 7 palavras</td><td class="nao">não entra</td><td class="num">9</td></tr>
+            <tr><td><b>Card interno</b></td><td class="num">até 5 palavras</td><td class="num">até 32 palavras</td><td class="num">40</td></tr>
+            <tr><td><b>Citação</b></td><td class="num">até 10 palavras</td><td class="nao">não entra</td><td class="num">13</td></tr>
+            <tr><td><b>Card de dado</b></td><td class="num">o número</td><td class="num">até 14 palavras</td><td class="num">22</td></tr>
+            <tr><td><b>Fechamento</b></td><td class="num">até 6 palavras</td><td class="num">até 10 palavras</td><td class="num">18</td></tr>
+            <tr><td><b>Story</b></td><td class="num">até 8 palavras</td><td class="num">até 10 palavras</td><td class="num">18</td></tr>
+            <tr><td><b>Anúncio</b></td><td class="num">até 9 palavras</td><td class="num">até 3 palavras</td><td class="num">12</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cap">O total inclui rótulo, assinatura e nota de fonte</div>
+    </div>
+  </div>
+
+  <h3 class="sub"><span class="n">5.2</span>Os três arranjos, e só três</h3>
+  <div class="grade-3">
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">A &middot; Rodapé</div><div class="peca-px">texto ancorado embaixo</div></div>
+      <div class="art art--feed art--navy">
+        <div class="moldura" style="left:calc(64*var(--u));right:calc(64*var(--u));bottom:calc(64*var(--u));height:44%"><b>Bloco de texto</b></div>
+        <div class="art-in">
+          <div class="a-rot"><i></i>Tese</div>
+          <div class="empurra"></div>
+          <div class="a-disp a-disp--m">O peso fica embaixo, o vazio fica em cima</div>
+        </div>
+      </div>
+      <div class="peca-txt">Para capa, citação e bastidor. O terço superior fica <b>livre de propósito</b>, e é ali que o símbolo sangra ou a foto respira.</div>
+    </div>
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">B &middot; Registro</div><div class="peca-px">texto descendo do topo</div></div>
+      <div class="art art--feed">
+        <div class="moldura moldura--claro" style="left:calc(64*var(--u));right:calc(64*var(--u));top:calc(64*var(--u));height:56%"><b>Bloco de texto</b></div>
+        <div class="art-in">
+          <div class="a-rot"><i></i>03</div>
+          <div class="a-junta" style="margin-top:calc(40*var(--u))"></div>
+          <div class="a-disp a-disp--m" style="margin-top:calc(36*var(--u))">Rótulo, junta, título, corpo</div>
+          <div class="a-corpo" style="margin-top:calc(28*var(--u))">A leitura desce como a de um artigo numerado, e é por isso que ele serve ao conteúdo de ensino.</div>
+        </div>
+      </div>
+      <div class="peca-txt">Para card educativo e narrativa de caso. É o arranjo que <b>mais parece documento</b>, e o único que aceita corpo longo.</div>
+    </div>
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">C &middot; Centro</div><div class="peca-px">um elemento em escala</div></div>
+      <div class="art art--feed art--papel2">
+        <div class="moldura moldura--claro" style="left:calc(64*var(--u));right:calc(64*var(--u));top:26%;height:48%"><b>Elemento único</b></div>
+        <div class="art-in">
+          <div class="a-rot"><i></i>Dado</div>
+          <div class="centro" style="align-items:center;text-align:center">
+            <div class="a-num" style="color:var(--navy)">00</div>
+            <div class="a-corpo" style="margin-top:calc(24*var(--u))">campo do número e do que ele conta</div>
+          </div>
+          <div class="a-nota">Estrutura, não conteúdo</div>
+        </div>
+      </div>
+      <div class="peca-txt">Para número, frase-âncora e fechamento. Tudo em volta <b>encolhe para o elemento central existir</b>.</div>
+    </div>
+  </div>
+  <div class="porque"><b>Por quê três:</b> cada arranjo resolve uma intenção de leitura diferente, e três é o número que a equipe consegue manter na cabeça sem consultar arquivo. Um quarto arranjo só entra com aval da direção de arte.</div>
+
+  <h3 class="sub"><span class="n">5.3</span>A proporção de cor no conteúdo</h3>
+  <div class="barra-prop">
+    <div style="flex:55;background:var(--papel);color:var(--tinta-70)">Papel 55</div>
+    <div style="flex:32;background:var(--navy);color:var(--papel-72)">Navy 32</div>
+    <div style="flex:8;background:var(--tinta);color:var(--papel-45)">Tinta 8</div>
+    <div style="flex:5;background:var(--fluor);color:var(--navy)">Fluor 5</div>
+  </div>
+  <div class="cap">Proporção derivada da tabela do contrato para o recorte social &middot; cobalto e menta ficam fora do feed</div>
+  <div class="grade-2" style="margin-top:var(--e-5);align-items:start">
+    <ul class="lista">
+      <li><b>Num carrossel de oito cards: no máximo três navy.</b> A leitura precisa de papel para respirar, e o navy vale mais quando é interrupção.</li>
+      <li><b>O fluor aparece uma vez por card.</b> Rótulo, filete da junta, número-chave ou uma palavra do display. Nunca dois desses ao mesmo tempo.</li>
+      <li><b>Sobre papel, o fluor só existe dentro da junta.</b> Como texto, ele tem contraste de 1,15 e simplesmente desaparece.</li>
+      <li><b>Cobalto e menta não entram no conteúdo social.</b> Cobalto é ação de página e menta é estado de sistema. No feed, os dois viram enfeite.</li>
+      <li><b>Tinta é para a peça de exceção</b>, como o bloqueio de prova social. Ela avisa que aquele card não é conteúdo de ensino.</li>
+    </ul>
+    <div class="painel">
+      <div class="cap" style="margin-top:0">O teste de olho semiaberto</div>
+      <p class="peca-txt" style="margin-top:var(--e-3)">Reduza o card para 145 px, o tamanho da miniatura na grade, e aperte os olhos. Devem sobrar <b>três coisas</b>: a mancha de cor, o display e a posição do bloco de texto. Se sobrar só um borrão cinza, o problema é hierarquia, não fonte.</p>
+    </div>
+  </div>
+
+  <h3 class="sub"><span class="n">5.4</span>O gesto, e o que fazer com foto</h3>
+  <div class="grade-4">
+    <div>
+      <div class="palco palco--papel2 palco--baixo"><span class="junta" style="margin:0"></span></div>
+      <div class="cap">Gesto 01 &middot; a junta abre o texto</div>
+    </div>
+    <div>
+      <div class="palco palco--navy palco--baixo" style="position:relative;overflow:hidden">
+        <svg viewBox="0 0 200 200" aria-hidden="true" style="position:absolute;width:76%;right:-22%;top:-26%;color:var(--navy-alto)"><use href="#trama"/></svg>
+      </div>
+      <div class="cap">Gesto 02 &middot; o símbolo sangra a borda</div>
+    </div>
+    <div>
+      <div class="palco palco--papel2 palco--baixo" style="padding:var(--e-4)">
+        <div class="octo-janela" style="aspect-ratio:1;width:118px;background:var(--navy);display:grid;place-items:center;position:relative;overflow:hidden">
+          <svg viewBox="0 0 200 200" aria-hidden="true" style="width:70%;color:var(--navy-alto)"><use href="#trama"/></svg>
+        </div>
+      </div>
+      <div class="cap">Foto em octógono &middot; retrato e detalhe</div>
+    </div>
+    <div>
+      <div class="palco palco--navy palco--baixo" style="position:relative;overflow:hidden;padding:0">
+        <div style="position:absolute;inset:0;background:var(--navy-alto)"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,28,70,.94) 24%,rgba(16,28,70,.10) 80%)"></div>
+        <div style="position:relative;align-self:end;justify-self:start;padding:var(--e-4);font-family:var(--display);font-weight:800;font-size:19px;letter-spacing:-.03em;color:var(--papel)">Texto sobre o scrim</div>
+      </div>
+      <div class="cap">Foto cheia &middot; scrim navy subindo do rodapé</div>
+    </div>
+  </div>
+  <ul class="lista" style="margin-top:var(--e-6);max-width:none">
+    <li><b>Um gesto por peça.</b> A junta ou o símbolo sangrando, nunca os dois. Duas quebras de grade no mesmo card viram bagunça.</li>
+    <li><b>Texto nunca cruza o rosto.</b> Em foto cheia, o retrato ocupa o terço oposto ao bloco de texto e o scrim faz a ponte.</li>
+    <li><b>Tratamento de foto:</b> contraste levemente aberto e saturação puxada para baixo, para a imagem casar com o creme do papel. Sem filtro de cor, sem desfoque de fundo falso, sem moldura branca.</li>
+    <li><b>Logo sobre foto só com tarja navy</b> de opacidade mínima de 88 por cento, como manda a regra 10 do contrato. Na prática, no conteúdo social, isso quer dizer: logo sobre o scrim, nunca sobre a área clara da imagem.</li>
+    <li><b>Foto de banco de imagem e rosto gerado por inteligência artificial estão fora.</b> Enquanto não houver arquivo liberado do Rodrigo, o campo de foto fica declarado na peça, como está nos exemplos acima.</li>
+  </ul>
+</section>
+
+<!-- ============ 06 · TABELA DE DECISÃO ============ -->
+<section class="sec" id="decisao">
+  <div class="sec-h">
+    <div class="sec-n">§ 06</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Qual formato para qual linha editorial</h2>
+      <p class="lede">As cinco linhas vêm do documento de linha editorial de 02/08, com a proporção da fase 1, que vai até setembro. A tabela responde a única pergunta que aparece toda terça de manhã: <b>a pauta é essa, o formato é qual</b>.</p>
+    </div>
+  </div>
+
+  <div class="tab-rolo">
+    <table class="tab">
+      <thead>
+        <tr>
+          <th style="min-width:170px">Linha editorial</th>
+          <th>Peso</th>
+          <th style="min-width:150px">Formato-âncora</th>
+          <th style="min-width:130px">Alternativo</th>
+          <th>Arranjo</th>
+          <th>Onde o fluor entra</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Educativa</b><br><span style="font-size:12px;color:var(--tinta-45)">o diagnóstico que ninguém ensina</span></td>
+          <td class="num">35%</td>
+          <td>Carrossel de 7 a 9 cards <span style="color:var(--tinta-45)">(formatos 01, 02, 04)</span></td>
+          <td>Story educativo em sequência</td>
+          <td>Registro</td>
+          <td>Rótulo numerado e junta</td>
+        </tr>
+        <tr>
+          <td><b>Tese e autoridade</b><br><span style="font-size:12px;color:var(--tinta-45)">as bandeiras do Rodrigo</span></td>
+          <td class="num">25%</td>
+          <td>Post único de tese <span style="color:var(--tinta-45)">(formato 05)</span></td>
+          <td>Card de citação no miolo</td>
+          <td>Rodapé</td>
+          <td>Uma palavra do display, só em card navy</td>
+        </tr>
+        <tr>
+          <td><b>Persuasiva</b><br><span style="font-size:12px;color:var(--tinta-45)">oportunidade, ainda sem venda</span></td>
+          <td class="num">20%</td>
+          <td>Carrossel de dados <span style="color:var(--tinta-45)">(formato 06)</span></td>
+          <td>Story tipográfico de contraste</td>
+          <td>Centro</td>
+          <td>O número-chave</td>
+        </tr>
+        <tr>
+          <td><b>Prova e transformação</b><br><span style="font-size:12px;color:var(--tinta-45)">o método funcionando</span></td>
+          <td class="num">10%</td>
+          <td>Carrossel narrativo <span style="color:var(--tinta-45)">(02 repetido, fecho em 04)</span></td>
+          <td>Mito e fato <span style="color:var(--tinta-45)">(formato 07)</span></td>
+          <td>Registro</td>
+          <td>Junta, apenas</td>
+        </tr>
+        <tr>
+          <td><b>Conexão e bastidor</b><br><span style="font-size:12px;color:var(--tinta-45)">o professor por trás</span></td>
+          <td class="num">10%</td>
+          <td>Capa de bastidor com foto <span style="color:var(--tinta-45)">(formato 08)</span></td>
+          <td>Story de celular, sem produção</td>
+          <td>Rodapé</td>
+          <td>Rótulo sobre o scrim</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grade-2" style="margin-top:var(--e-6);align-items:start">
+    <div class="painel">
+      <div class="cap" style="margin-top:0">A semana montada</div>
+      <div class="tab-rolo">
+        <table class="tab">
+          <thead><tr><th>Dia</th><th>O que sai</th><th>Peça</th></tr></thead>
+          <tbody>
+            <tr><td><b>Terça</b></td><td>Post de feed</td><td>Carrossel ou post único, conforme a linha da vez</td></tr>
+            <tr><td><b>Quinta</b></td><td>Post de feed</td><td>Linha diferente da de terça, polaridade alternada</td></tr>
+            <tr><td><b>Dias soltos</b></td><td>Story</td><td>Sequência de 3 a 7 frames, baixa produção</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cap">Cadência da linha editorial &middot; sobe para três posts por semana na captação, a partir de setembro</div>
+    </div>
+    <div>
+      <div class="cap" style="margin-top:0">Como decidir em vinte segundos</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>A pauta ensina alguma coisa?</b> Carrossel no arranjo registro.</li>
+        <li><b>A pauta é uma opinião dele?</b> Post único no arranjo rodapé, com assinatura.</li>
+        <li><b>A pauta tem um número no centro?</b> Arranjo centro, com a linha de fonte obrigatória.</li>
+        <li><b>A pauta é um caso ou um bastidor?</b> Campo de foto, arranjo rodapé, scrim.</li>
+        <li><b>A pauta corrige um erro comum?</b> Mito e fato, em duas faixas.</li>
+      </ul>
+      <div class="porque"><b>Regra de alternância:</b> a terça e a quinta da mesma semana nunca repetem arranjo nem polaridade. É o que mantém a grade viva sem ninguém precisar desenhá-la.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 · BLOQUEIOS E PROCEDÊNCIA ============ -->
+<section class="sec sec--escuro" id="procedencia">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="sec-n">§ 07</div>
+      <div>
+        <span class="junta junta--claro"></span>
+        <h2>Bloqueios e procedência</h2>
+        <p class="lede">Este módulo desenha formatos, não conteúdo aprovado. O que está bloqueado aqui <b>continua bloqueado depois</b>, mesmo que a arte fique pronta e o calendário aperte.</p>
+      </div>
+    </div>
+
+    <div class="grade-3">
+      <div class="painel" style="background:rgba(244,243,236,.05);border-color:var(--linha-clara)">
+        <div class="cap" style="margin-top:0;color:var(--fluor)">Bloqueio 01</div>
+        <h4 style="font-family:var(--display);font-weight:700;font-size:var(--t-h3);letter-spacing:-.02em;margin:var(--e-3) 0">Os nove depoimentos</h4>
+        <p class="peca-txt">Os depoimentos gravados de alunos e pacientes vieram do contexto do Instituto Ária, marca da qual o Rodrigo está se desligando, e <b>não têm autorização de uso</b> para a Academia DTM. O formato 09 existe como estrutura vazia, com o bloqueio escrito dentro da própria arte. Só sai do bloqueio com liberação por escrito de cada pessoa.</p>
+      </div>
+      <div class="painel" style="background:rgba(244,243,236,.05);border-color:var(--linha-clara)">
+        <div class="cap" style="margin-top:0;color:var(--fluor)">Bloqueio 02</div>
+        <h4 style="font-family:var(--display);font-weight:700;font-size:var(--t-h3);letter-spacing:-.02em;margin:var(--e-3) 0">A história da mãe</h4>
+        <p class="peca-txt">Na revisão de 26 de julho o Rodrigo declarou que <b>não reconhece</b> a história atribuída a ele sobre a mãe e a promessa de ganhar dinheiro dormindo. Ela pode ser erro de atribuição nosso, saído da transcrição da call. Não vira post, não vira story, não vira roteiro, e não volta pela porta dos fundos como exemplo de arte.</p>
+      </div>
+      <div class="painel" style="background:rgba(244,243,236,.05);border-color:var(--linha-clara)">
+        <div class="cap" style="margin-top:0;color:var(--fluor)">Bloqueio 03</div>
+        <h4 style="font-family:var(--display);font-weight:700;font-size:var(--t-h3);letter-spacing:-.02em;margin:var(--e-3) 0">Os números</h4>
+        <p class="peca-txt">Nenhum número de faturamento, de quantidade de alunos, de pacientes ou de clínica entra em peça pública antes da conferência com o Rodrigo. O valor de um milhão por ano, citado na call de levantamento, <b>segue em aberto</b> e está fora de qualquer arte. Credencial de conselho não aparece em material público, por regra da Inception.</p>
+      </div>
+    </div>
+
+    <div class="grade-3" style="margin-top:var(--e-8)">
+      <div class="proc proc--dele">
+        <h4 style="color:var(--papel)">O que é dele</h4>
+        <ul>
+          <li>As frases usadas como exemplo de citação, todas registradas na linha editorial de 02/08</li>
+          <li>Os conceitos do guarda-chuva e do cinto do Batman, que ele já usa na clínica e na aula</li>
+          <li>A cadência de dois posts por semana, terça e quinta, e a decisão de separar os dois perfis</li>
+          <li>Os nomes Academia DTM e Viver de DTM</li>
+        </ul>
+      </div>
+      <div class="proc proc--maiara">
+        <h4 style="color:var(--papel)">O que é da Maiara</h4>
+        <ul>
+          <li>O tom de órgão, não de produto, que atravessa o sistema inteiro</li>
+          <li>A linha editorial, as cinco linhas e a proporção da fase 1</li>
+          <li>A ordem dos destaques do perfil</li>
+          <li>A decisão de começar a produzir antes da troca do arroba</li>
+        </ul>
+      </div>
+      <div class="proc proc--nosso">
+        <h4 style="color:var(--papel)">O que é nosso, e precisa de validação</h4>
+        <ul>
+          <li>Os cinco níveis de tipo e os tamanhos em pixel do canvas</li>
+          <li>A régua de quantas palavras cabem por peça</li>
+          <li>Os três arranjos e os nomes deles</li>
+          <li>A proporção de cor do recorte social e a saída do cobalto e da menta</li>
+          <li>As medidas de zona segura e a reserva de 420 px</li>
+          <li>A regra de alternância da grade e o teto de três cards navy</li>
+          <li>A junta engordada para 4 px dentro do canvas de 1080</li>
+          <li>O tratamento de foto e o campo declarado enquanto não há arquivo</li>
+          <li><b>Todo o texto dentro das artes</b>, escrito como exemplo de preenchimento, sem nenhum dado, número ou credencial real dentro dele</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="painel" style="margin-top:var(--e-8);background:rgba(244,243,236,.05);border-color:var(--linha-clara)">
+      <div class="cap" style="margin-top:0">O que este módulo precisa para sair do papel</div>
+      <ul class="lista" style="margin-top:var(--e-4);max-width:none">
+        <li><b>Fotos do Rodrigo em alta resolução</b>, em retrato vertical e em bastidor de clínica, com liberação de uso. É o único bloqueio que impede metade dos formatos de existir.</li>
+        <li><b>Conferência dos números</b> citados nos exemplos, com a fonte completa de cada um.</li>
+        <li><b>Aprovação do selo como avatar</b>, que é o que destrava a troca de arroba de cursodtm para academiadtm.</li>
+        <li><b>Decisão sobre o lockup da formação Viver de DTM</b>, pendência 01 do contrato, para o criativo de captação de setembro poder assinar como formação.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-in">
+      <div>
+        <span class="lk lk--hz lk--neg" style="font-size:30px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+          <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+        </span>
+        <ul class="rodape-nav" style="margin-top:var(--e-5)">
+          <li><a href="index.html">Brandbook</a></li>
+          <li><a href="ds-paginas.html">Páginas</a></li>
+          <li><a href="ds-conteudos-criativos.html">Conteúdos &amp; Criativos</a></li>
+          <li><a href="ds-apresentacoes.html">Apresentações</a></li>
+        </ul>
+      </div>
+      <div class="rodape-assin">
+        <b>Academia DTM</b> &middot; Dr. Rodrigo Wendel<br>
+        Brandbook &amp; Design System &middot; v1 &middot; 20/08/2026<br>
+        Módulo 3 de 4 &middot; Conteúdos &amp; Criativos &middot; direção de arte <b>Inception</b>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1295 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Academia DTM · Brandbook e Design System · Inception</title>
+<meta name="description" content="Brandbook da Academia DTM — sistema de logo, cor, tipografia, grafismo e voz. Dr. Rodrigo Wendel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&family=Hanken+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   ACADEMIA DTM — tokens canônicos v1 (fonte única: _contrato.md)
+   ============================================================ */
+:root{
+  /* cor — base */
+  --navy:#101C46;
+  --navy-alto:#182559;
+  --tinta:#0B0F1A;
+  --papel:#F4F3EC;
+  --papel-2:#E7E5D8;
+  /* cor — sinal */
+  --fluor:#CDF23F;
+  --cobalto:#2C4BFF;
+  --menta:#12D9A0;
+  /* cor — revisão · NÃO é cor da marca. Só marca o proibido dentro destes
+     documentos; nunca em peça que a Academia publica. Ver contrato §9.1. */
+  --erro:#B3261E;
+  /* cor — derivadas */
+  --papel-72:rgba(244,243,236,.72);
+  --papel-45:rgba(244,243,236,.45);
+  --tinta-70:rgba(11,15,26,.70);
+  --tinta-45:rgba(11,15,26,.45);
+  --linha-clara:rgba(244,243,236,.14);
+  --linha-escura:rgba(11,15,26,.13);
+  /* tipo */
+  --display:"Archivo",system-ui,sans-serif;
+  --corpo:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:"Space Mono",ui-monospace,SFMono-Regular,monospace;
+  /* escala tipográfica */
+  --t-hero:clamp(44px,7.4vw,88px);
+  --t-h1:clamp(32px,4.8vw,58px);
+  --t-h2:clamp(24px,3.2vw,38px);
+  --t-h3:21px;
+  --t-corpo:17px;
+  --t-corpo-s:15px;
+  --t-legenda:13px;
+  --t-rotulo:11px;
+  /* espaço — base 4 */
+  --e-1:4px; --e-2:8px; --e-3:12px; --e-4:16px; --e-5:24px;
+  --e-6:32px; --e-7:48px; --e-8:64px; --e-9:96px; --e-10:128px;
+  /* raio */
+  --r-0:0; --r-1:3px; --r-2:6px; --r-3:12px; --r-pill:999px;
+  /* sombra — sempre navy, nunca preto */
+  --sombra-1:0 1px 2px rgba(16,28,70,.07);
+  --sombra-2:0 14px 36px -14px rgba(16,28,70,.24);
+  /* movimento */
+  --d-micro:180ms; --d-base:240ms; --d-reveal:520ms;
+  --ease:cubic-bezier(.22,1,.36,1);
+  /* medida */
+  --largura:1180px;
+  --largura-texto:68ch;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px;overflow-x:clip}
+body{overflow-x:clip}
+body{
+  background:var(--papel);color:var(--tinta);
+  font-family:var(--corpo);font-size:var(--t-corpo);line-height:1.62;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.042;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+
+.wrap{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6)}
+@media(max-width:640px){.wrap{padding:0 20px}}
+
+/* ---------- cabeçalho compartilhado (4 páginas) ---------- */
+.nav{position:sticky;top:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--linha-clara)}
+.nav-in{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--e-5);min-height:64px;flex-wrap:wrap}
+.nav-links{display:flex;gap:var(--e-5);list-style:none;flex-wrap:wrap}
+.nav-links a{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--papel-45);text-decoration:none;padding:20px 0;display:block;
+  border-bottom:2px solid transparent;transition:color var(--d-base) var(--ease),border-color var(--d-base) var(--ease)}
+.nav-links a:hover{color:var(--papel)}
+.nav-links a[aria-current="page"]{color:var(--fluor);border-bottom-color:var(--fluor)}
+@media(max-width:640px){.nav-in{padding:0 20px;min-height:0;padding-top:12px;padding-bottom:4px}
+  .nav-links{gap:16px}.nav-links a{padding:10px 0}}
+
+/* ---------- lockups ---------- */
+.lk{display:inline-flex;align-items:center;color:var(--navy)}
+.lk .sym{width:1em;height:1em;flex:none}
+.lk .rule{width:.028em;min-width:1px;background:currentColor;opacity:.32;flex:none}
+.lk .col{display:flex;flex-direction:column;font-family:var(--display);
+  text-transform:uppercase;line-height:1;white-space:nowrap}
+.lk .ac{font-weight:400;font-size:.225em;letter-spacing:.22em}
+.lk .dtm{font-weight:800;font-size:.6875em;letter-spacing:-.04em}
+.lk--principal .rule{height:.90em;margin:0 .325em}
+/* horizontal */
+.lk--hz{align-items:center}
+.lk--hz .rule{height:.62em;margin-left:.30em;margin-right:.26em}
+.lk--hz .row{display:flex;align-items:baseline;font-family:var(--display);
+  text-transform:uppercase;white-space:nowrap;line-height:1}
+.lk--hz .ac-h{font-weight:500;font-size:.44em;letter-spacing:.18em}
+.lk--hz .dtm-h{font-weight:800;font-size:.44em;letter-spacing:-.035em;margin-left:.26em}
+/* inversões */
+.lk--neg{color:var(--papel)}
+.lk--neg .sym{color:var(--fluor)}
+.lk--mono-papel{color:var(--papel)}
+.lk--mono-papel .sym{color:var(--papel)}
+.lk--mono-navy{color:var(--navy)}
+.lk--mono-navy .sym{color:var(--navy)}
+/* selo */
+.selo{display:grid;place-items:center;background:var(--navy);border-radius:var(--r-pill)}
+.selo svg{color:var(--fluor);width:62%;height:62%}
+.selo--invertido{background:var(--fluor)}
+.selo--invertido svg{color:var(--navy)}
+.selo--papel{background:var(--papel-2)}
+.selo--papel svg{color:var(--navy)}
+.selo--quadrado{border-radius:var(--r-1)}
+
+/* ---------- capa ---------- */
+.capa{background:var(--navy);color:var(--papel);padding:var(--e-9) 0 var(--e-8);position:relative;overflow:hidden}
+.capa::before{
+  content:"";position:absolute;right:-13%;top:-24%;width:min(60vw,760px);aspect-ratio:1;
+  background:radial-gradient(circle at 50% 50%,rgba(24,37,89,1) 0%,rgba(16,28,70,0) 68%);pointer-events:none}
+.capa-sym{position:absolute;right:-9%;top:-10%;width:min(52vw,620px);color:var(--navy-alto);opacity:.9;pointer-events:none}
+.capa .wrap{position:relative;z-index:2}
+.rotulo{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--fluor);display:flex;align-items:center;gap:var(--e-3);flex-wrap:wrap}
+.rotulo i{display:block;width:34px;height:2px;background:var(--fluor);font-style:normal;flex:none}
+.capa h1{font-family:var(--display);font-weight:800;font-size:var(--t-hero);line-height:1.0;text-wrap:balance;
+  letter-spacing:-.042em;margin:var(--e-6) 0 0;max-width:14ch}
+.capa h1 em{font-style:normal;color:var(--fluor)}
+.capa .tese{margin-top:var(--e-6);max-width:60ch;font-size:19px;color:var(--papel-72)}
+.capa .tese b{color:var(--papel);font-weight:600}
+.capa-meta{margin-top:var(--e-8);padding-top:var(--e-5);border-top:1px solid var(--linha-clara);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:var(--e-5)}
+.capa-meta .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--fluor);margin-bottom:var(--e-2)}
+.capa-meta p{font-size:var(--t-corpo-s);color:var(--papel-72);line-height:1.5}
+.capa-lk{margin-top:var(--e-7)}
+
+/* ---------- gesto de assinatura: A JUNTA ---------- */
+.junta{display:block;width:104px;height:2px;position:relative;background:var(--navy);margin-bottom:var(--e-4)}
+.junta::after{content:"";position:absolute;left:52px;top:5px;width:104px;height:2px;background:var(--fluor)}
+.junta--claro{background:var(--papel-45)}
+.junta--claro::after{background:var(--fluor)}
+
+/* ---------- seções ---------- */
+.sec{padding:var(--e-9) 0;border-top:1px solid var(--linha-escura)}
+.sec:first-of-type{border-top:0}
+.sec-h{display:grid;grid-template-columns:88px 1fr;gap:var(--e-6);align-items:start;margin-bottom:var(--e-7)}
+.sec-n{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.1em;
+  color:var(--tinta-45);padding-top:10px}
+.sec-h h2{font-family:var(--display);font-weight:800;font-size:var(--t-h2);letter-spacing:-.035em;
+  line-height:1.02;max-width:20ch;text-wrap:balance}
+.sec-h .lede{margin-top:var(--e-4);max-width:var(--largura-texto);color:var(--tinta-70);font-size:var(--t-corpo)}
+.sec-h .lede b{color:var(--tinta);font-weight:600}
+@media(max-width:720px){.sec-h{grid-template-columns:1fr;gap:var(--e-3)}.sec-n{padding-top:0}}
+
+.sec--escuro{background:var(--navy);color:var(--papel);border-top:0}
+/* sub-secoes do capitulo 02 respiram menos entre si */
+#horizontal,#selo,#aplicacao{padding-top:var(--e-8);padding-bottom:0}
+.sec--escuro .sec-n{color:var(--papel-45)}
+.sec--escuro .sec-h .lede{color:var(--papel-72)}
+.sec--escuro .sec-h .lede b{color:var(--papel)}
+
+/* blocos */
+.painel{background:var(--papel-2);border:1px solid var(--linha-escura);border-radius:var(--r-1);padding:var(--e-6)}
+.painel--claro{background:#FBFAF4}
+.cap{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-45);margin-top:var(--e-3)}
+.sec--escuro .cap{color:var(--papel-45)}
+.porque{margin-top:var(--e-3);font-size:var(--t-corpo-s);color:var(--tinta-70);border-left:2px solid var(--fluor);
+  padding-left:var(--e-3);max-width:var(--largura-texto)}
+.sec--escuro .porque{color:var(--papel-72)}
+.porque b{color:var(--tinta);font-weight:600}
+.sec--escuro .porque b{color:var(--papel)}
+
+.grade-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-5)}
+.grade-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e-5)}
+.grade-4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--e-4)}
+@media(max-width:900px){.grade-3,.grade-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.grade-2,.grade-3,.grade-4{grid-template-columns:1fr}}
+
+.palco{display:grid;place-items:center;min-height:230px;padding:var(--e-7) var(--e-5);
+  background:var(--papel);border:1px solid var(--linha-escura);border-radius:var(--r-1);overflow:hidden}
+.palco--navy{background:var(--navy);border-color:var(--navy)}
+.palco--papel2{background:var(--papel-2)}
+.palco--baixo{min-height:150px;padding:var(--e-6) var(--e-5)}
+
+/* tabelas */
+.tab{width:100%;border-collapse:collapse;font-size:var(--t-corpo-s);margin-top:var(--e-2)}
+.tab th,.tab td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--linha-escura);vertical-align:top}
+.tab th{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-45);border-bottom-width:2px;border-bottom-color:var(--navy)}
+.tab td b{font-weight:600}
+.tab .num{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sec--escuro .tab th{color:var(--papel-45);border-bottom-color:var(--fluor)}
+.sec--escuro .tab th,.sec--escuro .tab td{border-bottom-color:var(--linha-clara)}
+.tab-rolo{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.sim{color:var(--navy);font-weight:600}
+.nao{color:var(--tinta-45)}
+
+/* cor */
+.swatch{border:1px solid var(--linha-escura);border-radius:var(--r-1);overflow:hidden;background:#FBFAF4;
+  display:flex;flex-direction:column}
+.swatch-cor{height:130px;display:flex;align-items:flex-end;padding:var(--e-3)}
+.swatch-cor span{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.swatch-txt{padding:var(--e-4);display:flex;flex-direction:column;gap:var(--e-2);flex:1}
+.swatch-txt h4{font-family:var(--display);font-weight:700;font-size:var(--t-h3);letter-spacing:-.02em}
+.swatch-hex{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--tinta-70)}
+.swatch-txt p{font-size:14px;color:var(--tinta-70);line-height:1.5}
+.swatch-papel{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tinta-45);margin-top:auto;padding-top:var(--e-3);border-top:1px solid var(--linha-escura)}
+
+.barra-prop{display:flex;height:56px;border-radius:var(--r-1);overflow:hidden;margin-top:var(--e-5);
+  border:1px solid var(--linha-escura)}
+.barra-prop div{display:grid;place-items:center;font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase}
+
+/* tipografia */
+.amostra{border:1px solid var(--linha-escura);border-radius:var(--r-1);padding:var(--e-6);background:#FBFAF4}
+.amostra + .amostra{margin-top:var(--e-4)}
+.amostra-k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-45);display:flex;justify-content:space-between;gap:var(--e-4);margin-bottom:var(--e-5);flex-wrap:wrap}
+.esp-display{font-family:var(--display);font-weight:800;font-size:clamp(38px,6vw,74px);letter-spacing:-.042em;line-height:.96}
+.esp-h2{font-family:var(--display);font-weight:700;font-size:var(--t-h2);letter-spacing:-.03em;line-height:1.06;margin-top:var(--e-4)}
+.esp-h3{font-family:var(--display);font-weight:600;font-size:var(--t-h3);letter-spacing:-.015em;margin-top:var(--e-4)}
+.esp-corpo{font-size:var(--t-corpo);max-width:var(--largura-texto);margin-top:var(--e-4);color:var(--tinta-70)}
+.esp-mono{font-family:var(--mono);font-size:13px;letter-spacing:.02em;margin-top:var(--e-4);color:var(--tinta-70)}
+
+/* proibido */
+.proib{border:1px solid var(--linha-escura);border-radius:var(--r-1);overflow:hidden;background:#FBFAF4}
+.proib .palco{border:0;border-bottom:1px solid var(--linha-escura);border-radius:0;min-height:132px;
+  padding:var(--e-5);position:relative}
+.proib-x{position:absolute;top:10px;right:12px;font-family:var(--mono);font-size:9px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--erro);border:1px solid rgba(179,38,30,.4);padding:2px 6px;border-radius:2px}
+.proib-t{padding:var(--e-4)}
+.proib-t h4{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:-.01em;margin-bottom:6px}
+.proib-t p{font-size:13.5px;color:var(--tinta-70);line-height:1.5}
+.fundo-ruim{background:
+  repeating-linear-gradient(45deg,#8FA0C9 0 14px,#5C6E9E 14px 28px),
+  var(--navy)}
+
+/* protecao */
+.protecao{position:relative;display:inline-block;padding:calc(var(--x) * 1);outline:1px dashed rgba(44,75,255,.55);
+  outline-offset:0}
+.protecao::before{content:"";position:absolute;inset:0;background:rgba(44,75,255,.06)}
+.protecao > *{position:relative}
+
+/* grafismo */
+.octo-janela{clip-path:polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%)}
+.janela-demo{aspect-ratio:1;background:var(--navy);display:grid;place-items:center;color:var(--fluor);
+  font-family:var(--display);font-weight:800;font-size:54px;letter-spacing:-.04em}
+.janela-demo--fluor{background:var(--fluor);color:var(--navy)}
+.janela-demo--papel{background:var(--papel-2);color:var(--navy)}
+
+/* DNA */
+.dna{background:var(--tinta);color:var(--papel);border-radius:var(--r-1);padding:var(--e-6);
+  font-family:var(--mono);font-size:13px;line-height:1.85;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+.dna b{color:var(--fluor);font-weight:700}
+
+/* procedencia */
+.proc{border-left:3px solid var(--navy);padding-left:var(--e-5)}
+.proc--dele{border-left-color:var(--fluor)}
+.proc--maiara{border-left-color:var(--cobalto)}
+.proc--nosso{border-left-color:var(--menta)}
+.proc h4{font-family:var(--display);font-weight:700;font-size:var(--t-h3);letter-spacing:-.02em;margin-bottom:var(--e-3)}
+.proc ul{list-style:none;display:grid;gap:10px}
+.proc li{font-size:var(--t-corpo-s);color:var(--tinta-70);padding-left:16px;position:relative;line-height:1.55}
+.proc li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--tinta-45)}
+.proc li b{color:var(--tinta);font-weight:600}
+.sec--escuro .proc li{color:var(--papel-72)}
+.sec--escuro .proc li b{color:var(--papel)}
+.sec--escuro .proc li::before{background:var(--papel-45)}
+
+.alerta{border:1px solid rgba(44,75,255,.35);background:rgba(44,75,255,.05);border-radius:var(--r-1);
+  padding:var(--e-5);margin-top:var(--e-5)}
+.alerta .k{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--cobalto);margin-bottom:var(--e-3)}
+.alerta p{font-size:var(--t-corpo-s);color:var(--tinta-70);max-width:var(--largura-texto)}
+.alerta p + p{margin-top:10px}
+.alerta b{color:var(--tinta);font-weight:600}
+
+/* rodape compartilhado */
+.rodape{background:var(--tinta);color:var(--papel-45);padding:var(--e-8) 0 var(--e-7);margin-top:var(--e-9)}
+.rodape-in{display:flex;justify-content:space-between;gap:var(--e-6);flex-wrap:wrap;align-items:flex-end}
+.rodape-nav{display:flex;gap:var(--e-5);flex-wrap:wrap;list-style:none}
+.rodape a{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--papel-45);text-decoration:none;transition:color var(--d-base) var(--ease)}
+.rodape a:hover{color:var(--fluor)}
+.rodape-assin{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  line-height:1.9}
+.rodape-assin b{color:var(--papel-72);font-weight:700}
+
+ul.lista{list-style:none;display:grid;gap:var(--e-3);max-width:var(--largura-texto)}
+ul.lista li{position:relative;padding-left:22px;font-size:var(--t-corpo-s);color:var(--tinta-70);line-height:1.55}
+ul.lista li::before{content:"";position:absolute;left:0;top:10px;width:10px;height:2px;background:var(--fluor)}
+ul.lista li b{color:var(--tinta);font-weight:600}
+.sec--escuro ul.lista li{color:var(--papel-72)}
+.sec--escuro ul.lista li b{color:var(--papel)}
+
+.nota-pe{font-size:var(--t-legenda);color:var(--tinta-45);margin-top:var(--e-5);max-width:var(--largura-texto);line-height:1.55}
+.sec--escuro .nota-pe{color:var(--papel-45)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="trama" viewBox="0 0 200 200" fill="none">
+    <line x1="59.74" y1="28.53" x2="116.58" y2="28.53" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="122.07" y1="21.00" x2="162.26" y2="61.19" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="171.47" y1="59.74" x2="171.47" y2="116.58" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="179.00" y1="122.07" x2="138.81" y2="162.26" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="140.26" y1="171.47" x2="83.42" y2="171.47" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="77.93" y1="179.00" x2="37.74" y2="138.81" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="28.53" y1="140.26" x2="28.53" y2="83.42" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="21.00" y1="77.93" x2="61.19" y2="37.74" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" style="text-decoration:none">
+      <span class="lk lk--hz lk--neg" style="font-size:26px">
+        <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <span class="rule"></span>
+        <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" aria-current="page">Brandbook</a></li>
+      <li><a href="ds-paginas.html">Páginas</a></li>
+      <li><a href="ds-conteudos-criativos.html">Conteúdos &amp; Criativos</a></li>
+      <li><a href="ds-apresentacoes.html">Apresentações</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="capa">
+  <svg class="capa-sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+  <div class="wrap">
+    <div class="rotulo"><i></i>Módulo 1 de 4 &middot; Brandbook &amp; Design System &middot; v1 &middot; 20 de agosto de 2026</div>
+    <h1>Um órgão,<br>não um <em>produto</em></h1>
+    <p class="tese">A Academia DTM se apresenta com a linguagem de um <b>caderno de atas de sociedade científica</b> — papel, filete, caixa alta espaçada, numeração de artigo — atravessado por <b>uma única fita fluorescente de marcação de exame</b>. Escola que publica, não curso que anuncia.</p>
+    <div class="capa-lk">
+      <span class="lk lk--principal lk--neg" style="font-size:clamp(64px,9vw,104px)">
+        <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <span class="rule"></span>
+        <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+      </span>
+    </div>
+    <div class="capa-meta">
+      <div><div class="k">Marca-mãe</div><p>Academia DTM — escola de DTM e dor orofacial para dentistas. Dr. Rodrigo Wendel.</p></div>
+      <div><div class="k">Formação</div><p>Viver de DTM — a formação que vive dentro da Academia. Turma 1 abre em fevereiro de 2027.</p></div>
+      <div><div class="k">Símbolo</div><p>Rota Trama — octógono de 8 barras defasadas. Aprovado pelo Rodrigo. Geometria congelada.</p></div>
+      <div><div class="k">Este documento</div><p>Substitui o brandbook Pulso (11/07). É a fonte única de cor, tipo, logo e voz — os três módulos de aplicação derivam daqui.</p></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ 00 · A TESE ============ -->
+<section class="sec" id="tese">
+  <div class="sec-h">
+    <div class="sec-n">§ 00</div>
+    <div>
+      <span class="junta"></span>
+      <h2>A tese estética — e o teste que ela precisa passar</h2>
+      <p class="lede">Marca não nasce de paleta; nasce de uma aposta que decide as cores sozinha. A aposta aqui: <b>a Academia DTM é um corpo que emite documento</b> — parecer, ata, certificado, protocolo. Toda decisão abaixo é consequência dessa frase, não escolha de gosto.</p>
+    </div>
+  </div>
+
+  <div class="grade-2">
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">O que a marca é</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>Órgão.</b> Fundação, conselho, associação. Quem forma quem forma.</li>
+        <li><b>Documento.</b> A peça tem número de seção, filete e margem — parece publicada, não postada.</li>
+        <li><b>Medida.</b> O dado aparece em número tabular e com fonte, não em adjetivo.</li>
+        <li><b>Sobriedade com um sinal.</b> Uma cor viva na página inteira, e só uma. É o que separa rigor de austeridade morta.</li>
+      </ul>
+    </div>
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">O que a marca nunca é (anti-referências)</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>Dashboard de startup.</b> Card flutuante, gradiente roxo-azul, ícone de linha fina e cantos de 16px.</li>
+        <li><b>Lançamento de infoproduto.</b> Seta desenhada, selo de desconto, contador, foto do expert de braços cruzados.</li>
+        <li><b>Clínica odontológica.</b> Azul-e-branco dental, dente estilizado, sorriso de banco de imagem.</li>
+      </ul>
+      <p class="porque" style="margin-top:var(--e-5)"><b>Por quê:</b> as três já foram rejeitadas na prática — o símbolo levou quatro rodadas até sair da família de forma que produzia sol, floco e estrela. O que reprova aqui é leitura alheia, não falta de capricho.</p>
+    </div>
+  </div>
+
+  <div class="painel" style="margin-top:var(--e-5)">
+    <div class="cap" style="margin-top:0">O teste do logo coberto</div>
+    <p style="margin-top:var(--e-3);max-width:var(--largura-texto);color:var(--tinta-70)">Cubra o logo de qualquer peça da Academia. Um dentista que acompanha a área precisa conseguir dizer de quem é a peça só pela linguagem visual — a caixa alta espaçada, o filete duplo defasado, o papel creme, o navy e o único traço fluor. <b style="color:var(--tinta)">Se a peça pudesse ser de qualquer escola, ela não é da Academia.</b></p>
+  </div>
+</section>
+
+<!-- ============ 01 · O SÍMBOLO ============ -->
+<section class="sec" id="simbolo">
+  <div class="sec-h">
+    <div class="sec-n">§ 01</div>
+    <div>
+      <span class="junta"></span>
+      <h2>O símbolo · Trama</h2>
+      <p class="lede">Oito barras idênticas, do mesmo peso, defasadas uma sobre a outra até o anel fechar — e nenhuma delas é a primeira. <b>A geometria está congelada.</b> Nenhum módulo do sistema redesenha, reposiciona ou reinterpreta esta forma.</p>
+    </div>
+  </div>
+
+  <div class="grade-2" style="align-items:start">
+    <div>
+      <div class="palco palco--papel2" style="min-height:340px">
+        <svg viewBox="0 0 200 200" style="width:min(72%,270px);color:var(--navy)" aria-hidden="true"><use href="#trama"/></svg>
+      </div>
+      <div class="cap">Construção única — do banner de congresso ao favicon</div>
+    </div>
+    <div>
+      <div class="tab-rolo">
+        <table class="tab">
+          <thead><tr><th>Medida</th><th>Valor (unidades na caixa de 200)</th></tr></thead>
+          <tbody>
+            <tr><td>Módulo</td><td class="num">barra reta · eixo 57 · total 81 com as calotas</td></tr>
+            <tr><td>Espessura</td><td class="num">23,94 · terminal arredondado de raio 11,97</td></tr>
+            <tr><td>Repetição</td><td class="num">8 peças · passo fechado de 45°</td></tr>
+            <tr><td>Octógono guia</td><td class="num">vértices em R 78 · lado horizontal no topo</td></tr>
+            <tr><td>Defasagem</td><td class="num">avança 11 além do vértice · recua 13 no encontro</td></tr>
+            <tr><td>Envelope</td><td class="num">circular · Ø 188 na caixa de 200</td></tr>
+            <tr><td>Vazio central</td><td class="num">octógono de Ø 119 — sempre vazio</td></tr>
+            <tr><td>Redução comprovada</td><td class="num">legível até 18 px de largura</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="porque"><b>Por que o centro é vazio:</b> qualquer marca sólida no meio de um arranjo simétrico lê como alvo — foi testado em sete variantes e falhou nas sete. O vazio não é estilo, é o resultado do gate.</p>
+      <p class="porque" style="margin-top:var(--e-3)"><b>Por que a defasagem importa:</b> o avanço de cada peça sobre a vizinha aponta sempre para o mesmo lado. É a direção que o Rodrigo pediu por áudio, sem nenhuma flecha desenhada — e é o único detalhe que separa esta forma de um octógono comum.</p>
+    </div>
+  </div>
+
+  <div class="alerta">
+    <div class="k">A frase que ele fala sozinho</div>
+    <p>“Não tem uma técnica principal. São oito peças do mesmo tamanho, e o anel só fecha quando todas estão no lugar.” — o símbolo carrega o argumento do ensino, não uma metáfora de design. <b>Use essa frase; ela é a legenda oficial do símbolo.</b></p>
+  </div>
+</section>
+
+<!-- ============ 02 · SISTEMA DE LOGO ============ -->
+<section class="sec" id="logo">
+  <div class="sec-h">
+    <div class="sec-n">§ 02</div>
+    <div>
+      <span class="junta"></span>
+      <h2>O sistema de logo — três versões, uma marca</h2>
+      <p class="lede">Uma versão só nunca cobre a vida real de uma marca: o que cabe numa capa não cabe num cabeçalho de e-mail, e o que cabe num avatar não diz o nome. São <b>três construções e nenhuma a mais</b> — principal, horizontal e selo. Cada uma dessas montagens de símbolo mais nome é o que o meio chama de <b>lockup</b>, e a palavra aparece assim daqui em diante. Fonte única nas três: Archivo.</p>
+    </div>
+  </div>
+
+  <!-- 2.1 principal -->
+  <h3 style="font-family:var(--display);font-weight:800;font-size:var(--t-h3);letter-spacing:-.02em;margin-bottom:var(--e-4)">2.1 &middot; Principal — V05</h3>
+  <div class="grade-2">
+    <div>
+      <div class="palco">
+        <span class="lk lk--principal" style="font-size:clamp(52px,7vw,88px)">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span class="rule"></span>
+          <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+        </span>
+      </div>
+      <div class="cap">Positiva &middot; navy sobre papel</div>
+    </div>
+    <div>
+      <div class="palco palco--navy">
+        <span class="lk lk--principal lk--neg" style="font-size:clamp(52px,7vw,88px)">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span class="rule"></span>
+          <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+        </span>
+      </div>
+      <div class="cap">Negativa &middot; símbolo fluor, texto papel sobre navy</div>
+    </div>
+  </div>
+  <div class="grade-2" style="margin-top:var(--e-4)">
+    <div>
+      <div class="palco palco--papel2 palco--baixo">
+        <span class="lk lk--principal lk--mono-navy" style="font-size:56px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span class="rule"></span>
+          <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+        </span>
+      </div>
+      <div class="cap">Monocromática navy &middot; carimbo, gravação, bordado, 1 cor</div>
+    </div>
+    <div>
+      <div class="palco palco--navy palco--baixo">
+        <span class="lk lk--principal lk--mono-papel" style="font-size:56px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span class="rule"></span>
+          <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+        </span>
+      </div>
+      <div class="cap">Monocromática papel &middot; sobre navy, sobre foto com tarja, sobre fluor</div>
+    </div>
+  </div>
+
+  <div class="tab-rolo" style="margin-top:var(--e-6)">
+    <table class="tab">
+      <thead><tr><th>Elemento</th><th>Especificação exata</th></tr></thead>
+      <tbody>
+        <tr><td><b>ACADEMIA</b></td><td class="num">Archivo 400 &middot; 0,225em do símbolo &middot; tracking +0,22em &middot; caixa alta</td></tr>
+        <tr><td><b>DTM</b></td><td class="num">Archivo 800 &middot; 0,6875em do símbolo &middot; tracking −0,04em &middot; caixa alta</td></tr>
+        <tr><td>Entrelinha</td><td class="num">1,00 — as duas linhas casadas em largura ótica (razão 1,00)</td></tr>
+        <tr><td>Filete</td><td class="num">altura 0,90em &middot; espessura 0,028em &middot; opacidade 32% &middot; margem 0,325em dos dois lados</td></tr>
+        <tr><td>Proporção do bloco</td><td class="num">3,26 : 1 (largura : altura), medida em tela</td></tr>
+        <tr><td><b>Redução mínima</b></td><td class="num">símbolo 56 px em tela &middot; 20 mm em impresso</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="porque"><b>Por que o piso é 56 px:</b> abaixo disso ACADEMIA cai para menos de 12,6 px em peso 400 e vira sombra clara ao lado do DTM — some em impresso, em bordado e em fundo texturizado. Foi medido nos dois testes de redução, não estimado. <b>Abaixo de 56 px a versão correta é a horizontal, não a principal encolhida.</b></p>
+
+  <div class="grade-2" style="margin-top:var(--e-6)">
+    <div>
+      <div class="palco palco--papel2">
+        <span class="protecao" style="--x:36px">
+          <span class="lk lk--principal" style="font-size:72px">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+            <span class="rule"></span>
+            <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+          </span>
+        </span>
+      </div>
+      <div class="cap">Área de proteção &middot; X = metade da altura do símbolo, nos quatro lados</div>
+    </div>
+    <div>
+      <div class="painel painel--claro" style="height:100%">
+        <div class="cap" style="margin-top:0">A regra do X</div>
+        <p style="margin-top:var(--e-3);color:var(--tinta-70);font-size:var(--t-corpo-s)"><b style="color:var(--tinta)">X = 0,5 × altura do símbolo.</b> Nenhum texto, filete, borda de card, foto ou outro logo entra nessa faixa. Em símbolo de 104 px, X = 52 px.</p>
+        <ul class="lista" style="margin-top:var(--e-4)">
+          <li>A margem da página conta como respiro: o logo nunca fica a menos de X da borda do papel ou do slide.</li>
+          <li>Em cabeçalho de site a proteção lateral pode cair para 0,75X — é a única exceção, e existe porque a barra tem altura fixa.</li>
+          <li>Nunca use a área de proteção como “espaço decorativo”: ela é vazio, não fundo de cor diferente.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="horizontal" style="border-top:0;padding-top:0">
+  <h3 style="font-family:var(--display);font-weight:800;font-size:var(--t-h3);letter-spacing:-.02em;margin-bottom:var(--e-4)">2.2 &middot; Horizontal — a versão que carrega o tamanho pequeno</h3>
+  <p style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-6)">A principal ocupa 3,26 unidades de largura por 1 de altura. Cabeçalho de site, assinatura de e-mail e rodapé de documento pedem uma faixa de proporção pelo menos 5:1 e altura de 28 a 48 px — território em que a principal ou estoura a barra ou encolhe ACADEMIA até sumir. <b style="color:var(--tinta)">Três construções foram desenhadas, renderizadas e olhadas em 104, 48, 32 e 24 px, no positivo e no negativo. Duas reprovaram.</b></p>
+
+  <div class="grade-3">
+    <div class="painel painel--claro" style="border-color:var(--navy);border-width:2px">
+      <div class="cap" style="margin-top:0;color:var(--navy)">Construção A &middot; escolhida</div>
+      <h4 style="font-family:var(--display);font-weight:700;font-size:16px;margin:8px 0 var(--e-4)">Uma linha, corpo único, contraste só de peso</h4>
+      <div class="palco palco--baixo" style="min-height:96px;padding:var(--e-5) var(--e-4)">
+        <span class="lk lk--hz" style="font-size:56px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+          <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+        </span>
+      </div>
+      <div class="palco palco--baixo" style="min-height:0;padding:var(--e-4);margin-top:var(--e-3)">
+        <span class="lk lk--hz" style="font-size:30px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+          <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+        </span>
+      </div>
+      <p style="font-size:14px;color:var(--tinta-70);margin-top:var(--e-4);line-height:1.5"><b style="color:var(--tinta)">5,65 : 1</b> — 73% mais larga que a principal na mesma altura. ACADEMIA ganha o mesmo corpo do DTM e por isso continua legível a 24 px de faixa, que é onde essa versão vive.</p>
+    </div>
+
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Construção B &middot; reprovada</div>
+      <h4 style="font-family:var(--display);font-weight:700;font-size:16px;margin:8px 0 var(--e-4)">Uma linha, ACADEMIA como etiqueta</h4>
+      <div class="palco palco--baixo" style="min-height:96px;padding:var(--e-5) var(--e-4)">
+        <span class="lk" style="font-size:56px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span class="rule" style="height:.72em;margin:0 .28em"></span>
+          <span style="display:flex;align-items:baseline;font-family:var(--display);text-transform:uppercase;white-space:nowrap;line-height:1">
+            <span style="font-weight:400;font-size:.24em;letter-spacing:.22em">Academia</span>
+            <span style="font-weight:800;font-size:.62em;letter-spacing:-.04em;margin-left:.14em">DTM</span>
+          </span>
+        </span>
+      </div>
+      <div class="palco palco--baixo" style="min-height:0;padding:var(--e-4);margin-top:var(--e-3)">
+        <span class="lk" style="font-size:30px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span class="rule" style="height:.72em;margin:0 .28em"></span>
+          <span style="display:flex;align-items:baseline;font-family:var(--display);text-transform:uppercase;white-space:nowrap;line-height:1">
+            <span style="font-weight:400;font-size:.24em;letter-spacing:.22em">Academia</span>
+            <span style="font-weight:800;font-size:.62em;letter-spacing:-.04em;margin-left:.14em">DTM</span>
+          </span>
+        </span>
+      </div>
+      <p style="font-size:14px;color:var(--tinta-70);margin-top:var(--e-4);line-height:1.5">Mantém a proporção da principal, e é bonita no corpo grande. <b style="color:var(--tinta)">Reprova onde importa:</b> aos 30 px de faixa, ACADEMIA cai para 7 px em peso 400 e vira borrão — exatamente o defeito que a horizontal existe para resolver.</p>
+    </div>
+
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Construção C &middot; reprovada</div>
+      <h4 style="font-family:var(--display);font-weight:700;font-size:16px;margin:8px 0 var(--e-4)">Duas linhas comprimidas na altura do símbolo</h4>
+      <div class="palco palco--baixo" style="min-height:96px;padding:var(--e-5) var(--e-4)">
+        <span class="lk" style="font-size:56px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span class="rule" style="height:.80em;margin:0 .28em"></span>
+          <span style="display:flex;flex-direction:column;font-family:var(--display);text-transform:uppercase;line-height:1;white-space:nowrap">
+            <span style="font-weight:400;font-size:.19em;letter-spacing:.24em">Academia</span>
+            <span style="font-weight:800;font-size:.52em;letter-spacing:-.04em">DTM</span>
+          </span>
+        </span>
+      </div>
+      <div class="palco palco--baixo" style="min-height:0;padding:var(--e-4);margin-top:var(--e-3)">
+        <span class="lk" style="font-size:30px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span class="rule" style="height:.80em;margin:0 .28em"></span>
+          <span style="display:flex;flex-direction:column;font-family:var(--display);text-transform:uppercase;line-height:1;white-space:nowrap">
+            <span style="font-weight:400;font-size:.19em;letter-spacing:.24em">Academia</span>
+            <span style="font-weight:800;font-size:.52em;letter-spacing:-.04em">DTM</span>
+          </span>
+        </span>
+      </div>
+      <p style="font-size:14px;color:var(--tinta-70);margin-top:var(--e-4);line-height:1.5">Não é uma horizontal — é a principal encolhida. Medida em tela dá <b style="color:var(--tinta)">2,96 : 1</b>, ou seja, <b style="color:var(--tinta)">mais estreita que a própria principal</b> (3,26:1): o DTM perde corpo e a faixa não fica mais baixa. Paga o preço das duas linhas sem receber nada em troca.</p>
+    </div>
+  </div>
+
+  <div class="alerta">
+    <div class="k">Por que a A ganhou — o argumento, não o gosto</div>
+    <p><b>1. Ela resolve o defeito documentado da principal.</b> No teste de sete pesos ficou registrado que, na família V05–V07, “ACADEMIA deixa de ser palavra e vira etiqueta”. Na capa isso é uma escolha de impacto e funciona. Numa faixa de 32 px, vira um defeito. A horizontal é justamente a versão que vive em faixa pequena — então é nela que ACADEMIA precisa recuperar corpo.</p>
+    <p><b>2. Ela é a única que fica realmente horizontal.</b> Medidas em tela, na mesma altura de faixa: <b>A = 5,65:1 · B = 4,73:1 · C = 2,96:1</b> — contra 3,26:1 da principal. Só a A ganha largura de verdade, e é essa diferença que decide se a marca cabe ou não num cabeçalho de 48 px.</p>
+    <p><b>3. Ela continua lendo como a mesma marca.</b> Mesma fonte, mesmo símbolo, mesmo filete, mesma lógica de contraste (peso leve e espaçado contra peso extrabold e fechado). O único ajuste é o peso de ACADEMIA: <b>500 em vez de 400</b>, porque aqui a palavra encosta num 800 do mesmo corpo — a 400 ela pareceria anêmica ao lado, e a 500 ela apenas equilibra. É compensação ótica, não uma segunda identidade.</p>
+  </div>
+
+  <div class="tab-rolo" style="margin-top:var(--e-6)">
+    <table class="tab">
+      <thead><tr><th>Elemento</th><th>Especificação exata</th></tr></thead>
+      <tbody>
+        <tr><td><b>ACADEMIA</b></td><td class="num">Archivo 500 &middot; 0,44em do símbolo &middot; tracking +0,18em &middot; caixa alta</td></tr>
+        <tr><td><b>DTM</b></td><td class="num">Archivo 800 &middot; 0,44em do símbolo &middot; tracking −0,035em &middot; caixa alta</td></tr>
+        <tr><td>Espaço entre as palavras</td><td class="num">0,26em (margem esquerda do DTM), com as duas na mesma linha de base</td></tr>
+        <tr><td>Filete</td><td class="num">altura 0,62em &middot; espessura 0,028em &middot; opacidade 32% &middot; margem 0,30em à esquerda / 0,26em à direita</td></tr>
+        <tr><td>Proporção do bloco</td><td class="num">5,65 : 1 (largura : altura), medida em tela</td></tr>
+        <tr><td><b>Redução mínima</b></td><td class="num">símbolo 24 px em tela &middot; 9 mm em impresso</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="porque"><b>Por que o filete encolhe de 0,90em para 0,62em:</b> na principal ele acompanha um bloco de duas linhas; aqui acompanha uma linha só. Mantê-lo em 0,90em faria o traço sobrar acima e abaixo do texto e virar um elemento solto na faixa.</p>
+</section>
+
+<!-- 2.3 selo -->
+<section class="sec" id="selo" style="border-top:0">
+  <h3 style="font-family:var(--display);font-weight:800;font-size:var(--t-h3);letter-spacing:-.02em;margin-bottom:var(--e-4)">2.3 &middot; Selo — o símbolo sozinho</h3>
+  <p style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-6)">Onde não cabe nome: avatar, favicon, carimbo, marca d’água. <b style="color:var(--tinta)">O selo não apresenta a marca — ele confirma uma marca já conhecida.</b> Por isso ele nunca é a primeira aparição pública do nome.</p>
+
+  <div class="grade-4">
+    <div>
+      <div class="palco palco--papel2" style="min-height:200px">
+        <span class="selo" style="width:152px;height:152px"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span>
+      </div>
+      <div class="cap">Padrão &middot; símbolo fluor sobre navy</div>
+    </div>
+    <div>
+      <div class="palco palco--papel2" style="min-height:200px">
+        <span class="selo selo--invertido" style="width:152px;height:152px"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span>
+      </div>
+      <div class="cap">Invertido &middot; navy sobre fluor — uso pontual, 1 por peça</div>
+    </div>
+    <div>
+      <div class="palco palco--navy" style="min-height:200px">
+        <span class="selo selo--papel" style="width:152px;height:152px"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span>
+      </div>
+      <div class="cap">Sobre navy &middot; disco papel, símbolo navy</div>
+    </div>
+    <div>
+      <div class="palco palco--papel2" style="min-height:200px">
+        <span class="selo selo--quadrado" style="width:152px;height:152px"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span>
+      </div>
+      <div class="cap">Quadrado &middot; favicon, adesivo, botão — raio 3 px</div>
+    </div>
+  </div>
+
+  <div class="grade-2" style="margin-top:var(--e-6);align-items:start">
+    <div>
+      <div class="palco palco--papel2" style="min-height:0;padding:var(--e-6) var(--e-5);gap:var(--e-5);grid-auto-flow:column;place-items:center">
+        <span class="selo" style="width:96px;height:96px"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span>
+        <span class="selo" style="width:64px;height:64px"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span>
+        <span class="selo" style="width:44px;height:44px"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span>
+        <span class="selo" style="width:32px;height:32px"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></span>
+      </div>
+      <div class="cap">96 &middot; 64 &middot; 44 &middot; 32 px — o piso é 32 px</div>
+    </div>
+    <div class="tab-rolo">
+      <table class="tab">
+        <thead><tr><th>Elemento</th><th>Especificação exata</th></tr></thead>
+        <tbody>
+          <tr><td>Símbolo dentro do selo</td><td class="num">62% do lado — respiro de 19% em cada lado</td></tr>
+          <tr><td>Forma padrão</td><td class="num">círculo (avatar recorta em círculo de qualquer jeito)</td></tr>
+          <tr><td>Forma alternativa</td><td class="num">quadrado de raio 3 px — favicon, adesivo, botão</td></tr>
+          <tr><td><b>Mínimo — avatar</b></td><td class="num">32 px de diâmetro (símbolo em 20 px)</td></tr>
+          <tr><td><b>Mínimo — favicon</b></td><td class="num">quadrado de 32 px, símbolo em 24 px (75%, sem recorte circular)</td></tr>
+          <tr><td>Piso absoluto do símbolo</td><td class="num">18 px de largura — abaixo disso as juntas fecham</td></tr>
+        </tbody>
+      </table>
+      <p class="porque"><b>Por que 62% e não “o maior possível”:</b> o Instagram e o WhatsApp recortam o avatar em círculo e ainda desenham um anel de status por cima. Com o símbolo colado na borda, o anel come as juntas — que são a única coisa que separa esta marca de um octógono qualquer.</p>
+      <p class="porque" style="margin-top:var(--e-3)"><b>Por que o favicon pode subir para 75%:</b> ele não sofre recorte circular nem anel, e a 16-32 px cada pixel de símbolo conta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2.4 tabela de aplicação -->
+<section class="sec" id="aplicacao" style="border-top:0">
+  <h3 style="font-family:var(--display);font-weight:800;font-size:var(--t-h3);letter-spacing:-.02em;margin-bottom:var(--e-4)">2.4 &middot; Qual versão em qual lugar</h3>
+  <p style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-5)">Regra de bolso, para decidir sem abrir este documento: <b style="color:var(--tinta)">tem espaço vertical → principal. É uma faixa → horizontal. Não cabe o nome → selo.</b></p>
+  <div class="tab-rolo">
+    <table class="tab">
+      <thead><tr><th style="min-width:150px">Versão</th><th style="min-width:320px">Onde usa</th><th style="min-width:300px">Onde não usa</th><th style="min-width:120px">Piso</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Principal (V05)</b></td>
+          <td class="sim">Capa de slide · capa e verso de certificado · topo da página inicial do site · anúncio e criativo de feed · capa de apostila e de e-book · banner e backdrop de congresso · placa e fachada · camiseta e crachá de professor · abertura de vídeo · capa de proposta comercial</td>
+          <td class="nao">Cabeçalho fixo de site · assinatura de e-mail · rodapé de documento · qualquer faixa com menos de 56 px de altura de símbolo · story com a arte já cheia no topo</td>
+          <td class="num">símbolo 56 px<br>20 mm</td>
+        </tr>
+        <tr>
+          <td><b>Horizontal</b></td>
+          <td class="sim">Cabeçalho de site e de área de membros · assinatura de e-mail · rodapé de contrato, ficha e planilha · rodapé de certificado · topo de slide interno (não a capa) · crachá de aluno · legenda fixa de vídeo (lower third) · cabeçalho de PDF e de apostila interna · faixa de rodapé de landing</td>
+          <td class="nao">Capa (existe espaço vertical: use a principal) · aplicação quadrada · avatar · onde a marca precisa de presença, e não só de assinatura</td>
+          <td class="num">símbolo 24 px<br>9 mm</td>
+        </tr>
+        <tr>
+          <td><b>Selo</b></td>
+          <td class="sim">Avatar do Instagram @academiadtm · favicon · foto de perfil de WhatsApp Business, YouTube e LinkedIn · carimbo de autenticidade no certificado · marca d’água de material do aluno · adesivo e botão · marcador de canto em slide</td>
+          <td class="nao">Primeira aparição da marca para quem ainda não a conhece — o selo não diz o nome · capa de material · assinatura de e-mail · substituto da logo em documento oficial</td>
+          <td class="num">32 px<br>12 mm</td>
+        </tr>
+        <tr>
+          <td><b>Símbolo solto</b><br><span style="font-size:12px;color:var(--tinta-45)">sem disco, sem nome</span></td>
+          <td class="sim">Marca d’água em papel timbrado · padrão gráfico de fundo · marcador de item em lista · máscara de recorte de foto e de número (o octógono-janela, §06) · bullet de seção</td>
+          <td class="nao">Nunca substitui a logo em documento oficial, certificado, contrato ou peça de venda — ali sempre entra uma das três versões nomeadas</td>
+          <td class="num">18 px</td>
+        </tr>
+        <tr>
+          <td><b>Monocromática</b><br><span style="font-size:12px;color:var(--tinta-45)">navy 100% ou papel 100%</span></td>
+          <td class="sim">Impressão em 1 cor · carimbo · gravação em metal, acrílico ou madeira · bordado · fax e cópia · aplicação sobre fotografia com tarja · brinde de baixo custo</td>
+          <td class="nao">Onde a versão em duas cores cabe e o suporte reproduz cor — mono é solução técnica, não alternativa de gosto</td>
+          <td class="num">igual à versão de origem</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="porque"><b>Por que existe um piso em milímetros:</b> tela e papel não perdoam igual. A 20 mm o ACADEMIA da principal ainda imprime; a 15 mm ele entope no offset e some no bordado.</p>
+</section>
+
+<!-- 2.5 usos proibidos -->
+<section class="sec sec--escuro" id="proibido" style="margin:0 calc(50% - 50vw);padding:var(--e-9) 0;width:100vw">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="sec-n">§ 02.5</div>
+      <div>
+        <span class="junta junta--claro"></span>
+        <h2>O que nunca se faz com esta marca</h2>
+        <p class="lede">Seis proibições. Cada uma existe porque destrói uma coisa específica — não por preciosismo. <b>Quem quebra, quebra o que está escrito ao lado.</b></p>
+      </div>
+    </div>
+    <div class="grade-3">
+      <div class="proib">
+        <div class="palco palco--papel2" style="border-radius:0;border:0">
+          <span class="proib-x">não</span>
+          <span class="lk lk--principal" style="font-size:40px;transform:scaleX(1.42)">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+            <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+          </span>
+        </div>
+        <div class="proib-t"><h4>Esticar ou condensar</h4><p>O octógono vira elipse e a espessura das oito barras deixa de ser igual — que é a única coisa que a forma afirma.</p></div>
+      </div>
+      <div class="proib">
+        <div class="palco palco--papel2" style="border-radius:0;border:0">
+          <span class="proib-x">não</span>
+          <span class="lk lk--principal" style="font-size:44px">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true" style="color:var(--fluor)"><use href="#trama"/></svg><span class="rule"></span>
+            <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+          </span>
+        </div>
+        <div class="proib-t"><h4>Símbolo em fluor sobre papel</h4><p>Contraste medido: 1,15:1. O símbolo praticamente desaparece. Fluor só existe sobre navy ou tinta.</p></div>
+      </div>
+      <div class="proib">
+        <div class="palco palco--papel2" style="border-radius:0;border:0">
+          <span class="proib-x">não</span>
+          <span class="lk lk--principal" style="font-size:44px">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true" style="transform:rotate(22.5deg)"><use href="#trama"/></svg><span class="rule"></span>
+            <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+          </span>
+        </div>
+        <div class="proib-t"><h4>Girar o octógono</h4><p>O lado horizontal no topo é o que faz a forma pousar. Girada, ela flutua e a defasagem perde o sentido de leitura.</p></div>
+      </div>
+      <div class="proib">
+        <div class="palco palco--papel2" style="border-radius:0;border:0">
+          <span class="proib-x">não</span>
+          <span class="lk lk--principal" style="font-size:44px">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+            <span class="rule" style="margin:0 1.4em"></span>
+            <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+          </span>
+        </div>
+        <div class="proib-t"><h4>Recompor a distância símbolo ↔ texto</h4><p>Os 0,325em de cada lado do filete são parte do desenho. Aberto, vira duas coisas soltas; fechado, vira mancha.</p></div>
+      </div>
+      <div class="proib">
+        <div class="palco fundo-ruim" style="border-radius:0;border:0">
+          <span class="proib-x" style="color:#FFD4D0">não</span>
+          <span class="lk lk--principal lk--neg" style="font-size:44px">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+            <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+          </span>
+        </div>
+        <div class="proib-t"><h4>Sobre fundo movimentado, sem tarja</h4><p>Foto ou padrão embaixo do logo exige tarja sólida navy (opacidade mínima 88%) ou a versão monocromática papel.</p></div>
+      </div>
+      <div class="proib">
+        <div class="palco palco--papel2" style="border-radius:0;border:0">
+          <span class="proib-x">não</span>
+          <span class="lk lk--principal" style="font-size:44px">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+            <span class="col" style="font-family:Georgia,serif;text-transform:none">
+              <span style="font-size:.26em;letter-spacing:.04em;font-style:italic">Academia</span>
+              <span style="font-size:.62em;font-weight:700">DTM</span>
+            </span>
+          </span>
+        </div>
+        <div class="proib-t"><h4>Trocar a fonte ou reescrever o nome</h4><p>Archivo, caixa alta, duas palavras nesta ordem. Nada de “Academia de DTM”, “ACADEMIA-DTM”, caixa mista nem versalete (a caixa alta em corpo reduzido).</p></div>
+      </div>
+    </div>
+    <p class="nota-pe">Mais três, sem exemplo porque não precisam de imagem para serem entendidas: <b>não aplicar sombra, contorno, brilho ou degradê no logo</b> (o sistema não tem nenhum dos quatro) · <b>não colocar o logo dentro de forma que ele não tenha</b> (caixa, balão, moldura de outra marca) · <b>não usar o logo dentro de frase corrida</b> — o nome escrito em texto é texto, não logo.</p>
+  </div>
+</section>
+
+<!-- ============ 03 · ARQUITETURA DE MARCA ============ -->
+<section class="sec" id="arquitetura">
+  <div class="wrap" style="padding:0">
+  <div class="sec-h">
+    <div class="sec-n">§ 03</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Academia DTM &times; Viver de DTM — quem assina o quê</h2>
+      <p class="lede">A Academia é a casa; a formação é o que acontece dentro dela. <b>A Academia sobrevive à formação</b> — turmas mudam de nome, a instituição não. Essa hierarquia precisa aparecer em toda peça em que as duas se encontram.</p>
+    </div>
+  </div>
+
+  <div class="grade-2" style="align-items:start">
+    <div>
+      <div class="palco palco--papel2" style="min-height:230px;flex-direction:column;gap:var(--e-5)">
+        <span class="lk lk--principal" style="font-size:62px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+          <span class="col"><span class="ac">Academia</span><span class="dtm">DTM</span></span>
+        </span>
+      </div>
+      <div class="cap">Marca-mãe &middot; a instituição que assina e certifica</div>
+    </div>
+    <div>
+      <div class="palco palco--papel2" style="min-height:230px">
+        <img src="data:image/png;base64,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" alt="Lockup horizontal da formação Viver de DTM" style="width:min(84%,340px)">
+      </div>
+      <div class="cap">Formação &middot; arquivo atual, recebido em 11/07 &middot; PNG, sem vetor</div>
+    </div>
+  </div>
+
+  <div class="tab-rolo" style="margin-top:var(--e-6)">
+    <table class="tab">
+      <thead><tr><th style="min-width:250px">Situação</th><th style="min-width:270px">Quem assina</th><th style="min-width:280px">Como as duas convivem</th></tr></thead>
+      <tbody>
+        <tr><td><b>Material institucional</b><br><span style="font-size:12px;color:var(--tinta-45)">site, perfil, congresso, papel timbrado, contrato, comunicado</span></td><td>Academia DTM, sozinha</td><td>A formação não aparece. Citar “Viver de DTM” em texto corrido é permitido; usar o lockup dela, não.</td></tr>
+        <tr><td><b>Certificado e diploma</b></td><td>Academia DTM assina; a formação é o nome do curso no corpo do documento</td><td>Logo da Academia no topo e selo no canto. O nome da formação entra como texto, em Archivo — nunca como logo.</td></tr>
+        <tr><td><b>Material de venda da formação</b><br><span style="font-size:12px;color:var(--tinta-45)">página, criativo, e-mail, aula aberta</span></td><td>Viver de DTM em destaque</td><td>A Academia entra como endosso: a linha “uma formação da” + o lockup horizontal da mãe, com <b>no máximo 60% da altura</b> do lockup da formação.</td></tr>
+        <tr><td><b>Material didático dentro da formação</b><br><span style="font-size:12px;color:var(--tinta-45)">slide de aula, apostila, área de membros</span></td><td>Academia DTM no cabeçalho e no rodapé</td><td>A formação aparece uma vez, na capa. Do slide 2 em diante quem assina é a Academia — o aluno está numa escola, não num curso avulso.</td></tr>
+        <tr><td><b>Produto novo</b><br><span style="font-size:12px;color:var(--tinta-45)">mentoria, imersão, congresso próprio</span></td><td>Nome próprio + endosso da Academia</td><td>Mesma regra do material de venda. A Academia é o que dá lastro ao produto novo — é o ativo que não se refaz a cada lançamento.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ul class="lista" style="margin-top:var(--e-6);max-width:none">
+    <li><b>Nunca dois logos do mesmo tamanho lado a lado.</b> Duas marcas em pé de igualdade leem como parceria entre empresas diferentes — e não é isso: uma é dona da outra.</li>
+    <li><b>Nunca compor um lockup único</b> juntando símbolo da Academia com o wordmark da formação. São duas marcas, cada uma com sua construção.</li>
+    <li><b>Quando aparecem juntas, sempre separadas</b> por um filete vertical (mesma espessura e opacidade do filete do logo) ou pela linha “uma formação da” em Archivo 500, caixa alta, tracking +0,18em.</li>
+    <li><b>O símbolo Trama é da Academia, não da formação.</b> A formação não recebe símbolo próprio nesta rodada.</li>
+  </ul>
+
+  <div class="alerta">
+    <div class="k">Pendência aberta desde 02/08 — a fonte do lockup Viver de DTM</div>
+    <p><b>O que se sabe:</b> o lockup da formação chegou apenas em PNG, sem arquivo vetorial, e <b>a fonte dele não é Archivo</b> — a família exata não foi identificada justamente porque não há vetor. Na prática, o sistema hoje tem duas vozes tipográficas: a da Academia (Archivo, congelada neste documento) e a da formação (desconhecida).</p>
+    <p><b>Saída A — redesenhar o lockup da formação em Archivo.</b> O sistema passa a ter uma voz só, a formação lê como parte da casa e o arquivo final sai vetorizado, resolvendo de uma vez a falta de vetor. Custo: refazer os quatro arquivos atuais e substituir onde já foram usados. <b>É a recomendação da direção de arte.</b></p>
+    <p><b>Saída B — manter a fonte atual como exceção documentada.</b> Custo zero agora. Preço: o sistema convive com duas tipografias sem regra que explique a diferença, e a leitura de “mesma casa” enfraquece justamente na peça que mais precisa dela — o material de venda, onde as duas marcas aparecem juntas.</p>
+    <p style="margin-top:var(--e-4)"><b>Esta rodada não redesenha o lockup da formação.</b> A decisão é do Rodrigo, e até ela sair o material de venda usa os arquivos atuais, seguindo a regra de endosso da tabela acima.</p>
+  </div>
+  </div>
+</section>
+
+<!-- ============ 04 · COR ============ -->
+<section class="sec" id="cor">
+  <div class="sec-h">
+    <div class="sec-n">§ 04</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Cor — cinco vozes, e só uma fala alto</h2>
+      <p class="lede">Cada cor tem papel e origem material. <b>Cor que veio do seletor de cores parece software; cor que veio de uma coisa que existe parece marca.</b> Nenhum neutro é preto puro nem branco puro — os dois denunciam geração automática e queimam a leitura em impresso.</p>
+    </div>
+  </div>
+
+  <div class="grade-3">
+    <div class="swatch">
+      <div class="swatch-cor" style="background:var(--papel)"><span style="color:var(--tinta-45)">dominante &middot; 55%</span></div>
+      <div class="swatch-txt">
+        <h4>Papel</h4><div class="swatch-hex">#F4F3EC &middot; rgb(244,243,236) &middot; hsl(53,25%,94%)</div>
+        <p>O palco. Fundo de tudo que se lê — página, documento, slide, apostila.</p>
+        <div class="swatch-papel">Matéria: papel creme de anuário científico</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-cor" style="background:var(--navy)"><span style="color:var(--papel-45)">âncora &middot; 30%</span></div>
+      <div class="swatch-txt">
+        <h4>Navy</h4><div class="swatch-hex">#101C46 &middot; rgb(16,28,70) &middot; hsl(227,63%,17%)</div>
+        <p>A autoridade. Capa, faixa, cabeçalho, tarja, texto de título. É a cor da marca quando ela precisa pesar.</p>
+        <div class="swatch-papel">Matéria: esmalte de placa comemorativa</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-cor" style="background:var(--fluor)"><span style="color:var(--navy)">acento &middot; 5%</span></div>
+      <div class="swatch-txt">
+        <h4>Fluor-lime</h4><div class="swatch-hex">#CDF23F &middot; rgb(205,242,63) &middot; hsl(74,87%,60%)</div>
+        <p>O sinal. Rótulo de seção, o número que importa, o filete de assinatura, o símbolo no negativo. <b>Nunca é fundo de área grande e nunca é texto sobre papel.</b></p>
+        <div class="swatch-papel">Matéria: fita fluorescente de marcação de exame</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-cor" style="background:var(--cobalto)"><span style="color:#fff">dissonante &middot; 7%</span></div>
+      <div class="swatch-txt">
+        <h4>Cobalto</h4><div class="swatch-hex">#2C4BFF &middot; rgb(44,75,255) &middot; hsl(229,100%,59%)</div>
+        <p>A nota fora da harmonia, uma vez por peça. Link, botão de ação, marcação de revisão, borda de aviso. Só sobre papel.</p>
+        <div class="swatch-papel">Matéria: tinta de caneta esferográfica de assinatura</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-cor" style="background:var(--menta)"><span style="color:var(--navy)">funcional &middot; 3%</span></div>
+      <div class="swatch-txt">
+        <h4>Menta</h4><div class="swatch-hex">#12D9A0 &middot; rgb(18,217,160) &middot; hsl(163,86%,46%)</div>
+        <p>Estado positivo: concluído, aprovado, evolução, progresso. É informação, não decoração — se não comunica um estado, não entra.</p>
+        <div class="swatch-papel">Matéria: verde de reagente de teste</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-cor" style="background:var(--tinta)"><span style="color:var(--papel-45)">texto</span></div>
+      <div class="swatch-txt">
+        <h4>Tinta</h4><div class="swatch-hex">#0B0F1A &middot; rgb(11,15,26) &middot; hsl(222,41%,7%)</div>
+        <p>Corpo de texto longo e contraste máximo. É um preto azulado — o preto puro (#000) está banido do sistema.</p>
+        <div class="swatch-papel">Matéria: tinta de impressão sobre papel absorvente</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="barra-prop">
+    <div style="flex:55;background:var(--papel);color:var(--tinta-45)">papel 55%</div>
+    <div style="flex:30;background:var(--navy);color:var(--papel-72)">navy 30%</div>
+    <div style="flex:7;background:var(--cobalto);color:#fff">7%</div>
+    <div style="flex:5;background:var(--fluor);color:var(--navy)">5%</div>
+    <div style="flex:3;background:var(--menta);color:var(--navy)">3%</div>
+  </div>
+  <p class="porque"><b>Por que essa proporção:</b> um órgão publica em papel e assina em tinta escura. Se o fluor passar de ~5% da superfície ele deixa de ser sinal e vira o assunto — e a marca cai na estética de lançamento que este projeto rejeitou quatro vezes. <b>A régua prática: uma peça, um lugar em fluor.</b></p>
+
+  <div class="tab-rolo" style="margin-top:var(--e-7)">
+    <table class="tab">
+      <thead><tr><th>Par</th><th class="num">Contraste medido</th><th>Veredito WCAG</th><th>Onde vale</th></tr></thead>
+      <tbody>
+        <tr><td>Tinta sobre papel</td><td class="num">17,20 : 1</td><td class="sim">AAA</td><td>Texto corrido — o par padrão de leitura</td></tr>
+        <tr><td>Navy sobre papel</td><td class="num">14,79 : 1</td><td class="sim">AAA</td><td>Títulos, filetes, logo positivo</td></tr>
+        <tr><td>Fluor sobre tinta</td><td class="num">14,91 : 1</td><td class="sim">AAA</td><td>Rótulo e dado sobre fundo tinta</td></tr>
+        <tr><td>Papel sobre navy</td><td class="num">14,79 : 1</td><td class="sim">AAA</td><td>Todo texto em seção escura</td></tr>
+        <tr><td>Fluor sobre navy</td><td class="num">12,82 : 1</td><td class="sim">AAA</td><td>Rótulo, símbolo no negativo, o número da peça</td></tr>
+        <tr><td>Menta sobre navy</td><td class="num">8,98 : 1</td><td class="sim">AAA</td><td>Estado positivo em fundo escuro</td></tr>
+        <tr><td>Cobalto sobre papel</td><td class="num">5,31 : 1</td><td class="sim">AA</td><td>Link e botão. Em texto abaixo de 15 px, subir para navy</td></tr>
+        <tr style="background:rgba(179,38,30,.05)"><td><b>Fluor sobre papel</b></td><td class="num">1,15 : 1</td><td style="color:var(--erro);font-weight:600">reprova</td><td>Proibido em texto, ícone, filete ou logo</td></tr>
+        <tr style="background:rgba(179,38,30,.05)"><td><b>Menta sobre papel</b></td><td class="num">1,65 : 1</td><td style="color:var(--erro);font-weight:600">reprova</td><td>Proibido em texto. Só como preenchimento de barra com rótulo escuro por cima</td></tr>
+        <tr style="background:rgba(179,38,30,.05)"><td><b>Cobalto sobre navy</b></td><td class="num">2,79 : 1</td><td style="color:var(--erro);font-weight:600">reprova</td><td>Proibido em texto e em ícone. As duas cores nunca se encostam</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="porque"><b>Como ler esta tabela:</b> os números são a razão de contraste WCAG 2.1, calculados a partir dos HEX oficiais. AA exige 4,5:1 em texto normal e 3:1 em texto grande; AAA exige 7:1. <b>As três linhas marcadas não são “evitar” — são proibidas.</b></p>
+
+  <ul class="lista" style="margin-top:var(--e-6);max-width:none">
+    <li><b>Sem degradê atravessando o círculo cromático.</b> Degradê só entre navy e navy-alto (#101C46 → #182559), e mesmo assim em fundo, nunca em texto.</li>
+    <li><b>Sem #000 e sem #FFF em área grande.</b> O preto é #0B0F1A e o branco é #F4F3EC. Branco puro só existe dentro de foto.</li>
+    <li><b>Sombra é navy translúcido, nunca preto.</b> <span class="num">0 1px 2px rgba(16,28,70,.07)</span> e <span class="num">0 14px 36px −14px rgba(16,28,70,.24)</span> — as duas únicas do sistema.</li>
+    <li><b>Cobalto e menta não dividem a mesma peça sem função.</b> Cobalto é ação, menta é estado. Se aparecerem juntos, cada um está marcando uma coisa diferente.</li>
+  </ul>
+</section>
+
+<!-- ============ 05 · TIPOGRAFIA ============ -->
+<section class="sec" id="tipografia">
+  <div class="sec-h">
+    <div class="sec-n">§ 05</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Tipografia — três famílias, três territórios</h2>
+      <p class="lede">Archivo é grotesca de arquivo suíço: sistema, precisão, neutralidade cara — <b>o oposto da fonte de curso online</b>. Hanken Grotesk carrega o texto longo sem cansar. Space Mono assina rótulo, número e metadado, e é o que dá à peça a cara de documento que foi conferido.</p>
+    </div>
+  </div>
+
+  <div class="amostra">
+    <div class="amostra-k"><span>Archivo &middot; display</span><span>Google Fonts &middot; pesos 400 / 500 / 600 / 700 / 800</span></div>
+    <div class="esp-display">Medir é ensinar.</div>
+    <div class="esp-h2">A dor tem camada, e camada se investiga</div>
+    <div class="esp-h3">Formação em DTM e dor orofacial</div>
+    <p class="esp-corpo">Archivo tem eixo de largura variável — a versão expandida existe e pode ser usada em rótulo curto de capa, nunca em texto corrido.</p>
+  </div>
+
+  <div class="amostra">
+    <div class="amostra-k"><span>Hanken Grotesk &middot; corpo</span><span>Google Fonts &middot; pesos 300 a 700</span></div>
+    <p style="font-size:22px;line-height:1.5;max-width:var(--largura-texto)">O dentista sai da faculdade sem instrumento para medir a disfunção. A formação entrega o método: escutar o sinal, mapear a camada, acompanhar a evolução do caso.</p>
+    <p class="esp-corpo">Corpo padrão em 17 px com entrelinha 1,62 e linha de no máximo 68 caracteres. Acima disso o olho perde o retorno de linha e a leitura cai.</p>
+  </div>
+
+  <div class="amostra">
+    <div class="amostra-k"><span>Space Mono &middot; rótulo e dado</span><span>Google Fonts &middot; 400 / 700</span></div>
+    <div class="esp-mono" style="font-size:16px;color:var(--tinta)">§ 04 &middot; RÓTULO DE SEÇÃO &middot; TURMA 01 &middot; FEV/2027</div>
+    <div class="esp-mono" style="font-size:16px;color:var(--tinta);font-variant-numeric:tabular-nums">0123456789 &middot; 63,9% &middot; 12,4 mm &middot; 8 turmas</div>
+    <p class="esp-corpo">Todo número que entra numa comparação usa algarismo tabular (<span class="num">font-variant-numeric: tabular-nums</span>) para as colunas alinharem.</p>
+  </div>
+
+  <div class="tab-rolo" style="margin-top:var(--e-6)">
+    <table class="tab">
+      <thead><tr><th>Nível</th><th>Família &amp; peso</th><th class="num">Tamanho</th><th class="num">Entrelinha</th><th class="num">Tracking</th><th>Token</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hero</b></td><td>Archivo 800</td><td class="num">44 → 88 px</td><td class="num">0,94</td><td class="num">−0,042em</td><td class="num">--t-hero</td></tr>
+        <tr><td><b>H1</b></td><td>Archivo 800</td><td class="num">32 → 58 px</td><td class="num">0,98</td><td class="num">−0,038em</td><td class="num">--t-h1</td></tr>
+        <tr><td><b>H2</b></td><td>Archivo 700/800</td><td class="num">24 → 38 px</td><td class="num">1,02</td><td class="num">−0,035em</td><td class="num">--t-h2</td></tr>
+        <tr><td><b>H3</b></td><td>Archivo 600/700</td><td class="num">21 px</td><td class="num">1,20</td><td class="num">−0,015em</td><td class="num">--t-h3</td></tr>
+        <tr><td><b>Corpo</b></td><td>Hanken Grotesk 400</td><td class="num">17 px</td><td class="num">1,62</td><td class="num">0</td><td class="num">--t-corpo</td></tr>
+        <tr><td><b>Corpo menor</b></td><td>Hanken Grotesk 400</td><td class="num">15 px</td><td class="num">1,55</td><td class="num">0</td><td class="num">--t-corpo-s</td></tr>
+        <tr><td><b>Legenda</b></td><td>Hanken Grotesk 400</td><td class="num">13 px</td><td class="num">1,55</td><td class="num">0</td><td class="num">--t-legenda</td></tr>
+        <tr><td><b>Rótulo</b></td><td>Space Mono 700, caixa alta</td><td class="num">11 px</td><td class="num">1,40</td><td class="num">+0,14em</td><td class="num">--t-rotulo</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ul class="lista" style="margin-top:var(--e-6);max-width:none">
+    <li><b>O salto entre o hero e o nível seguinte é de no mínimo 3&times;.</b> 88 px para 21 px é o salto padrão de uma capa. Hierarquia tímida (72 → 48) é o que faz uma peça parecer feita por máquina.</li>
+    <li><b>Título grande fecha o tracking; caixa alta pequena abre.</b> Display grande em −0,038em a −0,042em; rótulo em caixa alta a +0,14em. Sem isso o título vaza e o rótulo entope.</li>
+    <li><b>Uma família por função, sem sobreposição.</b> Archivo nunca vira texto corrido; Hanken nunca vira título; Space Mono nunca passa de uma linha.</li>
+    <li><b>Fontes proibidas no sistema:</b> Inter, Roboto, Open Sans, Montserrat, Poppins e Lato — em qualquer nível, inclusive em slide e em documento de Word. A substituição de emergência é a fonte de sistema, não uma quinta família.</li>
+    <li><b>Acentuação completa e correta é regra de marca</b>, não detalhe de revisão: uma escola que erra acento perde a autoridade que a tipografia construiu.</li>
+  </ul>
+</section>
+
+<!-- ============ 06 · GRAFISMO ============ -->
+<section class="sec" id="grafismo">
+  <div class="sec-h">
+    <div class="sec-n">§ 06</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Grafismo — dois gestos que assinam sem o logo</h2>
+      <p class="lede">Todo o repertório gráfico sai do próprio símbolo. <b>Nada foi inventado por fora:</b> a defasagem das oito barras vira o gesto de abertura, e o vazio central octogonal vira a máscara de recorte. Uma peça da Academia deve ser reconhecível com o logo coberto.</p>
+    </div>
+  </div>
+
+  <div class="grade-2" style="align-items:start">
+    <div>
+      <div class="palco palco--papel2" style="min-height:210px">
+        <span style="display:block;position:relative;width:230px;height:16px">
+          <span style="position:absolute;left:0;top:0;width:230px;height:3px;background:var(--navy)"></span>
+          <span style="position:absolute;left:115px;top:9px;width:230px;height:3px;background:var(--fluor)"></span>
+        </span>
+      </div>
+      <div class="cap">Gesto 01 &middot; A junta</div>
+      <p class="porque" style="margin-top:var(--e-4)"><b>O que é:</b> dois filetes de mesma espessura, o segundo deslocado exatamente metade do comprimento do primeiro — a mesma defasagem que faz o octógono fechar. O primeiro é navy, o segundo é fluor. <b>Abre toda seção, todo capítulo, toda capa.</b></p>
+      <p class="porque" style="margin-top:var(--e-3)"><b>Como executar em 30 segundos:</b> filete de 2 a 3 px de altura e 104 px de largura; o segundo desloca 50% para a direita e 5 px para baixo. É a única “decoração” aprovada — e ela é estrutura, não enfeite.</p>
+    </div>
+    <div>
+      <div class="palco palco--papel2" style="min-height:210px;grid-auto-flow:column;gap:var(--e-4)">
+        <span class="octo-janela janela-demo" style="width:120px">01</span>
+        <span class="octo-janela janela-demo janela-demo--fluor" style="width:88px;font-size:38px">%</span>
+        <span class="octo-janela janela-demo janela-demo--papel" style="width:68px;font-size:28px">§</span>
+      </div>
+      <div class="cap">Gesto 02 &middot; O octógono-janela</div>
+      <p class="porque" style="margin-top:var(--e-4)"><b>O que é:</b> o vazio central do símbolo virado máscara de recorte. Foto de professor, número de aula, ícone de seção, retrato de aluno — tudo pode ser visto por dentro dessa janela.</p>
+      <p class="porque" style="margin-top:var(--e-3)"><b>Como executar:</b> <span class="num">clip-path: polygon(29.3% 0, 70.7% 0, 100% 29.3%, 100% 70.7%, 70.7% 100%, 29.3% 100%, 0 70.7%, 0 29.3%)</span> numa caixa quadrada. Sempre quadrada — em retângulo o octógono deforma e vira outra forma.</p>
+    </div>
+  </div>
+
+  <div class="grade-2" style="margin-top:var(--e-7);align-items:start">
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Grid e respiro</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>12 colunas</b>, com 24 px de medianiz — o vão entre uma coluna e a vizinha —, largura máxima de conteúdo <span class="num">1180 px</span>, margem lateral de 32 px no computador e 20 px no celular.</li>
+        <li><b>Escala de espaço em base 4:</b> 4, 8, 12, 16, 24, 32, 48, 64, 96, 128. Nenhum valor fora dessa lista — é o que impede o “quase alinhado”.</li>
+        <li><b>Ritmo vertical:</b> 96 px entre seções, 32 px entre blocos, 16 px dentro do bloco. Título e o texto que ele governa ficam a 16 px; o próximo assunto começa a 48 px.</li>
+        <li><b>A margem nunca é menor que o maior espaço interno da peça.</b> É a regra que faz o material parecer impresso em vez de espremido.</li>
+        <li><b>Uma quebra de grid por peça, e só uma:</b> o símbolo que sangra a borda (como na capa deste documento). Duas quebras viram bagunça; nenhuma vira modelo pronto.</li>
+      </ul>
+    </div>
+    <div class="painel painel--claro">
+      <div class="cap" style="margin-top:0">Superfície, forma e movimento</div>
+      <ul class="lista" style="margin-top:var(--e-4)">
+        <li><b>Raio:</b> 3 px em card, campo e botão; 6 px só em bloco grande de imagem; 12 px em nada. Círculo existe apenas no selo. Canto redondo largo é linguagem de aplicativo, não de instituição.</li>
+        <li><b>Borda:</b> 1 px em <span class="num">rgba(11,15,26,.13)</span> no claro e <span class="num">rgba(244,243,236,.14)</span> no escuro. Borda é o padrão; sombra é exceção.</li>
+        <li><b>Textura:</b> grão fotográfico fixo sobre a página inteira, opacidade entre 3,5% e 5%. É o que impede a peça de parecer renderizada.</li>
+        <li><b>Movimento:</b> curva única <span class="num">cubic-bezier(.22,1,.36,1)</span>, 180 ms em micro-interação, 240 ms em transição de estado, 520 ms em entrada de bloco.</li>
+        <li><b>O que nunca anima:</b> o logo, o símbolo e qualquer número que seja dado clínico. Nada pulsa, nada flutua, nada faz <i>parallax</i>. A marca é um órgão — órgão não pisca.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="nota-pe">Ícone: traço de 2 px, base geométrica, cantos vivos, uma cor por ícone. <b>Emoji está banido de toda peça institucional</b> — inclusive em post, e-mail e slide. Metáforas permitidas saem da matéria do ensino (medir, mapear, escutar, acompanhar); proibidas: dente, lâmpada, foguete, alvo, aperto de mão.</p>
+</section>
+
+<!-- ============ 07 · VOZ ============ -->
+<section class="sec sec--escuro" id="voz" style="margin:0 calc(50% - 50vw);padding:var(--e-9) 0;width:100vw">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="sec-n">§ 07</div>
+      <div>
+        <span class="junta junta--claro"></span>
+        <h2>A voz — o que a Academia diz e o que ela nunca diz</h2>
+        <p class="lede">O perfil e os materiais da Academia falam com <b>dentista</b>, não com paciente. Isso muda a régua inteira: vocabulário técnico entra sem tradução, RDC/DC pode ser citado, e falar de ticket e de margem não soa deslocado — porque quem lê entende de clínica e de consultório.</p>
+      </div>
+    </div>
+
+    <div class="grade-2" style="align-items:start">
+      <div>
+        <div class="cap" style="margin-top:0;color:var(--fluor)">Diz</div>
+        <ul class="lista" style="margin-top:var(--e-4)">
+          <li><b>Ensina de verdade em cada peça.</b> Se o post não deixa o leitor sabendo fazer algo que não sabia, ele não é da Academia.</li>
+          <li><b>Dado com fonte.</b> Número sempre acompanhado de onde veio. Estatística sem origem vira propaganda.</li>
+          <li><b>Opinião com fundamento.</b> Posição forte é bem-vinda, desde que sustentada — é o que separa professor de palestrante.</li>
+          <li><b>Admite o limite.</b> Reconhecer o que ainda não se sabe e o que deu errado é o traço de voz mais reconhecível do Rodrigo: “não sou dono da razão”.</li>
+          <li><b>Fala em ferramenta, não em técnica única.</b> A tese do repertório — quem só tem martelo enxerga prego em tudo — organiza o discurso inteiro.</li>
+          <li><b>Frase curta, verbo forte, zero rodeio.</b> Texto de instituição é seco por escolha, não por frieza.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="cap" style="margin-top:0;color:var(--fluor)">Nunca diz</div>
+        <ul class="lista" style="margin-top:var(--e-4)">
+          <li><b>Linguagem de paciente.</b> Conteúdo sobre “dor na mandíbula” em linguagem leiga pertence ao perfil clínico do Rodrigo, não à Academia.</li>
+          <li><b>Promessa de renda.</b> Nem em número, nem em insinuação, nem em depoimento. Oportunidade de mercado se demonstra com dado público; ganho individual não se promete.</li>
+          <li><b>Número financeiro não validado.</b> Enquanto a conferência com a clínica não fechar, só entra em peça pública o que já foi checado.</li>
+          <li><b>Superlativo sem medida.</b> “O melhor”, “o único”, “inédito”, “definitivo”. Se não dá para medir, não se afirma.</li>
+          <li><b>Nome de concorrente.</b> Ataca-se o padrão de mercado — curso de viés único, aula gravada sem interação — nunca uma pessoa.</li>
+          <li><b>Urgência fabricada.</b> Contador, “últimas vagas” sem que seja verdade, escassez inventada. Uma escola com turma tem data; não precisa de teatro.</li>
+          <li><b>Depoimento sem autorização</b> — de paciente ou de aluno. Nenhum material gravado no contexto anterior está liberado.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="nota-pe">Vale também para o visual: <b>sem seta desenhada, sem selo de desconto, sem contador, sem emoji, sem foto de banco de imagem.</b> A prova da Academia é o conteúdo dentro da peça, não o adorno em volta dela.</p>
+  </div>
+</section>
+
+<!-- ============ 08 · DESIGN DNA ============ -->
+<section class="sec" id="dna">
+  <div class="sec-h">
+    <div class="sec-n">§ 08</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Design DNA — o bloco que viaja</h2>
+      <p class="lede">A destilação executável desta identidade. <b>É este bloco que segue para os três módulos de aplicação</b> — Páginas, Conteúdos &amp; Criativos e Apresentações — e para qualquer peça futura. Quem produz herda o DNA; quem precisa divergir volta aqui antes, nunca decide sozinho.</p>
+    </div>
+  </div>
+  <div class="dna"><b>DESIGN DNA — Academia DTM · v1 · 20/08/2026</b>
+
+<b>TESE ESTÉTICA:</b> o caderno de atas de uma sociedade científica aplicado a uma escola de dor orofacial — atravessado por uma única fita fluorescente de marcação de exame. Órgão que publica, não curso que anuncia.
+
+<b>PALETA (papel de cada cor):</b>
+  dominante  papel #F4F3EC — 55% — papel creme de anuário científico
+  âncora     navy  #101C46 — 30% — esmalte de placa comemorativa
+  dissonante cobalto #2C4BFF — 7% — tinta de esferográfica de assinatura · 1 uso por peça (ação/link)
+  acento     fluor #CDF23F — 5% — fita fluorescente de marcação de exame · nunca fundo, nunca sobre papel
+  funcional  menta #12D9A0 — 3% — verde de reagente · só estado positivo
+  texto      tinta #0B0F1A — preto azulado · #000 e #FFF banidos em área grande
+
+<b>TIPOGRAFIA:</b> display Archivo (grotesca de arquivo suíço, 700/800) · texto Hanken Grotesk 400 · detalhe Space Mono 700 caixa alta +0,14em · salto mínimo de 3x entre hero e o nível seguinte · tracking negativo no display grande (−0,038 a −0,042em), positivo na caixa alta pequena.
+
+<b>COMPOSIÇÃO:</b> grid de 12 colunas, medianiz 24, largura máxima 1180 · escala de espaço em base 4 (4→128) · numeração de seção em mono à esquerda, como artigo de estatuto · um elemento desproporcional por peça e contenção no resto · quebra de grid permitida: o símbolo que sangra a borda, uma vez por peça.
+
+<b>MATÉRIA:</b> grão fotográfico fixo a 3,5–5% sobre a página inteira · borda de 1px como padrão e sombra como exceção · sombra sempre navy translúcida, nunca preta · sem degradê fora do par navy → navy-alto.
+
+<b>GESTO DE ASSINATURA:</b>
+  01 · A JUNTA — dois filetes de mesma espessura, o segundo deslocado 50% do comprimento e 5px abaixo; primeiro navy, segundo fluor. Abre toda seção.
+  02 · O OCTÓGONO-JANELA — clip-path octogonal (29,3% / 70,7%) em caixa quadrada, para foto, número e ícone.
+
+<b>MOTION:</b> curva única cubic-bezier(.22,1,.36,1) · 180ms micro · 240ms estado · 520ms entrada de bloco · nunca animam: o logo, o símbolo e qualquer número que seja dado clínico. Nada pulsa, nada flutua, nada faz parallax.
+
+<b>ANTI-REFERÊNCIAS:</b> dashboard de startup (card flutuante, gradiente roxo-azul, canto de 16px) · lançamento de infoproduto (seta, selo de desconto, contador) · clínica odontológica (azul-e-branco dental, dente estilizado, sorriso de banco de imagem).</div>
+  <p class="porque"><b>Regra de uso:</b> o bloco acima é copiado inteiro em toda delegação de trabalho visual da Academia. Peça produzida sem ele volta para refazer — não por burocracia, mas porque é assim que quatro pessoas diferentes produzem material que parece ter saído da mesma casa.</p>
+</section>
+
+<!-- ============ 09 · PROCEDÊNCIA ============ -->
+<section class="sec" id="procedencia">
+  <div class="sec-h">
+    <div class="sec-n">§ 09</div>
+    <div>
+      <span class="junta"></span>
+      <h2>Procedência — quem decidiu o quê</h2>
+      <p class="lede">Este documento circula com a assinatura da Academia DTM. Por isso <b>cada decisão vem marcada com a origem</b>: o que é escolha do Rodrigo, o que é decisão da Maiara e o que é autoria da direção de arte. Nada aqui deve ser atribuído a ele sem que ele tenha dito.</p>
+    </div>
+  </div>
+
+  <div class="grade-3" style="align-items:start">
+    <div class="proc proc--dele">
+      <h4>Decisão do Rodrigo</h4>
+      <ul>
+        <li>A escolha da rota <b>Trama</b> como símbolo da marca.</li>
+        <li>A escolha da <b>V05 como lockup principal</b>, com a justificativa dele por escrito: <i>“prefiri a V05, acho ela mais simétrica”</i> — e a ressalva, também dele: <i>“mas sem avaliar conceito, só a forma mesmo”</i>.</li>
+        <li>O aceite do sistema de mais de uma versão (“Blza”).</li>
+        <li>Os cinco pedidos do áudio de 03/08: redondo, ciclo que não acaba, setas, direção legível e nome ao lado.</li>
+        <li>A pergunta que originou o teste de pesos: <i>“Não acha que podemos aumentar a letra do DTM?”</i></li>
+        <li>Os nomes <b>Academia DTM</b> e <b>Viver de DTM</b>.</li>
+      </ul>
+    </div>
+    <div class="proc proc--maiara">
+      <h4>Decisão da Maiara</h4>
+      <ul>
+        <li>O <b>sistema de duas versões de lockup</b>: <i>“dá pra ter mais de uma versão também, a mais simétrica como principal e mais horizontal pra outras aplicações”</i>.</li>
+        <li>O pedido da <b>tabela de aplicação por versão</b> (§ 02.4).</li>
+        <li>O tom obrigatório <b>“órgão, não produto”</b>, que governa a tese estética.</li>
+        <li>A leitura conceitual das quatro referências visuais que originaram as três direções de símbolo — briefing interno, nunca fala do cliente.</li>
+      </ul>
+    </div>
+    <div class="proc proc--nosso">
+      <h4>Autoria da direção de arte<br><span style="font-size:12px;font-weight:400;color:var(--tinta-45)">Inception — derivado, não dito por ele</span></h4>
+      <ul>
+        <li>Toda a <b>geometria do símbolo</b> e os números de construção.</li>
+        <li>A <b>construção do lockup horizontal</b> e do <b>selo</b>, e todos os pisos de redução em px e mm.</li>
+        <li>A <b>tese estética</b>, os dois gestos de assinatura, os tokens, a escala tipográfica e a proporção de cor.</li>
+        <li>A <b>arquitetura de marca</b> (regra de quem assina o quê) e a recomendação sobre a fonte da formação.</li>
+        <li>Os textos de regra, os usos proibidos e as regras de voz — estas últimas destiladas da linha editorial já produzida no projeto.</li>
+        <li>A <b>paleta</b> foi proposta por nós no estudo de territórios e aprovada por ele em 11/07 como território visual do projeto.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="alerta" style="border-color:rgba(16,28,70,.25);background:rgba(16,28,70,.04)">
+    <div class="k" style="color:var(--navy)">O que ainda está aberto</div>
+    <div class="tab-rolo">
+      <table class="tab" style="margin-top:var(--e-3)">
+        <thead><tr><th>#</th><th style="min-width:230px">Pendência</th><th>Por que trava — e de quem é a decisão</th></tr></thead>
+        <tbody>
+          <tr><td class="num">01</td><td><b>Fonte do lockup Viver de DTM</b><br><span style="font-size:12px;color:var(--tinta-45)">aberta desde 02/08</span></td><td>Sem decisão, o sistema convive com duas tipografias sem regra. Saída A (redesenhar em Archivo, recomendada) ou saída B (manter como exceção). <b>Decisão do Rodrigo.</b></td></tr>
+          <tr><td class="num">02</td><td><b>Arquivo vetorial da logo antiga do Curso DTM</b><br><span style="font-size:12px;color:var(--tinta-45)">aberta desde 02/08</span></td><td>Necessário para planejar a transição de marca e o que sai de circulação. <b>Material com o Rodrigo.</b></td></tr>
+          <tr><td class="num">03</td><td><b>Registro no INPI</b></td><td>Definir se entra como marca mista (símbolo + nominativo “Academia DTM”) ou como dois pedidos separados. <b>Decisão do Rodrigo, com apoio jurídico.</b></td></tr>
+          <tr><td class="num">04</td><td><b>Vetorização do texto do lockup</b></td><td>O texto aqui usa Archivo como fonte web. O pacote final de arquivos entrega o wordmark em curvas, para não depender de fonte instalada. <b>Execução nossa, após aprovação.</b></td></tr>
+          <tr><td class="num">05</td><td><b>Pacote de arquivos finais</b><br><span style="font-size:12px;color:var(--tinta-45)">SVG, PNG e PDF das três versões</span></td><td>Exportado depois que a horizontal e o selo forem aprovados — não antes, para não gerar duas gerações de arquivo circulando. <b>Execução nossa.</b></td></tr>
+          <tr><td class="num">06</td><td><b>Nome do método</b><br><span style="font-size:12px;color:var(--tinta-45)">duas rejeições registradas</span></td><td>Não trava este documento nem a produção de conteúdo: a marca que assina é Academia DTM, que já está aprovada.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="painel" style="margin-top:var(--e-6)">
+    <div class="cap" style="margin-top:0">As três decisões que agora dependem de você, Rodrigo</div>
+    <ul class="lista" style="margin-top:var(--e-4);max-width:none">
+      <li><b>1. A horizontal está aprovada?</b> É a versão que vai para o cabeçalho do site, para a assinatura de e-mail e para o rodapé do certificado. § 02.2.</li>
+      <li><b>2. O selo (símbolo sozinho, em círculo) vira o avatar do @academiadtm?</b> É o que destrava a troca de @cursodtm para @academiadtm. § 02.3.</li>
+      <li><b>3. A fonte do lockup Viver de DTM:</b> redesenhar em Archivo (recomendado) ou manter a atual como exceção documentada? § 03.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-in">
+      <div>
+        <span class="lk lk--hz lk--neg" style="font-size:30px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+          <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+        </span>
+        <ul class="rodape-nav" style="margin-top:var(--e-5)">
+          <li><a href="index.html">Brandbook</a></li>
+          <li><a href="ds-paginas.html">Páginas</a></li>
+          <li><a href="ds-conteudos-criativos.html">Conteúdos &amp; Criativos</a></li>
+          <li><a href="ds-apresentacoes.html">Apresentações</a></li>
+        </ul>
+      </div>
+      <div class="rodape-assin">
+        <b>Academia DTM</b> &middot; Dr. Rodrigo Wendel<br>
+        Brandbook &amp; Design System &middot; v1 &middot; 20/08/2026<br>
+        Módulo 1 de 4 &middot; Brandbook &middot; direção de arte <b>Inception</b>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
