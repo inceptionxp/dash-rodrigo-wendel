@@ -9,6 +9,7 @@
   const M = window.DASH_METODO || {};
   const P = window.DASH_PRODUTO || {};
   const C = window.DASH_CONTEUDO || {};
+  const V = window.DASH_DEVOLUTIVAS || {};
   const A = ACOMPANHAMENTO || {};
   const main = document.getElementById('main-inner');
 
@@ -59,6 +60,12 @@
       <div class="marco-hero-titulo">${titulo}</div>
     </div>
     ${lead ? `<p class="page-lead">${lead}</p>` : ''}
+  `;
+
+  const aguardando = `
+    <div class="alert amarelo">
+      <strong>Aguardando sua validação.</strong> Cada peça abaixo termina com uma seção do que é autoria nossa, com o texto integral de cada ponto e uma pergunta objetiva. Comente aqui embaixo dizendo o código (D1, D2...) e o que muda. Nada disso está decidido.
+    </div>
   `;
 
   const fmtTag = (fmt) => ({
@@ -693,6 +700,38 @@
       <div class="alert">
         <strong>Pedido do Rodrigo em 02/08 — as "aulas em branco" — está resolvido no calendário acima.</strong> A grade nunca precisou de 43 semanas: os 8 dias de imersão acontecem em 3 semanas de viagem, não em 8 semanas. Sobram <strong>5 semanas de respiro</strong> dentro do ano, além da pausa de Carnaval. Detalhamento completo em <code>produto/calendario-turma-2027.md</code>.
       </div>
+    `,
+
+    /* ═══════════════ SUAS PERGUNTAS, RESPONDIDAS ═══════════════ */
+
+    'entrega-oferta': () => `
+      ${hero('Suas perguntas, respondidas', 'O', 'Preço, garantia e <span class="ei">bônus</span>', 'Resposta às três coisas que você trouxe em 26/07: o pedido de reduzir o ticket, como funcionaria a garantia e a ideia dos dois dias acompanhando a sua rotina na clínica.')}
+      ${aguardando}
+      ${V.OFERTA ? V.OFERTA.html : ''}
+    `,
+
+    'entrega-grade': () => `
+      ${hero('Suas perguntas, respondidas', 'G', 'Gate, grade da Etapa 1 e <span class="ei">reavaliação</span>', 'O que é um gate (e se os casos são seus), a sua grade de 16 aulas cruzada com a nossa, e a saída para o checklist de reavaliação nos casos estáveis.')}
+      ${aguardando}
+      ${V.GRADE ? V.GRADE.html : ''}
+    `,
+
+    'entrega-comercial': () => `
+      ${hero('Suas perguntas, respondidas', 'C', 'Motores de <span class="ei">tração</span>', 'O que é um motor de tração, quais existem para um dentista de consultório, e o corte do que entra no básico da formação. As quatro coisas que você pediu já estavam na grade.')}
+      ${aguardando}
+      ${V.COMERCIAL ? V.COMERCIAL.html : ''}
+    `,
+
+    'entrega-imersao3': () => `
+      ${hero('Suas perguntas, respondidas', 'I3', 'A 3ª imersão e o que se <span class="ei">pratica</span> nela', 'Você perguntou se teria algo de prático para fazer no fechamento da parte de gestão. Tinha, e já estava desenhado desde 11/07. Faltou a gente te devolver.')}
+      ${aguardando}
+      ${V.IMERSAO3 ? V.IMERSAO3.html : ''}
+    `,
+
+    'entrega-leads': () => `
+      ${hero('Suas perguntas, respondidas', 'L', 'As 4 perguntas de <span class="ei">triagem</span> do lead', 'O item 6 da validação de 12/07, refeito. Não era pergunta para você responder: é instrumento para aplicar nos seus leads, como uma anamnese antes de indicar conduta.')}
+      ${aguardando}
+      ${V.LEADS ? V.LEADS.html : ''}
     `,
 
     /* ═══════════════ MARCA & CONTEÚDO ═══════════════ */
