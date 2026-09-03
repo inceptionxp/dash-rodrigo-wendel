@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 748" width="100%" role="img" aria-label="O dado de mercado: prevalência e insegurança diagnóstica" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
+  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F9 · O DADO DE MERCADO</text>
+  <text x="40" y="134" font-family="Archivo, system-ui, sans-serif" font-size="25" font-weight="700" fill="currentColor" letter-spacing="-0.25" text-anchor="start">Cerca de 3 em cada 10 adultos</text>
+  <text x="40" y="160" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">têm disfunção temporomandibular</text>
+  <polygon points="54.13,196.00 69.87,196.00 81.00,207.13 81.00,222.87 69.87,234.00 54.13,234.00 43.00,222.87 43.00,207.13" fill="currentColor" fill-opacity="0.9"/>
+  <polygon points="106.13,196.00 121.87,196.00 133.00,207.13 133.00,222.87 121.87,234.00 106.13,234.00 95.00,222.87 95.00,207.13" fill="currentColor" fill-opacity="0.9"/>
+  <polygon points="158.13,196.00 173.87,196.00 185.00,207.13 185.00,222.87 173.87,234.00 158.13,234.00 147.00,222.87 147.00,207.13" fill="currentColor" fill-opacity="0.9"/>
+  <polygon points="210.13,196.00 225.87,196.00 237.00,207.13 237.00,222.87 225.87,234.00 210.13,234.00 199.00,222.87 199.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="262.13,196.00 277.87,196.00 289.00,207.13 289.00,222.87 277.87,234.00 262.13,234.00 251.00,222.87 251.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="314.13,196.00 329.87,196.00 341.00,207.13 341.00,222.87 329.87,234.00 314.13,234.00 303.00,222.87 303.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="366.13,196.00 381.87,196.00 393.00,207.13 393.00,222.87 381.87,234.00 366.13,234.00 355.00,222.87 355.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="418.13,196.00 433.87,196.00 445.00,207.13 445.00,222.87 433.87,234.00 418.13,234.00 407.00,222.87 407.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="470.13,196.00 485.87,196.00 497.00,207.13 497.00,222.87 485.87,234.00 470.13,234.00 459.00,222.87 459.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="522.13,196.00 537.87,196.00 549.00,207.13 549.00,222.87 537.87,234.00 522.13,234.00 511.00,222.87 511.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+  <line x1="40" y1="248" x2="190" y2="248" stroke="#CDF23F" stroke-width="7"/>
+  <text x="40" y="274" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">VALESAN ET AL., 2021</text>
+  <text x="40" y="294" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">CLINICAL ORAL INVESTIGATIONS</text>
+  <line x1="40" y1="330" x2="560" y2="330" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <text x="40" y="382" font-family="Archivo, system-ui, sans-serif" font-size="25" font-weight="700" fill="currentColor" letter-spacing="-0.25" text-anchor="start">61% desconhecem o DC/TMD</text>
+  <text x="40" y="408" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">o critério diagnóstico internacional</text>
+  <rect x="40" y="432" width="520" height="26" fill="currentColor" fill-opacity="0.12"/>
+  <rect x="40" y="432" width="317" height="26" fill="currentColor" fill-opacity="0.85"/>
+  <text x="40" y="490" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">PRABHAKAR ET AL., 2024</text>
+  <text x="40" y="510" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">AMOSTRA DE 310 DENTISTAS, ÍNDIA</text>
+  <line x1="40" y1="546" x2="560" y2="546" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <text x="40" y="598" font-family="Archivo, system-ui, sans-serif" font-size="25" font-weight="700" fill="currentColor" letter-spacing="-0.25" text-anchor="start">Cerca de 4 em cada 10 clínicos gerais</text>
+  <text x="40" y="624" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">não se sentem confiantes para conduzir um caso</text>
+  <polygon points="54.13,654.00 69.87,654.00 81.00,665.13 81.00,680.87 69.87,692.00 54.13,692.00 43.00,680.87 43.00,665.13" fill="currentColor" fill-opacity="0.9"/>
+  <polygon points="106.13,654.00 121.87,654.00 133.00,665.13 133.00,680.87 121.87,692.00 106.13,692.00 95.00,680.87 95.00,665.13" fill="currentColor" fill-opacity="0.9"/>
+  <polygon points="158.13,654.00 173.87,654.00 185.00,665.13 185.00,680.87 173.87,692.00 158.13,692.00 147.00,680.87 147.00,665.13" fill="currentColor" fill-opacity="0.9"/>
+  <polygon points="210.13,654.00 225.87,654.00 237.00,665.13 237.00,680.87 225.87,692.00 210.13,692.00 199.00,680.87 199.00,665.13" fill="currentColor" fill-opacity="0.9"/>
+  <polygon points="262.13,654.00 277.87,654.00 289.00,665.13 289.00,680.87 277.87,692.00 262.13,692.00 251.00,680.87 251.00,665.13" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="314.13,654.00 329.87,654.00 341.00,665.13 341.00,680.87 329.87,692.00 314.13,692.00 303.00,680.87 303.00,665.13" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="366.13,654.00 381.87,654.00 393.00,665.13 393.00,680.87 381.87,692.00 366.13,692.00 355.00,680.87 355.00,665.13" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="418.13,654.00 433.87,654.00 445.00,665.13 445.00,680.87 433.87,692.00 418.13,692.00 407.00,680.87 407.00,665.13" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="470.13,654.00 485.87,654.00 497.00,665.13 497.00,680.87 485.87,692.00 470.13,692.00 459.00,680.87 459.00,665.13" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="522.13,654.00 537.87,654.00 549.00,665.13 549.00,680.87 537.87,692.00 522.13,692.00 511.00,680.87 511.00,665.13" fill="currentColor" fill-opacity="0.12"/>
+  <text x="40" y="726" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">PRABHAKAR ET AL., 2024</text>
+</svg>

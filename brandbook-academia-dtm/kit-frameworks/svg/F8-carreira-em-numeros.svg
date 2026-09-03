@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 656" width="100%" role="img" aria-label="A carreira do Dr. Rodrigo Wendel em números" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
+  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F8 · A CARREIRA EM NÚMEROS</text>
+  <text x="40" y="214" font-family="Archivo, system-ui, sans-serif" font-size="124" font-weight="800" fill="currentColor" letter-spacing="-5" text-anchor="start">+92%</text>
+  <line x1="40" y1="240" x2="316" y2="240" stroke="#CDF23F" stroke-width="8"/>
+  <text x="40" y="278" font-family="Archivo, system-ui, sans-serif" font-size="25" font-weight="700" fill="currentColor" letter-spacing="-0.25" text-anchor="start">de melhora sem cirurgia</text>
+  <text x="40" y="304" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">nem intervenção nos dentes</text>
+  <line x1="40" y1="344" x2="560" y2="344" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <text x="40" y="404" font-family="Archivo, system-ui, sans-serif" font-size="44" font-weight="800" fill="currentColor" letter-spacing="-1.76" text-anchor="start">≈30</text>
+  <text x="40" y="430" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">anos de prática clínica</text>
+  <text x="310" y="404" font-family="Archivo, system-ui, sans-serif" font-size="44" font-weight="800" fill="currentColor" letter-spacing="-1.76" text-anchor="start">17</text>
+  <text x="310" y="430" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">anos de atendimento voluntário</text>
+  <text x="40" y="508" font-family="Archivo, system-ui, sans-serif" font-size="44" font-weight="800" fill="currentColor" letter-spacing="-1.76" text-anchor="start">≈3.000</text>
+  <text x="40" y="534" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">pacientes atendidos</text>
+  <text x="310" y="508" font-family="Archivo, system-ui, sans-serif" font-size="44" font-weight="800" fill="currentColor" letter-spacing="-1.76" text-anchor="start">100 a 120</text>
+  <text x="310" y="534" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">especialistas formados</text>
+  <line x1="40" y1="600" x2="560" y2="600" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <text x="40" y="634" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.62">CERCA DE 10% DOS ESPECIALISTAS EM DTM DO BRASIL</text>
+</svg>

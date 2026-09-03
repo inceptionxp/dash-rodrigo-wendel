@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 478" width="100%" role="img" aria-label="Guarda-chuva da DTM: três grupos, cerca de dez diagnósticos" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
+  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F1 · O GUARDA-CHUVA DA DTM</text>
+  <text x="300" y="134" font-family="Archivo, system-ui, sans-serif" font-size="48" font-weight="800" fill="currentColor" letter-spacing="-1.92" text-anchor="middle">DTM</text>
+  <path d="M 80 224 Q 300 76 520 224" stroke="currentColor" stroke-width="2.5"/>
+  <path d="M 80 224 Q 300 76 520 224" stroke="#CDF23F" stroke-width="7" stroke-dasharray="112 2000" stroke-dashoffset="-165"/>
+  <line x1="145" y1="188" x2="145" y2="246" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+  <line x1="455" y1="188" x2="455" y2="246" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+  <line x1="300" y1="152" x2="300" y2="246" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+  <polygon points="127.61,250.00 162.39,250.00 187.00,274.61 187.00,309.39 162.39,334.00 127.61,334.00 103.00,309.39 103.00,274.61" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="1.5"/>
+  <text x="145" y="299" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="21" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="middle">01</text>
+  <text x="145" y="370" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="middle">Muscular</text>
+  <polygon points="282.61,250.00 317.39,250.00 342.00,274.61 342.00,309.39 317.39,334.00 282.61,334.00 258.00,309.39 258.00,274.61" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="1.5"/>
+  <text x="300" y="299" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="21" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="middle">02</text>
+  <text x="300" y="370" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="middle">Articular</text>
+  <polygon points="437.61,250.00 472.39,250.00 497.00,274.61 497.00,309.39 472.39,334.00 437.61,334.00 413.00,309.39 413.00,274.61" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="1.5"/>
+  <text x="455" y="299" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="21" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="middle">03</text>
+  <text x="455" y="370" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="middle">Deslocamento</text>
+  <text x="455" y="395" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="middle">de disco</text>
+  <line x1="62" y1="424" x2="538" y2="424" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <polygon points="80.48,415.50 87.52,415.50 92.50,420.48 92.50,427.52 87.52,432.50 80.48,432.50 75.50,427.52 75.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+  <polygon points="128.48,415.50 135.52,415.50 140.50,420.48 140.50,427.52 135.52,432.50 128.48,432.50 123.50,427.52 123.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+  <polygon points="176.48,415.50 183.52,415.50 188.50,420.48 188.50,427.52 183.52,432.50 176.48,432.50 171.50,427.52 171.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+  <polygon points="224.48,415.50 231.52,415.50 236.50,420.48 236.50,427.52 231.52,432.50 224.48,432.50 219.50,427.52 219.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+  <polygon points="272.48,415.50 279.52,415.50 284.50,420.48 284.50,427.52 279.52,432.50 272.48,432.50 267.50,427.52 267.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+  <polygon points="320.48,415.50 327.52,415.50 332.50,420.48 332.50,427.52 327.52,432.50 320.48,432.50 315.50,427.52 315.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+  <polygon points="368.48,415.50 375.52,415.50 380.50,420.48 380.50,427.52 375.52,432.50 368.48,432.50 363.50,427.52 363.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+  <polygon points="416.48,415.50 423.52,415.50 428.50,420.48 428.50,427.52 423.52,432.50 416.48,432.50 411.50,427.52 411.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+  <polygon points="464.48,415.50 471.52,415.50 476.50,420.48 476.50,427.52 471.52,432.50 464.48,432.50 459.50,427.52 459.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+  <polygon points="512.48,415.50 519.52,415.50 524.50,420.48 524.50,427.52 519.52,432.50 512.48,432.50 507.50,427.52 507.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+  <text x="300" y="458" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1.2" text-anchor="middle" opacity="0.6">CERCA DE DEZ DIAGNÓSTICOS SOB UM ÚNICO RÓTULO</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 830" width="100%" role="img" aria-label="O percurso da formação: dez meses em três etapas" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
+  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F4 · O PERCURSO DA FORMAÇÃO</text>
+  <line x1="96" y1="118" x2="96" y2="690" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+  <polygon points="91.45,117.00 100.55,117.00 107.00,123.45 107.00,132.55 100.55,139.00 91.45,139.00 85.00,132.55 85.00,123.45" fill="currentColor" fill-opacity="0.28"/>
+  <text x="140" y="120" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">1º DE FEVEREIRO DE 2027</text>
+  <text x="140" y="146" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Abertura da turma</text>
+  <polygon points="91.45,185.00 100.55,185.00 107.00,191.45 107.00,200.55 100.55,207.00 91.45,207.00 85.00,200.55 85.00,191.45" fill="currentColor" fill-opacity="0.28"/>
+  <text x="140" y="188" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">ETAPA 1</text>
+  <text x="140" y="214" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Fundação e Diagnóstico</text>
+  <text x="140" y="238" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">Encontros 1 a 15</text>
+  <polygon points="88.96,269.00 103.04,269.00 113.00,278.96 113.00,293.04 103.04,303.00 88.96,303.00 79.00,293.04 79.00,278.96" fill="currentColor" fill-opacity="0.9"/>
+  <text x="140" y="278" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">MAIO DE 2027</text>
+  <text x="140" y="304" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Imersão 1 · Brasília</text>
+  <text x="140" y="328" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">fecha a etapa de diagnóstico</text>
+  <polygon points="91.45,365.00 100.55,365.00 107.00,371.45 107.00,380.55 100.55,387.00 91.45,387.00 85.00,380.55 85.00,371.45" fill="currentColor" fill-opacity="0.28"/>
+  <text x="140" y="368" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">ETAPA 2</text>
+  <text x="140" y="394" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Tratamento</text>
+  <text x="140" y="418" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">Encontros 16 a 35</text>
+  <polygon points="88.96,449.00 103.04,449.00 113.00,458.96 113.00,473.04 103.04,483.00 88.96,483.00 79.00,473.04 79.00,458.96" fill="currentColor" fill-opacity="0.9"/>
+  <text x="140" y="458" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">OUTUBRO DE 2027</text>
+  <text x="140" y="484" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Imersão 2 · Brasília</text>
+  <text x="140" y="508" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">fecha a etapa de tratamento</text>
+  <polygon points="91.45,545.00 100.55,545.00 107.00,551.45 107.00,560.55 100.55,567.00 91.45,567.00 85.00,560.55 85.00,551.45" fill="currentColor" fill-opacity="0.28"/>
+  <text x="140" y="548" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">ETAPA 3</text>
+  <text x="140" y="574" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Comercial, Gestão e Marketing</text>
+  <text x="140" y="598" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">Encontros 36 a 43</text>
+  <polygon points="88.13,627.00 103.87,627.00 115.00,638.13 115.00,653.87 103.87,665.00 88.13,665.00 77.00,653.87 77.00,638.13" fill="#CDF23F"/>
+  <polygon points="88.13,627.00 103.87,627.00 115.00,638.13 115.00,653.87 103.87,665.00 88.13,665.00 77.00,653.87 77.00,638.13" stroke="currentColor" stroke-width="1.5"/>
+  <text x="140" y="638" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">29 DE NOVEMBRO DE 2027</text>
+  <text x="140" y="664" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Imersão 3 · Formatura</text>
+  <text x="140" y="688" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">apresentação de caso ao vivo</text>
+  <line x1="40" y1="716" x2="560" y2="716" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <text x="40" y="768" font-family="Archivo, system-ui, sans-serif" font-size="40" font-weight="800" fill="currentColor" letter-spacing="-1.6" text-anchor="start">43</text>
+  <text x="40" y="792" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.62">ENCONTROS</text>
+  <text x="180" y="768" font-family="Archivo, system-ui, sans-serif" font-size="40" font-weight="800" fill="currentColor" letter-spacing="-1.6" text-anchor="start">10</text>
+  <text x="180" y="792" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.62">MESES</text>
+  <text x="320" y="768" font-family="Archivo, system-ui, sans-serif" font-size="40" font-weight="800" fill="currentColor" letter-spacing="-1.6" text-anchor="start">3</text>
+  <text x="320" y="792" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.62">IMERSÕES</text>
+  <text x="460" y="768" font-family="Archivo, system-ui, sans-serif" font-size="40" font-weight="800" fill="currentColor" letter-spacing="-1.6" text-anchor="start">8</text>
+  <text x="460" y="792" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.62">DIAS EM</text>
+  <text x="460" y="810" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.62">BRASÍLIA</text>
+</svg>

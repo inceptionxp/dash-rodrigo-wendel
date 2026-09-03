@@ -299,6 +299,9 @@ const ACOMPANHAMENTO = {
     {t: 'Precificação refinada + oferta completa', d: 'Estudo de preço refeito do zero com o formato agora fechado (faixa 15-20k aposentada). Depois: bônus, garantia, condições de fundador e preço final.', status: 'em-dev'},
     {t: 'Fechamento dos outputs/ferramentas por encontro', d: 'Com a grade v2 fechada (43 encontros), materializar os outputs verificáveis em ferramentas (calculadora, planilha, checklist, template) — o diferencial da consultoria. Entra junto/após a revisão técnica do Rodrigo.', status: 'planejado'},
     {t: 'Documento Mestre de Estratégia da campanha', d: 'Orienta todas as peças de execução que vêm depois.', status: 'em-dev'},
+    {t: 'Página de aplicação da Viver de DTM — entregue em 03/09/2026', d: 'A página que recebe o tráfego e leva o dentista ao formulário de aplicação. Aguardando revisão do Rodrigo — ver Peças comerciais. O preço não aparece na página por decisão de funil: entra só na apresentação comercial.', status: 'aguard-aprov'},
+    {t: 'Apresentação comercial da Viver de DTM — entregue em 03/09/2026', d: 'O deck da reunião com o dentista aprovado na aplicação: promessa, método, grade, prova e a oferta com preço. Aguardando revisão do Rodrigo — ver Peças comerciais.', status: 'aguard-aprov'},
+    {t: 'Guia de Social Media & Criativos — entregue em 03/09/2026', d: 'Como a marca aparece no Instagram e no tráfego: post, capa de Reels, carrossel e criativo de anúncio, com o que pode e o que não pode. Aguardando revisão do Rodrigo — ver Peças comerciais.', status: 'aguard-aprov'},
   ],
 
   // Histórico — recebidos e aprovados (com data)

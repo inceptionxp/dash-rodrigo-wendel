@@ -401,6 +401,13 @@
         </div>
         <span class="link-card-cta">Abrir →</span>
       </a>
+      <a class="link-card" href="#pecas-comerciais">
+        <div>
+          <span class="link-card-titulo">Peças comerciais — página, deck, guia</span>
+          <span class="link-card-meta">As 4 peças da campanha pra você revisar: página de aplicação, apresentação comercial, guia de social media e criativos, e o kit de frameworks — cada uma com o que olhar e espaço próprio pra comentar</span>
+        </div>
+        <span class="link-card-cta">Abrir →</span>
+      </a>
 
       <h2 class="section-title">Ferramentas do <span class="ei">aluno</span></h2>
       <a class="link-card" href="ferramentas/roteiro-primeira-consulta/index.html" target="_blank">
@@ -739,6 +746,52 @@
     'conteudo-linha': () => `
       ${hero('Marca & Conteúdo · Linha Editorial', 'LE', 'Linha <span class="ei">Editorial</span>', 'A estratégia de conteúdo do @academiadtm: para quem fala, com que linhas, em que ritmo — e as 4 primeiras semanas de pauta prontas pra gravar.')}
       ${C.LINHA_EDITORIAL ? C.LINHA_EDITORIAL.html : ''}
+    `,
+
+    /* ═══════════════ PEÇAS COMERCIAIS ═══════════════ */
+
+    'pecas-comerciais': () => `
+      ${hero('Peças comerciais', 'PC', 'Peças <span class="ei">comerciais</span>', 'As quatro peças que sustentam a campanha da Viver de DTM, prontas pra sua revisão. Abra cada uma em outra aba, leia com olho de quem vai vender, e volte aqui embaixo pra dizer o que muda. Nada foi publicado — tudo espera sua aprovação.')}
+
+      <h2 class="section-title">O que <span class="ei">revisar</span></h2>
+
+      <a class="link-card" href="pecas/pagina-aplicacao/index.html" target="_blank">
+        <div>
+          <span class="link-card-titulo">Página de aplicação — Viver de DTM</span>
+          <span class="link-card-meta">A página que recebe o dentista vindo do conteúdo e do tráfego e o leva ao formulário de aplicação. Olhe a promessa do topo, a ordem dos argumentos e as perguntas do formulário. Versão de 03/09/2026.</span>
+        </div>
+        <span class="link-card-cta">Abrir →</span>
+      </a>
+      <p style="font-size:12.5px;color:var(--cinza);margin:-4px 0 16px;">Por decisão de funil, o preço não aparece nessa página. Ele entra só na apresentação comercial, na conversa — a página vende a vaga na turma e a triagem, não o valor.</p>
+
+      <a class="link-card" href="pecas/apresentacao-comercial/index.html" target="_blank">
+        <div>
+          <span class="link-card-titulo">Apresentação comercial — o deck da reunião</span>
+          <span class="link-card-meta">O material que você conduz com o dentista aprovado na aplicação: promessa, método, grade, prova e a oferta com preço. Olhe se a sequência de argumentos é a que você usa na prática. Versão de 03/09/2026.</span>
+        </div>
+        <span class="link-card-cta">Abrir →</span>
+      </a>
+
+      <a class="link-card" href="brandbook-academia-dtm/ds-conteudos-criativos.html" target="_blank">
+        <div>
+          <span class="link-card-titulo">Guia de Social Media &amp; Criativos</span>
+          <span class="link-card-meta">Como a Academia DTM aparece no Instagram e no tráfego: post, capa de Reels, carrossel e criativo de anúncio, com o que pode e o que não pode. Olhe se você se reconhece nas peças. Versão de 03/09/2026.</span>
+        </div>
+        <span class="link-card-cta">Abrir →</span>
+      </a>
+
+      <a class="link-card" href="brandbook-academia-dtm/kit-frameworks/index.html" target="_blank">
+        <div>
+          <span class="link-card-titulo">Kit de frameworks — Abordagem MODAL</span>
+          <span class="link-card-meta">Os frameworks do método desenhados pra usar em aula, slide, página e post. Olhe se cada diagrama traduz o que você faz na clínica — o nome de cada etapa é o que mais precisa do seu olho. Versão de 03/09/2026.</span>
+        </div>
+        <span class="link-card-cta">Abrir →</span>
+      </a>
+
+      <h2 class="section-title">Como <span class="ei">comentar</span></h2>
+      <div class="alert amarelo">
+        <strong>O espaço de comentários desta seção fica aqui embaixo.</strong> Ele é só das peças comerciais — comentário deixado aqui não se mistura com o das outras páginas do painel. Abra a peça em outra aba, volte e escreva citando a peça e o trecho (por exemplo: “página de aplicação, título do topo”). Se for a primeira vez, o login com o GitHub leva dez segundos.
+      </div>
     `,
 
     'prod-mentoria': () => `

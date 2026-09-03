@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 792" width="100%" role="img" aria-label="A escada terapêutica: do conservador ao invasivo" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
+  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F3 · A ESCADA TERAPÊUTICA</text>
+  <rect x="40" y="408" width="360" height="120" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="1.5"/>
+  <text x="60" y="438" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="17" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.55">01</text>
+  <text x="60" y="468" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Conservador</text>
+  <text x="60" y="494" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">eletroestimulação · laser</text>
+  <text x="60" y="512" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">liberação miofascial · exercícios</text>
+  <line x1="156" y1="392" x2="156" y2="408" stroke="currentColor" stroke-width="1.5" opacity="0.45"/>
+  <rect x="130" y="272" width="360" height="120" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="1.5"/>
+  <text x="150" y="302" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="17" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.55">02</text>
+  <text x="150" y="332" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Minimamente invasivo</text>
+  <text x="150" y="358" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">infiltração anestésica · dry needling</text>
+  <text x="150" y="376" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">executados pelo aluno, sob supervisão</text>
+  <line x1="246" y1="256" x2="246" y2="272" stroke="currentColor" stroke-width="1.5" opacity="0.45"/>
+  <rect x="220" y="136" width="360" height="120" fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="220" y1="136" x2="580" y2="136" stroke="#CDF23F" stroke-width="6"/>
+  <text x="240" y="166" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="17" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.55">03</text>
+  <text x="240" y="196" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Invasivo</text>
+  <text x="240" y="222" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">a formação ensina a indicar e encaminhar,</text>
+  <text x="240" y="240" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">não a executar</text>
+  <line x1="40" y1="568" x2="560" y2="568" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <text x="40" y="604" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="2" text-anchor="start" opacity="0.75">CRITÉRIO PARA SUBIR O DEGRAU</text>
+  <polygon points="47.10,633.50 52.90,633.50 57.00,637.60 57.00,643.40 52.90,647.50 47.10,647.50 43.00,643.40 43.00,637.60" fill="currentColor" fill-opacity="0.8"/>
+  <text x="76" y="646" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.75">Três a seis meses sem resposta</text>
+  <polygon points="47.10,669.50 52.90,669.50 57.00,673.60 57.00,679.40 52.90,683.50 47.10,683.50 43.00,679.40 43.00,673.60" fill="currentColor" fill-opacity="0.8"/>
+  <text x="76" y="682" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.75">Diagnóstico confirmado</text>
+  <polygon points="47.10,705.50 52.90,705.50 57.00,709.60 57.00,715.40 52.90,719.50 47.10,719.50 43.00,715.40 43.00,709.60" fill="currentColor" fill-opacity="0.8"/>
+  <text x="76" y="718" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.75">Gravidade e impacto na vida do paciente</text>
+  <text x="40" y="762" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1.2" text-anchor="start" opacity="0.6">UMA ESCADA PARA CADA GRUPO DO GUARDA-CHUVA</text>
+</svg>

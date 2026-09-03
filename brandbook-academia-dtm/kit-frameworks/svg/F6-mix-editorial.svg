@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 610" width="100%" role="img" aria-label="O mix editorial em duas fases e os dois perfis" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
+  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F6 · O MIX EDITORIAL, FASE 1 E FASE 2</text>
+  <text x="248" y="122" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.4" text-anchor="start" opacity="0.62">FASE 1</text>
+  <text x="430" y="122" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.4" text-anchor="start" opacity="0.62">FASE 2</text>
+  <text x="40" y="161" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="700" fill="currentColor" letter-spacing="-0.17" text-anchor="start">Educativa</text>
+  <rect x="248" y="146" width="101.5" height="18" fill="currentColor" fill-opacity="0.85"/>
+  <text x="359.5" y="160" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="0.8" text-anchor="start" opacity="0.7">35%</text>
+  <rect x="430" y="146" width="58" height="18" fill="none" stroke="currentColor" stroke-width="1.5" fill-opacity="0"/>
+  <text x="498" y="160" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="0.8" text-anchor="start" opacity="0.7">20%</text>
+  <text x="40" y="217" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="700" fill="currentColor" letter-spacing="-0.17" text-anchor="start">Tese e autoridade</text>
+  <rect x="248" y="202" width="72.5" height="18" fill="currentColor" fill-opacity="0.85"/>
+  <text x="330.5" y="216" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="0.8" text-anchor="start" opacity="0.7">25%</text>
+  <rect x="430" y="202" width="58" height="18" fill="none" stroke="currentColor" stroke-width="1.5" fill-opacity="0"/>
+  <text x="498" y="216" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="0.8" text-anchor="start" opacity="0.7">20%</text>
+  <text x="40" y="273" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="700" fill="currentColor" letter-spacing="-0.17" text-anchor="start">Persuasiva</text>
+  <rect x="248" y="258" width="58" height="18" fill="currentColor" fill-opacity="0.85"/>
+  <text x="316" y="272" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="0.8" text-anchor="start" opacity="0.7">20%</text>
+  <rect x="430" y="258" width="87" height="18" fill="#CDF23F" stroke="currentColor" stroke-width="1.5" fill-opacity="1"/>
+  <text x="527" y="272" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="0.8" text-anchor="start" opacity="0.7">30%</text>
+  <text x="40" y="329" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="700" fill="currentColor" letter-spacing="-0.17" text-anchor="start">Prova e transformação</text>
+  <rect x="248" y="314" width="29" height="18" fill="currentColor" fill-opacity="0.85"/>
+  <text x="287" y="328" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="0.8" text-anchor="start" opacity="0.7">10%</text>
+  <rect x="430" y="314" width="72.5" height="18" fill="#CDF23F" stroke="currentColor" stroke-width="1.5" fill-opacity="1"/>
+  <text x="512.5" y="328" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="0.8" text-anchor="start" opacity="0.7">25%</text>
+  <text x="40" y="385" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="700" fill="currentColor" letter-spacing="-0.17" text-anchor="start">Conexão e bastidor</text>
+  <rect x="248" y="370" width="29" height="18" fill="currentColor" fill-opacity="0.85"/>
+  <text x="287" y="384" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="0.8" text-anchor="start" opacity="0.7">10%</text>
+  <rect x="430" y="370" width="14.5" height="18" fill="none" stroke="currentColor" stroke-width="1.5" fill-opacity="0"/>
+  <text x="454.5" y="384" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="0.8" text-anchor="start" opacity="0.7">5%</text>
+  <line x1="40" y1="448" x2="560" y2="448" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <text x="40" y="480" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="2" text-anchor="start" opacity="0.75">DOIS PERFIS, DOIS PÚBLICOS</text>
+  <rect x="40" y="508" width="250" height="76" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.05"/>
+  <text x="60" y="544" font-family="Archivo, system-ui, sans-serif" font-size="20" font-weight="700" fill="currentColor" letter-spacing="-0.2" text-anchor="start">@rodrigowendeldtm</text>
+  <text x="60" y="568" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.65">fala com o paciente</text>
+  <rect x="310" y="508" width="250" height="76" stroke="currentColor" stroke-width="1.5" fill="currentColor" fill-opacity="0.05"/>
+  <text x="330" y="544" font-family="Archivo, system-ui, sans-serif" font-size="20" font-weight="700" fill="currentColor" letter-spacing="-0.2" text-anchor="start">@academiadtm</text>
+  <text x="330" y="568" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.65">fala com o dentista</text>
+  <line x1="40" y1="508" x2="40" y2="584" stroke="#CDF23F" stroke-width="3"/>
+</svg>

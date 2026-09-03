@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 552" width="100%" role="img" aria-label="O Martelo Único contra o arsenal terapêutico" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
+  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F5 · O MARTELO ÚNICO E O ARSENAL</text>
+  <line x1="330" y1="110" x2="330" y2="430" stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
+  <line x1="330" y1="250" x2="330" y2="370" stroke="#CDF23F" stroke-width="2.5"/>
+  <text x="40" y="128" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="2" text-anchor="start" opacity="0.75">O MARTELO ÚNICO</text>
+  <rect x="40" y="146" width="38" height="38" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="50" y1="165" x2="68" y2="165" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+  <text x="92" y="172" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="700" fill="currentColor" letter-spacing="-0.17" text-anchor="start">O cirurgião opera</text>
+  <rect x="40" y="210" width="38" height="38" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="50" y1="229" x2="68" y2="229" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+  <text x="92" y="236" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="700" fill="currentColor" letter-spacing="-0.17" text-anchor="start">O ortodontista aparelha</text>
+  <rect x="40" y="274" width="38" height="38" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="50" y1="293" x2="68" y2="293" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+  <text x="92" y="300" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="700" fill="currentColor" letter-spacing="-0.17" text-anchor="start">O protesista faz prótese</text>
+  <rect x="40" y="338" width="38" height="38" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="50" y1="357" x2="68" y2="357" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+  <text x="92" y="364" font-family="Archivo, system-ui, sans-serif" font-size="17" font-weight="700" fill="currentColor" letter-spacing="-0.17" text-anchor="start">O clínico coloca placa</text>
+  <text x="348" y="128" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="2" text-anchor="start" opacity="0.75">O ARSENAL</text>
+  <rect x="365" y="182" width="30" height="8" fill="currentColor" opacity="0.85"/>
+  <circle cx="450" cy="186" r="14" stroke="currentColor" stroke-width="2.5" opacity="0.85"/>
+  <polygon points="520,171 534,197 506,197" fill="currentColor" opacity="0.85"/>
+  <path d="M 368 236 L 392 260 M 392 236 L 368 260" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+  <polygon points="443.38,232.00 456.62,232.00 466.00,241.38 466.00,254.62 456.62,264.00 443.38,264.00 434.00,254.62 434.00,241.38" fill="#CDF23F" opacity="1"/>
+  <path d="M 505 254 A 15 15 0 0 1 535 254" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+  <rect x="367" y="297" width="26" height="26" stroke="currentColor" stroke-width="2.5" opacity="0.85"/>
+  <circle cx="436" cy="310" r="5" fill="currentColor" opacity="0.85"/>
+  <circle cx="450" cy="310" r="5" fill="currentColor" opacity="0.85"/>
+  <circle cx="464" cy="310" r="5" fill="currentColor" opacity="0.85"/>
+  <path d="M 506 320 L 520 298 L 534 320" stroke="currentColor" stroke-width="3" fill="none" opacity="0.85"/>
+  <text x="348" y="400" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.62">A FERRAMENTA CERTA</text>
+  <text x="348" y="420" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.62">PARA CADA CASO</text>
+  <line x1="40" y1="452" x2="560" y2="452" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <text x="40" y="496" font-family="Archivo, system-ui, sans-serif" font-size="24" font-weight="700" fill="currentColor" letter-spacing="-0.24" text-anchor="start">Quem só tem martelo trata tudo como prego.</text>
+  <text x="40" y="526" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="18" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">DTM pede o arsenal inteiro, não uma técnica só.</text>
+</svg>
