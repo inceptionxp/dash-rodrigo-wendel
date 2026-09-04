@@ -1,1 +1,896 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Apresentação comercial · em atualização</title><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&family=Hanken+Grotesk:wght@400&family=Space+Mono:wght@700&display=swap" rel="stylesheet"><style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F4F3EC;color:#0B0F1A;font-family:"Hanken Grotesk",sans-serif;text-align:center;padding:24px}p.k{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#101C46}h1{font-family:Archivo,sans-serif;font-size:clamp(28px,4vw,44px);margin:12px 0}p{font-size:17px;line-height:1.65;max-width:52ch}</style></head><body><div><p class="k">Academia DTM · Viver de DTM</p><h1>Apresentação comercial em revisão final</h1><p>A versão para você comentar entra aqui ainda hoje. A página de aplicação e o Guia de Social Media já estão disponíveis na seção Peças comerciais.</p></div></body></html>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Viver de DTM &middot; Apresentação comercial &middot; Academia DTM</title>
+<meta name="description" content="Apresentação comercial da formação Viver de DTM, do Dr. Rodrigo Wendel. Turma fundadora, fevereiro a novembro de 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&family=Hanken+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#101C46;
+  --navy-alto:#182559;
+  --tinta:#0B0F1A;
+  --papel:#F4F3EC;
+  --papel-2:#E7E5D8;
+  --fluor:#CDF23F;
+  --cobalto:#2C4BFF;
+  --menta:#12D9A0;
+  --papel-72:rgba(244,243,236,.72);
+  --papel-45:rgba(244,243,236,.45);
+  --tinta-70:rgba(11,15,26,.70);
+  --tinta-45:rgba(11,15,26,.45);
+  --linha-clara:rgba(244,243,236,.14);
+  --linha-escura:rgba(11,15,26,.13);
+  --display:"Archivo",system-ui,sans-serif;
+  --corpo:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:"Space Mono",ui-monospace,SFMono-Regular,monospace;
+  --r-1:3px;
+  --d-micro:180ms; --d-base:240ms; --d-reveal:520ms;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+body{
+  background:var(--tinta);color:var(--papel);
+  font-family:var(--corpo);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+/* grão · a matéria do sistema (contrato §9.4, regra 21) */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.042;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- palco e casca do deck ---------- */
+.palco{position:fixed;inset:0;display:grid;place-items:center;background:var(--tinta)}
+.deck{position:relative;width:min(100vw,calc(100dvh*16/9));height:min(100dvh,calc(100vw*9/16));
+  overflow:hidden;cursor:pointer}
+.dica{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:150;
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--papel-45);background:rgba(11,15,26,.62);border:1px solid var(--linha-clara);
+  padding:8px 14px;pointer-events:none;transition:opacity var(--d-reveal) var(--ease)}
+.dica[data-fim]{opacity:0}
+
+/* ---------- modo notas · a fala do Rodrigo (tecla N) ----------
+   A nota vive no HTML de cada lâmina e NUNCA é renderizada dentro dela:
+   em projeção fica display:none. Ligado o modo, a lâmina encolhe para 70dvh
+   e a fala ocupa a faixa de baixo — nada de texto sobre a lâmina. */
+.nota{display:none}
+body[data-notas] .deck{width:min(100vw,calc(70dvh*16/9));height:min(70dvh,calc(100vw*9/16))}
+body[data-notas] .palco{align-items:start;padding-top:2dvh}
+.notas{position:fixed;left:0;right:0;bottom:0;height:27dvh;z-index:160;
+  background:var(--papel-2);color:var(--tinta);border-top:3px solid var(--navy);
+  padding:clamp(14px,2.2dvh,28px) clamp(20px,4vw,64px);overflow:auto}
+.notas-k{display:flex;justify-content:space-between;gap:24px;
+  font-family:var(--mono);font-weight:700;font-size:clamp(10px,1.35dvh,15px);
+  letter-spacing:.14em;text-transform:uppercase;color:var(--tinta-45);
+  margin-bottom:clamp(8px,1.2dvh,16px)}
+.notas-txt{font-family:var(--corpo);font-size:clamp(14px,2.35dvh,30px);line-height:1.5;
+  max-width:92ch;color:var(--tinta)}
+
+/* ---------- lockups (contrato §4) ---------- */
+.lk{display:inline-flex;align-items:center;color:var(--navy)}
+.lk .sym{width:1em;height:1em;flex:none}
+.lk .rule{width:.028em;min-width:1px;background:currentColor;opacity:.32;flex:none}
+.lk .col{display:flex;flex-direction:column;font-family:var(--display);
+  text-transform:uppercase;line-height:1;white-space:nowrap}
+.lk .ac{font-weight:400;font-size:.225em;letter-spacing:.22em}
+.lk .dtm{font-weight:800;font-size:.6875em;letter-spacing:-.04em}
+.lk--principal .rule{height:.90em;margin:0 .325em}
+.lk--hz{align-items:center}
+.lk--hz .rule{height:.62em;margin-left:.30em;margin-right:.26em}
+.lk--hz .row{display:flex;align-items:baseline;font-family:var(--display);
+  text-transform:uppercase;white-space:nowrap;line-height:1}
+.lk--hz .ac-h{font-weight:500;font-size:.44em;letter-spacing:.18em}
+.lk--hz .dtm-h{font-weight:800;font-size:.44em;letter-spacing:-.035em;margin-left:.26em}
+.lk--neg{color:var(--papel)}
+.lk--neg .sym{color:var(--fluor)}
+.lk--papel{color:var(--papel)}
+.lk--papel .sym{color:var(--papel)}
+
+/* ============================================================
+   A LÂMINA — motor de render 16:9 (ds-apresentacoes §00)
+   1 lâmina = 1920 x 1080. --px converte o desenho real.
+   Margem 96 · pé de folha 128 · grade 12 · piso 56 px (28 pt).
+   ============================================================ */
+.sl{position:absolute;inset:0;container-type:inline-size;overflow:hidden;
+  background:var(--papel);color:var(--tinta);font-family:var(--corpo);
+  --px:calc(100cqw / 1920);
+  opacity:0;visibility:hidden;transition:opacity var(--d-base) var(--ease)}
+.sl[data-ativo]{opacity:1;visibility:visible}
+.sl--navy{background:var(--navy);color:var(--papel)}
+.sl--fundo{background:linear-gradient(158deg,#101C46 0%,#182559 100%);color:var(--papel)}
+.sl--tinta{background:var(--tinta);color:var(--papel)}
+.sl--papel2{background:var(--papel-2)}
+.sl-quadro{position:absolute;inset:calc(96*var(--px));display:flex;flex-direction:column;
+  gap:calc(40*var(--px))}
+.sl--apertado .sl-quadro{gap:calc(32*var(--px))}
+.sl-topo{display:flex;justify-content:space-between;gap:calc(48*var(--px));flex:none}
+.sl-corpo{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center}
+.sl-pe{flex:none}
+.sl-perow{display:flex;justify-content:space-between;align-items:baseline;gap:calc(48*var(--px));
+  margin-top:calc(24*var(--px))}
+.sl--apertado .sl-perow{margin-top:0}
+.sl-topo>span,.sl-perow>span{white-space:nowrap}
+
+/* tipos da lâmina — px de 1920; dividir por dois para virar pt.
+   Piso absoluto: 56 px = 28 pt. Nenhuma classe abaixo disso. */
+.k56{font-family:var(--mono);font-weight:700;font-size:calc(56*var(--px));letter-spacing:.14em;
+  text-transform:uppercase;line-height:1.1;color:var(--tinta-45)}
+.k56--longo{letter-spacing:.10em}
+.k56--forte{color:var(--tinta-70)}
+.k56--fluor{color:var(--fluor)}
+.sl--navy .k56,.sl--tinta .k56,.sl--fundo .k56{color:var(--papel-45)}
+.sl--navy .k56--forte,.sl--tinta .k56--forte,.sl--fundo .k56--forte{color:var(--papel-72)}
+.sl--navy .k56--fluor,.sl--tinta .k56--fluor,.sl--fundo .k56--fluor{color:var(--fluor)}
+.t200{font-family:var(--display);font-weight:800;font-size:calc(200*var(--px));letter-spacing:-.042em;
+  line-height:.94;font-variant-numeric:tabular-nums}
+.t140{font-family:var(--display);font-weight:800;font-size:calc(140*var(--px));letter-spacing:-.042em;line-height:1.0}
+.t88{font-family:var(--display);font-weight:800;font-size:calc(88*var(--px));letter-spacing:-.038em;
+  line-height:1.08;text-wrap:balance}
+.t64{font-family:var(--display);font-weight:500;font-size:calc(64*var(--px));letter-spacing:-.02em;line-height:1.20}
+.t64--num{font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.p64{font-size:calc(64*var(--px));line-height:1.44;max-width:32ch;color:var(--tinta-70)}
+.p60{font-size:calc(60*var(--px));line-height:1.44;max-width:34ch;color:var(--tinta-70)}
+.p56{font-size:calc(56*var(--px));line-height:1.44;color:var(--tinta-70)}
+.sl--navy .p64,.sl--navy .p60,.sl--navy .p56,.sl--tinta .p64,.sl--tinta .p60,.sl--tinta .p56,
+.sl--fundo .p64,.sl--fundo .p60,.sl--fundo .p56{color:var(--papel-72)}
+.p64 b,.p60 b,.p56 b{color:var(--tinta);font-weight:600}
+.sl--navy .p64 b,.sl--navy .p60 b,.sl--tinta .p64 b,.sl--tinta .p60 b{color:var(--papel);font-weight:600}
+.fonte{font-family:var(--corpo);font-size:calc(56*var(--px));line-height:1.46;
+  color:var(--tinta-45);max-width:52ch}
+.sl--navy .fonte,.sl--tinta .fonte,.sl--fundo .fonte{color:var(--papel-45)}
+
+/* pedido em tela · fecho (roteiro v4, lâmina 21): o deck faz o pedido, não só a fala */
+.pedido{border-left:calc(8*var(--px)) solid var(--fluor);padding-left:calc(32*var(--px));
+  font-family:var(--display);font-weight:500;font-size:calc(64*var(--px));letter-spacing:-.02em;
+  line-height:1.20;color:var(--papel)}
+
+/* símbolo que sangra — a única quebra de grid da lâmina */
+.sl-sangra{position:absolute;pointer-events:none;color:rgba(244,243,236,.07)}
+.sl-sangra--dir{right:calc(-120*var(--px));top:calc(380*var(--px));width:calc(520*var(--px))}
+
+/* ---------- placa fotográfica (contrato §3 · gesto de imagem) ----------
+   Sangra a borda direita DENTRO da faixa de corpo (y 192 a 864 da régua),
+   por isso os trilhos de rótulo do topo e do pé ficam sobre campo chapado. */
+.foto{position:absolute;right:0;top:calc(192*var(--px));height:calc(672*var(--px));
+  overflow:hidden;isolation:isolate;pointer-events:none}
+.foto--cheia{top:0;height:100%;width:100%;left:0;right:0}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;
+  filter:contrast(1.06) brightness(1.02) url(#duotone)}
+.foto span{position:absolute;inset:0;display:block}
+.foto--fundo .scrim{background:linear-gradient(90deg,#16224F 0,rgba(22,34,79,0) 34%)}
+.foto--navy .scrim{background:linear-gradient(90deg,#101C46 0,rgba(16,28,70,0) 34%)}
+.foto--tinta .scrim{background:linear-gradient(90deg,#0B0F1A 0,rgba(11,15,26,0) 34%)}
+.foto--fecho .scrim{background:linear-gradient(92deg,rgba(16,28,70,.965) 0%,rgba(16,28,70,.94) 46%,rgba(16,28,70,.56) 100%)}
+
+/* ---------- frameworks do kit v2 (kit-frameworks/CHANGELOG.md) ----------
+   Nada é redesenhado: o SVG entra colado do kit, com recorte de viewBox e
+   escala calculada para o MENOR texto do desenho bater 28 px na base 1920.
+   Nada anima por dentro. */
+.fw{display:block;--fw-cor:var(--navy)}
+.sl--navy .fw,.sl--tinta .fw,.sl--fundo .fw{--fw-cor:var(--papel)}
+.fw>svg{display:block;width:100%;height:auto}
+
+/* linhas de pilha e de tópico */
+.linha{display:flex;justify-content:space-between;align-items:baseline;gap:calc(48*var(--px));
+  border-top:1px solid var(--linha-escura);padding-top:calc(28*var(--px))}
+.sl--navy .linha,.sl--tinta .linha{border-top-color:var(--linha-clara)}
+.topico{display:grid;grid-template-columns:calc(140*var(--px)) 1fr;align-items:baseline;
+  gap:calc(32*var(--px));border-top:1px solid var(--linha-escura);padding-top:calc(28*var(--px))}
+.sl--navy .topico,.sl--tinta .topico{border-top-color:var(--linha-clara)}
+.pilha{display:grid}
+
+/* colunas de etapa (grade da formação) */
+.etapa{flex:1;background:var(--papel);border-top:calc(10*var(--px)) solid var(--navy);
+  padding:calc(36*var(--px)) calc(36*var(--px)) calc(32*var(--px));display:flex;flex-direction:column;min-height:0}
+.etapa--fim{border-top-color:var(--fluor)}
+
+/* lâmina de polaridade — dois lados de largura igual, medianiz de 96.
+   O fio central fica no meio da medianiz: 48 de folga para o texto dos dois lados. */
+.duplo .sl-quadro{flex-direction:row;gap:calc(96*var(--px))}
+.lado{flex:1;display:flex;flex-direction:column;min-width:0}
+.lado .rodape-col{margin-top:auto;padding-top:calc(32*var(--px))}
+.fundo-duplo{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr}
+.fio-central{position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(11,15,26,.20)}
+.sobre-escuro{color:var(--papel)}
+.sobre-escuro .k56{color:var(--papel-45)}
+.sobre-escuro .k56--forte{color:var(--papel-72)}
+.sobre-escuro .p56,.sobre-escuro .p60,.sobre-escuro .p64{color:var(--papel-72)}
+.sobre-escuro .linha{border-top-color:var(--linha-clara)}
+
+@media (max-width:640px){
+  .dica{font-size:10px;padding:6px 10px;bottom:10px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="trama" viewBox="0 0 200 200" fill="none">
+    <line x1="59.74" y1="28.53" x2="116.58" y2="28.53" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="122.07" y1="21.00" x2="162.26" y2="61.19" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="171.47" y1="59.74" x2="171.47" y2="116.58" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="179.00" y1="122.07" x2="138.81" y2="162.26" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="140.26" y1="171.47" x2="83.42" y2="171.47" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="77.93" y1="179.00" x2="37.74" y2="138.81" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="28.53" y1="140.26" x2="28.53" y2="83.42" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="21.00" y1="77.93" x2="61.19" y2="37.74" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+  </symbol>
+  <filter id="duotone" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values="0.2126 0.7152 0.0722 0 0  0.2126 0.7152 0.0722 0 0  0.2126 0.7152 0.0722 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues="0.063 0.957"/>
+      <feFuncG type="table" tableValues="0.110 0.953"/>
+      <feFuncB type="table" tableValues="0.275 0.925"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
+
+<div class="palco">
+<div class="deck" id="deck">
+
+<!-- 01 · CAPA — foto -->
+<section class="sl sl--fundo">
+  <div class="foto foto--fundo" style="width:calc(468*var(--px))">
+    <img src="img/s01-rodrigo-retrato.jpg" alt="Dr. Rodrigo Wendel, de braços cruzados, com a jaqueta da marca">
+    <span class="scrim"></span>
+  </div>
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">Turma fundadora</span><span class="k56">Fev a nov de 2027</span></div>
+    <div class="sl-corpo">
+      <h1 class="t200">Viver de DTM</h1>
+      <div class="t64" style="margin-top:calc(44*var(--px));color:var(--papel-72);max-width:calc(1100*var(--px))">Formação em Diagnóstico e Tratamento de DTM</div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow" style="align-items:flex-end">
+        <span style="white-space:normal">
+          <span class="k56" style="display:block;margin-bottom:calc(20*var(--px))">uma formação da</span>
+          <span class="lk lk--hz lk--neg" style="font-size:calc(128*var(--px))">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+            <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+          </span>
+        </span>
+        <span class="k56 k56--forte">01 &middot; 21</span>
+      </div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Obrigado por reservar esse tempo. Essa conversa é uma avaliação: eu quero entender sua rotina, e você vai entender o que essa formação faz. No fim, a decisão é sua.&rdquo;</aside>
+</section>
+
+<!-- 02 · O PACIENTE QUE ELA JÁ TEM — dado-herói · F9, pictograma de prevalência -->
+<section class="sl sl--navy">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">O ponto cego</span><span class="k56">Prevalência</span></div>
+    <div class="sl-corpo">
+      <h1 class="t200" style="color:var(--fluor)">3 em cada 10</h1>
+      <div class="t64" style="margin-top:calc(32*var(--px))">já têm DTM</div>
+      <div class="fw" style="width:calc(1120*var(--px));margin-top:calc(40*var(--px))">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="33 188 526 54" width="100%" role="img" aria-label="Três adultos marcados em cada dez" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+          <polygon points="54.13,196.00 69.87,196.00 81.00,207.13 81.00,222.87 69.87,234.00 54.13,234.00 43.00,222.87 43.00,207.13" fill="currentColor" fill-opacity="0.9"/>
+          <polygon points="106.13,196.00 121.87,196.00 133.00,207.13 133.00,222.87 121.87,234.00 106.13,234.00 95.00,222.87 95.00,207.13" fill="currentColor" fill-opacity="0.9"/>
+          <polygon points="158.13,196.00 173.87,196.00 185.00,207.13 185.00,222.87 173.87,234.00 158.13,234.00 147.00,222.87 147.00,207.13" fill="currentColor" fill-opacity="0.9"/>
+          <polygon points="210.13,196.00 225.87,196.00 237.00,207.13 237.00,222.87 225.87,234.00 210.13,234.00 199.00,222.87 199.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+          <polygon points="262.13,196.00 277.87,196.00 289.00,207.13 289.00,222.87 277.87,234.00 262.13,234.00 251.00,222.87 251.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+          <polygon points="314.13,196.00 329.87,196.00 341.00,207.13 341.00,222.87 329.87,234.00 314.13,234.00 303.00,222.87 303.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+          <polygon points="366.13,196.00 381.87,196.00 393.00,207.13 393.00,222.87 381.87,234.00 366.13,234.00 355.00,222.87 355.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+          <polygon points="418.13,196.00 433.87,196.00 445.00,207.13 445.00,222.87 433.87,234.00 418.13,234.00 407.00,222.87 407.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+          <polygon points="470.13,196.00 485.87,196.00 497.00,207.13 497.00,222.87 485.87,234.00 470.13,234.00 459.00,222.87 459.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+          <polygon points="522.13,196.00 537.87,196.00 549.00,207.13 549.00,222.87 537.87,234.00 522.13,234.00 511.00,222.87 511.00,207.13" fill="currentColor" fill-opacity="0.12"/>
+        </svg>
+      </div>
+      <p class="fonte" style="margin-top:calc(40*var(--px))">Meta-análise com 21 mil pessoas &middot; Alqutaibi et al., 2025 &middot; Journal of Oral &amp; Facial Pain and Headache</p>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">Convergente com Valesan, 2021</span><span class="k56 k56--forte">02 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Antes de falar de mim ou da formação, eu quero te mostrar um número. Não é opinião minha, é meta-análise. Trinta por cento da população. Pensa na sua agenda dessa semana: alguém aí já é esse número.&rdquo;</aside>
+</section>
+
+<!-- 03 · O QUE ELA NÃO VÊ — F1, guarda-chuva (kit v2) -->
+<section class="sl">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">O ponto cego</span><span class="k56">Diagnóstico</span></div>
+    <div class="sl-corpo" style="flex-direction:row;gap:calc(88*var(--px));align-items:center">
+      <div style="width:calc(640*var(--px));flex:none">
+        <h1 class="t88">DTM não é um diagnóstico. É dez</h1>
+        <p class="p60" style="margin-top:calc(40*var(--px));max-width:none">Muscular. Articular. Deslocamento de disco. Cada grupo pede um raciocínio.</p>
+      </div>
+      <div class="fw" style="width:calc(1000*var(--px));flex:none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 86 600 354" width="100%" role="img" aria-label="Guarda-chuva da DTM: três grupos, cerca de dez diagnósticos" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+          <text x="300" y="134" font-family="Archivo, system-ui, sans-serif" font-size="48" font-weight="800" fill="currentColor" letter-spacing="-1.92" text-anchor="middle">DTM</text>
+          <path d="M 80 224 Q 300 76 520 224" stroke="currentColor" stroke-width="2.5"/>
+          <path d="M 80 224 Q 300 76 520 224" stroke="#CDF23F" stroke-width="7" stroke-dasharray="112 2000" stroke-dashoffset="-165"/>
+          <line x1="145" y1="188" x2="145" y2="246" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+          <line x1="455" y1="188" x2="455" y2="246" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+          <line x1="300" y1="152" x2="300" y2="246" stroke="currentColor" stroke-width="1.5" opacity="0.55"/>
+          <polygon points="127.61,250.00 162.39,250.00 187.00,274.61 187.00,309.39 162.39,334.00 127.61,334.00 103.00,309.39 103.00,274.61" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="1.5"/>
+          <text x="145" y="299" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="24" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="middle">01</text>
+          <text x="145" y="370" font-family="Archivo, system-ui, sans-serif" font-size="24" font-weight="700" fill="currentColor" letter-spacing="-0.24" text-anchor="middle">Muscular</text>
+          <polygon points="282.61,250.00 317.39,250.00 342.00,274.61 342.00,309.39 317.39,334.00 282.61,334.00 258.00,309.39 258.00,274.61" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="1.5"/>
+          <text x="300" y="299" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="24" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="middle">02</text>
+          <text x="300" y="370" font-family="Archivo, system-ui, sans-serif" font-size="24" font-weight="700" fill="currentColor" letter-spacing="-0.24" text-anchor="middle">Articular</text>
+          <polygon points="437.61,250.00 472.39,250.00 497.00,274.61 497.00,309.39 472.39,334.00 437.61,334.00 413.00,309.39 413.00,274.61" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="1.5"/>
+          <text x="455" y="299" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="24" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="middle">03</text>
+          <text x="455" y="370" font-family="Archivo, system-ui, sans-serif" font-size="24" font-weight="700" fill="currentColor" letter-spacing="-0.24" text-anchor="middle">Deslocamento</text>
+          <text x="455" y="395" font-family="Archivo, system-ui, sans-serif" font-size="24" font-weight="700" fill="currentColor" letter-spacing="-0.24" text-anchor="middle">de disco</text>
+          <line x1="62" y1="424" x2="538" y2="424" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+          <polygon points="80.48,415.50 87.52,415.50 92.50,420.48 92.50,427.52 87.52,432.50 80.48,432.50 75.50,427.52 75.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+          <polygon points="128.48,415.50 135.52,415.50 140.50,420.48 140.50,427.52 135.52,432.50 128.48,432.50 123.50,427.52 123.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+          <polygon points="176.48,415.50 183.52,415.50 188.50,420.48 188.50,427.52 183.52,432.50 176.48,432.50 171.50,427.52 171.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+          <polygon points="224.48,415.50 231.52,415.50 236.50,420.48 236.50,427.52 231.52,432.50 224.48,432.50 219.50,427.52 219.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+          <polygon points="272.48,415.50 279.52,415.50 284.50,420.48 284.50,427.52 279.52,432.50 272.48,432.50 267.50,427.52 267.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+          <polygon points="320.48,415.50 327.52,415.50 332.50,420.48 332.50,427.52 327.52,432.50 320.48,432.50 315.50,427.52 315.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+          <polygon points="368.48,415.50 375.52,415.50 380.50,420.48 380.50,427.52 375.52,432.50 368.48,432.50 363.50,427.52 363.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+          <polygon points="416.48,415.50 423.52,415.50 428.50,420.48 428.50,427.52 423.52,432.50 416.48,432.50 411.50,427.52 411.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+          <polygon points="464.48,415.50 471.52,415.50 476.50,420.48 476.50,427.52 471.52,432.50 464.48,432.50 459.50,427.52 459.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+          <polygon points="512.48,415.50 519.52,415.50 524.50,420.48 524.50,427.52 519.52,432.50 512.48,432.50 507.50,427.52 507.50,420.48" fill="currentColor" fill-opacity="0.85"/>
+        </svg>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">Guarda-chuva da DTM &middot; três grupos</span><span class="k56 k56--forte">03 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Quando você fecha &lsquo;DTM&rsquo; como se fosse um diagnóstico só, você já perdeu a metade da informação que precisa pra tratar direito. É guarda-chuva. Debaixo dele tem cerca de dez quadros diferentes, com prognóstico diferente.&rdquo;</aside>
+</section>
+
+<!-- 04 · A FORMAÇÃO QUE ELA RECEBEU — dado-herói · F9, barra do desconhecimento -->
+<section class="sl sl--navy">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">O ponto cego</span><span class="k56">Formação de origem</span></div>
+    <div class="sl-corpo">
+      <h1 class="t200" style="color:var(--fluor)">61%</h1>
+      <div class="t64" style="margin-top:calc(32*var(--px));max-width:calc(1180*var(--px))">não conhecem o critério internacional</div>
+      <div class="fw" style="width:calc(1120*var(--px));margin-top:calc(48*var(--px))">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="30 424 540 44" width="100%" role="img" aria-label="Barra: 61 por cento de 310 dentistas" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+          <rect x="40" y="432" width="520" height="26" fill="currentColor" fill-opacity="0.12"/>
+          <rect x="40" y="432" width="317" height="26" fill="currentColor" fill-opacity="0.85"/>
+        </svg>
+      </div>
+      <p class="fonte" style="margin-top:calc(40*var(--px))">310 dentistas, amostra da Índia &middot; Prabhakar et al., 2024</p>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">DC/TMD &middot; critério internacional</span><span class="k56 k56--forte">04 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;E isso vem da faculdade, que nunca ensinou a diferenciar os dois quadros. Eu também não aprendi isso na graduação, eu fui atrás depois, com o professor Norberto, com o mestrado, com Zurique.&rdquo;</aside>
+</section>
+
+<!-- 05 · O CUSTO SILENCIOSO — dicotomia -->
+<section class="sl duplo">
+  <div class="fundo-duplo"><div style="background:var(--navy)"></div><div style="background:var(--papel)"></div></div>
+  <div class="sl-quadro">
+    <div class="lado sobre-escuro">
+      <span class="k56">O custo silencioso</span>
+      <h1 class="t88" style="margin-top:calc(36*var(--px));max-width:14ch">De um lado o paciente</h1>
+      <p class="p60" style="margin-top:calc(36*var(--px));max-width:22ch">Ele peregrina.</p>
+      <div class="rodape-col"><span class="k56">A consequência</span></div>
+    </div>
+    <div class="lado">
+      <span class="k56">O custo silencioso</span>
+      <h2 class="t88" style="margin-top:calc(36*var(--px));max-width:14ch">Do outro, o teto</h2>
+      <p class="p60" style="margin-top:calc(36*var(--px));max-width:22ch">Você fecha a agenda de novo com o mesmo volume do mês passado.</p>
+      <div class="rodape-col" style="text-align:right"><span class="k56 k56--forte">05 &middot; 21</span></div>
+    </div>
+  </div>
+  <div class="fio-central"></div>
+  <aside class="nota">&ldquo;O paciente passa por otorrino, por neurologista, às vezes por psiquiatra, e ninguém fecha o diagnóstico. E do seu lado, esse mesmo paciente já senta na sua cadeira. Ele não vai embora porque você não sabe, ele vai embora achando que ninguém sabe.&rdquo;</aside>
+</section>
+
+<!-- 06 · A CONTA — número gigante e comparação -->
+<section class="sl sl--tinta">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">A conta</span><span class="k56">Ticket médio</span></div>
+    <div class="sl-corpo">
+      <h1 class="t200" style="color:var(--fluor)">R$ 3.909</h1>
+      <div class="t64" style="margin-top:calc(32*var(--px));max-width:calc(1240*var(--px))">é o ticket médio de um caso de DTM</div>
+      <div class="linha" style="margin-top:calc(64*var(--px))">
+        <span class="p60" style="max-width:26ch">O teto do consultório de clínica geral, por mês</span>
+        <span class="t64 t64--num" style="color:var(--papel);white-space:nowrap">R$ 20 mil e R$ 35 mil</span>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">Ticket por caso &middot; teto mensal</span><span class="k56 k56--forte">06 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Isso aqui é o ticket médio real da minha clínica, com protocolo. Eu não vou te dizer quanto você vai faturar, isso depende da sua agenda.&rdquo;</aside>
+</section>
+
+<!-- 07 · A PERGUNTA — tela cheia, sem framework (v4) -->
+<section class="sl sl--navy">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">A pergunta</span><span class="k56">Sua agenda deste mês</span></div>
+    <div class="sl-corpo">
+      <h1 class="t140" style="max-width:calc(1500*var(--px))">Quantos casos você já devolveu este mês?</h1>
+      <p class="p60" style="margin-top:calc(56*var(--px));max-width:40ch">Achando que era só uma placa genérica, sem protocolo por trás.</p>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">A pergunta que abre o mecanismo</span><span class="k56 k56--forte">07 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Essa pergunta não é retórica. Cada resposta é um paciente que já passou pela sua cadeira este mês. Deixa eu te mostrar por que isso acontece, e o que muda.&rdquo;</aside>
+</section>
+
+<!-- 08 · O MECANISMO, PARTE 1 — F5, martelo único e arsenal (kit v2) -->
+<section class="sl">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">O mecanismo</span><span class="k56">O Martelo Único</span></div>
+    <div class="sl-corpo" style="flex-direction:row;gap:calc(64*var(--px));align-items:center">
+      <div style="width:calc(560*var(--px));flex:none">
+        <h1 class="t88">Quem só tem martelo, tudo é prego</h1>
+        <p class="p60" style="margin-top:calc(40*var(--px));max-width:none">Você precisa do arsenal inteiro.</p>
+      </div>
+      <div class="fw" style="width:calc(1104*var(--px));flex:none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 104 580 330" width="100%" role="img" aria-label="O Martelo Único contra o arsenal terapêutico" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+          <line x1="390" y1="110" x2="390" y2="430" stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
+          <line x1="390" y1="250" x2="390" y2="370" stroke="#CDF23F" stroke-width="2.5"/>
+          <text x="40" y="128" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="1.4" text-anchor="start" opacity="0.75">O MARTELO ÚNICO</text>
+          <rect x="40" y="146" width="38" height="38" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="50" y1="165" x2="68" y2="165" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+          <text x="92" y="172" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">O cirurgião opera</text>
+          <rect x="40" y="210" width="38" height="38" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="50" y1="229" x2="68" y2="229" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+          <text x="92" y="236" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">O ortodontista aparelha</text>
+          <rect x="40" y="274" width="38" height="38" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="50" y1="293" x2="68" y2="293" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+          <text x="92" y="300" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">O protesista faz prótese</text>
+          <rect x="40" y="338" width="38" height="38" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="50" y1="357" x2="68" y2="357" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+          <text x="92" y="364" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">O clínico coloca placa</text>
+          <text x="408" y="128" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="1.4" text-anchor="start" opacity="0.75">O ARSENAL</text>
+          <rect x="408" y="182" width="30" height="8" fill="currentColor" opacity="0.85"/>
+          <circle cx="493" cy="186" r="14" stroke="currentColor" stroke-width="2.5" opacity="0.85"/>
+          <polygon points="563,171 577,197 549,197" fill="currentColor" opacity="0.85"/>
+          <path d="M 411 236 L 435 260 M 435 236 L 411 260" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+          <polygon points="486.38,232.00 499.62,232.00 509.00,241.38 509.00,254.62 499.62,264.00 486.38,264.00 477.00,254.62 477.00,241.38" fill="#CDF23F" opacity="1"/>
+          <path d="M 548 254 A 15 15 0 0 1 578 254" stroke="currentColor" stroke-width="3" opacity="0.85"/>
+          <rect x="410" y="297" width="26" height="26" stroke="currentColor" stroke-width="2.5" opacity="0.85"/>
+          <circle cx="479" cy="310" r="5" fill="currentColor" opacity="0.85"/>
+          <circle cx="493" cy="310" r="5" fill="currentColor" opacity="0.85"/>
+          <circle cx="507" cy="310" r="5" fill="currentColor" opacity="0.85"/>
+          <path d="M 549 320 L 563 298 L 577 320" stroke="currentColor" stroke-width="3" fill="none" opacity="0.85"/>
+          <text x="408" y="372" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="0.6" text-anchor="start" opacity="0.62">A FERRAMENTA</text>
+          <text x="408" y="398" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="0.6" text-anchor="start" opacity="0.62">CERTA PARA</text>
+          <text x="408" y="424" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="0.6" text-anchor="start" opacity="0.62">CADA CASO</text>
+        </svg>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">O Martelo Único &middot; princípio</span><span class="k56 k56--forte">08 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Essa frase é minha, eu repito ela há anos. Cada especialidade empurra a ferramenta que domina. Em 2014, decidi ensinar o arsenal inteiro, sem me prender a uma técnica só. Quem determina o tratamento é a literatura, e ela recomenda tratamento multimodal.&rdquo;</aside>
+</section>
+
+<!-- 09 · O MECANISMO, PARTE 2 — F3, escada terapêutica (kit v2) -->
+<section class="sl sl--papel2 sl--apertado">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">O mecanismo</span><span class="k56">Tratamento em degraus</span></div>
+    <div class="sl-corpo" style="flex-direction:row;gap:calc(72*var(--px));align-items:center">
+      <div style="width:calc(716*var(--px));flex:none">
+        <h1 class="t88">Uma escada para cada grupo diagnóstico</h1>
+        <p class="p60" style="margin-top:calc(40*var(--px));max-width:none">Do conservador ao invasivo. Critério objetivo de quando subir o degrau.</p>
+      </div>
+      <div class="fw" style="width:calc(940*var(--px));flex:none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="34 128 550 386" width="100%" role="img" aria-label="A escada terapêutica: do conservador ao invasivo" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+          <rect x="40" y="392" width="400" height="116" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="1.5"/>
+          <text x="60" y="426" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="24" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.55">01</text>
+          <text x="60" y="464" font-family="Archivo, system-ui, sans-serif" font-size="28" font-weight="700" fill="currentColor" letter-spacing="-0.28" text-anchor="start">Conservador</text>
+          <text x="60" y="494" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="22" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.68">eletroestimulação · laser</text>
+          <line x1="126" y1="380" x2="126" y2="392" stroke="currentColor" stroke-width="1.5" opacity="0.45"/>
+          <rect x="110" y="264" width="400" height="116" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="1.5"/>
+          <text x="130" y="298" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="24" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.55">02</text>
+          <text x="130" y="336" font-family="Archivo, system-ui, sans-serif" font-size="28" font-weight="700" fill="currentColor" letter-spacing="-0.28" text-anchor="start">Minimamente invasivo</text>
+          <text x="130" y="366" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="22" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.68">pelo aluno, sob supervisão</text>
+          <line x1="196" y1="252" x2="196" y2="264" stroke="currentColor" stroke-width="1.5" opacity="0.45"/>
+          <rect x="180" y="136" width="400" height="116" fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="180" y1="136" x2="580" y2="136" stroke="#CDF23F" stroke-width="6"/>
+          <text x="200" y="170" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="24" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.55">03</text>
+          <text x="200" y="208" font-family="Archivo, system-ui, sans-serif" font-size="28" font-weight="700" fill="currentColor" letter-spacing="-0.28" text-anchor="start">Invasivo</text>
+          <text x="200" y="238" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="22" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.68">ensina a indicar, não a executar</text>
+        </svg>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">Protocolo escalonado &middot; três peças</span><span class="k56 k56--forte">09 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Cada degrau tem um critério objetivo pra subir. Entre três e seis meses sem resposta, diagnóstico já confirmado, considerando gravidade e impacto na vida do paciente. Isso tira o achismo de quando avançar.&rdquo;</aside>
+</section>
+
+<!-- 10 · O PERCURSO — três etapas + régua de números do F4 (kit v2) -->
+<section class="sl sl--apertado">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">O percurso</span><span class="k56">Um encontro por semana</span></div>
+    <div class="sl-corpo">
+      <h1 class="t88">Dez meses, três etapas encadeadas</h1>
+      <div style="flex:1;min-height:0;display:flex;gap:calc(40*var(--px));align-items:stretch;margin-top:calc(32*var(--px))">
+        <div class="etapa">
+          <span class="k56">Etapa 01</span>
+          <div class="t64" style="margin-top:calc(24*var(--px))">Fundação e diagnóstico</div>
+          <span class="k56 k56--forte" style="margin-top:auto">E-01 a E-15</span>
+        </div>
+        <div class="etapa">
+          <span class="k56">Etapa 02</span>
+          <div class="t64" style="margin-top:calc(24*var(--px))">Tratamento</div>
+          <span class="k56 k56--forte" style="margin-top:auto">E-16 a E-35</span>
+        </div>
+        <div class="etapa etapa--fim">
+          <span class="k56">Etapa 03</span>
+          <div class="t64" style="margin-top:calc(24*var(--px))">Comercial e gestão</div>
+          <span class="k56 k56--forte" style="margin-top:auto">E-36 a E-43</span>
+        </div>
+      </div>
+      <div class="fw" style="width:calc(1000*var(--px));margin-top:calc(32*var(--px))">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 706 560 128" width="100%" role="img" aria-label="43 encontros, 10 meses, 3 imersões, 8 dias em Brasília" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+          <line x1="40" y1="716" x2="560" y2="716" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+          <text x="40" y="762" font-family="Archivo, system-ui, sans-serif" font-size="40" font-weight="800" fill="currentColor" letter-spacing="-1.6" text-anchor="start">43</text>
+          <text x="40" y="796" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="0.6" text-anchor="start" opacity="0.68">ENCONTROS</text>
+          <text x="180" y="762" font-family="Archivo, system-ui, sans-serif" font-size="40" font-weight="800" fill="currentColor" letter-spacing="-1.6" text-anchor="start">10</text>
+          <text x="180" y="796" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="0.6" text-anchor="start" opacity="0.68">MESES</text>
+          <text x="320" y="762" font-family="Archivo, system-ui, sans-serif" font-size="40" font-weight="800" fill="currentColor" letter-spacing="-1.6" text-anchor="start">3</text>
+          <text x="320" y="796" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="0.6" text-anchor="start" opacity="0.68">IMERSÕES</text>
+          <text x="460" y="762" font-family="Archivo, system-ui, sans-serif" font-size="40" font-weight="800" fill="currentColor" letter-spacing="-1.6" text-anchor="start">8</text>
+          <text x="460" y="796" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="0.6" text-anchor="start" opacity="0.68">DIAS EM</text>
+          <text x="460" y="824" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="0.6" text-anchor="start" opacity="0.68">BRASÍLIA</text>
+        </svg>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">Turma fechada &middot; fev a nov de 2027</span><span class="k56 k56--forte">10 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Diagnóstico, tratamento e negócio, nessa ordem, porque um sustenta o outro. Sem diagnóstico certo, você escolhe o degrau errado. Sem saber cobrar, o diagnóstico certo não vira consultório de pé. Uma turma fechada, caminhando junto do início ao fim.&rdquo;</aside>
+</section>
+
+<!-- 11 · A CAMADA COMERCIAL — dado-herói (v4: sobe para logo depois do percurso) -->
+<section class="sl sl--tinta">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">A camada comercial</span><span class="k56">Postura anti-guru</span></div>
+    <div class="sl-corpo">
+      <h1 class="t140" style="max-width:calc(1400*var(--px))">Vender é ajudar</h1>
+      <div class="t64" style="margin-top:calc(36*var(--px))">quando o diagnóstico é real</div>
+      <div class="linha" style="margin-top:calc(56*var(--px))">
+        <span class="p60" style="max-width:28ch">Você cobra pela avaliação, valor já validado na sua clínica</span>
+        <span class="t64 t64--num" style="color:var(--fluor);white-space:nowrap">R$ 540</span>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">O que dá certo e o que não dá</span><span class="k56 k56--forte">11 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Eu demorei pra entender isso na minha própria clínica: cobrar a avaliação não afasta o paciente certo, afasta quem não estava dentro do escopo mesmo. Vender, quando o diagnóstico é de verdade, é ajudar.&rdquo;</aside>
+</section>
+
+<!-- 12 · O QUE ELA VAI FAZER COM AS MÃOS — foto e lista -->
+<section class="sl sl--navy">
+  <div class="foto foto--navy" style="width:calc(400*var(--px))">
+    <img src="img/s10-rodrigo-clinica.jpg" alt="Dr. Rodrigo Wendel no consultório, ao lado da cadeira odontológica">
+    <span class="scrim"></span>
+  </div>
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">As imersões</span><span class="k56 k56--fluor">8 dias</span></div>
+    <div class="sl-corpo">
+      <h1 class="t88" style="max-width:calc(1180*var(--px))">8 dias com a mão no paciente</h1>
+      <div class="pilha" style="gap:calc(28*var(--px));margin-top:calc(52*var(--px));max-width:calc(1360*var(--px))">
+        <div class="topico"><span class="k56">01</span><span class="p64" style="max-width:none">Exame físico completo</span></div>
+        <div class="topico"><span class="k56">02</span><span class="p64" style="max-width:none">Infiltração e dry needling</span></div>
+        <div class="topico"><span class="k56">03</span><span class="p64" style="max-width:none">Consulta ao vivo</span></div>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">Três imersões &middot; Brasília</span><span class="k56 k56--forte">12 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Curso gravado não corrige a sua mão. Eu vou estar do seu lado, na minha clínica, com paciente real, vendo você aplicar o que aprendeu online. É isso que separa entender a teoria de saber fazer.&rdquo;</aside>
+</section>
+
+<!-- 13 · QUEM CONDUZ E POR QUÊ — número gigante, foto e a carreira em quatro números -->
+<section class="sl sl--tinta sl--apertado">
+  <div class="foto foto--tinta" style="width:calc(300*var(--px))">
+    <img src="img/s11-rodrigo-ensinando.jpg" alt="Dr. Rodrigo Wendel ensinando, diante do slide com a definição de dor da IASP">
+    <span class="scrim"></span>
+  </div>
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">Quem conduz</span><span class="k56">Dr. Rodrigo Wendel</span></div>
+    <div class="sl-corpo">
+      <h1 class="t200" style="color:var(--fluor)">+92%</h1>
+      <div class="t64" style="margin-top:calc(32*var(--px))">de melhora sem cirurgia</div>
+      <div style="display:flex;gap:calc(28*var(--px));margin-top:calc(24*var(--px));max-width:calc(1524*var(--px))">
+        <div class="linha" style="flex:1;display:block;padding-top:calc(24*var(--px))">
+          <span class="t64 t64--num" style="display:block;color:var(--papel)">&asymp;30</span>
+          <span class="p56" style="display:block;margin-top:calc(14*var(--px))">anos de prática</span>
+        </div>
+        <div class="linha" style="flex:1;display:block;padding-top:calc(24*var(--px))">
+          <span class="t64 t64--num" style="display:block;color:var(--papel)">17</span>
+          <span class="p56" style="display:block;margin-top:calc(14*var(--px))">anos de atendimento voluntário</span>
+        </div>
+        <div class="linha" style="flex:1;display:block;padding-top:calc(24*var(--px))">
+          <span class="t64 t64--num" style="display:block;color:var(--papel)">&asymp;3.000</span>
+          <span class="p56" style="display:block;margin-top:calc(14*var(--px))">pacientes atendidos</span>
+        </div>
+        <div class="linha" style="flex:1;display:block;padding-top:calc(24*var(--px))">
+          <span class="t64 t64--num" style="display:block;color:var(--papel)">100 a 120</span>
+          <span class="p56" style="display:block;margin-top:calc(14*var(--px))">especialistas formados</span>
+        </div>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">Carreira &middot; atendimento voluntário</span><span class="k56 k56--forte">13 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Eu já perdi o timing de um caso. Vi duas pacientes com o mesmo diagnóstico terem desfechos diferentes, uma com sequela, outra sem, só porque uma passou pelas minhas mãos antes de eu ter o arsenal completo. Foi isso que me fez organizar tudo que você está vendo aqui.&rdquo;</aside>
+</section>
+
+<!-- 14 · O QUE VOCÊ VIRA — cena de desejo (v4), sem número de faturamento -->
+<section class="sl sl--fundo">
+  <div class="foto foto--fundo" style="width:calc(468*var(--px))">
+    <img src="img/ficha-anamnese.jpg" alt="Ficha de anamnese de dor orofacial preenchida à mão, com marcações no mapa da face">
+    <span class="scrim"></span>
+  </div>
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">O que você vira</span><span class="k56">Ilustração gerada</span></div>
+    <div class="sl-corpo">
+      <h1 class="t140" style="max-width:calc(1300*var(--px))">Você vira quem os colegas procuram</h1>
+      <p class="p60" style="margin-top:calc(56*var(--px));max-width:32ch">O caso que hoje você devolve, amanhã senta na sua cadeira e sai resolvido.</p>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">Reconhecimento profissional</span><span class="k56 k56--forte">14 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Eu já vi isso acontecer com várias pessoas que passaram pela minha turma: paravam de encaminhar o caso difícil e viravam a referência que os colegas procuravam. O protocolo é o que muda isso.&rdquo;</aside>
+</section>
+
+<!-- 15 · PRA QUEM É — dicotomia -->
+<section class="sl duplo">
+  <div class="fundo-duplo"><div style="background:var(--papel)"></div><div style="background:var(--navy)"></div></div>
+  <div class="sl-quadro">
+    <div class="lado">
+      <span class="k56">É para você se</span>
+      <h1 class="t88" style="margin-top:calc(36*var(--px));max-width:14ch">O critério é clínico</h1>
+      <div class="pilha" style="gap:calc(24*var(--px));margin-top:calc(44*var(--px))">
+        <div class="linha"><span class="p56" style="max-width:26ch">Consultório rodando, com queixa de dor na mandíbula</span></div>
+        <div class="linha"><span class="p56" style="max-width:26ch">Pode viajar a Brasília três vezes no ano</span></div>
+      </div>
+      <div class="rodape-col"><span class="k56">Viver de DTM</span></div>
+    </div>
+    <div class="lado sobre-escuro">
+      <span class="k56">Não é para você se</span>
+      <h2 class="t88" style="margin-top:calc(36*var(--px));max-width:14ch">não é o currículo</h2>
+      <div class="pilha" style="gap:calc(24*var(--px));margin-top:calc(44*var(--px))">
+        <div class="linha"><span class="p56" style="max-width:26ch">Procura curso 100% gravado, sem presencial</span></div>
+        <div class="linha"><span class="p56" style="max-width:26ch">Busca título do CFO, em dois anos</span></div>
+      </div>
+      <div class="rodape-col" style="text-align:right"><span class="k56 k56--forte">15 &middot; 21</span></div>
+    </div>
+  </div>
+  <div class="fio-central"></div>
+  <aside class="nota">&ldquo;Eu não preciso que você já seja especialista em DTM. Eu preciso que você já tenha paciente sentando na cadeira e queira aprender a fazer isso direito, com prática de verdade.&rdquo;</aside>
+</section>
+
+<!-- 16 · O QUE ENTRA — pilha de valor, sem o preço final -->
+<section class="sl">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">A oferta</span><span class="k56">Turma fundadora</span></div>
+    <div class="sl-corpo">
+      <h1 class="t88">Tudo que você recebe ao entrar</h1>
+      <div class="pilha" style="gap:calc(22*var(--px));margin-top:calc(40*var(--px))">
+        <div class="linha"><span class="p60" style="max-width:none">Currículo completo &middot; 43 encontros, 10 meses</span><span class="k56 k56--forte">R$ 19.900</span></div>
+        <div class="linha"><span class="p60" style="max-width:none">Shadowing na clínica &middot; 2 dias</span><span class="k56 k56--forte">R$ 6.500</span></div>
+        <div class="linha"><span class="p60" style="max-width:none">Banco de casos clínicos comentados</span><span class="k56 k56--forte">R$ 1.750</span></div>
+        <div class="linha"><span class="p60" style="max-width:none">DTM Para Todos &middot; 9 aulas</span><span class="k56 k56--forte">R$ 397</span></div>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow" style="border-top:calc(4*var(--px)) solid var(--navy);padding-top:calc(28*var(--px));margin-top:0;align-items:baseline">
+        <span class="k56 k56--forte">Valor total do pacote</span>
+        <span class="t64 t64--num" style="color:var(--tinta)">R$ 28.547</span>
+        <span class="k56 k56--forte">16 &middot; 21</span>
+      </div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Esse é o valor de referência do que você recebe, no preço que a formação vai custar a partir da segunda turma. A turma fundadora não paga isso.&rdquo;</aside>
+</section>
+
+<!-- 17 · INVESTIMENTO — número gigante -->
+<section class="sl sl--navy">
+  <svg class="sl-sangra sl-sangra--dir" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">A oferta</span><span class="k56">Investimento</span></div>
+    <div class="sl-corpo">
+      <h1 class="t200" style="color:var(--fluor)">R$ 15.000</h1>
+      <div class="t64" style="margin-top:calc(32*var(--px))">pela turma fundadora</div>
+      <p class="p60" style="margin-top:calc(56*var(--px));max-width:40ch">À vista ou 12x de R$ 1.250 sem juros. R$ 13.547 abaixo do valor do pacote.</p>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">18x com juros disponível</span><span class="k56 k56--forte">17 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Cerca de 4 tratamentos, no seu ticket médio, pagam a formação inteira. Eu não vou te prometer quanto você vai faturar, isso depende de você, mas a conta de quantos casos pagam o investimento, essa eu posso te mostrar.&rdquo;</aside>
+</section>
+
+<!-- 18 · BÔNUS DE FUNDADOR — lista numerada -->
+<section class="sl sl--papel2 sl--apertado">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">A oferta</span><span class="k56">Bônus de fundador</span></div>
+    <div class="sl-corpo">
+      <h1 class="t88">Cinco entregas só da primeira turma</h1>
+      <div class="pilha" style="gap:calc(10*var(--px));margin-top:calc(32*var(--px))">
+        <div class="topico" style="padding-top:calc(26*var(--px))"><span class="k56">01</span><span class="p56">Shadowing na clínica, 2 dias</span></div>
+        <div class="topico" style="padding-top:calc(26*var(--px))"><span class="k56">02</span><span class="p56">Prioridade na mentoria</span></div>
+        <div class="topico" style="padding-top:calc(26*var(--px))"><span class="k56">03</span><span class="p56">Banco de casos clínicos comentados</span></div>
+        <div class="topico" style="padding-top:calc(26*var(--px))"><span class="k56">04</span><span class="p56">Kit de ativação imediata</span></div>
+        <div class="topico" style="padding-top:calc(26*var(--px))"><span class="k56">05</span><span class="p56">DTM Para Todos, 9 aulas</span></div>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">Exclusivo da turma fundadora</span><span class="k56 k56--forte">18 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Quem entra agora entra antes de qualquer prova social de turma anterior existir. E é por isso que a primeira turma recebe mais do que qualquer outra vai receber depois.&rdquo;</aside>
+</section>
+
+<!-- 19 · O TETO, COM MECANISMO — a causa da escassez é clínica -->
+<section class="sl sl--navy">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">A vaga</span><span class="k56">Escassez real</span></div>
+    <div class="sl-corpo">
+      <h1 class="t140" style="max-width:calc(1400*var(--px))">O limite é a agulha</h1>
+      <div class="t64" style="margin-top:calc(36*var(--px));color:var(--papel-72)">não o marketing</div>
+      <div class="linha" style="margin-top:calc(56*var(--px))">
+        <span class="p60" style="max-width:30ch">Infiltração e dry needling em paciente real exigem supervisão individual</span>
+        <span class="t64 t64--num" style="color:var(--fluor);white-space:nowrap">8 a 12 vagas</span>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">Escassez real, causa clínica</span><span class="k56 k56--forte">19 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;Eu não vou abrir mais vagas do que eu consigo supervisionar de perto, com paciente de verdade na frente. Se eu abrir mais, alguém da turma sai sem executar o que eu prometi que ia ensinar.&rdquo;</aside>
+</section>
+
+<!-- 20 · PRÓXIMOS PASSOS — F7, variante de três passos (geometria do kit v2) -->
+<section class="sl sl--apertado">
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">A aplicação</span><span class="k56">Próximos passos</span></div>
+    <div class="sl-corpo" style="flex-direction:row;gap:calc(72*var(--px));align-items:center">
+      <div style="width:calc(806*var(--px));flex:none">
+        <h1 class="t88">Você já recebe a proposta aqui</h1>
+        <p class="p60" style="margin-top:calc(40*var(--px));max-width:none">A proposta é apresentada nesta conversa e enviada por escrito depois.</p>
+      </div>
+      <div class="fw" style="width:calc(850*var(--px));flex:none">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="50 116 500 418" width="100%" role="img" aria-label="O fluxo de aplicação: conversa, proposta e matrícula" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+          <rect x="60" y="126" width="480" height="118" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="1.5"/>
+          <text x="80" y="160" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.55">01</text>
+          <text x="80" y="198" font-family="Archivo, system-ui, sans-serif" font-size="26" font-weight="700" fill="currentColor" letter-spacing="-0.26" text-anchor="start">Conversa de avaliação de vaga</text>
+          <text x="80" y="228" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="22" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.68">reunião 1:1 agendada</text>
+          <line x1="96" y1="244" x2="96" y2="266" stroke="currentColor" stroke-width="1.5" opacity="0.45"/>
+          <rect x="60" y="266" width="450" height="118" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="1.5"/>
+          <text x="80" y="300" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.55">02</text>
+          <text x="80" y="338" font-family="Archivo, system-ui, sans-serif" font-size="26" font-weight="700" fill="currentColor" letter-spacing="-0.26" text-anchor="start">Apresentação da proposta</text>
+          <text x="80" y="368" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="22" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.68">apresentada aqui e enviada depois</text>
+          <line x1="96" y1="384" x2="96" y2="406" stroke="currentColor" stroke-width="1.5" opacity="0.45"/>
+          <rect x="60" y="406" width="420" height="118" fill="currentColor" fill-opacity="0.16" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="60" y1="406" x2="190" y2="406" stroke="#CDF23F" stroke-width="5"/>
+          <text x="80" y="440" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="22" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.55">03</text>
+          <text x="80" y="478" font-family="Archivo, system-ui, sans-serif" font-size="26" font-weight="700" fill="currentColor" letter-spacing="-0.26" text-anchor="start">Matrícula confirmada</text>
+          <text x="80" y="508" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="22" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.68">turma fundadora de 8 a 12 alunos</text>
+        </svg>
+      </div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow"><span class="k56 k56--longo">Início em 1º de fevereiro de 2027</span><span class="k56 k56--forte">20 &middot; 21</span></div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;A gente já fez o passo 01, essa conversa. Se fizer sentido pros dois lados, eu te apresento a proposta completa ainda aqui, e depois te mando por escrito. A matrícula fecha quando você confirmar.&rdquo;</aside>
+</section>
+
+<!-- 21 · FECHO — manchete, pedido em tela e a bandeja em placa lateral -->
+<section class="sl sl--fundo">
+  <div class="foto foto--fundo" style="width:calc(600*var(--px))">
+    <img src="img/arsenal-bandeja.jpg" alt="Nove instrumentos clínicos enfileirados sobre papel, com uma fita de marcação em um deles">
+    <span class="scrim"></span>
+  </div>
+  <div class="sl-quadro">
+    <div class="sl-topo"><span class="k56 k56--forte">Viver de DTM</span><span class="k56">Ilustração gerada</span></div>
+    <div class="sl-corpo">
+      <p class="p56" style="max-width:calc(1128*var(--px))">O paciente que você trata como bruxismo</p>
+      <h1 class="t140" style="margin-top:calc(32*var(--px));max-width:calc(1128*var(--px))">já está na sua agenda</h1>
+      <div class="pedido" style="margin-top:calc(44*var(--px));max-width:calc(1128*var(--px))">Confirme sua vaga na turma fundadora.</div>
+    </div>
+    <div class="sl-pe">
+      <div class="sl-perow" style="align-items:flex-end">
+        <span style="white-space:normal">
+          <span class="k56" style="display:block;margin-bottom:calc(20*var(--px))">uma formação da</span>
+          <span class="lk lk--hz lk--papel" style="font-size:calc(128*var(--px))">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg><span class="rule"></span>
+            <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+          </span>
+        </span>
+        <span class="k56 k56--forte">21 &middot; 21</span>
+      </div>
+    </div>
+  </div>
+  <aside class="nota">&ldquo;A pergunta é se você vai continuar tratando esse paciente do jeito que trata hoje. A decisão, a partir daqui, é o seu próximo passo.&rdquo;</aside>
+</section>
+
+</div>
+</div>
+
+<div class="dica" id="dica">Setas ou clique para avançar &middot; N mostra a fala do Rodrigo</div>
+
+<div class="notas" id="notas" hidden>
+  <div class="notas-k"><span id="notas-lab">Lâmina 01</span><span>Fala do Rodrigo &middot; tecla N para ocultar</span></div>
+  <p class="notas-txt" id="notas-txt"></p>
+</div>
+
+<script>
+(function(){
+  var deck = document.getElementById('deck');
+  var slides = Array.prototype.slice.call(deck.querySelectorAll('.sl'));
+  var dica = document.getElementById('dica');
+  var painel = document.getElementById('notas');
+  var painelTxt = document.getElementById('notas-txt');
+  var painelLab = document.getElementById('notas-lab');
+  var i = 0, tocou = false;
+
+  function pintarNota(){
+    var nota = slides[i].querySelector('.nota');
+    painelTxt.textContent = nota ? nota.textContent.trim() : '';
+    painelLab.textContent = 'Lâmina ' + String(i + 1).padStart(2, '0');
+  }
+  function mostrar(n){
+    n = Math.max(0, Math.min(slides.length - 1, n));
+    slides[i].removeAttribute('data-ativo');
+    slides[n].setAttribute('data-ativo','');
+    i = n;
+    document.body.dataset.slide = String(i + 1);
+    pintarNota();
+    if (location.hash !== '#s' + (i + 1)) history.replaceState(null, '', '#s' + (i + 1));
+  }
+  function interagiu(){
+    if (tocou) return;
+    tocou = true;
+    dica.setAttribute('data-fim','');
+  }
+  function avancar(){ interagiu(); mostrar(i + 1); }
+  function voltar(){ interagiu(); mostrar(i - 1); }
+  function alternarNotas(){
+    interagiu();
+    var ligado = document.body.toggleAttribute('data-notas');
+    painel.hidden = !ligado;
+    pintarNota();
+  }
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' '){ e.preventDefault(); avancar(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp' || e.key === 'PageUp'){ e.preventDefault(); voltar(); }
+    else if (e.key === 'Home'){ e.preventDefault(); interagiu(); mostrar(0); }
+    else if (e.key === 'End'){ e.preventDefault(); interagiu(); mostrar(slides.length - 1); }
+    else if (e.key === 'n' || e.key === 'N'){ e.preventDefault(); alternarNotas(); }
+  });
+  deck.addEventListener('click', function(e){
+    var r = deck.getBoundingClientRect();
+    if ((e.clientX - r.left) / r.width < 0.25) voltar(); else avancar();
+  });
+
+  slides[0].setAttribute('data-ativo','');
+  document.body.dataset.slide = '1';
+  pintarNota();
+  var inicial = parseInt((location.hash || '').replace('#s',''), 10);
+  if (inicial > 0) mostrar(inicial - 1);
+  setTimeout(function(){ dica.setAttribute('data-fim',''); }, 7000);
+
+  window.deckIr = function(n){ interagiu(); mostrar(n - 1); return document.body.dataset.slide; };
+  window.deckNotas = alternarNotas;
+  window.deckTotal = slides.length;
+})();
+</script>
+</body>
+</html>
