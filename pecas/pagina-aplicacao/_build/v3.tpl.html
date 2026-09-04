@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Viver de DTM &middot; Formação em Diagnóstico e Tratamento de DTM &middot; Academia DTM</title>
+<meta name="description" content="Formação de 10 meses do Dr. Rodrigo Wendel em diagnóstico e tratamento de DTM: 43 encontros ao vivo e 3 imersões presenciais em Brasília. Turma fundadora, vagas limitadas pela capacidade real de supervisão. Aplique para uma conversa de avaliação de vaga.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='14' fill='%23101C46'/%3E%3Cg stroke='%23CDF23F' stroke-width='23.94' stroke-linecap='round' transform='translate(100 100) scale(.76) translate(-100 -100)'%3E%3Cline x1='59.74' y1='28.53' x2='116.58' y2='28.53'/%3E%3Cline x1='122.07' y1='21' x2='162.26' y2='61.19'/%3E%3Cline x1='171.47' y1='59.74' x2='171.47' y2='116.58'/%3E%3Cline x1='179' y1='122.07' x2='138.81' y2='162.26'/%3E%3Cline x1='140.26' y1='171.47' x2='83.42' y2='171.47'/%3E%3Cline x1='77.93' y1='179' x2='37.74' y2='138.81'/%3E%3Cline x1='28.53' y1='140.26' x2='28.53' y2='83.42'/%3E%3Cline x1='21' y1='77.93' x2='61.19' y2='37.74'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&family=Hanken+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VIVER DE DTM · PÁGINA DE APLICAÇÃO · Academia DTM · V3 · 03/09/2026
+   Tokens de outputs/brandbook-academia-dtm/_contrato.md §2.
+   Frameworks colados de kit-frameworks/svg/ na versão v2 (F9, F1, F5, F3, F4, F8).
+   Copy canônica: produto/copy-pagina-aplicacao-v3.md (11 dobras, nenhuma frase reescrita).
+
+   ---- A DECISÃO, ANTES DO HTML ----------------------------------
+   ESTILO ........... o do brandbook: caderno de atas de sociedade científica
+                      atravessado por uma fita fluorescente de marcação de exame.
+   O QUE DIFERENCIA . não existe preço nesta página, e ela diz isso na cara:
+                      o clímax não é uma tabela de valores, é o mapa das seis
+                      estações que separam a aplicação da matrícula. A leitora
+                      sabe exatamente o que acontece depois de clicar.
+   ASSINATURA ....... a JUNTA (dois filetes, o segundo deslocado 50% e 7px abaixo)
+                      abre TODA dobra e é a única coisa que se move: ela se desenha
+                      da esquerda para a direita quando a dobra entra na tela.
+   PROIBIDO ......... azul-e-branco dental com dente estilizado · contador regressivo
+                      e selo de desconto de lançamento · dashboard de startup.
+
+   MANIFESTO (Ato 1 · fable-web-craft) — herda o DESIGN DNA do contrato §10
+   TESE ......... o caderno de atas da sociedade científica aplicado a uma
+                  candidatura: cada dobra é um artigo numerado e a página inteira
+                  se lê como parecer, não como oferta.
+   SENSAÇÃO ..... «isso é uma escola, e essa gente mede o que fala» — a calma
+                  cética de quem lê um laudo antes de decidir.
+   GESTO ........ a JUNTA abrindo toda dobra + o octógono-janela, que vive dentro
+                  dos frameworks e volta como contador de vagas na dobra 9.
+   ANTI-REF ..... lançamento de infoproduto · clínica azul-e-branco com dente
+                  estilizado · dashboard de startup.
+   APOSTA ....... uma página de cinco dígitos sem nenhum número em reais. O clímax
+                  é o processo, não o preço: seis estações desenhadas, com a
+                  promessa de que nenhuma delas custa nada até a matrícula.
+
+   ---- RÉGUA DE ACABAMENTO DESTA VERSÃO (v3) ----------------------
+   1. Corpo nunca abaixo de 17px; rótulo e legenda nunca abaixo de 12px.
+   2. Parágrafo com line-height 1.7 e medida entre 62ch e 66ch.
+   3. Respiro interno de card >= 28px (>= 22px no celular); colunas com 48px+.
+   4. Texto nunca sobre linha, filete, foto, framework ou outro texto: toda
+      legenda de foto saiu de cima da imagem e virou linha abaixo dela.
+   5. Nenhum valor em reais em lugar nenhum da página.
+   ============================================================ */
+:root{
+  /* cor · base */
+  --navy:#101C46;
+  --navy-alto:#182559;
+  --tinta:#0B0F1A;
+  --papel:#F4F3EC;
+  --papel-2:#E7E5D8;
+  /* cor · sinal */
+  --fluor:#CDF23F;
+  --cobalto:#2C4BFF;
+  --menta:#12D9A0;
+  /* cor · derivadas */
+  --papel-72:rgba(244,243,236,.78);
+  --papel-45:rgba(244,243,236,.56);
+  --tinta-70:rgba(11,15,26,.74);
+  --tinta-45:rgba(11,15,26,.56);
+  --linha-clara:rgba(244,243,236,.16);
+  --linha-escura:rgba(11,15,26,.15);
+  /* tipo */
+  --display:"Archivo",system-ui,sans-serif;
+  --corpo:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:"Space Mono",ui-monospace,SFMono-Regular,monospace;
+  /* escala tipográfica · piso de 17px no corpo e 12px no rótulo */
+  --t-hero:clamp(34px,4.3vw,63px);
+  --t-h2:clamp(27px,3.1vw,45px);
+  --t-h3:clamp(21px,2.4vw,30px);
+  --t-corpo:17px;
+  --t-corpo-g:19px;
+  --t-legenda:14px;
+  --t-rotulo:12px;
+  --lh-corpo:1.7;
+  /* espaço · base 4 */
+  --e-1:4px; --e-2:8px; --e-3:12px; --e-4:16px; --e-5:24px;
+  --e-6:32px; --e-7:48px; --e-8:64px; --e-9:88px; --e-10:120px;
+  --pad-card:26px;
+  --gap-col:48px;
+  --gap-bloco:36px;
+  --pad-dobra:clamp(44px,4.6vw,72px);
+  --pad-curto:clamp(36px,3.6vw,56px);
+  --pad-climax:clamp(52px,5.4vw,84px);
+  /* raio */
+  --r-0:0; --r-1:3px; --r-2:6px; --r-3:12px; --r-pill:999px;
+  /* sombra · sempre navy, nunca preto */
+  --sombra-1:0 1px 2px rgba(16,28,70,.07);
+  --sombra-2:0 14px 36px -14px rgba(16,28,70,.24);
+  /* movimento */
+  --d-micro:180ms; --d-base:240ms; --d-reveal:520ms;
+  --ease:cubic-bezier(.22,1,.36,1);
+  /* medida */
+  --largura:1180px;
+  --largura-texto:66ch;
+  /* altura do conjunto grudado no topo (tarja + navegação) */
+  --topo:106px;
+}
+@media(max-width:900px){:root{--topo:104px;--pad-card:22px;--gap-col:32px;--gap-bloco:24px;
+  --pad-dobra:40px;--pad-curto:32px;--pad-climax:48px}}
+@media(max-width:640px){:root{--topo:110px;--pad-card:20px}}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{-webkit-tap-highlight-color:rgba(16,28,70,.12)}
+html{scroll-padding-top:calc(var(--topo) + 16px);overflow-x:clip}
+body{
+  background:var(--papel);color:var(--tinta);
+  font-family:var(--corpo);font-size:var(--t-corpo);line-height:var(--lh-corpo);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:clip;
+}
+/* grão · a matéria do sistema (contrato §9.4, regra 21) */
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--fluor);color:var(--tinta)}
+:focus-visible{outline:2px solid var(--cobalto);outline-offset:3px}
+.sobre-navy :focus-visible{outline-color:var(--fluor)}
+.wrap{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6)}
+@media(max-width:640px){.wrap{padding:0 20px}}
+.pula{position:absolute;left:-9999px;top:0;display:inline-flex;align-items:center;min-height:44px}
+.pula:focus{left:var(--e-5);top:var(--e-3);z-index:300;background:var(--papel);color:var(--navy);
+  display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border-radius:var(--r-1);
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+
+/* ---------- lockups (contrato §4) ---------- */
+.lk{display:inline-flex;align-items:center;color:var(--navy)}
+.lk .sym{width:1em;height:1em;flex:none}
+.lk .rule{width:.028em;min-width:1px;background:currentColor;opacity:.32;flex:none}
+.lk--hz{align-items:center}
+.lk--hz .rule{height:.62em;margin-left:.30em;margin-right:.26em}
+.lk--hz .row{display:flex;align-items:baseline;font-family:var(--display);
+  text-transform:uppercase;white-space:nowrap;line-height:1}
+.lk--hz .ac-h{font-weight:500;font-size:.44em;letter-spacing:.18em}
+.lk--hz .dtm-h{font-weight:800;font-size:.44em;letter-spacing:-.035em;margin-left:.26em}
+.lk--neg{color:var(--papel)}
+.lk--neg .sym{color:var(--fluor)}
+
+/* ---------- gestos de assinatura (contrato §5) ----------
+   A JUNTA abre TODA dobra. É o único elemento que se move na página: o segundo
+   filete se desenha da esquerda para a direita quando a dobra entra na tela.
+   A caixa da junta tem 156x9 e cobre os DOIS filetes, para que nenhum texto
+   possa encostar no gesto (regra 4 da régua de acabamento). */
+.junta{display:block;width:156px;height:9px;position:relative;flex:none}
+.junta::before{content:"";position:absolute;left:0;top:0;width:104px;height:2px;background:var(--navy)}
+.junta::after{content:"";position:absolute;left:52px;top:7px;width:104px;height:2px;background:var(--fluor);
+  transform:scaleX(0);transform-origin:left center;
+  transition:transform var(--d-reveal) var(--ease) 160ms}
+.rev.vis .junta::after,.ent .junta::after{transform:scaleX(1)}
+.junta--claro::before{background:var(--papel-45)}
+.octo-janela{clip-path:polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%)}
+
+/* ---------- marcação da copy (promessa-subpromessa) ---------- */
+.hl-acc{font-family:var(--display);font-weight:700;letter-spacing:-.012em;color:var(--navy)}
+.sobre-navy .hl-acc{color:var(--fluor)}
+.hl-und{text-decoration:underline;text-decoration-thickness:.09em;text-underline-offset:.16em;
+  text-decoration-color:rgba(16,28,70,.42)}
+.sobre-navy .hl-und{text-decoration-color:rgba(205,242,63,.62)}
+.hl-ital{font-style:italic}
+
+/* ---------- tarja fixa do topo (canal-landing, regra 1) ---------- */
+.tarja-topo{position:sticky;top:0;z-index:120;background:var(--tinta);color:var(--papel);
+  border-bottom:1px solid rgba(205,242,63,.34)}
+.tarja-topo .in{max-width:var(--largura);margin:0 auto;padding:11px var(--e-6);
+  display:flex;align-items:center;justify-content:center;gap:10px;min-height:44px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  text-align:center;line-height:1.55;text-wrap:balance}
+.tarja-topo b{color:var(--fluor);font-weight:700}
+@media(max-width:640px){.tarja-topo .in{padding:9px 20px;min-height:40px;letter-spacing:.06em;gap:6px}}
+
+/* ---------- cabeçalho ---------- */
+.nav{position:sticky;top:44px;z-index:100;background:var(--navy);border-bottom:1px solid var(--linha-clara)}
+@media(max-width:640px){.nav{top:40px}}
+.nav-in{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--e-5);min-height:62px}
+.nav-marca{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+.nav-links{display:flex;gap:var(--e-5);list-style:none;flex-wrap:wrap}
+.nav-links a{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--papel-45);text-decoration:none;padding:20px 0;display:block;
+  transition:color var(--d-base) var(--ease)}
+.nav-links a:hover{color:var(--papel)}
+@media(max-width:1080px){.nav-links{display:none}}
+@media(max-width:640px){.nav-in{padding:0 20px;min-height:58px}.nav .btn{display:none}}
+
+/* ---------- botões (ds-paginas §03) ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;
+  font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:18px 30px;border-radius:var(--r-1);
+  border:1px solid transparent;background:var(--cobalto);color:var(--papel);text-decoration:none;cursor:pointer;
+  min-height:56px;line-height:1.35;text-align:center;
+  transition:transform var(--d-micro) var(--ease),box-shadow var(--d-micro) var(--ease),
+    background-color var(--d-base) var(--ease),border-color var(--d-base) var(--ease),color var(--d-base) var(--ease)}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--sombra-2)}
+.btn:active{transform:translateY(1px);box-shadow:none;background:#2340E0}
+.btn--papel{background:var(--papel);color:var(--navy)}
+.btn--papel:hover{background:#FFFDF5}
+.btn--papel:active{background:var(--papel-2)}
+.btn--linha-clara{background:transparent;color:var(--papel);border-color:var(--linha-clara)}
+.btn--linha-clara:hover{background:rgba(244,243,236,.08);border-color:var(--papel-45);box-shadow:none;transform:none}
+.btn--bloco{width:100%}
+.btn--curto{min-height:46px;padding:13px 20px}
+.cta-centro{display:flex;justify-content:center;margin-top:var(--e-6)}
+
+/* link em texto corrido */
+a.txt{color:var(--cobalto);text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:3px;text-decoration-color:rgba(44,75,255,.42);
+  transition:text-decoration-color var(--d-base) var(--ease)}
+a.txt:hover{text-decoration-color:var(--cobalto)}
+.sobre-navy a.txt{color:var(--fluor);text-decoration-color:rgba(205,242,63,.5)}
+
+/* ---------- dobras ---------- */
+.dobra{position:relative;scroll-margin-top:calc(var(--topo) + 16px)}
+.dobra--papel{background:var(--papel)}
+.dobra--papel2{background:var(--papel-2)}
+.dobra--navy{background:var(--navy);color:var(--papel)}
+.dobra--tinta{background:var(--tinta);color:var(--papel)}
+.pad{padding-top:var(--pad-dobra);padding-bottom:var(--pad-dobra)}
+.pad--curto{padding-top:var(--pad-curto);padding-bottom:var(--pad-curto)}
+.pad--climax{padding-top:var(--pad-climax);padding-bottom:var(--pad-climax)}
+
+/* ---------- tipografia de página ---------- */
+h1.hero-h{font-family:var(--display);font-weight:800;letter-spacing:-.042em;line-height:1.04;
+  font-size:var(--t-hero);text-wrap:balance}
+h2.hl{font-family:var(--display);font-weight:800;letter-spacing:-.036em;line-height:1.07;
+  font-size:var(--t-h2);text-wrap:pretty;max-width:min(100%,960px);margin-inline:auto;color:var(--navy)}
+.sobre-navy h2.hl{color:var(--papel)}
+h3.hl{font-family:var(--display);font-weight:800;letter-spacing:-.03em;line-height:1.12;
+  font-size:var(--t-h3);text-wrap:balance;color:var(--navy)}
+.sobre-navy h3.hl{color:var(--papel)}
+h4.hl{font-family:var(--display);font-weight:700;letter-spacing:-.022em;line-height:1.22;font-size:20px;color:var(--navy)}
+.sobre-navy h4.hl{color:var(--papel)}
+.sub{font-size:19px;line-height:1.65;max-width:60ch;text-wrap:pretty;color:var(--tinta-70)}
+.sobre-navy .sub{color:var(--papel-72)}
+p.txt-corpo{max-width:64ch;text-wrap:pretty;color:var(--tinta-70);line-height:var(--lh-corpo)}
+p.txt-corpo + p.txt-corpo{margin-top:20px}
+p.txt-corpo b,.sub b{color:var(--tinta);font-weight:600}
+.sobre-navy p.txt-corpo{color:var(--papel-72)}
+.sobre-navy p.txt-corpo b{color:var(--papel)}
+.col-texto{max-width:min(100%,66ch);margin-inline:auto}
+.txt-def{font-size:var(--t-corpo-g);line-height:1.62;color:var(--tinta)}
+.sobre-navy .txt-def{color:var(--papel)}
+@media(max-width:900px){.txt-def{font-size:18px}.sub{font-size:17px}}
+.rotulo{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--fluor);line-height:1.5}
+.rotulo--escuro{color:var(--navy)}
+.mono-k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  line-height:1.6}
+.fonte{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--tinta-45);line-height:1.75;max-width:56ch}
+.sobre-navy .fonte{color:var(--papel-72)}
+/* crédito de fonte · corpo pequeno, fora do bloco tipográfico da manchete */
+.credito{font-family:var(--corpo);font-size:var(--t-legenda);line-height:1.6;color:var(--tinta-70);max-width:56ch}
+.sobre-navy .credito{color:var(--papel-72)}
+.fio{height:1px;background:var(--linha-escura);border:0;margin:var(--e-6) 0}
+.sobre-navy .fio{background:var(--linha-clara)}
+ul.lista{list-style:none;display:grid;gap:var(--e-4);max-width:var(--largura-texto)}
+ul.lista li{position:relative;padding-left:26px;font-size:var(--t-corpo);color:var(--tinta-70);
+  line-height:var(--lh-corpo);text-wrap:pretty}
+ul.lista li::before{content:"";position:absolute;left:0;top:12px;width:12px;height:2px;background:var(--navy)}
+ul.lista li b{color:var(--tinta);font-weight:600}
+.sobre-navy ul.lista li{color:var(--papel-72)}
+.sobre-navy ul.lista li::before{background:var(--fluor)}
+.sobre-navy ul.lista li b{color:var(--papel)}
+.painel{background:var(--papel-2);border:1px solid var(--linha-escura);border-radius:var(--r-1);padding:var(--pad-card)}
+.sobre-navy .painel{background:var(--navy-alto);border-color:var(--linha-clara)}
+.grade-2>*,.dor>*,.prof>*,.prova>*,.rod-cols>*,.crit>*,.sangra>*,.aplic>*,.mec-par>*,.teto>*,.ficha-3>*,.dentro>*{min-width:0}
+
+/* ---------- cabeçalho de dobra · centralizado (canal-landing, regra 4) ---------- */
+.cab{display:flex;flex-direction:column;align-items:center;text-align:center;
+  max-width:min(100%,1000px);margin:0 auto var(--gap-bloco)}
+.cab .junta{margin-bottom:var(--e-5)}
+.cab .rotulo{margin-bottom:var(--e-5)}
+.cab .sub{margin-top:var(--e-5);max-width:min(100%,62ch)}
+.cab .credito{margin-top:var(--e-4)}
+@media(max-width:720px){.cab{margin-bottom:var(--e-6)}.cab .junta,.cab .rotulo{margin-bottom:var(--e-4)}}
+
+/* ---------- frameworks do kit (kit-frameworks §00) ---------- */
+.fw{--fw-cor:#101C46;width:100%;margin-inline:auto}
+.sobre-navy .fw{--fw-cor:#F4F3EC}
+.fw svg{width:100%;height:auto}
+.fw-legenda{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-45);margin-top:var(--e-4);line-height:1.6}
+.sobre-navy .fw-legenda{color:var(--papel-45)}
+/* no celular o framework sangra a margem do wrap: é o único jeito de o texto
+   interno do SVG chegar perto do piso de legibilidade a 390px */
+@media(max-width:720px){
+  .fw{margin-inline:-20px;width:calc(100% + 40px);max-width:none!important}
+  .fw-legenda{margin-left:0}
+}
+
+/* ---------- número desproporcional (uma zona de compressão por dobra) ---------- */
+.num-gigante{font-family:var(--display);font-weight:800;font-size:clamp(72px,8.4vw,116px);
+  letter-spacing:-.05em;line-height:.88;color:var(--navy);font-variant-numeric:tabular-nums}
+.sobre-navy .num-gigante{color:var(--papel)}
+.num-legenda{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--tinta-45);margin-top:var(--e-4);line-height:1.75}
+.sobre-navy .num-legenda{color:var(--fluor)}
+
+/* ---------- 01 · hero split (canal-landing, regra 2) ---------- */
+.hero{min-height:min(calc(100svh - var(--topo)),820px);display:flex;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    radial-gradient(58% 62% at 76% 44%,rgba(24,37,89,.92),rgba(16,28,70,0) 72%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%23F4F3EC' stroke-opacity='.075' stroke-width='1'%3E%3Cpolygon points='35,4 85,4 116,35 116,85 85,116 35,116 4,85 4,35'/%3E%3C/g%3E%3C/svg%3E");}
+.hero-in{position:relative;z-index:2;width:100%;padding-top:var(--e-7);padding-bottom:var(--e-7);
+  display:grid;grid-template-columns:minmax(0,54fr) minmax(0,46fr);gap:var(--gap-col);align-items:center}
+.hero-copy{text-align:left}
+.hero-copy .credito{margin-top:var(--e-4)}
+.hero-copy .sub{margin-top:var(--e-5);max-width:52ch}
+.hero-copy h1.hero-h{margin-top:var(--e-6)}
+.hero-copy .linha-cta{margin-top:var(--e-7)}
+.hero-copy .mono-k{margin-top:var(--e-5);color:var(--papel-72)}
+.hero-fw{align-self:center}
+.hero-fw .fw{max-width:460px}
+@media(max-width:980px){
+  .hero{min-height:min(calc(100svh - var(--topo)),780px)}
+  .hero-in{grid-template-columns:1fr;gap:0;padding-top:var(--e-6);padding-bottom:var(--e-6)}
+  .hero-fw{display:none}
+  .hero-copy{text-align:center;display:flex;flex-direction:column;align-items:center}
+  .hero-copy .sub,.hero-copy .credito{margin-left:auto;margin-right:auto}
+  .hero-copy .endosso{align-items:center}
+  .hero-copy .sub{margin-top:var(--e-4)}
+  .hero-copy h1.hero-h{margin-top:var(--e-5)}
+  .hero-copy .linha-cta{margin-top:var(--e-5);width:100%}
+  .hero-copy .mono-k{margin-top:var(--e-4)}
+}
+.endosso{display:flex;flex-direction:column;gap:var(--e-4);align-items:flex-start}
+.endosso .marca-form{width:clamp(210px,21vw,290px);height:auto}
+.endosso .par{display:flex;align-items:center;gap:var(--e-3)}
+.endosso .de{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--papel-45)}
+.linha-cta{display:flex;gap:var(--e-4);flex-wrap:wrap;align-items:center}
+@media(max-width:980px){.linha-cta{display:grid;gap:var(--e-3);width:100%}
+  .linha-cta .btn{width:100%}
+  .linha-cta .btn--linha-clara{display:none}}
+
+/* ---------- 02 · ficha técnica da formação ---------- */
+.ficha-3{display:grid;grid-template-columns:minmax(0,22fr) minmax(0,44fr) minmax(0,34fr);
+  gap:var(--gap-col);align-items:start}
+@media(max-width:980px){.ficha-3{grid-template-columns:1fr 1fr;gap:var(--e-6)}
+  .ficha-3 > .ficha-foto{grid-column:1 / -1}}
+@media(max-width:640px){.ficha-3{grid-template-columns:1fr}}
+.prova{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap-col);margin-top:var(--e-6);
+  padding-top:var(--e-6);border-top:1px solid var(--linha-escura)}
+.prova .k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-45);margin-bottom:var(--e-3);line-height:1.5}
+.prova .v{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.024em;line-height:1.2;
+  color:var(--navy);font-variant-numeric:tabular-nums}
+.prova .d{font-size:var(--t-legenda);color:var(--tinta-70);margin-top:10px;line-height:1.6;text-wrap:pretty}
+@media(max-width:820px){.prova{grid-template-columns:1fr 1fr;gap:var(--e-6) var(--e-6)}}
+
+/* ---------- 03 · o ponto cego ---------- */
+.dor{display:grid;grid-template-columns:minmax(0,50fr) minmax(0,50fr);gap:var(--gap-col);align-items:center}
+.dor--inverso{grid-template-columns:minmax(0,46fr) minmax(0,54fr)}
+@media(max-width:980px){.dor,.dor--inverso{grid-template-columns:1fr;gap:var(--e-7)}}
+.sinais{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:var(--e-6)}
+.sinais span{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--navy);border:1px solid var(--linha-escura);border-radius:var(--r-1);padding:9px 14px;line-height:1.4}
+
+/* ---------- 04 · a virada ---------- */
+.mec-par{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--gap-col);align-items:center}
+.mec-par--topo{align-items:start}
+@media(max-width:980px){.mec-par{grid-template-columns:1fr;gap:var(--e-7)}}
+.pecas{display:grid;gap:var(--gap-bloco)}
+.peca{display:grid;grid-template-columns:56px minmax(0,1fr);gap:var(--e-5);align-items:start}
+.peca .n{font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.1em;color:var(--fluor);
+  padding-top:6px;font-variant-numeric:tabular-nums}
+.peca p{font-size:var(--t-corpo);line-height:var(--lh-corpo);color:var(--papel-72);max-width:52ch;
+  text-wrap:pretty;margin-top:var(--e-3)}
+@media(max-width:640px){.peca{grid-template-columns:44px minmax(0,1fr);gap:var(--e-4)}}
+
+/* ---------- fotografia · a chapa (contrato §3.6 + ds-paginas bloco 07) ----------
+   Mudança da v3: NENHUM texto vive sobre a foto. Nome, crédito e selo de
+   ilustração gerada saem da imagem e viram uma linha de legenda abaixo dela. */
+.foto{margin:0}
+.chapa{position:relative;overflow:hidden;border-radius:var(--r-2);isolation:isolate;background:var(--navy)}
+.chapa img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:saturate(.88) contrast(1.05) brightness(var(--exp,1))}
+.chapa::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:var(--navy);opacity:.12;mix-blend-mode:color}
+.chapa::before{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;
+  box-shadow:inset 0 0 0 1px rgba(11,15,26,.18)}
+.sobre-navy .chapa::before{box-shadow:inset 0 0 0 1px var(--linha-clara)}
+.chapa--retrato{aspect-ratio:4/5}
+.chapa--dezesseis9{aspect-ratio:16/9}
+.chapa--faixa{aspect-ratio:16/4.4}
+.chapa--arsenal{aspect-ratio:4/1}
+.foto-legenda{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;margin-top:var(--e-4);
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-45);line-height:1.6}
+.sobre-navy .foto-legenda{color:var(--papel-45)}
+.foto-legenda b{color:var(--navy);font-weight:700}
+.sobre-navy .foto-legenda b{color:var(--fluor)}
+@media(max-width:640px){.chapa--faixa{aspect-ratio:16/7}.chapa--arsenal{aspect-ratio:2.4/1}}
+
+/* ---------- 06 · o critério · um bloco por item ---------- */
+.crit{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-col)}
+@media(max-width:900px){.crit{grid-template-columns:1fr;gap:var(--e-7)}}
+.crit-k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--navy);padding-bottom:var(--e-4);border-bottom:2px solid var(--navy);margin-bottom:var(--e-5);
+  line-height:1.5}
+.crit-col--nao .crit-k{color:var(--tinta-45);border-bottom-color:var(--tinta-45)}
+.crit-lista{list-style:none;display:grid;gap:var(--e-3)}
+.crit-item{display:grid;grid-template-columns:20px minmax(0,1fr);gap:var(--e-4);align-items:start;
+  background:rgba(244,243,236,.62);border:1px solid var(--linha-escura);border-radius:var(--r-1);
+  padding:var(--pad-card)}
+.crit-item .mk{width:14px;height:14px;margin-top:6px;background:var(--navy);
+  clip-path:polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%)}
+.crit-col--nao .crit-item .mk{background:none;box-shadow:inset 0 0 0 2px var(--tinta-45)}
+.crit-item p{font-size:var(--t-corpo);line-height:var(--lh-corpo);color:var(--tinta-70);text-wrap:pretty}
+.crit-item .hl-acc{color:var(--navy)}
+.crit-col--nao .crit-item .hl-acc{color:var(--tinta)}
+
+/* ---------- 07 · retrato que sangra a borda esquerda ---------- */
+.sangra{display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);
+  gap:clamp(32px,4vw,64px);align-items:stretch;
+  padding-right:max(20px,calc((100% - var(--largura))/2 + var(--e-6)))}
+.sangra .chapa{min-height:600px;border-radius:0 var(--r-2) var(--r-2) 0;height:100%}
+.sangra .foto{display:flex;flex-direction:column}
+.sangra .foto-legenda{padding-left:max(20px,calc((100% - var(--largura))/2 + var(--e-6)));padding-right:var(--e-4)}
+.sangra-txt{display:flex;flex-direction:column;justify-content:center}
+.sangra .fw{max-width:480px;margin-left:0}
+@media(max-width:980px){
+  .sangra{grid-template-columns:1fr;padding-right:0;gap:var(--e-7)}
+  .sangra .chapa{aspect-ratio:16/10;min-height:0;border-radius:0}
+  .sangra-txt{padding:0 20px}
+  .sangra .foto-legenda{padding-left:20px;padding-right:20px}
+}
+.ficha-linha{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-45);line-height:2;padding-top:var(--e-5);border-top:1px solid var(--linha-escura)}
+.sobre-navy .ficha-linha{color:var(--papel-45);border-top-color:var(--linha-clara)}
+
+/* ---------- 08 · o que está dentro ---------- */
+.dentro{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-6) var(--gap-col)}
+@media(max-width:900px){.dentro{grid-template-columns:1fr;gap:var(--e-5)}}
+.item{padding-top:var(--e-5)}
+.item{display:grid;grid-template-columns:52px minmax(0,1fr);gap:var(--e-5);align-items:start;
+  border-top:1px solid var(--linha-escura);padding-top:var(--e-5)}
+.item .selo-num{width:52px;height:52px;flex:none;display:grid;place-items:center;background:var(--navy);
+  color:var(--fluor);font-family:var(--mono);font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.item p{font-size:var(--t-corpo);color:var(--tinta-70);line-height:var(--lh-corpo);margin-top:var(--e-3);
+  text-wrap:pretty}
+
+/* ---------- 09 · a vaga ---------- */
+.teto{display:grid;grid-template-columns:minmax(0,38fr) minmax(0,62fr);gap:var(--gap-col);align-items:center}
+@media(max-width:900px){.teto{grid-template-columns:1fr;gap:var(--e-7)}}
+.teto .num-gigante{font-size:clamp(80px,9.6vw,140px)}
+.contador{margin-top:var(--e-6);max-width:500px}
+
+/* ---------- 10 · perguntas ---------- */
+.faq{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap-col);align-items:start}
+@media(max-width:900px){.faq{grid-template-columns:1fr;column-gap:0}}
+.faq details{border-bottom:1px solid var(--linha-escura)}
+.faq details:nth-child(-n+2){border-top:1px solid var(--linha-escura)}
+@media(max-width:900px){.faq details:nth-child(2){border-top:0}}
+.faq summary{list-style:none;cursor:pointer;display:flex;gap:var(--e-5);align-items:center;padding:15px 0;
+  font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.018em;line-height:1.4;
+  color:var(--navy);min-height:52px;text-wrap:pretty;transition:color var(--d-base) var(--ease)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--cobalto)}
+.faq summary:focus-visible{outline-offset:-2px}
+.faq .sinal{margin-left:auto;flex:none;position:relative;width:15px;height:15px}
+.faq .sinal::before,.faq .sinal::after{content:"";position:absolute;background:currentColor;
+  transition:transform var(--d-base) var(--ease),opacity var(--d-base) var(--ease)}
+.faq .sinal::before{left:0;top:6.5px;width:15px;height:2px}
+.faq .sinal::after{left:6.5px;top:0;width:2px;height:15px}
+.faq details[open] .sinal::after{transform:scaleY(0);opacity:0}
+.faq .resp{padding:0 44px var(--e-5) 0;max-width:62ch;color:var(--tinta-70);font-size:var(--t-corpo);
+  line-height:var(--lh-corpo);text-wrap:pretty;animation:abre var(--d-reveal) var(--ease) both}
+.faq .resp .credito{margin-top:var(--e-4)}
+@keyframes abre{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+
+/* ---------- 11 · aplicação · as seis estações ---------- */
+.aplic{display:grid;grid-template-columns:minmax(0,52fr) minmax(0,48fr);gap:var(--gap-col);align-items:start}
+@media(max-width:980px){.aplic{grid-template-columns:1fr;gap:var(--e-7)}}
+.estacoes{list-style:none;display:grid;gap:var(--e-3);position:relative}
+.estacao{display:grid;grid-template-columns:46px minmax(0,1fr);gap:var(--e-5);align-items:start;
+  background:var(--navy-alto);border:1px solid var(--linha-clara);border-radius:var(--r-1);
+  padding:var(--pad-card)}
+.estacao:last-child{border-top:2px solid var(--fluor)}
+.estacao .n{width:46px;height:46px;display:grid;place-items:center;background:rgba(244,243,236,.08);
+  color:var(--fluor);font-family:var(--mono);font-size:14px;font-weight:700;font-variant-numeric:tabular-nums;
+  clip-path:polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%)}
+.estacao h4{font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.02em;line-height:1.3;
+  color:var(--papel)}
+.estacao p{font-size:var(--t-corpo);line-height:var(--lh-corpo);color:var(--papel-72);margin-top:10px;
+  text-wrap:pretty}
+.est-topo{margin-bottom:var(--e-6)}
+.form-card{background:#FBFAF4;border:1px solid rgba(11,15,26,.18);border-radius:var(--r-1);padding:var(--pad-card);
+  position:sticky;top:calc(var(--topo) + 16px)}
+@media(max-width:980px){.form-card{position:static}}
+.form-grade{display:grid;gap:var(--e-4)}
+.campo{display:block}
+.campo > span.rot{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tinta-45);display:block;margin-bottom:8px;line-height:1.5}
+.campo input,.campo select,.campo textarea{width:100%;font-family:var(--corpo);font-size:17px;color:var(--tinta);
+  background:#FBFAF4;border:1px solid rgba(11,15,26,.24);border-radius:var(--r-1);padding:14px 16px;line-height:1.45;
+  min-height:52px;transition:border-color var(--d-base) var(--ease),box-shadow var(--d-base) var(--ease)}
+.campo textarea{resize:vertical;min-height:88px}
+.campo select{appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230B0F1A' stroke-width='1.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:44px}
+.campo input::placeholder,.campo textarea::placeholder{color:var(--tinta-45)}
+.campo input:hover,.campo select:hover,.campo textarea:hover{border-color:rgba(11,15,26,.44)}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--cobalto);
+  box-shadow:0 0 0 3px rgba(44,75,255,.16)}
+.form-nota{font-size:var(--t-legenda);color:var(--tinta-45);margin-top:var(--e-5);line-height:1.6}
+
+/* ---------- rodapé (contrato §7) ---------- */
+.rod-cols{display:grid;grid-template-columns:4fr 2fr 2fr 3fr;gap:var(--gap-col)}
+@media(max-width:900px){.rod-cols{grid-template-columns:1fr 1fr;gap:var(--e-7)}}
+.rod-cols .k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--papel-45);margin-bottom:var(--e-4);line-height:1.5}
+.rod-cols ul{list-style:none;display:grid}
+.rod-cols ul a{font-size:var(--t-corpo);color:var(--papel-72);text-decoration:none;display:inline-flex;
+  align-items:center;min-height:44px;padding:2px 0;transition:color var(--d-base) var(--ease)}
+.rod-cols ul a:hover{color:var(--fluor)}
+.rod-legal{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--papel-45);line-height:2;margin-top:var(--gap-bloco);padding-top:var(--e-6);
+  border-top:1px solid var(--linha-clara)}
+
+/* ---------- barra fixa de celular (ds-paginas §5.2) ---------- */
+.barra-fixa{position:fixed;left:0;right:0;bottom:0;z-index:150;display:none;align-items:center;
+  justify-content:space-between;gap:var(--e-4);background:var(--navy);border-top:2px solid var(--fluor);
+  padding:var(--e-3) 20px;transform:translateY(110%);transition:transform var(--d-base) var(--ease)}
+.barra-fixa.on{transform:none}
+.barra-fixa .t{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--papel-45);line-height:1.5}
+.barra-fixa .t b{display:block;color:var(--papel);margin-top:4px}
+@media(max-width:980px){.barra-fixa{display:flex}}
+
+/* ---------- entrada e revelação (Ato 3.3 · contrato §9.4 regra 22) ---------- */
+@keyframes sobe{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.ent{animation:sobe 620ms var(--ease) both}
+.ent-1{animation-delay:60ms}.ent-2{animation-delay:150ms}.ent-3{animation-delay:240ms}
+.ent-4{animation-delay:330ms}.ent-5{animation-delay:420ms}.ent-6{animation-delay:510ms}
+.rev{opacity:0;transform:translateY(18px);transition:opacity var(--d-reveal) var(--ease),transform var(--d-reveal) var(--ease)}
+.rev.vis{opacity:1;transform:none}
+.rev-2{transition-delay:90ms}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
+  .rev{opacity:1;transform:none}
+  .junta::after{transform:scaleX(1)!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="trama" viewBox="0 0 200 200" fill="none">
+    <line x1="59.74" y1="28.53" x2="116.58" y2="28.53" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="122.07" y1="21.00" x2="162.26" y2="61.19" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="171.47" y1="59.74" x2="171.47" y2="116.58" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="179.00" y1="122.07" x2="138.81" y2="162.26" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="140.26" y1="171.47" x2="83.42" y2="171.47" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="77.93" y1="179.00" x2="37.74" y2="138.81" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="28.53" y1="140.26" x2="28.53" y2="83.42" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="21.00" y1="77.93" x2="61.19" y2="37.74" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<a class="pula" href="#aplicacao">Ir para a aplicação</a>
+
+<!-- ============ TARJA FIXA DO TOPO ============ -->
+<div class="tarja-topo">
+  <p class="in"><span>Turma fundadora &middot; início em 1&ordm; de fevereiro de 2027</span> <b>&middot; entre 8 e 12 vagas</b></p>
+</div>
+
+<!-- ============ CABEÇALHO ============ -->
+<header class="nav sobre-navy">
+  <div class="nav-in">
+    <a class="nav-marca" href="#topo" aria-label="Academia DTM">
+      <span class="lk lk--hz lk--neg" style="font-size:26px">
+        <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <span class="rule"></span>
+        <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#virada">A virada</a></li>
+      <li><a href="#percurso">O percurso</a></li>
+      <li><a href="#criterio">O critério</a></li>
+      <li><a href="#professor">Quem conduz</a></li>
+      <li><a href="#perguntas">Perguntas</a></li>
+    </ul>
+    <a class="btn btn--papel btn--curto" href="#aplicacao">Aplicar</a>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- ============ 01 · HERO · O DADO (navy · split) ============ -->
+<section class="dobra dobra--navy sobre-navy hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <div class="endosso ent ent-1">
+        <img class="marca-form" src="{{LOGO}}" width="680" height="201"
+             alt="Formação Viver de DTM" fetchpriority="high">
+        <span class="par">
+          <span class="de">uma formação da</span>
+          <span class="lk lk--hz lk--neg" style="font-size:20px">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+            <span class="rule"></span>
+            <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+          </span>
+        </span>
+      </div>
+
+      <h1 class="hero-h ent ent-2">Cerca de <span class="hl-acc">3 em cada 10</span> adultos têm&nbsp;DTM</h1>
+      <p class="credito ent ent-2">Fonte: Valesan et al., 2021, Clinical Oral Investigations</p>
+
+      <p class="sub ent ent-3">Boa parte já passa pela sua cadeira. Tratada como bruxismo, porque a formação de origem nunca ensinou a separar os dois&nbsp;quadros.</p>
+
+      <div class="linha-cta ent ent-4">
+        <a class="btn btn--papel" href="#aplicacao">Aplicar para uma conversa de avaliação de vaga</a>
+        <a class="btn btn--linha-clara" href="#percurso">Ver o percurso</a>
+      </div>
+      <p class="mono-k ent ent-5">O paciente que você trata assim hoje já está na sua agenda desta semana</p>
+    </div>
+
+    <div class="hero-fw ent ent-3">
+      <div class="fw">{{F9}}</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · A FORMAÇÃO · FICHA TÉCNICA (papel-2) ============ -->
+<section class="dobra dobra--papel2 pad--curto" id="formacao">
+  <div class="wrap">
+    <header class="cab rev">
+      <span class="junta"></span>
+      <p class="rotulo rotulo--escuro">A formação</p>
+      <h2 class="hl">Um percurso de 10 meses, não um curso gravado</h2>
+    </header>
+    <div class="ficha-3 rev rev-2">
+      <div>
+        <span class="junta"></span>
+        <p class="num-gigante" style="margin-top:var(--e-5)">10</p>
+        <p class="num-legenda">meses de percurso<br>não um curso gravado</p>
+      </div>
+      <div>
+        <p class="txt-corpo txt-def" style="max-width:52ch">Viver de DTM é a formação do Dr. Rodrigo Wendel para dentistas que já atendem, mas confundem sinal de bruxismo com sinal de DTM. Encontros semanais ao vivo. Três imersões presenciais na clínica dele, em Brasília. Prática supervisionada em paciente real.</p>
+        <p class="txt-corpo" style="margin-top:var(--e-5)">Uma formação da <span class="hl-acc hl-und">Academia DTM</span>.</p>
+      </div>
+      <figure class="foto ficha-foto">
+        <div class="chapa chapa--dezesseis9" style="--exp:1.02">
+          <img src="img/ficha-anamnese-1100.jpg"
+               srcset="img/ficha-anamnese-620.jpg 620w, img/ficha-anamnese-1100.jpg 1100w"
+               sizes="(max-width:980px) 92vw, 34vw"
+               width="1100" height="733" loading="lazy" decoding="async"
+               alt="Ficha de anamnese impressa em papel creme, quatro caixas assinaladas em tinta navy e uma fita fluorescente marcando uma linha">
+        </div>
+        <figcaption class="foto-legenda"><b>A ficha de anamnese do protocolo</b> <span>Ilustração gerada</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="prova rev">
+      <div><div class="k">O que é</div><div class="v">Formação anual de 10 meses</div><div class="d">Para o cirurgião-dentista que já tem consultório rodando.</div></div>
+      <div><div class="k">Direção clínica</div><div class="v">Dr. Rodrigo Wendel</div><div class="d">Cerca de 30 anos de atuação clínica em DTM e Dor Orofacial.</div></div>
+      <div><div class="k">Formato</div><div class="v">43 encontros &middot; 3 imersões</div><div class="d">8 dias de prática hands-on em Brasília ao longo do ano.</div></div>
+      <div><div class="k">Turma fundadora</div><div class="v">1&ordm; de fevereiro de 2027</div><div class="d">Formatura em 29 de novembro de 2027.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · O PONTO CEGO (papel) · F1 ============ -->
+<section class="dobra dobra--papel pad" id="ponto-cego">
+  <div class="wrap">
+    <header class="cab rev">
+      <span class="junta"></span>
+      <p class="rotulo rotulo--escuro">O ponto cego</p>
+      <h2 class="hl">DTM é um guarda-chuva. Tem <span class="hl-acc">cerca de dez</span> diagnósticos dentro dele</h2>
+    </header>
+
+    <div class="dor dor--inverso rev">
+      <div>
+        <div class="sinais">
+          <span>Estalo ao mastigar</span>
+          <span>Dor de cabeça constante</span>
+          <span>Dificuldade para abrir a boca</span>
+          <span>Desgaste nos dentes da frente</span>
+        </div>
+        <p class="txt-corpo txt-def">Cada sinal aponta para um caminho diferente. Um quadro muscular. Um quadro articular. Um deslocamento de disco. Três grupos, com critérios, tratamentos e prognósticos distintos entre si.</p>
+        <p class="txt-corpo" style="margin-top:var(--e-5)">Sem uma formação que ensine a diferenciar os três, o caminho mais comum é tratar tudo pelo sinal mais conhecido: bruxismo.</p>
+        <p class="txt-corpo">Num levantamento com 310 dentistas, cerca de <b>4 em cada 10</b> clínicos gerais não se sentiam confiantes para conduzir um caso de DTM. E 61% desconheciam o DC/TMD, o critério diagnóstico internacional.</p>
+        <p class="credito" style="margin-top:var(--e-4)">Fonte: Prabhakar et al., 2024, The Journal of Indian Prosthodontic Society, amostra da Índia</p>
+      </div>
+      <div>
+        <div class="fw" style="max-width:480px">{{F1}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · A VIRADA (tinta) · F5 + F3 ============ -->
+<section class="dobra dobra--tinta sobre-navy pad" id="virada">
+  <div class="wrap">
+    <header class="cab rev">
+      <span class="junta junta--claro"></span>
+      <p class="rotulo">A virada</p>
+      <h2 class="hl">Quem só tem martelo trata tudo como prego</h2>
+      <p class="sub">DTM pede o arsenal&nbsp;inteiro.</p>
+    </header>
+
+    <div class="mec-par rev">
+      <div>
+        <p class="txt-corpo txt-def">Existe um padrão na odontologia. Cada especialidade empurra a própria ferramenta para qualquer caso que chegue. O cirurgião quer operar. O ortodontista quer aparelhar. O protesista quer prótese. O clínico geral quer colocar placa.</p>
+        <p class="txt-corpo" style="margin-top:var(--e-5)">Esse padrão tem nome: o <span class="hl-acc">Martelo Único</span>. É o resultado de uma formação que ensina uma ferramenta de cada vez, nunca o raciocínio completo.</p>
+      </div>
+      <div>
+        <div class="fw" style="max-width:480px">{{F5}}</div>
+      </div>
+    </div>
+
+    <hr class="fio">
+
+    <div class="mec-par mec-par--topo rev">
+      <div>
+        <p class="txt-corpo txt-def" style="max-width:52ch">Viver de DTM ensina o raciocínio completo, em três peças, nesta ordem. Cada uma só funciona por causa da anterior.</p>
+        <div class="pecas" style="margin-top:var(--gap-bloco)">
+          <div class="peca">
+            <span class="n">01</span>
+            <div>
+              <h3 class="hl">Protocolo de leitura em camadas</h3>
+              <p>Ficha pré-consulta, anamnese profunda, exame físico protocolar, leitura de imagem. Fecha um diagnóstico específico dentro dos três grupos.</p>
+            </div>
+          </div>
+          <div class="peca">
+            <span class="n">02</span>
+            <div>
+              <h3 class="hl">Arsenal terapêutico em degraus</h3>
+              <p>Do conservador ao invasivo. Um degrau por grupo, com critério objetivo de quando subir. Você passa a escolher entre várias ferramentas.</p>
+            </div>
+          </div>
+          <div class="peca">
+            <span class="n">03</span>
+            <div>
+              <h3 class="hl">Percurso comercial</h3>
+              <p>A competência clínica vira receita quando você cobra a avaliação como ato clínico e apresenta o diagnóstico já como abertura do plano de tratamento.</p>
+            </div>
+          </div>
+        </div>
+        <p class="txt-corpo" style="margin-top:var(--gap-bloco)">Diagnóstico, tratamento e negócio na mesma trilha. Cursos gravados param no diagnóstico. Especializações tradicionais chegam à prática, mas em dois anos, sem a camada de negócio.</p>
+      </div>
+      <div>
+        <div class="fw" style="max-width:480px">{{F3}}</div>
+        <p class="fw-legenda">A escada terapêutica &middot; peça 02 do raciocínio</p>
+      </div>
+    </div>
+
+    <div class="cta-centro rev">
+      <a class="btn btn--papel" href="#percurso">Ver como o percurso é organizado</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · O PERCURSO (papel) · F4 ============ -->
+<section class="dobra dobra--papel pad" id="percurso">
+  <div class="wrap">
+    <header class="cab rev">
+      <span class="junta"></span>
+      <p class="rotulo rotulo--escuro">O percurso</p>
+      <h2 class="hl">Dez meses. Três etapas encadeadas</h2>
+      <p class="sub">43 encontros ao vivo, mais 3 imersões presenciais&nbsp;obrigatórias.</p>
+    </header>
+
+    <div class="dor rev">
+      <div>
+        <div class="fw" style="max-width:480px">{{F4}}</div>
+      </div>
+      <div>
+        <p class="txt-corpo txt-def">Cadência semanal. Encontros em grupo, online, mais 3 imersões na clínica do Dr. Wendel, em Brasília, somando 8 dias de prática hands-on. Turma fechada: você começa e termina com o mesmo grupo.</p>
+        <div class="pecas" style="margin-top:var(--gap-bloco)">
+          <div class="peca">
+            <span class="n" style="color:var(--navy)">01</span>
+            <div>
+              <h3 class="hl">Fundação e Diagnóstico</h3>
+              <p style="color:var(--tinta-70)">Cerca de 4 meses. Você fecha o diagnóstico dentro dos três grupos, integrando anamnese, exame físico e imagem. Fecha com uma imersão em Brasília, em paciente real.</p>
+            </div>
+          </div>
+          <div class="peca">
+            <span class="n" style="color:var(--navy)">02</span>
+            <div>
+              <h3 class="hl">Tratamento</h3>
+              <p style="color:var(--tinta-70)">Cerca de 4 a 5 meses. Você monta planos escalonados e executa, com as próprias mãos, os procedimentos conservadores e o protocolo de infiltração e dry needling, sob supervisão direta.</p>
+            </div>
+          </div>
+          <div class="peca">
+            <span class="n" style="color:var(--navy)">03</span>
+            <div>
+              <h3 class="hl">Comercial, Gestão e Marketing Básico</h3>
+              <p style="color:var(--tinta-70)">Cerca de 2 meses. Você conduz a consulta de avaliação como ato clínico e comercial, e controla os números do funil. Fecha com uma simulação completa de consulta, ao vivo, diante da turma.</p>
+            </div>
+          </div>
+        </div>
+        <p class="ficha-linha" style="margin-top:var(--gap-bloco)">Início em 1&ordm; de fevereiro de 2027 &middot; três viagens a Brasília: maio, outubro e novembro &middot; formatura em 29 de novembro de 2027 &middot; certificado de conclusão com carga horária</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · O CRITÉRIO (papel-2) · um bloco por item ============ -->
+<section class="dobra dobra--papel2 pad--curto" id="criterio">
+  <div class="wrap">
+    <header class="cab rev">
+      <span class="junta"></span>
+      <p class="rotulo rotulo--escuro">O critério</p>
+      <h2 class="hl">Duas dentistas muito diferentes cabem nesta turma</h2>
+      <p class="sub">A especialista que já opera, apara ou faz prótese e recebe DTM de rebote. A clínica geral que vive de restauração e canal e quer abrir uma frente nova. O critério abaixo é o que&nbsp;decide.</p>
+    </header>
+
+    <figure class="foto rev">
+      <div class="chapa chapa--faixa" style="--exp:1.12">
+        <img src="img/rodrigo-jardim-faixa-1600.jpg"
+             srcset="img/rodrigo-jardim-faixa-900.jpg 900w, img/rodrigo-jardim-faixa-1600.jpg 1600w"
+             sizes="(max-width:1240px) 100vw, 1116px"
+             width="1600" height="500" loading="lazy" decoding="async"
+             style="object-position:50% 34%"
+             alt="Dr. Rodrigo Wendel sentado ao ar livre, em jardim, olhando para a câmera">
+      </div>
+      <figcaption class="foto-legenda"><b>Dr. Rodrigo Wendel</b> <span>direção clínica da Academia DTM</span></figcaption>
+    </figure>
+
+    <div class="crit rev rev-2" style="margin-top:var(--gap-bloco)">
+      <div class="crit-col">
+        <p class="crit-k">É para você</p>
+        <ul class="crit-lista">
+          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Paciente com dor na mandíbula</span> senta na sua cadeira quase toda semana.</p></li>
+          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Já tratou como bruxismo</span>, teve resultado parcial e desconfia do protocolo.</p></li>
+          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Consultório rodando</span>, clínica geral ou outra especialidade, agenda cheia.</p></li>
+          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Disposição para viajar</span> a Brasília em três janelas do calendário 2027.</p></li>
+          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Quer executar com as próprias mãos</span>, sob supervisão, além da teoria.</p></li>
+        </ul>
+      </div>
+      <div class="crit-col crit-col--nao">
+        <p class="crit-k">Não é para você</p>
+        <ul class="crit-lista">
+          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Curso 100% gravado</span>, sem encontro ao vivo, é o que você procura.</p></li>
+          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Ainda não atende</span> com regularidade. Não tem cadeira para aplicar.</p></li>
+          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Título do CFO em dois anos</span> é outro formato, diferente deste.</p></li>
+          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Não pode viajar</span> nas três janelas presenciais do calendário 2027.</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 · QUEM CONDUZ (papel) · retrato que sangra + F8 ============ -->
+<section class="dobra dobra--papel pad" id="professor">
+  <div class="wrap">
+    <header class="cab rev">
+      <span class="junta"></span>
+      <p class="rotulo rotulo--escuro">Quem conduz</p>
+      <h2 class="hl">Dr. Rodrigo Wendel já perdeu o timing de um caso</h2>
+    </header>
+  </div>
+
+  <div class="sangra rev">
+    <figure class="foto">
+      <div class="chapa">
+        <img src="img/rodrigo-retrato-1400.jpg"
+             srcset="img/rodrigo-retrato-900.jpg 900w, img/rodrigo-retrato-1400.jpg 1400w"
+             sizes="(max-width:980px) 100vw, 42vw"
+             width="1400" height="1750" loading="lazy" decoding="async"
+             style="object-position:50% 22%"
+             alt="Dr. Rodrigo Wendel de braços cruzados, com jaqueta escura, em ambiente urbano">
+      </div>
+      <figcaption class="foto-legenda"><b>Dr. Rodrigo Wendel</b> <span>direção clínica da Academia DTM</span></figcaption>
+    </figure>
+    <div class="sangra-txt">
+      <div class="fw">{{F8}}</div>
+      <p class="ficha-linha" style="margin-top:var(--gap-bloco)">Graduação por universidade estadual &middot; mestrado por universidade federal &middot; período de treinamento em Zurique &middot; formou entre 100 e 120 especialistas em DTM no Brasil</p>
+    </div>
+  </div>
+
+  <div class="wrap rev rev-2" style="margin-top:var(--gap-bloco)">
+    <div class="col-texto">
+      <p class="txt-corpo">No começo da carreira, foi conservador demais em alguns casos. Perdeu o timing certo de intervir. Viu duas pacientes com o mesmo diagnóstico terem desfechos opostos. Uma teve sequela. A outra não. Só porque uma passou pelas mãos dele antes de ele ter o arsenal completo. Foi esse tipo de experiência, repetida por quase três décadas, que o levou a organizar o protocolo que agora ensina.</p>
+      <p class="txt-corpo">Ele não promete o que não pode entregar. A régua que aplica com o paciente é a mesma que aplica com quem se forma com ele: falar o que dá certo e o que não dá certo.</p>
+    </div>
+    <div class="cta-centro">
+      <a class="btn" href="#aplicacao">Aplicar para uma conversa de avaliação de vaga</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 · O QUE ESTÁ DENTRO (papel-2) ============ -->
+<section class="dobra dobra--papel2 pad--curto" id="dentro">
+  <div class="wrap">
+    <header class="cab rev">
+      <span class="junta"></span>
+      <p class="rotulo rotulo--escuro">O que está dentro</p>
+      <h2 class="hl">O que você recebe na turma fundadora</h2>
+    </header>
+
+    <figure class="foto rev">
+      <div class="chapa chapa--arsenal" style="--exp:1.03">
+        <img src="img/arsenal-bandeja-1536.jpg"
+             srcset="img/arsenal-bandeja-900.jpg 900w, img/arsenal-bandeja-1536.jpg 1536w"
+             sizes="(max-width:1240px) 100vw, 1116px"
+             width="1536" height="512" loading="lazy" decoding="async"
+             alt="Nove instrumentos clínicos e de fisioterapia enfileirados sobre papel creme, um deles marcado por uma fita fluorescente">
+      </div>
+      <figcaption class="foto-legenda"><b>O arsenal terapêutico da formação</b> <span>Ilustração gerada</span></figcaption>
+    </figure>
+
+    <div class="dentro rev rev-2" style="margin-top:var(--gap-bloco)">
+      <div class="item">
+        <span class="selo-num">01</span>
+        <div>
+          <h3 class="hl">Currículo completo</h3>
+          <p>43 encontros ao longo de 10 meses. Diagnóstico, tratamento escalonado e comercial básico.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="selo-num">02</span>
+        <div>
+          <h3 class="hl">3 imersões presenciais em Brasília</h3>
+          <p>8 dias de prática hands-on, na clínica real do Dr. Wendel, sob supervisão direta.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="selo-num">03</span>
+        <div>
+          <h3 class="hl">Shadowing na clínica real</h3>
+          <p>2 dias acompanhando a rotina clínica, comercial e de gestão dele de perto, em duplas ou trios. Exclusivo da turma fundadora.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="selo-num">04</span>
+        <div>
+          <h3 class="hl">Banco de casos clínicos reais comentados</h3>
+          <p>Comentados pelo Dr. Wendel, incluindo o raciocínio de procedimentos que a formação ensina a indicar mesmo sem executar.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="selo-num">05</span>
+        <div>
+          <h3 class="hl">Kit de Ativação Imediata</h3>
+          <p>Ficha de anamnese, scripts de recepção e roteiro de devolutiva, liberados antes do primeiro encontro.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="selo-num">06</span>
+        <div>
+          <h3 class="hl">DTM Para Todos</h3>
+          <p>Curso introdutório de 9 aulas, recebido antes mesmo da decisão de aplicar.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="selo-num">07</span>
+        <div>
+          <h3 class="hl">Reconhecimento de turma fundadora</h3>
+          <p>E prioridade de vaga na mentoria de continuidade, quando ela abrir.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="selo-num">08</span>
+        <div>
+          <h3 class="hl">Certificado de conclusão</h3>
+          <p>Com carga horária ao final da formação.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="txt-corpo rev" style="margin-top:var(--gap-bloco);max-width:66ch">O investimento e as condições de pagamento são apresentados na conversa de avaliação de vaga, junto com o restante da proposta.</p>
+  </div>
+</section>
+
+<!-- ============ 09 · A VAGA (tinta) · contador de octógonos ============ -->
+<section class="dobra dobra--tinta sobre-navy pad" id="vaga">
+  <div class="wrap">
+    <header class="cab rev">
+      <span class="junta junta--claro"></span>
+      <p class="rotulo">A vaga</p>
+      <h2 class="hl">Entre 8 e 12 vagas. O limite é a supervisão</h2>
+    </header>
+
+    <div class="teto rev">
+      <div>
+        <p class="num-gigante">8&ndash;12</p>
+        <p class="num-legenda">vagas na turma fundadora<br>o teto vem da capacidade de supervisão</p>
+        <div class="contador">{{CONTADOR}}</div>
+      </div>
+      <div>
+        <p class="txt-corpo txt-def">A execução de infiltração anestésica e dry needling em paciente real exige supervisão individual apertada. A disponibilidade de pacientes elegíveis, dentro da janela de cada imersão, é limitada.</p>
+        <p class="txt-corpo" style="margin-top:var(--e-5)">Rodar a estação em duplas ou trios reduz a pressão sobre esse número, mas não remove o teto. Uma turma maior do que a capacidade real de supervisão significa parte da turma sem executar o que foi prometido. Esta formação não vende essa promessa.</p>
+        <p class="txt-corpo"><b>Não existe contagem regressiva. Não existe &ldquo;últimas vagas&rdquo; fabricada. A vaga se encerra quando o número de alunos matriculados atinge o teto real da turma.</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 · PERGUNTAS (papel) ============ -->
+<section class="dobra dobra--papel pad" id="perguntas">
+  <div class="wrap">
+    <header class="cab rev">
+      <span class="junta"></span>
+      <p class="rotulo rotulo--escuro">Perguntas</p>
+      <h2 class="hl">Perguntas que toda dentista nesta posição já se fez</h2>
+      <p class="num-gigante" style="margin-top:var(--e-5)">07</p>
+      <p class="num-legenda">perguntas que aparecem em toda conversa de avaliação</p>
+    </header>
+
+    <div class="faq rev rev-2" id="faq">
+      <details open>
+        <summary>Minha cidade tem paciente de DTM suficiente para justificar essa formação?<span class="sinal" aria-hidden="true"></span></summary>
+        <div class="resp">
+          <p>Uma meta-análise com quase 21 mil participantes encontrou DTM em 29,5% da população, e em 36,7% das mulheres. O volume já está na sua agenda atual. Falta o protocolo para reconhecer o caso.</p>
+          <p class="credito">Fonte: Alqutaibi et al., 2025, Journal of Oral &amp; Facial Pain and Headache</p>
+        </div>
+      </details>
+      <details>
+        <summary>Curso online ensina odontologia de verdade?<span class="sinal" aria-hidden="true"></span></summary>
+        <div class="resp"><p>Esta não é uma formação 100% online. São 3 imersões presenciais obrigatórias, na clínica do Dr. Wendel, em Brasília, com prática hands-on em paciente real.</p></div>
+      </details>
+      <details>
+        <summary>Qual é o investimento?<span class="sinal" aria-hidden="true"></span></summary>
+        <div class="resp"><p>O investimento é apresentado na conversa de avaliação de vaga, junto com o restante da proposta. A conversa não compromete a nada.</p></div>
+      </details>
+      <details>
+        <summary>Já fiz uma pós-graduação e não voltou o investimento. Por que essa seria diferente?<span class="sinal" aria-hidden="true"></span></summary>
+        <div class="resp"><p>Porque a maioria das pós-graduações entrega só a técnica clínica. Viver de DTM entrega a técnica somada ao percurso comercial completo: cobrar, converter e reter.</p></div>
+      </details>
+      <details>
+        <summary>Não tenho tempo. Já sou sobrecarregada. Como encaixo isso na rotina?<span class="sinal" aria-hidden="true"></span></summary>
+        <div class="resp"><p>O formato é um encontro semanal, ao vivo. O ganho comercial começa nas primeiras semanas.</p></div>
+      </details>
+      <details>
+        <summary>Prefiro presencial, aprender fazendo. Isso aqui é assim?<span class="sinal" aria-hidden="true"></span></summary>
+        <div class="resp"><p>As 3 imersões existem para isso. Cada uma fecha uma etapa com prática supervisionada e validação ao vivo, em paciente real.</p></div>
+      </details>
+      <details>
+        <summary>Não quero virar especialista, só parar de encaminhar o paciente que já está na minha cadeira. Serve pra mim?<span class="sinal" aria-hidden="true"></span></summary>
+        <div class="resp"><p>Sim. Serve tanto a quem quer se tornar referência quanto a quem só quer parar de devolver o caso que já senta na própria cadeira toda semana.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11 · A APLICAÇÃO · O CLÍMAX (navy) ============ -->
+<section class="dobra dobra--navy sobre-navy pad--climax" id="aplicacao">
+  <div class="wrap">
+    <header class="cab rev">
+      <span class="junta junta--claro"></span>
+      <p class="rotulo">A aplicação</p>
+      <h2 class="hl">O paciente que você trata como bruxismo já está na sua agenda desta semana</h2>
+      <p class="sub">Aplicar abre uma conversa sem compromisso. A compra, se acontecer, vem&nbsp;depois.</p>
+    </header>
+
+    <p class="txt-corpo txt-def col-texto rev" style="text-align:center;margin-bottom:var(--gap-bloco)">Viver de DTM é uma conversa, não um botão de compra. Aplicar leva três minutos e abre um processo de seis passos, sem custo em nenhum deles até a&nbsp;matrícula.</p>
+
+    <div class="aplic rev">
+      <div>
+        <div class="est-topo">
+          <p class="num-gigante">06</p>
+          <p class="num-legenda">estações entre a aplicação e a matrícula<br>nenhuma delas custa nada</p>
+        </div>
+      <ol class="estacoes">
+        <li class="estacao">
+          <span class="n">01</span>
+          <div>
+            <h4>Você aplica</h4>
+            <p>Formulário curto sobre sua rotina clínica, seus casos de DTM e sua disponibilidade para as três imersões.</p>
+          </div>
+        </li>
+        <li class="estacao">
+          <span class="n">02</span>
+          <div>
+            <h4>A equipe analisa o fit</h4>
+            <p>O critério é clínico. Nem toda aplicação vira convite para conversa.</p>
+          </div>
+        </li>
+        <li class="estacao">
+          <span class="n">03</span>
+          <div>
+            <h4>Você recebe a confirmação e agenda a conversa</h4>
+            <p>Um horário, com a equipe do Dr. Wendel.</p>
+          </div>
+        </li>
+        <li class="estacao">
+          <span class="n">04</span>
+          <div>
+            <h4>Conversa de avaliação de vaga</h4>
+            <p>Ao vivo, sobre a sua rotina e os casos que já passam pela sua cadeira. Sem roteiro de vendas, sem pressão na hora.</p>
+          </div>
+        </li>
+        <li class="estacao">
+          <span class="n">05</span>
+          <div>
+            <h4>Apresentação da proposta completa</h4>
+            <p>É aqui que o investimento e as condições de pagamento entram, com o contexto todo já construído.</p>
+          </div>
+        </li>
+        <li class="estacao">
+          <span class="n">06</span>
+          <div>
+            <h4>Sua decisão</h4>
+            <p>Sem prazo artificial imposto na ligação. A vaga se encerra quando a turma fecha.</p>
+          </div>
+        </li>
+      </ol>
+      </div>
+
+      <!-- FORMULÁRIO ESTÁTICO · sem backend nesta versão.
+           O wiring (endpoint, validação de servidor, anti-spam, redirecionamento
+           para a página de obrigado e integração com o CRM) entra na captação. -->
+      <form class="form-card" action="#" method="post" novalidate>
+        <p class="mono-k" style="color:var(--tinta-45);margin-bottom:var(--e-5)">Aplicação para conversa de avaliação de vaga</p>
+        <div class="form-grade">
+          <label class="campo">
+            <span class="rot">Nome completo</span>
+            <input type="text" name="nome" placeholder="Como assina em ficha clínica" autocomplete="name" required>
+          </label>
+          <label class="campo">
+            <span class="rot">WhatsApp</span>
+            <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" autocomplete="tel" required>
+          </label>
+          <label class="campo">
+            <span class="rot">E-mail</span>
+            <input type="email" name="email" placeholder="nome@clinica.com.br" autocomplete="email" required>
+          </label>
+          <label class="campo">
+            <span class="rot">O que você já vê na sua cadeira hoje?</span>
+            <textarea name="cadeira" rows="3" placeholder="Dor na mandíbula, estalo ao mastigar, dor de cabeça recorrente, desgaste nos dentes da frente: o que aparece e com que frequência." required></textarea>
+          </label>
+          <label class="campo">
+            <span class="rot">Pode viajar a Brasília em 3 janelas de 2027?</span>
+            <select name="imersoes" required>
+              <option value="">Selecione</option>
+              <option value="sim">Sim, consigo me comprometer com as 3 semanas</option>
+              <option value="conferir">Preciso conferir uma das três janelas</option>
+              <option value="nao">Não consigo viajar nas 3 janelas</option>
+            </select>
+          </label>
+          <button class="btn btn--bloco" type="submit">Aplicar para uma conversa de avaliação de vaga</button>
+        </div>
+        <p class="form-nota">Os dados são usados só para a conversa de avaliação de vaga da turma fundadora. Sem repasse a terceiros.</p>
+      </form>
+    </div>
+
+    <p class="txt-corpo col-texto rev" style="margin-top:var(--gap-bloco);text-align:center">Enquanto essa conversa não acontece, o paciente de DTM continua sentando na sua cadeira, do jeito que sempre sentou. Aplicar é o que muda&nbsp;isso.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ RODAPÉ (contrato §7) ============ -->
+<footer class="dobra dobra--tinta sobre-navy pad--curto">
+  <div class="wrap">
+    <div class="rod-cols">
+      <div>
+        <span class="lk lk--hz lk--neg" style="font-size:30px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span class="rule"></span>
+          <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+        </span>
+        <p style="font-size:var(--t-corpo);color:var(--papel-72);margin-top:var(--e-5);max-width:34ch;line-height:var(--lh-corpo)">Escola de DTM e dor orofacial para cirurgiões-dentistas. Direção clínica do Dr. Rodrigo Wendel.</p>
+      </div>
+      <div>
+        <div class="k">A formação</div>
+        <ul>
+          <li><a href="#virada">A virada</a></li>
+          <li><a href="#percurso">O percurso</a></li>
+          <li><a href="#dentro">O que está dentro</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="k">Antes de aplicar</div>
+        <ul>
+          <li><a href="#criterio">O critério</a></li>
+          <li><a href="#professor">Quem conduz</a></li>
+          <li><a href="#vaga">A vaga</a></li>
+          <li><a href="#perguntas">Perguntas</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="k">Turma fundadora</div>
+        <ul>
+          <li><a href="#aplicacao">Aplicar para uma conversa de avaliação de vaga</a></li>
+        </ul>
+        <p class="mono-k" style="color:var(--papel-72);margin-top:var(--e-4);line-height:1.9">Início em 1&ordm; de fevereiro de 2027<br>Formatura em 29 de novembro de 2027</p>
+      </div>
+    </div>
+    <p class="rod-legal">
+      Academia DTM &middot; Dr. Rodrigo Wendel &middot; todos os direitos reservados<br>
+      Viver de DTM &middot; formação anual em diagnóstico e tratamento de DTM &middot; Brasília
+    </p>
+  </div>
+</footer>
+
+<!-- barra fixa de celular · ds-paginas §5.2 -->
+<div class="barra-fixa" id="barra" aria-hidden="true">
+  <span class="t">Turma fundadora &middot; fevereiro de 2027<b>Entre 8 e 12 vagas</b></span>
+  <a class="btn btn--papel btn--curto" href="#aplicacao">Aplicar</a>
+</div>
+
+<script>
+(function(){
+  var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* revelação de dobra · um reveal por bloco, deslocamento curto.
+     A junta (gesto 01) se desenha junto: é o único movimento de assinatura da página.
+     A checagem é por posição no scroll, não por IntersectionObserver: um scroll
+     programático rápido (o do guard, o do "ir para o fim") coalesce os callbacks do
+     observer e deixa dobras em branco. Aqui, tudo que já passou pela linha de leitura
+     fica revelado, e o gatilho se desliga sozinho quando a lista acaba. */
+  var pend = [].slice.call(document.querySelectorAll('.rev'));
+  if (reduz) {
+    pend.forEach(function(el){ el.classList.add('vis'); });
+  } else {
+    var varrer = function(){
+      var lim = window.innerHeight * 0.92;
+      for (var i = pend.length - 1; i >= 0; i--) {
+        if (pend[i].getBoundingClientRect().top < lim) {
+          pend[i].classList.add('vis'); pend.splice(i, 1);
+        }
+      }
+      if (!pend.length) {
+        window.removeEventListener('scroll', varrer);
+        window.removeEventListener('resize', varrer);
+      }
+    };
+    window.addEventListener('scroll', varrer, { passive: true });
+    window.addEventListener('resize', varrer);
+    varrer();
+  }
+
+  /* âncora com rolagem suave · só no clique, nunca no scroll programático */
+  document.addEventListener('click', function(ev){
+    var a = ev.target.closest && ev.target.closest('a[href^="#"]');
+    if (!a) return;
+    var alvo = document.querySelector(a.getAttribute('href'));
+    if (!alvo) return;
+    ev.preventDefault();
+    alvo.scrollIntoView({ behavior: reduz ? 'auto' : 'smooth', block: 'start' });
+  });
+
+  /* barra fixa de celular: aparece depois da hero e some quando o formulário entra na tela */
+  var barra = document.querySelector('#barra');
+  var hero  = document.querySelector('.hero');
+  var form  = document.querySelector('#aplicacao');
+  if (barra && hero && form && 'IntersectionObserver' in window) {
+    var heroFora = false, formNaTela = false;
+    function pinta(){
+      var on = heroFora && !formNaTela;
+      barra.classList.toggle('on', on);
+      barra.setAttribute('aria-hidden', on ? 'false' : 'true');
+    }
+    new IntersectionObserver(function(e){ heroFora = !e[0].isIntersecting; pinta(); },
+      { threshold: 0 }).observe(hero);
+    new IntersectionObserver(function(e){ formNaTela = e[0].isIntersecting; pinta(); },
+      { threshold: 0 }).observe(form);
+  }
+})();
+</script>
+</body>
+</html>

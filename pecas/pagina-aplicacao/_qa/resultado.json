@@ -1,0 +1,219 @@
+{
+ "1440": {
+  "fonts": {
+   "Archivo": true,
+   "Hanken Grotesk": true,
+   "Space Mono": true
+  },
+  "docScroll": {
+   "sw": 1440,
+   "cw": 1440
+  },
+  "bodyScroll": {
+   "sw": 1440,
+   "cw": 1440
+  },
+  "overflowEls": [
+   {
+    "tag": "use",
+    "cls": "[object SVGAnimatedString]",
+    "left": 1165,
+    "right": 1497
+   }
+  ],
+  "scrollers": [
+   {
+    "tag": "SECTION",
+    "cls": "dobra dobra--navy sobre-navy hero",
+    "sw": 1541,
+    "cw": 1440,
+    "ox": "hidden"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "junta junta--claro",
+    "sw": 156,
+    "cw": 104,
+    "ox": "visible"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "junta junta--claro",
+    "sw": 156,
+    "cw": 104,
+    "ox": "visible"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "junta junta--claro",
+    "sw": 156,
+    "cw": 104,
+    "ox": "visible"
+   }
+  ],
+  "smallTargets": [],
+  "h1": {
+   "fontSize": "78px",
+   "w": 926,
+   "h": 159,
+   "lines": 2
+  },
+  "heroH": 880,
+  "ctaBottom": 785,
+  "vh": 900
+ },
+ "390": {
+  "fonts": {
+   "Archivo": true,
+   "Hanken Grotesk": true,
+   "Space Mono": true
+  },
+  "docScroll": {
+   "sw": 390,
+   "cw": 390
+  },
+  "bodyScroll": {
+   "sw": 390,
+   "cw": 390
+  },
+  "overflowEls": [
+   {
+    "tag": "use",
+    "cls": "[object SVGAnimatedString]",
+    "left": 257,
+    "right": 398
+   },
+   {
+    "tag": "TABLE",
+    "cls": "tab",
+    "left": 20,
+    "right": 660
+   },
+   {
+    "tag": "THEAD",
+    "cls": "",
+    "left": 20,
+    "right": 660
+   },
+   {
+    "tag": "TR",
+    "cls": "",
+    "left": 20,
+    "right": 660
+   },
+   {
+    "tag": "TH",
+    "cls": "",
+    "left": 181,
+    "right": 493
+   },
+   {
+    "tag": "TH",
+    "cls": "num",
+    "left": 493,
+    "right": 660
+   },
+   {
+    "tag": "TBODY",
+    "cls": "",
+    "left": 20,
+    "right": 660
+   },
+   {
+    "tag": "TR",
+    "cls": "",
+    "left": 20,
+    "right": 660
+   },
+   {
+    "tag": "TD",
+    "cls": "",
+    "left": 181,
+    "right": 493
+   },
+   {
+    "tag": "TD",
+    "cls": "num",
+    "left": 493,
+    "right": 660
+   },
+   {
+    "tag": "TR",
+    "cls": "",
+    "left": 20,
+    "right": 660
+   },
+   {
+    "tag": "TD",
+    "cls": "",
+    "left": 181,
+    "right": 493
+   },
+   {
+    "tag": "TD",
+    "cls": "num",
+    "left": 493,
+    "right": 660
+   },
+   {
+    "tag": "TR",
+    "cls": "",
+    "left": 20,
+    "right": 660
+   },
+   {
+    "tag": "TD",
+    "cls": "",
+    "left": 181,
+    "right": 493
+   }
+  ],
+  "scrollers": [
+   {
+    "tag": "SECTION",
+    "cls": "dobra dobra--navy sobre-navy hero",
+    "sw": 417,
+    "cw": 390,
+    "ox": "hidden"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "junta junta--claro",
+    "sw": 156,
+    "cw": 104,
+    "ox": "visible"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "junta junta--claro",
+    "sw": 156,
+    "cw": 104,
+    "ox": "visible"
+   },
+   {
+    "tag": "SPAN",
+    "cls": "junta junta--claro",
+    "sw": 156,
+    "cw": 104,
+    "ox": "visible"
+   },
+   {
+    "tag": "DIV",
+    "cls": "rolo-in",
+    "sw": 640,
+    "cw": 350,
+    "ox": "auto"
+   }
+  ],
+  "smallTargets": [],
+  "h1": {
+   "fontSize": "34px",
+   "w": 350,
+   "h": 69,
+   "lines": 2
+  },
+  "heroH": 784,
+  "ctaBottom": 707,
+  "vh": 844
+ }
+}

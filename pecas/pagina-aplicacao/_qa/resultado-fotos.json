@@ -1,0 +1,124 @@
+{
+ "1440": {
+  "docScroll": {
+   "sw": 1440,
+   "cw": 1440
+  },
+  "overflowEls": [
+   {
+    "tag": "use",
+    "cls": "[object SVGAnimatedString]"
+   }
+  ],
+  "smallTargets": [],
+  "imgs": [
+   {
+    "src": "rodrigo-arsenal-900.jpg",
+    "ok": true,
+    "box": "356x445",
+    "estoura": false,
+    "lazy": "eager"
+   },
+   {
+    "src": "rodrigo-retrato-900.jpg",
+    "ok": true,
+    "box": "445x556",
+    "estoura": false,
+    "lazy": "eager"
+   }
+  ],
+  "chapas": [
+   {
+    "cls": "chapa chapa--retrato",
+    "w": 356,
+    "h": 445,
+    "estoura": false
+   },
+   {
+    "cls": "chapa chapa--retrato",
+    "w": 445,
+    "h": 556,
+    "estoura": false
+   }
+  ]
+ },
+ "390": {
+  "docScroll": {
+   "sw": 390,
+   "cw": 390
+  },
+  "overflowEls": [
+   {
+    "tag": "use",
+    "cls": "[object SVGAnimatedString]"
+   },
+   {
+    "tag": "TABLE",
+    "cls": "tab"
+   },
+   {
+    "tag": "THEAD",
+    "cls": ""
+   },
+   {
+    "tag": "TR",
+    "cls": ""
+   },
+   {
+    "tag": "TH",
+    "cls": ""
+   },
+   {
+    "tag": "TH",
+    "cls": "num"
+   },
+   {
+    "tag": "TBODY",
+    "cls": ""
+   },
+   {
+    "tag": "TR",
+    "cls": ""
+   },
+   {
+    "tag": "TD",
+    "cls": ""
+   },
+   {
+    "tag": "TD",
+    "cls": "num"
+   }
+  ],
+  "smallTargets": [],
+  "imgs": [
+   {
+    "src": "rodrigo-arsenal-900.jpg",
+    "ok": true,
+    "box": "320x400",
+    "estoura": false,
+    "lazy": "eager"
+   },
+   {
+    "src": "rodrigo-retrato-900.jpg",
+    "ok": true,
+    "box": "350x438",
+    "estoura": false,
+    "lazy": "eager"
+   }
+  ],
+  "chapas": [
+   {
+    "cls": "chapa chapa--retrato",
+    "w": 320,
+    "h": 400,
+    "estoura": false
+   },
+   {
+    "cls": "chapa chapa--retrato",
+    "w": 350,
+    "h": 438,
+    "estoura": false
+   }
+  ]
+ }
+}

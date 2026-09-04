@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<script>document.documentElement.className+=" js";</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Viver de DTM &middot; Formação em Diagnóstico e Tratamento de DTM &middot; Academia DTM</title>
@@ -12,21 +13,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&family=Hanken+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   VIVER DE DTM · PÁGINA DE APLICAÇÃO · Academia DTM · V3 · 03/09/2026
+   VIVER DE DTM · PÁGINA DE APLICAÇÃO · Academia DTM · V4 · 04/09/2026
    Tokens de outputs/brandbook-academia-dtm/_contrato.md §2.
-   Frameworks colados de kit-frameworks/svg/ na versão v2 (F9, F1, F5, F3, F4, F8).
-   Copy canônica: produto/copy-pagina-aplicacao-v3.md (11 dobras, nenhuma frase reescrita).
+   Copy canônica: produto/copy-pagina-aplicacao-v4.md (11 dobras).
+   Frameworks: os do kit v2 (guarda-chuva, martelo único, escada, percurso) mais
+   quatro desenhados aqui — os números do Rodrigo em dois recortes, as três
+   camadas, o teto de supervisão e os dois perfis. Nenhum código "F#" na tela.
 
    ---- A DECISÃO, ANTES DO HTML ----------------------------------
    ESTILO ........... o do brandbook: caderno de atas de sociedade científica
                       atravessado por uma fita fluorescente de marcação de exame.
    O QUE DIFERENCIA . não existe preço nesta página, e ela diz isso na cara:
-                      o clímax não é uma tabela de valores, é o mapa das seis
-                      estações que separam a aplicação da matrícula. A leitora
-                      sabe exatamente o que acontece depois de clicar.
+                      o clímax não é uma tabela de valores, são os três passos
+                      que separam a aplicação da matrícula. O leitor sabe
+                      exatamente o que acontece depois de clicar.
    ASSINATURA ....... a JUNTA (dois filetes, o segundo deslocado 50% e 7px abaixo)
-                      abre TODA dobra e é a única coisa que se move: ela se desenha
-                      da esquerda para a direita quando a dobra entra na tela.
+                      abre TODA dobra: ela se desenha da esquerda para a direita
+                      quando a dobra entra na tela, junto com o traço dos SVGs.
    PROIBIDO ......... azul-e-branco dental com dente estilizado · contador regressivo
                       e selo de desconto de lançamento · dashboard de startup.
 
@@ -37,20 +40,26 @@
    SENSAÇÃO ..... «isso é uma escola, e essa gente mede o que fala» — a calma
                   cética de quem lê um laudo antes de decidir.
    GESTO ........ a JUNTA abrindo toda dobra + o octógono-janela, que vive dentro
-                  dos frameworks e volta como contador de vagas na dobra 9.
+                  de todos os frameworks e nos marcadores do critério.
    ANTI-REF ..... lançamento de infoproduto · clínica azul-e-branco com dente
                   estilizado · dashboard de startup.
-   APOSTA ....... uma página de cinco dígitos sem nenhum número em reais. O clímax
-                  é o processo, não o preço: seis estações desenhadas, com a
-                  promessa de que nenhuma delas custa nada até a matrícula.
+   APOSTA ....... uma página de cinco dígitos sem nenhum número em reais, que
+                  abre pela cena do leitor em vez de abrir pelo dado de mercado.
 
-   ---- RÉGUA DE ACABAMENTO DESTA VERSÃO (v3) ----------------------
+   ---- RÉGUA DE ACABAMENTO DESTA VERSÃO (v4) ----------------------
    1. Corpo nunca abaixo de 17px; rótulo e legenda nunca abaixo de 12px.
-   2. Parágrafo com line-height 1.7 e medida entre 62ch e 66ch.
+      Dentro de SVG, nenhum texto abaixo de 15 unidades.
+   2. Parágrafo com line-height 1.7 e medida entre 58ch e 66ch.
    3. Respiro interno de card >= 28px (>= 22px no celular); colunas com 48px+.
-   4. Texto nunca sobre linha, filete, foto, framework ou outro texto: toda
-      legenda de foto saiu de cima da imagem e virou linha abaixo dela.
-   5. Nenhum valor em reais em lugar nenhum da página.
+   4. Texto nunca sobre linha, filete, foto, framework ou outro texto, nem em
+      HTML nem dentro de SVG. Legenda de foto é sempre linha abaixo da imagem.
+   5. Nenhum valor em reais, nenhum número de vagas e nenhuma menção a mentoria.
+   6. Todo número tem a âncora no próprio bloco: os +92% e os ≈3.000 pacientes
+      são do atendimento voluntário (17 anos, 1x/semana, banco-de-historias.md),
+      e o framework diz isso na rubrica, não num card vizinho.
+   7. Motion: só transform, opacity e stroke-dashoffset; nada em laço; a página
+      para depois de ~700ms; prefers-reduced-motion zera tudo. Sem JS, tudo
+      visível (o gate é a classe .js no <html>).
    ============================================================ */
 :root{
   /* cor · base */
@@ -63,6 +72,7 @@
   --fluor:#CDF23F;
   --cobalto:#2C4BFF;
   --menta:#12D9A0;
+  --carmim:#B23A2E;
   /* cor · derivadas */
   --papel-72:rgba(244,243,236,.78);
   --papel-45:rgba(244,243,236,.56);
@@ -75,7 +85,7 @@
   --corpo:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif;
   --mono:"Space Mono",ui-monospace,SFMono-Regular,monospace;
   /* escala tipográfica · piso de 17px no corpo e 12px no rótulo */
-  --t-hero:clamp(34px,4.3vw,63px);
+  --t-hero:clamp(33px,3.9vw,56px);
   --t-h2:clamp(27px,3.1vw,45px);
   --t-h3:clamp(21px,2.4vw,30px);
   --t-corpo:17px;
@@ -286,7 +296,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 @media(max-width:720px){.cab{margin-bottom:var(--e-6)}.cab .junta,.cab .rotulo{margin-bottom:var(--e-4)}}
 
 /* ---------- frameworks do kit (kit-frameworks §00) ---------- */
-.fw{--fw-cor:#101C46;width:100%;margin-inline:auto}
+.fw{--fw-cor:#101C46;width:100%;max-width:100%;min-width:0;margin-inline:auto}
 .sobre-navy .fw{--fw-cor:#F4F3EC}
 .fw svg{width:100%;height:auto}
 .fw-legenda{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
@@ -303,6 +313,13 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 .num-gigante{font-family:var(--display);font-weight:800;font-size:clamp(72px,8.4vw,116px);
   letter-spacing:-.05em;line-height:.88;color:var(--navy);font-variant-numeric:tabular-nums}
 .sobre-navy .num-gigante{color:var(--papel)}
+.dado-par{display:flex;flex-direction:column;gap:var(--e-6)}
+.dado-par .junta{margin-bottom:var(--e-1)}
+.dado .num-gigante{font-size:clamp(58px,6.6vw,92px)}
+.dado .num-legenda{margin-top:var(--e-3);max-width:22ch}
+@media(max-width:640px){.dado-par{flex-direction:row;flex-wrap:wrap;gap:var(--e-6) var(--e-7)}
+  .dado-par .junta{flex-basis:100%}}
+.fw--teto{width:100%;max-width:min(440px,100%)}
 .num-legenda{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
   color:var(--tinta-45);margin-top:var(--e-4);line-height:1.75}
 .sobre-navy .num-legenda{color:var(--fluor)}
@@ -321,8 +338,21 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 .hero-copy h1.hero-h{margin-top:var(--e-6)}
 .hero-copy .linha-cta{margin-top:var(--e-7)}
 .hero-copy .mono-k{margin-top:var(--e-5);color:var(--papel-72)}
+/* o octógono-janela como placa: dá corpo à coluna direita da hero sem competir
+   com o H1 (fundo um passo acima do navy, fio hairline, nenhum texto sobre o fio) */
+.janela{position:relative;padding:clamp(20px,1.9vw,26px)}
+.janela::before,.janela::after{content:"";position:absolute;z-index:0;pointer-events:none;
+  clip-path:polygon(28px 0,calc(100% - 28px) 0,100% 28px,100% calc(100% - 28px),
+    calc(100% - 28px) 100%,28px 100%,0 calc(100% - 28px),0 28px)}
+.janela::before{inset:0;background:rgba(244,243,236,.20)}
+.janela::after{inset:1.5px;background:linear-gradient(158deg,#1B2A63 0%,#101C46 68%)}
+.janela > *{position:relative;z-index:1}
+.hero-tira{display:none}
+@media(max-width:980px){.hero-tira{display:block;width:100%;max-width:340px;margin:var(--e-5) auto 0}
+  .hero-tira svg{--fw-cor:#F4F3EC}}
 .hero-fw{align-self:center}
-.hero-fw .fw{max-width:460px}
+.hero-fw .janela{width:100%}
+.hero-fw .fw{max-width:100%}
 @media(max-width:980px){
   .hero{min-height:min(calc(100svh - var(--topo)),780px)}
   .hero-in{grid-template-columns:1fr;gap:0;padding-top:var(--e-6);padding-bottom:var(--e-6)}
@@ -382,7 +412,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 
 /* ---------- fotografia · a chapa (contrato §3.6 + ds-paginas bloco 07) ----------
    Mudança da v3: NENHUM texto vive sobre a foto. Nome, crédito e selo de
-   ilustração gerada saem da imagem e viram uma linha de legenda abaixo dela. */
+   de foto saem de cima da imagem e viram uma linha de legenda abaixo dela. */
 .foto{margin:0}
 .chapa{position:relative;overflow:hidden;border-radius:var(--r-2);isolation:isolate;background:var(--navy)}
 .chapa img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
@@ -396,13 +426,15 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 .chapa--dezesseis9{aspect-ratio:16/9}
 .chapa--faixa{aspect-ratio:16/4.4}
 .chapa--arsenal{aspect-ratio:4/1}
+.chapa--banda{aspect-ratio:16/5.5}
 .foto-legenda{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;margin-top:var(--e-4);
   font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   color:var(--tinta-45);line-height:1.6}
 .sobre-navy .foto-legenda{color:var(--papel-45)}
 .foto-legenda b{color:var(--navy);font-weight:700}
 .sobre-navy .foto-legenda b{color:var(--fluor)}
-@media(max-width:640px){.chapa--faixa{aspect-ratio:16/7}.chapa--arsenal{aspect-ratio:2.4/1}}
+@media(max-width:640px){.chapa--faixa{aspect-ratio:16/7}.chapa--arsenal{aspect-ratio:2.4/1}
+  .chapa--banda{aspect-ratio:16/9}}
 
 /* ---------- 06 · o critério · um bloco por item ---------- */
 .crit{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-col)}
@@ -412,12 +444,13 @@ ul.lista li b{color:var(--tinta);font-weight:600}
   line-height:1.5}
 .crit-col--nao .crit-k{color:var(--tinta-45);border-bottom-color:var(--tinta-45)}
 .crit-lista{list-style:none;display:grid;gap:var(--e-3)}
-.crit-item{display:grid;grid-template-columns:20px minmax(0,1fr);gap:var(--e-4);align-items:start;
+.crit-item{display:grid;grid-template-columns:24px minmax(0,1fr);gap:var(--e-4);align-items:start;
   background:rgba(244,243,236,.62);border:1px solid var(--linha-escura);border-radius:var(--r-1);
-  padding:var(--pad-card)}
-.crit-item .mk{width:14px;height:14px;margin-top:6px;background:var(--navy);
-  clip-path:polygon(29.3% 0,70.7% 0,100% 29.3%,100% 70.7%,70.7% 100%,29.3% 100%,0 70.7%,0 29.3%)}
-.crit-col--nao .crit-item .mk{background:none;box-shadow:inset 0 0 0 2px var(--tinta-45)}
+  padding:var(--pad-card);transition:border-color var(--d-micro) var(--ease),background var(--d-micro) var(--ease)}
+.crit-item:hover{background:rgba(244,243,236,.94);border-color:rgba(18,217,160,.55)}
+.crit-col--nao .crit-item:hover{border-color:rgba(178,58,46,.42)}
+.crit-item .mk{width:24px;height:24px;margin-top:2px;display:block;flex:none}
+.crit-item .mk--nao{color:var(--carmim)}
 .crit-item p{font-size:var(--t-corpo);line-height:var(--lh-corpo);color:var(--tinta-70);text-wrap:pretty}
 .crit-item .hl-acc{color:var(--navy)}
 .crit-col--nao .crit-item .hl-acc{color:var(--tinta)}
@@ -430,7 +463,8 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 .sangra .foto{display:flex;flex-direction:column}
 .sangra .foto-legenda{padding-left:max(20px,calc((100% - var(--largura))/2 + var(--e-6)));padding-right:var(--e-4)}
 .sangra-txt{display:flex;flex-direction:column;justify-content:center}
-.sangra .fw{max-width:480px;margin-left:0}
+.sangra .fw{max-width:min(480px,100%)}
+@media(min-width:721px){.sangra .fw{margin-left:0}}
 @media(max-width:980px){
   .sangra{grid-template-columns:1fr;padding-right:0;gap:var(--e-7)}
   .sangra .chapa{aspect-ratio:16/10;min-height:0;border-radius:0}
@@ -440,6 +474,22 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 .ficha-linha{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
   color:var(--tinta-45);line-height:2;padding-top:var(--e-5);border-top:1px solid var(--linha-escura)}
 .sobre-navy .ficha-linha{color:var(--papel-45);border-top-color:var(--linha-clara)}
+.ficha-linha--acc{color:var(--navy);border-top:0;padding-top:var(--e-4)}
+
+/* carta do expert · primeira pessoa, medida estreita */
+.carta{display:grid;grid-template-columns:minmax(0,34fr) minmax(0,66fr);gap:var(--gap-col);
+  align-items:start;margin-top:var(--e-9)}
+@media(max-width:900px){.carta{grid-template-columns:1fr;gap:var(--e-7);margin-top:var(--e-8)}}
+.carta-foto .chapa{border-radius:var(--r-2)}
+.carta-txt{position:relative;max-width:60ch;padding-left:var(--e-6);
+  border-left:2px solid var(--fluor)}
+@media(max-width:900px){.carta-txt{padding-left:var(--e-5)}}
+.carta-txt .junta{margin-bottom:var(--e-5)}
+.carta-txt p{font-family:var(--corpo);font-size:var(--t-corpo-g);line-height:1.72;color:var(--tinta);
+  text-wrap:pretty}
+.carta-txt p + p{margin-top:var(--e-5)}
+.carta-txt cite{display:block;margin-top:var(--e-6);font-family:var(--mono);font-size:12px;
+  font-weight:700;letter-spacing:.15em;text-transform:uppercase;font-style:normal;color:var(--navy)}
 
 /* ---------- 08 · o que está dentro ---------- */
 .dentro{display:grid;grid-template-columns:1fr 1fr;gap:var(--e-6) var(--gap-col)}
@@ -481,7 +531,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 .faq .resp .credito{margin-top:var(--e-4)}
 @keyframes abre{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 
-/* ---------- 11 · aplicação · as seis estações ---------- */
+/* ---------- 11 · aplicação · os três passos ---------- */
 .aplic{display:grid;grid-template-columns:minmax(0,52fr) minmax(0,48fr);gap:var(--gap-col);align-items:start}
 @media(max-width:980px){.aplic{grid-template-columns:1fr;gap:var(--e-7)}}
 .estacoes{list-style:none;display:grid;gap:var(--e-3);position:relative}
@@ -545,11 +595,80 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 .ent{animation:sobe 620ms var(--ease) both}
 .ent-1{animation-delay:60ms}.ent-2{animation-delay:150ms}.ent-3{animation-delay:240ms}
 .ent-4{animation-delay:330ms}.ent-5{animation-delay:420ms}.ent-6{animation-delay:510ms}
-.rev{opacity:0;transform:translateY(18px);transition:opacity var(--d-reveal) var(--ease),transform var(--d-reveal) var(--ease)}
-.rev.vis{opacity:1;transform:none}
+.js .rev{opacity:0;transform:translateY(18px);transition:opacity var(--d-reveal) var(--ease),transform var(--d-reveal) var(--ease)}
+.js .rev.vis{opacity:1;transform:none}
 .rev-2{transition-delay:90ms}
+.rev-3{transition-delay:170ms}
+
+/* stagger fino dentro do bloco revelado · 45-55ms, só transform e opacity */
+.js .cab.rev > *{opacity:0;transform:translateY(9px);
+  transition:opacity var(--d-base) var(--ease),transform var(--d-base) var(--ease)}
+.js .cab.rev.vis > *{opacity:1;transform:none}
+.js .cab.rev.vis > *:nth-child(1){transition-delay:0ms}
+.js .cab.rev.vis > *:nth-child(2){transition-delay:55ms}
+.js .cab.rev.vis > *:nth-child(3){transition-delay:110ms}
+.js .cab.rev.vis > *:nth-child(4){transition-delay:165ms}
+.js .cab.rev.vis > *:nth-child(5){transition-delay:220ms}
+.js .rev .crit-item,.js .rev .estacao,.js .rev .item,.js .rev .peca{opacity:0;transform:translateY(12px);
+  transition:opacity var(--d-base) var(--ease),transform var(--d-base) var(--ease)}
+.js .rev.vis .crit-item,.js .rev.vis .estacao,.js .rev.vis .item,.js .rev.vis .peca{opacity:1;transform:none}
+.js .rev.vis .crit-item:nth-child(1){transition-delay:0ms}
+.js .rev.vis .crit-item:nth-child(2){transition-delay:45ms}
+.js .rev.vis .crit-item:nth-child(3){transition-delay:90ms}
+.js .rev.vis .estacao:nth-child(1){transition-delay:0ms}
+.js .rev.vis .estacao:nth-child(2){transition-delay:45ms}
+.js .rev.vis .estacao:nth-child(3){transition-delay:90ms}
+.js .rev.vis .item:nth-child(1){transition-delay:0ms}
+.js .rev.vis .item:nth-child(2){transition-delay:40ms}
+.js .rev.vis .item:nth-child(3){transition-delay:80ms}
+.js .rev.vis .item:nth-child(4){transition-delay:120ms}
+.js .rev.vis .item:nth-child(5){transition-delay:160ms}
+.js .rev.vis .item:nth-child(6){transition-delay:200ms}
+.js .rev.vis .item:nth-child(7){transition-delay:240ms}
+.js .rev.vis .item:nth-child(8){transition-delay:280ms}
+.js .rev.vis .peca:nth-child(1){transition-delay:0ms}
+.js .rev.vis .peca:nth-child(2){transition-delay:45ms}
+.js .rev.vis .peca:nth-child(3){transition-delay:90ms}
+
+/* entrada da hero · uma cascata só, termina em 700ms e para */
+.js .ent{transform:translateY(14px);transition:transform 420ms var(--ease)}
+.js.pronto .ent{transform:none}
+.js .ent-1{transition-delay:40ms} .js .ent-2{transition-delay:110ms}
+.js .ent-3{transition-delay:180ms} .js .ent-4{transition-delay:250ms}
+.js .ent-5{transition-delay:300ms}
+
+/* a cena do depois · medida estreita, o único bloco narrativo da página */
+.cena{max-width:min(100%,58ch);margin:var(--e-9) auto 0;padding-left:var(--e-6);
+  border-left:2px solid var(--fluor)}
+@media(max-width:900px){.cena{margin-top:var(--e-8);padding-left:var(--e-5)}}
+.cena .junta{margin-bottom:var(--e-5)}
+.cena p{font-family:var(--corpo);font-size:var(--t-corpo-g);line-height:1.72;color:var(--papel);
+  text-wrap:pretty}
+.cena p + p{margin-top:var(--e-5)}
+
+/* comparativo das três camadas */
+.cmp{margin-top:var(--e-8);display:flex;flex-direction:column;align-items:center;max-width:100%}
+.fw--cmp{width:100%;max-width:min(600px,100%)}
+.cmp .fw-legenda{text-align:center}
+
+/* micro-interação de estado · 180ms, deslocamento máximo de 2px */
+.faq summary{transition:color var(--d-micro) var(--ease),transform var(--d-micro) var(--ease)}
+.faq summary:hover{transform:translateX(2px)}
+.campo input,.campo select,.campo textarea{transition:border-color var(--d-micro) var(--ease),box-shadow var(--d-micro) var(--ease)}
+.item,.estacao{transition:transform var(--d-micro) var(--ease)}
+.dentro .item:hover,.estacoes .estacao:hover{transform:translateX(2px)}
+
+/* acordeão com altura animada de verdade, onde o motor suporta */
+@supports (interpolate-size:allow-keywords){
+  :root{interpolate-size:allow-keywords}
+  .js .faq details::details-content{height:0;overflow:clip;
+    transition:height var(--d-base) var(--ease),content-visibility var(--d-base) allow-discrete}
+  .js .faq details[open]::details-content{height:auto}
+}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}
-  .rev{opacity:1;transform:none}
+  .js .rev,.js .cab.rev > *,.js .rev .crit-item,.js .rev .estacao,.js .rev .item,.js .rev .peca,
+  .js .ent,.js .hero-fw{opacity:1!important;transform:none!important}
   .junta::after{transform:scaleX(1)!important}}
 </style>
 </head>
@@ -566,13 +685,21 @@ ul.lista li b{color:var(--tinta);font-weight:600}
     <line x1="28.53" y1="140.26" x2="28.53" y2="83.42" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
     <line x1="21.00" y1="77.93" x2="61.19" y2="37.74" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
   </symbol>
+  <symbol id="sim" viewBox="0 0 24 24">
+    <polygon points="7.5,1 16.5,1 23,7.5 23,16.5 16.5,23 7.5,23 1,16.5 1,7.5" fill="#12D9A0"/>
+    <path d="M6.6 12.3 L10.3 16 L17.5 8.6" fill="none" stroke="#0B0F1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="nao" viewBox="0 0 24 24">
+    <polygon points="7.5,1 16.5,1 23,7.5 23,16.5 16.5,23 7.5,23 1,16.5 1,7.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-opacity=".45"/>
+    <path d="M8.7 8.7 L15.3 15.3 M15.3 8.7 L8.7 15.3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
 </svg>
 
 <a class="pula" href="#aplicacao">Ir para a aplicação</a>
 
 <!-- ============ TARJA FIXA DO TOPO ============ -->
 <div class="tarja-topo">
-  <p class="in"><span>Turma fundadora &middot; início em 1&ordm; de fevereiro de 2027</span> <b>&middot; entre 8 e 12 vagas</b></p>
+  <p class="in"><span>Turma fundadora &middot; início em 2 de fevereiro de 2027</span> <b>&middot; vagas limitadas</b></p>
 </div>
 
 <!-- ============ CABEÇALHO ============ -->
@@ -615,59 +742,55 @@ ul.lista li b{color:var(--tinta);font-weight:600}
         </span>
       </div>
 
-      <h1 class="hero-h ent ent-2">Cerca de <span class="hl-acc">3 em cada 10</span> adultos têm&nbsp;DTM</h1>
-      <p class="credito ent ent-2">Fonte: Valesan et al., 2021, Clinical Oral Investigations</p>
+      <h1 class="hero-h ent ent-2">Já tem um paciente de DTM na sua <span class="hl-acc">agenda desta&nbsp;semana</span></h1>
 
-      <p class="sub ent ent-3">Boa parte já passa pela sua cadeira. Tratada como bruxismo, porque a formação de origem nunca ensinou a separar os dois&nbsp;quadros.</p>
+      <p class="sub ent ent-3">Cerca de 3 em cada 10 adultos têm DTM, e boa parte já passa pela sua cadeira. Tratada como bruxismo, porque a formação de origem nunca ensinou a separar os dois&nbsp;quadros.</p>
+      <p class="credito ent ent-3">Fonte: Valesan et al., 2021, Clinical Oral Investigations</p>
+
+      <div class="hero-tira ent ent-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 358 78" width="100%" role="img" aria-label="Três octógonos preenchidos em dez: cerca de 3 em cada 10 adultos têm DTM" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line class="tr" x1="10" y1="10" x2="74" y2="10" stroke="currentColor" stroke-width="2"/><line class="tr" x1="42" y1="14" x2="106" y2="14" stroke="#CDF23F" stroke-width="2"/>
+  <polygon points="17,36 27,36 34,43 34,53 27,60 17,60 10,53 10,43" fill="currentColor" fill-opacity="0.92"/>
+  <polygon points="53,36 63,36 70,43 70,53 63,60 53,60 46,53 46,43" fill="currentColor" fill-opacity="0.92"/>
+  <polygon points="89,36 99,36 106,43 106,53 99,60 89,60 82,53 82,43" fill="currentColor" fill-opacity="0.92"/>
+  <polygon points="125,36 135,36 142,43 142,53 135,60 125,60 118,53 118,43" fill="currentColor" fill-opacity="0.14"/>
+  <polygon points="161,36 171,36 178,43 178,53 171,60 161,60 154,53 154,43" fill="currentColor" fill-opacity="0.14"/>
+  <polygon points="197,36 207,36 214,43 214,53 207,60 197,60 190,53 190,43" fill="currentColor" fill-opacity="0.14"/>
+  <polygon points="233,36 243,36 250,43 250,53 243,60 233,60 226,53 226,43" fill="currentColor" fill-opacity="0.14"/>
+  <polygon points="269,36 279,36 286,43 286,53 279,60 269,60 262,53 262,43" fill="currentColor" fill-opacity="0.14"/>
+  <polygon points="305,36 315,36 322,43 322,53 315,60 305,60 298,53 298,43" fill="currentColor" fill-opacity="0.14"/>
+  <polygon points="341,36 351,36 358,43 358,53 351,60 341,60 334,53 334,43" fill="currentColor" fill-opacity="0.14"/>
+  <line class="tr" x1="10" y1="70" x2="106" y2="70" stroke="#CDF23F" stroke-width="5"/>
+</svg></div>
 
       <div class="linha-cta ent ent-4">
         <a class="btn btn--papel" href="#aplicacao">Aplicar para uma conversa de avaliação de vaga</a>
         <a class="btn btn--linha-clara" href="#percurso">Ver o percurso</a>
       </div>
-      <p class="mono-k ent ent-5">O paciente que você trata assim hoje já está na sua agenda desta semana</p>
+      <p class="mono-k ent ent-5">10 meses &middot; 43 encontros ao vivo &middot; 3&nbsp;imersões&nbsp;presenciais&nbsp;em&nbsp;Brasília</p>
     </div>
 
-    <div class="hero-fw ent ent-3">
-      <div class="fw"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 748" width="100%" role="img" aria-label="O dado de mercado: prevalência e insegurança diagnóstica" fill="none" style="color:var(--fw-cor,#101C46);display:block">
-  <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
-  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F9 · O DADO DE MERCADO</text>
-  <text x="40" y="134" font-family="Archivo, system-ui, sans-serif" font-size="25" font-weight="700" fill="currentColor" letter-spacing="-0.25" text-anchor="start">Cerca de 3 em cada 10 adultos</text>
-  <text x="40" y="160" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">têm disfunção temporomandibular</text>
-  <polygon points="54.13,196.00 69.87,196.00 81.00,207.13 81.00,222.87 69.87,234.00 54.13,234.00 43.00,222.87 43.00,207.13" fill="currentColor" fill-opacity="0.9"/>
-  <polygon points="106.13,196.00 121.87,196.00 133.00,207.13 133.00,222.87 121.87,234.00 106.13,234.00 95.00,222.87 95.00,207.13" fill="currentColor" fill-opacity="0.9"/>
-  <polygon points="158.13,196.00 173.87,196.00 185.00,207.13 185.00,222.87 173.87,234.00 158.13,234.00 147.00,222.87 147.00,207.13" fill="currentColor" fill-opacity="0.9"/>
-  <polygon points="210.13,196.00 225.87,196.00 237.00,207.13 237.00,222.87 225.87,234.00 210.13,234.00 199.00,222.87 199.00,207.13" fill="currentColor" fill-opacity="0.12"/>
-  <polygon points="262.13,196.00 277.87,196.00 289.00,207.13 289.00,222.87 277.87,234.00 262.13,234.00 251.00,222.87 251.00,207.13" fill="currentColor" fill-opacity="0.12"/>
-  <polygon points="314.13,196.00 329.87,196.00 341.00,207.13 341.00,222.87 329.87,234.00 314.13,234.00 303.00,222.87 303.00,207.13" fill="currentColor" fill-opacity="0.12"/>
-  <polygon points="366.13,196.00 381.87,196.00 393.00,207.13 393.00,222.87 381.87,234.00 366.13,234.00 355.00,222.87 355.00,207.13" fill="currentColor" fill-opacity="0.12"/>
-  <polygon points="418.13,196.00 433.87,196.00 445.00,207.13 445.00,222.87 433.87,234.00 418.13,234.00 407.00,222.87 407.00,207.13" fill="currentColor" fill-opacity="0.12"/>
-  <polygon points="470.13,196.00 485.87,196.00 497.00,207.13 497.00,222.87 485.87,234.00 470.13,234.00 459.00,222.87 459.00,207.13" fill="currentColor" fill-opacity="0.12"/>
-  <polygon points="522.13,196.00 537.87,196.00 549.00,207.13 549.00,222.87 537.87,234.00 522.13,234.00 511.00,222.87 511.00,207.13" fill="currentColor" fill-opacity="0.12"/>
-  <line x1="40" y1="248" x2="190" y2="248" stroke="#CDF23F" stroke-width="7"/>
-  <text x="40" y="274" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">VALESAN ET AL., 2021</text>
-  <text x="40" y="294" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">CLINICAL ORAL INVESTIGATIONS</text>
-  <line x1="40" y1="330" x2="560" y2="330" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-  <text x="40" y="382" font-family="Archivo, system-ui, sans-serif" font-size="25" font-weight="700" fill="currentColor" letter-spacing="-0.25" text-anchor="start">61% desconhecem o DC/TMD</text>
-  <text x="40" y="408" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">o critério diagnóstico internacional</text>
-  <rect x="40" y="432" width="520" height="26" fill="currentColor" fill-opacity="0.12"/>
-  <rect x="40" y="432" width="317" height="26" fill="currentColor" fill-opacity="0.85"/>
-  <text x="40" y="490" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">PRABHAKAR ET AL., 2024</text>
-  <text x="40" y="510" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">AMOSTRA DE 310 DENTISTAS, ÍNDIA</text>
-  <line x1="40" y1="546" x2="560" y2="546" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-  <text x="40" y="598" font-family="Archivo, system-ui, sans-serif" font-size="25" font-weight="700" fill="currentColor" letter-spacing="-0.25" text-anchor="start">Cerca de 4 em cada 10 clínicos gerais</text>
-  <text x="40" y="624" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">não se sentem confiantes para conduzir um caso</text>
-  <polygon points="54.13,654.00 69.87,654.00 81.00,665.13 81.00,680.87 69.87,692.00 54.13,692.00 43.00,680.87 43.00,665.13" fill="currentColor" fill-opacity="0.9"/>
-  <polygon points="106.13,654.00 121.87,654.00 133.00,665.13 133.00,680.87 121.87,692.00 106.13,692.00 95.00,680.87 95.00,665.13" fill="currentColor" fill-opacity="0.9"/>
-  <polygon points="158.13,654.00 173.87,654.00 185.00,665.13 185.00,680.87 173.87,692.00 158.13,692.00 147.00,680.87 147.00,665.13" fill="currentColor" fill-opacity="0.9"/>
-  <polygon points="210.13,654.00 225.87,654.00 237.00,665.13 237.00,680.87 225.87,692.00 210.13,692.00 199.00,680.87 199.00,665.13" fill="currentColor" fill-opacity="0.9"/>
-  <polygon points="262.13,654.00 277.87,654.00 289.00,665.13 289.00,680.87 277.87,692.00 262.13,692.00 251.00,680.87 251.00,665.13" fill="currentColor" fill-opacity="0.12"/>
-  <polygon points="314.13,654.00 329.87,654.00 341.00,665.13 341.00,680.87 329.87,692.00 314.13,692.00 303.00,680.87 303.00,665.13" fill="currentColor" fill-opacity="0.12"/>
-  <polygon points="366.13,654.00 381.87,654.00 393.00,665.13 393.00,680.87 381.87,692.00 366.13,692.00 355.00,680.87 355.00,665.13" fill="currentColor" fill-opacity="0.12"/>
-  <polygon points="418.13,654.00 433.87,654.00 445.00,665.13 445.00,680.87 433.87,692.00 418.13,692.00 407.00,680.87 407.00,665.13" fill="currentColor" fill-opacity="0.12"/>
-  <polygon points="470.13,654.00 485.87,654.00 497.00,665.13 497.00,680.87 485.87,692.00 470.13,692.00 459.00,680.87 459.00,665.13" fill="currentColor" fill-opacity="0.12"/>
-  <polygon points="522.13,654.00 537.87,654.00 549.00,665.13 549.00,680.87 537.87,692.00 522.13,692.00 511.00,680.87 511.00,665.13" fill="currentColor" fill-opacity="0.12"/>
-  <text x="40" y="726" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">PRABHAKAR ET AL., 2024</text>
+    <div class="hero-fw">
+      <div class="janela">
+      <div class="fw"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 508" width="100%" role="img" aria-label="Prevalência de DTM na população adulta: cerca de 3 em cada 10 adultos têm disfunção temporomandibular, representados por três octógonos preenchidos em dez. Fonte: Valesan e colaboradores, 2021, Clinical Oral Investigations." fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line class="tr" x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line class="tr" x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
+  <text x="40" y="92" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">PREVAL&#202;NCIA DE DTM NA POPULA&#199;&#195;O ADULTA</text>
+  <text x="40" y="152" font-family="Archivo, system-ui, sans-serif" font-size="30" font-weight="700" fill="currentColor" letter-spacing="-0.3" text-anchor="start">Cerca de 3 em cada 10 adultos</text>
+  <text x="40" y="184" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="19" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">têm disfunção temporomandibular</text>
+  <polygon points="62.3,224 93.7,224 116,246.3 116,277.7 93.7,300 62.3,300 40,277.7 40,246.3" fill="currentColor" fill-opacity="0.9"/>
+  <polygon points="162.3,224 193.7,224 216,246.3 216,277.7 193.7,300 162.3,300 140,277.7 140,246.3" fill="currentColor" fill-opacity="0.9"/>
+  <polygon points="262.3,224 293.7,224 316,246.3 316,277.7 293.7,300 262.3,300 240,277.7 240,246.3" fill="currentColor" fill-opacity="0.9"/>
+  <polygon points="362.3,224 393.7,224 416,246.3 416,277.7 393.7,300 362.3,300 340,277.7 340,246.3" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="462.3,224 493.7,224 516,246.3 516,277.7 493.7,300 462.3,300 440,277.7 440,246.3" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="62.3,324 93.7,324 116,346.3 116,377.7 93.7,400 62.3,400 40,377.7 40,346.3" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="162.3,324 193.7,324 216,346.3 216,377.7 193.7,400 162.3,400 140,377.7 140,346.3" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="262.3,324 293.7,324 316,346.3 316,377.7 293.7,400 262.3,400 240,377.7 240,346.3" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="362.3,324 393.7,324 416,346.3 416,377.7 393.7,400 362.3,400 340,377.7 340,346.3" fill="currentColor" fill-opacity="0.12"/>
+  <polygon points="462.3,324 493.7,324 516,346.3 516,377.7 493.7,400 462.3,400 440,377.7 440,346.3" fill="currentColor" fill-opacity="0.12"/>
+  <line class="tr" x1="40" y1="424" x2="316" y2="424" stroke="#CDF23F" stroke-width="8"/>
+  <text x="40" y="462" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.2" text-anchor="start" opacity="0.6">VALESAN ET AL., 2021</text>
+  <text x="40" y="484" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.2" text-anchor="start" opacity="0.6">CLINICAL ORAL INVESTIGATIONS</text>
 </svg></div>
+      </div>
     </div>
   </div>
 </section>
@@ -677,14 +800,19 @@ ul.lista li b{color:var(--tinta);font-weight:600}
   <div class="wrap">
     <header class="cab rev">
       <span class="junta"></span>
-      <p class="rotulo rotulo--escuro">A formação</p>
       <h2 class="hl">Um percurso de 10 meses, não um curso gravado</h2>
     </header>
     <div class="ficha-3 rev rev-2">
-      <div>
+      <div class="dado-par">
         <span class="junta"></span>
-        <p class="num-gigante" style="margin-top:var(--e-5)">10</p>
-        <p class="num-legenda">43 encontros ao vivo<br>3 imersões em Brasília</p>
+        <div class="dado">
+          <p class="num-gigante" data-conta="43">43</p>
+          <p class="num-legenda">encontros ao vivo, online</p>
+        </div>
+        <div class="dado">
+          <p class="num-gigante" data-conta="3">3</p>
+          <p class="num-legenda">imersões presenciais (Brasília)</p>
+        </div>
       </div>
       <div>
         <p class="txt-corpo txt-def" style="max-width:52ch">Viver de DTM é a formação do Dr. Rodrigo Wendel para dentistas que já atendem, mas confundem sinal de bruxismo com sinal de DTM. Encontros semanais ao vivo. Três imersões presenciais na clínica dele, em Brasília. Prática supervisionada em paciente real.</p>
@@ -698,7 +826,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
                width="1100" height="733" loading="lazy" decoding="async"
                alt="Ficha de anamnese impressa em papel creme, quatro caixas assinaladas em tinta navy e uma fita fluorescente marcando uma linha">
         </div>
-        <figcaption class="foto-legenda"><b>A ficha de anamnese do protocolo</b> <span>Ilustração gerada</span></figcaption>
+        <figcaption class="foto-legenda"><b>A ficha de anamnese do protocolo</b></figcaption>
       </figure>
     </div>
 
@@ -706,7 +834,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
       <div><div class="k">O que é</div><div class="v">Formação anual de 10 meses</div><div class="d">Para o cirurgião-dentista que já tem consultório rodando.</div></div>
       <div><div class="k">Direção clínica</div><div class="v">Dr. Rodrigo Wendel</div><div class="d">Cerca de 30 anos de atuação clínica em DTM e Dor Orofacial.</div></div>
       <div><div class="k">Formato</div><div class="v">43 encontros &middot; 3 imersões</div><div class="d">8 dias de prática hands-on em Brasília ao longo do ano.</div></div>
-      <div><div class="k">Turma fundadora</div><div class="v">1&ordm; de fevereiro de 2027</div><div class="d">Formatura em 29 de novembro de 2027.</div></div>
+      <div><div class="k">Turma fundadora</div><div class="v">2 de fevereiro de 2027</div><div class="d">Formatura em novembro de 2027.</div></div>
     </div>
   </div>
 </section>
@@ -716,7 +844,6 @@ ul.lista li b{color:var(--tinta);font-weight:600}
   <div class="wrap">
     <header class="cab rev">
       <span class="junta"></span>
-      <p class="rotulo rotulo--escuro">O ponto cego</p>
       <h2 class="hl">DTM é um guarda-chuva. Tem <span class="hl-acc">cerca de dez</span> diagnósticos dentro dele</h2>
     </header>
 
@@ -736,7 +863,6 @@ ul.lista li b{color:var(--tinta);font-weight:600}
       <div>
         <div class="fw" style="max-width:480px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 478" width="100%" role="img" aria-label="Guarda-chuva da DTM: três grupos, cerca de dez diagnósticos" fill="none" style="color:var(--fw-cor,#101C46);display:block">
   <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
-  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F1 · O GUARDA-CHUVA DA DTM</text>
   <text x="300" y="134" font-family="Archivo, system-ui, sans-serif" font-size="48" font-weight="800" fill="currentColor" letter-spacing="-1.92" text-anchor="middle">DTM</text>
   <path d="M 80 224 Q 300 76 520 224" stroke="currentColor" stroke-width="2.5"/>
   <path d="M 80 224 Q 300 76 520 224" stroke="#CDF23F" stroke-width="7" stroke-dasharray="112 2000" stroke-dashoffset="-165"/>
@@ -776,7 +902,6 @@ ul.lista li b{color:var(--tinta);font-weight:600}
   <div class="wrap">
     <header class="cab rev">
       <span class="junta junta--claro"></span>
-      <p class="rotulo">A virada</p>
       <h2 class="hl">Quem só tem martelo trata tudo como prego</h2>
       <p class="sub">DTM pede o arsenal&nbsp;inteiro.</p>
     </header>
@@ -789,7 +914,6 @@ ul.lista li b{color:var(--tinta);font-weight:600}
       <div>
         <div class="fw" style="max-width:480px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 552" width="100%" role="img" aria-label="O Martelo Único contra o arsenal terapêutico" fill="none" style="color:var(--fw-cor,#101C46);display:block">
   <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
-  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F5 · O MARTELO ÚNICO E O ARSENAL</text>
   <line x1="330" y1="110" x2="330" y2="430" stroke="currentColor" stroke-width="1.5" opacity="0.28"/>
   <line x1="330" y1="250" x2="330" y2="370" stroke="#CDF23F" stroke-width="2.5"/>
   <text x="40" y="128" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="2" text-anchor="start" opacity="0.75">O MARTELO ÚNICO</text>
@@ -854,12 +978,10 @@ ul.lista li b{color:var(--tinta);font-weight:600}
             </div>
           </div>
         </div>
-        <p class="txt-corpo" style="margin-top:var(--gap-bloco)">Diagnóstico, tratamento e negócio na mesma trilha. Cursos gravados param no diagnóstico. Especializações tradicionais chegam à prática, mas em dois anos, sem a camada de negócio.</p>
       </div>
       <div>
         <div class="fw" style="max-width:480px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 792" width="100%" role="img" aria-label="A escada terapêutica: do conservador ao invasivo" fill="none" style="color:var(--fw-cor,#101C46);display:block">
   <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
-  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F3 · A ESCADA TERAPÊUTICA</text>
   <rect x="40" y="408" width="360" height="120" fill="currentColor" fill-opacity="0.07" stroke="currentColor" stroke-width="1.5"/>
   <text x="60" y="438" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="17" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.55">01</text>
   <text x="60" y="468" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Conservador</text>
@@ -892,8 +1014,53 @@ ul.lista li b{color:var(--tinta);font-weight:600}
       </div>
     </div>
 
-    <div class="cta-centro rev">
-      <a class="btn btn--papel" href="#percurso">Ver como o percurso é organizado</a>
+
+    <div class="cmp rev">
+      <div class="fw fw--cmp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 530" width="100%" role="img" aria-label="As três camadas: curso gravado cobre só o diagnóstico, a especialização tradicional cobre diagnóstico e tratamento, e Viver de DTM cobre diagnóstico, tratamento e negócio" fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line class="tr" x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line class="tr" x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
+  <text x="40" y="100" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="start">Curso gravado</text>
+  <line class="tr" x1="74" y1="132" x2="115" y2="132" stroke="currentColor" stroke-width="1.5" opacity="0.38"/>
+  <line class="tr" x1="149" y1="132" x2="190" y2="132" stroke="currentColor" stroke-width="1.5" opacity="0.38"/>
+  <polygon points="49.5,115 64.5,115 74,124.5 74,139.5 64.5,149 49.5,149 40,139.5 40,124.5" fill="currentColor" fill-opacity="0.88"/>
+  <text x="57" y="137" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="#0B0F1A" opacity="1" letter-spacing="0.5" text-anchor="middle">01</text>
+  <polygon points="124.5,115 139.5,115 149,124.5 149,139.5 139.5,149 124.5,149 115,139.5 115,124.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-opacity="0.38"/>
+  <text x="132" y="137" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" opacity="0.45" letter-spacing="0.5" text-anchor="middle">02</text>
+  <polygon points="199.5,115 214.5,115 224,124.5 224,139.5 214.5,149 199.5,149 190,139.5 190,124.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-opacity="0.38"/>
+  <text x="207" y="137" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" opacity="0.45" letter-spacing="0.5" text-anchor="middle">03</text>
+  <text x="40" y="176" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.66">para no diagnóstico</text>
+  <text x="40" y="236" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="start">Especialização tradicional</text>
+  <line class="tr" x1="74" y1="268" x2="115" y2="268" stroke="currentColor" stroke-width="1.5" opacity="0.38"/>
+  <line class="tr" x1="149" y1="268" x2="190" y2="268" stroke="currentColor" stroke-width="1.5" opacity="0.38"/>
+  <polygon points="49.5,251 64.5,251 74,260.5 74,275.5 64.5,285 49.5,285 40,275.5 40,260.5" fill="currentColor" fill-opacity="0.88"/>
+  <text x="57" y="273" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="#0B0F1A" opacity="1" letter-spacing="0.5" text-anchor="middle">01</text>
+  <polygon points="124.5,251 139.5,251 149,260.5 149,275.5 139.5,285 124.5,285 115,275.5 115,260.5" fill="currentColor" fill-opacity="0.88"/>
+  <text x="132" y="273" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="#0B0F1A" opacity="1" letter-spacing="0.5" text-anchor="middle">02</text>
+  <polygon points="199.5,251 214.5,251 224,260.5 224,275.5 214.5,285 199.5,285 190,275.5 190,260.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-opacity="0.38"/>
+  <text x="207" y="273" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" opacity="0.45" letter-spacing="0.5" text-anchor="middle">03</text>
+  <text x="40" y="312" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.66">chega à prática, mas em dois anos, sem a camada de negócio</text>
+  <text x="40" y="372" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="start">Viver de DTM</text>
+  <line class="tr" x1="74" y1="404" x2="115" y2="404" stroke="currentColor" stroke-width="1.5" opacity="0.38"/>
+  <line class="tr" x1="149" y1="404" x2="190" y2="404" stroke="currentColor" stroke-width="1.5" opacity="0.38"/>
+  <polygon points="49.5,387 64.5,387 74,396.5 74,411.5 64.5,421 49.5,421 40,411.5 40,396.5" fill="#CDF23F"/>
+  <text x="57" y="409" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="#0B0F1A" opacity="1" letter-spacing="0.5" text-anchor="middle">01</text>
+  <polygon points="124.5,387 139.5,387 149,396.5 149,411.5 139.5,421 124.5,421 115,411.5 115,396.5" fill="#CDF23F"/>
+  <text x="132" y="409" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="#0B0F1A" opacity="1" letter-spacing="0.5" text-anchor="middle">02</text>
+  <polygon points="199.5,387 214.5,387 224,396.5 224,411.5 214.5,421 199.5,421 190,411.5 190,396.5" fill="#CDF23F"/>
+  <text x="207" y="409" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="#0B0F1A" opacity="1" letter-spacing="0.5" text-anchor="middle">03</text>
+  <text x="40" y="448" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.66">diagnóstico, tratamento e negócio na mesma trilha</text>
+  <line class="tr" x1="40" y1="486" x2="560" y2="486" stroke="currentColor" stroke-width="1" opacity="0.28"/>
+  <text x="40" y="512" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">01 DIAGNÓSTICO</text>
+  <text x="230" y="512" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">02 TRATAMENTO</text>
+  <text x="420" y="512" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.6">03 NEGÓCIO</text>
+</svg></div>
+      <p class="fw-legenda">As três camadas &middot; onde cada formato para</p>
+    </div>
+
+    <div class="cena rev">
+      <span class="junta junta--claro"></span>
+      <p>É a mesma semana. O mesmo paciente que você trataria como bruxismo senta na sua&nbsp;cadeira.</p>
+      <p>Você não pede a placa. Você abre a ficha, apalpa o masseter, mede a abertura, pergunta quando o estalo mudou de lado. Antes de ele levantar, você já sabe qual dos três grupos está na frente, e diz o nome do quadro em voz&nbsp;alta.</p>
+      <p>Ele não sai da sua sala com o telefone de outro profissional. Sai com um plano, e com a próxima consulta marcada com&nbsp;você.</p>
     </div>
   </div>
 </section>
@@ -903,19 +1070,17 @@ ul.lista li b{color:var(--tinta);font-weight:600}
   <div class="wrap">
     <header class="cab rev">
       <span class="junta"></span>
-      <p class="rotulo rotulo--escuro">O percurso</p>
-      <h2 class="hl">Dez meses. Três etapas encadeadas</h2>
-      <p class="sub">43 encontros ao vivo, mais 3 imersões presenciais&nbsp;obrigatórias.</p>
+      <h2 class="hl">O caso de DTM <span class="hl-acc">para de sair da sua cadeira</span></h2>
+      <p class="sub">Dez meses em três etapas encadeadas, com 43 encontros ao vivo e 3 imersões presenciais&nbsp;obrigatórias.</p>
     </header>
 
     <div class="dor rev">
       <div>
         <div class="fw" style="max-width:480px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 830" width="100%" role="img" aria-label="O percurso da formação: dez meses em três etapas" fill="none" style="color:var(--fw-cor,#101C46);display:block">
   <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
-  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F4 · O PERCURSO DA FORMAÇÃO</text>
   <line x1="96" y1="118" x2="96" y2="690" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
   <polygon points="91.45,117.00 100.55,117.00 107.00,123.45 107.00,132.55 100.55,139.00 91.45,139.00 85.00,132.55 85.00,123.45" fill="currentColor" fill-opacity="0.28"/>
-  <text x="140" y="120" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">1º DE FEVEREIRO DE 2027</text>
+  <text x="140" y="120" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">2 DE FEVEREIRO DE 2027</text>
   <text x="140" y="146" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Abertura da turma</text>
   <polygon points="91.45,185.00 100.55,185.00 107.00,191.45 107.00,200.55 100.55,207.00 91.45,207.00 85.00,200.55 85.00,191.45" fill="currentColor" fill-opacity="0.28"/>
   <text x="140" y="188" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">ETAPA 1</text>
@@ -939,7 +1104,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
   <text x="140" y="598" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">Encontros 36 a 43</text>
   <polygon points="88.13,627.00 103.87,627.00 115.00,638.13 115.00,653.87 103.87,665.00 88.13,665.00 77.00,653.87 77.00,638.13" fill="#CDF23F"/>
   <polygon points="88.13,627.00 103.87,627.00 115.00,638.13 115.00,653.87 103.87,665.00 88.13,665.00 77.00,653.87 77.00,638.13" stroke="currentColor" stroke-width="1.5"/>
-  <text x="140" y="638" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">29 DE NOVEMBRO DE 2027</text>
+  <text x="140" y="638" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">NOVEMBRO DE 2027</text>
   <text x="140" y="664" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Imersão 3 · Formatura</text>
   <text x="140" y="688" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">apresentação de caso ao vivo</text>
   <line x1="40" y1="716" x2="560" y2="716" stroke="currentColor" stroke-width="1" opacity="0.3"/>
@@ -955,7 +1120,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 </svg></div>
       </div>
       <div>
-        <p class="txt-corpo txt-def">Cadência semanal. Encontros em grupo, online, mais 3 imersões na clínica do Dr. Wendel, em Brasília, somando 8 dias de prática hands-on. Turma fechada: você começa e termina com o mesmo grupo.</p>
+        <p class="txt-corpo txt-def">Cadência semanal, às terças-feiras. Encontros em grupo, online, mais 3 imersões na clínica do Dr. Wendel, em Brasília, somando 8 dias de prática hands-on. Turma fechada: você começa e termina com o mesmo grupo.</p>
         <div class="pecas" style="margin-top:var(--gap-bloco)">
           <div class="peca">
             <span class="n" style="color:var(--navy)">01</span>
@@ -979,7 +1144,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
             </div>
           </div>
         </div>
-        <p class="ficha-linha" style="margin-top:var(--gap-bloco)">Início em 1&ordm; de fevereiro de 2027 &middot; três viagens a Brasília: maio, outubro e novembro &middot; formatura em 29 de novembro de 2027 &middot; certificado de conclusão com carga horária</p>
+        <p class="ficha-linha" style="margin-top:var(--gap-bloco)">Início em 2 de fevereiro de 2027 &middot; três viagens a Brasília: maio, outubro e novembro &middot; formatura em novembro de 2027 &middot; certificado de conclusão com carga horária</p>
       </div>
     </div>
   </div>
@@ -990,54 +1155,59 @@ ul.lista li b{color:var(--tinta);font-weight:600}
   <div class="wrap">
     <header class="cab rev">
       <span class="junta"></span>
-      <p class="rotulo rotulo--escuro">O critério</p>
-      <h2 class="hl">Duas dentistas muito diferentes cabem nesta turma</h2>
-      <p class="sub">A especialista que já opera, apara ou faz prótese e recebe DTM de rebote. A clínica geral que vive de restauração e canal e quer abrir uma frente nova. O critério abaixo é o que&nbsp;decide.</p>
+      <h2 class="hl">Dois perfis muito diferentes cabem nesta turma</h2>
+      <p class="sub">Quem já opera, apara ou faz prótese e recebe DTM de rebote. E quem vive de restauração e canal na clínica geral e quer abrir uma frente nova. O critério abaixo é o que&nbsp;decide.</p>
     </header>
 
-    <figure class="foto rev">
-      <div class="chapa chapa--faixa" style="--exp:1.12">
-        <img src="img/rodrigo-jardim-faixa-1600.jpg"
-             srcset="img/rodrigo-jardim-faixa-900.jpg 900w, img/rodrigo-jardim-faixa-1600.jpg 1600w"
-             sizes="(max-width:1240px) 100vw, 1116px"
-             width="1600" height="500" loading="lazy" decoding="async"
-             style="object-position:50% 34%"
-             alt="Dr. Rodrigo Wendel sentado ao ar livre, em jardim, olhando para a câmera">
-      </div>
-      <figcaption class="foto-legenda"><b>Dr. Rodrigo Wendel</b> <span>direção clínica da Academia DTM</span></figcaption>
-    </figure>
+    <div class="cmp rev">
+      <div class="fw fw--cmp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 396" width="100%" role="img" aria-label="Dois perfis convergem para a mesma turma: quem já é especialista e opera, apara ou faz prótese e recebe DTM de rebote; e quem vive de restauração e canal na clínica geral e quer abrir uma frente nova." fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line class="tr" x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line class="tr" x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
+  <line class="tr" x1="140" y1="244" x2="272" y2="292" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+  <line class="tr" x1="460" y1="244" x2="328" y2="292" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+  <polygon points="128.4,82 151.6,82 168,98.4 168,121.6 151.6,138 128.4,138 112,121.6 112,98.4" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="1.6" stroke-opacity="0.55"/>
+  <text x="140" y="118" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="1.4" text-anchor="middle">01</text>
+  <text x="140" y="176" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="middle">Já é especialista</text>
+  <text x="140" y="202" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="middle" opacity="0.66">opera, apara ou faz prótese</text>
+  <text x="140" y="224" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="middle" opacity="0.66">e recebe DTM de rebote</text>
+  <polygon points="448.4,82 471.6,82 488,98.4 488,121.6 471.6,138 448.4,138 432,121.6 432,98.4" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-width="1.6" stroke-opacity="0.55"/>
+  <text x="460" y="118" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="1.4" text-anchor="middle">02</text>
+  <text x="460" y="176" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="middle">Clínica geral</text>
+  <text x="460" y="202" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="middle" opacity="0.66">vive de restauração e canal</text>
+  <text x="460" y="224" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="middle" opacity="0.66">e quer abrir uma frente nova</text>
+  <polygon points="288.4,284 311.6,284 328,300.4 328,323.6 311.6,340 288.4,340 272,323.6 272,300.4" fill="#CDF23F"/>
+  <polygon points="288.4,284 311.6,284 328,300.4 328,323.6 311.6,340 288.4,340 272,323.6 272,300.4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <text x="300" y="372" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="middle">A mesma turma</text>
+</svg></div>
+    </div>
 
     <div class="crit rev rev-2" style="margin-top:var(--gap-bloco)">
       <div class="crit-col">
         <p class="crit-k">É para você</p>
         <ul class="crit-lista">
-          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Paciente com dor na mandíbula</span> senta na sua cadeira quase toda semana.</p></li>
-          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Já tratou como bruxismo</span>, teve resultado parcial e desconfia do protocolo.</p></li>
-          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Consultório rodando</span>, clínica geral ou outra especialidade, agenda cheia.</p></li>
-          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Disposição para viajar</span> a Brasília em três janelas do calendário 2027.</p></li>
-          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Quer executar com as próprias mãos</span>, sob supervisão, além da teoria.</p></li>
+          <li class="crit-item"><svg class="mk mk--sim" viewBox="0 0 24 24" aria-hidden="true"><use href="#sim"/></svg><p><span class="hl-acc">Paciente com dor na mandíbula</span> senta na sua cadeira quase toda semana, e você precisa encaminhar</p></li>
+          <li class="crit-item"><svg class="mk mk--sim" viewBox="0 0 24 24" aria-hidden="true"><use href="#sim"/></svg><p>Consultório rodando, clínica geral ou outra especialidade, agenda cheia, mas <span class="hl-acc">bateu em um teto de faturamento</span></p></li>
+          <li class="crit-item"><svg class="mk mk--sim" viewBox="0 0 24 24" aria-hidden="true"><use href="#sim"/></svg><p><span class="hl-acc">Disposição para três viagens</span> a Brasília em 2027</p></li>
         </ul>
       </div>
       <div class="crit-col crit-col--nao">
         <p class="crit-k">Não é para você</p>
         <ul class="crit-lista">
-          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Curso 100% gravado</span>, sem encontro ao vivo, é o que você procura.</p></li>
-          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Ainda não atende</span> com regularidade. Não tem cadeira para aplicar.</p></li>
-          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Título do CFO em dois anos</span> é outro formato, diferente deste.</p></li>
-          <li class="crit-item"><span class="mk" aria-hidden="true"></span><p><span class="hl-acc">Não pode viajar</span> nas três janelas presenciais do calendário 2027.</p></li>
+          <li class="crit-item"><svg class="mk mk--nao" viewBox="0 0 24 24" aria-hidden="true"><use href="#nao"/></svg><p>Procura <span class="hl-acc">curso 100% gravado</span>, sem prática presencial</p></li>
+          <li class="crit-item"><svg class="mk mk--nao" viewBox="0 0 24 24" aria-hidden="true"><use href="#nao"/></svg><p>Busca o <span class="hl-acc">título do CFO em dois anos</span>, ao invés da competência teórico-prática em 10 meses</p></li>
+          <li class="crit-item"><svg class="mk mk--nao" viewBox="0 0 24 24" aria-hidden="true"><use href="#nao"/></svg><p>Acredita que tudo deve ser resolvido com <span class="hl-acc">uma única técnica</span></p></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 07 · QUEM CONDUZ (papel) · retrato que sangra + F8 ============ -->
+<!-- ============ 07 · QUEM CONDUZ (papel) · retrato que sangra + carreira em números ============ -->
 <section class="dobra dobra--papel pad" id="professor">
   <div class="wrap">
     <header class="cab rev">
       <span class="junta"></span>
-      <p class="rotulo rotulo--escuro">Quem conduz</p>
-      <h2 class="hl">Dr. Rodrigo Wendel já perdeu o timing de um caso</h2>
+      <h2 class="hl">Dr. Rodrigo Wendel</h2>
+      <p class="sub">Direção clínica da Academia DTM. Cerca de 30 anos de prática em DTM e dor&nbsp;orofacial.</p>
     </header>
   </div>
 
@@ -1054,35 +1224,51 @@ ul.lista li b{color:var(--tinta);font-weight:600}
       <figcaption class="foto-legenda"><b>Dr. Rodrigo Wendel</b> <span>direção clínica da Academia DTM</span></figcaption>
     </figure>
     <div class="sangra-txt">
-      <div class="fw"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 656" width="100%" role="img" aria-label="A carreira do Dr. Rodrigo Wendel em números" fill="none" style="color:var(--fw-cor,#101C46);display:block">
-  <line x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
-  <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F8 · A CARREIRA EM NÚMEROS</text>
-  <text x="40" y="214" font-family="Archivo, system-ui, sans-serif" font-size="124" font-weight="800" fill="currentColor" letter-spacing="-5" text-anchor="start">+92%</text>
-  <line x1="40" y1="240" x2="316" y2="240" stroke="#CDF23F" stroke-width="8"/>
-  <text x="40" y="278" font-family="Archivo, system-ui, sans-serif" font-size="25" font-weight="700" fill="currentColor" letter-spacing="-0.25" text-anchor="start">de melhora sem cirurgia</text>
-  <text x="40" y="304" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">nem intervenção nos dentes</text>
-  <line x1="40" y1="344" x2="560" y2="344" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-  <text x="40" y="404" font-family="Archivo, system-ui, sans-serif" font-size="44" font-weight="800" fill="currentColor" letter-spacing="-1.76" text-anchor="start">≈30</text>
-  <text x="40" y="430" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">anos de prática clínica</text>
-  <text x="310" y="404" font-family="Archivo, system-ui, sans-serif" font-size="44" font-weight="800" fill="currentColor" letter-spacing="-1.76" text-anchor="start">17</text>
-  <text x="310" y="430" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">anos de atendimento voluntário</text>
-  <text x="40" y="508" font-family="Archivo, system-ui, sans-serif" font-size="44" font-weight="800" fill="currentColor" letter-spacing="-1.76" text-anchor="start">≈3.000</text>
-  <text x="40" y="534" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">pacientes atendidos</text>
-  <text x="310" y="508" font-family="Archivo, system-ui, sans-serif" font-size="44" font-weight="800" fill="currentColor" letter-spacing="-1.76" text-anchor="start">100 a 120</text>
-  <text x="310" y="534" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">especialistas formados</text>
-  <line x1="40" y1="600" x2="560" y2="600" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-  <text x="40" y="634" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="16" font-weight="700" fill="currentColor" letter-spacing="1" text-anchor="start" opacity="0.62">CERCA DE 10% DOS ESPECIALISTAS EM DTM DO BRASIL</text>
+      <div class="fw"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 566" width="100%" role="img" aria-label="Os números do Dr. Rodrigo Wendel em dois recortes. No atendimento voluntário de 17 anos, uma vez por semana: mais de 92 por cento de melhora sem cirurgia, em cerca de 3.000 pacientes acompanhados. No consultório e no ensino: cerca de 30 anos de prática clínica e cerca de 120 especialistas formados." fill="none" style="color:var(--fw-cor,#101C46);display:block">
+  <line class="tr" x1="40" y1="34" x2="144" y2="34" stroke="currentColor" stroke-width="2.5"/><line class="tr" x1="92" y1="39" x2="196" y2="39" stroke="#CDF23F" stroke-width="2.5"/>
+  <text x="40" y="88" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.66">NO ATENDIMENTO VOLUNT&#193;RIO</text>
+  <text x="40" y="110" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.66">17 ANOS, UMA VEZ POR SEMANA</text>
+  <text x="40" y="228" font-family="Archivo, system-ui, sans-serif" font-size="124" font-weight="800" fill="currentColor" letter-spacing="-5" text-anchor="start">+92%</text>
+  <line class="tr" x1="40" y1="264" x2="316" y2="264" stroke="#CDF23F" stroke-width="8"/>
+  <text x="40" y="296" font-family="Archivo, system-ui, sans-serif" font-size="25" font-weight="700" fill="currentColor" letter-spacing="-0.25" text-anchor="start">de melhora sem cirurgia</text>
+  <text x="40" y="322" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">nem intervenção nos dentes</text>
+  <text x="40" y="384" font-family="Archivo, system-ui, sans-serif" font-size="44" font-weight="800" fill="currentColor" letter-spacing="-1.76" text-anchor="start">&#8776;3.000</text>
+  <text x="40" y="410" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">pacientes acompanhados nesses 17 anos</text>
+  <line class="tr" x1="40" y1="450" x2="560" y2="450" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+  <text x="40" y="484" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.66">NO CONSULT&#211;RIO E NO ENSINO</text>
+  <text x="40" y="536" font-family="Archivo, system-ui, sans-serif" font-size="44" font-weight="800" fill="currentColor" letter-spacing="-1.76" text-anchor="start">&#8776;30</text>
+  <text x="40" y="562" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">anos de prática clínica</text>
+  <text x="310" y="536" font-family="Archivo, system-ui, sans-serif" font-size="44" font-weight="800" fill="currentColor" letter-spacing="-1.76" text-anchor="start">&#8776;120</text>
+  <text x="310" y="562" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="17" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.7">especialistas formados</text>
 </svg></div>
-      <p class="ficha-linha" style="margin-top:var(--gap-bloco)">Graduação por universidade estadual &middot; mestrado por universidade federal &middot; período de treinamento em Zurique &middot; formou entre 100 e 120 especialistas em DTM no Brasil</p>
+      <p class="ficha-linha" style="margin-top:var(--gap-bloco)">Graduação em Odontologia pela UNESP Araçatuba &middot; mestrado pela UNIFESP &middot;&nbsp;fellowship na Universidade de Zurique</p>
+      <p class="ficha-linha ficha-linha--acc">Cerca de 10% dos especialistas em DTM do Brasil aprenderam com o Dr. Rodrigo</p>
     </div>
   </div>
 
-  <div class="wrap rev rev-2" style="margin-top:var(--gap-bloco)">
-    <div class="col-texto">
-      <p class="txt-corpo">No começo da carreira, foi conservador demais em alguns casos. Perdeu o timing certo de intervir. Viu duas pacientes com o mesmo diagnóstico terem desfechos opostos. Uma teve sequela. A outra não. Só porque uma passou pelas mãos dele antes de ele ter o arsenal completo. Foi esse tipo de experiência, repetida por quase três décadas, que o levou a organizar o protocolo que agora ensina.</p>
-      <p class="txt-corpo">Ele não promete o que não pode entregar. A régua que aplica com o paciente é a mesma que aplica com quem se forma com ele: falar o que dá certo e o que não dá certo.</p>
+  <div class="wrap">
+    <div class="carta rev rev-2">
+      <figure class="foto carta-foto">
+        <div class="chapa chapa--retrato">
+          <img src="img/rodrigo-consultorio-900.jpg"
+               srcset="img/rodrigo-consultorio-560.jpg 560w, img/rodrigo-consultorio-900.jpg 900w"
+               sizes="(max-width:900px) 92vw, 34vw"
+               width="900" height="1125" loading="lazy" decoding="async"
+               style="object-position:50% 18%"
+               alt="Dr. Rodrigo Wendel de braços cruzados, ao lado da cadeira do próprio consultório">
+        </div>
+        <figcaption class="foto-legenda"><b>Na clínica, em Brasília</b> <span>onde acontecem as três imersões</span></figcaption>
+      </figure>
+      <blockquote class="carta-txt">
+        <span class="junta"></span>
+        <p>&ldquo;No começo da carreira eu já fui conservador demais em alguns casos. Perdi o timing certo de intervir e vi duas pacientes com o mesmo diagnóstico terem desfechos opostos. Uma teve sequela. A outra não.</p>
+        <p>A diferença entre elas foi que a primeira passou por mim antes de eu ter o arsenal completo. Foi esse tipo de experiência, repetida por quase três décadas, que me levou a organizar o protocolo que vou te ensinar&nbsp;agora.</p>
+        <p>A régua que aplico com o paciente é a mesma que aplico com quem se forma na Academia DTM: falar o que dá certo e o que não&nbsp;dá.&rdquo;</p>
+        <cite>Dr. Rodrigo Wendel</cite>
+      </blockquote>
     </div>
-    <div class="cta-centro">
+
+    <div class="cta-centro rev">
       <a class="btn" href="#aplicacao">Aplicar para uma conversa de avaliação de vaga</a>
     </div>
   </div>
@@ -1093,7 +1279,6 @@ ul.lista li b{color:var(--tinta);font-weight:600}
   <div class="wrap">
     <header class="cab rev">
       <span class="junta"></span>
-      <p class="rotulo rotulo--escuro">O que está dentro</p>
       <h2 class="hl"><span class="hl-acc">Só a turma fundadora</span> entra na clínica dele</h2>
       <p class="sub">Dois dias de shadowing na clínica real do Dr. Wendel &mdash; que some a partir da segunda&nbsp;turma.</p>
     </header>
@@ -1106,7 +1291,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
              width="1536" height="512" loading="lazy" decoding="async"
              alt="Nove instrumentos clínicos e de fisioterapia enfileirados sobre papel creme, um deles marcado por uma fita fluorescente">
       </div>
-      <figcaption class="foto-legenda"><b>O arsenal terapêutico da formação</b> <span>Ilustração gerada</span></figcaption>
+      <figcaption class="foto-legenda"><b>O arsenal terapêutico da formação</b></figcaption>
     </figure>
 
     <div class="dentro rev rev-2" style="margin-top:var(--gap-bloco)">
@@ -1128,7 +1313,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
         <span class="selo-num">03</span>
         <div>
           <h3 class="hl">Shadowing na clínica real</h3>
-          <p>2 dias acompanhando a rotina clínica, comercial e de gestão dele de perto, em duplas ou trios. Exclusivo da turma fundadora.</p>
+          <p>Dois dias de shadowing na clínica real do Dr. Wendel, exclusivo da turma fundadora. O encaixe no calendário de 2027 é combinado com a turma.</p>
         </div>
       </div>
       <div class="item">
@@ -1149,14 +1334,14 @@ ul.lista li b{color:var(--tinta);font-weight:600}
         <span class="selo-num">06</span>
         <div>
           <h3 class="hl">DTM Para Todos</h3>
-          <p>Curso introdutório de 9 aulas, recebido antes mesmo da decisão de aplicar.</p>
+          <p>Curso introdutório de 9 aulas, liberado assim que efetuar a matrícula.</p>
         </div>
       </div>
       <div class="item">
         <span class="selo-num">07</span>
         <div>
-          <h3 class="hl">Reconhecimento de turma fundadora</h3>
-          <p>E prioridade de vaga na mentoria de continuidade, quando ela abrir.</p>
+          <h3 class="hl">Grupo no WhatsApp</h3>
+          <p>Comunidade exclusiva para tirar dúvidas e trocar experiências com o professor e os colegas.</p>
         </div>
       </div>
       <div class="item">
@@ -1172,25 +1357,36 @@ ul.lista li b{color:var(--tinta);font-weight:600}
   </div>
 </section>
 
-<!-- ============ 09 · A VAGA (tinta) · contador de octógonos ============ -->
+<!-- ============ 09 · A VAGA (tinta) · o teto desenhado, sem número ============ -->
 <section class="dobra dobra--tinta sobre-navy pad" id="vaga">
   <div class="wrap">
     <header class="cab rev">
       <span class="junta junta--claro"></span>
-      <p class="rotulo">A vaga</p>
-      <h2 class="hl">Entre 8 e 12 vagas. O limite é a supervisão</h2>
+      <h2 class="hl">A turma é fechada. <span class="hl-acc">O limite é a supervisão</span></h2>
+      <p class="sub">Quem define o tamanho da turma é a quantidade de mãos que o professor consegue acompanhar de perto, imersão por&nbsp;imersão.</p>
     </header>
 
     <div class="teto rev">
       <div>
-        <p class="num-gigante">8&ndash;12</p>
-        <p class="num-legenda">vagas na turma fundadora<br>o teto vem da capacidade de supervisão</p>
-        <div class="contador"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 82" width="100%" role="img" aria-label="Contador de vagas: oito octogonos cheios e quatro vazios, o teto da turma" fill="none" style="color:var(--fw-cor,#F4F3EC);display:block"><polygon points="13.96,8.00 28.04,8.00 38.00,17.96 38.00,32.04 28.04,42.00 13.96,42.00 4.00,32.04 4.00,17.96" fill="currentColor" fill-opacity="0.92"/><polygon points="55.96,8.00 70.04,8.00 80.00,17.96 80.00,32.04 70.04,42.00 55.96,42.00 46.00,32.04 46.00,17.96" fill="currentColor" fill-opacity="0.92"/><polygon points="97.96,8.00 112.04,8.00 122.00,17.96 122.00,32.04 112.04,42.00 97.96,42.00 88.00,32.04 88.00,17.96" fill="currentColor" fill-opacity="0.92"/><polygon points="139.96,8.00 154.04,8.00 164.00,17.96 164.00,32.04 154.04,42.00 139.96,42.00 130.00,32.04 130.00,17.96" fill="currentColor" fill-opacity="0.92"/><polygon points="181.96,8.00 196.04,8.00 206.00,17.96 206.00,32.04 196.04,42.00 181.96,42.00 172.00,32.04 172.00,17.96" fill="currentColor" fill-opacity="0.92"/><polygon points="223.96,8.00 238.04,8.00 248.00,17.96 248.00,32.04 238.04,42.00 223.96,42.00 214.00,32.04 214.00,17.96" fill="currentColor" fill-opacity="0.92"/><polygon points="265.96,8.00 280.04,8.00 290.00,17.96 290.00,32.04 280.04,42.00 265.96,42.00 256.00,32.04 256.00,17.96" fill="currentColor" fill-opacity="0.92"/><polygon points="307.96,8.00 322.04,8.00 332.00,17.96 332.00,32.04 322.04,42.00 307.96,42.00 298.00,32.04 298.00,17.96" fill="currentColor" fill-opacity="0.92"/><polygon points="349.96,8.00 364.04,8.00 374.00,17.96 374.00,32.04 364.04,42.00 349.96,42.00 340.00,32.04 340.00,17.96" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.42"/><polygon points="391.96,8.00 406.04,8.00 416.00,17.96 416.00,32.04 406.04,42.00 391.96,42.00 382.00,32.04 382.00,17.96" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.42"/><polygon points="433.96,8.00 448.04,8.00 458.00,17.96 458.00,32.04 448.04,42.00 433.96,42.00 424.00,32.04 424.00,17.96" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.42"/><polygon points="475.96,8.00 490.04,8.00 500.00,17.96 500.00,32.04 490.04,42.00 475.96,42.00 466.00,32.04 466.00,17.96" fill="none" stroke="currentColor" stroke-width="2" stroke-opacity="0.42"/><rect x="4" y="52" width="328" height="6" fill="#CDF23F"/></svg></div>
+        <div class="fw fw--teto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" width="100%" role="img" aria-label="O que define o teto da turma: supervisão individual, paciente elegível e, no fim, o teto real da turma, definido pela capacidade de supervisão" fill="none" style="color:var(--fw-cor,#F4F3EC);display:block">
+  <line class="tr" x1="24" y1="28" x2="128" y2="28" stroke="currentColor" stroke-width="2.5"/><line class="tr" x1="76" y1="33" x2="180" y2="33" stroke="#CDF23F" stroke-width="2.5"/>
+  <line class="tr" x1="44" y1="109" x2="44" y2="251" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+  <polygon points="36.96,75 52.04,75 61,84.96 61,99.04 52.04,109 36.96,109 27,99.04 27,84.96" fill="currentColor" fill-opacity="0.24" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="92" y="86" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="start">Supervisão individual</text>
+  <text x="92" y="112" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.66">cada agulha passa pela mão do professor</text>
+  <polygon points="36.96,163 52.04,163 61,172.96 61,187.04 52.04,197 36.96,197 27,187.04 27,172.96" fill="currentColor" fill-opacity="0.24" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="92" y="174" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="start">Paciente elegível</text>
+  <text x="92" y="200" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.66">dentro da janela de cada imersão</text>
+  <polygon points="36.96,251 52.04,251 61,260.96 61,275.04 52.04,285 36.96,285 27,275.04 27,260.96" fill="#CDF23F"/>
+  <text x="92" y="262" font-family="Archivo, system-ui, sans-serif" font-size="21" font-weight="700" fill="currentColor" letter-spacing="-0.21" text-anchor="start">O teto real da turma</text>
+  <text x="92" y="288" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.66">definido pela capacidade de supervisão</text>
+  <line class="tr" x1="24" y1="316" x2="496" y2="316" stroke="currentColor" stroke-width="1" opacity="0.28"/>
+</svg></div>
       </div>
       <div>
         <p class="txt-corpo txt-def">A execução de infiltração anestésica e dry needling em paciente real exige supervisão individual apertada. A disponibilidade de pacientes elegíveis, dentro da janela de cada imersão, é limitada.</p>
-        <p class="txt-corpo" style="margin-top:var(--e-5)">Rodar a estação em duplas ou trios reduz a pressão sobre esse número, mas não remove o teto. Uma turma maior do que a capacidade real de supervisão significa parte da turma sem executar o que foi prometido. Esta formação não vende essa promessa.</p>
-        <p class="txt-corpo"><b>Não existe contagem regressiva. Não existe &ldquo;últimas vagas&rdquo; fabricada. A vaga se encerra quando o número de alunos matriculados atinge o teto real da turma.</b></p>
+        <p class="txt-corpo" style="margin-top:var(--e-5)">Rodar a estação em duplas ou trios reduz a pressão sobre esse teto, mas não o remove. Uma turma maior do que a capacidade real de supervisão significa parte da turma sem executar o que foi prometido. Esta formação não vende essa promessa.</p>
+        <p class="txt-corpo"><b>Não existe contagem regressiva. Não existe &ldquo;últimas vagas&rdquo; fabricada. A vaga se encerra quando a turma atinge o teto real de supervisão.</b></p>
       </div>
     </div>
   </div>
@@ -1201,13 +1397,22 @@ ul.lista li b{color:var(--tinta);font-weight:600}
   <div class="wrap">
     <header class="cab rev">
       <span class="junta"></span>
-      <p class="rotulo rotulo--escuro">Perguntas</p>
-      <h2 class="hl">Perguntas que toda dentista nesta posição já se fez</h2>
-      <p class="num-gigante" style="margin-top:var(--e-5)">07</p>
-      <p class="num-legenda">perguntas que aparecem em toda conversa de avaliação</p>
+      <h2 class="hl"><span class="hl-acc">8 perguntas</span> que todo dentista se faz antes da matrícula</h2>
     </header>
 
-    <div class="faq rev rev-2" id="faq">
+    <figure class="foto rev">
+      <div class="chapa chapa--banda" style="--exp:1.04">
+        <img src="img/rodrigo-ensinando-1600.jpg"
+             srcset="img/rodrigo-ensinando-900.jpg 900w, img/rodrigo-ensinando-1600.jpg 1600w"
+             sizes="(max-width:1240px) 100vw, 1116px"
+             width="1600" height="550" loading="lazy" decoding="async"
+             style="object-position:46% 42%"
+             alt="Dr. Rodrigo Wendel dando aula diante de um slide sobre a definição de dor da IASP">
+      </div>
+      <figcaption class="foto-legenda"><b>Aula da formação</b> <span>a mesma régua da conversa de avaliação de vaga</span></figcaption>
+    </figure>
+
+    <div class="faq rev rev-2" id="faq" style="margin-top:var(--gap-bloco)">
       <details open>
         <summary>Minha cidade tem paciente de DTM suficiente para justificar essa formação?<span class="sinal" aria-hidden="true"></span></summary>
         <div class="resp">
@@ -1228,8 +1433,8 @@ ul.lista li b{color:var(--tinta);font-weight:600}
         <div class="resp"><p>Porque a maioria das pós-graduações entrega só a técnica clínica. Viver de DTM entrega a técnica somada ao percurso comercial completo: cobrar, converter e reter.</p></div>
       </details>
       <details>
-        <summary>Não tenho tempo. Já sou sobrecarregada. Como encaixo isso na rotina?<span class="sinal" aria-hidden="true"></span></summary>
-        <div class="resp"><p>O formato é um encontro semanal, ao vivo. O ganho comercial começa nas primeiras semanas.</p></div>
+        <summary>Não tenho tempo. Já sou sobrecarregado. Como encaixo isso na rotina?<span class="sinal" aria-hidden="true"></span></summary>
+        <div class="resp"><p>O formato é um encontro semanal, ao vivo. E o Kit de Ativação Imediata (ficha de anamnese, scripts de recepção e roteiro de devolutiva) chega antes do primeiro encontro, para você aplicar o que aprende dentro da agenda que já tem.</p></div>
       </details>
       <details>
         <summary>Prefiro presencial, aprender fazendo. Isso aqui é assim?<span class="sinal" aria-hidden="true"></span></summary>
@@ -1238,6 +1443,10 @@ ul.lista li b{color:var(--tinta);font-weight:600}
       <details>
         <summary>Não quero virar especialista, só parar de encaminhar o paciente que já está na minha cadeira. Serve pra mim?<span class="sinal" aria-hidden="true"></span></summary>
         <div class="resp"><p>Sim. Serve tanto a quem quer se tornar referência quanto a quem só quer parar de devolver o caso que já senta na própria cadeira toda semana.</p></div>
+      </details>
+      <details>
+        <summary>O certificado me dá o título de especialista?<span class="sinal" aria-hidden="true"></span></summary>
+        <div class="resp"><p>Não. O título de especialista vem de curso de especialização reconhecido pelo CFO. Viver de DTM entrega certificado de conclusão com carga horária, mais a competência teórico-prática para conduzir o caso na própria cadeira, em 10 meses.</p></div>
       </details>
     </div>
   </div>
@@ -1248,61 +1457,30 @@ ul.lista li b{color:var(--tinta);font-weight:600}
   <div class="wrap">
     <header class="cab rev">
       <span class="junta junta--claro"></span>
-      <p class="rotulo">A aplicação</p>
       <h2 class="hl">O paciente que você trata como bruxismo já está na sua agenda desta semana</h2>
       <p class="sub">Aplicar abre uma conversa sem compromisso. A compra, se acontecer, vem&nbsp;depois.</p>
     </header>
 
-    <p class="txt-corpo txt-def col-texto rev" style="text-align:center;margin-bottom:var(--gap-bloco)">Viver de DTM é uma conversa, não um botão de compra. Aplicar leva três minutos e abre um processo de seis passos, sem custo em nenhum deles até a&nbsp;matrícula.</p>
+    <p class="txt-corpo txt-def col-texto rev" style="text-align:center;margin-bottom:var(--gap-bloco)">Viver de DTM é uma conversa, não um botão de compra. Aplicar leva três minutos e abre um processo de três passos, sem custo em nenhum deles até a&nbsp;matrícula.</p>
 
     <div class="aplic rev">
       <div>
         <div class="est-topo">
-          <p class="num-gigante">06</p>
-          <p class="num-legenda">estações entre a aplicação e a matrícula<br>nenhuma delas custa nada</p>
+          <p class="num-gigante" data-conta="03">03</p>
+          <p class="num-legenda">passos entre a aplicação e a matrícula<br>nenhum deles custa nada</p>
         </div>
       <ol class="estacoes">
         <li class="estacao">
           <span class="n">01</span>
-          <div>
-            <h4>Você aplica</h4>
-            <p>Formulário curto sobre sua rotina clínica, seus casos de DTM e sua disponibilidade para as três imersões.</p>
-          </div>
+          <div><h4>Você aplica no formulário</h4></div>
         </li>
         <li class="estacao">
           <span class="n">02</span>
-          <div>
-            <h4>A equipe analisa o fit</h4>
-            <p>O critério é clínico. Nem toda aplicação vira convite para conversa.</p>
-          </div>
+          <div><h4>A equipe analisa e agenda um horário com o Dr. Wendel</h4></div>
         </li>
         <li class="estacao">
           <span class="n">03</span>
-          <div>
-            <h4>Você recebe a confirmação e agenda a conversa</h4>
-            <p>Um horário, com a equipe do Dr. Wendel.</p>
-          </div>
-        </li>
-        <li class="estacao">
-          <span class="n">04</span>
-          <div>
-            <h4>Conversa de avaliação de vaga</h4>
-            <p>Ao vivo, sobre a sua rotina e os casos que já passam pela sua cadeira. Sem roteiro de vendas, sem pressão na hora.</p>
-          </div>
-        </li>
-        <li class="estacao">
-          <span class="n">05</span>
-          <div>
-            <h4>Apresentação da proposta completa</h4>
-            <p>É aqui que o investimento e as condições de pagamento entram, com o contexto todo já construído.</p>
-          </div>
-        </li>
-        <li class="estacao">
-          <span class="n">06</span>
-          <div>
-            <h4>Sua decisão</h4>
-            <p>Sem prazo artificial imposto na ligação. A vaga se encerra quando a turma fecha.</p>
-          </div>
+          <div><h4>Reunião de apresentação da formação e matrícula, se entenderem juntos que é o seu momento</h4></div>
         </li>
       </ol>
       </div>
@@ -1330,12 +1508,12 @@ ul.lista li b{color:var(--tinta);font-weight:600}
             <textarea name="cadeira" rows="3" placeholder="Dor na mandíbula, estalo ao mastigar, dor de cabeça recorrente, desgaste nos dentes da frente: o que aparece e com que frequência." required></textarea>
           </label>
           <label class="campo">
-            <span class="rot">Pode viajar a Brasília em 3 janelas de 2027?</span>
+            <span class="rot">Pode viajar a Brasília nas 3 imersões de 2027?</span>
             <select name="imersoes" required>
               <option value="">Selecione</option>
-              <option value="sim">Sim, consigo me comprometer com as 3 semanas</option>
-              <option value="conferir">Preciso conferir uma das três janelas</option>
-              <option value="nao">Não consigo viajar nas 3 janelas</option>
+              <option value="sim">Sim, tenho flexibilidade para viajar</option>
+              <option value="depende">Depende das datas</option>
+              <option value="nao">Não consigo viajar ou prefiro assistir online</option>
             </select>
           </label>
           <button class="btn btn--bloco" type="submit">Aplicar para uma conversa de avaliação de vaga</button>
@@ -1384,7 +1562,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
         <ul>
           <li><a href="#aplicacao">Aplicar para uma conversa de avaliação de vaga</a></li>
         </ul>
-        <p class="mono-k" style="color:var(--papel-72);margin-top:var(--e-4);line-height:1.9">Início em 1&ordm; de fevereiro de 2027<br>Formatura em 29 de novembro de 2027</p>
+        <p class="mono-k" style="color:var(--papel-72);margin-top:var(--e-4);line-height:1.9">Início em 2 de fevereiro de 2027<br>Formatura em novembro de 2027</p>
       </div>
     </div>
     <p class="rod-legal">
@@ -1396,7 +1574,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 
 <!-- barra fixa de celular · ds-paginas §5.2 -->
 <div class="barra-fixa" id="barra" aria-hidden="true">
-  <span class="t">Turma fundadora &middot; fevereiro de 2027<b>Entre 8 e 12 vagas</b></span>
+  <span class="t">Turma fundadora &middot; fevereiro de 2027<b>Vagas limitadas</b></span>
   <a class="btn btn--papel btn--curto" href="#aplicacao">Aplicar</a>
 </div>
 
@@ -1410,6 +1588,13 @@ ul.lista li b{color:var(--tinta);font-weight:600}
      programático rápido (o do guard, o do "ir para o fim") coalesce os callbacks do
      observer e deixa dobras em branco. Aqui, tudo que já passou pela linha de leitura
      fica revelado, e o gatilho se desliga sozinho quando a lista acaba. */
+  /* a cascata da hero dispara uma vez e o estado fica preso na classe .pronto:
+     com animation, o resize de viewport (screenshot de página inteira) reiniciava
+     tudo e a coluna direita saía a meio caminho na prova. */
+  if (reduz) { document.documentElement.classList.add('pronto'); }
+  else { requestAnimationFrame(function(){
+    requestAnimationFrame(function(){ document.documentElement.classList.add('pronto'); }); }); }
+
   var pend = [].slice.call(document.querySelectorAll('.rev'));
   if (reduz) {
     pend.forEach(function(el){ el.classList.add('vis'); });
@@ -1429,6 +1614,69 @@ ul.lista li b{color:var(--tinta);font-weight:600}
     window.addEventListener('scroll', varrer, { passive: true });
     window.addEventListener('resize', varrer);
     varrer();
+  }
+
+
+  /* traçado progressivo dos frameworks · a linha é desenhada, não aparece pronta.
+     Puro enfeite: se o JS não rodar, o SVG já está completo e estático. */
+  if (!reduz && 'IntersectionObserver' in window) {
+    var ioSvg = new IntersectionObserver(function(itens, obs){
+      itens.forEach(function(item){
+        if (!item.isIntersecting) return;
+        obs.unobserve(item.target);
+        var tracos = [], i = 0;
+        [].forEach.call(item.target.querySelectorAll('line,path'), function(el){
+          var cor = el.getAttribute('stroke');
+          if (!cor || cor === 'none') return;
+          if (el.getAttribute('stroke-dasharray')) return;
+          var L;
+          try { L = el.getTotalLength(); } catch (e) { return; }
+          if (!L || L > 3000) return;
+          el.style.strokeDasharray = L + 'px';
+          el.style.strokeDashoffset = L + 'px';
+          el.style.transition = 'stroke-dashoffset 520ms var(--ease) ' + Math.min(i * 40, 320) + 'ms';
+          tracos.push(el); i++;
+        });
+        if (!tracos.length) return;
+        var limpar = function(){
+          tracos.forEach(function(el){
+            el.style.strokeDasharray = ''; el.style.strokeDashoffset = ''; el.style.transition = '';
+          });
+        };
+        item.target.getBoundingClientRect();
+        requestAnimationFrame(function(){
+          tracos.forEach(function(el){ el.style.strokeDashoffset = '0px'; });
+        });
+        setTimeout(limpar, 1000);
+      });
+    }, { threshold: 0.15 });
+    [].forEach.call(document.querySelectorAll('.fw svg'), function(el){ ioSvg.observe(el); });
+  }
+
+  /* números-âncora contam uma vez ao entrar na tela · 520ms, sem laço */
+  if (!reduz && 'IntersectionObserver' in window) {
+    var ioNum = new IntersectionObserver(function(itens, obs){
+      itens.forEach(function(item){
+        if (!item.isIntersecting) return;
+        obs.unobserve(item.target);
+        var el = item.target;
+        var alvo = el.getAttribute('data-conta');
+        var pre = el.getAttribute('data-prefixo') || '';
+        var casas = alvo.length, n = parseInt(alvo, 10);
+        if (isNaN(n)) return;
+        var t0 = null;
+        var passo = function(t){
+          if (t0 === null) t0 = t;
+          var k = Math.min(1, (t - t0) / 520);
+          var v = String(Math.round(n * (1 - Math.pow(1 - k, 3))));
+          while (v.length < casas) v = '0' + v;
+          el.textContent = pre + v;
+          if (k < 1) requestAnimationFrame(passo);
+        };
+        requestAnimationFrame(passo);
+      });
+    }, { threshold: 0.6 });
+    [].forEach.call(document.querySelectorAll('[data-conta]'), function(el){ ioNum.observe(el); });
   }
 
   /* âncora com rolagem suave · só no clique, nunca no scroll programático */
