@@ -287,7 +287,7 @@ function blocoFicha(encontro, semana) {
   const presencial = encontro.modalidade === 'presencial';
   const horario = presencial
     ? (semana.diaAula ? semana.diaAula + ' · dias a confirmar' : 'Brasília · dias a definir')
-    : semana.diaAula + ' · horário a confirmar' + (semana.diaConfirmar ? ' · dia a confirmar' : '');
+    : semana.diaAula + ' · 19h às 21h' + (semana.diaConfirmar ? ' · dia a confirmar' : '');
   const emAberto = presencial || semana.diaConfirmar;
   return html`<div class="ficha">
     <div><p class="k">Semana</p><p class="v dado">${semana.numero} &middot; ${semana.rotulo}</p></div>
@@ -600,7 +600,7 @@ function linhaSemana(semana, atual) {
     <div>
       <p class="cal-sem-k"><b>Semana de ${semana.rotulo}</b> <em>&middot;</em> ${NOME_TIPO_SEMANA[semana.tipo]}${estado === 'aqui' ? [html` <em>&middot;</em> <b>você está aqui</b>`] : false}</p>
       ${links.length ? [html`<ul class="cal-encs">${links}</ul>`] : false}
-      ${!presencial && semana.diaAula ? [html`<p class="cal-pe"><i></i>${semana.diaAula}&nbsp;&middot; horário a confirmar${semana.diaConfirmar ? [html` &middot; <b>dia a confirmar</b>`] : false}</p>`] : false}
+      ${!presencial && semana.diaAula ? [html`<p class="cal-pe"><i></i>${semana.diaAula}&nbsp;&middot; 19h às 21h${semana.diaConfirmar ? [html` &middot; <b>dia a confirmar</b>`] : false}</p>`] : false}
       ${semana.nota ? [html`<p class="cal-nota">${semana.nota}</p>`] : false}
       ${presencial ? [html`<p class="cal-pe"><i></i>${DADOS.formacao.localImersoes}&nbsp;&middot; ${semana.diaAula ? [html`${semana.diaAula} &middot; <b>a confirmar</b>`] : 'dias a definir'}</p>`] : false}
       ${semana.feriado ? [html`<p class="cal-pe"><i></i>Feriado na semana &middot; ${semana.feriado}</p>`] : false}
@@ -631,7 +631,7 @@ function renderCalendario() {
     <header class="tela-cab">
       <span class="junta"></span>
       <h1 tabindex="-1" data-foco>Calendário 2027</h1>
-      <p>As ${DADOS.formacao.totalSemanas} semanas da Turma Fundadora, de <b>terça, 23 de fevereiro</b> a <b>30 de novembro de 2027</b>. Os encontros online são às <b>terças, horário a confirmar</b>. O ano fecha na formatura, na última semana de novembro.</p>
+      <p>As ${DADOS.formacao.totalSemanas} semanas da Turma Fundadora, de <b>terça, 23 de fevereiro</b> a <b>30 de novembro de 2027</b>. Os encontros online são às <b>terças, 19h às 21h</b>. O ano fecha na formatura, na última semana de novembro.</p>
     </header>
     <div class="ficha ficha--5">
       <div><p class="k">Semanas</p><p class="v dado">${DADOS.formacao.totalSemanas}</p></div>
@@ -655,7 +655,7 @@ function renderCalendario() {
     </div>
     <div class="bloqueio" style="margin-top:var(--e-5)">
       <p class="k"><i></i>Três semanas com o dia deslocado</p>
-      <p>Os encontros online são às <b>terças, horário a confirmar</b>. Em ${deslocadas.length} semanas o feriado nacional cai justamente na terça, e nelas o encontro roda em <b>outro dia da mesma semana</b>: ${[deslocadas.map(sem => html`<b>${sem.encontros.join(', ')}</b> na semana de ${sem.rotulo} (${sem.feriado})`).join(' · ')]}.</p>
+      <p>Os encontros online são às <b>terças, 19h às 21h</b>. Em ${deslocadas.length} semanas o feriado nacional cai justamente na terça, e nelas o encontro roda em <b>outro dia da mesma semana</b>: ${[deslocadas.map(sem => html`<b>${sem.encontros.join(', ')}</b> na semana de ${sem.rotulo} (${sem.feriado})`).join(' · ')]}.</p>
       <p>A escolha entre quarta e quinta ainda é do ${DADOS.formacao.professor}, e por isso essas semanas aparecem marcadas com <b>dia a confirmar</b>. Os dias dentro das três semanas de imersão seguem em aberto pelo mesmo motivo: dependem da agenda clínica e dos pacientes-modelo.</p>
     </div>
     <section class="secao">

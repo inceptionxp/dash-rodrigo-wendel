@@ -18,7 +18,7 @@ DASH.views['met-aprendiz'] = {
         'Não é só o clínico geral. O especialista de outra área (orto, prótese, cirurgia) é quem mais procura, e é quem tem caixa pra bancar a formação.',
         'Maioria feminina forte: 80% de mulheres nas duas últimas turmas. A comunicação assume a dentista como público majoritário.',
         'Agenda cheia de convênio, restauração e canal. Trabalha muito e o extrato do fim do mês não reflete isso.',
-        'Estuda em noite de semana — janela que você confirmou.',
+        'Estuda em noite de semana, das 19h às 21h — janela que você confirmou.',
       ],
     },
     {
@@ -63,7 +63,7 @@ DASH.views['met-aprendiz'] = {
   decisoes: [
     { data: '2026-07-12', texto: 'Público inclui o especialista de outra área, não só o clínico geral.' },
     { data: '2026-07-12', texto: 'Maioria feminina confirmada com dado das duas últimas turmas.' },
-    { data: '2026-07-12', texto: 'Janela de estudo: noite de semana.' },
+    { data: '2026-07-12', texto: 'Janela de estudo: noite de semana, das 19h às 21h.' },
   ],
   pendencias: [
     { quem: 'inception', texto: 'Aplicar as quatro perguntas de detecção de consciência nos primeiros leads reais da captação.', prazo: 'na abertura da captação' },

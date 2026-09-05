@@ -39,7 +39,7 @@ const DADOS = {
     totalEtapas: 3,
     totalBlocos: 15,
     localImersoes: 'Brasília · Instituto Odontológico Rodrigo Wendel',
-    janelaAula: 'terças, horário a confirmar',
+    janelaAula: 'terças, 19h às 21h',
     diaDaSemana: 'terça'
   },
 
