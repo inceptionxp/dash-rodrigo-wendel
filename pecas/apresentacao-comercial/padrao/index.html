@@ -241,7 +241,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 
 /* ---------- trama do caderno de atas · matéria de fundo, 5% ---------- */
 .sl--trama::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background-image:url("img/textura-caderno.jpg");background-size:320%;background-position:62% 38%;
+  background-image:url("../img/textura-caderno.jpg");background-size:320%;background-position:62% 38%;
   opacity:.04;mix-blend-mode:multiply}
 .sl--trama>.sl-quadro,.sl--trama>.placa{position:absolute;z-index:1}
 .sl--trama>.placa{position:absolute;z-index:1}
@@ -267,30 +267,6 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 /* ---------- degrau da escada · o card sobe, a barra marca o nível ---------- */
 .deg--2{margin-top:calc(-64*var(--px))}
 .deg--3{margin-top:calc(-128*var(--px))}
-
-/* ---------- comparação das duas portas ----------
-   Três colunas: rótulo, presencial, online. As células de cada coluna de valor
-   compartilham fundo e viram um card contínuo, com canto só nas pontas. */
-.cmp{display:grid;grid-template-columns:calc(620*var(--px)) 1fr 1fr;column-gap:calc(30*var(--px))}
-.cmp>span{align-self:stretch;display:flex;align-items:center}
-.cmp .cel{padding:calc(2*var(--px)) calc(28*var(--px));background:var(--papel);color:var(--tinta)}
-.cmp .cel--b{background:rgba(244,243,236,.07);color:var(--papel)}
-.cmp .cel-topo{border-radius:calc(28*var(--px)) calc(28*var(--px)) 0 0;padding-top:calc(6*var(--px))}
-.cmp .cel-base{border-radius:0 0 calc(28*var(--px)) calc(28*var(--px));padding-bottom:calc(8*var(--px))}
-.cmp .rot{font-family:var(--corpo);font-size:calc(56*var(--px));line-height:1.02;color:var(--papel-45);
-  padding:calc(2*var(--px)) 0}
-.cmp .val{font-size:calc(56*var(--px));line-height:1.02;color:var(--tinta-70)}
-.cmp .cel--b .val{color:var(--papel-72)}
-.cmp .val b{color:var(--tinta);font-weight:600}
-.cmp .cel--b .val b{color:var(--papel)}
-.cmp .kh{font-family:var(--mono);font-weight:700;font-size:calc(56*var(--px));letter-spacing:.14em;
-  text-transform:uppercase;color:var(--papel-45);padding-bottom:calc(0*var(--px));align-items:flex-end}
-.preco{display:flex;align-items:baseline;gap:calc(14*var(--px))}
-.preco--col{flex-direction:column;align-items:flex-start;gap:0}
-.preco .cif{font-family:var(--display);font-weight:600;font-size:calc(56*var(--px))}
-.preco .val-g{font-family:var(--display);font-weight:800;font-size:calc(168*var(--px));
-  letter-spacing:-.05em;line-height:.90;font-variant-numeric:tabular-nums}
-.preco--m .val-g{font-size:calc(132*var(--px))}
 
 /* ---------- construção por passos ----------
    Cada bloco entra sob comando, no ritmo da fala. Deslocamento curto e fade.
@@ -360,7 +336,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 <!-- 01 · CAPA — retrato sangrando a borda direita, título em escala de cartaz -->
 <section class="sl sl--fundo sl--foto" style="--g:calc(18*var(--px))">
   <div class="placa placa--duo" style="width:calc(620*var(--px))">
-    <img src="img/s01-rodrigo-retrato.jpg" alt="Dr. Rodrigo Wendel, de braços cruzados, com a jaqueta da marca">
+    <img src="../img/s01-rodrigo-retrato.jpg" alt="Dr. Rodrigo Wendel, de braços cruzados, com a jaqueta da marca">
     <span class="veu veu--fundo"></span>
   </div>
   <div class="sl-quadro" style="right:calc(652*var(--px))">
@@ -384,7 +360,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
             <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
           </span>
         </span>
-        <span class="k k--forte">01 &middot; 37</span>
+        <span class="k k--forte">01 &middot; 35</span>
       </div>
     </div>
   </div>
@@ -411,7 +387,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <p class="cap" data-passo="3" style="margin-top:calc(36*var(--px));max-width:calc(1500*var(--px))">Meta-análise com 21 mil pessoas &middot; Alqutaibi et al., 2025 &middot; Journal of Oral &amp; Facial Pain and Headache</p>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">02 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">02 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Antes de falar de mim ou da formação, eu quero te mostrar um número. Não é opinião minha, é meta-análise. Trinta por cento da população.&rdquo;</aside>
@@ -437,7 +413,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <p class="cap" data-passo="3" style="margin-top:calc(44*var(--px))">Cada octógono é um quadro diagnóstico com prognóstico próprio.</p>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">03 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">03 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Quando você fecha DTM como se fosse um diagnóstico só, você já perdeu metade da informação que precisa pra tratar direito.&rdquo;</aside>
@@ -473,7 +449,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">04 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">04 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Esses dez quadros se organizam em três grupos, e cada grupo pede um raciocínio próprio.&rdquo;</aside>
@@ -497,12 +473,12 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
           <p class="cap" data-passo="3" style="margin-top:calc(36*var(--px));max-width:none">310 dentistas, amostra da Índia &middot; Prabhakar et al., 2024. O critério internacional de diagnóstico é o DC/TMD.</p>
         </div>
         <div class="bloco bloco--3x2" data-passo="2">
-          <img src="img/caderno-atas-fita-pagina.jpg" alt="Volume encadernado de anais científicos aberto, com fita fluorescente marcando a página">
+          <img src="../img/caderno-atas-fita-pagina.jpg" alt="Volume encadernado de anais científicos aberto, com fita fluorescente marcando a página">
         </div>
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow"><span class="k k--forte">05 &middot; 37</span></div>
+      <div class="sl-perow"><span class="k k--forte">05 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;E isso vem da faculdade, que nunca ensinou a diferenciar os quadros.&rdquo;</aside>
@@ -521,7 +497,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <div class="mega" data-passo="2" style="margin-top:calc(28*var(--px))">Ele peregrina.</div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">06 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">06 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Tem um custo silencioso nisso, e ele cai dos dois lados.&rdquo;</aside>
@@ -531,7 +507,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 <!-- 07 · O CUSTO, LADO DELA — a agenda que fecha igual, sangrando a borda -->
 <section class="sl sl--foto">
   <div class="placa">
-    <img src="img/agenda-consultorio-marcada.jpg" alt="Agenda de consultório aberta, com um horário marcado em fluorescente">
+    <img src="../img/agenda-consultorio-marcada.jpg" alt="Agenda de consultório aberta, com um horário marcado em fluorescente">
     <span class="veu veu--papel"></span>
   </div>
   <div class="sl-quadro">
@@ -544,7 +520,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <p class="lead" data-passo="2" style="margin-top:calc(40*var(--px))">Você fecha a agenda de novo com o mesmo volume do mês passado.</p>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow"><span class="k k--forte">07 &middot; 37</span></div>
+      <div class="sl-perow"><span class="k k--forte">07 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;E do seu lado, esse mesmo paciente já senta na sua cadeira.&rdquo;</aside>
@@ -562,13 +538,13 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
           <h1 class="mega mega--m fluor">R$ 3.909</h1>
         </div>
         <div class="bloco bloco--3x2" data-passo="2">
-          <img src="img/calculadora-ficha-clinica.jpg" alt="Calculadora de mesa sobre uma ficha clínica impressa">
+          <img src="../img/calculadora-ficha-clinica.jpg" alt="Calculadora de mesa sobre uma ficha clínica impressa">
         </div>
       </div>
       <div class="h3 h3--leve" data-passo="2" style="margin-top:calc(40*var(--px));max-width:calc(1300*var(--px))">é o ticket médio de um caso de DTM</div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow"><span class="k k--forte">08 &middot; 37</span></div>
+      <div class="sl-perow"><span class="k k--forte">08 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Isso aqui é o ticket médio real da minha clínica, com protocolo.&rdquo;</aside>
@@ -587,7 +563,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <p class="lead" data-passo="2" style="margin-top:calc(44*var(--px));max-width:32ch">É onde trava o consultório de clínica geral, por mês.</p>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">09 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">09 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Compara com o teto que a clínica geral costuma alcançar por mês.&rdquo;</aside>
@@ -606,12 +582,12 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <div class="duo duo--a duo--t" style="margin-top:calc(30*var(--px))">
         <p class="lead" data-passo="2" style="max-width:none">Achando que era só uma placa genérica, sem protocolo por trás.</p>
         <div class="bloco bloco--16x9" data-passo="2">
-          <img src="img/ficha-anamnese.jpg" alt="Ficha de anamnese de dor orofacial preenchida à mão, com marcações no mapa da face">
+          <img src="../img/ficha-anamnese.jpg" alt="Ficha de anamnese de dor orofacial preenchida à mão, com marcações no mapa da face">
         </div>
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow"><span class="k k--forte">10 &middot; 37</span></div>
+      <div class="sl-perow"><span class="k k--forte">10 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Essa pergunta não é retórica. Cada resposta é um paciente que já passou pela sua cadeira este mês.&rdquo;</aside>
@@ -636,7 +612,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">11 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">11 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Essa frase é minha, eu repito ela há anos. Cada especialidade empurra a ferramenta que domina.&rdquo;</aside>
@@ -648,7 +624,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 <!-- 12 · O MECANISMO, A VIRADA — o objeto-herói do método sangrando a borda -->
 <section class="sl sl--fundo sl--foto">
   <div class="placa" style="width:calc(720*var(--px))">
-    <img src="img/placa-oclusal-objeto.jpg" alt="Placa oclusal e dispositivo interoclusal isolados sobre papel">
+    <img src="../img/placa-oclusal-objeto.jpg" alt="Placa oclusal e dispositivo interoclusal isolados sobre papel">
     <span class="veu veu--fundo"></span>
   </div>
   <div class="sl-quadro" style="right:calc(752*var(--px))">
@@ -661,7 +637,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <p class="lead" data-passo="2" style="margin-top:calc(36*var(--px))">A ferramenta certa para cada caso.</p>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow"><span class="k k--forte">12 &middot; 37</span></div>
+      <div class="sl-perow"><span class="k k--forte">12 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Em 2014 eu decidi ensinar o arsenal inteiro, sem me prender a uma técnica só.&rdquo;</aside>
@@ -700,7 +676,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">13 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">13 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Do conservador ao invasivo. Cada degrau tem um critério objetivo pra subir.&rdquo;</aside>
@@ -741,7 +717,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">14 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">14 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Diagnóstico, tratamento e negócio, nessa ordem, porque um sustenta o outro.&rdquo;</aside>
@@ -767,7 +743,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">15 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">15 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Esse é o tamanho da formação, em número.&rdquo;</aside>
@@ -788,20 +764,20 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <div class="duo duo--a duo--t" style="margin-top:calc(30*var(--px));gap:calc(64*var(--px))">
         <div class="pilha" style="gap:calc(14*var(--px))">
           <div class="linha" data-passo="2" style="padding-top:calc(14*var(--px))"><span class="k">Início</span><span class="h3 h3--s h3--n">23 de fevereiro de 2027</span></div>
-          <div class="linha" data-passo="3" style="padding-top:calc(14*var(--px))"><span class="k">Encontros online</span><span class="h3 h3--s h3--n">toda terça</span></div>
+          <div class="linha" data-passo="3" style="padding-top:calc(14*var(--px))"><span class="k">Encontros ao vivo</span><span class="h3 h3--s h3--n">toda terça</span></div>
           <div class="linha" data-passo="4" style="padding-top:calc(14*var(--px))"><span class="k">Formatura</span><span class="h3 h3--s h3--n">novembro de 2027</span></div>
         </div>
         <div class="bloco bloco--16x9" data-passo="2">
-          <img src="img/mala-viagem-pasta-clinica.jpg" alt="Mala de viagem de cabine ao lado de uma pasta clínica">
+          <img src="../img/mala-viagem-pasta-clinica.jpg" alt="Mala de viagem de cabine ao lado de uma pasta clínica">
         </div>
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow"><span class="k k--forte">16 &middot; 37</span></div>
+      <div class="sl-perow"><span class="k k--forte">16 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Uma turma fechada, caminhando junto do início ao fim.&rdquo;</aside>
-  <aside class="nota" data-nota="3">&ldquo;Os encontros online são sempre na terça, pra caber na rotina de consultório.&rdquo;</aside>
+  <aside class="nota" data-nota="3">&ldquo;Os encontros ao vivo são sempre na terça, pra caber na rotina de consultório.&rdquo;</aside>
   <aside class="nota" data-nota="4">&ldquo;A data exata da formatura a gente fecha com a turma.&rdquo;</aside>
 </section>
 
@@ -828,7 +804,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">17 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">17 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Eu demorei pra entender isso na minha própria clínica.&rdquo;</aside>
@@ -840,7 +816,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 <!-- 18 · AS MÃOS, O QUANTO — a mão na articulação, sangrando a borda -->
 <section class="sl sl--navy sl--foto">
   <div class="placa">
-    <img src="img/mao-luva-palpando-atm.jpg" alt="Mãos com luva palpando a articulação temporomandibular de um paciente, enquadradas do queixo para baixo">
+    <img src="../img/mao-luva-palpando-atm.jpg" alt="Mãos com luva palpando a articulação temporomandibular de um paciente, enquadradas do queixo para baixo">
     <span class="veu veu--navy"></span>
   </div>
   <div class="sl-quadro">
@@ -853,11 +829,11 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <p class="lead" data-passo="2" style="margin-top:calc(36*var(--px))">Três imersões presenciais, na clínica em Brasília.</p>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow"><span class="k k--forte">18 &middot; 37</span></div>
+      <div class="sl-perow"><span class="k k--forte">18 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Curso gravado não corrige a sua mão.&rdquo;</aside>
-  <aside class="nota" data-nota="2">&ldquo;Eu vou estar do seu lado, na minha clínica, com paciente real, vendo você aplicar o que aprendeu online.&rdquo;</aside>
+  <aside class="nota" data-nota="2">&ldquo;Eu vou estar do seu lado, na minha clínica, com paciente real, vendo você aplicar o que aprendeu nos encontros.&rdquo;</aside>
 </section>
 
 <!-- 19 · AS MÃOS, O QUÊ — três estações à esquerda, o arsenal em bloco à direita -->
@@ -877,12 +853,12 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
           <div class="linha linha--tab" data-passo="4" style="padding-top:calc(14*var(--px))"><span class="k">03</span><span class="h3 h3--xs">Consulta ao vivo</span></div>
         </div>
         <div class="bloco bloco--16x9" data-passo="2">
-          <img src="img/arsenal-bandeja.jpg" alt="Instrumentos clínicos enfileirados sobre papel, com fita fluorescente marcando um deles">
+          <img src="../img/arsenal-bandeja.jpg" alt="Instrumentos clínicos enfileirados sobre papel, com fita fluorescente marcando um deles">
         </div>
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow"><span class="k k--forte">19 &middot; 37</span></div>
+      <div class="sl-perow"><span class="k k--forte">19 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;São três estações de prática, e você passa por todas.&rdquo;</aside>
@@ -894,7 +870,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 <!-- 20 · QUEM CONDUZ — retrato de docência sangrando a borda -->
 <section class="sl sl--tinta sl--foto" style="--g:calc(24*var(--px))">
   <div class="placa" style="width:calc(700*var(--px))">
-    <img src="img/s11-rodrigo-ensinando.jpg" alt="Dr. Rodrigo Wendel ensinando, diante do slide com a definição de dor da IASP">
+    <img src="../img/s11-rodrigo-ensinando.jpg" alt="Dr. Rodrigo Wendel ensinando, diante do slide com a definição de dor da IASP">
     <span class="veu veu--tinta"></span>
   </div>
   <div class="sl-quadro" style="right:calc(732*var(--px))">
@@ -911,7 +887,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">20 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">20 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Deixa eu me apresentar direito agora.&rdquo;</aside>
@@ -943,7 +919,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">21 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">21 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Fiquei 17 anos fazendo atendimento voluntário, uma vez por semana. Com pouco recurso, mas muita vontade. E ali a gente teve mais de 92% de melhora, sem cirurgia e sem mexer em dente.&rdquo;</aside>
@@ -965,7 +941,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">22 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">22 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Fora do voluntariado, a conta é essa.&rdquo;</aside>
@@ -976,7 +952,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 <!-- 23 · A HISTÓRIA, PARTE 1 — retrato sangrando, aspa em escala de cartaz -->
 <section class="sl sl--fundo sl--foto">
   <div class="placa placa--duo">
-    <img src="img/s23-rodrigo-campo.jpg" alt="Dr. Rodrigo Wendel, de braços cruzados, camisa jeans, em campo aberto">
+    <img src="../img/s23-rodrigo-campo.jpg" alt="Dr. Rodrigo Wendel, de braços cruzados, camisa jeans, em campo aberto">
     <span class="veu veu--fundo"></span>
   </div>
   <div class="sl-quadro">
@@ -991,7 +967,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">23 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">23 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">Ler devagar. É a lâmina em que ele conta por que organizou o método. Pausa depois de &ldquo;a outra não&rdquo;.</aside>
@@ -1014,7 +990,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </blockquote>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">24 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">24 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">Aqui ele fecha o porquê do método: a experiência repetida virou protocolo.</aside>
@@ -1024,7 +1000,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 <!-- 25 · O QUE VOCÊ VIRA — o professor com o arsenal na mão -->
 <section class="sl sl--fundo sl--foto">
   <div class="placa placa--duo" style="width:calc(620*var(--px))">
-    <img src="img/s06-rodrigo-arsenal.jpg" alt="Dr. Rodrigo Wendel segurando uma placa oclusal transparente e um dispositivo de avanço mandibular">
+    <img src="../img/s06-rodrigo-arsenal.jpg" alt="Dr. Rodrigo Wendel segurando uma placa oclusal transparente e um dispositivo de avanço mandibular">
     <span class="veu veu--fundo"></span>
   </div>
   <div class="sl-quadro" style="right:calc(652*var(--px))">
@@ -1037,7 +1013,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <p class="p" data-passo="2" style="margin-top:calc(30*var(--px))">O caso que hoje você devolve, amanhã senta na sua cadeira e sai resolvido.</p>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">25 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">25 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Eu já vi isso acontecer com várias pessoas que passaram pela minha turma.&rdquo;</aside>
@@ -1047,7 +1023,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 <!-- 26 · O FIT, QUEM ENTRA — dois critérios em card, consultório ao lado -->
 <section class="sl sl--foto" style="--g:calc(30*var(--px))">
   <div class="placa">
-    <img src="img/s10-rodrigo-clinica.jpg" alt="Dr. Rodrigo Wendel no consultório, ao lado da cadeira odontológica">
+    <img src="../img/s10-rodrigo-clinica.jpg" alt="Dr. Rodrigo Wendel no consultório, ao lado da cadeira odontológica">
     <span class="veu veu--papel"></span>
   </div>
   <div class="sl-quadro">
@@ -1063,7 +1039,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">26 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">26 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Eu não preciso que você já seja especialista em DTM.&rdquo;</aside>
@@ -1086,7 +1062,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">27 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">27 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;E é honesto dizer pra quem isso aqui não serve.&rdquo;</aside>
@@ -1112,7 +1088,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">28 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">28 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Deixa eu te mostrar o que entra, peça por peça.&rdquo;</aside>
@@ -1143,7 +1119,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <p class="p" data-passo="3" style="margin-top:calc(34*var(--px));max-width:38ch">É o que a formação vai custar a partir da segunda turma.</p>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">29 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">29 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Somando peça por peça, o pacote fecha nesse valor.&rdquo;</aside>
@@ -1170,94 +1146,12 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <p class="p" data-passo="3" style="margin-top:calc(16*var(--px));max-width:38ch"><b>R$ 13.547 abaixo do valor do pacote.</b></p>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">30 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">30 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;A turma fundadora não paga o valor do pacote.&rdquo;</aside>
   <aside class="nota" data-nota="2">&ldquo;Existe 18x com juros, mas não é a condição que eu conduzo.&rdquo;</aside>
   <aside class="nota" data-nota="3">&ldquo;Cerca de quatro tratamentos, no seu ticket médio, pagam a formação inteira. Quanto você vai faturar depende de você. Essa conta, essa eu posso te mostrar.&rdquo;</aside>
-</section>
-
-<!-- 31 · A SEGUNDA PORTA — o preço à esquerda, o que entra em card à direita -->
-<section class="sl sl--tinta" style="--g:calc(30*var(--px))">
-  <div class="sl-quadro">
-    <div class="sl-topo"><span class="k k--forte">Segunda porta</span><span class="k">formato online</span></div>
-    <div class="sl-corpo">
-      <div data-passo="1">
-        <span class="junta"></span>
-        <h1 class="h1">A segunda porta</h1>
-      </div>
-      <div class="duo duo--t" style="margin-top:calc(26*var(--px));gap:calc(64*var(--px))">
-        <div>
-          <p class="p" data-passo="2" style="max-width:26ch">Para quem não consegue viajar três vezes no ano.</p>
-          <div class="preco" data-passo="4" style="margin-top:calc(30*var(--px))">
-            <span class="cif fluor">R$</span><span class="val-g fluor">8.000</span>
-          </div>
-        </div>
-        <div class="pilha" data-passo="3" style="gap:calc(12*var(--px))">
-          <div class="card card--vidro card--curto" style="padding:calc(10*var(--px)) calc(28*var(--px))"><span class="p">43 encontros ao vivo</span></div>
-          <div class="card card--vidro card--curto" style="padding:calc(10*var(--px)) calc(28*var(--px))"><span class="p">Gravações das imersões de 2027</span></div>
-          <div class="card card--vidro card--curto" style="padding:calc(10*var(--px)) calc(28*var(--px))"><span class="p">DTM Para Todos &middot; 9 aulas</span></div>
-          <div class="card card--vidro card--curto" style="padding:calc(10*var(--px)) calc(28*var(--px))"><span class="p">Certificado de conclusão</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">31 &middot; 37</span></div>
-    </div>
-  </div>
-  <aside class="nota" data-nota="1">Direção: só abra esta porta depois de ter oferecido o presencial. Quem hesita na viagem ou no investimento recebe esta opção. Quem hesita no conteúdo, não.</aside>
-  <aside class="nota" data-nota="2">&ldquo;Se viajar três vezes no ano não couber na sua rotina, existe um segundo caminho.&rdquo;</aside>
-  <aside class="nota" data-nota="3">&ldquo;Você acompanha os quarenta e três encontros ao vivo, e receberá a gravação de cada imersão depois que ela acontecer.&rdquo;</aside>
-  <aside class="nota" data-nota="4">&ldquo;Nesse formato, o investimento é oito mil.&rdquo;</aside>
-</section>
-
-<!-- 32 · AS DUAS PORTAS, LADO A LADO — duas colunas em card, o presencial em papel -->
-<section class="sl sl--navy" style="--g:calc(8*var(--px))">
-  <div class="sl-quadro">
-    <div class="sl-topo"><div class="h2" data-passo="1">A diferença é a mão corrigida</div></div>
-    <div class="sl-corpo">
-      <div class="cmp">
-        <span></span>
-        <span class="kh" data-passo="2">Presencial</span>
-        <span class="kh" data-passo="3">Online</span>
-
-        <span class="rot">Encontros ao vivo</span>
-        <span class="cel cel-topo" data-passo="2"><span class="val">43</span></span>
-        <span class="cel cel--b cel-topo" data-passo="3"><span class="val">43</span></span>
-
-        <span class="rot">Imers&otilde;es em Bras&iacute;lia</span>
-        <span class="cel" data-passo="2"><span class="val">3 &middot; 8 dias</span></span>
-        <span class="cel cel--b" data-passo="3"><span class="val">por grava&ccedil;&atilde;o</span></span>
-
-        <span class="rot">Shadowing na cl&iacute;nica</span>
-        <span class="cel" data-passo="2"><span class="val">2 dias</span></span>
-        <span class="cel cel--b" data-passo="3"><span class="val">n&atilde;o entra</span></span>
-
-        <span class="rot">Grupo com o professor</span>
-        <span class="cel" data-passo="2"><span class="val">o ano inteiro</span></span>
-        <span class="cel cel--b" data-passo="3"><span class="val">n&atilde;o entra</span></span>
-
-        <span class="rot">Certificado</span>
-        <span class="cel" data-passo="2"><span class="val">carga completa</span></span>
-        <span class="cel cel--b" data-passo="3"><span class="val">carga do online</span></span>
-
-        <span class="rot">Vagas</span>
-        <span class="cel" data-passo="2"><span class="val">20</span></span>
-        <span class="cel cel--b" data-passo="3"><span class="val">turma aberta</span></span>
-
-        <span class="rot">Investimento</span>
-        <span class="cel cel-base" data-passo="2"><span class="preco preco--col"><span class="cif">R$</span><span class="val-g">15.000</span></span></span>
-        <span class="cel cel--b cel-base" data-passo="3"><span class="preco preco--col preco--m"><span class="cif">R$</span><span class="val-g">8.000</span></span></span>
-      </div>
-    </div>
-    <div class="sl-pe">
-      <div class="sl-perow"><span class="k k--forte">Duas portas</span><span class="k">turma fundadora 2027</span><span class="k k--forte">32 &middot; 37</span></div>
-    </div>
-  </div>
-  <aside class="nota" data-nota="1">Direção: esta lâmina só entra depois da segunda porta aberta. Mostre a coluna do presencial inteira antes de revelar a do online.</aside>
-  <aside class="nota" data-nota="2">&ldquo;No presencial, a sua mão é corrigida por mim, no paciente.&rdquo;</aside>
-  <aside class="nota" data-nota="3">&ldquo;No online, você assiste à correção acontecendo em quem está lá.&rdquo;</aside>
 </section>
 
 <!-- 33 · BÔNUS DE FUNDADOR — cinco cards, o shadowing em fluor -->
@@ -1279,7 +1173,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">33 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">31 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;Quem entra agora entra antes de qualquer turma anterior existir. Por isso a primeira turma recebe mais do que qualquer outra vai receber depois.&rdquo;</aside>
@@ -1290,7 +1184,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 <!-- 34 · O TETO, O PRINCÍPIO — a agulha na bandeja, sangrando a borda -->
 <section class="sl sl--navy sl--foto">
   <div class="placa">
-    <img src="img/agulha-dry-needling-bandeja.jpg" alt="Agulha de dry needling e seringa de infiltração numa bandeja de aço">
+    <img src="../img/agulha-dry-needling-bandeja.jpg" alt="Agulha de dry needling e seringa de infiltração numa bandeja de aço">
     <span class="veu veu--navy"></span>
   </div>
   <div class="sl-quadro">
@@ -1303,7 +1197,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       <div class="h2" data-passo="2" style="margin-top:calc(26*var(--px));color:var(--tx70)">não o marketing</div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow"><span class="k k--forte">34 &middot; 37</span></div>
+      <div class="sl-perow"><span class="k k--forte">32 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;A turma é fechada, e quem define o tamanho dela não sou eu querendo vender mais.&rdquo;</aside>
@@ -1329,7 +1223,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">35 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">33 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="2">&ldquo;Cada agulha passa pela minha mão antes de passar pela sua.&rdquo;</aside>
@@ -1369,7 +1263,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
       </div>
     </div>
     <div class="sl-pe">
-      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">36 &middot; 37</span></div>
+      <div class="sl-perow" style="justify-content:flex-end"><span class="k k--forte">34 &middot; 35</span></div>
     </div>
   </div>
   <aside class="nota" data-nota="1">&ldquo;O caminho daqui pra frente é curto.&rdquo;</aside>
@@ -1381,7 +1275,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
 <!-- 37 · FECHO — o retrato volta, e o pedido fica em fita fluor -->
 <section class="sl sl--fundo sl--foto" style="--m:calc(96*var(--px))">
   <div class="placa placa--duo" style="width:calc(600*var(--px))">
-    <img src="img/s01-rodrigo-retrato.jpg" alt="Dr. Rodrigo Wendel, de braços cruzados, com a jaqueta da marca">
+    <img src="../img/s01-rodrigo-retrato.jpg" alt="Dr. Rodrigo Wendel, de braços cruzados, com a jaqueta da marca">
     <span class="veu veu--fundo"></span>
   </div>
   <div class="sl-quadro" style="right:calc(632*var(--px))">
@@ -1404,7 +1298,7 @@ body[data-notas] .palco{align-items:start;padding-top:2dvh}
             <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
           </span>
         </span>
-        <span class="k k--forte">37 &middot; 37</span>
+        <span class="k k--forte">35 &middot; 35</span>
       </div>
     </div>
   </div>

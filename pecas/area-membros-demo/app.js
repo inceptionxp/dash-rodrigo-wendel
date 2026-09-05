@@ -284,14 +284,16 @@ function blocoFicha(encontro, semana) {
   const formato = encontro.formato === 'imersao'
     ? NOME_FORMATO.imersao + ' · dia ' + encontro.diaImersao + ' de ' + encontro.diasImersao
     : NOME_FORMATO[encontro.formato];
-  const horario = encontro.modalidade === 'presencial'
-    ? 'Brasília · datas a definir'
-    : DADOS.formacao.janelaAula + ' · dia da semana a definir';
+  const presencial = encontro.modalidade === 'presencial';
+  const horario = presencial
+    ? (semana.diaAula ? semana.diaAula + ' · dias a confirmar' : 'Brasília · dias a definir')
+    : semana.diaAula + ' · horário a confirmar' + (semana.diaConfirmar ? ' · dia a confirmar' : '');
+  const emAberto = presencial || semana.diaConfirmar;
   return html`<div class="ficha">
     <div><p class="k">Semana</p><p class="v dado">${semana.numero} &middot; ${semana.rotulo}</p></div>
     <div><p class="k">Formato</p><p class="v">${formato}</p></div>
     <div><p class="k">Duração</p><p class="v${encontro.duracao ? '' : ' aberto'}">${encontro.duracao || 'A definir'}</p></div>
-    <div><p class="k">Horário</p><p class="v aberto">${horario}</p></div>
+    <div><p class="k">${presencial ? 'Dias' : 'Dia e horário'}</p><p class="v${emAberto ? ' aberto' : ''}">${horario}</p></div>
   </div>`;
 }
 
@@ -598,8 +600,9 @@ function linhaSemana(semana, atual) {
     <div>
       <p class="cal-sem-k"><b>Semana de ${semana.rotulo}</b> <em>&middot;</em> ${NOME_TIPO_SEMANA[semana.tipo]}${estado === 'aqui' ? [html` <em>&middot;</em> <b>você está aqui</b>`] : false}</p>
       ${links.length ? [html`<ul class="cal-encs">${links}</ul>`] : false}
+      ${!presencial && semana.diaAula ? [html`<p class="cal-pe"><i></i>${semana.diaAula}&nbsp;&middot; horário a confirmar${semana.diaConfirmar ? [html` &middot; <b>dia a confirmar</b>`] : false}</p>`] : false}
       ${semana.nota ? [html`<p class="cal-nota">${semana.nota}</p>`] : false}
-      ${presencial ? [html`<p class="cal-pe"><i></i>${DADOS.formacao.localImersoes}&nbsp;&middot; datas exatas a definir</p>`] : false}
+      ${presencial ? [html`<p class="cal-pe"><i></i>${DADOS.formacao.localImersoes}&nbsp;&middot; ${semana.diaAula ? [html`${semana.diaAula} &middot; <b>a confirmar</b>`] : 'dias a definir'}</p>`] : false}
       ${semana.feriado ? [html`<p class="cal-pe"><i></i>Feriado na semana &middot; ${semana.feriado}</p>`] : false}
     </div>
   </li>`;
@@ -610,6 +613,9 @@ function renderCalendario() {
   const atual = semanaDoAluno();
   const meses = mesesDoCalendario();
   const conta = tipo => DADOS.semanas.filter(s => s.tipo === tipo).length;
+  const comEncontro = DADOS.semanas.filter(s => s.encontros.length > 0).length;
+  const deslocadas = DADOS.semanas.filter(s => s.tipo === 'aula' && s.diaConfirmar);
+  const abertura = DADOS.aberturaOpcional;
 
   const navegacao = meses.map(mes => {
     const daAluna = mes.semanas.some(s => s.numero === atual.numero);
@@ -625,32 +631,36 @@ function renderCalendario() {
     <header class="tela-cab">
       <span class="junta"></span>
       <h1 tabindex="-1" data-foco>Calendário 2027</h1>
-      <p>As ${DADOS.formacao.totalSemanas} semanas da Turma Fundadora, de ${DADOS.semanas[0].rotulo} a ${DADOS.semanas[DADOS.semanas.length - 1].rotulo}. O ano fecha na formatura, na última semana de novembro.</p>
+      <p>As ${DADOS.formacao.totalSemanas} semanas da Turma Fundadora, de <b>terça, 23 de fevereiro</b> a <b>30 de novembro de 2027</b>. Os encontros online são às <b>terças, horário a confirmar</b>. O ano fecha na formatura, na última semana de novembro.</p>
     </header>
     <div class="ficha ficha--5">
       <div><p class="k">Semanas</p><p class="v dado">${DADOS.formacao.totalSemanas}</p></div>
       <div><p class="k">Encontros online</p><p class="v dado">${DADOS.formacao.totalEncontrosOnline}</p></div>
       <div><p class="k">Imersões</p><p class="v dado">${conta('imersao')}</p></div>
       <div><p class="k">Respiros</p><p class="v dado">${conta('respiro')}</p></div>
-      <div><p class="k">Pausa</p><p class="v dado">${conta('pausa')}</p></div>
+      <div><p class="k">Semanas com encontro</p><p class="v dado">${comEncontro}</p></div>
     </div>
     ${[tiraDoAno(atual)]}
     <ul class="cal-legenda">
       <li><span class="cal-amostra cal-amostra--aula octo-janela"></span>Aula</li>
       <li><span class="cal-amostra cal-amostra--imersao octo-janela"></span>Imersão presencial</li>
       <li><span class="cal-amostra cal-amostra--respiro"></span>Respiro</li>
-      <li><span class="cal-amostra cal-amostra--pausa"></span>Pausa</li>
       <li><span class="cal-amostra cal-amostra--feita"></span>Semana cumprida</li>
       <li><span class="cal-amostra cal-amostra--aqui"></span>Onde a aluna está</li>
     </ul>
     <div class="bloqueio" style="margin-top:var(--e-6)">
-      <p class="k"><i></i>Dia da semana ainda em aberto</p>
-      <p>A janela combinada é <b>${DADOS.formacao.janelaAula}</b>, mas o dia exato ainda não foi definido com o ${DADOS.formacao.professor}. Por isso este calendário marca a <b>semana</b>, nunca o dia e a hora.</p>
-      <p>Os feriados abaixo são os que caem na semana indicada — quais deles atingem a aula depende justamente dessa decisão.</p>
+      <p class="k"><i></i>${abertura.rotulo} &middot; ${abertura.estado}</p>
+      <p>Proposta de um encontro de abertura em <b>${abertura.data}</b>, na semana de ${abertura.semanaDe} — uma semana antes do Encontro 1. ${abertura.nota}</p>
+      <p>Por estar fora dos ${DADOS.formacao.totalEncontros} encontros, ele não entra na contagem das ${DADOS.formacao.totalSemanas} semanas abaixo. A decisão de realizá-lo é do ${DADOS.formacao.professor}.</p>
+    </div>
+    <div class="bloqueio" style="margin-top:var(--e-5)">
+      <p class="k"><i></i>Três semanas com o dia deslocado</p>
+      <p>Os encontros online são às <b>terças, horário a confirmar</b>. Em ${deslocadas.length} semanas o feriado nacional cai justamente na terça, e nelas o encontro roda em <b>outro dia da mesma semana</b>: ${[deslocadas.map(sem => html`<b>${sem.encontros.join(', ')}</b> na semana de ${sem.rotulo} (${sem.feriado})`).join(' · ')]}.</p>
+      <p>A escolha entre quarta e quinta ainda é do ${DADOS.formacao.professor}, e por isso essas semanas aparecem marcadas com <b>dia a confirmar</b>. Os dias dentro das três semanas de imersão seguem em aberto pelo mesmo motivo: dependem da agenda clínica e dos pacientes-modelo.</p>
     </div>
     <section class="secao">
       <span class="junta"></span>
-      <h2>Os cinco respiros</h2>
+      <h2>Os três respiros</h2>
       <p class="corrido">Respiro é semana sem aula nova, reservada para absorver conteúdo que estourou, plantão de dúvidas ou recuperação de calendário. É elasticidade operacional do ano — <b>não é conteúdo extra</b>, e por isso não aparece como entrega da formação. Cada um está no lugar em que está por um motivo, registrado na própria semana abaixo.</p>
     </section>
     <nav class="cal-meses" aria-label="Meses do ano letivo">${navegacao}</nav>
@@ -770,7 +780,7 @@ function renderPlano() {
     <p class="rotulo"><i></i>Semana ${ultimaSemana.numero} &middot; ${ultimaSemana.rotulo} &middot; ${DADOS.formacao.localImersoes}</p>
     <h2>Formatura e faixa ${marrom.nome.split(' / ')[0].toLowerCase()}</h2>
     <p>O critério do último gate está no Encontro 43, acima. Depois dele, a identidade que a formação entrega é uma só: <b>${marrom.identidade}</b>.</p>
-    <p>No jiu-jitsu real, marrom antecede a preta — e é de propósito que a formação para aqui. A faixa preta representa a elite da DTM, quem vira referência na área e ensina outros profissionais. Isso não se forma em dez meses, e o próprio ${DADOS.formacao.professor} é faixa roxa com um grau.</p>
+    <p>No jiu-jitsu real, marrom antecede a preta — e é de propósito que a formação para aqui. A faixa preta representa a elite da DTM, quem vira referência na área e ensina outros profissionais. Isso não se forma em nove meses, e o próprio ${DADOS.formacao.professor} é faixa roxa com um grau.</p>
   </div>`);
 
   return html`

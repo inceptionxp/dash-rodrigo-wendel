@@ -1,115 +1,227 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<script>document.documentElement.className+=" js";</script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>O Salto · Dr. Rodrigo Wendel · Painel do Projeto</title>
-<meta name="description" content="Painel de acompanhamento do projeto da mentoria de DTM do Dr. Rodrigo Wendel. Status em tempo real de cada bloco de entrega, marcos e validações pendentes.">
-<link rel="stylesheet" href="assets/style.css?v=4">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Painel do projeto &middot; Academia DTM &middot; Dr. Rodrigo Wendel</title>
+<meta name="description" content="Painel de acompanhamento do projeto da Academia DTM: onde o projeto está, o método, a formação Viver de DTM, as peças comerciais, a marca e o que ainda depende do Dr. Rodrigo.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B0F1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='14' fill='%23101C46'/%3E%3Cg stroke='%23CDF23F' stroke-width='23.94' stroke-linecap='round' transform='translate(100 100) scale(.76) translate(-100 -100)'%3E%3Cline x1='59.74' y1='28.53' x2='116.58' y2='28.53'/%3E%3Cline x1='122.07' y1='21' x2='162.26' y2='61.19'/%3E%3Cline x1='171.47' y1='59.74' x2='171.47' y2='116.58'/%3E%3Cline x1='179' y1='122.07' x2='138.81' y2='162.26'/%3E%3Cline x1='140.26' y1='171.47' x2='83.42' y2='171.47'/%3E%3Cline x1='77.93' y1='179' x2='37.74' y2='138.81'/%3E%3Cline x1='28.53' y1='140.26' x2='28.53' y2='83.42'/%3E%3Cline x1='21' y1='77.93' x2='61.19' y2='37.74'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&family=Hanken+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     PAINEL DO PROJETO · ACADEMIA DTM · SHELL V2 · 05/09/2026
+     Conteúdo em data-v2/*.js (contrato em data-v2/CONTRATO.md). Este arquivo
+     é só a casca: tarja, navegação, roteamento por hash e comentários.
+
+     MANIFESTO (Ato 1 · fable-web-craft) — herda o DESIGN DNA do brandbook
+     Academia DTM e os tokens da página de aplicação já aprovada (v4.2).
+
+     TESE ......... o mesmo caderno de atas de sociedade científica da página
+                    de aplicação, agora aberto na folha de acompanhamento do
+                    projeto: cada tela é uma ata datada, com os números no alto
+                    e o que falta decidir carimbado no rodapé.
+     SENSAÇÃO ..... «está tudo sob controle, e eu sei o que fazer amanhã» — a
+                    calma de quem abre um prontuário organizado, não um painel.
+     GESTO ........ a JUNTA (dois filetes, o fluor deslocado 50% e 7px abaixo)
+                    abre toda tela e se desenha na troca de view; o OCTÓGONO é
+                    o único marcador de lista da casca.
+     ANTI-REF ..... dashboard de startup com cards coloridos de status ·
+                    Notion genérico com emoji de seção · sidebar de SaaS azul.
+     APOSTA ....... uma tela quebra o mundo de papel: «O que depende de você»
+                    entra em navy de ponta a ponta, com os números em fluor.
+                    É a única página escura do painel — e é a que ele precisa
+                    abrir toda semana.
+
+     RÉGUA DE ACABAMENTO
+     1. Texto de leitura nunca abaixo de 16px; rótulo mono em caixa alta a 12px
+        (token --t-rotulo do brandbook, o mesmo da página aprovada).
+     2. Parágrafo com line-height 1,7 e medida de 62ch a 66ch.
+     3. Texto nunca sobre linha, filete, foto ou framework.
+     4. Toda tabela larga rola no eixo próprio; a página nunca rola na horizontal.
+     5. Sem emoji e sem ícone de linha genérico em nenhuma posição de interface.
+     ============================================================ -->
+
+<style>
+/* ---------- CRÍTICO · tokens do brandbook Academia DTM (§2) + casca ---------- */
+:root{
+  --navy:#101C46; --navy-alto:#182559; --tinta:#0B0F1A;
+  --papel:#F4F3EC; --papel-2:#E7E5D8;
+  --fluor:#CDF23F; --cobalto:#2C4BFF; --menta:#12D9A0; --carmim:#B23A2E;
+  --papel-72:rgba(244,243,236,.78); --papel-45:rgba(244,243,236,.56);
+  --tinta-70:rgba(11,15,26,.74); --tinta-45:rgba(11,15,26,.56);
+  /* rótulo mono de 12px pede mais peso que --tinta-45: .56 mede 4,27:1 sobre
+     papel e não passa em AA; .66 mede 5,9:1 */
+  --tinta-rotulo:rgba(11,15,26,.66);
+  --linha-clara:rgba(244,243,236,.16); --linha-escura:rgba(11,15,26,.15);
+  --display:"Archivo",system-ui,sans-serif;
+  --corpo:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:"Space Mono",ui-monospace,SFMono-Regular,monospace;
+  --t-titulo:clamp(30px,3.4vw,46px);
+  --t-h2:clamp(20px,1.6vw,23px);
+  --t-corpo:17px; --t-corpo-g:19px; --t-legenda:14px; --t-rotulo:12px;
+  --lh-corpo:1.7;
+  --e-1:4px; --e-2:8px; --e-3:12px; --e-4:16px; --e-5:24px;
+  --e-6:32px; --e-7:48px; --e-8:64px; --e-9:88px;
+  --pad-card:26px; --gap-col:32px; --gap-bloco:28px;
+  --r-0:0; --r-1:3px; --r-2:6px; --r-pill:999px;
+  --sombra-1:0 1px 2px rgba(16,28,70,.07);
+  --sombra-2:0 14px 36px -14px rgba(16,28,70,.24);
+  --d-micro:180ms; --d-base:240ms; --d-reveal:520ms;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --lateral:270px; --tarja:52px; --largura-palco:1000px;
+}
+@media(max-width:900px){:root{--pad-card:22px;--gap-col:24px;--gap-bloco:24px;--tarja:56px}}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-tap-highlight-color:rgba(16,28,70,.12);overflow-x:clip;scroll-behavior:smooth;
+  scroll-padding-top:calc(var(--tarja) + 12px)}
+body{background:var(--papel-2);color:var(--tinta);font-family:var(--corpo);
+  font-size:var(--t-corpo);line-height:var(--lh-corpo);overflow-x:clip;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--fluor);color:var(--tinta)}
+:focus-visible{outline:2px solid var(--cobalto);outline-offset:3px}
+.sobre-navy :focus-visible,.tarja :focus-visible,.lateral :focus-visible{outline-color:var(--fluor)}
+
+/* grão · a matéria do sistema */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.pula{position:absolute;left:-9999px;top:0}
+.pula:focus{left:var(--e-5);top:var(--e-3);z-index:300;background:var(--papel);color:var(--navy);
+  display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border-radius:var(--r-1);
+  font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+
+/* ---------- tarja fixa ---------- */
+.tarja{position:fixed;inset:0 0 auto 0;z-index:120;height:var(--tarja);
+  background:var(--tinta);color:var(--papel);border-bottom:1px solid rgba(205,242,63,.34);
+  display:flex;align-items:center;gap:var(--e-4);padding:0 var(--e-5)}
+.tarja .sim{width:19px;height:19px;flex:none;color:var(--fluor)}
+.tarja .sim line{stroke:currentColor}
+.tarja p{font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;line-height:1.4;color:var(--papel-72);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.tarja p b{color:var(--papel);font-weight:700}
+.tarja p i{font-style:normal;color:var(--fluor)}
+.abrir-menu{display:none;margin-left:auto;align-items:center;gap:9px;min-height:40px;padding:8px 14px;
+  background:transparent;border:1px solid var(--linha-clara);border-radius:var(--r-1);color:var(--papel);
+  font-family:var(--mono);font-size:var(--t-rotulo);font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;cursor:pointer}
+.abrir-menu .barras{position:relative;width:15px;height:11px;flex:none}
+.abrir-menu .barras::before,.abrir-menu .barras::after{content:"";position:absolute;left:0;width:15px;height:2px;background:currentColor}
+.abrir-menu .barras::before{top:0}.abrir-menu .barras::after{bottom:0}
+
+/* ---------- estrutura ---------- */
+.app{display:grid;grid-template-columns:var(--lateral) minmax(0,1fr);
+  padding-top:var(--tarja);min-height:100svh}
+.lateral{grid-column:1;background:var(--navy);color:var(--papel);
+  border-right:1px solid rgba(11,15,26,.35);
+  position:sticky;top:var(--tarja);height:calc(100svh - var(--tarja));overflow-y:auto;
+  padding:var(--e-6) 0 var(--e-8)}
+.palco{grid-column:2;min-width:0;padding:var(--e-8) var(--e-7) var(--e-9)}
+.palco-in{max-width:var(--largura-palco);margin:0 auto}
+
+/* ---------- gesto de assinatura · a junta ---------- */
+.junta{display:block;width:156px;height:9px;position:relative;flex:none}
+.junta::before{content:"";position:absolute;left:0;top:0;width:104px;height:2px;background:var(--navy)}
+.junta::after{content:"";position:absolute;left:52px;top:7px;width:104px;height:2px;background:var(--fluor);
+  transform:scaleX(0);transform-origin:left center;transition:transform var(--d-reveal) var(--ease) 120ms}
+.vis .junta::after{transform:scaleX(1)}
+.sobre-navy .junta::before{background:var(--papel-45)}
+
+/* ---------- título da view (piso de acabamento no crítico) ---------- */
+h1.titulo-view{font-family:var(--display);font-weight:800;letter-spacing:-.038em;
+  line-height:1.06;font-size:var(--t-titulo);color:var(--navy);text-wrap:balance;max-width:20ch}
+.sobre-navy h1.titulo-view{color:var(--papel)}
+
+/* no celular a tarja guarda só o nome do painel; «Academia DTM» está no lockup
+   da lateral e a data de atualização abre o cabeçalho de toda view */
+@media(max-width:820px){
+  .tarja p .so-largo{display:none}
+  .tarja{gap:var(--e-3);padding:0 18px}
+}
+@media(max-width:900px){
+  .app{grid-template-columns:minmax(0,1fr)}
+  .abrir-menu{display:inline-flex}
+  .lateral{position:fixed;top:var(--tarja);left:0;z-index:115;width:min(310px,86vw);
+    height:calc(100svh - var(--tarja));transform:translateX(-102%);
+    transition:transform var(--d-base) var(--ease);box-shadow:0 0 44px rgba(11,15,26,.34)}
+  .lateral.aberta{transform:none}
+  .palco{grid-column:1;padding:var(--e-6) 20px var(--e-8)}
+  h1.titulo-view{max-width:none}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .junta::after{transition:none;transform:scaleX(1)}
+  .lateral{transition:none}
+}
+</style>
+<link rel="stylesheet" href="assets/style.css?v=20">
 </head>
 <body>
 
+<a class="pula" href="#conteudo">Ir direto para o conteúdo</a>
+
+<header class="tarja">
+  <svg class="sim" viewBox="0 0 200 200" fill="none" role="img" aria-label="Símbolo da Academia DTM">
+    <g stroke-width="23.94" stroke-linecap="round">
+      <line x1="59.74" y1="28.53" x2="116.58" y2="28.53"/>
+      <line x1="122.07" y1="21" x2="162.26" y2="61.19"/>
+      <line x1="171.47" y1="59.74" x2="171.47" y2="116.58"/>
+      <line x1="179" y1="122.07" x2="138.81" y2="162.26"/>
+      <line x1="140.26" y1="171.47" x2="83.42" y2="171.47"/>
+      <line x1="77.93" y1="179" x2="37.74" y2="138.81"/>
+      <line x1="28.53" y1="140.26" x2="28.53" y2="83.42"/>
+      <line x1="21" y1="77.93" x2="61.19" y2="37.74"/>
+    </g>
+  </svg>
+  <p><b>Painel do projeto</b><span class="so-largo"> <i>&middot;</i> Academia DTM <i>&middot;</i> atualizado em 05/09/2026</span></p>
+  <button class="abrir-menu" id="abrir-menu" type="button" aria-controls="lateral" aria-expanded="false">
+    <span class="barras" aria-hidden="true"></span><span>Seções</span>
+  </button>
+</header>
+
 <div class="app">
 
-  <!-- ═══════════ SIDEBAR ═══════════ -->
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <div class="brand-mark">O Salto</div>
-      <span class="brand-meta">Dr. Rodrigo Wendel · v3</span>
-    </div>
-
-    <div class="sidebar-section">Consultoria</div>
-    <nav class="sidebar-nav">
-      <a class="nav-link" href="#home" data-view="home"><span class="nav-ico">◆</span><span>Visão Geral</span></a>
-      <a class="nav-link" href="#marcos" data-view="marcos"><span class="nav-ico">◆</span><span>Marcos do Projeto</span></a>
-      <a class="nav-link" href="#pesquisas" data-view="pesquisas"><span class="nav-ico">◆</span><span>Pesquisas</span></a>
-      <a class="nav-link" href="#acompanhamento" data-view="acompanhamento"><span class="nav-ico">◆</span><span>Acompanhamento</span></a>
-    </nav>
-
-    <div class="sidebar-section">Extração da Consultoria</div>
-    <nav class="sidebar-nav">
-      <a class="nav-link" href="#met-aprendiz" data-view="met-aprendiz"><span class="nav-ico">◆</span><span>Cliente Ideal</span></a>
-      <a class="nav-link" href="#met-expert" data-view="met-expert"><span class="nav-ico">◆</span><span>Diferenciais e Autoridade</span></a>
-      <a class="nav-link" href="#met-historias" data-view="met-historias"><span class="nav-ico">◆</span><span>Banco de Histórias</span></a>
-      <a class="nav-link" href="#met-metodo" data-view="met-metodo"><span class="nav-ico">◆</span><span>Método e Frameworks</span></a>
-      <a class="nav-link" href="brandbook-academia-dtm/index.html" target="_blank"><span class="nav-ico">◆</span><span>Brandbook &amp; Design System</span></a>
-    </nav>
-
-    <div class="sidebar-section">Produtos</div>
-    <nav class="sidebar-nav">
-      <div class="nav-group" id="nav-group-formacao">
-        <a class="nav-link" href="#prod-formacao" data-view="prod-formacao">
-          <span class="nav-ico">◆</span><span>Formação</span>
-          <button class="nav-toggle" onclick="event.preventDefault();event.stopPropagation();toggleNavGroup('nav-group-formacao')" aria-label="Abrir subpáginas da Formação">❯</button>
-        </a>
-        <div class="nav-children">
-          <a class="nav-link" href="#prod-oferta" data-view="prod-oferta"><span class="nav-ico">○</span><span>Oferta</span></a>
-          <a class="nav-link" href="#prod-grade" data-view="prod-grade"><span class="nav-ico">○</span><span>Grade · 43 Encontros</span></a>
-          <a class="nav-link" href="#prod-jornada" data-view="prod-jornada"><span class="nav-ico">○</span><span>Jornada do Aluno</span></a>
-          <a class="nav-link" href="#prod-gamificacao" data-view="prod-gamificacao"><span class="nav-ico">○</span><span>Gamificação · Faixas</span></a>
-        </div>
-      </div>
-      <a class="nav-link" href="#prod-mentoria" data-view="prod-mentoria"><span class="nav-ico">◆</span><span>Mentoria</span></a>
-
-    </nav>
-
-    <div class="sidebar-section">Suas perguntas, respondidas</div>
-    <nav class="sidebar-nav">
-      <a class="nav-link" href="#entrega-oferta" data-view="entrega-oferta"><span class="nav-ico">◆</span><span>Preço, garantia e bônus</span></a>
-      <a class="nav-link" href="#entrega-grade" data-view="entrega-grade"><span class="nav-ico">◆</span><span>Gate e grade da Etapa 1</span></a>
-      <a class="nav-link" href="#entrega-comercial" data-view="entrega-comercial"><span class="nav-ico">◆</span><span>Motores de tração</span></a>
-      <a class="nav-link" href="#entrega-imersao3" data-view="entrega-imersao3"><span class="nav-ico">◆</span><span>A 3ª imersão</span></a>
-      <a class="nav-link" href="#entrega-leads" data-view="entrega-leads"><span class="nav-ico">◆</span><span>Triagem do lead</span></a>
-    </nav>
-
-    <div class="sidebar-section">Marca &amp; Conteúdo</div>
-    <nav class="sidebar-nav">
-      <a class="nav-link" href="#conteudo-linha" data-view="conteudo-linha"><span class="nav-ico">◆</span><span>Linha Editorial</span></a>
-    </nav>
-
-    <div class="sidebar-section">Peças comerciais</div>
-    <nav class="sidebar-nav">
-      <a class="nav-link" href="#pecas-comerciais" data-view="pecas-comerciais"><span class="nav-ico">◆</span><span>Página, deck e guias</span></a>
-    </nav>
-
-    <div class="sidebar-footer">
-      v3 · Julho 2026<br>
-      Inception Experience<br>
-      Maiara Minatto
-    </div>
+  <aside class="lateral sobre-navy" id="lateral" aria-label="Seções do painel">
+    <a class="marca-lateral" href="#inicio">
+      <img src="marca/viver-de-dtm_horizontal_off.png" width="1783" height="528"
+           alt="Viver de DTM, formação da Academia DTM" fetchpriority="high">
+    </a>
+    <nav class="menu" id="menu"></nav>
+    <p class="pe-lateral">Inception <span>&middot;</span> Maiara Minatto<br>Projeto O Salto <span>&middot;</span> v2</p>
   </aside>
 
-  <!-- ═══════════ MAIN ═══════════ -->
-  <main class="main">
-    <div class="main-inner" id="main-inner"></div>
+  <main class="palco" id="conteudo">
+    <div class="palco-in">
+      <article id="view" aria-live="polite"></article>
 
-    <!-- GISCUS — comentários por seção -->
-    <div id="giscus-wrapper">
-      <div class="giscus-header">
-        <span class="giscus-tag">Comentários e validações</span>
-        <p class="giscus-help">Deixe aqui sua opinião sobre <strong>esta seção</strong>. Cada página tem seu próprio espaço de comentários. Na primeira vez, faça login com o GitHub (leva 10 segundos).</p>
-      </div>
-      <div class="giscus"></div>
+      <section id="giscus-wrapper" aria-label="Comentários desta seção">
+        <div class="giscus-header">
+          <span class="junta" aria-hidden="true"></span>
+          <span class="giscus-tag">Comentários e validações</span>
+          <p class="giscus-help">Deixe aqui sua opinião sobre <strong>esta seção</strong>. Cada página tem seu próprio espaço de comentários. Na primeira vez, faça login com o GitHub (leva 10 segundos).</p>
+        </div>
+        <div class="giscus"></div>
+      </section>
     </div>
   </main>
 
+  <div class="veu" id="veu" hidden></div>
 </div>
 
-<!-- MODAL — histórias e frameworks -->
-<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" onclick="if(event.target===this)closeModal()">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()" aria-label="Fechar">×</button>
-    <div id="modal-body"></div>
-  </div>
-</div>
-
-<script src="data/data.js?v=19"></script>
-<script src="data/docs.js?v=8"></script>
-<script src="data/metodo.js?v=9"></script>
-<script src="data/produto.js?v=9"></script>
-<script src="data/conteudo.js?v=1"></script>
-<script src="data/devolutivas.js?v=2"></script>
-<script src="assets/app.js?v=16"></script>
+<script src="data-v2/inicio.js?v=1"></script>
+<script src="data-v2/decisoes.js?v=1"></script>
+<script src="data-v2/metodo.js?v=1"></script>
+<script src="data-v2/formacao.js?v=1"></script>
+<script src="data-v2/comercial.js?v=1"></script>
+<script src="data-v2/marca.js?v=1"></script>
+<script src="assets/app.js?v=20"></script>
 
 <!-- ═══════════ GISCUS ═══════════ -->
 <script>

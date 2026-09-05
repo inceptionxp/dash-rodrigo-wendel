@@ -3,14 +3,20 @@
 
    PROCEDÊNCIA. Cada campo abaixo é rastreável a um dos três documentos-fonte:
      produto/plano-de-ensino-formacao.md   → etapas, blocos, títulos, resumos, materiais, formato
-     produto/calendario-turma-2027.md      → as 44 semanas, datas, feriados, respiros e imersões
+     produto/calendario-turma-2027.md (v2) → as 41 semanas, datas, feriados, respiros e imersões
      produto/gamificacao-faixas.md         → faixas, graus e gates
    Nada aqui foi inventado para preencher tela. Encontro sem material listado no plano
    fica com `materiais: []`, e a interface mostra o estado vazio.
 
+   CALENDÁRIO V2 (reunião de 05/09/2026). A turma começa em terça, 23/02/2027, e termina
+   em 30/11/2027: 41 semanas, 35 encontros online às terças, 3 semanas de imersão e 3 respiros.
+   Sem pausa de Carnaval, porque a turma começa depois dele.
+
    O QUE NÃO ESTÁ AQUI, DE PROPÓSITO:
-     · dia da semana e horário das aulas — a janela validada é 19h-21h em noite de semana,
-       mas o dia continua pendente com o Rodrigo (calendario-turma-2027.md, Pendências 1).
+     · os dias exatos das 3 imersões dentro da semana reservada — decisão do Rodrigo, depende
+       da agenda clínica e dos pacientes-modelo (calendario-turma-2027.md, Decisões 1 e 2).
+     · quarta ou quinta nas 3 semanas em que o feriado cai na terça — Decisão 3 do mesmo
+       documento. Aqui a semana fica marcada com as duas opções e o aviso de dia a confirmar.
      · carga horária das imersões — pendência P9 do contrato do design system.
      · qualquer número financeiro — pendência P7 do contrato do design system.
      · cor aplicada das faixas — a identidade visual das faixas é do @brand-director
@@ -24,17 +30,17 @@ const DADOS = {
     professor: 'Dr. Rodrigo Wendel',
     turma: 'Turma Fundadora',
     periodo: 'fevereiro a novembro de 2027',
-    inicio: '2027-02-01',
-    fim: '2027-11-29',
+    inicio: '2027-02-23',
+    fim: '2027-11-30',
     totalEncontros: 43,
     totalEncontrosOnline: 35,
     totalDiasPresenciais: 8,
-    totalSemanas: 44,
+    totalSemanas: 41,
     totalEtapas: 3,
     totalBlocos: 15,
     localImersoes: 'Brasília · Instituto Odontológico Rodrigo Wendel',
-    janelaAula: '19h-21h em noite de semana',
-    diaDaSemana: null
+    janelaAula: 'terças, horário a confirmar',
+    diaDaSemana: 'terça'
   },
 
   etapas: [
@@ -42,7 +48,7 @@ const DADOS = {
       id: 'etapa-1',
       numero: 1,
       nome: 'Fundação e Diagnóstico',
-      duracao: '~16 semanas',
+      duracao: '13 semanas',
       faixaDestino: 'azul',
       objetivo: 'O aluno sai diagnosticando DTM com precisão, usando anamnese estruturada, exame físico protocolar e leitura de imagem.',
       encontros: ['E1','E2','E3','E4','E5','E6','E7','E8','E9','E10','E11','E12','E13','E14','E15'],
@@ -58,7 +64,7 @@ const DADOS = {
       id: 'etapa-2',
       numero: 2,
       nome: 'Tratamento',
-      duracao: '~18 semanas',
+      duracao: '19 semanas',
       faixaDestino: 'roxa',
       objetivo: 'O aluno sai montando o plano de tratamento escalonado — do conservador ao invasivo — para cada um dos 3 grupos diagnósticos, e executando com as próprias mãos as técnicas em que está capacitado.',
       encontros: ['E16','E17','E18','E19','E20','E21','E22','E23','E24','E25','E26','E27','E28','E29','E30','E31','E32','E33','E34','E35'],
@@ -75,7 +81,7 @@ const DADOS = {
       id: 'etapa-3',
       numero: 3,
       nome: 'Comercial, Gestão e Marketing Básico',
-      duracao: '~8 semanas',
+      duracao: '8 semanas',
       faixaDestino: 'marrom',
       objetivo: 'Transformar a competência clínica recém-adquirida em receita: converter avaliação em tratamento, captar por indicação e posicionamento, reter e controlar os números essenciais.',
       encontros: ['E36','E37','E38','E39','E40','E41','E42','E43'],
@@ -511,51 +517,60 @@ const DADOS = {
   ],
 
   semanas: [
-    {"numero": 1, "inicio": "2027-02-01", "rotulo": "01/02", "tipo": "aula", "encontros": ["E1"], "feriado": null, "nota": null},
-    {"numero": 2, "inicio": "2027-02-08", "rotulo": "08/02", "tipo": "pausa", "encontros": [], "feriado": "Carnaval (seg/ter), Cinzas (qua)", "nota": "Pausa de Carnaval — sem aula. Pausa fixa no calendário, derruba a aula em qualquer cenário de segunda a quarta."},
-    {"numero": 3, "inicio": "2027-02-15", "rotulo": "15/02", "tipo": "aula", "encontros": ["E2"], "feriado": null, "nota": null},
-    {"numero": 4, "inicio": "2027-02-22", "rotulo": "22/02", "tipo": "aula", "encontros": ["E3"], "feriado": null, "nota": null},
-    {"numero": 5, "inicio": "2027-03-01", "rotulo": "01/03", "tipo": "aula", "encontros": ["E4"], "feriado": null, "nota": null},
-    {"numero": 6, "inicio": "2027-03-08", "rotulo": "08/03", "tipo": "aula", "encontros": ["E5"], "feriado": null, "nota": null},
-    {"numero": 7, "inicio": "2027-03-15", "rotulo": "15/03", "tipo": "aula", "encontros": ["E6"], "feriado": null, "nota": null},
-    {"numero": 8, "inicio": "2027-03-22", "rotulo": "22/03", "tipo": "aula", "encontros": ["E7"], "feriado": "Sexta-feira Santa (26/03)", "nota": null},
-    {"numero": 9, "inicio": "2027-03-29", "rotulo": "29/03", "tipo": "respiro", "encontros": [], "feriado": null, "nota": "Respiro 1 — fecha o primeiro arco (ficha, anamnese e o estudo de caso do E7) antes de abrir imagem e diagnóstico específico."},
-    {"numero": 10, "inicio": "2027-04-05", "rotulo": "05/04", "tipo": "aula", "encontros": ["E8"], "feriado": null, "nota": null},
-    {"numero": 11, "inicio": "2027-04-12", "rotulo": "12/04", "tipo": "aula", "encontros": ["E9"], "feriado": null, "nota": null},
-    {"numero": 12, "inicio": "2027-04-19", "rotulo": "19/04", "tipo": "aula", "encontros": ["E10"], "feriado": "Tiradentes (qua)", "nota": null},
-    {"numero": 13, "inicio": "2027-04-26", "rotulo": "26/04", "tipo": "aula", "encontros": ["E11"], "feriado": null, "nota": null},
-    {"numero": 14, "inicio": "2027-05-03", "rotulo": "03/05", "tipo": "aula", "encontros": ["E12"], "feriado": null, "nota": null},
-    {"numero": 15, "inicio": "2027-05-10", "rotulo": "10/05", "tipo": "imersao", "encontros": ["E13", "E14", "E15"], "feriado": null, "nota": "Imersão 1 · Brasília · Encontros 13 a 15 · gate e cerimônia da faixa azul."},
-    {"numero": 16, "inicio": "2027-05-17", "rotulo": "17/05", "tipo": "respiro", "encontros": [], "feriado": null, "nota": "Respiro 2 — semana de aterrissagem, logo após a Imersão 1. Emendar aula na semana seguinte à viagem derruba presença."},
-    {"numero": 17, "inicio": "2027-05-24", "rotulo": "24/05", "tipo": "aula", "encontros": ["E16"], "feriado": "Corpus Christi (qui)", "nota": null},
-    {"numero": 18, "inicio": "2027-05-31", "rotulo": "31/05", "tipo": "aula", "encontros": ["E17"], "feriado": null, "nota": null},
-    {"numero": 19, "inicio": "2027-06-07", "rotulo": "07/06", "tipo": "aula", "encontros": ["E18"], "feriado": null, "nota": null},
-    {"numero": 20, "inicio": "2027-06-14", "rotulo": "14/06", "tipo": "aula", "encontros": ["E19"], "feriado": null, "nota": null},
-    {"numero": 21, "inicio": "2027-06-21", "rotulo": "21/06", "tipo": "aula", "encontros": ["E20"], "feriado": null, "nota": null},
-    {"numero": 22, "inicio": "2027-06-28", "rotulo": "28/06", "tipo": "aula", "encontros": ["E21"], "feriado": null, "nota": null},
-    {"numero": 23, "inicio": "2027-07-05", "rotulo": "05/07", "tipo": "aula", "encontros": ["E22"], "feriado": null, "nota": null},
-    {"numero": 24, "inicio": "2027-07-12", "rotulo": "12/07", "tipo": "aula", "encontros": ["E23"], "feriado": null, "nota": null},
-    {"numero": 25, "inicio": "2027-07-19", "rotulo": "19/07", "tipo": "respiro", "encontros": [], "feriado": null, "nota": "Respiro 3 — meio da Etapa 2, logo depois do E23, que fecha a escada muscular e entrega o primeiro grau da faixa azul."},
-    {"numero": 26, "inicio": "2027-07-26", "rotulo": "26/07", "tipo": "aula", "encontros": ["E24"], "feriado": null, "nota": null},
-    {"numero": 27, "inicio": "2027-08-02", "rotulo": "02/08", "tipo": "aula", "encontros": ["E25"], "feriado": null, "nota": null},
-    {"numero": 28, "inicio": "2027-08-09", "rotulo": "09/08", "tipo": "aula", "encontros": ["E26"], "feriado": null, "nota": null},
-    {"numero": 29, "inicio": "2027-08-16", "rotulo": "16/08", "tipo": "aula", "encontros": ["E27"], "feriado": null, "nota": null},
-    {"numero": 30, "inicio": "2027-08-23", "rotulo": "23/08", "tipo": "aula", "encontros": ["E28"], "feriado": null, "nota": null},
-    {"numero": 31, "inicio": "2027-08-30", "rotulo": "30/08", "tipo": "aula", "encontros": ["E29"], "feriado": null, "nota": null},
-    {"numero": 32, "inicio": "2027-09-06", "rotulo": "06/09", "tipo": "aula", "encontros": ["E30"], "feriado": "Independência (ter)", "nota": null},
-    {"numero": 33, "inicio": "2027-09-13", "rotulo": "13/09", "tipo": "aula", "encontros": ["E31"], "feriado": null, "nota": null},
-    {"numero": 34, "inicio": "2027-09-20", "rotulo": "20/09", "tipo": "aula", "encontros": ["E32"], "feriado": null, "nota": null},
-    {"numero": 35, "inicio": "2027-09-27", "rotulo": "27/09", "tipo": "respiro", "encontros": [], "feriado": null, "nota": "Respiro 4 — preparação da viagem mais técnica do ano. É onde a triagem de pacientes-modelo da imersão precisa estar fechada."},
-    {"numero": 36, "inicio": "2027-10-04", "rotulo": "04/10", "tipo": "imersao", "encontros": ["E33", "E34", "E35"], "feriado": null, "nota": "Imersão 2 · Brasília · Encontros 33 a 35 · gate e cerimônia da faixa roxa."},
-    {"numero": 37, "inicio": "2027-10-11", "rotulo": "11/10", "tipo": "aula", "encontros": ["E36"], "feriado": "Aparecida (ter)", "nota": null},
-    {"numero": 38, "inicio": "2027-10-18", "rotulo": "18/10", "tipo": "aula", "encontros": ["E37"], "feriado": null, "nota": null},
-    {"numero": 39, "inicio": "2027-10-25", "rotulo": "25/10", "tipo": "aula", "encontros": ["E38"], "feriado": null, "nota": null},
-    {"numero": 40, "inicio": "2027-11-01", "rotulo": "01/11", "tipo": "aula", "encontros": ["E39"], "feriado": "Finados (ter)", "nota": null},
-    {"numero": 41, "inicio": "2027-11-08", "rotulo": "08/11", "tipo": "aula", "encontros": ["E40"], "feriado": null, "nota": null},
-    {"numero": 42, "inicio": "2027-11-15", "rotulo": "15/11", "tipo": "aula", "encontros": ["E41"], "feriado": "Proclamação (seg)", "nota": null},
-    {"numero": 43, "inicio": "2027-11-22", "rotulo": "22/11", "tipo": "respiro", "encontros": [], "feriado": null, "nota": "Respiro 5 — semana de preparação da planilha de números e da consulta completa que o aluno apresenta na formatura."},
-    {"numero": 44, "inicio": "2027-11-29", "rotulo": "29/11", "tipo": "imersao", "encontros": ["E42", "E43"], "feriado": null, "nota": "Imersão 3 · Brasília · Encontros 42 e 43 · gate de formatura e cerimônia da faixa marrom."}
+    {"numero": 1, "inicio": "2027-02-22", "rotulo": "22/02", "tipo": "aula", "encontros": ["E1"], "diaAula": "terça 23/02", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 2, "inicio": "2027-03-01", "rotulo": "01/03", "tipo": "aula", "encontros": ["E2"], "diaAula": "terça 02/03", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 3, "inicio": "2027-03-08", "rotulo": "08/03", "tipo": "aula", "encontros": ["E3"], "diaAula": "terça 09/03", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 4, "inicio": "2027-03-15", "rotulo": "15/03", "tipo": "aula", "encontros": ["E4"], "diaAula": "terça 16/03", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 5, "inicio": "2027-03-22", "rotulo": "22/03", "tipo": "aula", "encontros": ["E5"], "diaAula": "terça 23/03", "diaConfirmar": false, "feriado": "Sexta-feira Santa (sex 26/03)", "nota": null},
+    {"numero": 6, "inicio": "2027-03-29", "rotulo": "29/03", "tipo": "aula", "encontros": ["E6"], "diaAula": "terça 30/03", "diaConfirmar": false, "feriado": "Páscoa (dom 28/03)", "nota": null},
+    {"numero": 7, "inicio": "2027-04-05", "rotulo": "05/04", "tipo": "aula", "encontros": ["E7"], "diaAula": "terça 06/04", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 8, "inicio": "2027-04-12", "rotulo": "12/04", "tipo": "aula", "encontros": ["E8"], "diaAula": "terça 13/04", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 9, "inicio": "2027-04-19", "rotulo": "19/04", "tipo": "aula", "encontros": ["E9"], "diaAula": "terça 20/04", "diaConfirmar": false, "feriado": "Tiradentes (qua 21/04)", "nota": null},
+    {"numero": 10, "inicio": "2027-04-26", "rotulo": "26/04", "tipo": "aula", "encontros": ["E10"], "diaAula": "terça 27/04", "diaConfirmar": false, "feriado": "1º de Maio (sáb 01/05)", "nota": null},
+    {"numero": 11, "inicio": "2027-05-03", "rotulo": "03/05", "tipo": "aula", "encontros": ["E11"], "diaAula": "terça 04/05", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 12, "inicio": "2027-05-10", "rotulo": "10/05", "tipo": "aula", "encontros": ["E12"], "diaAula": "terça 11/05", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 13, "inicio": "2027-05-17", "rotulo": "17/05", "tipo": "imersao", "encontros": ["E13", "E14", "E15"], "diaAula": null, "diaConfirmar": true, "feriado": null, "nota": "Imersão 1 · Brasília · Encontros 13 a 15 · gate e cerimônia da faixa azul. Três dias; os dias dentro da semana dependem da agenda clínica do Rodrigo."},
+    {"numero": 14, "inicio": "2027-05-24", "rotulo": "24/05", "tipo": "respiro", "encontros": [], "diaAula": null, "diaConfirmar": false, "feriado": "Corpus Christi (qui 27/05)", "nota": "Respiro 1 — aterrissagem depois da primeira viagem e último absorvedor de transbordo da Etapa 1. A semana já tem feriado na quinta, quando a presença cairia de qualquer jeito."},
+    {"numero": 15, "inicio": "2027-05-31", "rotulo": "31/05", "tipo": "aula", "encontros": ["E16"], "diaAula": "terça 01/06", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 16, "inicio": "2027-06-07", "rotulo": "07/06", "tipo": "aula", "encontros": ["E17"], "diaAula": "terça 08/06", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 17, "inicio": "2027-06-14", "rotulo": "14/06", "tipo": "aula", "encontros": ["E18"], "diaAula": "terça 15/06", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 18, "inicio": "2027-06-21", "rotulo": "21/06", "tipo": "aula", "encontros": ["E19"], "diaAula": "terça 22/06", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 19, "inicio": "2027-06-28", "rotulo": "28/06", "tipo": "aula", "encontros": ["E20"], "diaAula": "terça 29/06", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 20, "inicio": "2027-07-05", "rotulo": "05/07", "tipo": "aula", "encontros": ["E21"], "diaAula": "terça 06/07", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 21, "inicio": "2027-07-12", "rotulo": "12/07", "tipo": "aula", "encontros": ["E22"], "diaAula": "terça 13/07", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 22, "inicio": "2027-07-19", "rotulo": "19/07", "tipo": "aula", "encontros": ["E23"], "diaAula": "terça 20/07", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 23, "inicio": "2027-07-26", "rotulo": "26/07", "tipo": "respiro", "encontros": [], "diaAula": null, "diaConfirmar": false, "feriado": null, "nota": "Respiro 2 — meio da Etapa 2, logo depois do E23, que fecha a escada muscular inteira e entrega o 1º grau da faixa azul. Sem ele, a turma atravessa 18 semanas seguidas de conteúdo técnico."},
+    {"numero": 24, "inicio": "2027-08-02", "rotulo": "02/08", "tipo": "aula", "encontros": ["E24"], "diaAula": "terça 03/08", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 25, "inicio": "2027-08-09", "rotulo": "09/08", "tipo": "aula", "encontros": ["E25"], "diaAula": "terça 10/08", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 26, "inicio": "2027-08-16", "rotulo": "16/08", "tipo": "aula", "encontros": ["E26"], "diaAula": "terça 17/08", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 27, "inicio": "2027-08-23", "rotulo": "23/08", "tipo": "aula", "encontros": ["E27"], "diaAula": "terça 24/08", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 28, "inicio": "2027-08-30", "rotulo": "30/08", "tipo": "aula", "encontros": ["E28"], "diaAula": "terça 31/08", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 29, "inicio": "2027-09-06", "rotulo": "06/09", "tipo": "aula", "encontros": ["E29"], "diaAula": "quarta 08/09 ou quinta 09/09", "diaConfirmar": true, "feriado": "Independência (ter 07/09)", "nota": "Feriado cai na terça: o encontro roda em outro dia desta mesma semana. A escolha entre quarta e quinta é decisão do Rodrigo e entra no calendário do aluno desde o primeiro dia."},
+    {"numero": 30, "inicio": "2027-09-13", "rotulo": "13/09", "tipo": "aula", "encontros": ["E30"], "diaAula": "terça 14/09", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 31, "inicio": "2027-09-20", "rotulo": "20/09", "tipo": "aula", "encontros": ["E31"], "diaAula": "terça 21/09", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 32, "inicio": "2027-09-27", "rotulo": "27/09", "tipo": "aula", "encontros": ["E32"], "diaAula": "terça 28/09", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 33, "inicio": "2027-10-04", "rotulo": "04/10", "tipo": "imersao", "encontros": ["E33", "E34", "E35"], "diaAula": null, "diaConfirmar": true, "feriado": null, "nota": "Imersão 2 · Brasília · Encontros 33 a 35 · gate e cerimônia da faixa roxa. Três dias; os dias dentro da semana ainda estão em aberto."},
+    {"numero": 34, "inicio": "2027-10-11", "rotulo": "11/10", "tipo": "aula", "encontros": ["E36"], "diaAula": "quarta 13/10 ou quinta 14/10", "diaConfirmar": true, "feriado": "Aparecida (ter 12/10)", "nota": "Abre a Etapa 3. Feriado cai na terça: o encontro roda em outro dia desta mesma semana, com o dia a confirmar."},
+    {"numero": 35, "inicio": "2027-10-18", "rotulo": "18/10", "tipo": "aula", "encontros": ["E37"], "diaAula": "terça 19/10", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 36, "inicio": "2027-10-25", "rotulo": "25/10", "tipo": "aula", "encontros": ["E38"], "diaAula": "terça 26/10", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 37, "inicio": "2027-11-01", "rotulo": "01/11", "tipo": "aula", "encontros": ["E39"], "diaAula": "quarta 03/11 ou quinta 04/11", "diaConfirmar": true, "feriado": "Finados (ter 02/11)", "nota": "Feriado cai na terça: o encontro roda em outro dia desta mesma semana, com o dia a confirmar."},
+    {"numero": 38, "inicio": "2027-11-08", "rotulo": "08/11", "tipo": "aula", "encontros": ["E40"], "diaAula": "terça 09/11", "diaConfirmar": false, "feriado": null, "nota": null},
+    {"numero": 39, "inicio": "2027-11-15", "rotulo": "15/11", "tipo": "aula", "encontros": ["E41"], "diaAula": "terça 16/11", "diaConfirmar": false, "feriado": "Proclamação (seg 15/11), Consciência Negra (sáb 20/11)", "nota": null},
+    {"numero": 40, "inicio": "2027-11-22", "rotulo": "22/11", "tipo": "respiro", "encontros": [], "diaAula": null, "diaConfirmar": false, "feriado": null, "nota": "Respiro 3 — preparação da formatura: a planilha de números e a consulta completa que o aluno apresenta ao vivo na Imersão 3."},
+    {"numero": 41, "inicio": "2027-11-29", "rotulo": "29/11", "tipo": "imersao", "encontros": ["E42", "E43"], "diaAula": "segunda 29 e terça 30/11", "diaConfirmar": true, "feriado": "Dia do Evangélico no DF (ter 30/11)", "nota": "Imersão 3 · Brasília · Encontros 42 e 43 · gate de formatura e cerimônia da faixa marrom. Dois dias; a proposta é segunda 29 e terça 30, única combinação que mantém a formatura em novembro."}
   ],
+
+  /* Encontro de abertura da turma, proposto para terça 16/02/2027 — uma semana antes do E1.
+     Está FORA dos 43 encontros e FORA das 41 semanas: não é aula técnica, é o Momento 0
+     (boas-vindas, entrega da faixa branca, tour da plataforma). Decisão 4 do calendário v2,
+     ainda com o Rodrigo. Por isso entra na interface marcado como opcional, a confirmar. */
+  aberturaOpcional: {
+    rotulo: 'Abertura da turma',
+    data: 'terça, 16/02/2027',
+    semanaDe: '15/02',
+    estado: 'opcional, a confirmar',
+    nota: 'Boas-vindas, apresentação da turma, entrega simbólica da faixa branca, combinados de convivência e tour da plataforma. Fora da contagem dos 43 encontros: não é aula de conteúdo técnico.'
+  },
 
   /* `cor` é a cor de referência do jiu-jitsu real, em palavra, como está no documento de
      gamificação. A cor aplicada de cada faixa NÃO está definida: a identidade visual das

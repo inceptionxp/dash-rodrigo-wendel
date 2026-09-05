@@ -550,6 +550,112 @@ ul.lista li b{color:var(--tinta);font-weight:600}
 .sec--escuro .peca-txt{color:var(--papel-72)}
 .sec--escuro .cap span{color:var(--papel-45)!important}
 
+/* ============================================================
+   v3 · 05/09/2026 — o mapa de crenças, a grade com imagem e a
+   revisão de leitura pedida pela dona do projeto em 05/09.
+   Nada aqui muda token, cor, família ou gesto: só medida de leitura.
+   ============================================================ */
+
+/* --- revisão de leitura 01 · a legenda mono ---
+   Medido em 1440: 65 legendas em 12 px, caixa alta e 0,12em de tracking,
+   várias passando de 90 caracteres. Sobe um ponto, o tracking cede e a
+   entrelinha abre. O rótulo continua sendo rótulo; só deixa de cansar. */
+.cap{font-size:13px;letter-spacing:.1em;line-height:1.72}
+.peca-cap{font-size:13px;letter-spacing:.09em;line-height:1.76}
+.tab--densa .fnt{font-size:12.5px;letter-spacing:.01em;line-height:1.7}
+.tab--densa .fmt{font-size:12.5px;line-height:1.65}
+
+/* --- revisão de leitura 02 · painel em três colunas ---
+   Três painéis de 356 px com 32 px de recheio deixavam 290 px de medida.
+   O recheio cede 8 px e a linha ganha três caracteres. */
+.grade-3>.painel{padding:var(--e-5)}
+
+/* --- revisão de leitura 03 · os três bloqueios em faixa ---
+   Eram três colunas de 290 px com parágrafos de 9 a 12 linhas. Viram três
+   faixas de largura inteira: rótulo e título à esquerda, texto à direita,
+   com a medida em torno de 70 caracteres. */
+.bloqueio{display:grid;grid-template-columns:260px 1fr;gap:var(--e-6);
+  padding:var(--e-6) 0;border-top:1px solid var(--linha-clara)}
+.bloqueio:first-of-type{border-top:0;padding-top:var(--e-3)}
+.bloqueio h4{font-family:var(--display);font-weight:800;font-size:var(--t-h3);
+  letter-spacing:-.02em;color:var(--papel);margin-top:var(--e-3);text-wrap:balance}
+.bloqueio-txt{max-width:70ch}
+.bloqueio-txt p + p{margin-top:var(--e-4)}
+@media(max-width:820px){.bloqueio{grid-template-columns:1fr;gap:var(--e-3)}}
+
+/* --- § 06.2 · o mapa de crenças --- */
+.domino{position:relative;background:var(--navy);color:var(--papel);
+  border-radius:var(--r-1);overflow:hidden;padding:var(--e-8) var(--e-7);
+  display:grid;grid-template-columns:1.06fr .94fr;gap:var(--e-8);align-items:start}
+.domino>svg{position:absolute;width:34%;right:-9%;bottom:-22%;color:var(--navy-alto);
+  pointer-events:none;z-index:0}
+.domino-in{position:relative;z-index:2}
+@media(max-width:900px){.domino{grid-template-columns:1fr;gap:var(--e-6)}}
+.domino .k{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--fluor);display:flex;align-items:center;gap:var(--e-3)}
+.domino .k i{display:block;width:34px;height:2px;background:var(--fluor);font-style:normal;flex:none}
+.domino h4{font-family:var(--display);font-weight:800;font-size:clamp(25px,2.5vw,34px);
+  line-height:1.1;letter-spacing:-.03em;margin-top:var(--e-5);text-wrap:balance}
+.domino h4 em{font-style:normal;color:var(--fluor)}
+.domino p{max-width:58ch;font-size:var(--t-corpo-s);line-height:1.66;color:var(--papel-72)}
+.domino p + p{margin-top:var(--e-5)}
+.domino-in--dir{padding-top:var(--e-4)}
+.domino p b{color:var(--papel);font-weight:600}
+@media(max-width:720px){.domino{padding:var(--e-7) var(--e-5)}}
+
+.cren{width:100%;border-collapse:collapse;font-size:var(--t-corpo-s);line-height:1.62;margin-top:var(--e-4)}
+.cren th,.cren td{text-align:left;padding:18px 20px;border-bottom:1px solid var(--linha-escura);vertical-align:top}
+.cren th{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--tinta-45);border-bottom-width:2px;border-bottom-color:var(--navy)}
+.cren .hoje{color:var(--tinta-45)}
+.cren .hoje b{color:var(--tinta-70);font-weight:600}
+.cren .vira{position:relative}
+.cren .vira b{color:var(--tinta);font-weight:600}
+.cren tr:hover td{background:rgba(16,28,70,.028)}
+.cren .fw{font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;color:var(--tinta-70);line-height:1.65}
+.seta{display:block;width:26px;height:2px;background:var(--navy);position:relative;margin-top:9px}
+.seta::after{content:"";position:absolute;right:0;top:-3px;width:8px;height:8px;
+  border-top:2px solid var(--navy);border-right:2px solid var(--navy);transform:rotate(45deg)}
+.confirmar{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--cobalto);
+  border:1px solid rgba(44,75,255,.42);border-radius:var(--r-1);padding:3px 8px;
+  margin-top:10px;line-height:1.5;white-space:nowrap}
+.cren tr.a-confirmar td{background:rgba(44,75,255,.045)}
+
+.ordem{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--linha-escura);
+  border:1px solid var(--linha-escura);border-radius:var(--r-1);overflow:hidden;margin-top:var(--e-4)}
+.ordem-col{background:#FBFAF4;padding:var(--e-5);display:flex;flex-direction:column;gap:var(--e-3)}
+.ordem-col .n{font-family:var(--display);font-weight:800;font-size:44px;line-height:.8;
+  letter-spacing:-.05em;color:var(--papel-2);font-variant-numeric:tabular-nums}
+.ordem-col .k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--tinta-45);line-height:1.6}
+.ordem-col b{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:-.012em;line-height:1.35}
+.ordem-col p{font-size:var(--t-corpo-s);color:var(--tinta-70);line-height:1.6}
+.ordem-col--navy{background:var(--navy);color:var(--papel)}
+.ordem-col--navy .n{color:var(--navy-alto)}
+.ordem-col--navy .k{color:var(--fluor)}
+.ordem-col--navy p{color:var(--papel-72)}
+@media(max-width:900px){.ordem{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.ordem{grid-template-columns:1fr}}
+
+/* --- § 01.6 · os mockups com imagem ---
+   A grade de exemplos rodava só em tipografia. Estes nove usam as
+   ilustrações já geradas do projeto. Regra herdada: texto nunca sobre
+   linha nem sobre elemento — ou vive sobre o scrim navy, ou vive sobre
+   área limpa de papel. Fluor nunca vira fundo. */
+.mk-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e-6)}
+.mk-grade>*{min-width:0}
+@media(max-width:900px){.mk-grade{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.mk-grade{grid-template-columns:1fr}}
+.a-img{position:absolute;z-index:0;overflow:hidden}
+.a-img img{width:100%;height:100%;object-fit:cover;display:block;
+  filter:saturate(.88) contrast(1.04)}
+.a-img--cheia{inset:0}
+.a-scrim--suave{position:absolute;inset:0;z-index:2;
+  background:linear-gradient(0deg,rgba(16,28,70,.96) 24%,rgba(16,28,70,.70) 42%,rgba(16,28,70,.16) 64%,rgba(16,28,70,0) 80%)}
+.a-janela{position:relative;overflow:hidden;background:var(--navy)}
+.a-janela img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.88) contrast(1.04)}
+
 /* --- entrada de bloco · 520 ms, curva única do contrato · nada pulsa, nada flutua --- */
 .rv{opacity:0;transform:translateY(14px);
   transition:opacity var(--d-reveal) var(--ease),transform var(--d-reveal) var(--ease)}
@@ -625,6 +731,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
     <a href="#trafego">04 &middot; tráfego</a>
     <a href="#sistema">05 &middot; sistema</a>
     <a href="#editorial">06 &middot; linhas</a>
+    <a href="#crencas">crenças</a>
     <a href="#temas">temas</a>
     <a href="#calendario">calendário</a>
     <a href="#virada">setembro</a>
@@ -659,7 +766,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
         <tr>
           <td class="id">02</td>
           <td>&ldquo;63,9% dos dentistas confundem sinal de bruxismo com sinal de DTM&rdquo; como dado-âncora do feed</td>
-          <td><b>Número vetado, sem fonte primária.</b> O lugar dele é ocupado por três dados verificados &mdash; ver § 06.2, linha Educativa</td>
+          <td><b>Número vetado, sem fonte primária.</b> O lugar dele é ocupado por três dados verificados &mdash; ver § 06.3, linha Educativa</td>
           <td class="fnt">verificacao-dados-copy.md<br>Alegação 1</td>
         </tr>
         <tr>
@@ -677,7 +784,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
         <tr>
           <td class="id">05</td>
           <td>Setembro como futuro: &ldquo;a partir de setembro&rdquo;</td>
-          <td><b>Setembro é agora.</b> A Fase 2 abre neste mês, com a turma marcada para 1º/02/2027</td>
+          <td><b>Setembro é agora.</b> A Fase 2 abre neste mês, com a turma marcada para 23/02/2027</td>
           <td class="fnt">estrategia-campanha.md § 7</td>
         </tr>
       </tbody>
@@ -695,7 +802,7 @@ ul.lista li b{color:var(--tinta);font-weight:600}
     <div class="alerta">
       <div class="k">Suposição declarada</div>
       <p>A Fase 1 nunca chegou a publicar: o perfil ainda não foi renomeado. Este guia <b>mantém as proporções de mix exatamente como a linha editorial de 02/08 as definiu</b> e resolve o descompasso pela ordem, não pela porcentagem.</p>
-      <p>O bloco de fundação &mdash; as nove pautas do § 06.5 &mdash; roda comprimido nas três primeiras semanas, e o mix da Fase 2 passa a contar a partir dali. É sequenciamento, não mudança de mix.</p>
+      <p>O bloco de fundação &mdash; as nove pautas do § 06.6 &mdash; roda comprimido nas três primeiras semanas, e o mix da Fase 2 passa a contar a partir dali. É sequenciamento, não mudança de mix.</p>
     </div>
   </div>
 </section>
@@ -762,30 +869,32 @@ PROIBIDO    emoji &middot; seta desenhada &middot; "arrasta pro lado" &middot; c
     </div>
   </div>
 
-  <div class="grade-2" style="margin-top:var(--e-7);align-items:start">
-    <div>
-      <div class="tab-rolo">
+  <div style="margin-top:var(--e-7)">
+    <div class="tab-rolo">
         <table class="tab">
-          <thead><tr><th></th><th style="min-width:150px">@rodrigowendeldtm</th><th style="min-width:150px">@academiadtm</th></tr></thead>
+          <thead><tr><th style="min-width:120px"></th><th style="min-width:300px">@rodrigowendeldtm</th><th style="min-width:380px">@academiadtm</th></tr></thead>
           <tbody>
             <tr><td><b>Fala com</b></td><td>Paciente</td><td class="sim">Dentista</td></tr>
             <tr><td><b>Assunto</b></td><td>Dor de mandíbula, tratamento, captação de consulta</td><td class="sim">Diagnóstico, arsenal terapêutico, negócio do consultório</td></tr>
-            <tr><td><b>Vocabulário</b></td><td>Linguagem leiga, sem sigla</td><td class="sim">Técnico sem tradução; RDC/DC, ticket e margem entram</td></tr>
+            <tr><td><b>Vocabul&aacute;rio</b></td><td><b>Linguagem leiga</b>, sem sigla e sem nome de protocolo</td><td class="sim"><b>Assertivo, t&eacute;cnico &mdash; sem virar aula hermética.</b> RDC/DC, ticket e margem entram; sigla fora do dia a dia do cl&iacute;nico geral vem explicada na primeira apari&ccedil;&atilde;o</td></tr>
             <tr><td><b>Quem assina</b></td><td>O rosto do Rodrigo</td><td class="sim">O selo da instituição</td></tr>
             <tr><td><b>Status</b></td><td class="num">cerca de 6.800 seguidores</td><td class="sim">objeto deste guia</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="cap">Decisão do Rodrigo, registrada em 02/08 &middot; é ela que organiza todo o resto</div>
-    </div>
-    <div>
-      <div class="porque" style="margin-top:var(--e-2)"><b>A régua que vale antes de qualquer discussão de formato:</b> um post sobre dor de mandíbula em linguagem leiga no @academiadtm é post no perfil errado. Não é questão de qualidade da peça &mdash; é endereço.</div>
-      <ul class="lista" style="margin-top:var(--e-5)">
+    <div class="cap">Decisão do Rodrigo, registrada em 02/08 &middot; é ela que organiza todo o resto</div>
+  </div>
+
+  <div class="grade-2" style="margin-top:var(--e-6);align-items:start">
+    <div><div class="porque" style="margin-top:var(--e-2)"><b>A r&eacute;gua que vale antes de qualquer discuss&atilde;o de formato:</b> um post sobre dor de mandíbula em linguagem leiga no @academiadtm &eacute; post no perfil errado. N&atilde;o &eacute; quest&atilde;o de qualidade da pe&ccedil;a &mdash; &eacute; endere&ccedil;o.</div>
+      <div class="porque" style="margin-top:var(--e-4)"><b>E a r&eacute;gua de tom, decidida em 05/09:</b> com paciente, linguagem leiga. Com profissional, <b>assertiva &mdash; e n&atilde;o totalmente t&eacute;cnica</b>.</div>
+      <div class="porque" style="margin-top:var(--e-4)">O leitor daqui &eacute; cl&iacute;nico geral, n&atilde;o especialista em DTM. Quem escreve como se todos j&aacute; soubessem o protocolo <b>perde exatamente quem a Academia quer formar</b>.</div>
+      </div>
+    <div><ul class="lista" style="margin-top:0">
         <li><b>Os dois perfis convivem, não competem.</b> O clínico continua como está; nada migra dele para cá.</li>
         <li><b>Nada de repost cruzado.</b> Conteúdo de paciente republicado aqui derruba a leitura de instituição em um post.</li>
         <li><b>O desenho dos dois públicos está no F6</b> do Kit de Frameworks, pronto para virar peça &mdash; ver § 05.5 e § 06.1.</li>
-      </ul>
-    </div>
+      </ul></div>
   </div>
 
   <h3 class="sub"><span class="n">1.2</span>O avatar</h3>
@@ -862,17 +971,18 @@ Viver de DTM &darr;</div>
   </div>
   <div class="cap">Cinco capas, na ordem da linha editorial &middot; arquivo 1080 &times; 1920, o Instagram recorta o círculo central</div>
 
-  <div class="grade-2" style="margin-top:var(--e-5);align-items:start">
-    <ul class="lista">
+  <div style="margin-top:var(--e-5)">
+    <ul class="lista" style="max-width:none;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--e-5)">
       <li><b>Capa de destaque não leva texto dentro.</b> O nome vive no rótulo do Instagram, que corta por volta do décimo caractere. Texto dentro do círculo some no recorte e briga com o rótulo.</li>
       <li><b>O ritmo alterna navy e papel</b>, sempre nesta ordem. A alternância é o que impede a fila de virar cinco medalhas iguais.</li>
       <li><b>Uma capa invertida na fila, e só uma.</b> O selo fluor marca o destaque da formação, que é o único com função comercial. É o mesmo princípio do fluor no resto do sistema: aparece onde importa decidir.</li>
     </ul>
-    <div class="painel">
-      <div class="cap" style="margin-top:0">O conteúdo de cada um, na ordem</div>
-      <div class="tab-rolo">
+  </div>
+
+  <div class="cap" style="margin-top:var(--e-7)">O conte&uacute;do de cada um, na ordem</div>
+  <div class="tab-rolo">
         <table class="tab tab--densa">
-          <thead><tr><th style="width:30px">#</th><th style="min-width:100px">Rótulo</th><th style="min-width:250px">O que abriga</th><th style="width:70px">Frames</th><th style="min-width:150px">Fonte do conteúdo</th></tr></thead>
+          <thead><tr><th style="width:30px">#</th><th style="min-width:130px">Rótulo</th><th style="min-width:380px">O que abriga</th><th style="width:70px">Frames</th><th style="min-width:230px">Fonte do conteúdo</th></tr></thead>
           <tbody>
             <tr><td class="id">01</td><td><b>Sobre</b></td><td>Trajetória: o estágio com o professor Norberto, a UNIFESP, Zurique, a coordenação de curso desde 2014. <b>Cartão de visita, não currículo</b></td><td class="num">3 a 4</td><td class="fnt">banco-de-historias forja-02, forja-03 &middot; estrategia-campanha § 1</td></tr>
             <tr><td class="id">02</td><td><b>Guarda-chuva</b></td><td>O conceito que mais o separa do dentista comum: DTM abriga cerca de 10 diagnósticos em 3 grupos, com a analogia da dor de dente</td><td class="num">4 a 5</td><td class="fnt">frameworks-metodo F3</td></tr>
@@ -882,9 +992,7 @@ Viver de DTM &darr;</div>
           </tbody>
         </table>
       </div>
-      <div class="cap">A ordem vai de quem ele é até o que ele vende, e não muda</div>
-    </div>
-  </div>
+  <div class="cap">A ordem vai de quem ele é até o que ele vende, e não muda</div>
 </section>
 
 <!-- ============ 01.3 · A GRADE ============ -->
@@ -901,7 +1009,7 @@ Viver de DTM &darr;</div>
           <div class="tile-in"><div class="a-junta"></div><div class="a-disp--m empurra" style="font-family:var(--display);font-weight:800;letter-spacing:-.032em;line-height:1.02;font-size:calc(84*var(--u))">O guarda-chuva</div></div>
         </div>
         <div class="art art--feed art--papel2">
-          <div class="tile-in centro" style="text-align:center;align-items:center"><div class="a-num" style="font-size:calc(260*var(--u))">00,0<small>%</small></div></div>
+          <div class="a-img a-img--cheia"><img src="img/m4-arsenal-bandeja-45.jpg" alt="Instrumentos clínicos e de fisioterapia enfileirados sobre papel creme, com uma fita fluorescente marcando um deles" loading="lazy"></div>
         </div>
         <div class="art art--feed art--navy">
           <div class="tile-in"><div class="a-junta empurra"></div><div class="a-disp" style="font-size:calc(88*var(--u));margin-top:calc(24*var(--u))">Tudo vira prego</div></div>
@@ -910,7 +1018,7 @@ Viver de DTM &darr;</div>
           <div class="tile-in"><div class="a-rot"><i></i>Mito</div><div class="a-disp empurra" style="font-size:calc(92*var(--u))">A placa resolve</div></div>
         </div>
         <div class="art art--feed art--papel2">
-          <div class="a-foto" style="position:absolute;inset:0 0 46% 0;z-index:2"><svg class="marca" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg></div>
+          <div class="a-img" style="inset:0 0 46% 0;z-index:2"><img src="img/m3-ficha-anamnese-11.jpg" alt="Formulário de anamnese impresso, quatro caixas assinaladas em navy e uma fita fluorescente atravessando uma linha" loading="lazy"></div>
           <div class="tile-in empurra" style="justify-content:flex-end"><div class="a-rot"><i></i>Bastidor</div></div>
         </div>
         <div class="art art--feed art--navy">
@@ -929,7 +1037,7 @@ Viver de DTM &darr;</div>
           </div>
         </div>
       </div>
-      <div class="cap">Nove publicações seguidas &middot; cada miniatura em 4:5, do jeito que a grade recorta</div>
+      <div class="cap">Nove publica&ccedil;&otilde;es seguidas &middot; cada miniatura em 4:5, do jeito que a grade recorta &middot; <b style="color:var(--tinta-70)">duas com imagem, sete em tipografia</b></div>
     </div>
     <div>
       <ul class="lista" style="margin-top:var(--e-2)">
@@ -940,6 +1048,204 @@ Viver de DTM &darr;</div>
         <li><b>A miniatura é lida a 145 px de largura.</b> Se o display do card tem mais de sete palavras, some. Esse é o teste, e ele roda antes de publicar: reduza a arte para o tamanho de uma unha e veja o que restou.</li>
       </ul>
       <div class="porque"><b>Por quê:</b> a grade do perfil hoje mostra a miniatura em 4:5, o mesmo formato do post. Publicar em 4:5 é o que garante que a arte apareça inteira, sem recorte pelo centro.</div>
+      <div class="porque" style="margin-top:var(--e-4)"><b>Duas com imagem, e não mais:</b> a propor&ccedil;&atilde;o vem da pr&oacute;pria r&eacute;gua acima &mdash; uma pe&ccedil;a com imagem a cada seis publica&ccedil;&otilde;es. As nove miniaturas abaixo, no &sect; 01.6, mostram o que cada uma dessas duas vira em tamanho de leitura.</div>
+    </div>
+  </div>
+
+  <h3 class="sub" id="montadas"><span class="n">1.6</span>A grade montada &mdash; seis posts e três stories com imagem</h3>
+  <p class="lede" style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-3)">A grade acima mostra <b>como o perfil se organiza</b>. Estas nove peças mostram <b>como cada casa dela se parece por dentro</b>, com a imagem no lugar e o texto no tamanho real.</p>
+  <p class="lede" style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-3)">Todas usam as ilustra&ccedil;&otilde;es j&aacute; produzidas para o projeto. <b>Nenhuma tem texto sobre linha ou sobre elemento:</b> ou o texto vive sobre o scrim navy, ou vive sobre &aacute;rea limpa de papel.</p>
+  <p class="lede" style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-6)"><b>O fluor nunca vira fundo.</b> E a copy continua sendo exemplo de preenchimento, como manda o &sect; 00.</p>
+
+  <div class="mk-grade">
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">M1 &middot; Capa &middot; Educativa</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--navy">
+        <div class="a-img a-img--cheia"><img src="img/m1-caderno-lombada-45.jpg" alt="Lombada costurada de um volume encadernado de anais, papel creme e tecido navy, com uma fita fluorescente entre as páginas" loading="lazy"></div>
+        <div class="a-scrim"></div>
+        <div class="art-in">
+          <div class="empurra"></div>
+          <div class="a-rot"><i></i>Série &middot; Diagnóstico</div>
+          <div class="a-disp a-disp--m" style="margin-top:calc(28*var(--u))">DTM não é um diagnóstico só</div>
+          <div class="a-assin" style="margin-top:calc(40*var(--u))">
+            <span class="a-arroba">@academiadtm</span>
+            <span class="a-arroba">01 / 08</span>
+          </div>
+        </div>
+      </div>
+      <div class="peca-cap">Arranjo rodapé &middot; imagem cheia, scrim navy, todo o texto no terço de baixo</div>
+      <div class="peca-txt">A crença n&uacute;mero um do &sect; 06.2 em forma de capa. <b>O texto inteiro mora sobre o scrim</b> &mdash; nada encosta na trama do papel nem na fita. O topo fica livre de prop&oacute;sito: &eacute; ali que a lombada respira.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">M2 &middot; Card interno &middot; registro</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--papel2">
+        <div class="a-img" style="inset:0 0 55% 0"><img src="img/m2-placa-oclusal-32.jpg" alt="Placa oclusal transparente e dispositivo interoclusal sobre papel creme, com uma fita fluorescente ao lado" loading="lazy"></div>
+        <div class="art-in" style="justify-content:flex-end">
+          <div class="a-rot"><i></i>02</div>
+          <div class="a-junta" style="margin-top:calc(28*var(--u))"></div>
+          <div class="a-disp a-disp--m" style="margin-top:calc(30*var(--u))">A placa é uma ferramenta, não o tratamento</div>
+          <div class="a-corpo a-corpo--s" style="margin-top:calc(24*var(--u))">Sem investigar a causa, ela administra o sintoma e o paciente volta.</div>
+          <div class="a-assin" style="margin-top:calc(32*var(--u))"><span class="a-arroba">@academiadtm</span><span class="a-arroba">02 / 08</span></div>
+        </div>
+      </div>
+      <div class="peca-cap">Arranjo registro com faixa de imagem &middot; imagem em cima, texto em papel limpo embaixo</div>
+      <div class="peca-txt">O corte em <b>45 por cento da altura</b> &eacute; o que separa imagem de texto sem precisar de scrim. Serve a qualquer card educativo com objeto: a fotografia responde &ldquo;do que estamos falando&rdquo; antes da primeira palavra.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">M3 &middot; Card de leitura em camadas</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed">
+        <div class="art-in">
+          <div class="a-rot"><i></i>Protocolo</div>
+          <div class="a-janela octo-janela" style="width:62%;aspect-ratio:1;align-self:flex-end;margin-top:calc(30*var(--u))"><img src="img/m3-ficha-anamnese-11.jpg" alt="Formulário de anamnese impresso, quatro caixas assinaladas em navy e uma fita fluorescente atravessando uma linha" loading="lazy"></div>
+          <div class="empurra"></div>
+          <div class="a-disp a-disp--m">Quarenta perguntas antes de qualquer exame</div>
+          <div class="a-assin" style="margin-top:calc(36*var(--u))"><span class="a-arroba">@academiadtm</span><span class="a-arroba">04 / 08</span></div>
+        </div>
+      </div>
+      <div class="peca-cap">Gesto do octógono &middot; a janela ocupa o alto, o texto ocupa a base</div>
+      <div class="peca-txt">A janela em oct&oacute;gono &eacute; o recorte de foto do sistema, no &sect; 05.4. Aqui ela entra <b>desalinhada &agrave; direita</b> &mdash; a quebra de grade da pe&ccedil;a, e a &uacute;nica. Nenhuma palavra encosta na moldura.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">M4 &middot; Citação &middot; Tese</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--navy">
+        <div class="a-img" style="inset:0 0 56% 0"><img src="img/m4-arsenal-faixa.jpg" alt="Nove instrumentos clínicos e de fisioterapia enfileirados sobre papel creme, com uma fita fluorescente marcando um deles" loading="lazy"></div>
+        <div class="art-in" style="justify-content:flex-end">
+          <div class="a-rot"><i></i>Bandeira</div>
+          <div class="a-disp a-disp--m" style="margin-top:calc(28*var(--u))">Pra quem só tem martelo, tudo é prego</div>
+          <div class="a-nota" style="margin-top:calc(28*var(--u));opacity:.85">Dr. Rodrigo Wendel</div>
+          <div class="a-assin" style="margin-top:calc(36*var(--u))"><span class="a-arroba">@academiadtm</span><span class="a-arroba">05 / 08</span></div>
+        </div>
+      </div>
+      <div class="peca-cap">Faixa superior em papel, texto em navy embaixo &middot; frase do léxico fixo, sempre assinada</div>
+      <div class="peca-txt">A imagem <b>&eacute; o argumento</b>: nove ferramentas em fila, uma marcada. Ela sustenta a frase sem ilustr&aacute;-la ao p&eacute; da letra. <b>A faixa preserva as cores da fotografia</b> &mdash; scrim aqui apagaria justamente as nove ferramentas que fazem o ponto.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">M5 &middot; Persuasiva &middot; a agenda</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--navy">
+        <div class="a-img" style="inset:60% 0 0 0"><img src="img/m5-agenda-marcada-32.jpg" alt="Agenda de consultório aberta sobre a mesa, com um horário marcado em fita fluorescente e uma caneta navy ao lado" loading="lazy"></div>
+        <div class="art-in" style="bottom:40%;padding-bottom:calc(40*var(--u))">
+          <div class="a-rot"><i></i>Oportunidade</div>
+          <div class="empurra"></div>
+          <div class="a-disp a-disp--m">Ele já está na sua agenda desta semana</div>
+          <div class="a-assin" style="margin-top:calc(34*var(--u))"><span class="a-arroba">@academiadtm</span><span class="a-arroba">06 / 08</span></div>
+        </div>
+      </div>
+      <div class="peca-cap">Faixa invertida &middot; texto em navy no alto, imagem em papel embaixo &middot; a assinatura fecha o bloco de texto, nunca a fotografia</div>
+      <div class="peca-txt">A polaridade inverte a M2: aqui o <b>navy est&aacute; em cima</b> e a fotografia embaixo. Serve quando a frase precisa vir antes da imagem &mdash; e &eacute; a que melhor sobrevive ao recorte 1:1 do gerenciador.</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">M6 &middot; Fechamento com pedido</div><div class="peca-px">1080 &times; 1350</div></div>
+      <div class="art art--feed art--papel2">
+        <div class="a-img" style="inset:0 0 66% 0"><img src="img/m6-caderno-aberto-169.jpg" alt="Volume encadernado aberto sobre a mesa, com uma fita fluorescente atravessando uma linha da página" loading="lazy"></div>
+        <div class="art-in" style="justify-content:flex-end">
+          <div class="a-rot"><i></i>Fim</div>
+          <div class="a-disp a-disp--m" style="margin-top:calc(26*var(--u))">Guarda para a próxima consulta</div>
+          <div class="a-cta" style="margin-top:calc(30*var(--u))">Salvar</div>
+          <div class="a-assin" style="margin-top:calc(36*var(--u))">
+            <span class="lk lk--hz lk--mono-navy" style="font-size:calc(64*var(--u))">
+              <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+              <span class="rule"></span>
+              <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+            </span>
+            <span class="a-arroba">08 / 08</span>
+          </div>
+        </div>
+      </div>
+      <div class="peca-cap">Arranjo rodapé &middot; único card do carrossel com lockup &middot; um pedido só</div>
+      <div class="peca-txt">O fechamento troca de fundo para avisar que a leitura acabou, e a faixa de imagem no topo <b>fecha o ciclo aberto pela capa</b>: o mesmo volume, agora aberto. Um pedido apenas &mdash; dois derrubam os dois.</div>
+    </div>
+
+  </div>
+
+  <div class="grade-story" style="margin-top:var(--e-8)">
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">MS1 &middot; Story &middot; anúncio da série</div><div class="peca-px">1080 &times; 1920</div></div>
+      <div class="art art--story art--navy">
+        <div class="a-img a-img--cheia"><img src="img/sa-ficha-anamnese-916.jpg" alt="Formulário de anamnese impresso em papel creme, com caixas assinaladas e uma fita fluorescente sobre uma das linhas" loading="lazy"></div>
+        <div class="a-scrim--suave"></div>
+        <div class="zs" style="top:0;height:calc(250*var(--u))"><span>Faixa do Instagram &middot; 250 px</span></div>
+        <div class="zs" style="bottom:0;height:calc(250*var(--u))"><span>Faixa do Instagram &middot; 250 px</span></div>
+        <div class="art-in art-in--story">
+          <div class="empurra"></div>
+          <div class="a-rot"><i></i>Hoje no feed</div>
+          <div class="a-disp a-disp--m" style="margin-top:calc(30*var(--u))">A anamnese que investiga</div>
+          <div class="a-corpo a-corpo--s" style="margin-top:calc(26*var(--u))">Carrossel novo, oito cards</div>
+          <div class="a-arroba" style="margin-top:calc(40*var(--u))">@academiadtm</div>
+        </div>
+      </div>
+      <div class="peca-cap">Imagem cheia com scrim &middot; o texto ocupa só o miolo, acima da faixa de 250 px</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">MS2 &middot; Story &middot; educativo</div><div class="peca-px">1080 &times; 1920</div></div>
+      <div class="art art--story art--papel2">
+        <div class="zs zs--claro" style="top:0;height:calc(250*var(--u))"><span>Faixa do Instagram &middot; 250 px</span></div>
+        <div class="zs zs--claro" style="bottom:0;height:calc(250*var(--u))"><span>Faixa do Instagram &middot; 250 px</span></div>
+        <div class="art-in art-in--story">
+          <div class="a-rot"><i></i>Guarda-chuva</div>
+          <div class="a-janela octo-janela" style="width:78%;aspect-ratio:1;align-self:center;margin:calc(56*var(--u)) 0"><img src="img/sb-placa-oclusal-11.jpg" alt="Placa oclusal transparente e dispositivo interoclusal sobre papel creme" loading="lazy"></div>
+          <div class="a-disp a-disp--m">Uma ferramenta entre várias</div>
+          <div class="empurra"></div>
+          <div class="a-arroba">@academiadtm</div>
+        </div>
+      </div>
+      <div class="peca-cap">Janela em octógono no miolo &middot; rótulo acima, display abaixo, nada encostando na moldura</div>
+    </div>
+
+    <div class="peca">
+      <div class="peca-topo"><div class="peca-nome">MS3 &middot; Story &middot; bastidor</div><div class="peca-px">1080 &times; 1920</div></div>
+      <div class="art art--story art--navy">
+        <div class="a-img a-img--cheia"><img src="img/sc-mao-luva-atm-916.jpg" alt="Duas mãos com luva palpando a articulação temporomandibular, enquadradas do queixo para baixo" loading="lazy"></div>
+        <div class="a-scrim"></div>
+        <div class="zs" style="top:0;height:calc(250*var(--u))"><span>Faixa do Instagram &middot; 250 px</span></div>
+        <div class="zs" style="bottom:0;height:calc(250*var(--u))"><span>Faixa do Instagram &middot; 250 px</span></div>
+        <div class="art-in art-in--story">
+          <div class="empurra"></div>
+          <div class="a-disp a-disp--m">A palpação que a faculdade não ensinou</div>
+          <div class="a-arroba" style="margin-top:calc(36*var(--u))">@academiadtm</div>
+        </div>
+      </div>
+      <div class="peca-cap">Enquadramento do queixo para baixo &middot; sem rosto &middot; o texto nunca cruza a mão</div>
+    </div>
+
+  </div>
+
+  <div class="grade-2" style="margin-top:var(--e-8);align-items:start">
+    <div>
+      <div class="cap" style="margin-top:0">De onde vem cada imagem</div>
+      <div class="tab-rolo">
+        <table class="tab tab--densa">
+          <thead><tr><th style="width:64px">Peça</th><th style="min-width:200px">Arquivo</th><th style="min-width:180px">Como ela entra</th></tr></thead>
+          <tbody>
+            <tr><td class="id">M1</td><td class="fnt">m1-caderno-lombada-45.jpg</td><td>Cheia, com scrim navy</td></tr>
+            <tr><td class="id">M2</td><td class="fnt">m2-placa-oclusal-32.jpg</td><td>Faixa superior, 45% da altura</td></tr>
+            <tr><td class="id">M3</td><td class="fnt">m3-ficha-anamnese-11.jpg</td><td>Janela em octógono</td></tr>
+            <tr><td class="id">M4</td><td class="fnt">m4-arsenal-faixa.jpg</td><td>Faixa superior, 44% da altura</td></tr>
+            <tr><td class="id">M5</td><td class="fnt">m5-agenda-marcada-32.jpg</td><td>Faixa inferior, 42% da altura</td></tr>
+            <tr><td class="id">M6</td><td class="fnt">m6-caderno-aberto-169.jpg</td><td>Faixa superior, 34% da altura</td></tr>
+            <tr><td class="id">MS1</td><td class="fnt">sa-ficha-anamnese-916.jpg</td><td>Cheia, com scrim navy</td></tr>
+            <tr><td class="id">MS2</td><td class="fnt">sb-placa-oclusal-11.jpg</td><td>Janela em octógono</td></tr>
+            <tr><td class="id">MS3</td><td class="fnt">sc-mao-luva-atm-916.jpg</td><td>Cheia, com scrim navy</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cap">Recortes gerados a partir dos masters em outputs/imagens &middot; JPEG de qualidade 82 na largura em que a peça aparece</div>
+    </div>
+    <div>
+      <ul class="lista" style="margin-top:var(--e-2)">
+        <li><b>Três maneiras de a imagem entrar, e só três.</b> Cheia com scrim, faixa em uma das pontas, ou janela em octógono. Um quarto jeito só com aval da direção de arte, como manda a régua dos arranjos.</li>
+        <li><b>Texto nunca sobre linha nem sobre elemento.</b> Em imagem cheia ele mora no scrim; em faixa e em janela, na área limpa de papel. Não existe caso intermediário &mdash; palavra em cima de textura é palavra que some no celular.</li>
+        <li><b>O fluor da fotografia não conta como o fluor da peça.</b> A fita fluorescente já é o acento da imagem: se o card também levar rótulo em fluor, viram dois, e a regra do § 05.3 cai.</li>
+        <li><b>Nenhuma destas imagens substitui foto do professor</b> em bloco de autoridade, de aula ou de prova. Ali só entram as nove liberadas em 27/08.</li>
+      </ul>
+      <div class="porque" style="margin-top:var(--e-5)"><b>Por que ilustra&ccedil;&atilde;o de objeto e n&atilde;o foto de banco:</b> objeto cl&iacute;nico fotografado em papel creme, com luz dura e sombra navy, <b>&eacute; a tese est&eacute;tica do projeto em forma de imagem</b>. Banco de imagem entrega consult&oacute;rio azul-e-branco e sorriso &mdash; exatamente o que o &sect; 00 pro&iacute;be.</div>
     </div>
   </div>
 </section>
@@ -1879,7 +2185,7 @@ Viver de DTM &darr;</div>
         <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F4 · O PERCURSO DA FORMAÇÃO</text>
         <line x1="96" y1="118" x2="96" y2="690" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
         <polygon points="91.45,117.00 100.55,117.00 107.00,123.45 107.00,132.55 100.55,139.00 91.45,139.00 85.00,132.55 85.00,123.45" fill="currentColor" fill-opacity="0.28"/>
-        <text x="140" y="120" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">1º DE FEVEREIRO DE 2027</text>
+        <text x="140" y="120" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">23 DE FEVEREIRO DE 2027</text>
         <text x="140" y="146" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Abertura da turma</text>
         <polygon points="91.45,185.00 100.55,185.00 107.00,191.45 107.00,200.55 100.55,207.00 91.45,207.00 85.00,200.55 85.00,191.45" fill="currentColor" fill-opacity="0.28"/>
         <text x="140" y="188" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">ETAPA 1</text>
@@ -1903,7 +2209,7 @@ Viver de DTM &darr;</div>
         <text x="140" y="598" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">Encontros 36 a 43</text>
         <polygon points="88.13,627.00 103.87,627.00 115.00,638.13 115.00,653.87 103.87,665.00 88.13,665.00 77.00,653.87 77.00,638.13" fill="#CDF23F"/>
         <polygon points="88.13,627.00 103.87,627.00 115.00,638.13 115.00,653.87 103.87,665.00 88.13,665.00 77.00,653.87 77.00,638.13" stroke="currentColor" stroke-width="1.5"/>
-        <text x="140" y="638" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">29 DE NOVEMBRO DE 2027</text>
+        <text x="140" y="638" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">29 E 30 DE NOVEMBRO DE 2027</text>
         <text x="140" y="664" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Imersão 3 · Formatura</text>
         <text x="140" y="688" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">apresentação de caso ao vivo</text>
         <line x1="40" y1="716" x2="560" y2="716" stroke="currentColor" stroke-width="1" opacity="0.3"/>
@@ -2034,7 +2340,7 @@ Viver de DTM &darr;</div>
         <line x1="60" y1="766" x2="190" y2="766" stroke="#CDF23F" stroke-width="5"/>
         <text x="80" y="796" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="1.6" text-anchor="start" opacity="0.55">06</text>
         <text x="80" y="826" font-family="Archivo, system-ui, sans-serif" font-size="20" font-weight="700" fill="currentColor" letter-spacing="-0.2" text-anchor="start">Matrícula confirmada</text>
-        <text x="80" y="852" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">turma fundadora de 8 a 12 alunos</text>
+        <text x="80" y="852" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">turma fundadora, 20 vagas</text>
         <line x1="40" y1="912" x2="560" y2="912" stroke="currentColor" stroke-width="1" opacity="0.3"/>
         <text x="40" y="946" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.1" text-anchor="start" opacity="0.62">NÃO EXISTE CARRINHO ABERTO</text>
         <text x="40" y="968" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.1" text-anchor="start" opacity="0.62">A DECISÃO ACONTECE NA CONVERSA</text>
@@ -2247,7 +2553,7 @@ Viver de DTM &darr;</div>
       </div>
       <div>
       <ul class="lista" style="margin-top:0">
-        <li><b>O mix é proporção de mês, não de semana.</b> Ninguém publica 0,4 de um post; a conta fecha no ciclo de quatro semanas do § 6.4.</li>
+        <li><b>O mix é proporção de mês, não de semana.</b> Ninguém publica 0,4 de um post; a conta fecha no ciclo de quatro semanas do § 6.5.</li>
         <li><b>Duas linhas nunca caem na mesma semana duas vezes seguidas.</b> A regra de alternância vale para o assunto, não só para a cor do card.</li>
         <li><b>A Conexão é a única transversal.</b> Ela pode aparecer em story sem consumir cota de feed.</li>
       </ul>
@@ -2256,7 +2562,132 @@ Viver de DTM &darr;</div>
     </div>
   </div>
 
-  <h3 class="sub" id="temas"><span class="n">6.2</span>Banco de temas &mdash; 38 pautas com fonte</h3>
+  <h3 class="sub" id="crencas"><span class="n">6.2</span>Que crença cada pilar muda</h3>
+  <p class="lede" style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-3)">As cinco linhas do &sect; 06.1 dizem <b>que peso</b> cada assunto tem no m&ecirc;s. Esta se&ccedil;&atilde;o diz <b>o que cada pe&ccedil;a precisa mudar na cabe&ccedil;a de quem l&ecirc;</b>.</p>
+  <p class="lede" style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-6)">Sem isso, o mix vira cota de postagem: publica-se o n&uacute;mero certo de cards educativos sem que nenhuma crença se mova.</p>
+
+  <div class="domino">
+    <svg viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+    <div class="domino-in">
+      <div class="k"><i></i>A peça que derruba as outras</div>
+      <h4>Se o cl&iacute;nico acreditar que DTM &eacute; um <em>guarda-chuva</em> de cerca de dez quadros, e n&atilde;o um diagn&oacute;stico s&oacute;, a pergunta dele muda de lugar</h4>
+    </div>
+    <div class="domino-in domino-in--dir">
+      <p>Ela deixa de ser &ldquo;vale a pena aprender DTM&rdquo; e passa a ser <b>&ldquo;eu n&atilde;o posso continuar chutando o diagn&oacute;stico do paciente que j&aacute; est&aacute; sentado aqui&rdquo;</b>. Da&iacute; em diante, obje&ccedil;&atilde;o de pre&ccedil;o, de formato e de tempo perde for&ccedil;a sozinha.</p>
+      <p>&Eacute; por isso que a linha Educativa leva 35% da Fase 1: o p&uacute;blico est&aacute; majoritariamente <b>inconsciente do pr&oacute;prio erro</b>, n&atilde;o apenas sem conhecer a solu&ccedil;&atilde;o. Revelar o problema vem antes de qualquer oferta &mdash; e essa crença nunca sai do ar por mais de duas semanas seguidas, mesmo quando o bloco da semana &eacute; outro.</p>
+    </div>
+  </div>
+  <div class="cap">A propor&ccedil;&atilde;o do mix do &sect; 06.1 sai daqui &middot; produto/mapa-de-crencas &sect; 1</div>
+
+  <div class="tab-rolo" style="margin-top:var(--e-7)">
+    <table class="cren">
+      <thead><tr><th style="min-width:230px">O que ele acredita hoje</th><th style="min-width:280px">O que a pe&ccedil;a precisa instalar</th><th style="min-width:120px">Pilar</th><th style="min-width:190px">Framework que ataca</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="hoje"><b>&ldquo;DTM &eacute; bruxismo&rdquo;</b>, ou &eacute; um diagn&oacute;stico s&oacute;<span class="seta"></span></td>
+          <td class="vira"><b>DTM &eacute; um guarda-chuva com cerca de 10 diagn&oacute;sticos em 3 grupos</b>, e cada um pede um tratamento diferente</td>
+          <td><span class="linha-nome"><span class="cod cod--cheio">ED</span></span></td>
+          <td class="fw">O guarda-chuva da DTM<br><b>F1 no kit</b></td>
+        </tr>
+        <tr>
+          <td class="hoje"><b>&ldquo;Uma placa resolve DTM&rdquo;</b><span class="seta"></span></td>
+          <td class="vira">Quem s&oacute; tem martelo trata tudo como prego. <b>DTM pede o arsenal inteiro</b>, do conservador ao invasivo, escolhido por crit&eacute;rio</td>
+          <td><span class="linha-nome"><span class="cod cod--cheio">ED</span><span class="cod">TA</span></span></td>
+          <td class="fw">O martelo &uacute;nico e o arsenal<br><b>F5 no kit</b> &middot; e o F2</td>
+        </tr>
+        <tr class="a-confirmar">
+          <td class="hoje"><b>&ldquo;N&atilde;o tenho paciente de DTM suficiente&rdquo;</b> onde eu moro<span class="seta"></span></td>
+          <td class="vira">O paciente com sinal de DTM <b>j&aacute; est&aacute; na minha agenda toda semana</b> &mdash; cerca de 3 em cada 10 adultos t&ecirc;m DTM<span class="confirmar">a confirmar com o professor</span></td>
+          <td><span class="linha-nome"><span class="cod">PE</span></span></td>
+          <td class="fw">O dado de preval&ecirc;ncia<br><b>F9 no kit</b></td>
+        </tr>
+        <tr>
+          <td class="hoje"><b>&ldquo;DTM n&atilde;o d&aacute; dinheiro&rdquo;</b>, n&atilde;o compensa aprender isso<span class="seta"></span></td>
+          <td class="vira"><b>Um tratamento particular de DTM vale de 10 a 20 vezes uma consulta comum</b>, com ticket m&eacute;dio conferido</td>
+          <td><span class="linha-nome"><span class="cod">PE</span></span></td>
+          <td class="fw">Motor comercial<br>sem desenho no kit</td>
+        </tr>
+        <tr class="a-confirmar">
+          <td class="hoje"><b>&ldquo;N&atilde;o tenho tempo&rdquo;</b>, j&aacute; sou sobrecarregado<span class="seta"></span></td>
+          <td class="vira"><b>&Eacute; um encontro por semana, n&atilde;o um por dia</b> &mdash; e o al&iacute;vio de parar de tratar errado come&ccedil;a nas primeiras semanas<span class="confirmar">a confirmar com o professor</span></td>
+          <td><span class="linha-nome"><span class="cod cod--cheio">ED</span></span></td>
+          <td class="fw">O percurso da forma&ccedil;&atilde;o<br><b>F4 no kit</b></td>
+        </tr>
+        <tr>
+          <td class="hoje"><b>&ldquo;Curso online n&atilde;o ensina odontologia de verdade&rdquo;</b><span class="seta"></span></td>
+          <td class="vira">S&atilde;o <b>tr&ecirc;s imers&otilde;es presenciais, uma por etapa</b>, e cada uma termina com prova pr&aacute;tica validada ao vivo pelo pr&oacute;prio professor</td>
+          <td><span class="linha-nome"><span class="cod">TA</span></span></td>
+          <td class="fw">O percurso da forma&ccedil;&atilde;o<br><b>F4 no kit</b></td>
+        </tr>
+        <tr>
+          <td class="hoje"><b>&ldquo;Preciso de t&iacute;tulo de especialista&rdquo;</b> pra tratar DTM<span class="seta"></span></td>
+          <td class="vira"><b>Compet&ecirc;ncia validada em pr&aacute;tica supervisionada pesa mais que diploma sem pr&aacute;tica</b> &mdash; quem determina o tratamento &eacute; a literatura, e ela se aprende fazendo</td>
+          <td><span class="linha-nome"><span class="cod">TA</span></span></td>
+          <td class="fw">Leitura de precis&atilde;o em camadas<br>sem desenho no kit</td>
+        </tr>
+        <tr>
+          <td class="hoje"><b>&ldquo;J&aacute; fiz uma p&oacute;s e n&atilde;o voltou o investimento&rdquo;</b><span class="seta"></span></td>
+          <td class="vira">A forma&ccedil;&atilde;o liga <b>diagn&oacute;stico, tratamento e neg&oacute;cio na mesma trilha</b>, n&atilde;o ensina t&eacute;cnica cl&iacute;nica isolada</td>
+          <td><span class="linha-nome"><span class="cod">TA</span></span></td>
+          <td class="fw">O percurso da forma&ccedil;&atilde;o<br><b>F4 no kit</b> &middot; e o motor comercial</td>
+        </tr>
+        <tr>
+          <td class="hoje"><b>&ldquo;Ser conservador demais &eacute; sempre mais seguro&rdquo;</b> &mdash; ou o contr&aacute;rio, intervir logo resolve<span class="seta"></span></td>
+          <td class="vira"><b>Existe crit&eacute;rio objetivo pra saber quando subir o degrau:</b> tr&ecirc;s a seis meses sem resposta, diagn&oacute;stico confirmado, gravidade e impacto na vida do paciente</td>
+          <td><span class="linha-nome"><span class="cod">TA</span></span></td>
+          <td class="fw">Timing de interven&ccedil;&atilde;o<br>sem desenho no kit</td>
+        </tr>
+        <tr>
+          <td class="hoje"><b>&ldquo;O que aprendi na forma&ccedil;&atilde;o inicial j&aacute; basta&rdquo;</b><span class="seta"></span></td>
+          <td class="vira"><b>Ficar na fronteira da evolu&ccedil;&atilde;o terap&ecirc;utica muda o desfecho:</b> o mesmo caso, tratado com mais recurso anos depois, resolve sem sequela</td>
+          <td><span class="linha-nome"><span class="cod">PR</span></span></td>
+          <td class="fw">A escada terap&ecirc;utica<br><b>F3 no kit</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cap">C&oacute;digo F = desenho pronto no Kit de Frameworks, &sect; 05.5 &middot; sem c&oacute;digo = conceito do m&eacute;todo ainda sem desenho, a pe&ccedil;a sai em tipografia</div>
+
+  <div class="alerta" style="border-color:rgba(44,75,255,.35)">
+    <div class="k">Uma d&eacute;cima primeira crença fica fora do calend&aacute;rio at&eacute; ele confirmar</div>
+    <p><b>&ldquo;IA e tecnologia n&atilde;o t&ecirc;m lugar num consult&oacute;rio cl&iacute;nico s&eacute;rio&rdquo;</b> &rarr; <b>&ldquo;uma IA que transcreve e estrutura a anamnese no formato que voc&ecirc; j&aacute; usa devolve tempo de consulta pra escutar o paciente&rdquo;</b>. Linha Persuasiva, Fase 2, ligada &agrave; camada 1 da leitura de precis&atilde;o.</p>
+    <p>Ela entra aqui <b>marcada, e n&atilde;o entra em calend&aacute;rio</b>: n&atilde;o existe fala do professor sobre essa crença no banco de hist&oacute;rias, e a IA de anamnese ainda &eacute; backlog, n&atilde;o produto.</p>
+    <p><b>S&oacute; vira pauta depois de ele confirmar a crença</b> e, de prefer&ecirc;ncia, ceder um caso real de uso.</p>
+    <p>As duas linhas marcadas na tabela est&atilde;o na situa&ccedil;&atilde;o oposta: <b>a crença tem fonte</b> &mdash; dado de preval&ecirc;ncia e formato do produto.</p>
+    <p>O que falta nelas &eacute; uma hist&oacute;ria dele que a quebre. <b>Elas publicam do jeito que est&atilde;o</b>; o que se pede &eacute; o relato que as torna dele, e n&atilde;o nossas.</p>
+  </div>
+
+  <h4 class="cap" style="margin-top:var(--e-8);font-size:13px">A ordem de instala&ccedil;&atilde;o, em quatro blocos</h4>
+  <div class="ordem">
+    <div class="ordem-col ordem-col--navy">
+      <div class="n">01</div>
+      <div class="k">Semanas 1 e 2 &middot; ve&iacute;culo</div>
+      <b>Guarda-chuva &rarr; placa &rarr; online contra presencial</b>
+      <p>Sem estas tr&ecirc;s, nenhuma pe&ccedil;a de meio ou fundo de funil faz sentido: o leitor ainda n&atilde;o aceitou que tem um problema nem que existe um caminho estruturado.</p>
+    </div>
+    <div class="ordem-col">
+      <div class="n">02</div>
+      <div class="k">Semanas 3 e 4 &middot; interno</div>
+      <b>T&iacute;tulo &rarr; timing &rarr; atualiza&ccedil;&atilde;o terap&ecirc;utica</b>
+      <p>Aqui o dentista j&aacute; aceitou o problema. A crença muda de &ldquo;isso n&atilde;o &eacute; pra mim&rdquo; para &ldquo;eu sou capaz de aprender isso do jeito certo&rdquo;.</p>
+    </div>
+    <div class="ordem-col">
+      <div class="n">03</div>
+      <div class="k">Semanas 5 e 6 &middot; externo</div>
+      <b>Paciente &rarr; tempo &rarr; dinheiro</b>
+      <p>S&atilde;o as obje&ccedil;&otilde;es de circunst&acirc;ncia. S&oacute; fazem sentido depois que ele aceitou o problema e a pr&oacute;pria capacidade &mdash; antes disso, soam como venda.</p>
+    </div>
+    <div class="ordem-col">
+      <div class="n">04</div>
+      <div class="k">Aproxima&ccedil;&atilde;o da oferta</div>
+      <b>&ldquo;J&aacute; fiz p&oacute;s e n&atilde;o voltou&rdquo;</b>
+      <p>Entra perto da virada comercial do &sect; 06.7, quando a compara&ccedil;&atilde;o direta com a forma&ccedil;&atilde;o anterior tem mais peso e j&aacute; existe oferta pra comparar.</p>
+    </div>
+  </div>
+  <div class="porque" style="margin-top:var(--e-5)"><b>A regra de repeti&ccedil;&atilde;o:</b> o guarda-chuva volta em todo ciclo, mesmo quando o bloco da semana &eacute; outro. &Eacute; o fio que sustenta as demais &mdash; e a &uacute;nica crença que nunca sai do ar por mais de duas semanas seguidas.</div>
+  <p class="nota-pe">produto/mapa-de-crencas.md &sect; 1, &sect; 2, &sect; 3 e &sect; 5 &middot; a formula&ccedil;&atilde;o &ldquo;crença hoje / crença a instalar&rdquo; &eacute; s&iacute;ntese da Inception sobre material dele; as duas linhas marcadas e a d&eacute;cima primeira crença aguardam confirma&ccedil;&atilde;o.</p>
+
+  <h3 class="sub" id="temas"><span class="n">6.3</span>Banco de temas &mdash; 38 pautas com fonte</h3>
   <p class="lede" style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-4)">Esta é a fila de produção. <b>Tema sem fonte rastreável não entra nela.</b> O gancho-resumo indica o ângulo, não é copy publicável. A coluna Formato usa a numeração deste módulo.</p>
 
   <div class="tema-h"><span class="cod cod--cheio">ED</span><h4>Educativa</h4><span class="cont">9 temas</span></div>
@@ -2364,7 +2795,7 @@ Viver de DTM &darr;</div>
   </div>
   <p class="nota-pe">A tinta vermelha desta lista é caneta de revisor, não cor da marca: ela só existe dentro dos documentos do sistema e nunca em peça que a Academia publica. Contrato § 9.1.</p>
 
-  <h3 class="sub"><span class="n">6.3</span>Formato por linha &mdash; a matriz completa</h3>
+  <h3 class="sub"><span class="n">6.4</span>Formato por linha &mdash; a matriz completa</h3>
   <div class="tab-rolo">
     <table class="tab tab--densa">
       <thead><tr><th style="min-width:170px">Linha</th><th style="min-width:170px">Feed âncora</th><th style="min-width:150px">Feed alternativo</th><th style="min-width:110px">Story âncora</th><th style="min-width:140px">Story de apoio</th><th style="width:80px">Arranjo</th><th style="min-width:150px">Onde o fluor entra</th></tr></thead>
@@ -2449,7 +2880,7 @@ Viver de DTM &darr;</div>
     </div>
   </div>
 
-  <h3 class="sub" id="calendario"><span class="n">6.4</span>Ritmo e calendário-modelo</h3>
+  <h3 class="sub" id="calendario"><span class="n">6.5</span>Ritmo e calendário-modelo</h3>
   <p class="lede" style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-5)">Dois posts de feed por semana, terça e quinta, mais stories em três dias soltos. <b>É a maior cadência que ele sustenta por seis meses</b>, com clínica cheia e 43 encontros para preparar.</p>
 
   <div class="grade-2" style="align-items:start">
@@ -2503,7 +2934,7 @@ Viver de DTM &darr;</div>
   </div>
   <div class="porque"><b>O ciclo é o molde que se repete depois do bloco de fundação.</b> Card navy e card papel se alternam dentro da semana e entre as semanas: a grade do § 01.5 se mantém viva sem ninguém desenhá-la.</div>
 
-  <h3 class="sub"><span class="n">6.5</span>As nove pautas de abertura</h3>
+  <h3 class="sub"><span class="n">6.6</span>As nove pautas de abertura</h3>
   <p class="lede" style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-4)">Resumo, não a pauta inteira. O gancho falado, o desenvolvimento em quatro passos e o CTA continuam em <span style="font-family:var(--mono);font-size:13px">produto/pautas-primeiras-4-semanas.md</span>.</p>
   <div class="tab-rolo">
     <table class="tab tab--densa">
@@ -2526,8 +2957,8 @@ Viver de DTM &darr;</div>
     <div class="porque" style="margin-top:0"><b>Compressão recomendada:</b> as nove pautas rodam em três semanas, três por semana, para o perfil chegar à captação com a fundação publicada. Depois, volta a cadência de duas por semana. <b>É sequenciamento, não mudança de mix.</b></div>
   </div>
 
-  <h3 class="sub" id="virada"><span class="n">6.6</span>Fase 1 &rarr; Fase 2: a virada de setembro</h3>
-  <p class="lede" style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-5)">A captação comercial abre em <b>setembro de 2026</b>, cerca de cinco meses antes de a turma começar, em <b>1º de fevereiro de 2027</b>. O feed deixa de ser só aquecimento.</p>
+  <h3 class="sub" id="virada"><span class="n">6.7</span>Fase 1 &rarr; Fase 2: a virada de setembro</h3>
+  <p class="lede" style="max-width:var(--largura-texto);color:var(--tinta-70);margin-bottom:var(--e-5)">A captação comercial abre em <b>setembro de 2026</b>, cerca de cinco meses antes de a turma começar, em <b>23 de fevereiro de 2027</b>. O feed deixa de ser só aquecimento.</p>
   <div class="tab-rolo">
     <table class="tab tab--densa">
       <thead><tr><th style="min-width:130px">Decisão</th><th style="min-width:170px">Fase 1</th><th style="min-width:230px">Fase 2</th><th style="min-width:230px">Por quê</th></tr></thead>
@@ -2546,11 +2977,12 @@ Viver de DTM &darr;</div>
     <div class="painel painel--claro">
       <div class="cap" style="margin-top:0">O que a Fase 2 pode anunciar</div>
       <ul class="lista" style="margin-top:var(--e-4)">
-        <li><b>Turma fundadora, entre 8 e 12 vagas</b>, com abertura em 1º de fevereiro de 2027.</li>
+        <li><b>Turma fundadora com abertura em 23 de fevereiro de 2027.</b> O n&uacute;mero de vagas &mdash; <b>20</b> &mdash; s&oacute; aparece em material de venda: p&aacute;gina, deck e conversa de avalia&ccedil;&atilde;o. <b>No feed, nunca.</b></li>
         <li><b>R$ 15.000</b>, à vista ou em até 12x de R$ 1.250 sem juros; R$ 19.900 a partir da segunda turma.</li>
         <li><b>43 encontros em 10 meses</b>, com três imersões presenciais obrigatórias em Brasília, somando 8 dias.</li>
         <li><b>Aplicação seguida de conversa de avaliação de vaga.</b> Não existe carrinho aberto nem botão de compra.</li>
         <li><b>Certificado de conclusão</b> com carga horária.</li>
+        <li><b>Grupo no WhatsApp como b&ocirc;nus do presencial.</b> Ele acompanha quem est&aacute; nas imers&otilde;es e n&atilde;o &eacute; canal de venda: n&atilde;o vira argumento de oferta nem promessa de suporte ilimitado.</li>
       </ul>
     </div>
     <div class="painel" style="border-left:3px solid var(--erro)">
@@ -2562,6 +2994,8 @@ Viver de DTM &darr;</div>
         <li><b>&ldquo;R$ 1 milhão por ano&rdquo;</b> ou qualquer cifra de faturamento não conciliada.</li>
         <li><b>Datas exatas das imersões.</b> Só as semanas estão reservadas: 10/05, 04/10 e 29/11 de 2027.</li>
         <li><b>Contagem regressiva</b> ou vaga que não seja limitada de verdade. Uma escola com turma tem data.</li>
+        <li><b>Escassez num&eacute;rica no feed.</b> &ldquo;Restam X vagas&rdquo; e derivados n&atilde;o entram em conte&uacute;do org&acirc;nico, nem quando o n&uacute;mero &eacute; verdadeiro. O lugar dele &eacute; a p&aacute;gina e a conversa.</li>
+        <li><b>A palavra &ldquo;mentoria&rdquo;.</b> Viver de DTM &eacute; forma&ccedil;&atilde;o com turma, aula e prova pr&aacute;tica. Chamar de mentoria muda a expectativa de entrega e o pre&ccedil;o de refer&ecirc;ncia.</li>
       </ul>
     </div>
   </div>
@@ -2573,7 +3007,7 @@ Viver de DTM &darr;</div>
     <p>Tráfego pago entra como plano B, amplificando conteúdo que já existe, se em três a quatro semanas as aplicações qualificadas não sustentarem as vagas.</p>
   </div>
 
-  <h3 class="sub"><span class="n">6.7</span>O que medir</h3>
+  <h3 class="sub"><span class="n">6.8</span>O que medir</h3>
   <div class="grade-2" style="align-items:start">
     <div class="tab-rolo">
       <table class="tab tab--densa">
@@ -2623,7 +3057,7 @@ Viver de DTM &darr;</div>
           <li><b>Admite o limite.</b> Reconhecer o que ainda não se sabe é o traço mais reconhecível da voz dele.</li>
           <li><b>Fala em ferramenta, não em técnica única.</b> A tese do repertório organiza o discurso inteiro.</li>
           <li><b>Frase curta, verbo forte, zero rodeio.</b> Seco por escolha, não por frieza.</li>
-          <li><b>Vocabulário técnico sem tradução.</b> Quem lê entende de clínica e de consultório.</li>
+          <li><b>Vocabul&aacute;rio t&eacute;cnico, com tom assertivo.</b> Quem l&ecirc; entende de cl&iacute;nica e de consult&oacute;rio &mdash; mas &eacute; cl&iacute;nico geral, n&atilde;o especialista em DTM. <b>T&eacute;cnico sim, hermético n&atilde;o:</b> sigla de protocolo vem explicada na primeira apari&ccedil;&atilde;o da pe&ccedil;a.</li>
           <li><b>Um pedido por peça</b>, mesmo sutil: salvar, comentar, responder.</li>
         </ul>
       </div>
@@ -2635,7 +3069,7 @@ Viver de DTM &darr;</div>
           <li><b>Número financeiro não validado.</b></li>
           <li><b>Superlativo sem medida.</b></li>
           <li><b>Nome de concorrente.</b> Ataca-se o padrão de mercado, nunca uma pessoa.</li>
-          <li><b>Urgência fabricada.</b></li>
+          <li><b>Urg&ecirc;ncia fabricada</b>, contagem regressiva ou <b>escassez num&eacute;rica no feed</b> &mdash; nem com n&uacute;mero verdadeiro.</li>
           <li><b>Depoimento sem autorização</b>, de paciente ou de aluno.</li>
           <li><b>Emoji</b>, em qualquer peça pública. O Design System proíbe como elemento editorial.</li>
           <li><b>Registro de conselho com número</b>, por regra da Inception.</li>
@@ -2657,6 +3091,8 @@ Viver de DTM &darr;</div>
               <tr><td><b>Premium, Diamond, Platinum, Mega Blaster</b></td><td>Marketês que ele recusa explicitamente</td><td class="fnt">analise-aula § 3 e § 5</td></tr>
               <tr><td><b>Conectivo de parecer</b> &mdash; as cinco aberturas de parágrafo listadas no protocolo anti-IA da casa</td><td>Marca d&rsquo;água de texto gerado por máquina. A lista fica num arquivo só, para não existirem duas versões dela</td><td class="fnt">anti-ia-blacklist.yaml<br>anti-ai-protocol, pecados 4 e 8</td></tr>
               <tr><td><b>&ldquo;garantia&rdquo;</b> em qualquer formulação</td><td>Modelo não fechado</td><td class="fnt">PENDENCIAS bloco C-0</td></tr>
+              <tr><td><b>&ldquo;mentoria&rdquo;</b>, &ldquo;mentorado&rdquo;, &ldquo;mentorando&rdquo;</td><td>Viver de DTM &eacute; forma&ccedil;&atilde;o com turma, aula e prova pr&aacute;tica. A palavra muda a expectativa de entrega e o pre&ccedil;o de refer&ecirc;ncia</td><td class="fnt">decis&atilde;o da reuni&atilde;o<br>de 05/09/2026</td></tr>
+              <tr><td><b>&ldquo;restam X vagas&rdquo;</b> e derivados, em pe&ccedil;a org&acirc;nica</td><td>As 20 vagas s&atilde;o fato de material de venda. No feed, viram escassez fabricada</td><td class="fnt">decis&atilde;o da reuni&atilde;o<br>de 05/09/2026 &middot; &sect; 06.7</td></tr>
             </tbody>
           </table>
         </div>
@@ -2681,22 +3117,35 @@ Viver de DTM &darr;</div>
     </div>
 
     <h3 class="sub" id="bloqueios"><span class="n">7.2</span>Os três bloqueios</h3>
-    <div class="grade-3">
-      <div class="painel" style="background:rgba(244,243,236,.05);border-color:var(--linha-clara)">
+    <div class="bloqueio">
+      <div>
         <div class="cap" style="margin-top:0;color:var(--fluor)">Bloqueio 01</div>
-        <h4 style="font-family:var(--display);font-weight:700;font-size:var(--t-h3);letter-spacing:-.02em;margin:var(--e-3) 0">Os nove depoimentos</h4>
-        <p class="peca-txt">Os depoimentos gravados de alunos e pacientes vieram do contexto do Instituto Ária, marca da qual o Rodrigo está se desligando, e <b>não têm autorização de uso</b> para a Academia DTM. O formato 09 existe como estrutura vazia, com o bloqueio escrito dentro da própria arte. Só sai do bloqueio com liberação por escrito de cada pessoa.</p>
+        <h4>Os nove depoimentos</h4>
       </div>
-      <div class="painel" style="background:rgba(244,243,236,.05);border-color:var(--linha-clara)">
+      <div class="bloqueio-txt">
+        <p class="peca-txt">Os depoimentos gravados de alunos e pacientes vieram do contexto do Instituto &Aacute;ria, marca da qual o Rodrigo est&aacute; se desligando, e <b>n&atilde;o t&ecirc;m autoriza&ccedil;&atilde;o de uso</b> para a Academia DTM.</p>
+        <p class="peca-txt">O formato 09 existe como estrutura vazia, com o bloqueio escrito dentro da pr&oacute;pria arte. <b>S&oacute; sai do bloqueio com libera&ccedil;&atilde;o por escrito de cada pessoa.</b></p>
+      </div>
+    </div>
+    <div class="bloqueio">
+      <div>
         <div class="cap" style="margin-top:0;color:var(--fluor)">Bloqueio 02</div>
-        <h4 style="font-family:var(--display);font-weight:700;font-size:var(--t-h3);letter-spacing:-.02em;margin:var(--e-3) 0">A história da mãe</h4>
-        <p class="peca-txt">Na revisão de 26 de julho o Rodrigo declarou que <b>não reconhece</b> a história atribuída a ele sobre a mãe e a promessa de ganhar dinheiro dormindo. Ela pode ser erro de atribuição nosso, saído da transcrição da call. Não vira post, não vira story, não vira roteiro, e não volta pela porta dos fundos como exemplo de arte.</p>
+        <h4>A história da mãe</h4>
       </div>
-      <div class="painel" style="background:rgba(244,243,236,.05);border-color:var(--linha-clara)">
+      <div class="bloqueio-txt">
+        <p class="peca-txt">Na revis&atilde;o de 26 de julho o Rodrigo declarou que <b>n&atilde;o reconhece</b> a hist&oacute;ria atribu&iacute;da a ele sobre a m&atilde;e e a promessa de ganhar dinheiro dormindo. Ela pode ser erro de atribui&ccedil;&atilde;o nosso, sa&iacute;do da transcri&ccedil;&atilde;o da call.</p>
+        <p class="peca-txt"><b>N&atilde;o vira post, n&atilde;o vira story, n&atilde;o vira roteiro</b> &mdash; e n&atilde;o volta pela porta dos fundos como exemplo de arte.</p>
+      </div>
+    </div>
+    <div class="bloqueio">
+      <div>
         <div class="cap" style="margin-top:0;color:var(--fluor)">Bloqueio 03</div>
-        <h4 style="font-family:var(--display);font-weight:700;font-size:var(--t-h3);letter-spacing:-.02em;margin:var(--e-3) 0">Os números</h4>
-        <p class="peca-txt">Nenhum número de faturamento, de quantidade de alunos, de pacientes ou de clínica entra em peça pública antes da conferência com o Rodrigo. O valor de um milhão por ano, citado na call de levantamento, <b>segue em aberto</b> e está fora de qualquer arte. Credencial de conselho não aparece em material público, por regra da Inception.</p>
-        <p class="peca-txt" style="margin-top:var(--e-3)">Esta trava vale para o <b>feed e os criativos</b> deste guia. A página de vendas e o deck comercial já usam os números de carreira aprovados na copy de 27/08 (&asymp;30 anos &middot; 17 de voluntariado &middot; &asymp;3.000 pacientes &middot; +92% no voluntariado &middot; 100 a 120 especialistas); a conferência com o Rodrigo segue pendente para o pacote inteiro. Versão a fixar: <b>&ldquo;&asymp;30 anos&rdquo;</b> e <b>&ldquo;&asymp;3.000 pacientes&rdquo;</b> (as da página) &mdash; &ldquo;25+ anos&rdquo; e &ldquo;+8 mil&rdquo; ficam como versões a conciliar com ele.</p>
+        <h4>Os números</h4>
+      </div>
+      <div class="bloqueio-txt">
+        <p class="peca-txt">Nenhum n&uacute;mero de faturamento, de quantidade de alunos, de pacientes ou de cl&iacute;nica entra em pe&ccedil;a p&uacute;blica antes da confer&ecirc;ncia com o Rodrigo. O valor de um milh&atilde;o por ano, citado na call de levantamento, <b>segue em aberto</b> e est&aacute; fora de qualquer arte. Credencial de conselho n&atilde;o aparece em material p&uacute;blico, por regra da Inception.</p>
+        <p class="peca-txt">Esta trava vale para o <b>feed e os criativos</b> deste guia. A p&aacute;gina de vendas e o deck comercial j&aacute; usam os n&uacute;meros de carreira aprovados na copy de 27/08 &mdash; &asymp;30 anos &middot; 17 de voluntariado &middot; &asymp;3.000 pacientes &middot; +92% no voluntariado &middot; 100 a 120 especialistas &mdash; e a confer&ecirc;ncia com o Rodrigo segue pendente para o pacote inteiro.</p>
+        <p class="peca-txt">Vers&atilde;o a fixar: <b>&ldquo;&asymp;30 anos&rdquo;</b> e <b>&ldquo;&asymp;3.000 pacientes&rdquo;</b>, as da p&aacute;gina. &ldquo;25+ anos&rdquo; e &ldquo;+8 mil&rdquo; ficam como vers&otilde;es a conciliar com ele.</p>
       </div>
     </div>
 
@@ -2799,7 +3248,7 @@ Viver de DTM &darr;</div>
       </ul>
     </div>
 
-    <p class="nota-pe">Nenhuma peça sobe antes de o perfil ser renomeado e o selo virar avatar. A copy de cada tema é do @copywriter, escrita a partir do banco do § 06.2 e do mapa de copy.</p>
+    <p class="nota-pe">Nenhuma peça sobe antes de o perfil ser renomeado e o selo virar avatar. A copy de cada tema é do @copywriter, escrita a partir do banco do § 06.3 e do mapa de copy.</p>
   </div>
 </section>
 

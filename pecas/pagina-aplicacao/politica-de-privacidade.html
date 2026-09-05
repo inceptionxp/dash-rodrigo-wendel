@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Política de privacidade &middot; Academia DTM &middot; Viver de DTM</title>
+<meta name="description" content="O que a Academia DTM faz com os dados enviados no formulário de aplicação da formação Viver de DTM: o que é coletado, para que serve, por quanto tempo fica guardado e como pedir a exclusão.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='14' fill='%23101C46'/%3E%3Cg stroke='%23CDF23F' stroke-width='23.94' stroke-linecap='round' transform='translate(100 100) scale(.76) translate(-100 -100)'%3E%3Cline x1='59.74' y1='28.53' x2='116.58' y2='28.53'/%3E%3Cline x1='122.07' y1='21' x2='162.26' y2='61.19'/%3E%3Cline x1='171.47' y1='59.74' x2='171.47' y2='116.58'/%3E%3Cline x1='179' y1='122.07' x2='138.81' y2='162.26'/%3E%3Cline x1='140.26' y1='171.47' x2='83.42' y2='171.47'/%3E%3Cline x1='77.93' y1='179' x2='37.74' y2='138.81'/%3E%3Cline x1='28.53' y1='140.26' x2='28.53' y2='83.42'/%3E%3Cline x1='21' y1='77.93' x2='61.19' y2='37.74'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&family=Hanken+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   POLÍTICA DE PRIVACIDADE · Academia DTM · V1 · 05/09/2026
+   Peça de apoio da página de aplicação (index.html): mesmos tokens do brandbook,
+   mesma tipografia, mesmo gesto. A diferença é de temperatura: a capa é o navy
+   da página, e o corpo do documento é papel liso, sem card e sem framework.
+   O texto é base para revisão jurídica; a tarja do topo diz isso na cara.
+   ============================================================ */
+:root{
+  --navy:#101C46;
+  --navy-alto:#182559;
+  --tinta:#0B0F1A;
+  --papel:#F4F3EC;
+  --papel-2:#E7E5D8;
+  --fluor:#CDF23F;
+  --cobalto:#2C4BFF;
+  --papel-72:rgba(244,243,236,.78);
+  --papel-45:rgba(244,243,236,.56);
+  --tinta-70:rgba(11,15,26,.74);
+  --tinta-45:rgba(11,15,26,.56);
+  --linha-clara:rgba(244,243,236,.16);
+  --linha-escura:rgba(11,15,26,.15);
+  --display:"Archivo",system-ui,sans-serif;
+  --corpo:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:"Space Mono",ui-monospace,SFMono-Regular,monospace;
+  --t-hero:clamp(31px,3.4vw,48px);
+  --t-h2:clamp(21px,2.1vw,27px);
+  --t-corpo:17px;
+  --t-legenda:14px;
+  --lh-corpo:1.7;
+  --e-1:4px; --e-2:8px; --e-3:12px; --e-4:16px; --e-5:24px;
+  --e-6:32px; --e-7:48px; --e-8:64px; --e-9:88px;
+  --r-1:3px;
+  --d-micro:180ms; --d-base:240ms; --d-reveal:520ms;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --largura:1180px;
+  --largura-texto:70ch;
+  --topo:106px;
+}
+@media(max-width:900px){:root{--topo:104px}}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-padding-top:calc(var(--topo) + 16px);overflow-x:clip}
+body{background:var(--papel);color:var(--tinta);font-family:var(--corpo);font-size:var(--t-corpo);
+  line-height:var(--lh-corpo);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:clip}
+/* grão · a mesma matéria da página de aplicação */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:200;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--fluor);color:var(--tinta)}
+:focus-visible{outline:2px solid var(--cobalto);outline-offset:3px}
+.sobre-navy :focus-visible{outline-color:var(--fluor)}
+.wrap{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6)}
+@media(max-width:640px){.wrap{padding:0 20px}}
+.pula{position:absolute;left:-9999px;top:0}
+.pula:focus{left:var(--e-5);top:var(--e-3);z-index:300;background:var(--papel);color:var(--navy);
+  display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border-radius:var(--r-1);
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+
+/* lockup da marca */
+.lk{display:inline-flex;align-items:center;color:var(--navy)}
+.lk .sym{width:1em;height:1em;flex:none}
+.lk .rule{width:.028em;min-width:1px;background:currentColor;opacity:.32;flex:none;
+  height:.62em;margin-left:.30em;margin-right:.26em}
+.lk .row{display:flex;align-items:baseline;font-family:var(--display);text-transform:uppercase;
+  white-space:nowrap;line-height:1}
+.lk .ac-h{font-weight:500;font-size:.44em;letter-spacing:.18em}
+.lk .dtm-h{font-weight:800;font-size:.44em;letter-spacing:-.035em;margin-left:.26em}
+.lk--neg{color:var(--papel)}
+.lk--neg .sym{color:var(--fluor)}
+
+/* a junta · o gesto de assinatura da página de aplicação, herdado aqui */
+.junta{display:block;width:156px;height:9px;position:relative;flex:none}
+.junta::before{content:"";position:absolute;left:0;top:0;width:104px;height:2px;background:var(--papel-45)}
+.junta::after{content:"";position:absolute;left:52px;top:7px;width:104px;height:2px;background:var(--fluor)}
+.junta--escuro::before{background:var(--navy)}
+
+/* tarja fixa do topo */
+.tarja-topo{position:sticky;top:0;z-index:120;background:var(--tinta);color:var(--papel);
+  border-bottom:1px solid rgba(205,242,63,.34)}
+.tarja-topo .in{max-width:var(--largura);margin:0 auto;padding:11px var(--e-6);display:flex;
+  align-items:center;justify-content:center;gap:10px;min-height:44px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  text-align:center;line-height:1.55;text-wrap:balance}
+.tarja-topo b{color:var(--fluor);font-weight:700}
+@media(max-width:640px){.tarja-topo .in{padding:9px 20px;min-height:40px;letter-spacing:.06em;gap:6px}}
+
+/* cabeçalho */
+.nav{position:sticky;top:44px;z-index:100;background:var(--navy);border-bottom:1px solid var(--linha-clara)}
+@media(max-width:640px){.nav{top:40px}}
+.nav-in{max-width:var(--largura);margin:0 auto;padding:0 var(--e-6);display:flex;align-items:center;
+  justify-content:space-between;gap:var(--e-5);min-height:62px}
+.nav-marca{display:inline-flex;align-items:center;min-height:44px;text-decoration:none}
+@media(max-width:640px){.nav-in{padding:0 20px;min-height:58px}}
+
+/* botão */
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;
+  font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:18px 30px;border-radius:var(--r-1);
+  border:1px solid transparent;background:var(--cobalto);color:var(--papel);text-decoration:none;
+  cursor:pointer;min-height:56px;line-height:1.35;text-align:center;
+  transition:transform var(--d-micro) var(--ease),box-shadow var(--d-micro) var(--ease),
+    background-color var(--d-base) var(--ease),color var(--d-base) var(--ease)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px -14px rgba(16,28,70,.24)}
+.btn:active{transform:translateY(1px);box-shadow:none}
+.btn--papel{background:var(--papel);color:var(--navy)}
+.btn--papel:hover{background:#FFFDF5}
+.btn--curto{min-height:46px;padding:13px 20px}
+
+/* capa */
+.capa{background:var(--navy);color:var(--papel);padding:clamp(40px,4.4vw,64px) 0 clamp(44px,4.8vw,68px)}
+.capa-in{display:flex;flex-direction:column;align-items:center;text-align:center;
+  max-width:min(100%,1000px);margin:0 auto}
+.capa .junta{margin-bottom:var(--e-5)}
+.rotulo{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--fluor);line-height:1.5;margin-bottom:var(--e-5)}
+h1.hero-h{font-family:var(--display);font-weight:800;letter-spacing:-.042em;line-height:1.06;
+  font-size:var(--t-hero);text-wrap:balance;width:100%}
+h1.hero-h .hl-acc{color:var(--fluor)}
+.capa .sub{font-size:19px;line-height:1.65;max-width:min(100%,58ch);text-wrap:pretty;
+  color:var(--papel-72);margin-top:var(--e-5)}
+@media(max-width:900px){.capa .sub{font-size:17px}}
+.capa .btn{margin-top:var(--e-6)}
+.selo{width:min(100%,460px);margin-top:var(--e-7)}
+@media(max-width:900px){.selo{width:min(100%,260px);margin-top:var(--e-6)}}
+
+/* documento */
+.doc{padding:clamp(48px,5vw,76px) 0 clamp(40px,4.4vw,64px)}
+.doc-in{max-width:var(--largura-texto);margin:0 auto}
+.abertura{font-size:19px;line-height:1.62;color:var(--tinta);text-wrap:pretty;
+  padding-bottom:var(--e-6);border-bottom:1px solid var(--linha-escura)}
+@media(max-width:900px){.abertura{font-size:18px}}
+.art{padding-top:var(--e-7)}
+.art-n{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tinta-45);display:block;margin-bottom:var(--e-3)}
+.art h2{font-family:var(--display);font-weight:800;letter-spacing:-.03em;line-height:1.14;
+  font-size:var(--t-h2);color:var(--navy);text-wrap:pretty}
+.art p{margin-top:var(--e-4);color:var(--tinta-70);text-wrap:pretty;line-height:var(--lh-corpo)}
+.art p b{color:var(--tinta);font-weight:600}
+.art ul{list-style:none;display:grid;gap:var(--e-3);margin-top:var(--e-4)}
+.art ul li{position:relative;padding-left:26px;color:var(--tinta-70);line-height:var(--lh-corpo);
+  text-wrap:pretty}
+.art ul li::before{content:"";position:absolute;left:0;top:12px;width:12px;height:2px;background:var(--navy)}
+.pendente{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--navy);background:rgba(205,242,63,.34);
+  border:1px dashed rgba(11,15,26,.32);border-radius:var(--r-1);padding:4px 10px;line-height:1.6}
+.fecho{margin-top:var(--e-8);padding-top:var(--e-6);border-top:1px solid var(--linha-escura);
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--tinta-45);line-height:2}
+
+/* rodapé */
+.rod{background:var(--tinta);color:var(--papel);padding:clamp(36px,3.6vw,56px) 0}
+.rod-in{display:flex;align-items:center;justify-content:space-between;gap:var(--e-6);flex-wrap:wrap}
+.rod-legal{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--papel-45);line-height:2}
+.rod a{display:inline-flex;align-items:center;min-height:44px;color:var(--papel-72);
+  text-decoration:none;border-bottom:1px solid var(--linha-clara);
+  font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  transition:color var(--d-base) var(--ease),border-color var(--d-base) var(--ease)}
+.rod a:hover{color:var(--fluor);border-color:var(--fluor)}
+
+/* entrada · um movimento só, na capa, e nada em laço */
+@keyframes sobe{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.ent{animation:sobe 560ms var(--ease) both}
+.ent-2{animation-delay:90ms}
+.ent-3{animation-delay:180ms}
+@media(prefers-reduced-motion:reduce){.ent{animation:none}
+  .btn:hover{transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="trama" viewBox="0 0 200 200" fill="none">
+    <line x1="59.74" y1="28.53" x2="116.58" y2="28.53" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="122.07" y1="21.00" x2="162.26" y2="61.19" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="171.47" y1="59.74" x2="171.47" y2="116.58" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="179.00" y1="122.07" x2="138.81" y2="162.26" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="140.26" y1="171.47" x2="83.42" y2="171.47" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="77.93" y1="179.00" x2="37.74" y2="138.81" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="28.53" y1="140.26" x2="28.53" y2="83.42" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="21.00" y1="77.93" x2="61.19" y2="37.74" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<a class="pula" href="#documento">Ir para o documento</a>
+
+<div class="tarja-topo">
+  <p class="in"><span>Texto-base para revisão jurídica</span> <b>&middot; antes da publicação</b></p>
+</div>
+
+<header class="nav sobre-navy">
+  <div class="nav-in">
+    <a class="nav-marca" href="index.html" aria-label="Academia DTM">
+      <span class="lk lk--neg" style="font-size:26px">
+        <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <span class="rule"></span>
+        <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+      </span>
+    </a>
+    <a class="btn btn--papel btn--curto" href="index.html">Voltar para a página</a>
+  </div>
+</header>
+
+<main>
+
+<section class="capa sobre-navy">
+  <div class="wrap">
+    <div class="capa-in">
+      <span class="junta ent"></span>
+      <p class="rotulo ent ent-2">Academia DTM &middot; documento</p>
+      <h1 class="hero-h ent ent-2">Política de <span class="hl-acc">privacidade</span></h1>
+      <p class="sub ent ent-3">O que a Academia DTM faz com os dados que você envia no formulário de aplicação da formação Viver de DTM, por quanto tempo guarda e como você pede para apagar.</p>
+      <a class="btn btn--papel ent ent-3" href="index.html#aplicacao">Voltar para a aplicação</a>
+      <svg class="selo ent ent-3" viewBox="0 0 460 300" role="img" aria-label="Selo do documento: a marca da Academia DTM dentro de um octógono, com a inscrição política de privacidade, versão 1, de 5 de setembro de 2026" fill="none">
+        <line x1="150" y1="28" x2="310" y2="28" stroke="rgba(244,243,236,.36)" stroke-width="2"/>
+        <polygon points="196.9,52 263.1,52 310,98.9 310,165.1 263.1,212 196.9,212 150,165.1 150,98.9"
+                 fill="none" stroke="rgba(244,243,236,.36)" stroke-width="2"/>
+        <use href="#trama" x="180" y="82" width="100" height="100" style="color:#CDF23F"/>
+        <text x="230" y="250" text-anchor="middle" font-family="Space Mono, monospace" font-size="16"
+              font-weight="700" letter-spacing="3.4" fill="rgba(244,243,236,.78)">POLÍTICA DE PRIVACIDADE</text>
+        <text x="230" y="282" text-anchor="middle" font-family="Space Mono, monospace" font-size="16"
+              font-weight="700" letter-spacing="3.4" fill="rgba(244,243,236,.56)">VERSÃO 1 &#183; 05.09.2026</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<article class="doc" id="documento">
+  <div class="wrap">
+    <div class="doc-in">
+      <p class="abertura">Este texto vale para o formulário de aplicação da formação Viver de DTM, na página da Academia DTM. Ele foi escrito para ser lido por quem aplica, e não por advogado: cada trecho diz o que acontece com o dado, quem encosta nele e o que você pode exigir a qualquer momento.</p>
+
+      <div class="art">
+        <span class="art-n">Artigo 01</span>
+        <h2>Quem controla os dados</h2>
+        <p>A <b>Academia DTM</b>, escola de DTM e dor orofacial sob direção clínica do Dr. Rodrigo Wendel, é quem decide o que acontece com os dados enviados no formulário. Na linguagem da Lei 13.709 de 2018, ela é a controladora. Ninguém mais decide o uso desses dados.</p>
+      </div>
+
+      <div class="art">
+        <span class="art-n">Artigo 02</span>
+        <h2>O que é coletado</h2>
+        <p>O formulário pede cinco informações, todas digitadas por você:</p>
+        <ul>
+          <li>nome completo</li>
+          <li>WhatsApp</li>
+          <li>e-mail</li>
+          <li>a resposta aberta sobre o que você já vê na sua cadeira hoje</li>
+          <li>a resposta sobre viajar a Brasília quatro vezes em 2027</li>
+        </ul>
+        <p>Junto com o envio, a página registra a origem da visita: os parâmetros de campanha que vierem no endereço da página (utm_source, utm_medium, utm_campaign e utm_content), o endereço em que a aplicação foi preenchida e o site que trouxe você até aqui. Esse registro serve para saber por qual caminho a aplicação chegou.</p>
+        <p>O formulário <b>não pede registro profissional, não pede documento e nunca pede dado de paciente</b>. Se você escrever dado de paciente na resposta aberta, ele é apagado do registro.</p>
+      </div>
+
+      <div class="art">
+        <span class="art-n">Artigo 03</span>
+        <h2>Para que os dados são usados</h2>
+        <p>Dois usos, e nenhum além deles. O primeiro é analisar a aplicação e organizar a fila das conversas de avaliação de vaga. O segundo é falar com você sobre a formação, por WhatsApp, e-mail ou telefone. Os dados de origem entram só na leitura interna de campanha e na ordem dessa fila.</p>
+      </div>
+
+      <div class="art">
+        <span class="art-n">Artigo 04</span>
+        <h2>Base legal</h2>
+        <p>Duas bases sustentam o uso. A primeira é o seu <b>consentimento</b>, marcado na caixa do formulário antes do envio. A segunda é o <b>procedimento preliminar de contrato</b>: você pediu uma conversa sobre uma matrícula, e o contato é o passo seguinte desse pedido. Lei 13.709 de 2018, artigo 7º, incisos I e V.</p>
+      </div>
+
+      <div class="art">
+        <span class="art-n">Artigo 05</span>
+        <h2>Por quanto tempo fica guardado</h2>
+        <p>Aplicação que não vira matrícula fica guardada por <b>24 meses</b> contados do envio, porque muita gente volta na turma seguinte. Aplicação que vira matrícula passa para o cadastro de aluno e segue o prazo do contrato da formação. Um pedido de exclusão apaga antes desses prazos, com uma exceção: o que a lei ou uma obrigação fiscal mandar guardar.</p>
+      </div>
+
+      <div class="art">
+        <span class="art-n">Artigo 06</span>
+        <h2>Com quem os dados são compartilhados</h2>
+        <p>Nada é vendido, e nada vai para quem queira vender alguma coisa a você. Os dados circulam apenas nas ferramentas que operam o processo, sempre a mando da Academia DTM:</p>
+        <ul>
+          <li>a automação que recebe o formulário e organiza a fila</li>
+          <li>a planilha e o sistema de gestão de contatos onde a aplicação fica registrada</li>
+          <li>a ferramenta de agenda que marca a conversa</li>
+          <li>o serviço que envia as mensagens e os e-mails do processo</li>
+        </ul>
+        <p>A tipografia desta página vem do serviço de fontes do Google, o que envia o endereço de IP do visitante para esse serviço. Fora isso, a página não usa cookie de rastreamento nem pixel de anúncio nesta versão. Se isso mudar, a mudança aparece aqui antes de valer.</p>
+      </div>
+
+      <div class="art">
+        <span class="art-n">Artigo 07</span>
+        <h2>Seus direitos</h2>
+        <p>A qualquer momento você pode pedir a confirmação de que existe tratamento, o acesso aos seus dados, a correção do que estiver errado, a exclusão ou a anonimização, a informação sobre com quem os dados foram compartilhados e a retirada do consentimento. O pedido é respondido em até <b>15 dias</b>. Retirar o consentimento interrompe o contato dali em diante, e não desfaz o que já tinha sido feito antes do pedido.</p>
+      </div>
+
+      <div class="art">
+        <span class="art-n">Artigo 08</span>
+        <h2>Como fazer o pedido</h2>
+        <p>Pedido de acesso, correção ou exclusão vai para o canal de contato da Academia DTM, enviado do mesmo e-mail usado na aplicação, o que já serve de conferência. Endereço de contato: <span class="pendente">e-mail oficial a definir com a Academia DTM</span></p>
+      </div>
+
+      <div class="art">
+        <span class="art-n">Artigo 09</span>
+        <h2>Versão deste texto</h2>
+        <p>Versão 1, de 5 de setembro de 2026. Mudança relevante entra aqui com data nova. Quando a mudança alterar o uso dos dados, quem já aplicou é avisado antes de ela valer.</p>
+      </div>
+
+      <p class="fecho">Academia DTM &middot; Viver de DTM &middot; Brasília<br>Documento em revisão jurídica &middot; versão 1</p>
+    </div>
+  </div>
+</article>
+
+</main>
+
+<footer class="rod">
+  <div class="wrap">
+    <div class="rod-in">
+      <span class="lk lk--neg" style="font-size:28px">
+        <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+        <span class="rule"></span>
+        <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+      </span>
+      <a href="index.html#aplicacao">Voltar para a aplicação</a>
+    </div>
+    <p class="rod-legal" style="margin-top:32px">Academia DTM &middot; Dr. Rodrigo Wendel &middot; todos os direitos reservados</p>
+  </div>
+</footer>
+
+</body>
+</html>

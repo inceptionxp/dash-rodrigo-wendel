@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>O Salto · Dr. Rodrigo Wendel · Painel do Projeto</title>
+<meta name="description" content="Painel de acompanhamento do projeto da mentoria de DTM do Dr. Rodrigo Wendel. Status em tempo real de cada bloco de entrega, marcos e validações pendentes.">
+<link rel="stylesheet" href="assets/style.css?v=4">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ═══════════ SIDEBAR ═══════════ -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-mark">O Salto</div>
+      <span class="brand-meta">Dr. Rodrigo Wendel · v3</span>
+    </div>
+
+    <div class="sidebar-section">Consultoria</div>
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#home" data-view="home"><span class="nav-ico">◆</span><span>Visão Geral</span></a>
+      <a class="nav-link" href="#marcos" data-view="marcos"><span class="nav-ico">◆</span><span>Marcos do Projeto</span></a>
+      <a class="nav-link" href="#pesquisas" data-view="pesquisas"><span class="nav-ico">◆</span><span>Pesquisas</span></a>
+      <a class="nav-link" href="#acompanhamento" data-view="acompanhamento"><span class="nav-ico">◆</span><span>Acompanhamento</span></a>
+    </nav>
+
+    <div class="sidebar-section">Extração da Consultoria</div>
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#met-aprendiz" data-view="met-aprendiz"><span class="nav-ico">◆</span><span>Cliente Ideal</span></a>
+      <a class="nav-link" href="#met-expert" data-view="met-expert"><span class="nav-ico">◆</span><span>Diferenciais e Autoridade</span></a>
+      <a class="nav-link" href="#met-historias" data-view="met-historias"><span class="nav-ico">◆</span><span>Banco de Histórias</span></a>
+      <a class="nav-link" href="#met-metodo" data-view="met-metodo"><span class="nav-ico">◆</span><span>Método e Frameworks</span></a>
+      <a class="nav-link" href="brandbook-academia-dtm/index.html" target="_blank"><span class="nav-ico">◆</span><span>Brandbook &amp; Design System</span></a>
+    </nav>
+
+    <div class="sidebar-section">Produtos</div>
+    <nav class="sidebar-nav">
+      <div class="nav-group" id="nav-group-formacao">
+        <a class="nav-link" href="#prod-formacao" data-view="prod-formacao">
+          <span class="nav-ico">◆</span><span>Formação</span>
+          <button class="nav-toggle" onclick="event.preventDefault();event.stopPropagation();toggleNavGroup('nav-group-formacao')" aria-label="Abrir subpáginas da Formação">❯</button>
+        </a>
+        <div class="nav-children">
+          <a class="nav-link" href="#prod-oferta" data-view="prod-oferta"><span class="nav-ico">○</span><span>Oferta</span></a>
+          <a class="nav-link" href="#prod-grade" data-view="prod-grade"><span class="nav-ico">○</span><span>Grade · 43 Encontros</span></a>
+          <a class="nav-link" href="#prod-jornada" data-view="prod-jornada"><span class="nav-ico">○</span><span>Jornada do Aluno</span></a>
+          <a class="nav-link" href="#prod-gamificacao" data-view="prod-gamificacao"><span class="nav-ico">○</span><span>Gamificação · Faixas</span></a>
+        </div>
+      </div>
+      <a class="nav-link" href="#prod-mentoria" data-view="prod-mentoria"><span class="nav-ico">◆</span><span>Mentoria</span></a>
+
+    </nav>
+
+    <div class="sidebar-section">Suas perguntas, respondidas</div>
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#entrega-oferta" data-view="entrega-oferta"><span class="nav-ico">◆</span><span>Preço, garantia e bônus</span></a>
+      <a class="nav-link" href="#entrega-grade" data-view="entrega-grade"><span class="nav-ico">◆</span><span>Gate e grade da Etapa 1</span></a>
+      <a class="nav-link" href="#entrega-comercial" data-view="entrega-comercial"><span class="nav-ico">◆</span><span>Motores de tração</span></a>
+      <a class="nav-link" href="#entrega-imersao3" data-view="entrega-imersao3"><span class="nav-ico">◆</span><span>A 3ª imersão</span></a>
+      <a class="nav-link" href="#entrega-leads" data-view="entrega-leads"><span class="nav-ico">◆</span><span>Triagem do lead</span></a>
+    </nav>
+
+    <div class="sidebar-section">Marca &amp; Conteúdo</div>
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#conteudo-linha" data-view="conteudo-linha"><span class="nav-ico">◆</span><span>Linha Editorial</span></a>
+    </nav>
+
+    <div class="sidebar-section">Peças comerciais</div>
+    <nav class="sidebar-nav">
+      <a class="nav-link" href="#pecas-comerciais" data-view="pecas-comerciais"><span class="nav-ico">◆</span><span>Página, deck e guias</span></a>
+    </nav>
+
+    <div class="sidebar-footer">
+      v3 · Julho 2026<br>
+      Inception Experience<br>
+      Maiara Minatto
+    </div>
+  </aside>
+
+  <!-- ═══════════ MAIN ═══════════ -->
+  <main class="main">
+    <div class="main-inner" id="main-inner"></div>
+
+    <!-- GISCUS — comentários por seção -->
+    <div id="giscus-wrapper">
+      <div class="giscus-header">
+        <span class="giscus-tag">Comentários e validações</span>
+        <p class="giscus-help">Deixe aqui sua opinião sobre <strong>esta seção</strong>. Cada página tem seu próprio espaço de comentários. Na primeira vez, faça login com o GitHub (leva 10 segundos).</p>
+      </div>
+      <div class="giscus"></div>
+    </div>
+  </main>
+
+</div>
+
+<!-- MODAL — histórias e frameworks -->
+<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fechar">×</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script src="data/data.js?v=19"></script>
+<script src="data/docs.js?v=8"></script>
+<script src="data/metodo.js?v=9"></script>
+<script src="data/produto.js?v=9"></script>
+<script src="data/conteudo.js?v=1"></script>
+<script src="data/devolutivas.js?v=2"></script>
+<script src="assets/app.js?v=16"></script>
+
+<!-- ═══════════ GISCUS ═══════════ -->
+<script>
+(function(){
+  const REPO='inceptionxp/dash-rodrigo-wendel';
+  const REPO_ID='R_kgDOTIiXHw';
+  const CAT='General';
+  const CAT_ID='DIC_kwDOTIiXH84DAJJv';
+  const ORIGIN='https://giscus.app';
+  let loaded=false, currentTerm=null;
+  const container=()=>document.querySelector('#giscus-wrapper .giscus');
+
+  window._showGiscus=function(termKey){
+    const term='dash-'+(termKey||'home');
+    if(term===currentTerm) return;
+    currentTerm=term;
+    const c=container(); if(!c) return;
+    if(!loaded){
+      // Só carrega quando IDs estiverem configurados
+      if(REPO_ID.includes('PLACEHOLDER')) return;
+      const s=document.createElement('script');
+      s.src='https://giscus.app/client.js';
+      s.setAttribute('data-repo',REPO);
+      s.setAttribute('data-repo-id',REPO_ID);
+      s.setAttribute('data-category',CAT);
+      s.setAttribute('data-category-id',CAT_ID);
+      s.setAttribute('data-mapping','specific');
+      s.setAttribute('data-term',term);
+      s.setAttribute('data-strict','0');
+      s.setAttribute('data-reactions-enabled','1');
+      s.setAttribute('data-emit-metadata','0');
+      s.setAttribute('data-input-position','top');
+      s.setAttribute('data-theme','light');
+      s.setAttribute('data-lang','pt');
+      s.crossOrigin='anonymous'; s.async=true;
+      c.appendChild(s); loaded=true;
+    } else {
+      const f=document.querySelector('#giscus-wrapper iframe.giscus-frame');
+      if(f) f.contentWindow.postMessage({giscus:{setConfig:{term}}},ORIGIN);
+    }
+  };
+
+  window._giscusTermFromHash=function(){
+    const h=(location.hash.slice(1)||'home').split('/');
+    return h[0]+(h[1]?'-'+h[1]:'');
+  };
+
+  function tick(){ window._showGiscus(window._giscusTermFromHash()); }
+  window.addEventListener('hashchange', ()=>setTimeout(tick,120));
+  setTimeout(tick, 300);
+})();
+</script>
+</body>
+</html>

@@ -3,7 +3,7 @@
   <text x="40" y="76" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="18" font-weight="700" fill="currentColor" letter-spacing="2.4" text-anchor="start">F4 · O PERCURSO DA FORMAÇÃO</text>
   <line x1="96" y1="118" x2="96" y2="690" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
   <polygon points="91.45,117.00 100.55,117.00 107.00,123.45 107.00,132.55 100.55,139.00 91.45,139.00 85.00,132.55 85.00,123.45" fill="currentColor" fill-opacity="0.28"/>
-  <text x="140" y="120" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">1º DE FEVEREIRO DE 2027</text>
+  <text x="140" y="120" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">23 DE FEVEREIRO DE 2027</text>
   <text x="140" y="146" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Abertura da turma</text>
   <polygon points="91.45,185.00 100.55,185.00 107.00,191.45 107.00,200.55 100.55,207.00 91.45,207.00 85.00,200.55 85.00,191.45" fill="currentColor" fill-opacity="0.28"/>
   <text x="140" y="188" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">ETAPA 1</text>
@@ -27,7 +27,7 @@
   <text x="140" y="598" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">Encontros 36 a 43</text>
   <polygon points="88.13,627.00 103.87,627.00 115.00,638.13 115.00,653.87 103.87,665.00 88.13,665.00 77.00,653.87 77.00,638.13" fill="#CDF23F"/>
   <polygon points="88.13,627.00 103.87,627.00 115.00,638.13 115.00,653.87 103.87,665.00 88.13,665.00 77.00,653.87 77.00,638.13" stroke="currentColor" stroke-width="1.5"/>
-  <text x="140" y="638" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">29 DE NOVEMBRO DE 2027</text>
+  <text x="140" y="638" font-family="Space Mono, ui-monospace, SFMono-Regular, monospace" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1.8" text-anchor="start" opacity="0.62">29 E 30 DE NOVEMBRO DE 2027</text>
   <text x="140" y="664" font-family="Archivo, system-ui, sans-serif" font-size="22" font-weight="700" fill="currentColor" letter-spacing="-0.22" text-anchor="start">Imersão 3 · Formatura</text>
   <text x="140" y="688" font-family="Hanken Grotesk, -apple-system, sans-serif" font-size="16" font-weight="400" fill="currentColor" letter-spacing="0" text-anchor="start" opacity="0.62">apresentação de caso ao vivo</text>
   <line x1="40" y1="716" x2="560" y2="716" stroke="currentColor" stroke-width="1" opacity="0.3"/>

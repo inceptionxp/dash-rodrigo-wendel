@@ -1,5 +1,62 @@
 # Kit de frameworks · Academia DTM — CHANGELOG
 
+## v2.1 · 05/09/2026 · F4 alinhado ao calendário V2 da turma 2027
+
+**Motivo:** a data de abertura decidida com o cliente em 05/09 é **23 de fevereiro de 2027**, e não
+mais 1º de fevereiro. Fonte única: `produto/calendario-turma-2027.md` (V2, bloco "Números que vão
+para as peças"). O F4 era o último lugar do kit que ainda mostrava a data velha.
+
+**Só texto de data mudou. Nada de redesenho:** geometria do símbolo congelada, viewBox 600×830
+intacto, tokens, cores, famílias, corpos e gestos de assinatura idênticos aos da v2.
+
+### F4 · O percurso da formação
+- **Abertura:** `1º DE FEVEREIRO DE 2027` → **`23 DE FEVEREIRO DE 2027`**. Mesma contagem de
+  caracteres (23), então a caixa não mexeu.
+- **Imersão 3:** `29 DE NOVEMBRO DE 2027` → **`29 E 30 DE NOVEMBRO DE 2027`**. A imersão ocupa os
+  dois dias e a **formatura é em 30/11**; a data velha exibia só o primeiro dia e escondia a
+  formatura. A linha cresceu de 23 para 27 caracteres, ou seja, ~43 unidades a mais, e termina em
+  x≈432 — 128 unidades antes da margem direita.
+- **Imersões 1 e 2:** `MAIO DE 2027` e `OUTUBRO DE 2027` **mantidas**. As semanas de 17/05 e 04/10
+  caem nesses meses, então nada estava errado, e o registro mês-a-mês é o mesmo da copy da página
+  de vendas ("imersões em maio, outubro e novembro").
+- **`10 MESES` mantido**, por decisão do briefing ("de fevereiro a novembro"). Registro de
+  divergência: o calendário V2 mede **9 meses e 1 semana** entre 23/02 e 30/11 e recomenda trocar
+  o número. Enquanto a copy da página de vendas disser "10 meses", o F4 acompanha. Handoff aberto.
+- **Sem contador de semanas no F4** — a régua de números é 43 encontros · 10 meses · 3 imersões ·
+  8 dias em Brasília. As "41 semanas" do calendário não aparecem aqui e não foram introduzidas.
+- **Colisões:** 0 → 0. Medido por tinta real (`canvas.measureText` com
+  `actualBoundingBoxAscent/Descent`, convertido para unidades de viewBox), sobre o SVG renderizado
+  no Chromium com as três fontes carregadas: folga mínima **texto × traço ou nó = 20,4 un.**,
+  **texto × borda = 19,8 un.**, **texto × outro rótulo = 8+ un.** O único par abaixo de 8 é
+  `DIAS EM` / `BRASÍLIA` (4,1 un.), que é a entrelinha de um rótulo de duas linhas criado na v2, e
+  não colisão entre rótulos distintos. Verificação cruzada: o mesmo medidor rodado na versão
+  anterior devolve exatamente o mesmo resultado — as datas novas não custaram um pixel de folga.
+- **Menor corpo:** 15 (piso da v2 preservado).
+- **viewBox:** 600×830 → **600×830** (sem alteração).
+- **Prova:** `_prova/F4-percurso-da-formacao.png` (Playwright, retina 2×, 1200×1660).
+
+### Sincronia
+- `svg/F4-percurso-da-formacao.svg`, os 2 SVG inline do `index.html` e o bloco `<pre>` escapado
+  conferidos por comparação exata: 2 ocorrências inline + 1 escapada, todas idênticas ao arquivo.
+- Espelho `outputs/dashboard/brandbook-academia-dtm/kit-frameworks/` recebeu SVG, `index.html` e
+  este CHANGELOG. O deploy em si não foi feito.
+- `outputs/pagina-vendas-viver-de-dtm/index.html`: o embed **não** bate byte a byte com o arquivo
+  do kit — a página usa a variante sem a linha de título `F4 · O PERCURSO DA FORMAÇÃO`. Por isso a
+  correção foi cirúrgica no embed, e não substituição do bloco. A abertura já estava em 23/02
+  (trocada pelo agente da página); aqui entrou a Imersão 3 (`NOVEMBRO DE 2027` →
+  `29 E 30 DE NOVEMBRO DE 2027`). Colisão dentro de SVG na página: **0 em 1440×900 e 0 em 390×844**
+  (`_prova/colisao-svg.py`).
+
+### Pendente (fora desta rodada)
+- `outputs/brandbook-academia-dtm/ds-conteudos-criativos.html` — em edição por outro agente. O F4
+  de lá ainda mostra `29 DE NOVEMBRO DE 2027` e precisa reembutir o SVG novo depois.
+- `outputs/dashboard/brandbook-academia-dtm/ds-conteudos-criativos.html` — espelho do arquivo
+  acima; reespelhar junto.
+- `outputs/dashboard/pecas/pagina-aplicacao/index.html` — cópia de 04/09 de outra peça, com um F4
+  desatualizado (`2 DE FEVEREIRO DE 2027`, `NOVEMBRO DE 2027`). Fora do escopo deste briefing.
+
+---
+
 ## v2 · 03/09/2026 · correção de colisão de texto e piso tipográfico
 
 **Regra aplicada (nova, vinda da dona do projeto):** texto nunca sobre linha nem sobre
