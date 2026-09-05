@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aulas · Viver de DTM · Academia DTM</title>
+<meta name="description" content="Demonstração navegável da área de membros da Formação Viver de DTM, da Academia DTM. Dados de aluno fictícios, nada publicado.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,300..900&family=Hanken+Grotesk:wght@300..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="trama" viewBox="0 0 200 200" fill="none">
+    <line x1="59.74" y1="28.53" x2="116.58" y2="28.53" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="122.07" y1="21.00" x2="162.26" y2="61.19" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="171.47" y1="59.74" x2="171.47" y2="116.58" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="179.00" y1="122.07" x2="138.81" y2="162.26" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="140.26" y1="171.47" x2="83.42" y2="171.47" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="77.93" y1="179.00" x2="37.74" y2="138.81" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="28.53" y1="140.26" x2="28.53" y2="83.42" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+    <line x1="21.00" y1="77.93" x2="61.19" y2="37.74" stroke="currentColor" stroke-width="23.94" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<div class="demo-faixa sobre-navy" role="note">
+  <div class="demo-faixa-in">
+    <p class="k"><i></i>Demonstração</p>
+    <p>Área de membros da Formação <b>Viver de DTM</b> montada para conferência. A aluna, o progresso e os materiais marcados como baixados são <b>fictícios</b> — a Turma Fundadora só começa em fevereiro de 2027. <b>Nada foi publicado.</b></p>
+  </div>
+</div>
+
+<header class="topo sobre-navy">
+  <div class="topo-in">
+    <a class="topo-marca" href="#/aulas">
+      <span class="endosso">
+        <span class="marca-formacao" role="img" aria-label="Formação Viver de DTM"></span>
+        <span class="par">
+          <span class="de">uma formação da</span>
+          <span class="lk lk--hz lk--neg" style="font-size:24px">
+            <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+            <span class="rule"></span>
+            <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+          </span>
+        </span>
+      </span>
+    </a>
+    <ul class="topo-links">
+      <li><a href="#/aulas" data-grupo="formacao">Aulas</a></li>
+      <li><a href="#/ferramentas" data-grupo="ferramentas">Caixa de ferramentas</a></li>
+      <li><a href="#/assistente" data-grupo="assistente">Assistente</a></li>
+      <li><a href="#/jornada" data-grupo="jornada">Minha jornada</a></li>
+    </ul>
+    <div class="cracha" id="cracha"></div>
+  </div>
+</header>
+
+<nav class="subnav" id="subnav" aria-label="Seções da formação" hidden>
+  <div class="subnav-in">
+    <span class="mono-k">Formação</span>
+    <ul>
+      <li><a href="#/aulas">Aulas</a></li>
+      <li><a href="#/materiais">Materiais</a></li>
+      <li><a href="#/calendario">Calendário</a></li>
+      <li><a href="#/plano">Plano de estudos</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="barra-trilho">
+  <button type="button" data-abrir-trilho aria-controls="trilho">
+    <i aria-hidden="true"></i>Trilha da formação<b>43</b>
+  </button>
+</div>
+
+<div class="casca">
+  <aside class="trilho sobre-navy" id="trilho"></aside>
+  <main class="conteudo"><div class="conteudo-in" id="palco"></div></main>
+</div>
+
+<button class="veu" type="button" tabindex="-1" aria-hidden="true"></button>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div class="rodape-in">
+      <div>
+        <span class="lk lk--hz lk--neg" style="font-size:30px">
+          <svg class="sym" viewBox="0 0 200 200" aria-hidden="true"><use href="#trama"/></svg>
+          <span class="rule"></span>
+          <span class="row"><span class="ac-h">Academia</span><span class="dtm-h">DTM</span></span>
+        </span>
+        <ul class="rodape-nav" style="margin-top:var(--e-5)">
+          <li><a href="#/aulas">Aulas</a></li>
+          <li><a href="#/materiais">Materiais</a></li>
+          <li><a href="#/calendario">Calendário</a></li>
+          <li><a href="#/plano">Plano de estudos</a></li>
+          <li><a href="#/ferramentas">Caixa de ferramentas</a></li>
+          <li><a href="#/assistente">Assistente</a></li>
+          <li><a href="#/jornada">Minha jornada</a></li>
+        </ul>
+      </div>
+      <div class="rodape-assin">
+        <b>Academia DTM</b> &middot; Dr. Rodrigo Wendel<br>
+        Formação Viver de DTM &middot; Turma Fundadora 2027<br>
+        Área de membros &middot; demonstração &middot; direção de arte <b>Inception</b>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="dados.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -751,14 +751,14 @@
     /* ═══════════════ PEÇAS COMERCIAIS ═══════════════ */
 
     'pecas-comerciais': () => `
-      ${hero('Peças comerciais', 'PC', 'Peças <span class="ei">comerciais</span>', 'As quatro peças que sustentam a campanha da Viver de DTM, prontas pra sua revisão. Abra cada uma em outra aba, leia com olho de quem vai vender, e volte aqui embaixo pra dizer o que muda. Nada foi publicado — tudo espera sua aprovação.')}
+      ${hero('Peças comerciais', 'PC', 'Peças <span class="ei">comerciais</span>', 'As cinco peças que sustentam a campanha da Viver de DTM, prontas pra sua revisão. Abra cada uma em outra aba, leia com olho de quem vai vender, e volte aqui embaixo pra dizer o que muda. Nada foi publicado — tudo espera sua aprovação.')}
 
       <h2 class="section-title">O que <span class="ei">revisar</span></h2>
 
       <a class="link-card" href="pecas/pagina-aplicacao/index.html" target="_blank">
         <div>
           <span class="link-card-titulo">Página de aplicação — Viver de DTM</span>
-          <span class="link-card-meta">A página que recebe o dentista vindo do conteúdo e do tráfego e o leva ao formulário de aplicação. Olhe a promessa do topo, a ordem dos argumentos e as perguntas do formulário. Versão de 03/09/2026.</span>
+          <span class="link-card-meta">A página que recebe o dentista vindo do conteúdo e do tráfego e o leva ao formulário de aplicação. Olhe a promessa do topo, a ordem dos argumentos e as perguntas do formulário. Versão de 04/09/2026 — sem preço, sem número de vagas.</span>
         </div>
         <span class="link-card-cta">Abrir →</span>
       </a>
@@ -767,7 +767,7 @@
       <a class="link-card" href="pecas/apresentacao-comercial/index.html" target="_blank">
         <div>
           <span class="link-card-titulo">Apresentação comercial — o deck da reunião</span>
-          <span class="link-card-meta">O material que você conduz com o dentista aprovado na aplicação: promessa, método, grade, prova e a oferta com preço. Olhe se a sequência de argumentos é a que você usa na prática. Versão de 03/09/2026.</span>
+          <span class="link-card-meta">O material que você conduz com o dentista aprovado na aplicação: promessa, método, grade, prova e a oferta com preço. Olhe se a sequência de argumentos é a que você usa na prática. Versão de 05/09/2026 — oferta em duas portas: presencial (20 vagas) e online. Setas avançam passo a passo; tecla N mostra as notas do apresentador.</span>
         </div>
         <span class="link-card-cta">Abrir →</span>
       </a>
@@ -784,6 +784,14 @@
         <div>
           <span class="link-card-titulo">Kit de frameworks — Abordagem MODAL</span>
           <span class="link-card-meta">Os frameworks do método desenhados pra usar em aula, slide, página e post. Olhe se cada diagrama traduz o que você faz na clínica — o nome de cada etapa é o que mais precisa do seu olho. Versão de 03/09/2026.</span>
+        </div>
+        <span class="link-card-cta">Abrir →</span>
+      </a>
+
+      <a class="link-card" href="pecas/area-membros-demo/index.html" target="_blank">
+        <div>
+          <span class="link-card-titulo">Área de membros — demonstração navegável</span>
+          <span class="link-card-meta">Não é só lista de aulas: é o sistema de trabalho do aluno. Caixa de ferramentas (anamnese assistida por IA, mini whitebook da DTM com busca por sinal, questionários com pontuação, calculadora de proposta), assistente que responde sobre as aulas e a jornada por faixas. Tudo que você ainda não escreveu aparece marcado como “conteúdo do professor”. Aluna e progresso são fictícios. Versão de 05/09/2026.</span>
         </div>
         <span class="link-card-cta">Abrir →</span>
       </a>
