@@ -2,6 +2,7 @@ window.DASH = window.DASH || {}; DASH.views = DASH.views || {};
 
 DASH.views['form-oferta'] = {
   titulo: 'A oferta em duas portas',
+  status: 'em-revisao',
   kicker: 'Formação',
   resumo: 'O presencial é a oferta. O online é a resposta a quem trava em viagem ou em valor, e só entra depois que o presencial já foi oferecido.',
   fatos: [
@@ -49,10 +50,10 @@ DASH.views['form-oferta'] = {
     { data: '2026-08-26', texto: 'A turma fundadora custa R$ 15.000, e a formação passa a R$ 19.900 a partir da segunda turma.' }
   ],
   pendencias: [
-    { quem: 'inception', texto: 'Fechar o modelo de garantia, com contabilidade e revisão jurídica.', prazo: 'antes da abertura de vendas' },
-    { quem: 'rodrigo', texto: 'Autorizar o uso dos depoimentos gravados, ou gravar novos com autorização.', prazo: 'antes da campanha' },
-    { quem: 'rodrigo', texto: 'Confirmar o número de pacientes elegíveis por imersão, que é o teto real de supervisão.', prazo: 'até dezembro de 2026' },
-    { quem: 'inception', texto: 'Definir quando a cobrança do parcelamento começa: na compra ou na abertura da turma.', prazo: 'na configuração do checkout' }
+    { quem: 'inception', feito: false, texto: 'Fechar o modelo de garantia, com contabilidade e revisão jurídica.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: false, texto: 'Autorizar o uso dos depoimentos gravados, ou gravar novos com autorização.', prazo: 'antes da campanha' },
+    { quem: 'rodrigo', feito: false, texto: 'Confirmar o número de pacientes elegíveis por imersão, que é o teto real de supervisão.', prazo: 'até dezembro de 2026' },
+    { quem: 'inception', feito: false, texto: 'Definir quando a cobrança do parcelamento começa: na compra ou na abertura da turma.', prazo: 'na configuração do checkout' }
   ],
   links: [],
   atualizado: '2026-09-05'
@@ -60,6 +61,7 @@ DASH.views['form-oferta'] = {
 
 DASH.views['form-grade'] = {
   titulo: 'As três etapas e os 43 encontros',
+  status: 'em-revisao',
   kicker: 'Formação',
   resumo: 'Diagnóstico, tratamento e comercial, nessa ordem. Cada etapa fecha com uma imersão em Brasília, e a imersão é a prova prática: quem não passa, não muda de faixa.',
   fatos: [
@@ -87,8 +89,8 @@ DASH.views['form-grade'] = {
     { data: '2026-07-10', texto: 'A linha entre o que o aluno executa e o que ele encaminha foi confirmada técnica por técnica.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', texto: 'Enviar o material gravado dos Dois Tripés, único conteúdo ainda pendente na grade.', prazo: 'até dezembro de 2026' },
-    { quem: 'rodrigo', texto: 'Definir a carga horária oficial de cada encontro, que trava o certificado.', prazo: 'antes da abertura de vendas' }
+    { quem: 'rodrigo', feito: false, texto: 'Enviar o material gravado dos Dois Tripés, único conteúdo ainda pendente na grade.', prazo: 'até dezembro de 2026' },
+    { quem: 'rodrigo', feito: false, texto: 'Definir a carga horária oficial de cada encontro, que trava o certificado.', prazo: 'antes da abertura de vendas' }
   ],
   links: [],
   atualizado: '2026-09-05'
@@ -96,6 +98,7 @@ DASH.views['form-grade'] = {
 
 DASH.views['form-calendario'] = {
   titulo: 'O calendário de 2027',
+  status: 'entregue',
   kicker: 'Formação',
   resumo: 'De 23 de fevereiro a 30 de novembro de 2027, às terças, das 19h às 21h. São 41 semanas: 38 com encontro e 3 de respiro.',
   fatos: [
@@ -132,12 +135,12 @@ DASH.views['form-calendario'] = {
     { data: '2026-09-05', texto: 'O shadowing é uma quarta viagem, separada das três imersões.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', texto: 'Dias exatos dentro de cada semana de imersão. Isso trava passagem, agenda do aluno e material de venda.', prazo: 'antes da abertura de vendas' },
-    { quem: 'rodrigo', texto: 'Confirmar a Imersão 3 em 29 e 30/11. Qualquer outra combinação joga a formatura para dezembro.', prazo: 'antes da abertura de vendas' },
-    { quem: 'rodrigo', texto: 'Quarta ou quinta nas três semanas de feriado.', prazo: 'antes da abertura de vendas' },
-    { quem: 'rodrigo', texto: 'Se a abertura da turma em 16/02 entra.', prazo: 'antes da abertura de vendas' },
-    { quem: 'rodrigo', texto: 'Janela do shadowing e quantas rodadas por mês.', prazo: 'até março de 2027' },
-    { quem: 'rodrigo', texto: 'Data limite de matrícula, com folga para o onboarding antes de 23/02.', prazo: 'outubro de 2026' }
+    { quem: 'rodrigo', feito: false, texto: 'Dias exatos dentro de cada semana de imersão. Isso trava passagem, agenda do aluno e material de venda.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: false, texto: 'Confirmar a Imersão 3 em 29 e 30/11. Qualquer outra combinação joga a formatura para dezembro.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: false, texto: 'Quarta ou quinta nas três semanas de feriado.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: false, texto: 'Se a abertura da turma em 16/02 entra.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: false, texto: 'Janela do shadowing e quantas rodadas por mês.', prazo: 'até março de 2027' },
+    { quem: 'rodrigo', feito: false, texto: 'Data limite de matrícula, com folga para o onboarding antes de 23/02.', prazo: 'outubro de 2026' }
   ],
   links: [],
   atualizado: '2026-09-05'
@@ -145,6 +148,7 @@ DASH.views['form-calendario'] = {
 
 DASH.views['form-jornada'] = {
   titulo: 'A jornada do aluno e as faixas',
+  status: 'em-revisao',
   kicker: 'Formação',
   resumo: 'Quatro faixas em três viradas de identidade: eu diagnostico, eu trato, eu cobro pelo que sei. Faixa só se recebe passando na prova presencial, nunca por presença.',
   fatos: [
@@ -181,8 +185,8 @@ DASH.views['form-jornada'] = {
     { data: '2026-07-11', texto: 'As três passagens de faixa acontecem dentro da imersão presencial, não em encontro online.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', texto: 'Aprovar a nomenclatura branca, azul, roxa e marrom, e os nomes das três fases.', prazo: 'na revisão desta dash' },
-    { quem: 'rodrigo', texto: 'Definir o suporte da faixa: peça física entregue na imersão ou registro digital.', prazo: 'até dezembro de 2026' }
+    { quem: 'rodrigo', feito: false, texto: 'Aprovar a nomenclatura branca, azul, roxa e marrom, e os nomes das três fases.', prazo: 'na revisão desta dash' },
+    { quem: 'rodrigo', feito: false, texto: 'Definir o suporte da faixa: peça física entregue na imersão ou registro digital.', prazo: 'até dezembro de 2026' }
   ],
   links: [],
   atualizado: '2026-09-05'
@@ -190,6 +194,7 @@ DASH.views['form-jornada'] = {
 
 DASH.views['form-area-membros'] = {
   titulo: 'O sistema do aluno',
+  status: 'em-producao',
   kicker: 'Formação',
   resumo: 'A demonstração mostra como a formação fica por dentro: aulas, caixa de ferramentas, assistente e percurso de faixas. Nada foi publicado, e recarregar a página zera tudo.',
   fatos: [
@@ -224,9 +229,9 @@ DASH.views['form-area-membros'] = {
     { data: '2026-09-05', texto: 'As pesquisas de entrada e de satisfação entram como obrigatórias para o aluno avançar.' }
   ],
   pendencias: [
-    { quem: 'inception', texto: 'Atualizar a demonstração para o calendário novo: ela ainda mostra 44 semanas com início em 01/02.', prazo: 'setembro de 2026' },
-    { quem: 'rodrigo', texto: 'Escrever o conteúdo clínico do whitebook e os enunciados dos questionários.', prazo: 'antes de fevereiro de 2027' },
-    { quem: 'rodrigo', texto: 'Decidir se os dois adicionais de IA entram, e em que ordem.', prazo: 'antes de dezembro de 2026' }
+    { quem: 'inception', feito: false, texto: 'Atualizar a demonstração para o calendário novo: ela ainda mostra 44 semanas com início em 01/02.', prazo: 'setembro de 2026' },
+    { quem: 'rodrigo', feito: false, texto: 'Escrever o conteúdo clínico do whitebook e os enunciados dos questionários.', prazo: 'antes de fevereiro de 2027' },
+    { quem: 'rodrigo', feito: false, texto: 'Decidir se os dois adicionais de IA entram, e em que ordem.', prazo: 'antes de dezembro de 2026' }
   ],
   links: [
     { rotulo: 'Abrir a demonstração da área de membros', href: 'pecas/area-membros-demo/index.html' }

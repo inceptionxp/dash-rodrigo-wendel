@@ -2,6 +2,7 @@ window.DASH = window.DASH || {}; DASH.views = DASH.views || {};
 
 DASH.views['inicio'] = {
   titulo: 'Onde o projeto está',
+  status: 'em-producao',
   kicker: 'Início',
   resumo: 'A turma fundadora abre em 23 de fevereiro de 2027. Produto, calendário e oferta estão fechados; o que falta é a divulgação começar em outubro e as decisões de agenda que travam o material de venda.',
   fatos: [
@@ -49,12 +50,12 @@ DASH.views['inicio'] = {
     { data: '2026-09-04', texto: 'A oferta tem duas portas: 20 vagas no presencial e uma opção só online, aberta apenas em objeção de viagem ou de valor.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', texto: 'Dias exatos das três imersões dentro das semanas de 17/05, 04/10 e 29/11.', prazo: 'antes da abertura de vendas' },
-    { quem: 'rodrigo', texto: 'Quarta ou quinta nas três semanas de feriado.', prazo: 'antes da abertura de vendas' },
-    { quem: 'rodrigo', texto: 'Se entra o encontro de abertura da turma em 16/02, fora dos 43.', prazo: 'antes da abertura de vendas' },
-    { quem: 'rodrigo', texto: 'Autorização de uso dos depoimentos em vídeo já gravados.', prazo: 'antes da campanha' },
-    { quem: 'inception', texto: 'Modelo de garantia, com confirmação de contabilidade e revisão jurídica.', prazo: 'antes da abertura de vendas' },
-    { quem: 'inception', texto: 'Especificação do fluxo comercial, do formulário à matrícula.', prazo: 'em produção' }
+    { quem: 'rodrigo', feito: false, texto: 'Dias exatos das três imersões dentro das semanas de 17/05, 04/10 e 29/11.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: false, texto: 'Quarta ou quinta nas três semanas de feriado.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: false, texto: 'Se entra o encontro de abertura da turma em 16/02, fora dos 43.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: false, texto: 'Autorização de uso dos depoimentos em vídeo já gravados.', prazo: 'antes da campanha' },
+    { quem: 'inception', feito: false, texto: 'Modelo de garantia, com confirmação de contabilidade e revisão jurídica.', prazo: 'antes da abertura de vendas' },
+    { quem: 'inception', feito: false, texto: 'Especificação do fluxo comercial, do formulário à matrícula.', prazo: 'em produção' }
   ],
   links: [],
   atualizado: '2026-09-05'
@@ -62,6 +63,7 @@ DASH.views['inicio'] = {
 
 DASH.views['continuidade'] = {
   titulo: 'Depois da turma fundadora',
+  status: 'pendente',
   kicker: 'Continuidade',
   resumo: 'O que sustenta receita depois de novembro de 2027: o programa de continuidade, a assinatura do sistema, os dois adicionais de IA, a certificação e o tier online como produto de 2028.',
   fatos: [
@@ -86,8 +88,8 @@ DASH.views['continuidade'] = {
     { data: '2026-09-05', texto: 'A certificação é pesquisada agora e decidida depois da turma fundadora aberta.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', texto: 'Decidir se os dois adicionais de IA entram, e em que ordem.', prazo: 'antes de dezembro de 2026' },
-    { quem: 'inception', texto: 'Ligações e orçamentos com as faculdades levantadas na pesquisa de certificação.', prazo: 'setembro de 2026' }
+    { quem: 'rodrigo', feito: false, texto: 'Decidir se os dois adicionais de IA entram, e em que ordem.', prazo: 'antes de dezembro de 2026' },
+    { quem: 'inception', feito: false, texto: 'Ligações e orçamentos com as faculdades levantadas na pesquisa de certificação.', prazo: 'setembro de 2026' }
   ],
   links: [],
   atualizado: '2026-09-05'

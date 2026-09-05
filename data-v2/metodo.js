@@ -3,6 +3,7 @@ window.DASH = window.DASH || {}; DASH.views = DASH.views || {};
 /* ─────────── met-aprendiz ─────────── */
 DASH.views['met-aprendiz'] = {
   titulo: 'Quem é o dentista',
+  status: 'entregue',
   kicker: 'Método',
   resumo: 'O aluno é o dentista que trata DTM como bruxismo e não sabe que erra. Maioria mulher, já com anos de consultório, muitas vezes com outra especialidade — e com caixa pra investir.',
   fatos: [
@@ -66,7 +67,7 @@ DASH.views['met-aprendiz'] = {
     { data: '2026-07-12', texto: 'Janela de estudo: noite de semana, das 19h às 21h.' },
   ],
   pendencias: [
-    { quem: 'inception', texto: 'Aplicar as quatro perguntas de detecção de consciência nos primeiros leads reais da captação.', prazo: 'na abertura da captação' },
+    { quem: 'inception', feito: false, texto: 'Aplicar as quatro perguntas de detecção de consciência nos primeiros leads reais da captação.', prazo: 'na abertura da captação' },
   ],
   links: [
     { rotulo: 'Estudo completo do aluno (documento)', href: 'docs/dna-aprendiz.md' },
@@ -77,6 +78,7 @@ DASH.views['met-aprendiz'] = {
 /* ─────────── met-expert ─────────── */
 DASH.views['met-expert'] = {
   titulo: 'Quem é você nesse mercado',
+  status: 'em-revisao',
   kicker: 'Método',
   resumo: 'A base de autoridade de toda a comunicação: expertise clínica em volume real, formação científica e prova de negócio no próprio consultório. É o que nenhum concorrente do nicho reúne.',
   fatos: [
@@ -145,7 +147,7 @@ DASH.views['met-expert'] = {
     { data: '2026-07-11', texto: 'Posicionamento fechado: formação para dentistas que não dominam DTM.' },
   ],
   pendencias: [
-    { quem: 'rodrigo', texto: 'Bio curta e longa, trajetória resumida e fotos profissionais (retrato, consultório, casual).', prazo: 'antes das peças de captação' },
+    { quem: 'rodrigo', feito: false, texto: 'Bio curta e longa, trajetória resumida e fotos profissionais (retrato, consultório, casual).', prazo: 'antes das peças de captação' },
   ],
   links: [
     { rotulo: 'Banco de histórias', href: '#met-historias' },
@@ -156,6 +158,7 @@ DASH.views['met-expert'] = {
 /* ─────────── met-historias ─────────── */
 DASH.views['met-historias'] = {
   titulo: 'Banco de histórias',
+  status: 'em-revisao',
   kicker: 'Método',
   resumo: 'Dezessete histórias reais, cada uma com o lugar onde rende mais. Nenhuma delas é ilustração: são a prova que sustenta a página, o deck e o conteúdo. O texto integral está no documento.',
   fatos: [
@@ -216,7 +219,7 @@ DASH.views['met-historias'] = {
     { data: '2026-07-07', texto: 'Quatro depoimentos de paciente em vídeo recebidos, transcritos e catalogados.' },
   ],
   pendencias: [
-    { quem: 'rodrigo', texto: 'Autorização de uso de imagem de cada paciente, e confirmação do direito de uso dos depoimentos de aluno gravados na parceria antiga.', prazo: 'antes de qualquer publicação' },
+    { quem: 'rodrigo', feito: false, texto: 'Autorização de uso de imagem de cada paciente, e confirmação do direito de uso dos depoimentos de aluno gravados na parceria antiga.', prazo: 'antes de qualquer publicação' },
   ],
   links: [
     { rotulo: 'Banco de histórias (texto integral)', href: 'docs/banco-de-historias.md' },
@@ -227,6 +230,7 @@ DASH.views['met-historias'] = {
 /* ─────────── met-metodo ─────────── */
 DASH.views['met-metodo'] = {
   titulo: 'O método',
+  status: 'em-revisao',
   kicker: 'Método',
   resumo: 'O método ainda não tem nome fechado: três opções aguardam a sua decisão. A promessa já de pé: formar dentistas capazes de diagnosticar, tratar e lucrar com DTM, caso a caso, não com técnica única.',
   fatos: [
@@ -279,9 +283,9 @@ DASH.views['met-metodo'] = {
     { data: '2026-07-28', texto: 'O CPAD e as seis fases não são seus e saíram do material. Fica só a verdade clínica, sem urgência fabricada.' },
   ],
   pendencias: [
-    { quem: 'rodrigo', texto: 'Decidir o nome do método entre as três opções enviadas em 28/07.', prazo: 'até 31/10' },
-    { quem: 'rodrigo', texto: 'Lista nominal dos diagnósticos de cada grupo e critérios objetivos de escalonamento por grupo.', prazo: 'até 15/10' },
-    { quem: 'inception', texto: 'Atualizar a arte do percurso com a data de abertura em 23/02/2027.', prazo: 'antes das peças públicas' },
+    { quem: 'rodrigo', feito: false, texto: 'Decidir o nome do método entre as três opções enviadas em 28/07.', prazo: 'até 31/10' },
+    { quem: 'rodrigo', feito: false, texto: 'Lista nominal dos diagnósticos de cada grupo e critérios objetivos de escalonamento por grupo.', prazo: 'até 15/10' },
+    { quem: 'inception', feito: false, texto: 'Atualizar a arte do percurso com a data de abertura em 23/02/2027.', prazo: 'antes das peças públicas' },
   ],
   links: [
     { rotulo: 'Frameworks do método (documento)', href: 'docs/frameworks-metodo.md' },

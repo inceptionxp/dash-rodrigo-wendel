@@ -3,6 +3,7 @@ window.DASH = window.DASH || {}; DASH.views = DASH.views || {};
 /* ─────────── devolutivas ─────────── */
 DASH.views['devolutivas'] = {
   titulo: 'O que você já validou',
+  status: 'entregue',
   kicker: 'Decisões',
   resumo: 'Tudo que você aprovou desde julho, com a data e o lugar onde a decisão já está aplicada. O que ainda depende de você está na fila da próxima tela.',
   fatos: [
@@ -59,7 +60,7 @@ DASH.views['devolutivas'] = {
     { data: '2026-09-05', texto: 'Data de início da turma fixada em 23/02/2027.' },
   ],
   pendencias: [
-    { quem: 'inception', texto: 'Manter esta tabela como registro único do que foi validado, a cada reunião.', prazo: 'contínuo' },
+    { quem: 'inception', feito: false, texto: 'Manter esta tabela como registro único do que foi validado, a cada reunião.', prazo: 'contínuo' },
   ],
   links: [
     { rotulo: 'O que ainda depende de você', href: '#decisoes-rodrigo' },
@@ -70,6 +71,7 @@ DASH.views['devolutivas'] = {
 /* ─────────── decisoes-rodrigo ─────────── */
 DASH.views['decisoes-rodrigo'] = {
   titulo: 'O que depende de você agora',
+  status: 'pendente',
   kicker: 'Decisões',
   resumo: 'Dezesseis decisões abertas, na ordem em que travam o trabalho. Os prazos são sugestão nossa, calculados a partir da divulgação em outubro e do início da turma em 23/02/2027.',
   fatos: [
@@ -135,8 +137,8 @@ DASH.views['decisoes-rodrigo'] = {
     { data: '2026-09-05', texto: 'Shadowing confirmado como viagem separada das imersões.' },
   ],
   pendencias: [
-    { quem: 'inception', texto: 'Pesquisar contatos e orçamento de credenciamento junto ao MEC, para a rota de certificação.', prazo: 'outubro' },
-    { quem: 'inception', texto: 'Escrever a proposta dos dois adicionais de IA, um para a clínica e um para os alunos.', prazo: 'setembro' },
+    { quem: 'inception', feito: false, texto: 'Pesquisar contatos e orçamento de credenciamento junto ao MEC, para a rota de certificação.', prazo: 'outubro' },
+    { quem: 'inception', feito: false, texto: 'Escrever a proposta dos dois adicionais de IA, um para a clínica e um para os alunos.', prazo: 'setembro' },
   ],
   links: [
     { rotulo: 'Calendário completo da turma 2027', href: 'docs/calendario-turma-2027.md' },
@@ -147,6 +149,7 @@ DASH.views['decisoes-rodrigo'] = {
 /* ─────────── marcos ─────────── */
 DASH.views['marcos'] = {
   titulo: 'Os quatro marcos',
+  status: 'em-producao',
   kicker: 'Projeto',
   resumo: 'O contrato tem quatro marcos. Os dois primeiros estão concluídos, o terceiro está em andamento e o quarto fecha o projeto com a passagem de bastão e o treinamento.',
   fatos: [
@@ -177,8 +180,8 @@ DASH.views['marcos'] = {
     { data: '2026-07-11', texto: 'Marco 02 concluído com a validação da estratégia.' },
   ],
   pendencias: [
-    { quem: 'inception', texto: 'Confirmar a data da reunião de entrega final e do treinamento.', prazo: 'próxima reunião' },
-    { quem: 'rodrigo', texto: 'Revisar as peças entregues em 03/09: página de aplicação, apresentação comercial e guia de social media.', prazo: '20/09' },
+    { quem: 'inception', feito: false, texto: 'Confirmar a data da reunião de entrega final e do treinamento.', prazo: 'próxima reunião' },
+    { quem: 'rodrigo', feito: false, texto: 'Revisar as peças entregues em 03/09: página de aplicação, apresentação comercial e guia de social media.', prazo: '20/09' },
   ],
   links: [
     { rotulo: 'Contrato assinado', href: 'docs/contrato-rodrigo-wendel.pdf' },

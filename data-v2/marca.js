@@ -2,6 +2,7 @@ window.DASH = window.DASH || {}; DASH.views = DASH.views || {};
 
 DASH.views['marca-identidade'] = {
   titulo: 'Academia DTM e Viver de DTM',
+  status: 'entregue',
   kicker: 'Marca',
   resumo: 'Academia DTM é a casa que forma. Viver de DTM é a formação que ela vende. Duas marcas, uma assinatura: a Academia endossa, a formação aparece em destaque.',
   fatos: [
@@ -11,6 +12,67 @@ DASH.views['marca-identidade'] = {
     { rotulo: 'famílias tipográficas', valor: '3' }
   ],
   blocos: [
+    { tipo: 'logos', titulo: 'Os arquivos das duas marcas',
+      zip: { href: 'marca/academia-dtm_logos.zip', tamanho: '2,2 MB',
+        nota: 'O ZIP traz os 35 arquivos abaixo mais o guia de uso em texto: quando usar cada versão, os tamanhos mínimos e a área de proteção. O SVG já vem com o texto convertido em curva, então abre no Illustrator e no Canva sem a fonte Archivo instalada. O JPG carrega o fundo dentro do arquivo, porque JPG não guarda transparência.' },
+      itens: [
+    { nome: 'Lockup principal · navy',
+      descricao: 'Sobre fundo claro. Capa, hero de página, certificado, criativo de feed.',
+      preview: 'marca/academia-dtm_lockup-principal_navy.png', fundo: 'papel',
+      formatos: { png: 'marca/academia-dtm_lockup-principal_navy.png', svg: 'marca/academia-dtm_lockup-principal_navy.svg', jpg: 'marca/academia-dtm_lockup-principal_navy.jpg' } },
+    { nome: 'Lockup principal · claro',
+      descricao: 'Sobre fundo escuro. Mesma função da versão navy.',
+      preview: 'marca/academia-dtm_lockup-principal_papel.png', fundo: 'navy',
+      formatos: { png: 'marca/academia-dtm_lockup-principal_papel.png', svg: 'marca/academia-dtm_lockup-principal_papel.svg', jpg: 'marca/academia-dtm_lockup-principal_papel.jpg' } },
+    { nome: 'Lockup horizontal · navy',
+      descricao: 'Sobre fundo claro. Cabeçalho, assinatura de e-mail, rodapé, crachá.',
+      preview: 'marca/academia-dtm_lockup-horizontal_navy.png', fundo: 'papel',
+      formatos: { png: 'marca/academia-dtm_lockup-horizontal_navy.png', svg: 'marca/academia-dtm_lockup-horizontal_navy.svg', jpg: 'marca/academia-dtm_lockup-horizontal_navy.jpg' } },
+    { nome: 'Lockup horizontal · claro',
+      descricao: 'Sobre fundo escuro. Mesma função da versão navy.',
+      preview: 'marca/academia-dtm_lockup-horizontal_papel.png', fundo: 'navy',
+      formatos: { png: 'marca/academia-dtm_lockup-horizontal_papel.png', svg: 'marca/academia-dtm_lockup-horizontal_papel.svg', jpg: 'marca/academia-dtm_lockup-horizontal_papel.jpg' } },
+    { nome: 'Selo · navy',
+      descricao: 'Círculo navy com símbolo fluor. Avatar, favicon, carimbo de certificado.',
+      preview: 'marca/academia-dtm_selo_navy.png', fundo: 'papel',
+      formatos: { png: 'marca/academia-dtm_selo_navy.png', svg: 'marca/academia-dtm_selo_navy.svg', jpg: 'marca/academia-dtm_selo_navy.jpg' } },
+    { nome: 'Selo · claro',
+      descricao: 'Círculo claro com símbolo navy. O selo para fundo escuro.',
+      preview: 'marca/academia-dtm_selo_papel.png', fundo: 'navy',
+      formatos: { png: 'marca/academia-dtm_selo_papel.png', svg: 'marca/academia-dtm_selo_papel.svg', jpg: 'marca/academia-dtm_selo_papel.jpg' } },
+    { nome: 'Símbolo · navy',
+      descricao: 'O losango sozinho, sobre fundo claro. Marcador, ícone, ornamento.',
+      preview: 'marca/academia-dtm_simbolo_navy.png', fundo: 'papel',
+      formatos: { png: 'marca/academia-dtm_simbolo_navy.png', svg: 'marca/academia-dtm_simbolo_navy.svg', jpg: 'marca/academia-dtm_simbolo_navy.jpg' } },
+    { nome: 'Símbolo · fluor',
+      descricao: 'Só sobre fundo escuro. Fluor sobre papel reprova em contraste.',
+      preview: 'marca/academia-dtm_simbolo_fluor.png', fundo: 'navy',
+      formatos: { png: 'marca/academia-dtm_simbolo_fluor.png', svg: 'marca/academia-dtm_simbolo_fluor.svg', jpg: 'marca/academia-dtm_simbolo_fluor.jpg' } },
+    { nome: 'Símbolo · claro',
+      descricao: 'Sobre fundo escuro ou foto com tarja navy.',
+      preview: 'marca/academia-dtm_simbolo_papel.png', fundo: 'navy',
+      formatos: { png: 'marca/academia-dtm_simbolo_papel.png', svg: 'marca/academia-dtm_simbolo_papel.svg', jpg: 'marca/academia-dtm_simbolo_papel.jpg' } },
+    { nome: 'Viver de DTM · horizontal navy',
+      descricao: 'Sobre fundo claro. Assina cabeçalho, rodapé e página da formação.',
+      preview: 'marca/viver-de-dtm_horizontal_navy.png', fundo: 'papel',
+      formatos: { png: 'marca/viver-de-dtm_horizontal_navy.png', jpg: 'marca/viver-de-dtm_horizontal_navy.jpg' },
+      nota: 'Vetor: pedir ao Rodrigo' },
+    { nome: 'Viver de DTM · horizontal claro',
+      descricao: 'Sobre fundo escuro, navy ou foto.',
+      preview: 'marca/viver-de-dtm_horizontal_off.png', fundo: 'navy',
+      formatos: { png: 'marca/viver-de-dtm_horizontal_off.png', jpg: 'marca/viver-de-dtm_horizontal_off.jpg' },
+      nota: 'Vetor: pedir ao Rodrigo' },
+    { nome: 'Viver de DTM · selo navy',
+      descricao: 'Redutor quadrado sobre fundo claro: avatar, favicon e carimbo.',
+      preview: 'marca/viver-de-dtm_selo_navy.png', fundo: 'papel',
+      formatos: { png: 'marca/viver-de-dtm_selo_navy.png', jpg: 'marca/viver-de-dtm_selo_navy.jpg' },
+      nota: 'Vetor: pedir ao Rodrigo' },
+    { nome: 'Viver de DTM · selo claro',
+      descricao: 'Redutor quadrado sobre fundo escuro.',
+      preview: 'marca/viver-de-dtm_selo_off.png', fundo: 'navy',
+      formatos: { png: 'marca/viver-de-dtm_selo_off.png', jpg: 'marca/viver-de-dtm_selo_off.jpg' },
+      nota: 'Vetor: pedir ao Rodrigo' }
+      ] },
     { tipo: 'texto', titulo: 'O símbolo', html: '<p>O símbolo é um losango construído por oito traços de mesma espessura, com as pontas arredondadas. O losango veio do pedido do senhor de manter a referência à marca antiga; os oito traços trocaram o braço que irradia por módulos que se encaixam, e é isso que faz a figura ler como instituição, e não como sol ou floco.</p><p>A geometria está congelada. O símbolo herda a cor do contexto: navy sobre papel, fluor sobre navy. Ele nunca gira, nunca ganha sombra, nunca entra em moldura e nunca substitui a logo em documento oficial, certificado ou contrato.</p>' },
     { tipo: 'tabela', titulo: 'A paleta', colunas: ['Cor', 'Código', 'Onde entra', 'Proporção'], linhas: [
       ['Papel', '#F4F3EC', 'fundo de tudo que é impresso e de tudo que é lido', '55%'],
@@ -42,24 +104,20 @@ DASH.views['marca-identidade'] = {
     { data: '2026-07-11', texto: 'Território visual definido: navy, fluor-lime e papel off-white.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', texto: 'Aprovar a versão horizontal da logo, que assina cabeçalho, e-mail, rodapé e certificado.', prazo: 'setembro de 2026' },
-    { quem: 'rodrigo', texto: 'Confirmar se o selo vira o avatar do perfil @academiadtm.', prazo: 'antes da virada do perfil' },
-    { quem: 'rodrigo', texto: 'Decidir a fonte da assinatura Viver de DTM, hoje uma exceção fora do sistema.', prazo: 'antes da divulgação' },
-    { quem: 'rodrigo', texto: 'Enviar o arquivo vetorial da logo antiga do Curso DTM, se existir.', prazo: 'quando encontrar' }
+    { quem: 'rodrigo', feito: false, texto: 'Aprovar a versão horizontal da logo, que assina cabeçalho, e-mail, rodapé e certificado.', prazo: 'setembro de 2026' },
+    { quem: 'rodrigo', feito: false, texto: 'Confirmar se o selo vira o avatar do perfil @academiadtm.', prazo: 'antes da virada do perfil' },
+    { quem: 'rodrigo', feito: false, texto: 'Decidir a fonte da assinatura Viver de DTM, hoje uma exceção fora do sistema.', prazo: 'antes da divulgação' },
+    { quem: 'rodrigo', feito: false, texto: 'Enviar o arquivo vetorial da logo antiga do Curso DTM, se existir.', prazo: 'quando encontrar' }
   ],
   links: [
-    { rotulo: 'Abrir o brandbook', href: 'brandbook-academia-dtm/index.html' },
-    { rotulo: 'Símbolo em SVG', href: 'marca/simbolo-academia-dtm_navy.svg' },
-    { rotulo: 'Viver de DTM · horizontal navy', href: 'marca/viver-de-dtm_horizontal_navy.png' },
-    { rotulo: 'Viver de DTM · horizontal claro', href: 'marca/viver-de-dtm_horizontal_off.png' },
-    { rotulo: 'Viver de DTM · selo navy', href: 'marca/viver-de-dtm_selo_navy.png' },
-    { rotulo: 'Viver de DTM · selo claro', href: 'marca/viver-de-dtm_selo_off.png' }
+    { rotulo: 'Abrir o brandbook', href: 'brandbook-academia-dtm/index.html' }
   ],
   atualizado: '2026-09-05'
 };
 
 DASH.views['marca-social'] = {
   titulo: 'A linha editorial',
+  status: 'entregue',
   kicker: 'Marca',
   resumo: 'Dois posts por semana no @academiadtm, com a linha educativa dominante. O feed existe para revelar um erro que o leitor não sabe que comete, e passa a vender a partir de outubro.',
   fatos: [
@@ -107,9 +165,9 @@ DASH.views['marca-social'] = {
     { data: '2026-09-05', texto: 'Os perfis de paciente e de academia ficam separados, com linhas editoriais distintas.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', texto: 'Revisar os pilares e os temas antes de a produção começar.', prazo: 'setembro de 2026' },
-    { quem: 'rodrigo', texto: 'Ler e validar o guia de direcionamento das redes.', prazo: 'setembro de 2026' },
-    { quem: 'inception', texto: 'Montar a pasta de referências visuais para a produção.', prazo: 'setembro de 2026' }
+    { quem: 'rodrigo', feito: false, texto: 'Revisar os pilares e os temas antes de a produção começar.', prazo: 'setembro de 2026' },
+    { quem: 'rodrigo', feito: false, texto: 'Ler e validar o guia de direcionamento das redes.', prazo: 'setembro de 2026' },
+    { quem: 'inception', feito: false, texto: 'Montar a pasta de referências visuais para a produção.', prazo: 'setembro de 2026' }
   ],
   links: [
     { rotulo: 'Abrir o guia de conteúdos e criativos', href: 'brandbook-academia-dtm/ds-conteudos-criativos.html' }
@@ -119,6 +177,7 @@ DASH.views['marca-social'] = {
 
 DASH.views['marca-crencas'] = {
   titulo: 'As crenças que o conteúdo muda',
+  status: 'em-revisao',
   kicker: 'Marca',
   resumo: 'Cada post existe para trocar uma crença específica por outra. Uma delas sustenta todas as demais e nunca sai do ar por mais de duas semanas.',
   fatos: [
@@ -153,8 +212,8 @@ DASH.views['marca-crencas'] = {
     { data: '2026-09-05', texto: 'O mapa de crenças passa a orientar cada pauta, para dar intenção ao conteúdo.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', texto: 'Confirmar as duas linhas marcadas como a confirmar e dizer se tem um caso de paciente escondido na própria cadeira.', prazo: 'setembro de 2026' },
-    { quem: 'rodrigo', texto: 'Confirmar se quer instalar a crença sobre IA no consultório e ceder um caso real de uso.', prazo: 'quando decidir' }
+    { quem: 'rodrigo', feito: false, texto: 'Confirmar as duas linhas marcadas como a confirmar e dizer se tem um caso de paciente escondido na própria cadeira.', prazo: 'setembro de 2026' },
+    { quem: 'rodrigo', feito: false, texto: 'Confirmar se quer instalar a crença sobre IA no consultório e ceder um caso real de uso.', prazo: 'quando decidir' }
   ],
   links: [],
   atualizado: '2026-09-05'
