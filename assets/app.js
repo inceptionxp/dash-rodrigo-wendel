@@ -767,7 +767,7 @@
       <a class="link-card" href="pecas/apresentacao-comercial/index.html" target="_blank">
         <div>
           <span class="link-card-titulo">Apresentação comercial — o deck da reunião</span>
-          <span class="link-card-meta">O material que você conduz com o dentista aprovado na aplicação: promessa, método, grade, prova e a oferta com preço. Olhe se a sequência de argumentos é a que você usa na prática. Versão de 05/09/2026 — oferta em duas portas: presencial (20 vagas) e online. Setas avançam passo a passo; tecla N mostra as notas do apresentador.</span>
+          <span class="link-card-meta">O material que você conduz com o dentista aprovado na aplicação: promessa, método, grade, prova e a oferta com preço. Olhe se a sequência de argumentos é a que você usa na prática. Versão de 05/09/2026 (v7, redesenho) — oferta em duas portas: presencial (20 vagas) e online. Setas avançam passo a passo; tecla N mostra as notas do apresentador.</span>
         </div>
         <span class="link-card-cta">Abrir →</span>
       </a>
