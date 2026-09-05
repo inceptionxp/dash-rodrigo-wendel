@@ -38,7 +38,7 @@ DASH.views['devolutivas'] = {
       linhas: [
         ['Quem é o aluno', 'Inclui o especialista de outra área, não só o clínico geral', '12/07', 'Quem é o dentista, copy'],
         ['Gênero do público', 'Maioria feminina, com 80% nas duas últimas turmas', '12/07', 'Linguagem das peças'],
-        ['Horário dos encontros', 'Noite de semana, das 19h às 21h', '12/07', 'Calendário'],
+        ['Horário dos encontros', 'Noite de semana', '12/07', 'Calendário'],
         ['Urgência na consulta', 'Nada de urgência fabricada: fica só a verdade clínica de que DTM piora sem tratar', '28/07', 'Etapa 3, roteiro de consulta'],
         ['Desconto', 'Sem régua fixa: cada um calibra pela própria margem', '28/07', 'Etapa 3'],
       ],

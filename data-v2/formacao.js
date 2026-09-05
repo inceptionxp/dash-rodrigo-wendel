@@ -97,7 +97,7 @@ DASH.views['form-grade'] = {
 DASH.views['form-calendario'] = {
   titulo: 'O calendário de 2027',
   kicker: 'Formação',
-  resumo: 'De 23 de fevereiro a 30 de novembro de 2027, às terças, das 19h às 21h. São 41 semanas: 38 com encontro e 3 de respiro.',
+  resumo: 'De 23 de fevereiro a 30 de novembro de 2027, às terças. São 41 semanas: 38 com encontro e 3 de respiro.',
   fatos: [
     { rotulo: 'início', valor: 'terça, 23/02/2027' },
     { rotulo: 'formatura', valor: 'terça, 30/11/2027' },
