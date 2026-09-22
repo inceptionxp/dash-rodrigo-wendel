@@ -52,7 +52,7 @@ DASH.views['com-pagina'] = {
   links: [
     { rotulo: 'Abrir a página de aplicação', href: 'pecas/pagina-aplicacao/index.html' }
   ],
-  atualizado: '2026-09-05'
+  atualizado: '2026-09-22'
 };
 
 DASH.views['com-apresentacao'] = {
@@ -100,7 +100,7 @@ DASH.views['com-apresentacao'] = {
     { rotulo: 'Abrir a versão padrão', href: 'pecas/apresentacao-comercial/padrao/index.html' },
     { rotulo: 'Abrir a versão com a porta online', href: 'pecas/apresentacao-comercial/com-online/index.html' }
   ],
-  atualizado: '2026-09-05'
+  atualizado: '2026-09-22'
 };
 
 DASH.views['com-fluxo'] = {
@@ -125,19 +125,19 @@ DASH.views['com-fluxo'] = {
     { tipo: 'texto', titulo: 'A trava que não se negocia', html: '<p>Nenhuma reunião entra na agenda sem que uma pessoa tenha falado antes com quem aplicou. Ele pode escolher o horário sozinho pelo link, e isso é bom, mas até a véspera alguém conversa com ele. É essa regra que separa o desenho de um atendimento inteiro por robô, e ela continua valendo quando o volume subir.</p>' },
     { tipo: 'tabela', titulo: 'As ferramentas de cada etapa', colunas: ['Etapa', 'Ferramenta', 'Quem configura', 'Status'], linhas: [
       ['Formulário e campos de origem', 'Versão nova da página de aplicação', 'Inception', 'Em produção'],
-      ['Validação e barreira de robô', 'Serviço próprio na Cloudflare', 'Inception', 'Em produção'],
-      ['Automação do fluxo', 'n8n', 'Inception', 'Em produção'],
-      ['Histórico das aplicações', 'Planilha que só acrescenta linha', 'Inception', 'A configurar'],
-      ['Estado do contato', 'CRM com seis estágios', 'Inception', 'Ferramenta em escolha'],
-      ['Envio de WhatsApp', 'Caminho oficial, direto ou dentro do CRM', 'Inception', 'Ferramenta em escolha'],
-      ['Agenda e link da reunião', 'Agenda ligada à Google Agenda do Dr. Rodrigo', 'Inception', 'Ferramenta em escolha'],
+      ['Validação e barreira de robô', 'Destino do formulário', 'Pedro', 'Em proposta'],
+      ['Rastreio', 'Pixel, API de conversões, evento de aplicação e página de obrigado', 'Pedro', 'Em proposta'],
+      ['Automação do fluxo', 'Automações de WhatsApp e agendamento', 'Pedro', 'Em proposta'],
+      ['Estado do contato', 'CRM com seis estágios', 'Pedro', 'Em proposta'],
+      ['Envio de WhatsApp', 'Caminho oficial, direto ou dentro do CRM', 'Pedro', 'Em proposta'],
+      ['Agenda e link da reunião', 'Segunda, quarta e quinta às 19h30, 30 minutos', 'Pedro', 'Em proposta'],
       ['Canal de atendimento', 'WhatsApp Business em aparelho e chip próprios', 'Dr. Rodrigo', 'A providenciar'],
       ['E-mail de confirmação', 'Caixa no domínio da Academia', 'Inception', 'A configurar']
     ]},
     { tipo: 'lista', titulo: 'O que o Dr. Rodrigo providencia', itens: [
       'Um aparelho celular adicional, pode ser um antigo, só para esse canal.',
       'Um chip com número novo, dedicado ao atendimento comercial.',
-      'Uma conta de WhatsApp Business cadastrada nesse aparelho. Dois perfis profissionais não convivem no mesmo aparelho, mesmo com chip eletrônico.',
+      'Um número dedicado, cadastrado na API oficial da Meta. O aparelho tanto faz, pode ser chip eletrônico no celular dele (13/09): o que a infra exige é o número exclusivo do comercial.',
       'A definição de quem responde no dia a dia: alguém da equipe da clínica ou uma pessoa contratada para isso.'
     ]},
     { tipo: 'lista', titulo: 'A configuração do canal, passo a passo', itens: [
@@ -146,9 +146,9 @@ DASH.views['com-fluxo'] = {
       'O horário de atendimento declarado, com a mensagem de ausência repetindo esse mesmo horário e a saudação automática desligada, para não atropelar a confirmação que sai na hora.',
       'As etiquetas do atendimento criadas: aplicação nova, em conversa, agendado, compareceu, matriculado e agora não. Elas espelham o CRM enquanto ele não estiver ligado.',
       'O catálogo decidido, com a recomendação de não usar, porque valor só existe na conversa. E o número adicionado ao Meta Business, que é o que libera anúncio com botão de WhatsApp.',
-      'As janelas fixas de agenda: quantas conversas por semana, em que dias e horários, e quanto dura cada uma. Quem atende trabalha pelo WhatsApp Web, com o celular de âncora.'
+      'As janelas fixas de agenda, definidas em 22/09: reuniões de 30 minutos, segunda, quarta e quinta às 19h30, uma por dia. Se a agenda lotar, abre a segunda janela do dia.'
     ]},
-    { tipo: 'lista', titulo: 'O que a Inception configura', itens: [
+    { tipo: 'lista', titulo: 'O que o gestor do funil configura (Pedro, em proposta)', itens: [
       'O serviço na Cloudflare que recebe o formulário, valida os campos e barra robô, para que o endereço do fluxo não fique escrito na página.',
       'A versão nova da página com os campos que faltam: origem e parâmetros de campanha, página de origem, carimbo de envio, campo-armadilha e a caixa de consentimento. Sem o campo de origem não dá para medir indicação, orgânico e pago.',
       'O fluxo no n8n, nesta ordem: recebe, normaliza, gera a chave contra duplicidade, pontua, grava na planilha, cria ou atualiza o contato no CRM e dispara as três mensagens.',
@@ -176,5 +176,5 @@ DASH.views['com-fluxo'] = {
     { quem: 'rodrigo', feito: false, texto: 'Definir quem atende no número secundário.', prazo: 'antes de outubro de 2026' }
   ],
   links: [],
-  atualizado: '2026-09-05'
+  atualizado: '2026-09-22'
 };

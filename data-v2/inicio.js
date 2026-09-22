@@ -28,7 +28,7 @@ DASH.views['inicio'] = {
       'Fechar o guia de direcionamento das redes e das orientações de perfil.',
       'Entregar o mapa de crenças do público, para dar intenção a cada conteúdo.',
       'Refinar a página de aplicação e enviar o link para conferência.',
-      'Levantar contatos e orçamentos de certificação com faculdades credenciadas.',
+      'Definir a redação do certificado: curso livre, com carga horária, até a conversa com a faculdade fechar.',
       'Montar a pasta de referências visuais para a produção de conteúdo.',
       'Escrever a proposta dos dois adicionais de IA, o clínico e o do aluno.',
       'Enviar os links das pautas e os arquivos da logo em alta resolução.'
@@ -50,15 +50,15 @@ DASH.views['inicio'] = {
     { data: '2026-09-04', texto: 'A oferta tem duas portas: 20 vagas no presencial e uma opção só online, aberta apenas em objeção de viagem ou de valor.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Dias exatos das três imersões dentro das semanas de 17/05, 04/10 e 29/11.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: false, texto: 'Dias exatos das Imersões 1 e 2, nas semanas de 17/05 e 04/10. A Imersão 3 já fechou em 29 e 30/11.', prazo: 'antes da abertura de vendas' },
     { quem: 'rodrigo', feito: false, texto: 'Quarta ou quinta nas três semanas de feriado.', prazo: 'antes da abertura de vendas' },
-    { quem: 'rodrigo', feito: false, texto: 'Se entra o encontro de abertura da turma em 16/02, fora dos 43.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: true, texto: 'Encontro de abertura em 16/02: cortado em 13/09.', prazo: 'feito' },
     { quem: 'rodrigo', feito: false, texto: 'Autorização de uso dos depoimentos em vídeo já gravados.', prazo: 'antes da campanha' },
     { quem: 'inception', feito: false, texto: 'Modelo de garantia, com confirmação de contabilidade e revisão jurídica.', prazo: 'antes da abertura de vendas' },
     { quem: 'inception', feito: false, texto: 'Especificação do fluxo comercial, do formulário à matrícula.', prazo: 'em produção' }
   ],
   links: [],
-  atualizado: '2026-09-05'
+  atualizado: '2026-09-22'
 };
 
 DASH.views['continuidade'] = {
@@ -69,7 +69,7 @@ DASH.views['continuidade'] = {
   fatos: [
     { rotulo: 'formatura da turma 1', valor: '30/11/2027' },
     { rotulo: 'adicionais de IA propostos', valor: '2' },
-    { rotulo: 'certificação', valor: 'a partir da 2ª turma' },
+    { rotulo: 'certificação', valor: 'curso livre, 134 h' },
     { rotulo: 'tier online como produto próprio', valor: '2028' }
   ],
   blocos: [
@@ -80,17 +80,17 @@ DASH.views['continuidade'] = {
       'Plataforma própria da formação: área de membros, caixa de ferramentas, assistente das aulas, percurso por faixas, pesquisas de entrada e de satisfação, painel de acompanhamento por aluno e banco de referências.',
       'Os dois são escopo novo, fora do contrato atual. Esforço estimado de 12,5 a 18 semanas de trabalho técnico na plataforma, com a IA clínica em fase própria.'
     ]},
-    { tipo: 'texto', titulo: 'Certificação', html: '<p>A recomendação é vender a turma fundadora como curso livre, com certificado de conclusão e carga horária, e buscar chancela de faculdade a partir da segunda turma. O teto realista hoje é extensão ou aperfeiçoamento, que não dá título nem especialidade, e a grade da primeira turma precisa poder mudar. Com uma turma formada e casos na mão, a negociação com a faculdade acontece de cima.</p>' },
+    { tipo: 'texto', titulo: 'Certificação', html: '<p>A posição do Dr. Rodrigo em 22/09: <strong>curso livre é o caminho viável</strong>, e o reconhecimento pelo MEC só entra se a conversa com a faculdade se confirmar. Pós-graduação reconhecida pede 360 horas e uma instituição parceira com as disciplinas básicas; a formação tem 134. A página promete certificado de conclusão com carga horária e nada além disso até a conversa fechar. A carga vai a público como piso, mínimo de 130 horas, e o certificado sai com a carga real de cada aluno.</p>' },
     { tipo: 'texto', titulo: 'O tier online', html: '<p>A porta online existe na oferta como resposta a objeção de viagem ou de valor. Como produto próprio, com material editado e prova social, ela é peça de 2028: as gravações das imersões só existem depois de maio de 2027, e o funil de aplicação atual não comporta volume de venda online.</p>' }
   ],
   decisoes: [
     { data: '2026-09-05', texto: 'Os dois adicionais de IA entram como proposta de escopo novo, com detalhamento escrito.' },
-    { data: '2026-09-05', texto: 'A certificação é pesquisada agora e decidida depois da turma fundadora aberta.' }
+    { data: '2026-09-22', texto: 'Certificado como curso livre, com 134 horas; o MEC só entra se a conversa com a faculdade se confirmar.' }
   ],
   pendencias: [
     { quem: 'rodrigo', feito: false, texto: 'Decidir se os dois adicionais de IA entram, e em que ordem.', prazo: 'antes de dezembro de 2026' },
-    { quem: 'inception', feito: false, texto: 'Ligações e orçamentos com as faculdades levantadas na pesquisa de certificação.', prazo: 'setembro de 2026' }
+    { quem: 'rodrigo', feito: false, texto: 'Contar o resultado da conversa com a faculdade, que define a redação final do certificado.', prazo: 'antes da abertura de vendas' }
   ],
   links: [],
-  atualizado: '2026-09-05'
+  atualizado: '2026-09-22'
 };

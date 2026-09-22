@@ -83,7 +83,7 @@ DASH.views['met-expert'] = {
   resumo: 'A base de autoridade de toda a comunicação: expertise clínica em volume real, formação científica e prova de negócio no próprio consultório. É o que nenhum concorrente do nicho reúne.',
   fatos: [
     { rotulo: 'anos de atuação', valor: '30' },
-    { rotulo: 'especialistas formados', valor: '≈120' },
+    { rotulo: 'dentistas formados', valor: '+300' },
     { rotulo: 'pacientes atendidos na carreira', valor: '+8.000' },
     { rotulo: 'anos de atendimento voluntário', valor: '17' },
   ],
@@ -268,7 +268,7 @@ DASH.views['met-metodo'] = {
     {
       tipo: 'detalhe', titulo: 'Ver o método por dentro',
       html: `
-        <p><strong>O nome do método está em aberto.</strong> MODAL foi proposto em julho e você pediu pra rever. Três opções seguem na mesa desde 28/07: <strong>Arsenal Multimodal</strong> (mantém a palavra que você gostou e a imagem do cinto do Batman), <strong>Amplitude Clínica</strong> (o mais forte juridicamente, com duplo sentido real com a amplitude de abertura bucal) e <strong>Abordagem Multicritério</strong> (o mais sóbrio, enfatiza o rigor da decisão). Enquanto não houver decisão, nenhuma peça usa nome de método: quem assina é <strong>Academia DTM</strong> e <strong>Viver de DTM</strong>. Isso não trava nada, mas deixa uma camada de diferenciação sem uso.</p>
+        <p><strong>O método tem nome: Abordagem Multimodal.</strong> Foi você quem trouxe, em setembro, depois de rever as propostas anteriores. É o nome do que o aluno aprende a fazer; quem assina a comunicação continua sendo a Academia DTM.</p>
         <p><strong>A leitura em quatro camadas.</strong> Camada 1, a ficha de perguntas que o paciente preenche antes, com base validada em português mais os acréscimos autorais de sono, atividade física e medicamentos. Camada 2, anamnese profunda: intensidade, frequência, duração e fatores de melhora, piora e precipitação. Camada 3, exame físico protocolar com palpação, sons articulares e medidas de movimento — a parte que exige o presencial. Camada 4, imagem. As quatro juntas fecham o diagnóstico específico.</p>
         <p><strong>As três escadas.</strong> A escada muscular vai da eletroestimulação, laser, liberação miofascial, controle do bruxismo e educação em dor até a infiltração anestésica e o agulhamento, com a toxina botulínica no topo, como último recurso. A escada do deslocamento de disco começa em exercícios de amplitude e sobe até artroscopia e discopexia. A escada articular vai de laser, fármaco e crioterapia até prótese de ATM. O corte do que a formação capacita a fazer, revisado por você em 28/07: todos os conservadores das três escadas, mais infiltração anestésica e agulhamento. O restante entra como indicação e condução, não como execução.</p>
         <p><strong>O timing.</strong> Insistir no conservador de três a seis meses. Se o paciente não responde e o diagnóstico está confirmado, subir o degrau. Gravidade, imagem e impacto em outras áreas da vida entram na conta. É o critério que evita os dois erros opostos: intervir cedo demais e tarde demais.</p>
@@ -283,7 +283,7 @@ DASH.views['met-metodo'] = {
     { data: '2026-07-28', texto: 'O CPAD e as seis fases não são seus e saíram do material. Fica só a verdade clínica, sem urgência fabricada.' },
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Decidir o nome do método entre as três opções enviadas em 28/07.', prazo: 'até 31/10' },
+    { quem: 'rodrigo', feito: true, texto: 'Nome do método: Abordagem Multimodal, proposto por você e fechado em 13/09.', prazo: 'feito' },
     { quem: 'rodrigo', feito: false, texto: 'Lista nominal dos diagnósticos de cada grupo e critérios objetivos de escalonamento por grupo.', prazo: 'até 15/10' },
     { quem: 'inception', feito: false, texto: 'Atualizar a arte do percurso com a data de abertura em 23/02/2027.', prazo: 'antes das peças públicas' },
   ],

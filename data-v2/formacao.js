@@ -41,7 +41,8 @@ DASH.views['form-oferta'] = {
       'A garantia. O modelo não está fechado e depende de confirmação contábil e revisão jurídica. Nenhuma redação de garantia entra em página, deck ou script antes disso.',
       'Os nove depoimentos em vídeo já gravados. Foram feitos sob outra marca, sem autorização de uso.',
       'Qualquer cifra de faturamento. Nenhum número financeiro entra em peça antes da conferência com a clínica.',
-      'Título de especialista ou reconhecimento de conselho. A promessa é certificado de conclusão com carga horária.'
+      'Título de especialista ou reconhecimento de conselho. A promessa é certificado de conclusão com carga horária (piso de 130 horas na divulgação). Chancela ou MEC só depois que a conversa com a faculdade fechar.',
+      'A palavra shadowing. Na peça pública o bônus é "2 dias na minha clínica, acompanhando minha rotina". E nenhum faturamento da clínica acompanha o bônus.'
     ]}
   ],
   decisoes: [
@@ -52,11 +53,11 @@ DASH.views['form-oferta'] = {
   pendencias: [
     { quem: 'inception', feito: false, texto: 'Fechar o modelo de garantia, com contabilidade e revisão jurídica.', prazo: 'antes da abertura de vendas' },
     { quem: 'rodrigo', feito: false, texto: 'Autorizar o uso dos depoimentos gravados, ou gravar novos com autorização.', prazo: 'antes da campanha' },
-    { quem: 'rodrigo', feito: false, texto: 'Confirmar o número de pacientes elegíveis por imersão, que é o teto real de supervisão.', prazo: 'até dezembro de 2026' },
-    { quem: 'inception', feito: false, texto: 'Definir quando a cobrança do parcelamento começa: na compra ou na abertura da turma.', prazo: 'na configuração do checkout' }
+    { quem: 'rodrigo', feito: false, texto: 'Confirmar o número de pacientes elegíveis por imersão, que é o teto real de supervisão.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: false, texto: 'Escolher a plataforma de cobrança entre Asaas e TBM, ou outra que faça parcelamento em boleto e PIX. A escolha define em quantas vezes dá para parcelar e quando a primeira cobrança cai.', prazo: 'antes da abertura de vendas' }
   ],
   links: [],
-  atualizado: '2026-09-05'
+  atualizado: '2026-09-22'
 };
 
 DASH.views['form-grade'] = {
@@ -89,11 +90,11 @@ DASH.views['form-grade'] = {
     { data: '2026-07-10', texto: 'A linha entre o que o aluno executa e o que ele encaminha foi confirmada técnica por técnica.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Enviar o material gravado dos Dois Tripés, único conteúdo ainda pendente na grade.', prazo: 'até dezembro de 2026' },
-    { quem: 'rodrigo', feito: false, texto: 'Definir a carga horária oficial de cada encontro, que trava o certificado.', prazo: 'antes da abertura de vendas' }
+    { quem: 'rodrigo', feito: true, texto: 'Material gravado dos Dois Tripés: gravado em agosto.', prazo: 'feito' },
+    { quem: 'rodrigo', feito: true, texto: 'Carga horária: 2 horas por encontro online e 8 por dia de imersão, 134 horas no total.', prazo: 'fechado em 22/09' }
   ],
   links: [],
-  atualizado: '2026-09-05'
+  atualizado: '2026-09-22'
 };
 
 DASH.views['form-calendario'] = {
@@ -113,7 +114,7 @@ DASH.views['form-calendario'] = {
     { tipo: 'tabela', titulo: 'As três imersões em Brasília', colunas: ['Imersão', 'Semana', 'Dias', 'Fecha com'], linhas: [
       ['1 · Diagnóstico', 'semana de 17/05', '3 dias', 'prova prática e faixa azul'],
       ['2 · Tratamento', 'semana de 04/10', '3 dias', 'prova prática e faixa roxa'],
-      ['3 · Formatura', 'semana de 29/11', '2 dias', 'apresentação final e faixa marrom']
+      ['3 · Formatura', 'segunda 29 e terça 30/11', '2 dias', 'apresentação final e faixa marrom']
     ]},
     { tipo: 'tabela', titulo: 'Os três encontros que mudam de dia', colunas: ['Semana', 'Feriado na terça', 'Encontro vai para'], linhas: [
       ['06/09', 'Independência, 07/09', 'quarta 08/09 ou quinta 09/09'],
@@ -123,7 +124,7 @@ DASH.views['form-calendario'] = {
     { tipo: 'lista', titulo: 'O resto do ano em quatro pontos', itens: [
       'Respiros nas semanas de 24/05, 26/07 e 22/11, um por etapa, sempre antes da viagem daquela etapa.',
       'Shadowing entre junho e setembro, em duplas ou trios, de preferência quinta e sexta. Com 20 alunos em duplas ou trios, são de 14 a 20 dias da agenda ao longo do ano — decisão em aberto: trios fixos ou um dia por rodada.',
-      'Abertura da turma em terça, 16/02, opcional e fora dos 43 encontros: boas-vindas, faixa branca e tour da plataforma.',
+      'Cada dia de imersão tem 8 horas. Somadas aos 35 encontros online de 2 horas, dão 134 horas de formação.',
       '30 de novembro é Dia do Evangélico no Distrito Federal. Não bloqueia a formatura, mas afeta equipe de apoio e comércio.'
     ]},
     { tipo: 'texto', titulo: 'Como comunicar as três datas deslocadas', html: '<p>As três entram no material de venda e no calendário do aluno desde o primeiro dia, já resolvidas. Avisar em cima da hora derruba presença e passa recado de improviso. A escolha entre quarta e quinta pode ser a mesma nas três semanas, o que é mais fácil de memorizar.</p>' },
@@ -132,18 +133,19 @@ DASH.views['form-calendario'] = {
   decisoes: [
     { data: '2026-09-05', texto: 'A turma começa em 23/02/2027, depois do Carnaval, e o cronograma fecha em 30/11/2027.' },
     { data: '2026-09-05', texto: 'Feriado na terça desloca o encontro para outro dia da mesma semana, em vez de cancelar.' },
-    { data: '2026-09-05', texto: 'O shadowing é uma quarta viagem, separada das três imersões.' }
+    { data: '2026-09-05', texto: 'O shadowing é uma quarta viagem, separada das três imersões.' },
+    { data: '2026-09-22', texto: 'Imersão 3 em 29 e 30/11, com 8 horas por dia de imersão.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Dias exatos dentro de cada semana de imersão. Isso trava passagem, agenda do aluno e material de venda.', prazo: 'antes da abertura de vendas' },
-    { quem: 'rodrigo', feito: false, texto: 'Confirmar a Imersão 3 em 29 e 30/11. Qualquer outra combinação joga a formatura para dezembro.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: false, texto: 'Dias exatos das Imersões 1 e 2. As datas de 2027 já saíram; isso trava passagem, agenda do aluno e material de venda.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: true, texto: 'Imersão 3 em 29 e 30/11, usando o feriado do Distrito Federal.', prazo: 'fechado em 22/09' },
     { quem: 'rodrigo', feito: false, texto: 'Quarta ou quinta nas três semanas de feriado.', prazo: 'antes da abertura de vendas' },
-    { quem: 'rodrigo', feito: false, texto: 'Se a abertura da turma em 16/02 entra.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: true, texto: 'Abertura da turma em 16/02: cortada em 13/09.', prazo: 'feito' },
     { quem: 'rodrigo', feito: false, texto: 'Janela do shadowing e quantas rodadas por mês.', prazo: 'até março de 2027' },
     { quem: 'rodrigo', feito: false, texto: 'Data limite de matrícula, com folga para o onboarding antes de 23/02.', prazo: 'outubro de 2026' }
   ],
   links: [],
-  atualizado: '2026-09-05'
+  atualizado: '2026-09-22'
 };
 
 DASH.views['form-jornada'] = {
@@ -189,7 +191,7 @@ DASH.views['form-jornada'] = {
     { quem: 'rodrigo', feito: false, texto: 'Definir o suporte da faixa: peça física entregue na imersão ou registro digital.', prazo: 'até dezembro de 2026' }
   ],
   links: [],
-  atualizado: '2026-09-05'
+  atualizado: '2026-09-22'
 };
 
 DASH.views['form-area-membros'] = {
@@ -236,5 +238,5 @@ DASH.views['form-area-membros'] = {
   links: [
     { rotulo: 'Abrir a demonstração da área de membros', href: 'pecas/area-membros-demo/index.html' }
   ],
-  atualizado: '2026-09-05'
+  atualizado: '2026-09-22'
 };
