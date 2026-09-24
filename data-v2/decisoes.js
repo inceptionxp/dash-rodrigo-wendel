@@ -65,7 +65,7 @@ DASH.views['devolutivas'] = {
   links: [
     { rotulo: 'O que ainda depende de você', href: '#decisoes-rodrigo' },
   ],
-  atualizado: '2026-09-22',
+  atualizado: '2026-09-24',
 };
 
 /* ─────────── decisoes-rodrigo ─────────── */
@@ -84,9 +84,7 @@ DASH.views['decisoes-rodrigo'] = {
       tipo: 'tabela', titulo: 'Trava o calendário — decidir primeiro',
       colunas: ['O que decidir', 'Por que importa', 'Prazo sugerido'],
       linhas: [
-        ['Dias exatos da Imersão 1, na semana de 17/05', 'O aluno compra passagem com meses de antecedência', '15/09'],
-        ['Dias exatos da Imersão 2, na semana de 04/10', 'Mesma razão; ela fecha a etapa de tratamento', '15/09'],
-        ['Dias das Imersões 1 e 2', 'A Imersão 3 fechou em 29 e 30/11; as datas de 2027 já saíram e falta cravar as outras duas', 'antes da abertura de vendas'],
+        ['Grade de outubro', 'A Imersão 2 foi para 21 a 23/10. Sobram 5 semanas até a formatura para 6 encontros da Etapa 3, então pelo menos um vem antes do gate da faixa roxa', 'antes da abertura de vendas'],
         ['Os três encontros de feriado: quarta ou quinta', 'Independência, Aparecida e Finados caem na terça e precisam de dia fixo no calendário publicado', '15/09'],
         ['Aula inaugural na semana de 16/02, sim ou não', 'Muda a data que a página anuncia como início da turma', '15/09'],
       ],
@@ -123,7 +121,7 @@ DASH.views['decisoes-rodrigo'] = {
     {
       tipo: 'detalhe', titulo: 'Ver o contexto de cada decisão',
       html: `
-        <p><strong>As três imersões.</strong> As semanas já estão fixadas: 17/05, 04/10 e 29/11 de 2027. A Imersão 3 fechou em 22/09: segunda 29 e terça 30/11, usando o feriado do Distrito Federal. Cada dia de imersão tem 8 horas. Falta só o dia dentro das duas primeiras semanas. A recomendação é começo de semana, de segunda a quarta, porque o aluno viaja no domingo e volta a atender antes do fim da semana. Na Imersão 3 não existe escolha: são dois dias e precisam ser segunda 29 e terça 30, senão a formação não fecha em 30/11 como você definiu. Vale saber que 30 de novembro é Dia do Evangélico, feriado distrital no DF — isso afeta serviços locais, não a atividade da imersão.</p>
+        <p><strong>As três imersões.</strong> As três estão fechadas: quinta 20 a sábado 22/05, quinta 21 a sábado 23/10 e segunda 29 e terça 30/11 de 2027, esta usando o feriado do Distrito Federal. Cada dia de imersão tem 8 horas. A Imersão 2 saiu da semana de 04/10, quando você estará em curso, e isso pede um reajuste na grade de outubro. Vale saber que 30 de novembro é Dia do Evangélico, feriado distrital no DF — isso afeta serviços locais, não a atividade da imersão.</p>
         <p><strong>Os três feriados.</strong> Independência em 07/09, Aparecida em 12/10 e Finados em 02/11 caem todos numa terça. A regra que você fixou é deslocar o encontro daquela semana. Falta escolher entre quarta e quinta em cada um dos três casos.</p>
         <p><strong>O shadowing.</strong> Ele é bônus da turma fundadora e virou uma quarta viagem, separada das imersões. Com 20 alunos, em duplas ou trios, são de sete a dez rodadas de dois dias, o que dá de 14 a 20 dias do seu calendário em 2027. A janela recomendada é de junho a setembro, entre a Imersão 1 e a Imersão 2, com quinta e sexta como dias sugeridos. Se esse volume não couber, a alternativa é reduzir para um dia por rodada ou aumentar o tamanho do grupo. A decisão precisa sair antes de a oferta ir pra rua.</p>
         <p><strong>Conteúdo do professor para a área de membros.</strong> Três lacunas do método dependem só de você: a lista nominal dos diagnósticos de cada grupo do guarda-chuva, os critérios objetivos de quando subir o degrau em cada escada, e as perguntas de sono e bruxismo da sua ficha de avaliação. São o que falta pra fechar os materiais das Etapas 1 e 2.</p>
@@ -134,6 +132,7 @@ DASH.views['decisoes-rodrigo'] = {
   ],
   decisoes: [
     { data: '2026-09-05', texto: 'Semanas das três imersões mantidas: 17/05, 04/10 e 29/11 de 2027.' },
+    { data: '2026-09-24', texto: 'Imersão 1 em 20 a 22/05 e Imersão 2 em 21 a 23/10, de quinta a sábado.' },
     { data: '2026-09-05', texto: 'Shadowing confirmado como viagem separada das imersões.' },
     { data: '2026-09-22', texto: 'Imersão 3 em 29 e 30/11, usando o feriado. Dia de imersão com 8 horas.' },
     { data: '2026-09-22', texto: 'Carga horária de 134 horas; a divulgação usa o piso de 130 e o certificado sai com a carga real.' },
@@ -146,7 +145,7 @@ DASH.views['decisoes-rodrigo'] = {
   links: [
     { rotulo: 'Calendário completo da turma 2027', href: 'docs/calendario-turma-2027.md' },
   ],
-  atualizado: '2026-09-22',
+  atualizado: '2026-09-24',
 };
 
 /* ─────────── marcos ─────────── */
@@ -189,5 +188,5 @@ DASH.views['marcos'] = {
   links: [
     { rotulo: 'Contrato assinado', href: 'docs/contrato-rodrigo-wendel.pdf' },
   ],
-  atualizado: '2026-09-22',
+  atualizado: '2026-09-24',
 };

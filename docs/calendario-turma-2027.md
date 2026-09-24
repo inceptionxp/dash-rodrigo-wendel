@@ -44,7 +44,7 @@ aula aqui eu achava que ia dar em duas aulas, eu vou ter que dar em quatro."*
 | Etapa | Encontros | Da semana | À semana | Fecha com |
 |---|---|---|---|---|
 | 1 · Fundação e Diagnóstico | E1 a E15 | 22/02 | 17/05 | Imersão 1 + faixa azul |
-| 2 · Tratamento | E16 a E35 | 31/05 | 04/10 | Imersão 2 + faixa roxa |
+| 2 · Tratamento | E16 a E35 | 31/05 | 18/10 | Imersão 2 + faixa roxa |
 | 3 · Comercial, Gestão e Marketing | E36 a E43 | 11/10 | 29/11 | Imersão 3 + formatura |
 
 ---
@@ -68,7 +68,7 @@ A coluna "semana de" traz a segunda-feira. A coluna "dia da aula" traz a data re
 | 10 | 26/04 | E10 | ter 27/04 | 1º de Maio (sáb 01/05) | |
 | 11 | 03/05 | E11 | ter 04/05 | | |
 | 12 | 10/05 | E12 | ter 11/05 | | |
-| 13 | 17/05 | ✈️ **IMERSÃO 1 · E13-E15 · 3 dias em Brasília** | dias a definir | | **GATE + faixa azul** |
+| 13 | 17/05 | ✈️ **IMERSÃO 1 · E13-E15 · 3 dias em Brasília** | qui 20, sex 21 e sáb 22/05 (Rodrigo, 24/09) | | **GATE + faixa azul** |
 | 14 | 24/05 | ⬜ **RESPIRO 1** | | Corpus Christi (qui 27/05) | |
 | 15 | 31/05 | **ETAPA 2 abre** · E16 | ter 01/06 | | |
 | 16 | 07/06 | E17 | ter 08/06 | | |
@@ -88,9 +88,9 @@ A coluna "semana de" traz a segunda-feira. A coluna "dia da aula" traz a data re
 | 30 | 13/09 | E30 | ter 14/09 | | |
 | 31 | 20/09 | E31 · estudo de caso 4 | ter 21/09 | | **3º grau na faixa azul** |
 | 32 | 27/09 | E32 · casos mistos (prepara o gate) | ter 28/09 | | |
-| 33 | 04/10 | ✈️ **IMERSÃO 2 · E33-E35 · 3 dias em Brasília** | dias a definir | | **GATE + faixa roxa** |
+| 33 | 04/10 | ⚠️ **IMERSÃO 2 SAIU DESTA SEMANA** (foi para 21 a 23/10; ver "Reajuste de outubro") | — | | **GATE + faixa roxa** |
 | 34 | 11/10 | **ETAPA 3 abre** · E36 | ⚠️ qua 13/10 **ou** qui 14/10 | **Aparecida (ter 12/10)** | |
-| 35 | 18/10 | E37 | ter 19/10 | | |
+| 35 | 18/10 | E37 · ⚠️ **semana da Imersão 2 (qui 21, sex 22 e sáb 23/10)**, grade em reajuste | ter 19/10 | | |
 | 36 | 25/10 | E38 | ter 26/10 | | |
 | 37 | 01/11 | E39 | ⚠️ qua 03/11 **ou** qui 04/11 | **Finados (ter 02/11)** | |
 | 38 | 08/11 | E40 | ter 09/11 | | |
@@ -102,13 +102,12 @@ A coluna "semana de" traz a segunda-feira. A coluna "dia da aula" traz a data re
 
 ## As 3 imersões
 
-Duas das três semanas reservadas na V1 continuam de pé. A Imersão 2 fica na semana de 04/10 e a
-Imersão 3 na semana de 29/11, exatamente como estavam. Só a Imersão 1 anda uma semana.
+A Imersão 1 anda uma semana em relação à V1 e a Imersão 2 anda duas (agenda do Rodrigo, 24/09). A Imersão 3 fica em 29/11.
 
 | Imersão | Semana na V1 | Semana na V2 | Dias | Encontros |
 |---|---|---|---|---|
-| 1 · Diagnóstico | 10/05 | **17/05** (+1 semana) | 3 | E13-E15 |
-| 2 · Tratamento | 04/10 | **04/10** (mantida) | 3 | E33-E35 |
+| 1 · Diagnóstico | 10/05 | **17/05**: qui 20 a sáb 22/05 (Rodrigo, 24/09) | 3 | E13-E15 |
+| 2 · Tratamento | 04/10 | **18/10**: qui 21 a sáb 23/10 (Rodrigo, 24/09) | 3 | E33-E35 |
 | 3 · Formatura | 29/11 | **29/11** (mantida) | 2 | E42-E43 |
 
 **Por que a Imersão 1 anda uma semana.** A Etapa 1 tem 12 encontros online antes da viagem. Com
@@ -260,8 +259,8 @@ entre peças se resolve por esta tabela.
 | Semanas de calendário | **41** |
 | Semanas com encontro | 38 |
 | Semanas de respiro | 3 (uso interno, fora de peça de venda) |
-| Imersão 1 · Brasília | semana de **17/05/2027**, 3 dias |
-| Imersão 2 · Brasília | semana de **04/10/2027**, 3 dias |
+| Imersão 1 · Brasília | **20, 21 e 22/05/2027** (qui a sáb; Rodrigo, 24/09) |
+| Imersão 2 · Brasília | **21, 22 e 23/10/2027** (qui a sáb; Rodrigo, 24/09) |
 | Imersão 3 · Brasília · formatura | semana de **29/11/2027**, 2 dias |
 | Formatura | **30/11/2027** |
 | Viagens a Brasília | **4** (3 imersões mais o shadowing) |

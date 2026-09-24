@@ -50,7 +50,8 @@ DASH.views['inicio'] = {
     { data: '2026-09-04', texto: 'A oferta tem duas portas: 20 vagas no presencial e uma opção só online, aberta apenas em objeção de viagem ou de valor.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Dias exatos das Imersões 1 e 2, nas semanas de 17/05 e 04/10. A Imersão 3 já fechou em 29 e 30/11.', prazo: 'antes da abertura de vendas' },
+    { quem: 'rodrigo', feito: true, texto: 'Dias das imersões: 20 a 22/05, 21 a 23/10 e 29 e 30/11 de 2027.', prazo: 'feito' },
+    { quem: 'maiara', feito: false, texto: 'Reajustar a grade de outubro: com a Imersão 2 em 21 a 23/10, um encontro da Etapa 3 vem antes do gate da faixa roxa.', prazo: 'antes da abertura de vendas' },
     { quem: 'rodrigo', feito: false, texto: 'Quarta ou quinta nas três semanas de feriado.', prazo: 'antes da abertura de vendas' },
     { quem: 'rodrigo', feito: true, texto: 'Encontro de abertura em 16/02: cortado em 13/09.', prazo: 'feito' },
     { quem: 'rodrigo', feito: false, texto: 'Autorização de uso dos depoimentos em vídeo já gravados.', prazo: 'antes da campanha' },
@@ -58,7 +59,7 @@ DASH.views['inicio'] = {
     { quem: 'inception', feito: false, texto: 'Especificação do fluxo comercial, do formulário à matrícula.', prazo: 'em produção' }
   ],
   links: [],
-  atualizado: '2026-09-22'
+  atualizado: '2026-09-24'
 };
 
 DASH.views['continuidade'] = {
@@ -92,5 +93,5 @@ DASH.views['continuidade'] = {
     { quem: 'rodrigo', feito: false, texto: 'Contar o resultado da conversa com a faculdade, que define a redação final do certificado.', prazo: 'antes da abertura de vendas' }
   ],
   links: [],
-  atualizado: '2026-09-22'
+  atualizado: '2026-09-24'
 };
