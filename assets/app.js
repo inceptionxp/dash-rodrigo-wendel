@@ -16,7 +16,8 @@
     { rotulo: 'Início', itens: [
       ['inicio', 'Onde o projeto está'],
       ['marcos', 'Os quatro marcos'],
-      ['decisoes-rodrigo', 'O que depende de você']
+      ['decisoes-rodrigo', 'O que depende de você'],
+      ['devolutivas', 'O que você já validou']
     ]},
     { rotulo: 'Método', itens: [
       ['met-aprendiz', 'Quem é o dentista'],
@@ -28,8 +29,7 @@
       ['form-oferta', 'A oferta'],
       ['form-grade', 'As etapas e os encontros'],
       ['form-calendario', 'O calendário de 2027'],
-      ['form-jornada', 'A jornada e as faixas'],
-      ['form-area-membros', 'O sistema do aluno']
+      ['form-jornada', 'A jornada e as faixas']
     ]},
     { rotulo: 'Comercial', itens: [
       ['com-pagina', 'A página de aplicação'],
@@ -40,10 +40,6 @@
       ['marca-identidade', 'Academia DTM e Viver de DTM'],
       ['marca-social', 'A linha editorial'],
       ['marca-crencas', 'As crenças do conteúdo']
-    ]},
-    { rotulo: 'Depois da fundadora', itens: [
-      ['devolutivas', 'O que você já validou'],
-      ['continuidade', 'Depois da turma fundadora']
     ]}
   ];
 

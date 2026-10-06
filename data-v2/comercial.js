@@ -2,7 +2,7 @@ window.DASH = window.DASH || {}; DASH.views = DASH.views || {};
 
 DASH.views['com-pagina'] = {
   titulo: 'A página de aplicação',
-  status: 'entregue',
+  status: 'em-revisao',
   kicker: 'Comercial',
   resumo: 'A página não vende: ela faz o dentista aplicar para uma conversa. Nenhum valor aparece ali. O investimento entra depois, na apresentação, com o senhor na frente.',
   fatos: [
@@ -45,19 +45,19 @@ DASH.views['com-pagina'] = {
     { data: '2026-09-05', texto: 'A estrutura, as cores e a identidade da página foram validadas pelo Dr. Rodrigo.' }
   ],
   pendencias: [
-    { quem: 'inception', feito: false, texto: 'Trocar a expressão dez meses por de fevereiro a novembro de 2027 em toda a página, conforme o calendário refeito.', prazo: 'antes da divulgação' },
-    { quem: 'inception', feito: false, texto: 'Refino visual e de animação para o acabamento premium combinado na reunião.', prazo: 'setembro de 2026' },
-    { quem: 'rodrigo', feito: false, texto: 'Conferir a página no link e apontar qualquer informação incoerente.', prazo: 'setembro de 2026' }
+    { quem: 'inception', feito: true, texto: 'Período escrito como fevereiro a novembro de 2027.', prazo: 'feito' },
+    { quem: 'rodrigo', feito: true, texto: 'Conferir a página no link e apontar qualquer informação incoerente.', prazo: 'feito' },
+    { quem: 'inception', feito: false, texto: 'Versão atualizada com as últimas definições: copy para a reunião individual, refino visual e texto do certificado.', prazo: 'em produção' }
   ],
   links: [
     { rotulo: 'Abrir a página de aplicação', href: 'pecas/pagina-aplicacao/index.html' }
   ],
-  atualizado: '2026-09-22'
+  atualizado: '2026-10-06'
 };
 
 DASH.views['com-apresentacao'] = {
   titulo: 'A apresentação comercial',
-  status: 'entregue',
+  status: 'em-revisao',
   kicker: 'Comercial',
   resumo: 'Duas versões do mesmo deck. A padrão defende só o presencial e fecha em R$ 15.000. A segunda abre a porta online e só entra quando a objeção for viagem ou valor.',
   fatos: [
@@ -93,21 +93,20 @@ DASH.views['com-apresentacao'] = {
     { data: '2026-09-04', texto: 'O presencial declara 20 vagas na lâmina de investimento.' }
   ],
   pendencias: [
-    { quem: 'inception', feito: false, texto: 'Trocar a expressão dez meses por de fevereiro a novembro de 2027 nas lâminas do percurso.', prazo: 'antes da divulgação' },
-    { quem: 'inception', feito: false, texto: 'Ajustes finos de formatação identificados na reunião de 05/09.', prazo: 'setembro de 2026' }
+    { quem: 'inception', feito: false, texto: 'Apresentação refeita para a reunião individual de 30 minutos: menos lâminas, mais limpa e com as últimas definições.', prazo: 'em produção' }
   ],
   links: [
     { rotulo: 'Abrir a versão padrão', href: 'pecas/apresentacao-comercial/padrao/index.html' },
     { rotulo: 'Abrir a versão com a porta online', href: 'pecas/apresentacao-comercial/com-online/index.html' }
   ],
-  atualizado: '2026-09-22'
+  atualizado: '2026-10-06'
 };
 
 DASH.views['com-fluxo'] = {
   titulo: 'Do formulário à matrícula',
-  status: 'em-producao',
+  status: 'entregue',
   kicker: 'Comercial',
-  resumo: 'Três passos entre a aplicação e a matrícula, com um número secundário de WhatsApp atendendo em nome da Academia. A especificação completa do fluxo está em produção.',
+  resumo: 'Três passos entre a aplicação e a matrícula, com um número secundário de WhatsApp atendendo em nome da Academia. A especificação está entregue; a configuração é com o Pedro.',
   fatos: [
     { rotulo: 'passos', valor: '3' },
     { rotulo: 'canal de atendimento', valor: 'WhatsApp Business' },
@@ -123,16 +122,16 @@ DASH.views['com-fluxo'] = {
     { tipo: 'texto', titulo: 'O número secundário e o personagem', html: '<p>O atendimento comercial roda em um número separado, com um personagem respondendo em nome da Academia. Isso é prática comum e resolve dois problemas ao mesmo tempo: preserva a agenda do senhor e evita que o professor seja a única pessoa disponível para responder mensagem, o que desvaloriza o serviço. O tempo dele fica reservado para a reunião de apresentação, que é onde a venda acontece de verdade.</p>' },
     { tipo: 'texto', titulo: 'Onde a IA entra, e onde não entra', html: '<p>A IA cobre a qualificação inicial: responde quem preencheu o formulário de madrugada, confirma os dados e mantém a conversa andando até o horário comercial. Daí para a frente é pessoa. Substituir o atendimento humano inteiro por IA não é recomendação nossa, e não é o que faz esse funil converter.</p>' },
     { tipo: 'texto', titulo: 'A trava que não se negocia', html: '<p>Nenhuma reunião entra na agenda sem que uma pessoa tenha falado antes com quem aplicou. Ele pode escolher o horário sozinho pelo link, e isso é bom, mas até a véspera alguém conversa com ele. É essa regra que separa o desenho de um atendimento inteiro por robô, e ela continua valendo quando o volume subir.</p>' },
-    { tipo: 'tabela', titulo: 'As ferramentas de cada etapa', colunas: ['Etapa', 'Ferramenta', 'Quem configura', 'Status'], linhas: [
-      ['Formulário e campos de origem', 'Versão nova da página de aplicação', 'Inception', 'Em produção'],
-      ['Validação e barreira de robô', 'Destino do formulário', 'Pedro', 'Em proposta'],
-      ['Rastreio', 'Pixel, API de conversões, evento de aplicação e página de obrigado', 'Pedro', 'Em proposta'],
-      ['Automação do fluxo', 'Automações de WhatsApp e agendamento', 'Pedro', 'Em proposta'],
-      ['Estado do contato', 'CRM com seis estágios', 'Pedro', 'Em proposta'],
-      ['Envio de WhatsApp', 'Caminho oficial, direto ou dentro do CRM', 'Pedro', 'Em proposta'],
-      ['Agenda e link da reunião', 'Segunda, quarta e quinta às 19h30, 30 minutos', 'Pedro', 'Em proposta'],
-      ['Canal de atendimento', 'WhatsApp Business em aparelho e chip próprios', 'Dr. Rodrigo', 'A providenciar'],
-      ['E-mail de confirmação', 'Caixa no domínio da Academia', 'Inception', 'A configurar']
+    { tipo: 'tabela', titulo: 'As ferramentas de cada etapa', colunas: ['Etapa', 'Ferramenta', 'Quem configura'], linhas: [
+      ['Formulário e campos de origem', 'Versão nova da página de aplicação', 'Pedro'],
+      ['Validação e barreira de robô', 'Destino do formulário', 'Pedro'],
+      ['Rastreio', 'Pixel, API de conversões, evento de aplicação e página de obrigado', 'Pedro'],
+      ['Automação do fluxo', 'Automações de WhatsApp e agendamento', 'Pedro'],
+      ['Estado do contato', 'CRM com seis estágios', 'Pedro'],
+      ['Envio de WhatsApp', 'Caminho oficial, direto ou dentro do CRM', 'Pedro'],
+      ['Agenda e link da reunião', 'Segunda, quarta e quinta às 19h30, 30 minutos', 'Pedro'],
+      ['Canal de atendimento', 'WhatsApp Business em número próprio', 'Dr. Rodrigo e Pedro'],
+      ['E-mail de confirmação', 'Caixa no domínio da Academia', 'Pedro']
     ]},
     { tipo: 'lista', titulo: 'O que o Dr. Rodrigo providencia', itens: [
       'Um aparelho celular adicional, pode ser um antigo, só para esse canal.',
@@ -148,7 +147,7 @@ DASH.views['com-fluxo'] = {
       'O catálogo decidido, com a recomendação de não usar, porque valor só existe na conversa. E o número adicionado ao Meta Business, que é o que libera anúncio com botão de WhatsApp.',
       'As janelas fixas de agenda, definidas em 22/09: reuniões de 30 minutos, segunda, quarta e quinta às 19h30, uma por dia. Se a agenda lotar, abre a segunda janela do dia.'
     ]},
-    { tipo: 'lista', titulo: 'O que o gestor do funil configura (Pedro, em proposta)', itens: [
+    { tipo: 'lista', titulo: 'O que o gestor do funil configura (Pedro)', itens: [
       'O serviço na Cloudflare que recebe o formulário, valida os campos e barra robô, para que o endereço do fluxo não fique escrito na página.',
       'A versão nova da página com os campos que faltam: origem e parâmetros de campanha, página de origem, carimbo de envio, campo-armadilha e a caixa de consentimento. Sem o campo de origem não dá para medir indicação, orgânico e pago.',
       'O fluxo no n8n, nesta ordem: recebe, normaliza, gera a chave contra duplicidade, pontua, grava na planilha, cria ou atualiza o contato no CRM e dispara as três mensagens.',
@@ -159,11 +158,11 @@ DASH.views['com-fluxo'] = {
     { tipo: 'tabela', titulo: 'A ordem de execução, e o que cada passo trava', colunas: ['Ordem', 'Passo', 'Quem', 'Trava o quê'], linhas: [
       ['01', 'Chip, aparelho e perfil no WhatsApp Business', 'Dr. Rodrigo', 'Trava tudo'],
       ['02', 'Janelas de agenda e duração da conversa', 'Dr. Rodrigo', 'Trava a agenda'],
-      ['03', 'Escolha das ferramentas de WhatsApp e de agenda', 'Inception', 'Trava o fluxo'],
-      ['04', 'Campos novos e consentimento na página', 'Inception', 'Trava a origem e a medição'],
-      ['05', 'Fluxo no n8n ligado ao formulário', 'Inception', 'Trava o teste'],
-      ['06', 'Teste de ponta a ponta em ambiente de teste', 'Inception', 'Trava a produção'],
-      ['07', 'Virada para produção e primeira aplicação real', 'Inception e Dr. Rodrigo', 'Abre a captação']
+      ['03', 'Escolha das ferramentas de WhatsApp e de agenda', 'Pedro', 'Trava o fluxo'],
+      ['04', 'Campos novos e consentimento na página', 'Pedro', 'Trava a origem e a medição'],
+      ['05', 'Fluxo no n8n ligado ao formulário', 'Pedro', 'Trava o teste'],
+      ['06', 'Teste de ponta a ponta em ambiente de teste', 'Pedro', 'Trava a produção'],
+      ['07', 'Virada para produção e primeira aplicação real', 'Pedro e Dr. Rodrigo', 'Abre a captação']
     ]}
   ],
   decisoes: [
@@ -171,10 +170,9 @@ DASH.views['com-fluxo'] = {
     { data: '2026-09-05', texto: 'A IA fica restrita à qualificação inicial; o acompanhamento e o fechamento são humanos.' }
   ],
   pendencias: [
-    { quem: 'inception', feito: false, texto: 'Especificação completa do fluxo comercial, do formulário à matrícula, com scripts de cada passo.', prazo: 'em produção' },
-    { quem: 'rodrigo', feito: false, texto: 'Aparelho, chip e conta de WhatsApp Business configurados.', prazo: 'antes de outubro de 2026' },
-    { quem: 'rodrigo', feito: false, texto: 'Definir quem atende no número secundário.', prazo: 'antes de outubro de 2026' }
+    { quem: 'inception', feito: true, texto: 'Especificação do fluxo comercial, do formulário à matrícula.', prazo: 'entregue' },
+    { quem: 'rodrigo', feito: true, texto: 'Quem atende no número secundário: o próprio Dr. Rodrigo, sob o nome do personagem.', prazo: 'fechado em 13/09' }
   ],
   links: [],
-  atualizado: '2026-09-22'
+  atualizado: '2026-10-06'
 };

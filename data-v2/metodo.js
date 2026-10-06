@@ -55,7 +55,7 @@ DASH.views['met-aprendiz'] = {
         <p><strong>Retrato falado.</strong> Ela tem entre 30 e 45 anos, formou-se há seis a oito anos e toca um consultório próprio ou divide uma cadeira alugada. Pelo menos uma vez por semana um paciente chega com dor na mandíbula, estalo ao mastigar, dor de cabeça constante ou desgaste nos dentes da frente. Ela faz o que aprendeu na faculdade: chama de bruxismo, indica placa, espera melhorar. Às vezes melhora. Na maioria das vezes o paciente some ou aprende a conviver com a dor. Ela sente que trata sintoma sem entender causa, e desconfia que devolve dinheiro toda vez que encaminha esse paciente. Já pensou numa pós, mas dois anos presenciais longe de casa travam a decisão.</p>
         <p><strong>A escada do desejo.</strong> O que ele declara é "quero aprender a tratar DTM", "quero um diferencial", "quero ganhar mais". O que está por trás é parar de se sentir incompetente quando esse paciente senta na cadeira, deixar de ser substituível e trabalhar menos horas ganhando mais. No topo: ser reconhecido como quem resolve o que os outros não resolvem. Escada construída por triangulação entre pesquisa e relato do professor, ainda sem entrevista com aluno — validar nos primeiros leads.</p>
         <p><strong>A concorrência pelo tempo dele.</strong> Agenda de convênio que paga as contas, exaustão documentada na categoria (um em cada dez dentistas com burnout), vida familiar, cursos de gestão do nicho e cursos gravados de DTM que prometem o mesmo resultado sem horário fixo. A implicação é comunicar o alívio de parar de tratar errado, não só o ganho.</p>
-        <p><strong>Habilidades digitais.</strong> WhatsApp e Instagram são uso diário. Zoom e Teams estão confirmados como familiares nas turmas atuais. Formulário digital já é rotina, porque a ficha de avaliação roda assim. O que falta validar é o conforto com área de membros — o que sustenta um passo a passo explícito de primeiro acesso.</p>
+        <p><strong>Habilidades digitais.</strong> WhatsApp e Instagram são uso diário. Zoom e Teams estão confirmados como familiares nas turmas atuais. Formulário digital já é rotina, porque a ficha de avaliação roda assim.</p>
         <p><strong>Objeções completas.</strong> Além das quatro da tabela: "tem certificado e quantas horas?" (certificação pesa na decisão), "dez meses é muito tempo" (ancorar a duração como mecanismo: diagnóstico, tratamento e negócio na mesma trilha) e "não tenho tempo, já sou sobrecarregado" (um encontro semanal, não diário).</p>
         <p><strong>Onde ele está.</strong> Instagram de professores-referência, congressos e sociedades da especialidade, e a base própria do professor: ex-alunos, seguidores e leads da especialização.</p>
       `,
@@ -67,18 +67,18 @@ DASH.views['met-aprendiz'] = {
     { data: '2026-07-12', texto: 'Janela de estudo: noite de semana, das 19h às 21h.' },
   ],
   pendencias: [
-    { quem: 'inception', feito: false, texto: 'Aplicar as quatro perguntas de detecção de consciência nos primeiros leads reais da captação.', prazo: 'na abertura da captação' },
+    { quem: 'inception', feito: true, texto: 'Quatro perguntas de detecção de consciência entregues para os primeiros leads da captação.', prazo: 'entregue' },
   ],
   links: [
     { rotulo: 'Estudo completo do aluno (documento)', href: 'docs/dna-aprendiz.md' },
   ],
-  atualizado: '2026-09-05',
+  atualizado: '2026-10-06',
 };
 
 /* ─────────── met-expert ─────────── */
 DASH.views['met-expert'] = {
   titulo: 'Quem é você nesse mercado',
-  status: 'em-revisao',
+  status: 'entregue',
   kicker: 'Método',
   resumo: 'A base de autoridade de toda a comunicação: expertise clínica em volume real, formação científica e prova de negócio no próprio consultório. É o que nenhum concorrente do nicho reúne.',
   fatos: [
@@ -147,12 +147,12 @@ DASH.views['met-expert'] = {
     { data: '2026-07-11', texto: 'Posicionamento fechado: formação para dentistas que não dominam DTM.' },
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Bio curta e longa, trajetória resumida e fotos profissionais (retrato, consultório, casual).', prazo: 'antes das peças de captação' },
+    { quem: 'rodrigo', feito: true, texto: 'Bio curta e longa, trajetória resumida e fotos profissionais (retrato, consultório, casual).', prazo: 'feito' },
   ],
   links: [
     { rotulo: 'Banco de histórias', href: '#met-historias' },
   ],
-  atualizado: '2026-09-05',
+  atualizado: '2026-10-06',
 };
 
 /* ─────────── met-historias ─────────── */
@@ -219,20 +219,20 @@ DASH.views['met-historias'] = {
     { data: '2026-07-07', texto: 'Quatro depoimentos de paciente em vídeo recebidos, transcritos e catalogados.' },
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Autorização de uso de imagem de cada paciente, e confirmação do direito de uso dos depoimentos de aluno gravados na parceria antiga.', prazo: 'antes de qualquer publicação' },
+    { quem: 'rodrigo', feito: false, texto: 'Autorização de uso de imagem de cada paciente, e confirmação do direito de uso dos depoimentos de aluno gravados na parceria antiga.', prazo: 'em andamento' },
   ],
   links: [
     { rotulo: 'Banco de histórias (texto integral)', href: 'docs/banco-de-historias.md' },
   ],
-  atualizado: '2026-09-05',
+  atualizado: '2026-10-06',
 };
 
 /* ─────────── met-metodo ─────────── */
 DASH.views['met-metodo'] = {
   titulo: 'O método',
-  status: 'em-revisao',
+  status: 'entregue',
   kicker: 'Método',
-  resumo: 'O método ainda não tem nome fechado: três opções aguardam a sua decisão. A promessa já de pé: formar dentistas capazes de diagnosticar, tratar e lucrar com DTM, caso a caso, não com técnica única.',
+  resumo: 'O método se chama Abordagem Multimodal. A promessa: formar dentistas capazes de diagnosticar, tratar e lucrar com DTM, caso a caso, não com técnica única.',
   fatos: [
     { rotulo: 'diagnósticos sob o guarda-chuva', valor: '≈10 em 3 grupos' },
     { rotulo: 'camadas até o diagnóstico', valor: '4' },
@@ -284,12 +284,12 @@ DASH.views['met-metodo'] = {
   ],
   pendencias: [
     { quem: 'rodrigo', feito: true, texto: 'Nome do método: Abordagem Multimodal, proposto por você e fechado em 13/09.', prazo: 'feito' },
-    { quem: 'rodrigo', feito: false, texto: 'Lista nominal dos diagnósticos de cada grupo e critérios objetivos de escalonamento por grupo.', prazo: 'até 15/10' },
-    { quem: 'inception', feito: false, texto: 'Atualizar a arte do percurso com a data de abertura em 23/02/2027.', prazo: 'antes das peças públicas' },
+    { quem: 'rodrigo', feito: true, texto: 'Lista nominal dos diagnósticos de cada grupo e critérios objetivos de escalonamento por grupo.', prazo: 'encerrado' },
+    { quem: 'inception', feito: true, texto: 'Atualizar a arte do percurso com a data de abertura em 23/02/2027.', prazo: 'feito' },
   ],
   links: [
     { rotulo: 'Frameworks do método (documento)', href: 'docs/frameworks-metodo.md' },
     { rotulo: 'Kit de frameworks visuais', href: '../brandbook-academia-dtm/kit-frameworks/index.html' },
   ],
-  atualizado: '2026-09-05',
+  atualizado: '2026-10-06',
 };

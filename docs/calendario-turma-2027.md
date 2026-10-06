@@ -1,4 +1,5 @@
 # Calendário da Turma Fundadora · Viver de DTM
+> **Atualizado em 06/10/2026.** Imersões fechadas em 24/09 (20-22/05, 21-23/10, 29-30/11). Grade de outubro reajustada (opção A, Maiara): a Etapa 3 abre em 05/10 com E36 e E37 antes da Imersão 2; respiro de 22/11 mantido. Feriado na terça → quarta (13/09). Abertura em 16/02 cortada (13/09).
 
 > **V2, reunião de 05/09/2026.** A turma começa em **terça, 23 de fevereiro de 2027**, depois do
 > Carnaval, e termina em **terça, 30 de novembro de 2027**. Os encontros online acontecem **às
@@ -55,7 +56,6 @@ A coluna "semana de" traz a segunda-feira. A coluna "dia da aula" traz a data re
 
 | Sem | Semana de | O que acontece | Dia da aula | Feriado na semana | Marco |
 |---|---|---|---|---|---|
-| | 15/02 | ⭐ *Abertura da turma (opcional, fora dos 43)* | ter 16/02 | | entrega da faixa branca |
 | 1 | 22/02 | **ETAPA 1 abre** · E1 | ter 23/02 | | |
 | 2 | 01/03 | E2 | ter 02/03 | | |
 | 3 | 08/03 | E3 | ter 09/03 | | |
@@ -88,15 +88,15 @@ A coluna "semana de" traz a segunda-feira. A coluna "dia da aula" traz a data re
 | 30 | 13/09 | E30 | ter 14/09 | | |
 | 31 | 20/09 | E31 · estudo de caso 4 | ter 21/09 | | **3º grau na faixa azul** |
 | 32 | 27/09 | E32 · casos mistos (prepara o gate) | ter 28/09 | | |
-| 33 | 04/10 | ⚠️ **IMERSÃO 2 SAIU DESTA SEMANA** (foi para 21 a 23/10; ver "Reajuste de outubro") | — | | **GATE + faixa roxa** |
-| 34 | 11/10 | **ETAPA 3 abre** · E36 | ⚠️ qua 13/10 **ou** qui 14/10 | **Aparecida (ter 12/10)** | |
-| 35 | 18/10 | E37 · ⚠️ **semana da Imersão 2 (qui 21, sex 22 e sáb 23/10)**, grade em reajuste | ter 19/10 | | |
+| 33 | 04/10 | **ETAPA 3 abre** · E36 | ter 05/10 | | |
+| 34 | 11/10 | E37 | qua 13/10 | **Aparecida (ter 12/10)** | |
+| 35 | 18/10 | ✈️ **IMERSÃO 2 · E33-E35 · 3 dias em Brasília** | qui 21 a sáb 23/10 | | **GATE + faixa roxa** |
 | 36 | 25/10 | E38 | ter 26/10 | | |
-| 37 | 01/11 | E39 | ⚠️ qua 03/11 **ou** qui 04/11 | **Finados (ter 02/11)** | |
+| 37 | 01/11 | E39 | qua 03/11 | **Finados (ter 02/11)** | |
 | 38 | 08/11 | E40 | ter 09/11 | | |
 | 39 | 15/11 | E41 | ter 16/11 | Proclamação (seg 15/11), Consciência Negra (sáb 20/11) | |
 | 40 | 22/11 | ⬜ **RESPIRO 3** | | | |
-| 41 | 29/11 | ✈️ **IMERSÃO 3 · E42-E43 · 2 dias · FORMATURA** | seg 29 e ter 30/11 (proposta) | Dia do Evangélico no DF (ter 30/11) | **GATE final + faixa marrom** |
+| 41 | 29/11 | ✈️ **IMERSÃO 3 · E42-E43 · 2 dias · FORMATURA** | seg 29 e ter 30/11 | Dia do Evangélico no DF (ter 30/11) | **GATE final + faixa marrom** |
 
 ---
 
@@ -206,9 +206,9 @@ margem e a decisão passa a ser cortar conteúdo, em vez de adiar.
 
 | Semana | Encontro | Feriado na terça | Vai para |
 |---|---|---|---|
-| 06/09 | E29 · minimamente invasivo articular I | Independência (07/09) | quarta 08/09 ou quinta 09/09 |
-| 11/10 | E36 · a consulta de avaliação | Aparecida (12/10) | quarta 13/10 ou quinta 14/10 |
-| 01/11 | E39 · scripts de recepção | Finados (02/11) | quarta 03/11 ou quinta 04/11 |
+| 06/09 | E29 · minimamente invasivo articular I | Independência (07/09) | quarta 08/09 |
+| 11/10 | E37 | Aparecida (12/10) | quarta 13/10 |
+| 01/11 | E39 · scripts de recepção | Finados (02/11) | quarta 03/11 |
 
 Os três são encontros online comuns, sem estudo de caso e sem marco de faixa. Nenhum deles é
 gate. O deslocamento custa só ajuste de agenda, sem risco pedagógico.

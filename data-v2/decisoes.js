@@ -30,7 +30,6 @@ DASH.views['devolutivas'] = {
         ['O que a formação capacita', 'Todos os conservadores, mais infiltração anestésica e agulhamento; o resto entra como indicação', '10/07', 'Escada terapêutica, grade'],
         ['Prática das imersões', 'Rodízio entre os próprios alunos, com triagem antes e recrutamento externo só da diferença', '28/07', 'Imersões 1 e 2'],
         ['Material dos dois tripés', 'Gravado por você, com o gesto da folha riscada ao meio', '28/07', 'Encontro 3'],
-        ['Plataforma da formação', 'Plataforma própria, com ferramentas integradas e gamificação', '05/09', 'Área de membros'],
       ],
     },
     {
@@ -49,9 +48,8 @@ DASH.views['devolutivas'] = {
       colunas: ['Tema', 'O que você decidiu', 'Quando', 'Onde está aplicado'],
       linhas: [
         ['Data de início', '23/02/2027, depois do carnaval, com fim em 30/11', '05/09', 'Calendário, página, apresentação'],
-        ['Grupo de WhatsApp', 'Só para quem entra no presencial', '05/09', 'Oferta, área de membros'],
-        ['Canal de atendimento', 'Número secundário com atendente próprio, desde o começo da captação', '05/09', 'Fluxo comercial'],
-        ['Assistente de IA clínica', 'Ferramenta autotreinável para anamnese e apoio ao diagnóstico', '05/09', 'Proposta de adicionais'],
+        ['Grupo de WhatsApp', 'Só para quem entra no presencial', '05/09', 'Oferta'],
+        ['Canal de atendimento', 'Número secundário com atendente próprio, desde o começo da captação', '05/09', 'Fluxo comercial']
       ],
     },
   ],
@@ -60,12 +58,11 @@ DASH.views['devolutivas'] = {
     { data: '2026-09-05', texto: 'Data de início da turma fixada em 23/02/2027.' },
   ],
   pendencias: [
-    { quem: 'inception', feito: false, texto: 'Manter esta tabela como registro único do que foi validado, a cada reunião.', prazo: 'contínuo' },
   ],
   links: [
     { rotulo: 'O que ainda depende de você', href: '#decisoes-rodrigo' },
   ],
-  atualizado: '2026-09-24',
+  atualizado: '2026-10-06',
 };
 
 /* ─────────── decisoes-rodrigo ─────────── */
@@ -73,79 +70,55 @@ DASH.views['decisoes-rodrigo'] = {
   titulo: 'O que depende de você agora',
   status: 'pendente',
   kicker: 'Decisões',
-  resumo: 'Dezesseis decisões abertas, na ordem em que travam o trabalho. Os prazos são sugestão nossa, calculados a partir da divulgação em outubro e do início da turma em 23/02/2027.',
+  resumo: 'As decisões abertas em setembro estão fechadas. Faltam do senhor três coisas, e nenhuma é decisão nova: são o que libera as peças públicas.',
   fatos: [
-    { rotulo: 'decisões abertas', valor: '16' },
-    { rotulo: 'travam o calendário', valor: '5' },
-    { rotulo: 'divulgação começa em', valor: 'outubro' },
+    { rotulo: 'com o senhor agora', valor: '3' },
+    { rotulo: 'decisões de setembro', valor: 'fechadas' }
   ],
   blocos: [
     {
-      tipo: 'tabela', titulo: 'Trava o calendário — decidir primeiro',
-      colunas: ['O que decidir', 'Por que importa', 'Prazo sugerido'],
+      tipo: 'tabela', titulo: 'Libera as peças públicas',
+      colunas: ['O que falta', 'Por que importa', 'Prazo sugerido'],
       linhas: [
-        ['Grade de outubro', 'A Imersão 2 foi para 21 a 23/10. Sobram 5 semanas até a formatura para 6 encontros da Etapa 3, então pelo menos um vem antes do gate da faixa roxa', 'antes da abertura de vendas'],
-        ['Os três encontros de feriado: quarta ou quinta', 'Independência, Aparecida e Finados caem na terça e precisam de dia fixo no calendário publicado', '15/09'],
-        ['Aula inaugural na semana de 16/02, sim ou não', 'Muda a data que a página anuncia como início da turma', '15/09'],
+        ['Autorizações de uso dos depoimentos', 'Sem elas, nenhum depoimento em vídeo vai ao ar', 'em andamento'],
+        ['Nome da instituição do certificado', 'Define o texto do certificado na página e na apresentação. Selo do MEC só entra escrito depois que a instituição confirmar como ele vale para curso livre', 'depois da reunião em Brasília'],
+        ['Revisão dos cinco carrosséis', 'São os posts de abertura do perfil da Academia DTM', 'ao receber os links'],
       ],
     },
     {
-      tipo: 'tabela', titulo: 'Trava a captação — a oferta',
-      colunas: ['O que decidir', 'Por que importa', 'Prazo sugerido'],
+      tipo: 'tabela', titulo: 'O que foi fechado desde setembro',
+      colunas: ['Tema', 'Como ficou', 'Quando'],
       linhas: [
-        ['Formato do shadowing com 20 alunos', 'Duplas, trios ou um dia só: hoje custa de 14 a 20 dias da sua agenda', '30/09'],
-        ['Modelo de garantia', 'É a única promessa da oferta que alguém pode cobrar na justiça', '30/09'],
-        ['Autorização de uso dos depoimentos', 'Sem ela, a prova social em vídeo não pode ir ao ar', '30/09'],
+        ['Encontro em semana de feriado', 'Vai para a quarta da mesma semana', '13/09'],
+        ['Aula inaugural', 'Cortada; a turma abre no Encontro 1, em 23/02', '13/09'],
+        ['Shadowing', '2 dias, em duplas', '13/09'],
+        ['Nome do método', 'Abordagem Multimodal', '13/09'],
+        ['Carga horária', '134 horas; a divulgação usa o piso de 130 e o certificado sai com a carga real', '22/09'],
+        ['Reuniões de venda', '30 minutos, segunda, quarta e quinta às 19h30', '22/09'],
+        ['Dias das imersões', '20 a 22/05, 21 a 23/10 e 29 e 30/11 de 2027', '24/09'],
+        ['Garantia', 'Devolução até o Encontro 3, descontados os impostos e as taxas já recolhidos', '06/10'],
+        ['Grade de outubro', 'A Etapa 3 abre em 05/10, com os Encontros 36 e 37 antes da Imersão 2; o respiro de 22/11 continua', '06/10'],
+        ['Números da clínica', 'Ticket médio de 2025 e valor da avaliação enviados', '04/10'],
+        ['Trajetória', 'Começo em 2003 na clínica de uma amiga, com clínica geral e DTM, migrando depois só para DTM', '06/10'],
+        ['Conteúdo do professor, perfil, canal e linha editorial', 'Encerrados como pendência deste projeto', '06/10'],
       ],
-    },
-    {
-      tipo: 'tabela', titulo: 'Trava a captação — o canal',
-      colunas: ['O que decidir', 'Por que importa', 'Prazo sugerido'],
-      linhas: [
-        ['Renomear o perfil para Academia DTM', 'A divulgação começa em outubro e o tráfego precisa cair no nome certo', '30/09'],
-        ['Revisar os pilares e temas do conteúdo', 'A produção dos conteúdos de atração só começa depois do seu aval', '20/09'],
-        ['Aparelho extra, WhatsApp Business e nome do atendente', 'Sem os três, o canal comercial não existe', '30/09'],
-      ],
-    },
-    {
-      tipo: 'tabela', titulo: 'Trava a produção do produto — outubro em diante',
-      colunas: ['O que decidir', 'Por que importa', 'Prazo sugerido'],
-      linhas: [
-        ['Lista nominal dos diagnósticos de cada grupo', 'Sem ela o guarda-chuva não vira material de aula nem pôster de consultório', '15/10'],
-        ['Critérios objetivos de escalonamento por grupo', 'Completam a escada terapêutica e o checklist de reavaliação', '15/10'],
-        ['As perguntas de sono e bruxismo da sua ficha', 'São o acréscimo autoral que separa a sua ficha do protocolo padrão', '15/10'],
-        ['Nome do método, entre as três opções de 28/07', 'Hoje nenhuma peça usa nome de método; sem decisão, continua assim', '31/10'],
-        ['Números atuais da clínica', 'Ticket, leads por mês e conversão calibram os scripts comerciais da Etapa 3', '31/10'],
-      ],
-    },
-    {
-      tipo: 'detalhe', titulo: 'Ver o contexto de cada decisão',
-      html: `
-        <p><strong>As três imersões.</strong> As três estão fechadas: quinta 20 a sábado 22/05, quinta 21 a sábado 23/10 e segunda 29 e terça 30/11 de 2027, esta usando o feriado do Distrito Federal. Cada dia de imersão tem 8 horas. A Imersão 2 saiu da semana de 04/10, quando você estará em curso, e isso pede um reajuste na grade de outubro. Vale saber que 30 de novembro é Dia do Evangélico, feriado distrital no DF — isso afeta serviços locais, não a atividade da imersão.</p>
-        <p><strong>Os três feriados.</strong> Independência em 07/09, Aparecida em 12/10 e Finados em 02/11 caem todos numa terça. A regra que você fixou é deslocar o encontro daquela semana. Falta escolher entre quarta e quinta em cada um dos três casos.</p>
-        <p><strong>O shadowing.</strong> Ele é bônus da turma fundadora e virou uma quarta viagem, separada das imersões. Com 20 alunos, em duplas ou trios, são de sete a dez rodadas de dois dias, o que dá de 14 a 20 dias do seu calendário em 2027. A janela recomendada é de junho a setembro, entre a Imersão 1 e a Imersão 2, com quinta e sexta como dias sugeridos. Se esse volume não couber, a alternativa é reduzir para um dia por rodada ou aumentar o tamanho do grupo. A decisão precisa sair antes de a oferta ir pra rua.</p>
-        <p><strong>Conteúdo do professor para a área de membros.</strong> Três lacunas do método dependem só de você: a lista nominal dos diagnósticos de cada grupo do guarda-chuva, os critérios objetivos de quando subir o degrau em cada escada, e as perguntas de sono e bruxismo da sua ficha de avaliação. São o que falta pra fechar os materiais das Etapas 1 e 2.</p>
-        <p><strong>Depoimentos.</strong> Chegaram quatro depoimentos de paciente em vídeo. Falta a autorização de imagem de cada um para uso público com identificação. Os depoimentos de aluno foram gravados no contexto da parceria antiga, então o direito de uso precisa ser confirmado antes de qualquer publicação.</p>
-        <p><strong>Garantia.</strong> O ponto de corte proposto é o Encontro 3, fim do bloco inicial. O que segue em aberto é o desenho: devolução integral, devolução do valor líquido, garantia condicionada a execução das tarefas, ou crédito para uma turma seguinte. A escolha final depende também de duas confirmações que não são nossas para dar: a alíquota efetiva com a contabilidade e a redação da cláusula com o jurídico.</p>
-      `,
     },
   ],
   decisoes: [
-    { data: '2026-09-05', texto: 'Semanas das três imersões mantidas: 17/05, 04/10 e 29/11 de 2027.' },
-    { data: '2026-09-24', texto: 'Imersão 1 em 20 a 22/05 e Imersão 2 em 21 a 23/10, de quinta a sábado.' },
-    { data: '2026-09-05', texto: 'Shadowing confirmado como viagem separada das imersões.' },
-    { data: '2026-09-22', texto: 'Imersão 3 em 29 e 30/11, usando o feriado. Dia de imersão com 8 horas.' },
+    { data: '2026-09-13', texto: 'Feriado na terça desloca o encontro para a quarta da mesma semana.' },
+    { data: '2026-09-13', texto: 'Shadowing de 2 dias, em duplas.' },
     { data: '2026-09-22', texto: 'Carga horária de 134 horas; a divulgação usa o piso de 130 e o certificado sai com a carga real.' },
-    { data: '2026-09-22', texto: 'Certificado como curso livre enquanto o reconhecimento pelo MEC não se confirmar.' },
+    { data: '2026-09-22', texto: 'Certificado como curso livre.' },
+    { data: '2026-09-24', texto: 'Imersão 1 em 20 a 22/05 e Imersão 2 em 21 a 23/10, de quinta a sábado.' },
+    { data: '2026-10-06', texto: 'Garantia com devolução do valor líquido até o Encontro 3.' },
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Contar o que saiu da conversa com a faculdade. Curso livre é o caminho; o MEC só entra se essa conversa se confirmar.', prazo: 'antes da abertura de vendas' },
-    { quem: 'inception', feito: false, texto: 'Escrever a proposta dos dois adicionais de IA, um para a clínica e um para os alunos.', prazo: 'setembro' },
+    { quem: 'rodrigo', feito: false, texto: 'Passar o nome da instituição que emite o certificado.', prazo: 'depois da reunião em Brasília' },
   ],
   links: [
     { rotulo: 'Calendário completo da turma 2027', href: 'docs/calendario-turma-2027.md' },
   ],
-  atualizado: '2026-09-24',
+  atualizado: '2026-10-06',
 };
 
 /* ─────────── marcos ─────────── */
@@ -153,7 +126,7 @@ DASH.views['marcos'] = {
   titulo: 'Os quatro marcos',
   status: 'em-producao',
   kicker: 'Projeto',
-  resumo: 'O contrato tem quatro marcos. Os dois primeiros estão concluídos, o terceiro está em andamento e o quarto fecha o projeto com a passagem de bastão e o treinamento.',
+  resumo: 'O contrato tem quatro marcos. Os dois primeiros estão concluídos e o terceiro está na reta final: faltam carrosséis, criativos, página e apresentação atualizadas. O quarto fecha o projeto com a reunião de entrega e o treinamento.',
   fatos: [
     { rotulo: 'marcos concluídos', valor: '2 de 4' },
     { rotulo: 'levantamento', valor: '02/07/2026' },
@@ -169,12 +142,20 @@ DASH.views['marcos'] = {
       html: '<p>Você ratificou o nome da empresa e da formação, a identidade visual e o formato do produto. Ficou com você a revisão da estrutura técnica, que foi chegando ao longo de julho e agosto. <strong>A garantia contratual de devolução integral em cinco dias úteis venceu com este marco.</strong></p>',
     },
     {
-      tipo: 'texto', titulo: 'Marco 03 · Configuração Operacional — em andamento',
-      html: '<p>É a fase assíncrona, com validações pontuais. Já entregues: página de aplicação, apresentação comercial, guia de social media, brandbook e kit de frameworks visuais, todos aguardando a sua revisão. Em produção: refinamento da página, segunda versão da apresentação para a porta online e a pasta de referências para a sua produção de conteúdo. Depende de você: o setup de domínio, hospedagem e canais, listado na tela de decisões.</p>',
+      tipo: 'lista', titulo: 'Marco 03 · Configuração Operacional — reta final',
+      itens: [
+        'Entregue: método, formação, oferta, calendário de 2027, marca, brandbook e kit de frameworks.',
+        'Entregue: página de aplicação, apresentação comercial em duas versões e especificação do fluxo do formulário à matrícula.',
+        'Entregue: guia de social media, linha editorial, pautas e termos de autorização dos depoimentos.',
+        'Entregue: domínio academiadtm.com.br no ar, com HTTPS.',
+        'Em revisão: os cinco carrosséis de abertura do perfil.',
+        'Em produção: os 10 criativos estáticos e os 5 roteiros de vídeo para o tráfego.',
+        'Em produção: a página de aplicação e a apresentação de vendas atualizadas com as últimas definições.',
+      ],
     },
     {
-      tipo: 'texto', titulo: 'Marco 04 · Entrega Final — previsto',
-      html: '<p>Reunião de passagem do projeto, treinamento para você operar tudo sozinho e esta dashboard organizada com as entregas. O suporte de trinta dias corridos começa a contar depois do treinamento. A previsão registrada no início do projeto era 25/09/2026; a data efetiva depende do fechamento das peças comerciais e do calendário de divulgação de outubro, e será confirmada na próxima reunião.</p>',
+      tipo: 'texto', titulo: 'Marco 04 · Entrega Final — próximo',
+      html: '<p>Reunião de passagem do projeto, treinamento para você operar tudo sozinho e esta dashboard organizada com as entregas. O suporte de trinta dias corridos começa a contar depois do treinamento. A data sai assim que essas quatro entregas estiverem com o senhor.</p>',
     },
   ],
   decisoes: [
@@ -182,11 +163,11 @@ DASH.views['marcos'] = {
     { data: '2026-07-11', texto: 'Marco 02 concluído com a validação da estratégia.' },
   ],
   pendencias: [
-    { quem: 'inception', feito: false, texto: 'Confirmar a data da reunião de entrega final e do treinamento.', prazo: 'próxima reunião' },
-    { quem: 'rodrigo', feito: false, texto: 'Revisar as peças entregues em 03/09: página de aplicação, apresentação comercial e guia de social media.', prazo: '20/09' },
+    { quem: 'rodrigo', feito: true, texto: 'Revisar as peças entregues em 03/09: página de aplicação, apresentação comercial e guia de social media.', prazo: 'feito' },
+    { quem: 'inception', feito: false, texto: 'Marcar a reunião de entrega final e o treinamento.', prazo: 'depois das quatro entregas' },
   ],
   links: [
     { rotulo: 'Contrato assinado', href: 'docs/contrato-rodrigo-wendel.pdf' },
   ],
-  atualizado: '2026-09-24',
+  atualizado: '2026-10-06',
 };

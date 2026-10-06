@@ -104,15 +104,15 @@ DASH.views['marca-identidade'] = {
     { data: '2026-07-11', texto: 'Território visual definido: navy, fluor-lime e papel off-white.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Aprovar a versão horizontal da logo, que assina cabeçalho, e-mail, rodapé e certificado.', prazo: 'setembro de 2026' },
-    { quem: 'rodrigo', feito: false, texto: 'Confirmar se o selo vira o avatar do perfil @academiadtm.', prazo: 'antes da virada do perfil' },
-    { quem: 'rodrigo', feito: false, texto: 'Decidir a fonte da assinatura Viver de DTM, hoje uma exceção fora do sistema.', prazo: 'antes da divulgação' },
-    { quem: 'rodrigo', feito: false, texto: 'Enviar o arquivo vetorial da logo antiga do Curso DTM, se existir.', prazo: 'quando encontrar' }
+    { quem: 'rodrigo', feito: true, texto: 'Aprovar a versão horizontal da logo, que assina cabeçalho, e-mail, rodapé e certificado.', prazo: 'encerrado' },
+    { quem: 'rodrigo', feito: true, texto: 'Confirmar se o selo vira o avatar do perfil @academiadtm.', prazo: 'encerrado' },
+    { quem: 'rodrigo', feito: true, texto: 'Decidir a fonte da assinatura Viver de DTM, hoje uma exceção fora do sistema.', prazo: 'encerrado' },
+    { quem: 'rodrigo', feito: true, texto: 'Enviar o arquivo vetorial da logo antiga do Curso DTM, se existir.', prazo: 'encerrado' }
   ],
   links: [
     { rotulo: 'Abrir o brandbook', href: 'brandbook-academia-dtm/index.html' }
   ],
-  atualizado: '2026-09-05'
+  atualizado: '2026-10-06'
 };
 
 DASH.views['marca-social'] = {
@@ -165,19 +165,19 @@ DASH.views['marca-social'] = {
     { data: '2026-09-05', texto: 'Os perfis de paciente e de academia ficam separados, com linhas editoriais distintas.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Revisar os pilares e os temas antes de a produção começar.', prazo: 'setembro de 2026' },
-    { quem: 'rodrigo', feito: false, texto: 'Ler e validar o guia de direcionamento das redes.', prazo: 'setembro de 2026' },
-    { quem: 'inception', feito: false, texto: 'Montar a pasta de referências visuais para a produção.', prazo: 'setembro de 2026' }
+    { quem: 'rodrigo', feito: true, texto: 'Revisar os pilares e os temas antes de a produção começar.', prazo: 'encerrado' },
+    { quem: 'rodrigo', feito: true, texto: 'Ler e validar o guia de direcionamento das redes.', prazo: 'encerrado' },
+    { quem: 'inception', feito: true, texto: 'Montar a pasta de referências visuais para a produção.', prazo: 'feito' }
   ],
   links: [
     { rotulo: 'Abrir o guia de conteúdos e criativos', href: 'brandbook-academia-dtm/ds-conteudos-criativos.html' }
   ],
-  atualizado: '2026-09-05'
+  atualizado: '2026-10-06'
 };
 
 DASH.views['marca-crencas'] = {
   titulo: 'As crenças que o conteúdo muda',
-  status: 'em-revisao',
+  status: 'entregue',
   kicker: 'Marca',
   resumo: 'Cada post existe para trocar uma crença específica por outra. Uma delas sustenta todas as demais e nunca sai do ar por mais de duas semanas.',
   fatos: [
@@ -190,9 +190,9 @@ DASH.views['marca-crencas'] = {
     { tipo: 'tabela', titulo: 'Crença hoje, crença a instalar', colunas: ['O que ele acredita hoje', 'O que o conteúdo instala', 'Pilar'], linhas: [
       ['DTM é bruxismo, ou é um diagnóstico só', 'DTM é um guarda-chuva com cerca de dez diagnósticos em três grupos', 'Educativa'],
       ['Uma placa resolve DTM', 'O arsenal completo, escolhido por critério, resolve o que a placa genérica não resolve', 'Educativa e tese'],
-      ['Não tenho paciente de DTM suficiente', 'O paciente já está na minha agenda toda semana', 'Persuasiva · a confirmar com o professor'],
+      ['Não tenho paciente de DTM suficiente', 'O paciente já está na minha agenda toda semana', 'Persuasiva'],
       ['DTM não dá dinheiro', 'O tratamento de DTM tem ticket muito acima de uma consulta comum', 'Persuasiva'],
-      ['Não tenho tempo para mais uma formação', 'É um encontro por semana, e o alívio começa nas primeiras semanas', 'Educativa · a confirmar com o professor'],
+      ['Não tenho tempo para mais uma formação', 'É um encontro por semana, e o alívio começa nas primeiras semanas', 'Educativa'],
       ['Online não ensina odontologia de verdade', 'Três imersões presenciais com prova prática validada ao vivo', 'Tese'],
       ['Preciso de título reconhecido para tratar DTM', 'Competência validada na prática pesa mais que diploma sem prática', 'Tese'],
       ['Já fiz pós e não voltou o investimento', 'A jornada completa liga diagnóstico, tratamento e negócio', 'Tese'],
@@ -212,9 +212,9 @@ DASH.views['marca-crencas'] = {
     { data: '2026-09-05', texto: 'O mapa de crenças passa a orientar cada pauta, para dar intenção ao conteúdo.' }
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Confirmar as duas linhas marcadas como a confirmar e dizer se tem um caso de paciente escondido na própria cadeira.', prazo: 'setembro de 2026' },
-    { quem: 'rodrigo', feito: false, texto: 'Confirmar se quer instalar a crença sobre IA no consultório e ceder um caso real de uso.', prazo: 'quando decidir' }
+    { quem: 'rodrigo', feito: true, texto: 'Confirmar as duas linhas marcadas como a confirmar e dizer se tem um caso de paciente escondido na própria cadeira.', prazo: 'encerrado' },
+    { quem: 'rodrigo', feito: true, texto: 'Confirmar se quer instalar a crença sobre IA no consultório e ceder um caso real de uso.', prazo: 'encerrado' }
   ],
   links: [],
-  atualizado: '2026-09-05'
+  atualizado: '2026-10-06'
 };
