@@ -34,7 +34,8 @@
     { rotulo: 'Comercial', itens: [
       ['com-pagina', 'A página de aplicação'],
       ['com-apresentacao', 'A apresentação'],
-      ['com-fluxo', 'Do formulário à matrícula']
+      ['com-fluxo', 'Do formulário à matrícula'],
+      ['com-campanha', 'A campanha de abertura']
     ]},
     { rotulo: 'Marca e conteúdo', itens: [
       ['marca-identidade', 'Academia DTM e Viver de DTM'],

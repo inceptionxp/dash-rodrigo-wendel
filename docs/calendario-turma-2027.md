@@ -1,5 +1,6 @@
 # Calendário da Turma Fundadora · Viver de DTM
 > **Atualizado em 06/10/2026.** Imersões fechadas em 24/09 (20-22/05, 21-23/10, 29-30/11). Grade de outubro reajustada (opção A, Maiara): a Etapa 3 abre em 05/10 com E36 e E37 antes da Imersão 2; respiro de 22/11 mantido. Feriado na terça → quarta (13/09). Abertura em 16/02 cortada (13/09).
+> **09/10/2026 (Maiara):** são **4 dias com a mão no paciente**, nas Imersões 1 e 2. A **Imersão 3 não tem paciente**: é dedicada a gestão, marketing, comercial e ao planejamento da clínica de cada aluno para 2028.
 
 > **V2, reunião de 05/09/2026.** A turma começa em **terça, 23 de fevereiro de 2027**, depois do
 > Carnaval, e termina em **terça, 30 de novembro de 2027**. Os encontros online acontecem **às
@@ -96,7 +97,7 @@ A coluna "semana de" traz a segunda-feira. A coluna "dia da aula" traz a data re
 | 38 | 08/11 | E40 | ter 09/11 | | |
 | 39 | 15/11 | E41 | ter 16/11 | Proclamação (seg 15/11), Consciência Negra (sáb 20/11) | |
 | 40 | 22/11 | ⬜ **RESPIRO 3** | | | |
-| 41 | 29/11 | ✈️ **IMERSÃO 3 · E42-E43 · 2 dias · FORMATURA** | seg 29 e ter 30/11 | Dia do Evangélico no DF (ter 30/11) | **GATE final + faixa marrom** |
+| 41 | 29/11 | ✈️ **IMERSÃO 3 · E42-E43 · 2 dias · sem paciente (gestão, marketing, comercial, planejamento 2028) · FORMATURA** | seg 29 e ter 30/11 (confirmado, Rodrigo, 22/09) | Dia do Evangélico no DF (ter 30/11) | **GATE final + faixa marrom** |
 
 ---
 
@@ -108,7 +109,7 @@ A Imersão 1 anda uma semana em relação à V1 e a Imersão 2 anda duas (agenda
 |---|---|---|---|---|
 | 1 · Diagnóstico | 10/05 | **17/05**: qui 20 a sáb 22/05 (Rodrigo, 24/09) | 3 | E13-E15 |
 | 2 · Tratamento | 04/10 | **18/10**: qui 21 a sáb 23/10 (Rodrigo, 24/09) | 3 | E33-E35 |
-| 3 · Formatura | 29/11 | **29/11** (mantida) | 2 | E42-E43 |
+| 3 · Gestão, marketing, comercial e planejamento 2028 + formatura (sem paciente) | 29/11 | **29/11** (mantida) | 2 | E42-E43 |
 
 **Por que a Imersão 1 anda uma semana.** A Etapa 1 tem 12 encontros online antes da viagem. Com
 início em 23/02 e sem pausa de Carnaval no meio, o E12 cai em 11/05, e a semana de 10/05 já está
@@ -116,7 +117,9 @@ ocupada. A imersão vem na semana seguinte. Realocar o E12 para dentro da imers�
 é justamente o encontro que fecha o raciocínio dos 3 grupos do guarda-chuva no papel e prepara a
 turma para a prática presencial.
 
-**Os dias dentro de cada semana continuam em aberto.** Essa decisão é do Rodrigo, porque depende
+**Com a mão no paciente: 4 dias, nas Imersões 1 e 2.** A Imersão 3 não tem paciente: é dedicada a gestão, marketing, comercial e ao planejamento da clínica de cada aluno para 2028 (Maiara, 09/10/2026).
+
+**Imersão 3 confirmada em 29 e 30/11/2027**, usando o feriado do DF (Rodrigo, 22/09). As Imersões 1 e 2 ficaram no formato **quinta a sábado** (Rodrigo, 24/09). Registro da análise anterior, que dependia
 da agenda clínica dele e da disponibilidade dos pacientes-modelo. As duas combinações práticas:
 
 - **Início de semana** (seg-qua, ou seg-ter na Imersão 3): o aluno viaja no domingo e volta a
@@ -129,9 +132,9 @@ formatura acontecer nessa data, os 2 dias precisam ser **segunda 29 e terça 30 
 Qualquer outra combinação empurra o encerramento para dezembro.
 
 **Alerta de agenda local.** 30 de novembro é **Dia do Evangélico**, feriado distrital no DF (Leis
-distritais 893/1995 e 963/1995). Não bloqueia a formatura, porque o E42 é workshop de gestão e o
-E43 é apresentação dos alunos, sem paciente envolvido. Mas afeta equipe de apoio, comércio e uma
-possível emenda na segunda. O Rodrigo mora lá e confirma se isso atrapalha.
+distritais 893/1995 e 963/1995). Não bloqueia a formatura, porque a Imersão 3 não tem paciente: o E42 é workshop de
+gestão, marketing, comercial e planejamento 2028, e o E43 é apresentação dos alunos. Mas afeta equipe de apoio, comércio e uma
+possível emenda na segunda. O Rodrigo respondeu que usar o feriado "seria ótimo" (Rodrigo, 22/09).
 
 ---
 
@@ -256,12 +259,15 @@ entre peças se resolve por esta tabela.
 | Período, em texto | **fevereiro a novembro de 2027** |
 | Dia dos encontros online | **terças, 19h às 21h** |
 | Encontros | **43** (35 online + 8 dias presenciais) |
+| Dias com a mão no paciente | **4**, nas Imersões 1 e 2. A Imersão 3 não tem paciente (Maiara, 09/10/2026) |
 | Semanas de calendário | **41** |
 | Semanas com encontro | 38 |
 | Semanas de respiro | 3 (uso interno, fora de peça de venda) |
 | Imersão 1 · Brasília | **20, 21 e 22/05/2027** (qui a sáb; Rodrigo, 24/09) |
 | Imersão 2 · Brasília | **21, 22 e 23/10/2027** (qui a sáb; Rodrigo, 24/09) |
-| Imersão 3 · Brasília · formatura | semana de **29/11/2027**, 2 dias |
+| Imersão 3 · Brasília · formatura | **29 e 30/11/2027** (confirmado, Rodrigo, 22/09), 2 dias, sem paciente: gestão, marketing, comercial e planejamento da clínica para 2028 |
+| Duração do dia de imersão | **8h** (Rodrigo, 22/09) |
+| Carga horária | **134h** = 35 encontros online × 2h (70h) + 8 dias de imersão × 8h (64h). Shadowing soma +16h só para quem faz. Divulgação usa piso "mínimo 130 horas"; o certificado sai com a carga real (Rodrigo, 22/09) |
 | Formatura | **30/11/2027** |
 | Viagens a Brasília | **4** (3 imersões mais o shadowing) |
 | Shadowing | 2 dias, em duplas ou trios, janela de junho a setembro |
@@ -278,12 +284,12 @@ comercial publicada. Substituir por "fevereiro a novembro de 2027" onde couber t
 
 | # | Decisão | Prazo prático | Trava o quê |
 |---|---|---|---|
-| 1 | **Dias exatos das 3 imersões** dentro das semanas reservadas | antes da abertura de vendas | passagem e agenda clínica do aluno, material de venda |
-| 2 | **Imersão 3 em 29 e 30/11?** Qualquer outra combinação joga a formatura para dezembro | antes da abertura de vendas | data de formatura em toda a copy |
+| 1 | **Dias exatos das Imersões 1 e 2** dentro das semanas reservadas (Imersão 3 fechada; datas de 2027 já saíram, ele crava os dias. Rodrigo, 22/09) | antes da abertura de vendas | passagem e agenda clínica do aluno, material de venda |
+| 2 | ~~**Imersão 3 em 29 e 30/11?**~~ **Respondida: sim, 29 e 30/11/2027** (Rodrigo, 22/09) | antes da abertura de vendas | data de formatura em toda a copy |
 | 3 | **Quarta ou quinta** nas 3 semanas de feriado (08-09/09, 13-14/10, 03-04/11) | antes da abertura de vendas | calendário publicado do aluno |
 | 4 | **Abertura da turma em 16/02** entra ou não | antes da abertura de vendas | data de início na copy, roteiro de onboarding |
 | 5 | **Janela do shadowing** e quantas rodadas por mês | até março de 2027 | 8 a 12 dias da agenda dele |
-| 6 | **Dia do Evangélico (30/11) atrapalha?** Equipe, comércio e emenda de segunda no DF | antes da abertura de vendas | logística da formatura |
+| 6 | ~~**Dia do Evangélico (30/11) atrapalha?**~~ **Respondida: não, usar o feriado "seria ótimo"** (Rodrigo, 22/09) | antes da abertura de vendas | logística da formatura |
 | 7 | **Sábado mensal** entra? Se sim, vira o formato dos estudos de caso (E7, E23, E27, E31) | até dezembro de 2026 | grade e promessa de carga horária |
 | 8 | **Data limite de matrícula**, com folga para o onboarding antes de 23/02 | outubro de 2026 | cronograma da campanha |
 
@@ -292,7 +298,7 @@ comercial publicada. Substituir por "fevereiro a novembro de 2027" onde couber t
 ## Suposições declaradas
 
 1. O plano de ensino v2 segue válido: 43 encontros, 3 etapas, 3 imersões (3 dias, 3 dias e 2
-   dias), com estudos de caso em E7, E23, E27 e E31 e gates em E15, E35 e E43.
+   dias; 4 dias com paciente nas Imersões 1 e 2, a Imersão 3 sem paciente), com estudos de caso em E7, E23, E27 e E31 e gates em E15, E35 e E43.
 2. Turma de 8 a 12 alunos, conforme a restrição de pacientes-modelo registrada em 28/07/2026. É
    esse número que gera as 4 a 6 rodadas de shadowing.
 3. Feriados nacionais de 2027 calculados a partir da Páscoa em 28/03/2027. Carnaval em 08 e 09/02,

@@ -242,27 +242,27 @@ DASH.views['met-metodo'] = {
   blocos: [
     {
       tipo: 'framework', titulo: 'O guarda-chuva da DTM',
-      svg: '../brandbook-academia-dtm/kit-frameworks/svg/F1-guarda-chuva-dtm.svg',
+      svg: 'brandbook-academia-dtm/kit-frameworks/svg/F1-guarda-chuva-dtm.svg',
       legenda: 'DTM não é um diagnóstico: são cerca de dez diagnósticos em três grupos — muscular, articular e deslocamento de disco.',
     },
     {
       tipo: 'framework', titulo: 'Os dois tripés',
-      svg: '../brandbook-academia-dtm/kit-frameworks/svg/F2-dois-tripes.svg',
+      svg: 'brandbook-academia-dtm/kit-frameworks/svg/F2-dois-tripes.svg',
       legenda: 'O tripé sistêmico (sono, atividade física, aspectos psicoemocionais) explica a sobrecarga; o tripé local é onde se intervém.',
     },
     {
       tipo: 'framework', titulo: 'A escada terapêutica',
-      svg: '../brandbook-academia-dtm/kit-frameworks/svg/F3-escada-terapeutica.svg',
+      svg: 'brandbook-academia-dtm/kit-frameworks/svg/F3-escada-terapeutica.svg',
       legenda: 'Uma escada por grupo diagnóstico: começa no conservador, sobe pro minimamente invasivo e só então chega no invasivo.',
     },
     {
       tipo: 'framework', titulo: 'O percurso da formação',
-      svg: '../brandbook-academia-dtm/kit-frameworks/svg/F4-percurso-da-formacao.svg',
-      legenda: 'Três etapas — diagnóstico, tratamento e negócio — e cada uma fecha numa imersão presencial em Brasília com prova prática ao vivo.',
+      svg: 'brandbook-academia-dtm/kit-frameworks/svg/F4-percurso-da-formacao.svg',
+      legenda: 'Três etapas — diagnóstico, tratamento e negócio — e cada uma termina numa imersão presencial em Brasília.',
     },
     {
       tipo: 'framework', titulo: 'O martelo único e o arsenal',
-      svg: '../brandbook-academia-dtm/kit-frameworks/svg/F5-martelo-unico-e-arsenal.svg',
+      svg: 'brandbook-academia-dtm/kit-frameworks/svg/F5-martelo-unico-e-arsenal.svg',
       legenda: 'Cada especialidade empurra a própria ferramenta. O arsenal faz o contrário: escolhe a ferramenta certa pra cada caso.',
     },
     {
@@ -289,7 +289,7 @@ DASH.views['met-metodo'] = {
   ],
   links: [
     { rotulo: 'Frameworks do método (documento)', href: 'docs/frameworks-metodo.md' },
-    { rotulo: 'Kit de frameworks visuais', href: '../brandbook-academia-dtm/kit-frameworks/index.html' },
+    { rotulo: 'Kit de frameworks visuais', href: 'brandbook-academia-dtm/kit-frameworks/index.html' },
   ],
-  atualizado: '2026-10-06',
+  atualizado: '2026-10-17',
 };

@@ -193,7 +193,7 @@ DASH.views['marca-crencas'] = {
       ['Não tenho paciente de DTM suficiente', 'O paciente já está na minha agenda toda semana', 'Persuasiva'],
       ['DTM não dá dinheiro', 'O tratamento de DTM tem ticket muito acima de uma consulta comum', 'Persuasiva'],
       ['Não tenho tempo para mais uma formação', 'É um encontro por semana, e o alívio começa nas primeiras semanas', 'Educativa'],
-      ['Online não ensina odontologia de verdade', 'Três imersões presenciais com prova prática validada ao vivo', 'Tese'],
+      ['Online não ensina odontologia de verdade', 'Imersões presenciais com 4 dias de prática em paciente real, acompanhada ao vivo', 'Tese'],
       ['Preciso de título reconhecido para tratar DTM', 'Competência validada na prática pesa mais que diploma sem prática', 'Tese'],
       ['Já fiz pós e não voltou o investimento', 'A jornada completa liga diagnóstico, tratamento e negócio', 'Tese'],
       ['Ser conservador demais é sempre mais seguro', 'Existe critério objetivo para saber quando subir o degrau', 'Tese'],
@@ -216,5 +216,5 @@ DASH.views['marca-crencas'] = {
     { quem: 'rodrigo', feito: true, texto: 'Confirmar se quer instalar a crença sobre IA no consultório e ceder um caso real de uso.', prazo: 'encerrado' }
   ],
   links: [],
-  atualizado: '2026-10-06'
+  atualizado: '2026-10-17'
 };

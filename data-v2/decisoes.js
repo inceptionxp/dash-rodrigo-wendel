@@ -7,9 +7,9 @@ DASH.views['devolutivas'] = {
   kicker: 'Decisões',
   resumo: 'Tudo que você aprovou desde julho, com a data e o lugar onde a decisão já está aplicada. O que ainda depende de você está na fila da próxima tela.',
   fatos: [
-    { rotulo: 'decisões registradas', valor: '18' },
+    { rotulo: 'decisões registradas', valor: '19' },
     { rotulo: 'primeira validação', valor: '11/07/2026' },
-    { rotulo: 'última validação', valor: '05/09/2026' },
+    { rotulo: 'última validação', valor: '12/10/2026' },
   ],
   blocos: [
     {
@@ -49,7 +49,8 @@ DASH.views['devolutivas'] = {
       linhas: [
         ['Data de início', '23/02/2027, depois do carnaval, com fim em 30/11', '05/09', 'Calendário, página, apresentação'],
         ['Grupo de WhatsApp', 'Só para quem entra no presencial', '05/09', 'Oferta'],
-        ['Canal de atendimento', 'Número secundário com atendente próprio, desde o começo da captação', '05/09', 'Fluxo comercial']
+        ['Canal de atendimento', 'Número secundário com atendente próprio, desde o começo da captação', '05/09', 'Fluxo comercial'],
+        ['Campanha de abertura', '10 anúncios, 5 roteiros de vídeo, 5 carrosséis, 7 e-mails e 7 mensagens de WhatsApp validados', '12/10', 'Central da campanha']
       ],
     },
   ],
@@ -62,7 +63,7 @@ DASH.views['devolutivas'] = {
   links: [
     { rotulo: 'O que ainda depende de você', href: '#decisoes-rodrigo' },
   ],
-  atualizado: '2026-10-06',
+  atualizado: '2026-10-17',
 };
 
 /* ─────────── decisoes-rodrigo ─────────── */
@@ -70,19 +71,22 @@ DASH.views['decisoes-rodrigo'] = {
   titulo: 'O que depende de você agora',
   status: 'pendente',
   kicker: 'Decisões',
-  resumo: 'As decisões abertas em setembro estão fechadas. Faltam do senhor três coisas, e nenhuma é decisão nova: são o que libera as peças públicas.',
+  resumo: 'As decisões abertas em setembro estão fechadas e a campanha foi validada em 12/10. O que falta do senhor agora é o que coloca a campanha no ar.',
   fatos: [
-    { rotulo: 'com o senhor agora', valor: '3' },
+    { rotulo: 'com o senhor agora', valor: '6' },
     { rotulo: 'decisões de setembro', valor: 'fechadas' }
   ],
   blocos: [
     {
-      tipo: 'tabela', titulo: 'Libera as peças públicas',
+      tipo: 'tabela', titulo: 'Coloca a campanha no ar',
       colunas: ['O que falta', 'Por que importa', 'Prazo sugerido'],
       linhas: [
+        ['Renomear o perfil para @academiadtm e publicar os 5 carrosséis', 'Os anúncios levam ao perfil, e ele precisa estar com o nome e o conteúdo novos', 'antes de ligar os anúncios'],
+        ['Gravar os 5 vídeos dos roteiros', 'São os anúncios em vídeo da campanha', 'antes de ligar os anúncios'],
+        ['Número de WhatsApp da Academia, cadastrado na API oficial da Meta com o Pedro', 'É por ele que a coordenação chama quem aplicou', 'antes da primeira aplicação'],
+        ['Meta Business com o número e a conta de anúncios', 'Sem ele o Pedro não liga a campanha', 'antes de ligar os anúncios'],
+        ['Plataforma de cobrança e se o 12x sai com ou sem juros', 'A primeira cobrança cai na matrícula, e a matrícula precisa de onde cobrar', 'antes da primeira reunião de venda'],
         ['Autorizações de uso dos depoimentos', 'Sem elas, nenhum depoimento em vídeo vai ao ar', 'em andamento'],
-        ['Nome da instituição do certificado', 'Define o texto do certificado na página e na apresentação. Selo do MEC só entra escrito depois que a instituição confirmar como ele vale para curso livre', 'depois da reunião em Brasília'],
-        ['Revisão dos cinco carrosséis', 'São os posts de abertura do perfil da Academia DTM', 'ao receber os links'],
       ],
     },
     {
@@ -91,9 +95,10 @@ DASH.views['decisoes-rodrigo'] = {
       linhas: [
         ['Encontro em semana de feriado', 'Vai para a quarta da mesma semana', '13/09'],
         ['Aula inaugural', 'Cortada; a turma abre no Encontro 1, em 23/02', '13/09'],
-        ['Shadowing', '2 dias, em duplas', '13/09'],
+        ['Dias na clínica', '2 dias na clínica do senhor, só para a turma fundadora', '13/09'],
         ['Nome do método', 'Abordagem Multimodal', '13/09'],
-        ['Carga horária', '134 horas; a divulgação usa o piso de 130 e o certificado sai com a carga real', '22/09'],
+        ['Carga horária', '134 horas', '22/09'],
+        ['Certificado', 'Credenciado pelo MEC, sem nome de instituição em nenhuma peça', '12/10'],
         ['Reuniões de venda', '30 minutos, segunda, quarta e quinta às 19h30', '22/09'],
         ['Dias das imersões', '20 a 22/05, 21 a 23/10 e 29 e 30/11 de 2027', '24/09'],
         ['Garantia', 'Devolução até o Encontro 3, descontados os impostos e as taxas já recolhidos', '06/10'],
@@ -101,24 +106,28 @@ DASH.views['decisoes-rodrigo'] = {
         ['Números da clínica', 'Ticket médio de 2025 e valor da avaliação enviados', '04/10'],
         ['Trajetória', 'Começo em 2003 na clínica de uma amiga, com clínica geral e DTM, migrando depois só para DTM', '06/10'],
         ['Conteúdo do professor, perfil, canal e linha editorial', 'Encerrados como pendência deste projeto', '06/10'],
+        ['Página de aplicação', 'No ar em academiadtm.com.br/formacao', '12/10'],
+        ['Campanha de abertura', 'Anúncios, roteiros de vídeo, carrosséis, e-mails e WhatsApp validados', '12/10'],
       ],
     },
   ],
   decisoes: [
     { data: '2026-09-13', texto: 'Feriado na terça desloca o encontro para a quarta da mesma semana.' },
-    { data: '2026-09-13', texto: 'Shadowing de 2 dias, em duplas.' },
-    { data: '2026-09-22', texto: 'Carga horária de 134 horas; a divulgação usa o piso de 130 e o certificado sai com a carga real.' },
-    { data: '2026-09-22', texto: 'Certificado como curso livre.' },
+    { data: '2026-09-13', texto: '2 dias na clínica do senhor para a turma fundadora.' },
+    { data: '2026-09-22', texto: 'Carga horária de 134 horas.' },
     { data: '2026-09-24', texto: 'Imersão 1 em 20 a 22/05 e Imersão 2 em 21 a 23/10, de quinta a sábado.' },
     { data: '2026-10-06', texto: 'Garantia com devolução do valor líquido até o Encontro 3.' },
+    { data: '2026-10-12', texto: 'Certificado credenciado pelo MEC, sem nome de instituição. A página deixa de mostrar número de vagas e as apostilas e ferramentas saem sem promessa de prazo.' },
   ],
   pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Passar o nome da instituição que emite o certificado.', prazo: 'depois da reunião em Brasília' },
+    { quem: 'rodrigo', feito: true, texto: 'Certificado decidido em 12/10/2026: credenciado pelo MEC, sem nome de instituição.', prazo: 'encerrado' },
+    { quem: 'rodrigo', feito: true, texto: 'Validar os anúncios, os roteiros de vídeo, os carrosséis, os e-mails e as mensagens de WhatsApp.', prazo: 'feito em 12/10' },
   ],
   links: [
     { rotulo: 'Calendário completo da turma 2027', href: 'docs/calendario-turma-2027.md' },
+    { rotulo: 'Central da campanha', href: '#com-campanha' },
   ],
-  atualizado: '2026-10-06',
+  atualizado: '2026-10-17',
 };
 
 /* ─────────── marcos ─────────── */
@@ -126,9 +135,9 @@ DASH.views['marcos'] = {
   titulo: 'Os quatro marcos',
   status: 'em-producao',
   kicker: 'Projeto',
-  resumo: 'O contrato tem quatro marcos. Os dois primeiros estão concluídos e o terceiro está na reta final: faltam carrosséis, criativos, página e apresentação atualizadas. O quarto fecha o projeto com a reunião de entrega e o treinamento.',
+  resumo: 'O contrato tem quatro marcos. Os três primeiros estão concluídos: a campanha foi validada em 12/10 e a página está no ar. O quarto fecha o projeto com a reunião de entrega e o treinamento.',
   fatos: [
-    { rotulo: 'marcos concluídos', valor: '2 de 4' },
+    { rotulo: 'marcos concluídos', valor: '3 de 4' },
     { rotulo: 'levantamento', valor: '02/07/2026' },
     { rotulo: 'validação', valor: '11/07/2026' },
   ],
@@ -142,32 +151,31 @@ DASH.views['marcos'] = {
       html: '<p>Você ratificou o nome da empresa e da formação, a identidade visual e o formato do produto. Ficou com você a revisão da estrutura técnica, que foi chegando ao longo de julho e agosto. <strong>A garantia contratual de devolução integral em cinco dias úteis venceu com este marco.</strong></p>',
     },
     {
-      tipo: 'lista', titulo: 'Marco 03 · Configuração Operacional — reta final',
+      tipo: 'lista', titulo: 'Marco 03 · Configuração Operacional — concluído em 12/10/2026',
       itens: [
         'Entregue: método, formação, oferta, calendário de 2027, marca, brandbook e kit de frameworks.',
-        'Entregue: página de aplicação, apresentação comercial em duas versões e especificação do fluxo do formulário à matrícula.',
+        'Entregue: apresentação comercial em duas versões e especificação do fluxo do formulário à matrícula.',
         'Entregue: guia de social media, linha editorial, pautas e termos de autorização dos depoimentos.',
-        'Entregue: domínio academiadtm.com.br no ar, com HTTPS.',
-        'Em revisão: os cinco carrosséis de abertura do perfil.',
-        'Em produção: os 10 criativos estáticos e os 5 roteiros de vídeo para o tráfego.',
-        'Em produção: a página de aplicação e a apresentação de vendas atualizadas com as últimas definições.',
+        'No ar: academiadtm.com.br, com HTTPS, e a página de aplicação em academiadtm.com.br/formacao desde 12/10.',
+        'Validados em 12/10: os 5 carrosséis de abertura do perfil, os 10 anúncios, os 5 roteiros de vídeo, os 7 e-mails e as 7 mensagens de WhatsApp.',
       ],
     },
     {
       tipo: 'texto', titulo: 'Marco 04 · Entrega Final — próximo',
-      html: '<p>Reunião de passagem do projeto, treinamento para você operar tudo sozinho e esta dashboard organizada com as entregas. O suporte de trinta dias corridos começa a contar depois do treinamento. A data sai assim que essas quatro entregas estiverem com o senhor.</p>',
+      html: '<p>Reunião de passagem do projeto, treinamento para você operar tudo sozinho e esta dashboard organizada com as entregas. O suporte de trinta dias corridos começa a contar depois do treinamento.</p>',
     },
   ],
   decisoes: [
     { data: '2026-07-02', texto: 'Marco 01 concluído com a conversa de levantamento.' },
     { data: '2026-07-11', texto: 'Marco 02 concluído com a validação da estratégia.' },
+    { data: '2026-10-12', texto: 'Marco 03 concluído com a página no ar e a campanha validada.' },
   ],
   pendencias: [
     { quem: 'rodrigo', feito: true, texto: 'Revisar as peças entregues em 03/09: página de aplicação, apresentação comercial e guia de social media.', prazo: 'feito' },
-    { quem: 'inception', feito: false, texto: 'Marcar a reunião de entrega final e o treinamento.', prazo: 'depois das quatro entregas' },
+    { quem: 'inception', feito: false, texto: 'Marcar a reunião de entrega final e o treinamento.', prazo: 'data a combinar' },
   ],
   links: [
     { rotulo: 'Contrato assinado', href: 'docs/contrato-rodrigo-wendel.pdf' },
   ],
-  atualizado: '2026-10-06',
+  atualizado: '2026-10-17',
 };

@@ -14,7 +14,7 @@ DASH.views['form-oferta'] = {
     {tipo:'texto', titulo:'…', html:'<p>…</p>'},
     {tipo:'lista', titulo:'…', itens:['…','…']},
     {tipo:'tabela', titulo:'…', colunas:['…'], linhas:[['…','…']]},
-    {tipo:'framework', titulo:'…', svg:'../brandbook-academia-dtm/kit-frameworks/svg/F1.svg', legenda:'…'},
+    {tipo:'framework', titulo:'…', svg:'brandbook-academia-dtm/kit-frameworks/svg/F1.svg', legenda:'…'},
     {tipo:'logos', titulo:'…',                     // galeria de download; o preview e' sempre PNG
       zip:{href:'marca/academia-dtm_logos.zip', tamanho:'2,2 MB', nota:'…'},
       itens:[{nome:'…', descricao:'…', preview:'marca/x.png', fundo:'papel'|'navy',
