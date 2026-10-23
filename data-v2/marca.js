@@ -170,9 +170,10 @@ DASH.views['marca-social'] = {
     { quem: 'inception', feito: true, texto: 'Montar a pasta de referências visuais para a produção.', prazo: 'feito' }
   ],
   links: [
+    { rotulo: 'Baixar os carrosséis prontos para o feed, com legenda', href: 'pecas/campanha/index.html#carrosseis' },
     { rotulo: 'Abrir o guia de conteúdos e criativos', href: 'brandbook-academia-dtm/ds-conteudos-criativos.html' }
   ],
-  atualizado: '2026-10-06'
+  atualizado: '2026-10-23'
 };
 
 DASH.views['marca-crencas'] = {

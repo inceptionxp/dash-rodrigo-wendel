@@ -201,13 +201,13 @@ DASH.views['com-campanha'] = {
     { tipo: 'tabela', titulo: 'O que está na central', colunas: ['Peça', 'O que é', 'Quem usa'], linhas: [
       ['10 anúncios estáticos', 'Cada um em feed e em story, com texto e link da página', 'Pedro, no tráfego pago'],
       ['5 roteiros de vídeo', 'De 30 a 45 segundos, falados pelo senhor para a câmera', 'O senhor grava; o Pedro sobe'],
-      ['5 carrosséis', '01 Mitos, 03 O que o paciente vive antes do sim, 05 Como funciona a formação, 08 Quem é Rodrigo Wendel e 09 Você pode, com a legenda final de cada um', 'O senhor publica no @academiadtm'],
+      ['5 carrosséis', '01 Mitos, 03 O que o paciente vive antes do sim, 05 Como funciona a formação, 08 Quem é Rodrigo Wendel e 09 Você pode: um zip com as imagens na ordem e a legenda final de cada um', 'Pedro, no feed do @academiadtm'],
       ['7 e-mails', '6 para a lista, da semana anterior à abertura até 13 dias antes do início da turma, e 1 para ex-alunos pedindo indicação', 'Quem dispara a lista'],
       ['7 mensagens de WhatsApp', '6 para a lista, no mesmo calendário dos e-mails, e 1 para ex-alunos', 'Quem dispara a lista']
     ]},
     { tipo: 'lista', titulo: 'Como usar a central', itens: [
       'Abra o link no computador. Cada anúncio tem a prévia, o arquivo em alta para baixar e o texto para copiar.',
-      'Os textos de e-mail, WhatsApp e legenda saem com um clique no botão de copiar.',
+      'Os textos de e-mail, WhatsApp e legenda saem com um clique no botão de copiar. Cada carrossel tem um zip com as imagens já na ordem de postagem.',
       'Todo link leva para academiadtm.com.br/formacao, com os parâmetros que dizem de onde veio cada aplicação.'
     ]},
     { tipo: 'texto', titulo: 'O que liga a campanha', html: '<p>As peças estão prontas. Os anúncios entram no ar quando o perfil estiver renomeado para @academiadtm, com os carrosséis publicados, e quando o número de WhatsApp da Academia e o Meta Business estiverem configurados com o Pedro. Os vídeos entram assim que o senhor gravar os 5 roteiros.</p>' }
@@ -215,18 +215,20 @@ DASH.views['com-campanha'] = {
   decisoes: [
     { data: '2026-10-08', texto: 'O carrossel 02 saiu da série. Ficam 01, 03, 05, 08 e 09.' },
     { data: '2026-10-12', texto: 'Anúncios, roteiros de vídeo, e-mails e mensagens de WhatsApp validados pelo senhor.' },
-    { data: '2026-10-17', texto: 'Legendas finais dos 5 carrosséis fechadas.' }
+    { data: '2026-10-17', texto: 'Legendas finais dos 5 carrosséis fechadas.' },
+    { data: '2026-10-23', texto: 'Carrossel 05 com os ajustes pedidos pelo senhor. Os 5 carrosséis ganharam zip para o Pedro postar.' }
   ],
   pendencias: [
     { quem: 'inception', feito: true, texto: 'Os 10 anúncios estáticos em feed e story, com texto e link.', prazo: 'feito em 12/10' },
     { quem: 'inception', feito: true, texto: 'Os 5 roteiros de vídeo.', prazo: 'feito em 12/10' },
     { quem: 'inception', feito: true, texto: 'Os 5 carrosséis no Canva e as legendas finais.', prazo: 'feito' },
     { quem: 'inception', feito: true, texto: 'Os 7 e-mails e as 7 mensagens de WhatsApp.', prazo: 'feito em 12/10' },
-    { quem: 'rodrigo', feito: false, texto: 'Renomear o perfil para @academiadtm e publicar os 5 carrosséis.', prazo: 'antes de ligar os anúncios' },
-    { quem: 'rodrigo', feito: false, texto: 'Gravar os 5 vídeos dos roteiros.', prazo: 'antes de ligar os anúncios' }
+    { quem: 'rodrigo', feito: false, texto: 'Renomear o perfil para @academiadtm.', prazo: 'antes de o Pedro postar os carrosséis' },
+    { quem: 'rodrigo', feito: false, texto: 'Gravar os 5 vídeos dos roteiros.', prazo: 'os anúncios estáticos podem rodar antes' }
   ],
   links: [
-    { rotulo: 'Abrir a central da campanha', href: 'pecas/campanha/index.html' }
+    { rotulo: 'Abrir a central da campanha', href: 'pecas/campanha/index.html' },
+    { rotulo: 'Baixar os carrosséis com legenda', href: 'pecas/campanha/index.html#carrosseis' }
   ],
-  atualizado: '2026-10-17'
+  atualizado: '2026-10-23'
 };

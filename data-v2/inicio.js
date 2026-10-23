@@ -19,7 +19,7 @@ DASH.views['inicio'] = {
     ]},
     { tipo: 'lista', titulo: 'O que falta do Dr. Rodrigo', itens: [
       'As autorizações de uso dos depoimentos.',
-      'Renomear o perfil do Instagram para @academiadtm e publicar os carrosséis.',
+      'Renomear o perfil do Instagram para @academiadtm, para o Pedro postar os carrosséis.',
       'Gravar os 5 vídeos dos roteiros da campanha.',
       'Escolher a plataforma de cobrança e se o 12x sai com ou sem juros.'
     ]},
