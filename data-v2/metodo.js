@@ -158,13 +158,13 @@ DASH.views['met-expert'] = {
 /* ─────────── met-historias ─────────── */
 DASH.views['met-historias'] = {
   titulo: 'Banco de histórias',
-  status: 'em-revisao',
+  status: 'entregue',
   kicker: 'Método',
-  resumo: 'Dezessete histórias reais, cada uma com o lugar onde rende mais. Nenhuma delas é ilustração: são a prova que sustenta a página, o deck e o conteúdo. O texto integral está no documento.',
+  resumo: 'Vinte e três histórias reais, contadas pelo senhor nas calls, na aula e nos áudios, cada uma com o lugar onde rende mais. Nenhuma delas é ilustração: são a prova que sustenta a página, o deck e o conteúdo. O texto integral está no documento.',
   fatos: [
-    { rotulo: 'histórias catalogadas', valor: '17' },
+    { rotulo: 'histórias catalogadas', valor: '23' },
     { rotulo: 'depoimentos de paciente em vídeo', valor: '4' },
-    { rotulo: 'que forjaram a expertise', valor: '7' },
+    { rotulo: 'que forjaram a expertise', valor: '12' },
   ],
   blocos: [
     {
@@ -192,7 +192,7 @@ DASH.views['met-historias'] = {
       linhas: [
         ['A escolha da Odontologia', 'Entrou por matemática e física, e só se identificou quando começou a atender gente.', 'Conteúdo de bastidor'],
         ['Faixa roxa, um grau', 'O jiu-jitsu dele é a origem da progressão por faixas dentro da formação.', 'Conteúdo, desenho do produto'],
-        ['A mãe e o dinheiro dormindo', 'A própria mãe foi seduzida por promessa de ganho fácil, e isso fixou a posição dele.', 'Conteúdo, posicionamento'],
+        ['Ninguém me conhecia', 'Foi de porta em porta com o cartão e construiu autoridade antes das redes.', 'Bastidor, aula de autoridade'],
       ],
     },
     {
@@ -214,17 +214,28 @@ DASH.views['met-historias'] = {
         ['O professor aposentado de 77 anos', 'Viaja de carro a Brasília uma vez por mês só pra assistir às aulas, e senta na frente.', 'Conteúdo, prova pedagógica'],
       ],
     },
+    {
+      tipo: 'tabela', titulo: 'Novas, das calls, da aula e dos áudios',
+      colunas: ['História', 'Em uma frase', 'Onde usar'],
+      linhas: [
+        ['A paciente que teve vergonha de não pagar a avaliação', 'Ela não quis pagar, viu o tamanho da avaliação e disse que estava com vergonha.', 'Anúncio V1, módulo comercial'],
+        ['50 desmarcações em três meses', 'Sem número ele só ficava irritado; com número criou o sinal para agendar.', 'Módulo comercial, conteúdo de bastidor'],
+        ['O paciente gostava e não fechava', 'Antes de divulgar mais, arrumou os processos e mudou a abertura da consulta.', 'Carrossel 03, roteiro V2, módulo comercial'],
+        ['A paciente muscular que virou mista', 'A melhora do músculo revelou a articulação, e o plano mudou no meio do caminho.', 'Aula de reavaliação, conteúdo de autoridade'],
+        ['O curso de vendas em que ele foi embora', 'Viu a promessa fácil no palco, levantou e saiu. Sempre sem nomes.', 'Conteúdo de posicionamento'],
+        ['A paciente que não abria a boca', 'Achava que seria cirurgia; ele descartou na primeira consulta e ela voltou a comer em público.', 'Roteiro da primeira consulta, conteúdo contra cirurgia precoce'],
+      ],
+    },
   ],
   decisoes: [
     { data: '2026-07-07', texto: 'Quatro depoimentos de paciente em vídeo recebidos, transcritos e catalogados.' },
+    { data: '2026-10-23', texto: 'Banco concluído com 23 histórias. A autorização de uso de imagem e depoimento segue na tela da oferta.' },
   ],
-  pendencias: [
-    { quem: 'rodrigo', feito: false, texto: 'Autorização de uso de imagem de cada paciente, e confirmação do direito de uso dos depoimentos de aluno gravados na parceria antiga.', prazo: 'em andamento' },
-  ],
+  pendencias: [],
   links: [
     { rotulo: 'Banco de histórias (texto integral)', href: 'docs/banco-de-historias.md' },
   ],
-  atualizado: '2026-10-06',
+  atualizado: '2026-10-23',
 };
 
 /* ─────────── met-metodo ─────────── */
